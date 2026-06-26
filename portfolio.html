@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض أعمال نيو جولدن أوفيس — مشاريع مكتبية في مصر</title>
+  <meta name="description" content="معرض أعمال نيو جولدن أوفيس — مشاريع طباعة وتوريد مستلزمات مكتبية وتركيب كاميرات وتكييفات للشركات والفنادق والمستشفيات في مصر.">
+  <meta name="keywords" content="معرض أعمال، مشاريع طباعة، كاميرات مراقبة، تكييفات، مستلزمات مكتبية، إسكندرية، مصر">
+  <meta property="og:title" content="معرض أعمال نيو جولدن أوفيس — مشاريع مكتبية في مصر">
+  <meta property="og:description" content="معرض أعمال نيو جولدن أوفيس — مشاريع طباعة وتوريد مستلزمات مكتبية وتركيب كاميرات وتكييفات للشركات والفنادق والمستشفيات في مصر.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Portfolio Page Specific Styles */
+
+    /* Stats Row */
+    .portfolio-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .portfolio-stat {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .portfolio-stat .ps-number {
+      font-family: 'Cairo', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--secondary, #E8A020);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .portfolio-stat .ps-label {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      color: var(--primary, #1B3A6B);
+      font-weight: 600;
+    }
+
+    /* Filter Tabs */
+    .portfolio-filters {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .filter-tab {
+      padding: 0.55rem 1.3rem;
+      border-radius: 50px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid var(--primary, #1B3A6B);
+      color: var(--primary, #1B3A6B);
+      background: transparent;
+      transition: all 0.3s;
+    }
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: var(--primary, #1B3A6B);
+      color: #fff;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .portfolio-card {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,58,107,0.1);
+      background: #fff;
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 36px rgba(27,58,107,0.18);
+    }
+    .portfolio-card-image {
+      height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .portfolio-card-image i {
+      font-size: 3.5rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    }
+    .portfolio-card-image .card-number {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+    }
+    .portfolio-card-body {
+      padding: 1.4rem 1.3rem;
+    }
+    .portfolio-card-body .pc-badge {
+      display: inline-block;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+    .badge-print { background: #fff3e0; color: #e65100; }
+    .badge-copier { background: #e8eaf6; color: #3949ab; }
+    .badge-camera { background: #e0f2f1; color: #00695c; }
+    .badge-ac { background: #e3f2fd; color: #1565c0; }
+    .badge-supplies { background: #f3e5f5; color: #6a1b9a; }
+    .badge-gift { background: #fce4ec; color: #c62828; }
+
+    .portfolio-card-body h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .portfolio-card-body p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Color Themes for Cards */
+    .bg-navy-dark { background: linear-gradient(135deg, #1B3A6B 0%, #0d2244 100%); }
+    .bg-navy-mid { background: linear-gradient(135deg, #2a5298 0%, #1B3A6B 100%); }
+    .bg-gold { background: linear-gradient(135deg, #E8A020 0%, #c47c0a 100%); }
+    .bg-teal { background: linear-gradient(135deg, #00796b 0%, #004d40 100%); }
+    .bg-indigo { background: linear-gradient(135deg, #3949ab 0%, #1a237e 100%); }
+    .bg-blue-steel { background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%); }
+    .bg-purple { background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%); }
+    .bg-olive { background: linear-gradient(135deg, #558b2f 0%, #33691e 100%); }
+    .bg-crimson { background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%); }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(27,58,107,0.09);
+      position: relative;
+      border-top: 4px solid var(--secondary, #E8A020);
+      transition: transform 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial-card .quote-icon {
+      font-size: 3rem;
+      color: var(--secondary, #E8A020);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 0.8;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-card .tc-text {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testimonial-card .tc-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .testimonial-card .tc-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary, #1B3A6B), #2a5298);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .testimonial-card .tc-avatar i {
+      font-size: 1.4rem;
+      color: var(--secondary, #E8A020);
+    }
+    .testimonial-card .tc-info h4 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.15rem;
+    }
+    .testimonial-card .tc-info p {
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .tc-stars {
+      color: var(--secondary, #E8A020);
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 1000px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .portfolio-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar injected by layout.js -->
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>معرض أعمالنا</span>
+      </nav>
+      <h1 class="reveal">معرض أعمالنا — مشاريع نفخر بها</h1>
+      <p class="lead reveal delay-1">
+        أكثر من خمسة وثلاثين عامًا من الخبرة تتجلى في مئات المشاريع الناجحة للشركات والفنادق والمستشفيات والجامعات في مصر. كل مشروع يحكي قصة ثقة وجودة.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Row -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="portfolio-stats">
+        <div class="portfolio-stat reveal">
+          <span class="ps-number">+500</span>
+          <span class="ps-label">مشروع منجز بنجاح</span>
+        </div>
+        <div class="portfolio-stat reveal delay-1">
+          <span class="ps-number">+35</span>
+          <span class="ps-label">سنة في السوق المصري</span>
+        </div>
+        <div class="portfolio-stat reveal delay-2">
+          <span class="ps-number">+100</span>
+          <span class="ps-label">شركة ومؤسسة عميلة</span>
+        </div>
+        <div class="portfolio-stat reveal">
+          <span class="ps-number">6</span>
+          <span class="ps-label">محافظات تغطية شاملة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">أعمالنا</span>
+        <h2>مشاريع مختارة من محفظة أعمالنا</h2>
+        <div class="divider"></div>
+        <p>نماذج من المشاريع التي نفذناها بكفاءة واحترافية عالية لعملائنا في مختلف القطاعات</p>
+      </div>
+
+      <!-- Filter Tabs (Static) -->
+      <div class="portfolio-filters reveal">
+        <button class="filter-tab active">كل الأعمال</button>
+        <button class="filter-tab">طباعة</button>
+        <button class="filter-tab">تصوير</button>
+        <button class="filter-tab">كاميرات</button>
+        <button class="filter-tab">تكييفات</button>
+        <button class="filter-tab">مستلزمات</button>
+      </div>
+
+      <!-- Portfolio Cards Grid -->
+      <div class="portfolio-grid">
+
+        <!-- Card 1: Printing - Brochures -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-card-image bg-navy-dark">
+            <i class="fa-solid fa-print"></i>
+            <span class="card-number">مشروع #001</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-print">طباعة</span>
+            <h3>طباعة 50,000 بروشور لشركة عقارات بالقاهرة</h3>
+            <p>طباعة أوفست عالية الجودة على ورق مصقول فاخر مع تصميم احترافي وتسليم في الموعد المحدد.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Copier/Printers - Government -->
+        <div class="portfolio-card reveal delay-1">
+          <div class="portfolio-card-image bg-indigo">
+            <i class="fa-solid fa-copy"></i>
+            <span class="card-number">مشروع #002</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-copier">تصوير وطباعة</span>
+            <h3>تجهيز 200 كمبيوتر وطابعة لوزارة حكومية</h3>
+            <p>توريد وتركيب وتشغيل منظومة متكاملة من الطابعات الليزرية مع ضمان سنوي وعقد صيانة.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Cameras - Factory -->
+        <div class="portfolio-card reveal delay-2">
+          <div class="portfolio-card-image bg-teal">
+            <i class="fa-solid fa-camera"></i>
+            <span class="card-number">مشروع #003</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-camera">كاميرات مراقبة</span>
+            <h3>نظام مراقبة 64 كاميرا لمصنع بالإسكندرية</h3>
+            <p>تصميم وتركيب شبكة مراقبة شاملة بكاميرات Full HD مع غرفة تحكم مركزية ونظام تسجيل DVR.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: AC - Hotel -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-card-image bg-blue-steel">
+            <i class="fa-solid fa-snowflake"></i>
+            <span class="card-number">مشروع #004</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-ac">تكييفات</span>
+            <h3>تكييف 30 وحدة لفندق 4 نجوم بالإسكندرية</h3>
+            <p>توريد وتركيب 30 وحدة تكييف سبليت موفرة للطاقة مع أنظمة تحكم ذكية وعقد صيانة سنوية.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Supplies - University -->
+        <div class="portfolio-card reveal delay-1">
+          <div class="portfolio-card-image bg-purple">
+            <i class="fa-solid fa-briefcase"></i>
+            <span class="card-number">مشروع #005</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-supplies">مستلزمات مكتبية</span>
+            <h3>توريد مستلزمات مكتبية لجامعة مصرية</h3>
+            <p>عقد توريد سنوي شامل لجميع الأدوات والمستلزمات المكتبية لإدارات الجامعة ومعاملها وكلياتها.</p>
+          </div>
+        </div>
+
+        <!-- Card 6: UV Printing - Tourism -->
+        <div class="portfolio-card reveal delay-2">
+          <div class="portfolio-card-image bg-gold">
+            <i class="fa-solid fa-palette"></i>
+            <span class="card-number">مشروع #006</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-print">طباعة UV</span>
+            <h3>طباعة UV لكتالوجات فاخرة لشركة سياحة</h3>
+            <p>طباعة UV بأحبار خاصة مقاومة للماء والأشعة فوق البنفسجية على ورق مصقول بجودة استثنائية.</p>
+          </div>
+        </div>
+
+        <!-- Card 7: DVR - Mall -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-card-image bg-olive">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span class="card-number">مشروع #007</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-camera">كاميرات مراقبة</span>
+            <h3>نظام DVR مركزي لمجمع تجاري</h3>
+            <p>بنية تحتية أمنية متكاملة لمجمع تجاري تشمل 120 كاميرا ونظام DVR مركزي مع مراقبة عبر الإنترنت.</p>
+          </div>
+        </div>
+
+        <!-- Card 8: Copier Maintenance Fleet -->
+        <div class="portfolio-card reveal delay-1">
+          <div class="portfolio-card-image bg-navy-mid">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span class="card-number">مشروع #008</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-copier">تصوير وصيانة</span>
+            <h3>صيانة أسطول 80 ماكينة تصوير لشركة كبرى</h3>
+            <p>عقد صيانة دورية شهرية لأسطول ضخم من ماكينات التصوير مع توريد مستلزمات وقطع غيار أصلية.</p>
+          </div>
+        </div>
+
+        <!-- Card 9: Gifts Printing -->
+        <div class="portfolio-card reveal delay-2">
+          <div class="portfolio-card-image bg-crimson">
+            <i class="fa-solid fa-gift"></i>
+            <span class="card-number">مشروع #009</span>
+          </div>
+          <div class="portfolio-card-body">
+            <span class="pc-badge badge-gift">هدايا مطبوعة</span>
+            <h3>طباعة هدايا وأكواب ترويجية لحدث شركة</h3>
+            <p>تصميم وطباعة 500 كوب وهدية ترويجية مخصصة لحفل سنوي لشركة كبرى بجودة عالية وتسليم عاجل.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectors Section -->
+  <section style="padding:60px 0;background:#f8f9fa">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">قطاعات نخدمها في مصر</h2>
+      <p style="font-size:1.05rem;line-height:1.9;color:#555;margin-bottom:24px">نيو جولدن أوفيس تخدم شركات وجهات من مختلف القطاعات في القاهرة والإسكندرية وجميع محافظات مصر:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+        <div style="background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #e0e0e0">🏢 <p style="margin:6px 0 0;font-size:0.9rem;font-weight:600">شركات ومكاتب</p></div>
+        <div style="background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #e0e0e0">🏥 <p style="margin:6px 0 0;font-size:0.9rem;font-weight:600">مستشفيات وعيادات</p></div>
+        <div style="background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #e0e0e0">🏨 <p style="margin:6px 0 0;font-size:0.9rem;font-weight:600">فنادق ومنتجعات</p></div>
+        <div style="background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #e0e0e0">🏫 <p style="margin:6px 0 0;font-size:0.9rem;font-weight:600">مدارس وجامعات</p></div>
+        <div style="background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #e0e0e0">🏭 <p style="margin:6px 0 0;font-size:0.9rem;font-weight:600">مصانع ومستودعات</p></div>
+        <div style="background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #e0e0e0">🏦 <p style="margin:6px 0 0;font-size:0.9rem;font-weight:600">بنوك ومؤسسات</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">آراء عملائنا</span>
+        <h2>ماذا يقول عملاؤنا؟</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal">
+          <div class="tc-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="quote-icon">"</div>
+          <p class="tc-text">
+            تعاملنا مع نيو جولدن أوفيس في توريد وتركيب نظام المراقبة الخاص بمصنعنا، والنتيجة كانت فوق التوقعات. الاحترافية في التنفيذ والدقة في المواعيد جعلتهم شريكًا لا غنى عنه في أعمالنا.
+          </p>
+          <div class="tc-author">
+            <div class="tc-avatar">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="tc-info">
+              <h4>المهندس أحمد السيد</h4>
+              <p>مدير عمليات — مصنع صناعي، الإسكندرية</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-1">
+          <div class="tc-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="quote-icon">"</div>
+          <p class="tc-text">
+            طبعنا معهم خمسين ألف بروشور لحملتنا التسويقية وكانت الجودة ممتازة والأسعار منافسة جدًا. فريقهم محترف ومتعاون من أول لحظة حتى استلام الطلب. بالتأكيد سنكرر التعامل معهم.
+          </p>
+          <div class="tc-author">
+            <div class="tc-avatar">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="tc-info">
+              <h4>دينا حسن</h4>
+              <p>مديرة تسويق — شركة عقارات، القاهرة</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="tc-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="quote-icon">"</div>
+          <p class="tc-text">
+            تعاقدنا معهم على صيانة ماكينات التصوير في جميع فروعنا وأثبتوا كفاءة عالية في الالتزام بالمواعيد وسرعة الاستجابة لأي عطل. خدمة ما بعد البيع لديهم تستحق الإشادة الكاملة.
+          </p>
+          <div class="tc-author">
+            <div class="tc-avatar">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="tc-info">
+              <h4>خالد إبراهيم</h4>
+              <p>مدير إداري — مجموعة شركات، الإسكندرية</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="reveal">
+        <h2>ابدأ مشروعك معنا اليوم</h2>
+        <p>انضم إلى أكثر من 5000 عميل يثقون بنيو جولدن أوفيس — تواصل معنا الآن وسنقدم لك عرض سعر مجاني خلال 24 ساعة</p>
+        <div class="btn-group">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-envelope"></i>
+            طلب عرض سعر
+          </a>
+          <a href="https://wa.me/201227392074?text=مرحبًا، أريد الاستفسار عن بدء مشروع جديد" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+            واتساب
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Filter tabs visual toggle (static — no real filtering without data attributes)
+    document.querySelectorAll('.filter-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.filter-tab').forEach(function(t) {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

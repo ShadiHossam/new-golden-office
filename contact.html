@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل مع نيو جولدن أوفيس — الإسكندرية | مصر</title>
+  <meta name="description" content="تواصل مع نيو جولدن أوفيس في الإسكندرية. عنواننا: 26 عبد المنعم سند، الإبراهيمية، باب شرق. واتساب وهاتف: 01227392074">
+  <meta name="keywords" content="تواصل نيو جولدن أوفيس، عنوان الإسكندرية، هاتف، واتساب، مستلزمات مكتبية إسكندرية">
+  <meta property="og:title" content="تواصل مع نيو جولدن أوفيس — الإسكندرية">
+  <meta property="og:description" content="تواصل مع نيو جولدن أوفيس في الإسكندرية. عنواننا: 26 عبد المنعم سند، الإبراهيمية، باب شرق. واتساب وهاتف: 01227392074">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-info-col h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 1.5rem;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 3px 14px rgba(27,58,107,0.08);
+      border-right: 4px solid var(--secondary, #E8A020);
+      transition: transform 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateX(-4px);
+    }
+    .contact-card .cc-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary, #1B3A6B), #2a5298);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card .cc-icon i {
+      font-size: 1.2rem;
+      color: var(--secondary, #E8A020);
+    }
+    .contact-card .cc-content h4 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #888;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .contact-card .cc-content p,
+    .contact-card .cc-content a {
+      font-size: 1rem;
+      color: var(--primary, #1B3A6B);
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    .contact-card .cc-content a:hover {
+      color: var(--secondary, #E8A020);
+    }
+    .map-wrapper {
+      margin-top: 1.2rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(27,58,107,0.12);
+    }
+    /* Contact Form */
+    .contact-form-col h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 1.5rem;
+    }
+    .contact-form {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.2rem;
+      box-shadow: 0 4px 24px rgba(27,58,107,0.1);
+    }
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+    .form-group label {
+      display: block;
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid #e5eaf3;
+      border-radius: 10px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      background: #fafbfd;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+      box-sizing: border-box;
+      direction: rtl;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary, #1B3A6B);
+      box-shadow: 0 0 0 3px rgba(27,58,107,0.1);
+      background: #fff;
+    }
+    .form-group textarea {
+      height: 130px;
+      resize: vertical;
+    }
+    .form-submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--primary, #1B3A6B), #2a5298);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .form-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(27,58,107,0.25);
+    }
+    .success-message {
+      display: none;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      border: 2px solid #4caf50;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .success-message i {
+      font-size: 2.5rem;
+      color: #4caf50;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .success-message p {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.05rem;
+      color: #2e7d32;
+      font-weight: 600;
+    }
+    /* WhatsApp CTA */
+    .whatsapp-cta-card {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+    }
+    .whatsapp-cta-card .wa-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .whatsapp-cta-card h2 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+    }
+    .whatsapp-cta-card p {
+      font-size: 1.05rem;
+      opacity: 0.92;
+      margin-bottom: 1.8rem;
+      line-height: 1.7;
+    }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: #128C7E;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .btn-whatsapp i { font-size: 1.3rem; }
+    /* FAQ */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      box-shadow: 0 3px 14px rgba(27,58,107,0.07);
+      overflow: hidden;
+      border: 1px solid #eef0f8;
+    }
+    .faq-question {
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .faq-question:hover {
+      background: #f8f9ff;
+    }
+    .faq-question .faq-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--primary, #1B3A6B);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .faq-question .faq-icon i {
+      font-size: 0.8rem;
+      color: var(--secondary, #E8A020);
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-question .faq-icon {
+      background: var(--secondary, #E8A020);
+    }
+    .faq-item.open .faq-question .faq-icon i {
+      transform: rotate(180deg);
+      color: #fff;
+    }
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-item.open .faq-answer {
+      padding: 0 1.5rem 1.3rem;
+      max-height: 200px;
+    }
+    .faq-answer p {
+      font-size: 0.98rem;
+      color: #555;
+      line-height: 1.8;
+      border-top: 1px solid #eef0f8;
+      padding-top: 1rem;
+    }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar injected by layout.js -->
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>تواصل معنا</span>
+      </nav>
+      <h1 class="reveal">تواصل مع نيو جولدن أوفيس</h1>
+      <p class="lead reveal delay-1">
+        نحن هنا للإجابة على جميع استفساراتك وتقديم عروض أسعار مخصصة لاحتياجاتك. تواصل معنا عبر أي وسيلة تفضلها وسنرد عليك في أقرب وقت ممكن.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Info + Form -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left: Contact Info -->
+        <div class="contact-info-col reveal">
+          <h3>معلومات التواصل</h3>
+
+          <div style="background:#f8f9fa;border-radius:12px;padding:20px;margin-bottom:20px">
+            <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:12px"><i class="fas fa-clock" style="color:#c8a951;margin-left:8px"></i>مواعيد العمل</h3>
+            <div style="display:grid;gap:8px;font-size:0.95rem;color:#555">
+              <div style="display:flex;justify-content:space-between;padding:8px;background:#fff;border-radius:8px">
+                <span style="font-weight:600">السبت — الخميس</span>
+                <span>9:00 ص — 6:00 م</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:8px;background:#fff;border-radius:8px">
+                <span style="font-weight:600">الجمعة</span>
+                <span style="color:#e74c3c">مغلق</span>
+              </div>
+            </div>
+            <p style="font-size:0.9rem;color:#777;margin:12px 0 0">للطوارئ والاستفسارات: تواصل عبر واتساب في أي وقت على <a href="https://wa.me/201227392074" style="color:#c8a951;font-weight:600">01227392074</a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="cc-content">
+              <h4>العنوان</h4>
+              <p>26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية، مصر</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="cc-content">
+              <h4>هاتف</h4>
+              <a href="tel:+201227392074">01227392074</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="cc-content">
+              <h4>واتساب</h4>
+              <a href="https://wa.me/201227392074" target="_blank" rel="noopener">راسلنا على واتساب</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="cc-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="cc-content">
+              <h4>ساعات العمل</h4>
+              <p>السبت – الخميس: 9 صباحًا — 6 مساءً</p>
+              <p style="color:#e53935;font-size:0.9rem;margin-top:0.2rem;">الجمعة: مغلق</p>
+            </div>
+          </div>
+
+          <!-- Google Maps Embed -->
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0!2d29.91!3d31.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNewGoldenOffice!5e0!3m2!1sen!2seg!4v1"
+              width="100%"
+              height="250"
+              style="border:0;border-radius:12px;display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              title="موقع نيو جولدن أوفيس على الخريطة">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form-col reveal delay-1">
+          <h3>أرسل لنا رسالة</h3>
+          <div class="contact-form">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="name">
+                  <i class="fa-solid fa-user" style="margin-left:0.4rem;color:var(--secondary)"></i>
+                  الاسم الكامل
+                </label>
+                <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">
+                  <i class="fa-solid fa-phone" style="margin-left:0.4rem;color:var(--secondary)"></i>
+                  رقم الهاتف
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" required>
+              </div>
+              <div class="form-group">
+                <label for="service">
+                  <i class="fa-solid fa-briefcase" style="margin-left:0.4rem;color:var(--secondary)"></i>
+                  الخدمة المطلوبة
+                </label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>اختر الخدمة التي تحتاجها</option>
+                  <option value="printing">خدمات الطباعة</option>
+                  <option value="copiers">ماكينات التصوير والطباعة</option>
+                  <option value="cameras">كاميرات المراقبة</option>
+                  <option value="ac">أجهزة التكييف</option>
+                  <option value="cash-machines">ماكينات فارم وعد النقود</option>
+                  <option value="office-supplies">المستلزمات المكتبية</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">
+                  <i class="fa-solid fa-comment" style="margin-left:0.4rem;color:var(--secondary)"></i>
+                  رسالتك
+                </label>
+                <textarea id="message" name="message" placeholder="اكتب رسالتك أو استفسارك هنا..."></textarea>
+              </div>
+              <button type="submit" class="form-submit-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+                إرسال الرسالة
+              </button>
+            </form>
+            <div class="success-message" id="successMessage">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>تم إرسال رسالتك بنجاح! سنتواصل معك في أقرب وقت ممكن.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp CTA -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="whatsapp-cta-card reveal">
+        <i class="fa-brands fa-whatsapp wa-icon"></i>
+        <h2>تفضل التواصل الفوري؟</h2>
+        <p>
+          راسلنا على واتساب الآن واحصل على رد فوري من فريقنا المتخصص.<br>
+          أرسل لنا استفسارك أو طلبك وسنرد عليك خلال دقائق.
+        </p>
+        <a href="https://wa.me/201227392074?text=مرحبًا، أريد الاستفسار عن خدماتكم" class="btn-whatsapp" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i>
+          ابدأ المحادثة الآن — 01227392074
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">أسئلة شائعة</span>
+        <h2>أسئلة يطرحها عملاؤنا</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>ما هي ساعات العمل الرسمية لدى نيو جولدن أوفيس؟</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>يعمل مكتبنا من الساعة التاسعة صباحًا حتى السادسة مساءً، من يوم السبت إلى يوم الخميس. يوم الجمعة إجازة رسمية. يمكنك التواصل معنا عبر واتساب في أي وقت وسنرد عليك في أول فرصة.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>هل تقدمون خدمات التوصيل والتركيب خارج الإسكندرية؟</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>نعم، نخدم عملاءنا في مختلف محافظات مصر بما فيها القاهرة، الجيزة، المنوفية، والبحيرة. للمشاريع الكبرى والكميات المناسبة، نتولى التوصيل والتركيب والتشغيل في موقع العميل بالكامل.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>ما هي وسائل الدفع المتاحة؟</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>نقبل الدفع نقدًا، أو بالتحويل البنكي، أو عبر المحافظ الإلكترونية (فودافون كاش — اتصالات كاش). للعقود الكبيرة والمؤسسات، يمكن الاتفاق على شروط دفع مرنة وخطط تقسيط مناسبة.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>هل توجد ضمان على المنتجات والخدمات؟</span>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>جميع منتجاتنا مغطاة بضمان الوكيل الرسمي وتتراوح مدته بين سنة وثلاث سنوات حسب نوع المنتج. لخدمات التركيب كالكاميرات والتكييفات، نقدم ضمانًا على الصنعة لمدة عام كامل، مع عقود صيانة سنوية بأسعار مميزة.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- All Egypt Provinces Section -->
+  <section style="padding:40px 0">
+    <div class="container">
+      <h2 style="font-size:1.5rem;font-weight:700;color:#1a1a2e;margin-bottom:16px">نخدم جميع محافظات مصر</h2>
+      <p style="font-size:1rem;line-height:1.9;color:#555;margin-bottom:16px">نيو جولدن أوفيس في الإسكندرية توفر خدماتها لعملاء القاهرة والإسكندرية والجيزة والإسماعيلية والسويس والمنصورة وطنطا ودمياط وأسوان والأقصر وجميع محافظات مصر.</p>
+      <p style="font-size:1rem;line-height:1.9;color:#555">للطلبات والشحن لخارج الإسكندرية: تواصل معنا عبر واتساب وسنتولى تنسيق الشحن لك بأمان.</p>
+    </div>
+  </section>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const successMsg = document.getElementById('successMessage');
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    }
+
+    function toggleFaq(questionEl) {
+      const item = questionEl.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('open');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+  </script>
+</body>
+</html>

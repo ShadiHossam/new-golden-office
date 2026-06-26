@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية — نيو جولدن أوفيس</title>
+  <meta name="description" content="سياسة الخصوصية لشركة نيو جولدن أوفيس — كيف نجمع بياناتك ونستخدمها ونحميها.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .policy-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--green-mid) 100%);
+      padding: 100px 0 60px;
+      color: #fff;
+      text-align: center;
+      margin-top: var(--nav-height);
+    }
+    .policy-hero h1 {
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 0.6rem;
+    }
+    .policy-hero p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    .policy-hero .breadcrumb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .policy-hero .breadcrumb a {
+      color: rgba(255,255,255,0.85);
+    }
+    .policy-hero .breadcrumb a:hover { color: #fff; }
+    .policy-hero .breadcrumb i { font-size: 0.7rem; }
+
+    .policy-body {
+      padding: 64px 0 80px;
+    }
+    .policy-toc {
+      background: var(--green-pale);
+      border: 1px solid var(--border);
+      border-right: 4px solid var(--green);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .policy-toc h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .policy-toc ol {
+      list-style: arabic-indic;
+      padding-right: 1.4rem;
+      margin: 0;
+    }
+    .policy-toc ol li {
+      margin-bottom: 0.3rem;
+    }
+    .policy-toc ol li a {
+      color: var(--green);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .policy-toc ol li a:hover { color: var(--green-dark); text-decoration: underline; }
+
+    .policy-section {
+      margin-bottom: 2.8rem;
+    }
+    .policy-section h2 {
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .policy-section h2 .sec-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .policy-section p {
+      color: #444;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+    .policy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0;
+    }
+    .policy-section ul li {
+      color: #444;
+      padding: 0.35rem 0 0.35rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .policy-section ul li::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .policy-info-box {
+      background: var(--green-pale);
+      border-right: 4px solid var(--green);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .policy-info-box i {
+      color: var(--green);
+      font-size: 1.2rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .policy-info-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .policy-last-updated {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f0f0;
+      border-radius: var(--radius-pill);
+      padding: 6px 16px;
+      font-size: 0.88rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .policy-last-updated i { color: var(--green); }
+    .policy-contact-cta {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: #fff;
+      margin-top: 2rem;
+    }
+    .policy-contact-cta h3 { color: #fff; margin-bottom: 0.5rem; }
+    .policy-contact-cta p { color: rgba(255,255,255,0.85); margin-bottom: 1.3rem; }
+    .policy-contact-cta .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--green-dark);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .policy-contact-cta .btn-white:hover {
+      background: var(--green-pale);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar injected by layout.js -->
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="policy-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <i class="fas fa-chevron-left"></i>
+        <span>سياسة الخصوصية</span>
+      </div>
+      <h1><i class="fas fa-shield-alt" style="margin-left:12px;font-size:0.85em;opacity:0.9"></i>سياسة الخصوصية</h1>
+      <p>كيف نجمع معلوماتك، ونستخدمها، ونحميها</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ POLICY BODY ═══════════════ -->
+  <section class="policy-body">
+    <div class="container-sm">
+
+      <div class="policy-last-updated">
+        <i class="fas fa-calendar-alt"></i>
+        آخر تحديث: يونيو 2026
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="policy-toc">
+        <h3><i class="fas fa-list-ul"></i> المحتويات</h3>
+        <ol>
+          <li><a href="#intro">مقدمة</a></li>
+          <li><a href="#collect">المعلومات التي نجمعها</a></li>
+          <li><a href="#use">كيف نستخدم معلوماتك</a></li>
+          <li><a href="#share">مشاركة المعلومات مع الغير</a></li>
+          <li><a href="#cookies">ملفات تعريف الارتباط (Cookies)</a></li>
+          <li><a href="#security">حماية المعلومات</a></li>
+          <li><a href="#rights">حقوقك</a></li>
+          <li><a href="#children">خصوصية الأطفال</a></li>
+          <li><a href="#changes">التعديلات على السياسة</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ol>
+      </div>
+
+      <!-- 1. Intro -->
+      <div class="policy-section" id="intro">
+        <h2><span class="sec-num">١</span> مقدمة</h2>
+        <p>
+          نيو جولدن أوفيس ("الشركة"، "نحن"، "لنا") تلتزم بحماية خصوصيتك وسرية بياناتك الشخصية. توضح هذه السياسة كيفية جمع المعلومات التي تُتيحها لنا عند تصفح موقعنا الإلكتروني (<strong>newgoldenoffice.com</strong>) أو التواصل معنا، واستخدامها وحمايتها.
+        </p>
+        <p>
+          باستخدامك لموقعنا أو التواصل معنا، فإنك توافق على الشروط الواردة في هذه السياسة.
+        </p>
+      </div>
+
+      <!-- 2. Collect -->
+      <div class="policy-section" id="collect">
+        <h2><span class="sec-num">٢</span> المعلومات التي نجمعها</h2>
+        <p>قد نجمع الأنواع التالية من المعلومات:</p>
+        <ul>
+          <li><strong>معلومات الاتصال:</strong> الاسم، رقم الهاتف، عنوان البريد الإلكتروني التي تُدخلها في نموذج التواصل.</li>
+          <li><strong>محتوى الرسائل:</strong> استفساراتك وطلباتك التي ترسلها عبر النموذج أو واتساب.</li>
+          <li><strong>بيانات الاستخدام:</strong> صفحات الموقع التي تزورها، مدة الزيارة، نوع المتصفح والجهاز (بيانات مجهولة الهوية عبر أدوات تحليل مثل Google Analytics).</li>
+          <li><strong>بيانات الاتصال الهاتفي:</strong> عند الاتصال بنا مباشرةً يُحفظ الرقم الخاص بك على جهازنا.</li>
+        </ul>
+        <div class="policy-info-box">
+          <i class="fas fa-info-circle"></i>
+          <p>نحن <strong>لا نجمع</strong> بيانات الدفع أو البطاقات الائتمانية عبر الموقع. تتم عمليات السداد نقدًا أو عبر تحويل بنكي مباشر.</p>
+        </div>
+      </div>
+
+      <!-- 3. Use -->
+      <div class="policy-section" id="use">
+        <h2><span class="sec-num">٣</span> كيف نستخدم معلوماتك</h2>
+        <p>نستخدم المعلومات التي نجمعها للأغراض التالية فقط:</p>
+        <ul>
+          <li>الرد على استفساراتك وطلباتك وتقديم الخدمة المناسبة لك.</li>
+          <li>التواصل معك عبر الهاتف أو واتساب لتأكيد الطلبات أو تحديد مواعيد الصيانة والتركيب.</li>
+          <li>إرسال عروض أو تحديثات إذا أبديت رغبتك في ذلك صراحةً.</li>
+          <li>تحسين موقعنا الإلكتروني وخدماتنا بناءً على بيانات الاستخدام المجمّعة.</li>
+        </ul>
+        <p>لن نستخدم بياناتك لأي غرض آخر دون الحصول على موافقتك المسبقة.</p>
+      </div>
+
+      <!-- 4. Share -->
+      <div class="policy-section" id="share">
+        <h2><span class="sec-num">٤</span> مشاركة المعلومات مع الغير</h2>
+        <p>
+          نحن <strong>لا نبيع</strong> بياناتك الشخصية ولا نشاركها مع أطراف ثالثة لأغراض تجارية. قد نُفصح عن المعلومات فقط في الحالات التالية:
+        </p>
+        <ul>
+          <li>إذا طُلب ذلك بموجب القانون المصري أو أمر قضائي.</li>
+          <li>لمزودي خدمات تقنية موثوقين يساعدوننا في تشغيل الموقع (مثل استضافة الويب) وملزمون بعدم استخدام بياناتك لأغراض أخرى.</li>
+          <li>لحماية حقوقنا القانونية أو الدفاع عن أنفسنا في النزاعات.</li>
+        </ul>
+      </div>
+
+      <!-- 5. Cookies -->
+      <div class="policy-section" id="cookies">
+        <h2><span class="sec-num">٥</span> ملفات تعريف الارتباط (Cookies)</h2>
+        <p>
+          قد يستخدم موقعنا ملفات تعريف الارتباط لتحسين تجربة التصفح وتحليل حركة الزوار. هذه الملفات لا تحتوي على معلومات شخصية مُعرِّفة. يمكنك ضبط متصفحك لرفض هذه الملفات، مع العلم بأن بعض أجزاء الموقع قد لا تعمل بشكل مثالي عندها.
+        </p>
+        <ul>
+          <li><strong>ملفات الجلسة:</strong> تُحذف عند إغلاق المتصفح.</li>
+          <li><strong>ملفات التحليل:</strong> تُستخدم لإحصاءات الزيارات (مجهولة الهوية).</li>
+        </ul>
+      </div>
+
+      <!-- 6. Security -->
+      <div class="policy-section" id="security">
+        <h2><span class="sec-num">٦</span> حماية المعلومات</h2>
+        <p>
+          نتخذ تدابير تقنية وتنظيمية معقولة لحماية بياناتك من الوصول غير المصرح به أو الفقدان أو الإفصاح. ومع ذلك، لا يمكن ضمان الأمان الكامل على الإنترنت، لذا يُرجى توخي الحذر عند مشاركة أي معلومات عبر أي قناة إلكترونية.
+        </p>
+        <div class="policy-info-box">
+          <i class="fas fa-lock"></i>
+          <p>يستخدم موقعنا بروتوكول HTTPS لتشفير البيانات المنقولة بينك وبين الموقع.</p>
+        </div>
+      </div>
+
+      <!-- 7. Rights -->
+      <div class="policy-section" id="rights">
+        <h2><span class="sec-num">٧</span> حقوقك</h2>
+        <p>يحق لك في أي وقت:</p>
+        <ul>
+          <li>طلب الاطلاع على المعلومات الشخصية التي نحتفظ بها عنك.</li>
+          <li>طلب تصحيح أو حذف بياناتك.</li>
+          <li>إلغاء الاشتراك في أي رسائل تسويقية.</li>
+          <li>الاعتراض على طريقة معالجة بياناتك.</li>
+        </ul>
+        <p>لممارسة أي من هذه الحقوق، تواصل معنا عبر البيانات الواردة في نهاية هذه الصفحة.</p>
+      </div>
+
+      <!-- 8. Children -->
+      <div class="policy-section" id="children">
+        <h2><span class="sec-num">٨</span> خصوصية الأطفال</h2>
+        <p>
+          خدماتنا موجهة للشركات والأفراد البالغين. لا نجمع عن قصد معلومات من أشخاص دون سن الثامنة عشرة. إذا علمت بأن طفلًا قدّم لنا بياناته، يُرجى التواصل معنا فورًا لحذفها.
+        </p>
+      </div>
+
+      <!-- 9. Changes -->
+      <div class="policy-section" id="changes">
+        <h2><span class="sec-num">٩</span> التعديلات على السياسة</h2>
+        <p>
+          نحتفظ بالحق في تعديل هذه السياسة في أي وقت. سيتم نشر أي تحديثات على هذه الصفحة مع تغيير تاريخ "آخر تحديث". نوصيك بمراجعة هذه الصفحة بصفة دورية.
+        </p>
+      </div>
+
+      <!-- 10. Contact -->
+      <div class="policy-section" id="contact">
+        <h2><span class="sec-num">١٠</span> تواصل معنا</h2>
+        <p>إذا كان لديك أي استفسار حول سياسة الخصوصية أو بياناتك الشخصية، يمكنك التواصل معنا:</p>
+        <ul>
+          <li><strong>العنوان:</strong> 26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية، مصر</li>
+          <li><strong>الهاتف / واتساب:</strong> 01227392074</li>
+          <li><strong>ساعات العمل:</strong> السبت – الخميس، 9 صباحًا – 6 مساءً</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="policy-contact-cta">
+        <h3>هل لديك استفسار؟</h3>
+        <p>فريقنا جاهز للإجابة على أي سؤال يتعلق بخصوصيتك أو خدماتنا.</p>
+        <a href="contact.html" class="btn-white">
+          <i class="fas fa-envelope"></i> تواصل معنا
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

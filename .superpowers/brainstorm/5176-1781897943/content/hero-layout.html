@@ -1,0 +1,105 @@
+<h2>شكل الـ Hero Section عامل إزاي؟</h2>
+<p class="subtitle">اختار الـ layout الأنسب للصفحة الرئيسية</p>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400,600,700,900&family=Tajawal:wght@400,500,700&display=swap" rel="stylesheet">
+
+<style>
+  .hero-mock { border-radius: 12px; overflow: hidden; border: 2px solid #e8f5e0; font-family: 'Cairo', sans-serif; direction: rtl; }
+  .mock-nav { background: white; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e8f5e0; }
+  .mock-logo { display: flex; align-items: center; gap: 8px; }
+  .mock-logo-img { width: 32px; height: 32px; border-radius: 50%; background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QB+RXhpZgAASUkqAAgAAAACADEBAgAHAAAAJgAAAGmHBAABAAAALgAAAAAAAABHb29nbGUAAAMAAJAHAAQAAAAwMjIwAaADAAEAAAABAAAABaAEAAEAAABYAAAAAAAAAAIAAQACAAQAAABSOTgAAgAHAAQAAAAwMTAwAAAAAP/bAIQAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhANDhEOCwsQFhARExQVFRUMDxcYFhQYEhQVFAEDBAQFBAUJBQUJFA0LDhQVExUVDhQVDxUTERQPDxAVDxAVFRUNEA8VFQ8NFQ0NDxAVDQ4NDhUODw0RDw0PDRUN/8AAEQgAKAAoAwERAAIRAQMRAf/EABoAAAMBAAMAAAAAAAAAAAAAAAUGBwgDBAn/xAAxEAABAgQEAwYFBQAAAAAAAAABAgMEBQYRAAcSIQgTQRQxUWFxoSIyU4GiFRdiY7H/xAAbAQABBQEBAAAAAAAAAAAAAAAFAQIDBAcGAP/EAC8RAAEEAQICCQIHAAAAAAAAAAEAAgMEEQUhElEGEzFBYXGBkbGh8BQVIjIzQlT/2gAMAwEAAhEDEQA/APVPHl5C57U8rpmE7TNI1qCY7gp1Vio+CR3k+QxTs3K9NvHYeGjxTHvbGMuOEkniFowP8vtkTp+p2Ven/L+2ObPSvSg7h6w+xVMXoCcZTnT1WSiq4YvymOZjmh8xbVunyUk7j7jHR1Lte8zrK7w4eCuMe14y05RfF1PQSs6nYo6m42avgrSwi6WwbFaybJT9yQMDtQuNoVn2H931PJRySCJheVDcuKafzdqGPqOp3jEwMIoJDRUUoKrX0Df4UJFiR1uLk73zjSKcmv2HXbx4mg7Duzy9O/mhEEZsyGWXfC42+MTK2T1AmTQsuikSttfK/VYaCbEKOmoJCtZR5hPoCMalHWijaGsYAPAIxho7AqNmznLJcmpFLJ9FSmKmcumLoYREytLRsSgrRcqUm4UlKiCL93piRsbWn9IwnbBFspM04HOClBUEtg4mBgy+uHS3GFHMui1yQhSgBv439sPIwlS1xKOOJoeBSi+hUwQF+nLcI97Y4Tpg5woNA7OIfBQ69/F6oJkG4zUNE1PTS1rZW5q1OIG4Q83ouPMaD7Yr9DpmmtJB3g591Hp78sLeSypEcIuZrFSGTtyNL7PM0JmqX0CFKPqE31AW306dXkcaNkInhWbjDmUBRGTtG5fNxKYqYN9nO/zBiHaLfMI6alEAeivDDW80pRDgBffVR1WMqJMKiYtrb8NamgF+yUYV3alWgMzaSNa0fGy5qwirB2HKjYcxJuBfpfcX88AtYo/mNN8Df3do8x94UE8fWxlqmnDzPYGTCcSKPUmAm5idfLf+FS7JCSjfqkg7fyv445DopYirCWnOeGTizvtnbGPTCoUnBmYnbH5TyabrBUuVDCv2+Yq9osydnnD8tH4Y0bjbzRZY54m8gKmoqZMVLEz2KrJuaxKYVUS81aKS+oHloKUkgpVYhOmwGydI2vKCEhWr+GzK13KfK6ClsagIm8WtUdHpBB0urAARcd+lKUJPS4JHfhCcpVU8IvJWn+W9N1XNGJjMZa1ExLWxUSQHBawCwPmt0vgPa0mlclE08eT8+fP1ULoWPdxOG64v2no/pTcu2/pGIjoemf52+yb+HiH9UxplUGliFZEMzyoUpLCNAs0UiySkdLDbbBtrQxoa0bBTjbZdvDkq/9k=') center/cover; }
+  .mock-links { display: flex; gap: 16px; font-size: 11px; color: #555; }
+  .mock-cta-btn { background: #5DB829; color: white; font-size: 10px; padding: 5px 12px; border-radius: 20px; font-weight: 700; }
+  .pill { display: inline-block; background: #e8f5e0; color: #2E7D14; font-size: 10px; padding: 3px 10px; border-radius: 20px; margin-left: 4px; }
+</style>
+
+<div class="cards" style="grid-template-columns: 1fr 1fr;">
+
+  <!-- Option A: Bold centered hero -->
+  <div class="card" data-choice="centered-hero" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; background: white;">
+      <div class="hero-mock">
+        <div class="mock-nav">
+          <div class="mock-cta-btn">تواصل معنا</div>
+          <div class="mock-links"><span>مستلزمات</span><span>ماكينات</span><span>كاميرات</span><span>طباعة</span></div>
+          <div class="mock-logo">
+            <div style="text-align:right"><div style="font-size:10px;font-weight:900;color:#1a5c0a;">نيو جولدن أوفيس</div><div style="font-size:8px;color:#5DB829;">NEW GOLDEN OFFICE</div></div>
+            <div class="mock-logo-img"></div>
+          </div>
+        </div>
+        <div style="background: linear-gradient(160deg, #f0faf0 0%, white 60%); padding: 28px 20px; text-align: center;">
+          <div style="margin-bottom:10px"><span class="pill">٣٥ سنة خبرة</span><span class="pill">+٥٠٠٠ عميل</span></div>
+          <div style="font-size: 18px; font-weight: 900; color: #1a5c0a; line-height: 1.3; margin-bottom: 8px;">شريكك الأول<br>للمكتب والأعمال في مصر</div>
+          <div style="font-size: 10px; color: #5a6472; margin-bottom: 14px;">طباعة • كاميرات • تكييف • ماكينات • مستلزمات مكتبية</div>
+          <div style="display:flex;gap:8px;justify-content:center">
+            <div style="background:#5DB829;color:white;font-size:10px;padding:7px 16px;border-radius:25px;font-weight:700;">اتصل الآن</div>
+            <div style="background:white;border:2px solid #5DB829;color:#5DB829;font-size:10px;padding:7px 16px;border-radius:25px;font-weight:700;">واتساب</div>
+          </div>
+          <div style="display:flex;justify-content:center;gap:16px;margin-top:16px">
+            <div style="text-align:center"><div style="font-size:14px;font-weight:900;color:#2E7D14;">٣٥+</div><div style="font-size:9px;color:#5a6472;">سنة</div></div>
+            <div style="width:1px;background:#e8f5e0"></div>
+            <div style="text-align:center"><div style="font-size:14px;font-weight:900;color:#2E7D14;">٥٠٠٠+</div><div style="font-size:9px;color:#5a6472;">عميل</div></div>
+            <div style="width:1px;background:#e8f5e0"></div>
+            <div style="text-align:center"><div style="font-size:14px;font-weight:900;color:#2E7D14;">٥٠+</div><div style="font-size:9px;color:#5a6472;">ماركة</div></div>
+            <div style="width:1px;background:#e8f5e0"></div>
+            <div style="text-align:center"><div style="font-size:14px;font-weight:900;color:#2E7D14;">٦</div><div style="font-size:9px;color:#5a6472;">خدمات</div></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;background:#f8faf6">
+          <div style="background:white;border-radius:8px;padding:10px;text-align:center;border:1px solid #e8f5e0;box-shadow:0 2px 8px rgba(46,125,20,0.08)"><div style="font-size:16px;margin-bottom:4px;">🖨️</div><div style="font-size:9px;font-weight:700;color:#1a5c0a">طباعة</div></div>
+          <div style="background:white;border-radius:8px;padding:10px;text-align:center;border:1px solid #e8f5e0;box-shadow:0 2px 8px rgba(46,125,20,0.08)"><div style="font-size:16px;margin-bottom:4px;">📷</div><div style="font-size:9px;font-weight:700;color:#1a5c0a">كاميرات</div></div>
+          <div style="background:white;border-radius:8px;padding:10px;text-align:center;border:1px solid #e8f5e0;box-shadow:0 2px 8px rgba(46,125,20,0.08)"><div style="font-size:16px;margin-bottom:4px;">❄️</div><div style="font-size:9px;font-weight:700;color:#1a5c0a">تكييف</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Centered Bold Hero</h3>
+      <p>النص في المنتصف، الأرقام تحت مباشرة، والخدمات كـ cards صغيرة. مناسب جداً للموبايل.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Two-column split hero -->
+  <div class="card" data-choice="split-hero" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 0; background: white;">
+      <div class="hero-mock">
+        <div class="mock-nav">
+          <div class="mock-cta-btn">تواصل معنا</div>
+          <div class="mock-links"><span>مستلزمات</span><span>ماكينات</span><span>كاميرات</span><span>طباعة</span></div>
+          <div class="mock-logo">
+            <div style="text-align:right"><div style="font-size:10px;font-weight:900;color:#1a5c0a;">نيو جولدن أوفيس</div><div style="font-size:8px;color:#5DB829;">NEW GOLDEN OFFICE</div></div>
+            <div class="mock-logo-img"></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;background:white;min-height:160px">
+          <div style="background:linear-gradient(135deg,#2E7D14,#5DB829);padding:20px;display:flex;align-items:center;justify-content:center">
+            <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:14px;backdrop-filter:blur(10px);text-align:center">
+              <div class="mock-logo-img" style="margin:0 auto 8px;width:44px;height:44px;border:3px solid rgba(255,255,255,0.5)"></div>
+              <div style="color:white;font-size:10px;font-weight:700">منذ ١٩٩٠</div>
+              <div style="color:rgba(255,255,255,0.8);font-size:8px;margin-top:2px">الإسكندرية، مصر</div>
+            </div>
+          </div>
+          <div style="padding:20px;text-align:right">
+            <div style="margin-bottom:8px"><span class="pill">٣٥ سنة خبرة</span></div>
+            <div style="font-size:13px;font-weight:900;color:#1a5c0a;line-height:1.3;margin-bottom:6px;">شريكك الأول للمكتب والأعمال</div>
+            <div style="font-size:9px;color:#5a6472;margin-bottom:10px;">طباعة • كاميرات • تكييف • ماكينات</div>
+            <div style="display:flex;gap:6px;flex-direction:column">
+              <div style="background:#5DB829;color:white;font-size:9px;padding:6px 12px;border-radius:20px;font-weight:700;text-align:center">اتصل الآن</div>
+              <div style="background:white;border:1.5px solid #25D366;color:#25D366;font-size:9px;padding:6px 12px;border-radius:20px;font-weight:700;text-align:center">واتساب</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-around;padding:12px;background:#f8faf6;border-top:1px solid #e8f5e0">
+          <div style="text-align:center"><div style="font-size:13px;font-weight:900;color:#2E7D14;">٣٥+</div><div style="font-size:8px;color:#5a6472;">سنة</div></div>
+          <div style="text-align:center"><div style="font-size:13px;font-weight:900;color:#2E7D14;">٥٠٠٠+</div><div style="font-size:8px;color:#5a6472;">عميل</div></div>
+          <div style="text-align:center"><div style="font-size:13px;font-weight:900;color:#2E7D14;">٥٠+</div><div style="font-size:8px;color:#5a6472;">ماركة</div></div>
+          <div style="text-align:center"><div style="font-size:13px;font-weight:900;color:#2E7D14;">٦</div><div style="font-size:8px;color:#5a6472;">خدمات</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Split Hero (2 Column)</h3>
+      <p>النص على اليمين والصورة/الشعار على الشمال بخلفية خضرا. الـ layout الحالي بس أقوى وأنيق.</p>
+    </div>
+  </div>
+
+</div>

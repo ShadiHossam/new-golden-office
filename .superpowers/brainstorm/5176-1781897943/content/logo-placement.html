@@ -1,0 +1,55 @@
+<h2>How should the logo appear in the navbar?</h2>
+<p class="subtitle">Your logo (the circular G icon) can be used in a few ways. Pick what looks best.</p>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400,600,700,900&family=Tajawal:wght@400,500,700&display=swap" rel="stylesheet">
+
+<div class="cards">
+
+  <div class="card" data-choice="logo-plus-text" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: white; padding: 20px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; border-bottom: 3px solid #5DB829; min-height: 90px;">
+      <div style="text-align: right;">
+        <div style="font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 16px; color: #1a5c0a; line-height: 1.1;">نيو جولدن أوفيس</div>
+        <div style="font-family: 'Cairo', sans-serif; font-weight: 500; font-size: 10px; color: #5DB829; letter-spacing: 1px;">NEW GOLDEN OFFICE</div>
+      </div>
+      <img src="../../../../profile picture.jpg" alt="Logo" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #e8f5e0;">
+    </div>
+    <div class="card-body">
+      <h3>A — Logo + Company Name</h3>
+      <p>Logo icon beside the full Arabic name + English subtitle. Most professional and recognizable.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="logo-only" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: white; padding: 20px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; border-bottom: 3px solid #5DB829; min-height: 90px;">
+      <img src="../../../../profile picture.jpg" alt="Logo" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid #5DB829; box-shadow: 0 4px 15px rgba(93,184,41,0.25);">
+    </div>
+    <div class="card-body">
+      <h3>B — Logo Icon Only</h3>
+      <p>Just the circular G logo. Clean and minimal — works well if the brand is well known locally.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="logo-large-text" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: linear-gradient(135deg, #f0faf0 0%, #e8f5e0 100%); padding: 20px; display: flex; align-items: center; justify-content: flex-end; gap: 14px; min-height: 90px;">
+      <div style="text-align: right;">
+        <div style="font-family: 'Cairo', sans-serif; font-weight: 900; font-size: 18px; color: #1a5c0a; line-height: 1.2;">نيو جولدن أوفيس</div>
+        <div style="font-family: 'Tajawal', sans-serif; font-size: 11px; color: #5a6472;">منذ ١٩٩٠ • الإسكندرية، مصر</div>
+      </div>
+      <div style="position: relative;">
+        <img src="../../../../profile picture.jpg" alt="Logo" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;">
+        <div style="position: absolute; bottom: -2px; right: -2px; background: #5DB829; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border: 2px solid white;">
+          <span style="color: white; font-size: 8px;">✓</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Logo + Name + Tagline</h3>
+      <p>Logo with name and a subtle "Since 1990 · Alexandria" tagline. Emphasizes heritage and location.</p>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 24px; padding: 16px; background: #fff8e1; border-radius: 10px; border-right: 4px solid #f0c040;">
+  <p style="margin: 0; font-size: 13px; color: #5a4a00;"><strong>Fix included:</strong> The logo file will be copied to <code>images/logo.png</code> so it appears correctly on all 51 pages of the site.</p>
+</div>

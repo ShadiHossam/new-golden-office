@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عن نيو جولدن أوفيس — شريكك في الأعمال منذ 1990 | مصر</title>
+  <meta name="description" content="قصة نيو جولدن أوفيس منذ تأسيسها عام 1990 في الإسكندرية — شركة رائدة في الطباعة والمستلزمات المكتبية وخدمات الأعمال في مصر.">
+  <meta name="keywords" content="نيو جولدن أوفيس، مستلزمات مكتبية، طباعة، إسكندرية، مصر، ماكينات تصوير، كاميرات مراقبة">
+  <meta property="og:title" content="عن نيو جولدن أوفيس — شريكك في الأعمال منذ 1990">
+  <meta property="og:description" content="قصة نيو جولدن أوفيس منذ تأسيسها عام 1990 في الإسكندرية — شركة رائدة في الطباعة والمستلزمات المكتبية وخدمات الأعمال في مصر.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* About Page Specific Styles */
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-story-text p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .stat-box {
+      background: var(--primary, #1B3A6B);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(27,58,107,0.15);
+      transition: transform 0.3s;
+    }
+    .stat-box:hover {
+      transform: translateY(-4px);
+    }
+    .stat-box .stat-number {
+      font-family: 'Cairo', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--secondary, #E8A020);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-box .stat-label {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-family: 'Tajawal', sans-serif;
+    }
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+    .mvv-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(27,58,107,0.09);
+      border-top: 4px solid var(--secondary, #E8A020);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .mvv-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 32px rgba(27,58,107,0.15);
+    }
+    .mvv-card .mvv-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary, #1B3A6B), #2a5298);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+    }
+    .mvv-card .mvv-icon i {
+      font-size: 1.8rem;
+      color: var(--secondary, #E8A020);
+    }
+    .mvv-card h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.8rem;
+    }
+    .mvv-card p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #555;
+    }
+    .services-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-overview-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 3px 16px rgba(27,58,107,0.08);
+      border-bottom: 3px solid var(--secondary, #E8A020);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      display: block;
+    }
+    .service-overview-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 28px rgba(27,58,107,0.14);
+    }
+    .service-overview-card .svc-icon {
+      font-size: 2.4rem;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.9rem;
+      display: block;
+    }
+    .service-overview-card h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.4rem;
+    }
+    .service-overview-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 3px 16px rgba(27,58,107,0.08);
+      transition: transform 0.3s;
+    }
+    .why-card:hover {
+      transform: translateY(-4px);
+    }
+    .why-card .why-icon {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #f0f4ff, #dce6ff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .why-card .why-icon i {
+      font-size: 1.6rem;
+      color: var(--primary, #1B3A6B);
+    }
+    .why-card h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary, #1B3A6B);
+      margin-bottom: 0.5rem;
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+      .about-story-grid { grid-template-columns: 1fr; }
+      .mvv-grid { grid-template-columns: 1fr; }
+      .services-overview-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .services-overview-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar injected by layout.js -->
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="index.html">الرئيسية</a>
+          <i class="fa-solid fa-chevron-left"></i>
+          <span>عن الشركة</span>
+        </nav>
+        <h1 class="reveal">عن نيو جولدن أوفيس — شريكك الموثوق منذ 1990</h1>
+        <p class="lead reveal delay-1">
+          نوفر لك الوقت والجهد — نجيب بأفضل حل لكل احتياج بجودة موثوقة وأسعار تنافسية. شريكك في مصر منذ عام 1990.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">قصتنا</span>
+        <h2>رحلة النجاح والنمو</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="about-story-grid">
+        <!-- Left: Text -->
+        <div class="about-story-text reveal">
+          <p>
+            تأسست <strong>نيو جولدن أوفيس</strong> عام 1990 في قلب مدينة الإسكندرية، حيث بدأت رحلتها كمتجر صغير متخصص في المستلزمات المكتبية. منذ اليوم الأول، كان هدفنا واضحًا: تقديم أفضل المنتجات والخدمات للشركات والمؤسسات المصرية بأسعار عادلة وجودة لا تُضاهى.
+          </p>
+          <p>
+            على مدار العقود الماضية، نمت الشركة لتصبح مرجعًا موثوقًا في قطاعات الطباعة الاحترافية، ماكينات التصوير والطباعة، كاميرات المراقبة، أجهزة التكييف، وماكينات فارم وعد النقود. وسّعنا نطاق خدماتنا لتشمل الشركات الكبرى، والفنادق، والمستشفيات، والمدارس، والجهات الحكومية في الإسكندرية والقاهرة وسائر محافظات مصر.
+          </p>
+          <p>
+            يقود فريق نيو جولدن أوفيس اليوم كوكبة من المتخصصين ذوي الخبرة العالية في مجالاتهم، ملتزمين بتقديم حلول مبتكرة تواكب متطلبات السوق المتغيرة. نفخر بثقة آلاف العملاء الذين رافقونا في هذه الرحلة، وهم الدافع الأقوى لمواصلة التطوير والتميز.
+          </p>
+        </div>
+        <!-- Right: Photo + Stats -->
+        <div class="about-story-visual reveal delay-1">
+          <img src="images/about-team.webp" alt="فريق نيو جولدن أوفيس — 35 عاماً من الخبرة" loading="lazy">
+          <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number">+35</span>
+            <span class="stat-label">سنة خبرة في السوق</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">+5000</span>
+            <span class="stat-label">عميل راضٍ يثق بنا</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">6</span>
+            <span class="stat-label">قطاعات خدمية متكاملة</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">مصر</span>
+            <span class="stat-label">تغطية شاملة في جميع المحافظات</span>
+          </div>
+          </div><!-- /stats-grid -->
+        </div><!-- /about-story-visual -->
+      </div><!-- /about-story-grid -->
+    </div>
+  </section>
+
+  <!-- Company Timeline -->
+  <section style="padding:60px 0;background:#f8f9fa">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">رحلتنا عبر السنين — نيو جولدن أوفيس من 1990 إلى اليوم</h2>
+      <div style="position:relative;padding-right:32px">
+        <div style="position:absolute;right:0;top:0;bottom:0;width:3px;background:#c8a951;border-radius:2px"></div>
+        <div style="margin-bottom:28px;position:relative">
+          <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
+          <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">1990 — التأسيس</h3>
+          <p style="color:#555;font-size:0.95rem;line-height:1.7">تأسست نيو جولدن أوفيس في الإسكندرية بمتجر صغير متخصص في ماكينات التصوير وقطع الغيار.</p>
+        </div>
+        <div style="margin-bottom:28px;position:relative">
+          <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
+          <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">2000 — التوسع</h3>
+          <p style="color:#555;font-size:0.95rem;line-height:1.7">توسعنا لنضم خدمات الطباعة الاحترافية والمستلزمات المكتبية، لنصبح وجهة متكاملة لأعمال الشركات.</p>
+        </div>
+        <div style="margin-bottom:28px;position:relative">
+          <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
+          <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">2010 — كاميرات المراقبة والتكييفات</h3>
+          <p style="color:#555;font-size:0.95rem;line-height:1.7">أضفنا خدمات تركيب كاميرات المراقبة والتكييفات لنوفر حلولاً شاملة لبيئة العمل.</p>
+        </div>
+        <div style="position:relative">
+          <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
+          <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">2025 — 35 عاماً من الثقة</h3>
+          <p style="color:#555;font-size:0.95rem;line-height:1.7">اليوم، نخدم أكثر من 5,000 عميل في القاهرة والإسكندرية وجميع أنحاء مصر بستة خدمات متكاملة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission, Vision, Values -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">هويتنا</span>
+        <h2>رسالتنا ورؤيتنا وقيمنا</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="mvv-grid">
+        <!-- Mission -->
+        <div class="mvv-card reveal">
+          <div class="mvv-icon">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3>رسالتنا</h3>
+          <p>
+            نسعى إلى تمكين الشركات والمؤسسات المصرية من خلال توفير منتجات وخدمات مكتبية متكاملة بجودة عالية وأسعار تنافسية. نلتزم بأن نكون الشريك الموثوق الذي يدعم نجاح عملائنا في كل خطوة.
+          </p>
+        </div>
+        <!-- Vision -->
+        <div class="mvv-card reveal delay-1">
+          <div class="mvv-icon">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3>رؤيتنا</h3>
+          <p>
+            أن نكون الشركة الرائدة في مجال حلول الأعمال والمكاتب على مستوى مصر، معروفين بالابتكار والجودة والخدمة المتميزة، ومساهمين في تطوير بيئة الأعمال المصرية.
+          </p>
+        </div>
+        <!-- Values -->
+        <div class="mvv-card reveal delay-2">
+          <div class="mvv-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3>قيمنا</h3>
+          <p>
+            الجودة أولاً في كل ما نقدمه، والنزاهة في تعاملاتنا، والاحترام الكامل لعملائنا وشركائنا. نؤمن بالتطوير المستمر والابتكار لمواكبة تطلعات السوق المتجددة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">خدماتنا</span>
+        <h2>ما نقدمه لك</h2>
+        <div class="divider"></div>
+        <p>حلول متكاملة تغطي جميع احتياجات مكتبك وعملك في مكان واحد</p>
+      </div>
+      <div class="services-overview-grid">
+        <a href="printing/index.html" class="service-overview-card reveal">
+          <i class="fa-solid fa-print svc-icon"></i>
+          <h3>خدمات الطباعة</h3>
+          <p>طباعة أوفست، ديجيتال، بانرات، كروت شخصية، UV، وهدايا مطبوعة</p>
+        </a>
+        <a href="copiers/index.html" class="service-overview-card reveal delay-1">
+          <i class="fa-solid fa-copy svc-icon"></i>
+          <h3>ماكينات التصوير والطباعة</h3>
+          <p>بيع وتأجير وصيانة ماكينات التصوير والطابعات وتوريد الكارتريدج</p>
+        </a>
+        <a href="cameras/index.html" class="service-overview-card reveal delay-2">
+          <i class="fa-solid fa-camera svc-icon"></i>
+          <h3>كاميرات المراقبة</h3>
+          <p>تركيب وصيانة أنظمة المراقبة الأمنية بأحدث التقنيات</p>
+        </a>
+        <a href="ac/index.html" class="service-overview-card reveal">
+          <i class="fa-solid fa-snowflake svc-icon"></i>
+          <h3>أجهزة التكييف</h3>
+          <p>توريد وتركيب وصيانة جميع أنواع وسعات التكييفات</p>
+        </a>
+        <a href="cash-machines/index.html" class="service-overview-card reveal delay-1">
+          <i class="fa-solid fa-coins svc-icon"></i>
+          <h3>ماكينات فارم وعد</h3>
+          <p>ماكينات عد وفرم النقود للبنوك والشركات والمحلات التجارية</p>
+        </a>
+        <a href="office-supplies/index.html" class="service-overview-card reveal delay-2">
+          <i class="fa-solid fa-briefcase svc-icon"></i>
+          <h3>المستلزمات المكتبية</h3>
+          <p>توريد شامل لجميع الأدوات والمستلزمات المكتبية بأسعار الجملة</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">مميزاتنا</span>
+        <h2>لماذا تختار نيو جولدن أوفيس؟</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <h3>نفهم احتياجك ونوفر وقتك</h3>
+          <p>خبرة متراكمة منذ 1990 تمنحنا فهمًا عميقًا لاحتياجات عملائنا — نختصر عليك البحث ونجيب بأفضل حل مباشرة.</p>
+        </div>
+        <div class="why-card reveal delay-1">
+          <div class="why-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>جودة مضمونة</h3>
+          <p>نتعامل مع أفضل الموردين والعلامات التجارية العالمية لضمان جودة كل منتج وخدمة نقدمها.</p>
+        </div>
+        <div class="why-card reveal delay-2">
+          <div class="why-icon">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+          <h3>أسعار منافسة</h3>
+          <p>نقدم أفضل الأسعار في السوق مع الحفاظ على أعلى معايير الجودة، مع عروض خاصة للكميات الكبيرة.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3>خدمة ما بعد البيع</h3>
+          <p>فريق متخصص للصيانة والدعم الفني يضمن استمرارية عمل معداتك دون انقطاع أو تأخير.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="reveal">
+        <h2>احجز استشارتك المجانية اليوم</h2>
+        <p>فريقنا المتخصص جاهز لمساعدتك في اختيار أفضل الحلول لعملك وتقديم عرض سعر مخصص لاحتياجاتك</p>
+        <div class="btn-group">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-phone"></i>
+            تواصل معنا الآن
+          </a>
+          <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+            واتساب
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
