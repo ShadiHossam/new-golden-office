@@ -1,0 +1,174 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<form method="POST" action="/2ef65f179f12439e317a23628b016653/seo/<%= page.id %>/update">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+  <div class="row g-3">
+    <!-- Left: SEO fields -->
+    <div class="col-lg-8">
+      <div class="card mb-3">
+        <div class="card-header">
+          <strong>Page Info</strong>
+          <span class="badge badge-gold"><%= page.category %></span>
+        </div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+            <div>
+              <div class="form-label">Page</div>
+              <div style="font-size:13.5px;font-weight:550;color:var(--text);"><%= page.label %></div>
+            </div>
+            <div>
+              <div class="form-label">File Path</div>
+              <code style="font-size:12px;"><%= page.path %></code>
+            </div>
+          </div>
+          <% if (liveMeta) { %>
+          <div style="background:var(--surface-2);border-radius:var(--r);padding:12px 16px;font-size:12px;color:var(--text-3);border:1px solid var(--border-light);">
+            <strong style="color:var(--text-2);">Current live values from HTML file:</strong><br>
+            <span style="display:block;margin-top:6px;">Title: <em style="color:var(--text-2);"><%= liveMeta.seo_title || '—' %></em></span>
+            <span style="display:block;margin-top:2px;">Description: <em style="color:var(--text-2);"><%= (liveMeta.meta_description || '').substring(0, 80) || '—' %></em></span>
+          </div>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-header"><strong>SEO Meta Tags</strong></div>
+        <div class="card-body">
+          <div class="form-mb">
+            <label class="form-label">SEO Title <span style="color:var(--text-3);font-weight:400;">(recommended: 50–60 characters)</span></label>
+            <input type="text" name="seo_title" class="form-control" value="<%= page.seo_title || '' %>" placeholder="Page title for search engines" dir="rtl" id="seo_title">
+            <div class="char-counter" id="seo_title_count">0 / 60</div>
+          </div>
+
+          <div class="form-mb">
+            <label class="form-label">Meta Description <span style="color:var(--text-3);font-weight:400;">(recommended: 120–160 characters)</span></label>
+            <textarea name="meta_description" class="form-control" rows="3" placeholder="Description shown in search results" dir="rtl" id="meta_desc"><%= page.meta_description || '' %></textarea>
+            <div class="char-counter" id="meta_desc_count">0 / 160</div>
+          </div>
+
+          <div class="form-mb">
+            <label class="form-label">Meta Keywords <span style="color:var(--text-3);font-weight:400;">(comma separated, optional)</span></label>
+            <input type="text" name="meta_keywords" class="form-control" value="<%= page.meta_keywords || '' %>" placeholder="keyword1, keyword2, keyword3" dir="rtl">
+            <div class="form-hint">Keywords have minimal SEO impact but some crawlers still read them.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><strong>Open Graph (Social Sharing)</strong></div>
+        <div class="card-body">
+          <div class="form-mb">
+            <label class="form-label">OG Title <span style="color:var(--text-3);font-weight:400;">(leave empty to use SEO title)</span></label>
+            <input type="text" name="og_title" class="form-control" value="<%= page.og_title || '' %>" placeholder="Title for Facebook, Twitter, LinkedIn…" dir="rtl">
+          </div>
+
+          <div class="form-mb">
+            <label class="form-label">OG Description <span style="color:var(--text-3);font-weight:400;">(leave empty to use meta description)</span></label>
+            <textarea name="og_description" class="form-control" rows="2" placeholder="Description for social sharing…" dir="rtl"><%= page.og_description || '' %></textarea>
+          </div>
+
+          <div class="form-mb" style="margin-bottom:0;">
+            <label class="form-label">OG Image URL <span style="color:var(--text-3);font-weight:400;">(shown when shared on Facebook, WhatsApp, etc.)</span></label>
+            <input type="text" name="og_image" class="form-control" value="<%= page.og_image || '' %>" placeholder="https://newgoldenoffice.com/images/share.jpg" id="og_image_input">
+            <div class="form-hint">Use an absolute URL. Recommended size: 1200×630 px.</div>
+            <% if (page.og_image) { %>
+            <div style="margin-top:10px;">
+              <img src="<%= page.og_image %>" alt="OG preview" style="max-height:90px;border-radius:8px;border:1px solid var(--border);object-fit:cover;" id="og_image_preview" onerror="this.style.display='none'">
+            </div>
+            <% } else { %>
+            <div id="og_image_preview" style="display:none;margin-top:10px;">
+              <img src="" alt="OG preview" style="max-height:90px;border-radius:8px;border:1px solid var(--border);object-fit:cover;" onerror="this.parentElement.style.display='none'">
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Tips -->
+    <div class="col-lg-4">
+      <div class="card mb-3" style="position:sticky;top:74px;">
+        <div class="card-header"><strong>SEO Tips</strong></div>
+        <div class="card-body" style="font-size:12.5px;color:var(--text-2);line-height:1.8;">
+          <p style="margin-bottom:10px;"><strong style="color:var(--text);">Title:</strong> Include primary keyword near the start. 50–60 chars max.</p>
+          <p style="margin-bottom:10px;"><strong style="color:var(--text);">Description:</strong> Write a compelling summary with a call to action. 120–160 chars.</p>
+          <p style="margin-bottom:10px;"><strong style="color:var(--text);">OG Tags:</strong> Used when sharing on Facebook, WhatsApp, LinkedIn. Can differ from SEO.</p>
+          <p><strong style="color:var(--text);">Save Effect:</strong> Changes write directly to the HTML file on your website.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><strong>SERP Preview</strong></div>
+        <div class="card-body">
+          <div style="font-family:Arial,sans-serif;max-width:100%;">
+            <div id="serp-title" style="font-size:18px;color:#1a0dab;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;"><%= page.seo_title || 'Your page title here' %></div>
+            <div style="font-size:14px;color:#006621;margin:2px 0;">newgoldenoffice.com<%= page.url %></div>
+            <div id="serp-desc" style="font-size:13px;color:#545454;line-height:1.58;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;"><%= page.meta_description || 'Your meta description will appear here. Write a compelling summary that makes users want to click.' %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;gap:12px;align-items:center;">
+    <button type="submit" class="btn btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+      Save & Update HTML
+    </button>
+    <a href="/2ef65f179f12439e317a23628b016653/seo" class="btn btn-outline-secondary">Cancel</a>
+    <span style="font-size:12px;color:var(--text-3);margin-left:4px;">Changes will be written to <code><%= page.path %></code></span>
+  </div>
+</form>
+
+<script nonce="<%= cspNonce %>">
+  function updateCounter(inputId, counterId, max) {
+    var el = document.getElementById(inputId);
+    var counter = document.getElementById(counterId);
+    if (!el || !counter) return;
+    function update() {
+      var len = el.value.length;
+      counter.textContent = len + ' / ' + max;
+      counter.className = 'char-counter' + (len > max ? ' over' : len >= Math.floor(max * 0.8) ? ' good' : '');
+    }
+    el.addEventListener('input', update);
+    update();
+  }
+  updateCounter('seo_title', 'seo_title_count', 60);
+  updateCounter('meta_desc', 'meta_desc_count', 160);
+
+  // SERP preview live update
+  var titleInput = document.querySelector('[name="seo_title"]');
+  var descInput = document.querySelector('[name="meta_description"]');
+  var serpTitle = document.getElementById('serp-title');
+  var serpDesc = document.getElementById('serp-desc');
+
+  if (titleInput && serpTitle) {
+    titleInput.addEventListener('input', function() {
+      serpTitle.textContent = this.value || 'Your page title here';
+    });
+  }
+  if (descInput && serpDesc) {
+    descInput.addEventListener('input', function() {
+      serpDesc.textContent = this.value || 'Your meta description will appear here.';
+    });
+  }
+
+  // OG image live preview
+  var ogImageInput = document.getElementById('og_image_input');
+  var ogImagePreview = document.getElementById('og_image_preview');
+  if (ogImageInput && ogImagePreview) {
+    ogImageInput.addEventListener('input', function() {
+      var url = this.value.trim();
+      if (url) {
+        var img = ogImagePreview.querySelector('img') || ogImagePreview;
+        if (img.tagName === 'IMG') { img.src = url; ogImagePreview.style.display = ''; }
+        else { ogImagePreview.style.display = 'none'; }
+      } else {
+        ogImagePreview.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<%- include('../layout-end') %>

@@ -1,0 +1,175 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<div class="row g-3">
+  <!-- Add form -->
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header"><strong>New Redirect</strong></div>
+      <div class="card-body">
+        <form method="POST" action="/2ef65f179f12439e317a23628b016653/redirects" id="newRedirectForm">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <div class="mb-2">
+            <label class="form-label">Source path (old URL)</label>
+            <input type="text" class="form-control form-control-sm" name="from" required placeholder="/old-page.html" style="font-family:monospace;font-size:12px;">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Destination path (new URL)</label>
+            <input type="text" class="form-control form-control-sm" name="to" placeholder="/new-page.html" style="font-family:monospace;font-size:12px;" data-redirect-to>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Type</label>
+            <select class="form-control form-control-sm" name="status" data-redirect-status>
+              <option value="301">301 — Permanent (SEO passes)</option>
+              <option value="302">302 — Temporary</option>
+              <option value="307">307 — Temporary (method preserved)</option>
+              <option value="308">308 — Permanent (method preserved)</option>
+              <option value="410">410 — Gone (content removed)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;font-size:13px;">Add Redirect</button>
+        </form>
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-body" style="font-size:12px;color:var(--text-3);">
+        <strong style="color:var(--text);">Guide</strong><br>
+        <strong>301</strong> — Permanent. Use when changing a page URL (passes SEO equity).<br>
+        <strong>302</strong> — Temporary. No SEO impact.<br>
+        <strong>307</strong> — Temporary, preserves HTTP method.<br>
+        <strong>308</strong> — Permanent, preserves HTTP method.<br>
+        <strong>410</strong> — Gone. Content permanently removed. Google deindexes faster than a 404.<br><br>
+        Tip: you can paste a full URL — it will be converted to a path.
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body p-0">
+        <table class="table table-hover" style="margin:0;">
+          <thead>
+            <tr style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);">
+              <th style="padding:10px 12px;">Source</th>
+              <th style="padding:10px 12px;width:30px;"></th>
+              <th style="padding:10px 12px;">Destination</th>
+              <th style="padding:10px 12px;width:70px;">Type</th>
+              <th style="padding:10px 12px;width:90px;">Added</th>
+              <th style="padding:10px 12px;width:110px;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% redirects.forEach(function(r) { %>
+            <tr class="display-row" data-id="<%= r.id %>">
+              <td style="padding:10px 12px;"><code style="font-size:11px;color:#dc3545;"><%= r.from %></code></td>
+              <td style="padding:10px 12px;color:var(--text-3);">→</td>
+              <td style="padding:10px 12px;">
+                <% if (String(r.status) === '410') { %>
+                <span style="font-size:11px;color:var(--text-3);font-style:italic;">— Gone</span>
+                <% } else { %>
+                <code style="font-size:11px;color:#1e8a3e;"><%= r.to %></code>
+                <% } %>
+              </td>
+              <td style="padding:10px 12px;">
+                <%
+                  var sc = String(r.status);
+                  var badgeColor = sc === '410' ? '#dc3545' : (sc === '301' || sc === '308') ? 'var(--gold)' : '#6c757d';
+                %>
+                <span style="font-size:10px;background:<%= badgeColor %>;color:#fff;padding:2px 6px;border-radius:4px;font-weight:600;"><%= r.status %></span>
+              </td>
+              <td style="padding:10px 12px;color:var(--text-3);font-size:12px;"><%= r.created_at ? new Date(r.created_at).toLocaleDateString('en-US', {day:'numeric',month:'short'}) : '—' %></td>
+              <td style="padding:10px 12px;white-space:nowrap;">
+                <button type="button" class="btn btn-outline-secondary btn-sm" style="font-size:11px;" onclick="toggleEditRedirect(<%= r.id %>)">Edit</button>
+                <form method="POST" action="/2ef65f179f12439e317a23628b016653/redirects/<%= r.id %>/delete" style="display:inline;" data-confirm="Delete this redirect?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button class="btn btn-outline-danger btn-sm" style="font-size:11px;">×</button>
+                </form>
+              </td>
+            </tr>
+            <tr class="edit-row" id="edit-row-<%= r.id %>" style="display:none;background:var(--surface-1);">
+              <td colspan="6" style="padding:12px 14px;">
+                <form method="POST" action="/2ef65f179f12439e317a23628b016653/redirects/<%= r.id %>/edit" style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <div style="flex:1 1 200px;">
+                    <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">Source</label>
+                    <input type="text" class="form-control form-control-sm" name="from" value="<%= r.from %>" required style="font-family:monospace;font-size:12px;">
+                  </div>
+                  <div style="flex:1 1 200px;">
+                    <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">Destination</label>
+                    <input type="text" class="form-control form-control-sm" name="to" value="<%= r.to %>" style="font-family:monospace;font-size:12px;" data-redirect-to>
+                  </div>
+                  <div style="flex:0 0 210px;">
+                    <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">Type</label>
+                    <select class="form-control form-control-sm" name="status" data-redirect-status>
+                      <% ['301','302','307','308','410'].forEach(function(t) { %>
+                      <option value="<%= t %>" <%= String(r.status) === t ? 'selected' : '' %>><%= t %><% if (t === '410') { %> — Gone<% } %></option>
+                      <% }) %>
+                    </select>
+                  </div>
+                  <div style="display:flex;gap:6px;">
+                    <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="toggleEditRedirect(<%= r.id %>)">Cancel</button>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+            <% if (redirects.length === 0) { %>
+            <tr>
+              <td colspan="6" class="text-center" style="padding:40px;color:var(--text-3);">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="1.5" style="display:block;margin:0 auto 10px;"><polyline points="15,10 20,15 15,20"/><path d="M4 4v7a4 4 0 004 4h12"/></svg>
+                No redirects yet. Add one using the form on the left.
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script nonce="<%= cspNonce %>">
+function toggleEditRedirect(id) {
+  var displayRow = document.querySelector('.display-row[data-id="' + id + '"]');
+  var editRow = document.getElementById('edit-row-' + id);
+  if (!editRow) return;
+  var isOpening = editRow.style.display === 'none';
+  document.querySelectorAll('.edit-row').forEach(function(r) { r.style.display = 'none'; });
+  document.querySelectorAll('.display-row').forEach(function(r) { r.style.display = ''; });
+  if (isOpening) {
+    editRow.style.display = '';
+    if (displayRow) displayRow.style.display = 'none';
+    var sel = editRow.querySelector('[data-redirect-status]');
+    if (sel) syncStatusToTarget(sel);
+  }
+}
+
+function syncStatusToTarget(sel) {
+  var form = sel.closest('form');
+  if (!form) return;
+  var toInput = form.querySelector('[data-redirect-to]');
+  if (!toInput) return;
+  if (sel.value === '410') {
+    toInput.value = '';
+    toInput.disabled = true;
+    toInput.required = false;
+    toInput.placeholder = '(not used for 410)';
+  } else {
+    toInput.disabled = false;
+    if (form.id === 'newRedirectForm') toInput.required = true;
+    toInput.placeholder = form.id === 'newRedirectForm' ? '/new-page.html' : '';
+  }
+}
+
+document.addEventListener('change', function(e) {
+  if (e.target && e.target.matches('[data-redirect-status]')) syncStatusToTarget(e.target);
+});
+
+(function() {
+  var sel = document.querySelector('#newRedirectForm [data-redirect-status]');
+  if (sel) syncStatusToTarget(sel);
+})();
+</script>
+
+<%- include('../layout-end') %>

@@ -1,0 +1,170 @@
+<%
+  function seoScore(page) {
+    var checks = { total: 5, passed: 0, issues: [] };
+    var titleLen = (page.seo_title || '').length;
+    if (titleLen > 0 && titleLen <= 60) checks.passed++;
+    else if (titleLen > 60) checks.issues.push('SEO title too long (' + titleLen + '/60)');
+    else checks.issues.push('SEO title missing');
+
+    var descLen = (page.meta_description || '').length;
+    if (descLen >= 120 && descLen <= 160) checks.passed++;
+    else if (descLen > 0 && descLen < 120) checks.issues.push('Description too short (' + descLen + '/120)');
+    else if (descLen > 160) checks.issues.push('Description too long (' + descLen + '/160)');
+    else checks.issues.push('Meta description missing');
+
+    if ((page.og_title || '').trim()) checks.passed++;
+    else checks.issues.push('OG title missing');
+
+    if ((page.og_description || '').trim()) checks.passed++;
+    else checks.issues.push('OG description missing');
+
+    if ((page.meta_keywords || '').trim()) checks.passed++;
+    else checks.issues.push('Keywords missing');
+
+    checks.pct = Math.round(checks.passed / checks.total * 100);
+    return checks;
+  }
+
+  var allPages = pages;
+  var goodCount = 0, okCount = 0, badCount = 0;
+  allPages.forEach(function(p) {
+    var s = seoScore(p);
+    if (s.pct >= 80) goodCount++;
+    else if (s.pct >= 50) okCount++;
+    else badCount++;
+  });
+  var totalItems = allPages.length;
+%>
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<!-- Overview stats -->
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:#1e8a3e;"><%= goodCount %></div>
+      <div style="font-size:12px;color:var(--text-3);">Good SEO (80%+)</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:#e67e22;"><%= okCount %></div>
+      <div style="font-size:12px;color:var(--text-3);">Needs Improvement</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:#dc3545;"><%= badCount %></div>
+      <div style="font-size:12px;color:var(--text-3);">Has Issues</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:var(--gold);"><%= totalItems > 0 ? Math.round(goodCount / totalItems * 100) : 0 %>%</div>
+      <div style="font-size:12px;color:var(--text-3);">Overall Score</div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter bar -->
+<form method="GET" action="/2ef65f179f12439e317a23628b016653/seo" class="filter-bar mb-3">
+  <input type="text" name="filter" class="form-control" placeholder="Search pages…" value="<%= filter %>" style="max-width:200px;">
+  <select name="category" class="form-control" style="max-width:180px;" onchange="this.form.submit()">
+    <option value="">All Categories</option>
+    <% categories.forEach(function(cat) { %>
+    <option value="<%= cat %>" <%= category === cat ? 'selected' : '' %>><%= cat %></option>
+    <% }); %>
+  </select>
+  <div class="btn-group btn-group-sm">
+    <a href="/2ef65f179f12439e317a23628b016653/seo<%= filter || category ? '?filter=' + encodeURIComponent(filter) + '&category=' + encodeURIComponent(category) : '' %>" class="btn btn-<%= !issueFilter ? 'primary' : 'outline-secondary' %>">All (<%= totalItems %>)</a>
+    <a href="/2ef65f179f12439e317a23628b016653/seo?issues=1<%= filter ? '&filter=' + encodeURIComponent(filter) : '' %><%= category ? '&category=' + encodeURIComponent(category) : '' %>" class="btn btn-<%= issueFilter ? 'primary' : 'outline-secondary' %>">Issues (<%= okCount + badCount %>)</a>
+  </div>
+  <button type="submit" class="btn btn-outline-secondary btn-sm">Search</button>
+  <% if (filter || category) { %><a href="/2ef65f179f12439e317a23628b016653/seo" class="btn btn-outline-secondary btn-sm">Clear</a><% } %>
+</form>
+
+<div class="card">
+  <% if (pages.length === 0) { %>
+  <div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <p>No pages match your filter.</p>
+  </div>
+  <% } else { %>
+  <div style="overflow-x:auto;">
+    <table class="table table-hover" style="border-collapse:separate;border-spacing:0;">
+      <thead>
+        <tr style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);">
+          <th style="padding:10px 12px;width:28%;">Page</th>
+          <th style="padding:10px 12px;">Category</th>
+          <th style="padding:10px 12px;">Score</th>
+          <th style="padding:10px 12px;">Meta Desc</th>
+          <th style="padding:10px 12px;">OG Title</th>
+          <th style="padding:10px 12px;">Issues</th>
+          <th style="padding:10px 12px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pages.forEach(function(page) {
+          var score = seoScore(page);
+          var scoreColor = score.pct >= 80 ? '#1e8a3e' : score.pct >= 50 ? '#e67e22' : '#dc3545';
+          var scoreBg = score.pct >= 80 ? '#d4edda' : score.pct >= 50 ? '#fef3e2' : '#fde8e8';
+          var descLen = (page.meta_description || '').length;
+        %>
+        <tr style="border-bottom:1px solid var(--border-light);">
+          <td style="padding:10px 12px;">
+            <div style="font-weight:600;font-size:13px;color:var(--text);direction:rtl;text-align:right;"><%= page.label %></div>
+            <div style="font-size:11px;color:var(--text-3);font-family:monospace;"><%= page.path %></div>
+          </td>
+          <td style="padding:10px 12px;">
+            <span class="badge badge-gold" style="font-size:10px;"><%= page.category %></span>
+          </td>
+          <td style="padding:10px 12px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:<%= scoreBg %>;color:<%= scoreColor %>;display:grid;place-items:center;font-size:10px;font-weight:800;flex-shrink:0;"><%= score.passed %></div>
+              <div>
+                <div style="height:6px;background:var(--surface-2);border-radius:3px;overflow:hidden;width:72px;">
+                  <div style="height:100%;width:<%= score.pct %>%;background:<%= scoreColor %>;border-radius:3px;transition:width 0.3s;"></div>
+                </div>
+                <div style="font-size:9px;color:var(--text-3);margin-top:2px;"><%= score.pct %>%</div>
+              </div>
+            </div>
+          </td>
+          <td style="padding:10px 12px;">
+            <% if (descLen === 0) { %>
+            <span style="font-size:11px;color:#dc3545;font-weight:500;">Missing</span>
+            <% } else if (descLen < 120) { %>
+            <span style="font-size:11px;color:#e67e22;font-weight:500;"><%= descLen %> chars (short)</span>
+            <% } else if (descLen > 160) { %>
+            <span style="font-size:11px;color:#e67e22;font-weight:500;"><%= descLen %> chars (long)</span>
+            <% } else { %>
+            <span style="font-size:11px;color:#1e8a3e;font-weight:500;"><%= descLen %> chars</span>
+            <% } %>
+          </td>
+          <td style="padding:10px 12px;">
+            <% if ((page.og_title || '').trim()) { %>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e8a3e" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+            <% } else { %>
+            <span style="font-size:13px;color:#dc3545;font-weight:600;">—</span>
+            <% } %>
+          </td>
+          <td style="padding:10px 12px;">
+            <% if (score.issues.length === 0) { %>
+            <span style="font-size:11px;color:#1e8a3e;font-weight:500;">All good</span>
+            <% } else { %>
+            <% score.issues.slice(0,2).forEach(function(issue) { %>
+            <div style="font-size:11px;color:#dc3545;display:flex;align-items:center;gap:4px;"><span style="width:5px;height:5px;border-radius:50%;background:#dc3545;flex-shrink:0;display:inline-block;"></span><%= issue %></div>
+            <% }); %>
+            <% if (score.issues.length > 2) { %><div style="font-size:10px;color:var(--text-3);">+<%= score.issues.length - 2 %> more</div><% } %>
+            <% } %>
+          </td>
+          <td style="padding:10px 12px;text-align:right;">
+            <a href="/2ef65f179f12439e317a23628b016653/seo/<%= page.id %>/edit" class="btn btn-outline-primary btn-sm" style="font-size:11px;">Edit</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+</div>
+
+<%- include('../layout-end') %>

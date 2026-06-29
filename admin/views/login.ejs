@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — NGO Admin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #fef9ee 0%, #f4f6f9 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .login-wrap { width: 100%; max-width: 380px; padding: 0 20px; }
+    .login-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 38px 34px;
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+    .login-logo { display: flex; align-items: center; gap: 11px; margin-bottom: 32px; }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #b8860b, #d4a017);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 11px;
+      box-shadow: 0 2px 8px rgba(184,134,11,0.3);
+    }
+    .logo-text { font-weight: 700; font-size: 15px; color: #111318; }
+    .logo-sub { font-size: 11px; color: #8b93a7; }
+    h1 { font-size: 20px; font-weight: 700; color: #111318; margin-bottom: 5px; letter-spacing: -0.3px; }
+    .subtitle { color: #8b93a7; font-size: 13px; margin-bottom: 26px; }
+    label { display: block; font-size: 12.5px; font-weight: 550; color: #4a5068; margin-bottom: 5px; }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid rgba(0,0,0,0.09);
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-family: inherit;
+      color: #111318;
+      outline: none;
+      transition: all 0.15s;
+      margin-bottom: 16px;
+      background: #fff;
+    }
+    input:focus { border-color: #b8860b; box-shadow: 0 0 0 3px rgba(184,134,11,0.1); }
+    input::placeholder { color: #bcc5d3; }
+    .submit-btn {
+      width: 100%;
+      padding: 11px;
+      background: linear-gradient(135deg, #b8860b, #d4a017);
+      color: #fff;
+      border: none;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+      box-shadow: 0 2px 12px rgba(184,134,11,0.25);
+    }
+    .submit-btn:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 4px 18px rgba(184,134,11,0.3); }
+    .error {
+      background: #fef2f2; color: #dc2626; font-size: 12.5px;
+      padding: 9px 13px; border-radius: 8px; margin-bottom: 16px;
+      border: 1px solid #fecaca;
+    }
+    .success {
+      background: #f0fdf4; color: #16a34a; font-size: 12.5px;
+      padding: 9px 13px; border-radius: 8px; margin-bottom: 16px;
+      border: 1px solid #bbf7d0;
+    }
+    .forgot-link {
+      display: block; text-align: center; margin-top: 14px;
+      font-size: 12.5px; color: #8b93a7; text-decoration: none; transition: color 0.15s;
+    }
+    .forgot-link:hover { color: #b8860b; }
+    .continue-btn {
+      display: block; width: 100%; padding: 11px;
+      background: linear-gradient(135deg, #b8860b, #d4a017);
+      color: #fff; border: none; border-radius: 9px;
+      font-size: 13.5px; font-weight: 600; font-family: inherit;
+      text-align: center; text-decoration: none; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-logo">
+        <div class="logo-icon">NGO</div>
+        <div>
+          <div class="logo-text">نيو جولدن أوفيس</div>
+          <div class="logo-sub">Admin Panel</div>
+        </div>
+      </div>
+
+      <% if (typeof alreadyLoggedIn !== 'undefined' && alreadyLoggedIn) { %>
+        <h1>Already logged in</h1>
+        <p class="subtitle">Signed in as <strong><%= loggedInAs %></strong></p>
+        <a href="/2ef65f179f12439e317a23628b016653" class="continue-btn">Go to Dashboard</a>
+      <% } else { %>
+        <h1>Welcome back</h1>
+        <p class="subtitle">Sign in to manage your website</p>
+
+        <% if (typeof success !== 'undefined' && success) { %>
+          <div class="success"><%= success %></div>
+        <% } %>
+        <% if (error) { %>
+          <div class="error"><%= error %></div>
+        <% } %>
+
+        <form method="POST" action="/2ef65f179f12439e317a23628b016653/login">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="admin" required autofocus autocomplete="username">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+          <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+        <a href="/2ef65f179f12439e317a23628b016653/reset-password" class="forgot-link">Forgot password?</a>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<!-- Upload zone -->
+<div class="upload-zone" id="upload-zone">
+  <svg class="upload-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16,16 12,12 8,16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg>
+  <div class="upload-zone-text">Drop images here or click to upload</div>
+  <div class="upload-zone-sub">JPEG, PNG, WebP, GIF, SVG — max 10 MB</div>
+  <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+  <div id="upload-progress-wrap" style="width:100%;max-width:420px;margin-top:12px;display:flex;flex-direction:column;gap:6px;"></div>
+</div>
+
+<!-- Search + bulk bar -->
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:16px 0 10px;">
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+    <form method="GET" action="/2ef65f179f12439e317a23628b016653/media" style="display:flex;gap:6px;margin:0;">
+      <input type="text" name="q" class="form-control" placeholder="Search by name or alt…" value="<%= search %>" style="max-width:220px;font-size:12.5px;">
+      <button type="submit" class="btn btn-outline-secondary btn-sm">Search</button>
+      <% if (search) { %><a href="/2ef65f179f12439e317a23628b016653/media" class="btn btn-outline-secondary btn-sm">Clear</a><% } %>
+    </form>
+    <button class="btn btn-outline-secondary btn-sm" id="select-all-btn" style="display:none;">Select All</button>
+  </div>
+  <div id="bulk-bar" style="display:none;align-items:center;gap:8px;">
+    <span style="font-size:12.5px;font-weight:500;" id="bulk-count">0 selected</span>
+    <button class="btn btn-outline-danger btn-sm" id="bulk-delete-btn">Delete Selected</button>
+    <button class="btn btn-outline-secondary btn-sm" id="bulk-cancel-btn">Cancel</button>
+  </div>
+  <div style="font-size:12px;color:var(--text-3);"><%= totalCount %> file<%= totalCount !== 1 ? 's' : '' %></div>
+</div>
+
+<% if (media.length === 0) { %>
+<div class="card">
+  <div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+    <p><% if (search) { %>No files match "<%= search %>". <a href="/2ef65f179f12439e317a23628b016653/media">Clear filter</a><% } else { %>No media files yet. Upload images above.<% } %></p>
+  </div>
+</div>
+<% } else { %>
+
+<div class="media-grid" id="media-grid">
+  <% media.forEach(function(m) { %>
+  <div class="media-card" data-id="<%= m.id %>" data-url="/images/<%= m.filename %>" data-filename="<%= (m.original_name || m.filename).replace(/\"/g,'&quot;') %>" data-size="<%= m.size || 0 %>" data-date="<%= m.created_at %>" data-alt="<%= (m.alt || '').replace(/\"/g,'&quot;') %>" data-title="<%= (m.title || '').replace(/\"/g,'&quot;') %>" data-caption="<%= (m.caption || '').replace(/\"/g,'&quot;') %>">
+    <div class="media-card-check" title="Select"></div>
+    <img src="/2ef65f179f12439e317a23628b016653/images/<%= m.filename %>" alt="<%= m.alt || m.original_name || m.filename %>" class="media-thumb" loading="lazy" onerror="this.style.background='#f4f6f9';this.style.minHeight='120px';">
+    <div class="media-info">
+      <div class="media-filename" title="<%= m.original_name || m.filename %>"><%= m.original_name || m.filename %></div>
+      <div class="media-size"><%= m.size ? Math.round(m.size / 1024) + ' KB' : '' %><% if (m.size && m.created_at) { %> · <% } %><%= m.created_at ? new Date(m.created_at).toLocaleDateString('en-US', {month:'short',day:'numeric'}) : '' %></div>
+    </div>
+    <div class="media-actions">
+      <button type="button" class="btn btn-outline-secondary btn-xs media-url-copy" data-url="/images/<%= m.filename %>">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy URL
+      </button>
+      <form method="POST" action="/2ef65f179f12439e317a23628b016653/media/<%= m.id %>/delete" style="margin:0;" data-confirm="Delete this file permanently?">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button type="submit" class="btn btn-outline-danger btn-xs">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6"/></svg>
+          Delete
+        </button>
+      </form>
+    </div>
+  </div>
+  <% }) %>
+</div>
+
+<!-- Pagination -->
+<% if (pagination.totalPages > 1) { %>
+<nav style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap;gap:8px;">
+  <div style="font-size:12px;color:var(--text-3);"><%= pagination.total %> files · page <%= pagination.page %>/<%= pagination.totalPages %></div>
+  <ul style="display:flex;gap:4px;list-style:none;padding:0;margin:0;">
+    <% if (pagination.hasPrev) { %>
+    <li><a href="/2ef65f179f12439e317a23628b016653/media?page=<%= pagination.page - 1 %><%= search ? '&q=' + encodeURIComponent(search) : '' %>" class="btn btn-outline-secondary btn-sm">‹</a></li>
+    <% } %>
+    <% for (var i = Math.max(1, pagination.page - 2); i <= Math.min(pagination.totalPages, pagination.page + 2); i++) { %>
+    <li><a href="/2ef65f179f12439e317a23628b016653/media?page=<%= i %><%= search ? '&q=' + encodeURIComponent(search) : '' %>" class="btn btn-sm" style="background:<%= i === pagination.page ? 'var(--gold)' : 'transparent' %>;color:<%= i === pagination.page ? '#fff' : 'var(--text)' %>;border:1px solid <%= i === pagination.page ? 'var(--gold)' : 'var(--border-light)' %>;"><%= i %></a></li>
+    <% } %>
+    <% if (pagination.hasNext) { %>
+    <li><a href="/2ef65f179f12439e317a23628b016653/media?page=<%= pagination.page + 1 %><%= search ? '&q=' + encodeURIComponent(search) : '' %>" class="btn btn-outline-secondary btn-sm">›</a></li>
+    <% } %>
+  </ul>
+</nav>
+<% } %>
+<% } %>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;display:none;align-items:center;justify-content:center;">
+  <button id="lightbox-close" style="position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;line-height:1;">×</button>
+  <div style="display:flex;gap:0;background:#fff;border-radius:14px;overflow:hidden;max-width:900px;width:95%;max-height:90vh;">
+    <div style="flex:1;background:#111;display:flex;align-items:center;justify-content:center;min-height:300px;max-height:90vh;overflow:hidden;">
+      <img id="lightbox-img" src="" alt="" style="max-width:100%;max-height:90vh;object-fit:contain;">
+    </div>
+    <div style="width:300px;padding:22px;overflow-y:auto;flex-shrink:0;">
+      <h4 id="lightbox-name" style="font-size:13px;font-weight:700;margin:0 0 3px;word-break:break-all;"></h4>
+      <div id="lightbox-meta" style="font-size:11px;color:var(--text-3);margin-bottom:16px;"></div>
+
+      <form id="lightbox-form" style="display:flex;flex-direction:column;gap:10px;">
+        <div>
+          <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">Alt Text (SEO)</label>
+          <input type="text" id="lb-alt" class="form-control form-control-sm" placeholder="Describe the image for SEO & accessibility">
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">Title</label>
+          <input type="text" id="lb-title" class="form-control form-control-sm" placeholder="Image title">
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">Caption</label>
+          <textarea id="lb-caption" class="form-control form-control-sm" rows="2" placeholder="Optional caption"></textarea>
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:600;display:block;margin-bottom:4px;">URL</label>
+          <div style="display:flex;gap:6px;">
+            <input type="text" id="lb-url" class="form-control form-control-sm" readonly style="font-size:11px;font-family:monospace;">
+            <button type="button" id="lb-copy-btn" class="btn btn-outline-primary btn-sm" style="white-space:nowrap;">Copy</button>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button type="submit" class="btn btn-primary btn-sm" style="flex:1;">Save</button>
+          <a id="lb-open-link" href="#" target="_blank" class="btn btn-outline-secondary btn-sm">Open</a>
+        </div>
+        <div id="lb-status" style="font-size:11px;text-align:center;display:none;"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script nonce="<%= cspNonce %>">
+(function() {
+  var csrfToken = '<%= csrfToken %>';
+
+  // ========== UPLOAD ZONE ==========
+  var zone = document.getElementById('upload-zone');
+  var fileInput = document.getElementById('file-input');
+  var progressWrap = document.getElementById('upload-progress-wrap');
+
+  zone.addEventListener('click', function(e) {
+    if (!e.target.closest('input[type=file]')) fileInput.click();
+  });
+  fileInput.addEventListener('change', function() { if (this.files.length) uploadFiles(this.files); });
+  zone.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('drag-over'); });
+  zone.addEventListener('dragleave', function() { this.classList.remove('drag-over'); });
+  zone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    this.classList.remove('drag-over');
+    if (e.dataTransfer.files.length) uploadFiles(e.dataTransfer.files);
+  });
+
+  function uploadFiles(files) {
+    progressWrap.innerHTML = '';
+    var total = files.length, completed = 0;
+    Array.from(files).forEach(function(file) {
+      var item = document.createElement('div');
+      item.style.cssText = 'display:flex;align-items:center;gap:8px;font-size:12px;background:rgba(255,255,255,0.9);padding:6px 10px;border-radius:8px;';
+      item.innerHTML = '<span style="flex-shrink:0;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + file.name + '</span>'
+        + '<div style="flex:1;height:5px;background:rgba(0,0,0,0.1);border-radius:3px;overflow:hidden;"><div style="height:100%;width:0%;background:var(--gold);border-radius:3px;transition:width 0.2s;" class="pbar"></div></div>'
+        + '<span class="pstatus" style="flex-shrink:0;min-width:32px;text-align:right;">0%</span>';
+      progressWrap.appendChild(item);
+
+      var fd = new FormData();
+      fd.append('image', file);
+      fd.append('_csrf', csrfToken);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/2ef65f179f12439e317a23628b016653/media/upload');
+      xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+      xhr.upload.onprogress = function(e) {
+        if (e.lengthComputable) {
+          var pct = Math.round(e.loaded / e.total * 100);
+          item.querySelector('.pbar').style.width = pct + '%';
+          item.querySelector('.pstatus').textContent = pct + '%';
+        }
+      };
+      xhr.onload = function() {
+        completed++;
+        try {
+          var data = JSON.parse(xhr.responseText);
+          if (data.success) {
+            item.querySelector('.pbar').style.background = '#1e8a3e';
+            item.querySelector('.pstatus').textContent = '✓';
+          } else {
+            item.querySelector('.pbar').style.background = '#dc3545';
+            item.querySelector('.pstatus').textContent = '✗';
+          }
+        } catch(e) {
+          item.querySelector('.pbar').style.background = '#dc3545';
+          item.querySelector('.pstatus').textContent = 'Err';
+        }
+        if (completed === total) setTimeout(function() { location.reload(); }, 1200);
+      };
+      xhr.onerror = function() {
+        completed++;
+        item.querySelector('.pbar').style.background = '#dc3545';
+        item.querySelector('.pstatus').textContent = 'Err';
+        if (completed === total) setTimeout(function() { location.reload(); }, 1200);
+      };
+      xhr.send(fd);
+    });
+  }
+
+  // ========== COPY URL (grid cards) ==========
+  document.querySelectorAll('.media-url-copy').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navigator.clipboard.writeText(this.dataset.url);
+      var orig = this.textContent.trim();
+      this.textContent = '✓ Copied!';
+      var b = this;
+      setTimeout(function() { b.textContent = orig; }, 1800);
+    });
+  });
+
+  // ========== BULK SELECTION ==========
+  var cards = document.querySelectorAll('.media-card');
+  var selectAllBtn = document.getElementById('select-all-btn');
+  var bulkBar = document.getElementById('bulk-bar');
+  var bulkCount = document.getElementById('bulk-count');
+  var bulkDeleteBtn = document.getElementById('bulk-delete-btn');
+  var bulkCancelBtn = document.getElementById('bulk-cancel-btn');
+
+  if (cards.length) selectAllBtn.style.display = '';
+
+  cards.forEach(function(card) {
+    var check = card.querySelector('.media-card-check');
+    check.addEventListener('click', function(e) { e.stopPropagation(); card.classList.toggle('selected'); updateBulk(); });
+  });
+
+  function updateBulk() {
+    var selected = document.querySelectorAll('.media-card.selected');
+    if (selected.length > 0) {
+      bulkBar.style.display = 'flex';
+      bulkCount.textContent = selected.length + ' selected';
+    } else {
+      bulkBar.style.display = 'none';
+    }
+  }
+
+  selectAllBtn.addEventListener('click', function() {
+    var all = document.querySelectorAll('.media-card.selected').length === cards.length;
+    cards.forEach(function(c) { all ? c.classList.remove('selected') : c.classList.add('selected'); });
+    this.textContent = all ? 'Select All' : 'Deselect All';
+    updateBulk();
+  });
+
+  bulkCancelBtn.addEventListener('click', function() {
+    cards.forEach(function(c) { c.classList.remove('selected'); });
+    selectAllBtn.textContent = 'Select All';
+    updateBulk();
+  });
+
+  bulkDeleteBtn.addEventListener('click', function() {
+    var selected = Array.from(document.querySelectorAll('.media-card.selected'));
+    if (!selected.length) return;
+    if (!confirm('Delete ' + selected.length + ' file(s) permanently? This cannot be undone.')) return;
+    var ids = selected.map(function(c) { return parseInt(c.dataset.id); });
+    fetch('/2ef65f179f12439e317a23628b016653/media/api/bulk-delete', {
+      method: 'POST',
+      headers: { 'X-CSRF-Token': csrfToken, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids: ids })
+    }).then(function(r) { return r.json(); }).then(function(data) {
+      if (data.success) location.reload();
+      else alert('Error: ' + (data.error || 'unknown'));
+    }).catch(function() { alert('Network error'); });
+  });
+
+  // ========== LIGHTBOX ==========
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbName = document.getElementById('lightbox-name');
+  var lbMeta = document.getElementById('lightbox-meta');
+  var lbAlt = document.getElementById('lb-alt');
+  var lbTitle = document.getElementById('lb-title');
+  var lbCaption = document.getElementById('lb-caption');
+  var lbUrl = document.getElementById('lb-url');
+  var lbCopyBtn = document.getElementById('lb-copy-btn');
+  var lbOpenLink = document.getElementById('lb-open-link');
+  var lbForm = document.getElementById('lightbox-form');
+  var lbStatus = document.getElementById('lb-status');
+  var currentId = null;
+
+  document.querySelectorAll('.media-thumb').forEach(function(img) {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var card = this.closest('.media-card');
+      currentId = parseInt(card.dataset.id);
+      var url = card.dataset.url;
+      lbImg.src = '/2ef65f179f12439e317a23628b016653' + url;
+      lbName.textContent = card.dataset.filename;
+      var size = parseInt(card.dataset.size);
+      lbMeta.textContent = (size ? Math.round(size / 1024) + ' KB · ' : '') + new Date(card.dataset.date).toLocaleDateString('en-US', {day:'numeric',month:'short',year:'numeric'});
+      lbAlt.value = card.dataset.alt || '';
+      lbTitle.value = card.dataset.title || '';
+      lbCaption.value = card.dataset.caption || '';
+      lbUrl.value = url;
+      lbOpenLink.href = '/2ef65f179f12439e317a23628b016653' + url;
+      lbStatus.style.display = 'none';
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lbForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!currentId) return;
+    lbStatus.style.display = 'block';
+    lbStatus.textContent = 'Saving…';
+    lbStatus.style.color = 'var(--text-3)';
+    fetch('/2ef65f179f12439e317a23628b016653/media/api/' + currentId + '/update', {
+      method: 'POST',
+      headers: { 'X-CSRF-Token': csrfToken, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ alt_text: lbAlt.value, title: lbTitle.value, caption: lbCaption.value })
+    }).then(function(r) { return r.json(); }).then(function(data) {
+      if (data.success) {
+        lbStatus.textContent = '✓ Saved';
+        lbStatus.style.color = '#1e8a3e';
+        var card = document.querySelector('.media-card[data-id="' + currentId + '"]');
+        if (card) { card.dataset.alt = lbAlt.value; card.dataset.title = lbTitle.value; card.dataset.caption = lbCaption.value; }
+      } else {
+        lbStatus.textContent = data.error || 'Error';
+        lbStatus.style.color = '#dc3545';
+      }
+    }).catch(function() { lbStatus.textContent = 'Network error'; lbStatus.style.color = '#dc3545'; });
+  });
+
+  lbCopyBtn.addEventListener('click', function() {
+    navigator.clipboard.writeText(lbUrl.value);
+    this.textContent = 'Copied!';
+    var b = this;
+    setTimeout(function() { b.textContent = 'Copy'; }, 1500);
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', function() { lightbox.style.display = 'none'; });
+  lightbox.addEventListener('click', function(e) { if (e.target === lightbox) lightbox.style.display = 'none'; });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lightbox.style.display !== 'none') lightbox.style.display = 'none'; });
+})();
+</script>
+
+<%- include('../layout-end') %>

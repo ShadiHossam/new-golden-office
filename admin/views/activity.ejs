@@ -1,0 +1,86 @@
+<%- include('layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<!-- Filters -->
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+  <div class="d-flex gap-2 align-items-center flex-wrap">
+    <select class="form-control" style="width:auto;font-size:12px;" onchange="location.href='/2ef65f179f12439e317a23628b016653/activity?user='+this.value+'&action=<%= encodeURIComponent(filterAction) %>&q=<%= encodeURIComponent(query) %>'">
+      <option value="all" <%= filterUser === 'all' ? 'selected' : '' %>>All Users</option>
+      <% users.forEach(function(u) { %>
+      <option value="<%= u %>" <%= filterUser === u ? 'selected' : '' %>><%= u %></option>
+      <% }) %>
+    </select>
+    <select class="form-control" style="width:auto;font-size:12px;" onchange="location.href='/2ef65f179f12439e317a23628b016653/activity?user=<%= encodeURIComponent(filterUser) %>&action='+encodeURIComponent(this.value)+'&q=<%= encodeURIComponent(query) %>'">
+      <option value="all" <%= filterAction === 'all' ? 'selected' : '' %>>All Actions</option>
+      <% actions.forEach(function(a) { %>
+      <option value="<%= a %>" <%= filterAction === a ? 'selected' : '' %>><%= a %></option>
+      <% }) %>
+    </select>
+    <form method="GET" action="/2ef65f179f12439e317a23628b016653/activity" style="display:flex;gap:6px;margin:0;">
+      <input type="hidden" name="user" value="<%= filterUser %>">
+      <input type="hidden" name="action" value="<%= filterAction %>">
+      <input type="text" class="form-control" name="q" value="<%= query %>" placeholder="Search…" style="width:180px;font-size:12px;">
+      <button type="submit" class="btn btn-outline-secondary btn-sm" style="font-size:12px;">Search</button>
+      <% if (filterUser !== 'all' || filterAction !== 'all' || query) { %>
+      <a href="/2ef65f179f12439e317a23628b016653/activity" class="btn btn-outline-secondary btn-sm" style="font-size:12px;">Clear</a>
+      <% } %>
+    </form>
+  </div>
+  <div style="font-size:12px;color:var(--text-3);"><%= pagination.total %> entr<%= pagination.total !== 1 ? 'ies' : 'y' %></div>
+</div>
+
+<div class="card">
+  <div class="card-body p-0">
+    <table class="table table-hover" style="margin:0;">
+      <thead>
+        <tr style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);">
+          <th style="padding:10px 14px;width:170px;">Date</th>
+          <th style="padding:10px 14px;width:130px;">User</th>
+          <th style="padding:10px 14px;width:200px;">Action</th>
+          <th style="padding:10px 14px;">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% logs.forEach(function(log) { %>
+        <tr>
+          <td style="color:var(--text-3);font-size:12.5px;padding:10px 14px;"><%= new Date(log.timestamp).toLocaleDateString('en-US', { day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' }) %></td>
+          <td style="padding:10px 14px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:26px;height:26px;background:var(--gold-soft);color:var(--gold);border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:11px;flex-shrink:0;border:1px solid var(--gold-border);"><%= (log.user || 'S').charAt(0).toUpperCase() %></div>
+              <span style="font-size:13px;"><%= log.user %></span>
+            </div>
+          </td>
+          <td style="padding:10px 14px;font-size:13px;"><%= log.action %></td>
+          <td style="padding:10px 14px;color:var(--text-3);font-size:12.5px;"><%= log.details || '' %></td>
+        </tr>
+        <% }) %>
+        <% if (logs.length === 0) { %>
+        <tr>
+          <td colspan="4" class="text-center py-5">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="1.5" style="margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+            <div style="color:var(--text-2);font-weight:500;">No activity recorded</div>
+            <div style="font-size:12px;color:var(--text-3);margin-top:4px;">Actions performed in the admin will appear here.</div>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% if (pagination.totalPages > 1) { %>
+<nav style="display:flex;justify-content:center;margin-top:16px;">
+  <ul style="display:flex;gap:4px;list-style:none;padding:0;margin:0;">
+    <% if (pagination.hasPrev) { %>
+    <li><a href="/2ef65f179f12439e317a23628b016653/activity?page=<%= pagination.page - 1 %>&user=<%= encodeURIComponent(filterUser) %>&action=<%= encodeURIComponent(filterAction) %>&q=<%= encodeURIComponent(query) %>" class="btn btn-outline-secondary btn-sm">‹</a></li>
+    <% } %>
+    <% for (var i = Math.max(1, pagination.page - 2); i <= Math.min(pagination.totalPages, pagination.page + 2); i++) { %>
+    <li><a href="/2ef65f179f12439e317a23628b016653/activity?page=<%= i %>&user=<%= encodeURIComponent(filterUser) %>&action=<%= encodeURIComponent(filterAction) %>&q=<%= encodeURIComponent(query) %>" class="btn btn-sm" style="background:<%= i === pagination.page ? 'var(--gold)' : 'transparent' %>;color:<%= i === pagination.page ? '#fff' : 'var(--text)' %>;border:1px solid <%= i === pagination.page ? 'var(--gold)' : 'var(--border-light)' %>;"><%= i %></a></li>
+    <% } %>
+    <% if (pagination.hasNext) { %>
+    <li><a href="/2ef65f179f12439e317a23628b016653/activity?page=<%= pagination.page + 1 %>&user=<%= encodeURIComponent(filterUser) %>&action=<%= encodeURIComponent(filterAction) %>&q=<%= encodeURIComponent(query) %>" class="btn btn-outline-secondary btn-sm">›</a></li>
+    <% } %>
+  </ul>
+</nav>
+<% } %>
+
+<%- include('layout-end') %>

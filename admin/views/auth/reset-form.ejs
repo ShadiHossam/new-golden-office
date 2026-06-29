@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set New Password — NGO Admin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #f4f6f9; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .wrap { width: 100%; max-width: 380px; padding: 0 20px; }
+    .card { background: #fff; border-radius: 18px; padding: 38px 34px; border: 1px solid rgba(0,0,0,0.07); box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+    h1 { font-size: 20px; font-weight: 700; color: #111318; margin-bottom: 5px; }
+    .sub { color: #8b93a7; font-size: 13px; margin-bottom: 24px; }
+    label { display: block; font-size: 12.5px; font-weight: 550; color: #4a5068; margin-bottom: 5px; }
+    input { width: 100%; padding: 10px 13px; border: 1.5px solid rgba(0,0,0,0.09); border-radius: 9px; font-size: 13.5px; font-family: inherit; color: #111318; outline: none; transition: all 0.15s; margin-bottom: 16px; }
+    input:focus { border-color: #b8860b; box-shadow: 0 0 0 3px rgba(184,134,11,0.1); }
+    .btn { width: 100%; padding: 11px; background: linear-gradient(135deg, #b8860b, #d4a017); color: #fff; border: none; border-radius: 9px; font-size: 13.5px; font-weight: 600; font-family: inherit; cursor: pointer; }
+    .error { background: #fef2f2; color: #dc2626; font-size: 12.5px; padding: 9px 13px; border-radius: 8px; margin-bottom: 16px; border: 1px solid #fecaca; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>New Password</h1>
+      <p class="sub">Choose a password of at least 5 characters.</p>
+      <% if (typeof error !== 'undefined' && error) { %><div class="error"><%= error %></div><% } %>
+      <form method="POST" action="/2ef65f179f12439e317a23628b016653/reset-password/<%= token %>">
+        <label>New Password</label>
+        <input type="password" name="new_password" placeholder="••••••••••••" required minlength="5" autofocus autocomplete="new-password">
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" placeholder="••••••••••••" required minlength="5" autocomplete="new-password">
+        <button type="submit" class="btn">Set New Password</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

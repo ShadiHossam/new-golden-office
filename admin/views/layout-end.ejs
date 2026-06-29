@@ -1,0 +1,39 @@
+      </div><!-- /content-body -->
+    </main>
+  </div>
+
+  <script nonce="<%= cspNonce %>">
+    // User dropdown toggle
+    const menuToggle = document.getElementById('user-menu-toggle');
+    const dropdown = document.getElementById('user-dropdown');
+    if (menuToggle && dropdown) {
+      menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+      document.addEventListener('click', function() { dropdown.classList.remove('open'); });
+    }
+
+    // Auto-dismiss toast
+    const toast = document.querySelector('.toast-msg');
+    if (toast) {
+      setTimeout(() => { toast.parentElement && (toast.parentElement.style.display = 'none'); }, 4500);
+    }
+
+    // Confirm delete — handle both forms and buttons
+    document.querySelectorAll('form[data-confirm]').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        if (!confirm(this.dataset.confirm || 'Are you sure?')) e.preventDefault();
+      });
+    });
+    document.querySelectorAll('button[data-confirm], a[data-confirm]').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        if (!confirm(this.dataset.confirm || 'Are you sure?')) e.preventDefault();
+      });
+    });
+
+    // Mark active nav
+    const currentPath = window.location.pathname.replace('/2ef65f179f12439e317a23628b016653', '') || '/';
+  </script>
+</body>
+</html>

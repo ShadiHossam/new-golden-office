@@ -1,0 +1,85 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<!-- Summary cards -->
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:var(--text);"><%= totalFiles %></div>
+      <div style="font-size:12px;color:var(--text-3);">HTML Files</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:var(--text);"><%= totalChecked %></div>
+      <div style="font-size:12px;color:var(--text-3);">Links Checked</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:<%= brokenCount === 0 ? '#1e8a3e' : '#dc3545' %>;"><%= brokenCount %></div>
+      <div style="font-size:12px;color:var(--text-3);">Broken Links</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card p-3 text-center">
+      <div style="font-size:28px;font-weight:800;color:<%= brokenCount === 0 ? '#1e8a3e' : '#e67e22' %>;"><%= brokenCount === 0 ? '100' : Math.round((totalChecked - brokenCount) / totalChecked * 100) %>%</div>
+      <div style="font-size:12px;color:var(--text-3);">Links OK</div>
+    </div>
+  </div>
+</div>
+
+<% if (brokenCount === 0) { %>
+<div class="card">
+  <div class="card-body text-center" style="padding:48px;">
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#1e8a3e" stroke-width="1.5" style="margin-bottom:14px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+    <div style="font-size:16px;font-weight:700;color:#1e8a3e;margin-bottom:6px;">All links are working!</div>
+    <div style="font-size:13px;color:var(--text-3);">No broken internal links found across <%= totalFiles %> HTML files.</div>
+  </div>
+</div>
+<% } else { %>
+
+<div class="card">
+  <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+    <strong style="color:#dc3545;"><%= brokenCount %> Broken Link<%= brokenCount !== 1 ? 's' : '' %> Found</strong>
+    <span style="font-size:12px;color:var(--text-3);">These internal links point to files that do not exist.</span>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-hover" style="margin:0;">
+      <thead>
+        <tr style="font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-3);">
+          <th style="padding:10px 14px;">Source File</th>
+          <th style="padding:10px 14px;width:30px;"></th>
+          <th style="padding:10px 14px;">Broken Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% broken.forEach(function(b) { %>
+        <tr>
+          <td style="padding:10px 14px;"><code style="font-size:11.5px;color:var(--text-2);"><%= b.source %></code></td>
+          <td style="padding:10px 14px;color:var(--text-3);">→</td>
+          <td style="padding:10px 14px;"><code style="font-size:11.5px;color:#dc3545;"><%= b.target %></code></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card mt-3" style="border-left:3px solid var(--gold);">
+  <div class="card-body" style="font-size:12.5px;color:var(--text-2);line-height:1.8;">
+    <strong style="color:var(--text);">How to fix:</strong> For each broken link, either update the <code>href</code> in the source file to point to an existing page, or add a redirect from the broken target to the correct page using the
+    <a href="/2ef65f179f12439e317a23628b016653/redirects" style="color:var(--gold);font-weight:600;">Redirects Manager</a>.
+  </div>
+</div>
+
+<% } %>
+
+<div style="margin-top:20px;display:flex;gap:10px;align-items:center;">
+  <a href="/2ef65f179f12439e317a23628b016653/seo/link-checker" class="btn btn-outline-secondary btn-sm">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px;"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+    Re-scan
+  </a>
+  <a href="/2ef65f179f12439e317a23628b016653/seo" class="btn btn-outline-secondary btn-sm">← Back to SEO</a>
+</div>
+
+<%- include('../layout-end') %>

@@ -1,0 +1,33 @@
+{
+  "siteName": "نيو جولدن أوفيس",
+  "siteUrl": "https://newgoldenoffice.com",
+  "locale": "ar-EG",
+  "contact": {
+    "email": "",
+    "phone": "+201227392074",
+    "whatsapp": "+201227392074",
+    "address": "26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية"
+  },
+  "business": {
+    "openingHours": {
+      "days": "السبت - الخميس",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "foundingYear": "1990"
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "twitter": ""
+  },
+  "tracking": {
+    "gtmId": "",
+    "gtmEnabled": false,
+    "ga4Id": "",
+    "ga4Enabled": false,
+    "clarityId": "",
+    "clarityEnabled": false
+  }
+}

@@ -1,0 +1,188 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<form method="POST" action="/2ef65f179f12439e317a23628b016653/settings">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+  <div class="row g-3">
+    <div class="col-lg-8">
+
+      <!-- Business Info -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <strong>Business Information</strong>
+        </div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-mb">
+              <label class="form-label">Site Name (Arabic)</label>
+              <input type="text" name="siteName" class="form-control" value="<%= settings.siteName || '' %>" placeholder="نيو جولدن أوفيس" dir="rtl">
+            </div>
+            <div class="form-mb">
+              <label class="form-label">Site URL</label>
+              <input type="url" name="siteUrl" class="form-control" value="<%= settings.siteUrl || '' %>" placeholder="https://newgoldenoffice.com">
+            </div>
+            <div class="form-mb">
+              <label class="form-label">Phone</label>
+              <input type="text" name="contact_phone" class="form-control" value="<%= (settings.contact || {}).phone || '' %>" placeholder="+201227392074">
+            </div>
+            <div class="form-mb">
+              <label class="form-label">WhatsApp</label>
+              <input type="text" name="contact_whatsapp" class="form-control" value="<%= (settings.contact || {}).whatsapp || '' %>" placeholder="+201227392074">
+            </div>
+            <div class="form-mb" style="grid-column:1/-1;">
+              <label class="form-label">Email</label>
+              <input type="email" name="contact_email" class="form-control" value="<%= (settings.contact || {}).email || '' %>" placeholder="info@newgoldenoffice.com">
+            </div>
+            <div class="form-mb" style="grid-column:1/-1;">
+              <label class="form-label">Address (Arabic)</label>
+              <input type="text" name="contact_address" class="form-control" value="<%= (settings.contact || {}).address || '' %>" placeholder="26 عبد المنعم سند، الإسكندرية" dir="rtl">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opening Hours -->
+      <div class="card mb-3">
+        <div class="card-header"><strong>Opening Hours</strong></div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+            <div>
+              <label class="form-label">Working Days</label>
+              <input type="text" name="hours_days" class="form-control" value="<%= ((settings.business || {}).openingHours || {}).days || '' %>" placeholder="السبت - الخميس" dir="rtl">
+            </div>
+            <div>
+              <label class="form-label">Opens</label>
+              <input type="time" name="hours_opens" class="form-control" value="<%= ((settings.business || {}).openingHours || {}).opens || '09:00' %>">
+            </div>
+            <div>
+              <label class="form-label">Closes</label>
+              <input type="time" name="hours_closes" class="form-control" value="<%= ((settings.business || {}).openingHours || {}).closes || '18:00' %>">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="card mb-3">
+        <div class="card-header"><strong>Social Media Links</strong></div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <label class="form-label">Facebook</label>
+              <input type="url" name="social_facebook" class="form-control" value="<%= (settings.social || {}).facebook || '' %>" placeholder="https://facebook.com/…">
+            </div>
+            <div>
+              <label class="form-label">Instagram</label>
+              <input type="url" name="social_instagram" class="form-control" value="<%= (settings.social || {}).instagram || '' %>" placeholder="https://instagram.com/…">
+            </div>
+            <div>
+              <label class="form-label">YouTube</label>
+              <input type="url" name="social_youtube" class="form-control" value="<%= (settings.social || {}).youtube || '' %>" placeholder="https://youtube.com/…">
+            </div>
+            <div>
+              <label class="form-label">Twitter / X</label>
+              <input type="url" name="social_twitter" class="form-control" value="<%= (settings.social || {}).twitter || '' %>" placeholder="https://x.com/…">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics & Tracking -->
+      <div class="card">
+        <div class="card-header"><strong>Analytics & Tracking</strong></div>
+        <div class="card-body">
+
+          <!-- GA4 -->
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border-light);">
+            <div>
+              <div style="font-weight:550;font-size:13px;margin-bottom:2px;">Google Analytics 4</div>
+              <div style="font-size:12px;color:var(--text-3);">Measurement ID (e.g., G-XXXXXXX)</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <input type="text" name="ga4_id" class="form-control" value="<%= (settings.tracking || {}).ga4Id || '' %>" placeholder="G-XXXXXXXX" style="width:180px;">
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;white-space:nowrap;">
+                <input type="checkbox" name="ga4_enabled" value="on" <%= (settings.tracking || {}).ga4Enabled ? 'checked' : '' %> style="width:16px;height:16px;accent-color:var(--gold);">
+                Enabled
+              </label>
+            </div>
+          </div>
+
+          <!-- GTM -->
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border-light);">
+            <div>
+              <div style="font-weight:550;font-size:13px;margin-bottom:2px;">Google Tag Manager</div>
+              <div style="font-size:12px;color:var(--text-3);">Container ID (e.g., GTM-XXXXXX)</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <input type="text" name="gtm_id" class="form-control" value="<%= (settings.tracking || {}).gtmId || '' %>" placeholder="GTM-XXXXXXX" style="width:180px;">
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;white-space:nowrap;">
+                <input type="checkbox" name="gtm_enabled" value="on" <%= (settings.tracking || {}).gtmEnabled ? 'checked' : '' %> style="width:16px;height:16px;accent-color:var(--gold);">
+                Enabled
+              </label>
+            </div>
+          </div>
+
+          <!-- Clarity -->
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0;">
+            <div>
+              <div style="font-weight:550;font-size:13px;margin-bottom:2px;">Microsoft Clarity</div>
+              <div style="font-size:12px;color:var(--text-3);">Project ID (e.g., abc123xyz)</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <input type="text" name="clarity_id" class="form-control" value="<%= (settings.tracking || {}).clarityId || '' %>" placeholder="xxxxxxxxx" style="width:180px;">
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;white-space:nowrap;">
+                <input type="checkbox" name="clarity_enabled" value="on" <%= (settings.tracking || {}).clarityEnabled ? 'checked' : '' %> style="width:16px;height:16px;accent-color:var(--gold);">
+                Enabled
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar info -->
+    <div class="col-lg-4">
+      <div class="card" style="position:sticky;top:74px;">
+        <div class="card-header"><strong>Site Info</strong></div>
+        <div class="card-body" style="font-size:13px;">
+          <div style="margin-bottom:14px;">
+            <div class="form-label" style="margin-bottom:2px;">Contact</div>
+            <div style="color:var(--text-2);">
+              <div>📞 <%= (settings.contact || {}).phone || 'Not set' %></div>
+              <div>💬 <%= (settings.contact || {}).whatsapp || 'Not set' %></div>
+              <div>📧 <%= (settings.contact || {}).email || 'Not set' %></div>
+            </div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div class="form-label" style="margin-bottom:2px;">Hours</div>
+            <div style="color:var(--text-2);" dir="rtl">
+              <%= ((settings.business || {}).openingHours || {}).days || '—' %><br>
+              <%= ((settings.business || {}).openingHours || {}).opens || '' %> – <%= ((settings.business || {}).openingHours || {}).closes || '' %>
+            </div>
+          </div>
+          <div>
+            <div class="form-label" style="margin-bottom:2px;">Tracking</div>
+            <div style="color:var(--text-2);">
+              <% var t = settings.tracking || {}; %>
+              GA4: <span class="badge <%= t.ga4Enabled ? 'badge-success' : 'badge-secondary' %>"><%= t.ga4Enabled ? 'ON' : 'OFF' %></span><br>
+              GTM: <span class="badge <%= t.gtmEnabled ? 'badge-success' : 'badge-secondary' %>"><%= t.gtmEnabled ? 'ON' : 'OFF' %></span><br>
+              Clarity: <span class="badge <%= t.clarityEnabled ? 'badge-success' : 'badge-secondary' %>"><%= t.clarityEnabled ? 'ON' : 'OFF' %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;gap:12px;">
+    <button type="submit" class="btn btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+      Save Settings
+    </button>
+    <a href="/2ef65f179f12439e317a23628b016653" class="btn btn-outline-secondary">Cancel</a>
+  </div>
+</form>
+
+<%- include('../layout-end') %>
