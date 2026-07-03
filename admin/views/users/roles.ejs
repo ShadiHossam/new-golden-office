@@ -1,0 +1,90 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<div class="card mb-3">
+  <div class="card-header"><strong>Roles</strong></div>
+  <div class="card-body" style="padding:0;">
+    <table class="table table-hover">
+      <thead>
+        <tr><th>Role</th><th>Description</th><th>Users</th><th></th></tr>
+      </thead>
+      <tbody>
+        <% roles.forEach(function(r) { %>
+        <tr>
+          <td style="font-weight:550;"><%= r.label %> <% if (r.builtin) { %><span class="badge badge-secondary fs-12" style="margin-left:4px;">built-in</span><% } %></td>
+          <td class="text-muted fs-12"><%= r.description %></td>
+          <td><%= usersByRole[r.value] || 0 %></td>
+          <td class="text-end">
+            <a href="#role-<%= r.value %>" class="btn btn-outline-primary btn-sm">Edit Permissions</a>
+            <% if (!r.builtin) { %>
+            <form method="POST" action="/2ef65f179f12439e317a23628b016653/users/roles/<%= r.value %>/delete" style="display:inline;" data-confirm="Delete role &quot;<%= r.label %>&quot;?">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <% if ((usersByRole[r.value] || 0) > 0) { %>
+              <select name="reassignTo" class="form-select" style="display:inline-block;width:auto;font-size:11px;padding:3px 6px;">
+                <% roles.filter(function(x){return x.value !== r.value;}).forEach(function(x) { %>
+                <option value="<%= x.value %>">Move users to: <%= x.label %></option>
+                <% }); %>
+              </select>
+              <% } %>
+              <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+            </form>
+            <% } %>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header"><strong>Add Custom Role</strong></div>
+  <div class="card-body">
+    <form method="POST" action="/2ef65f179f12439e317a23628b016653/users/roles/new" style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <div style="flex:1;min-width:160px;">
+        <label class="form-label">Name</label>
+        <input type="text" name="label" class="form-control" placeholder="e.g. Content Reviewer" required>
+      </div>
+      <div style="flex:1;min-width:160px;">
+        <label class="form-label">Description</label>
+        <input type="text" name="description" class="form-control" placeholder="Optional">
+      </div>
+      <div style="min-width:160px;">
+        <label class="form-label">Seed permissions from</label>
+        <select name="basedOnRole" class="form-select">
+          <% roles.forEach(function(r) { %>
+          <option value="<%= r.value %>"><%= r.label %></option>
+          <% }); %>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Role</button>
+    </form>
+  </div>
+</div>
+
+<% roles.forEach(function(r) { %>
+<div class="card mb-3" id="role-<%= r.value %>">
+  <div class="card-header"><strong><%= r.label %> — Permissions</strong></div>
+  <div class="card-body">
+    <form method="POST" action="/2ef65f179f12439e317a23628b016653/users/roles/<%= r.value %>/save">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <% permissionGroups.forEach(function(group) { %>
+      <div class="settings-section">
+        <div class="settings-section-title"><%= group.label %></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 16px;">
+          <% group.permissions.forEach(function(perm) { %>
+          <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;cursor:pointer;padding:4px 0;">
+            <input type="checkbox" name="perm_<%= perm.key %>" <%= defaults[r.value][perm.key] ? 'checked' : '' %> style="width:16px;height:16px;accent-color:var(--gold);">
+            <%= perm.label %>
+          </label>
+          <% }); %>
+        </div>
+      </div>
+      <% }); %>
+      <button type="submit" class="btn btn-primary btn-sm mt-2">Save "<%= r.label %>" Permissions</button>
+    </form>
+  </div>
+</div>
+<% }); %>
+
+<%- include('../layout-end') %>

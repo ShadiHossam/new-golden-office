@@ -1,13 +1,14 @@
 const express = require('express');
 const { getSettings, saveSettings } = require('../lib/db');
 const { logActivity } = require('../lib/activity');
+const { requirePermission } = require('../lib/permissions');
 
 const router = express.Router();
 
 function trimStr(v) { return typeof v === 'string' ? v.trim() : ''; }
 function isOn(v) { return v === 'on' || v === true || v === 'true' || v === '1'; }
 
-router.get('/', (req, res) => {
+router.get('/', requirePermission('settings.view'), (req, res) => {
   const settings = getSettings();
   res.render('settings/index', {
     pageTitle: 'Settings',
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', requirePermission('settings.manage'), (req, res) => {
   const settings = getSettings();
 
   // Business info

@@ -29,44 +29,87 @@
           </a>
         </li>
 
-        <li class="sidebar-section-label">Content</li>
+        <% var perms = typeof permissions !== 'undefined' ? permissions : {}; %>
 
+        <% if (perms['pages.view'] || perms['seo.view'] || perms['media.view']) { %>
+        <li class="sidebar-section-label">Content</li>
+        <% } %>
+
+        <% if (perms['pages.view']) { %>
+        <li class="<%= currentPath.startsWith('/pages') ? 'active' : '' %>">
+          <a href="/2ef65f179f12439e317a23628b016653/pages" data-tooltip="Pages">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+            <span>Pages</span>
+          </a>
+        </li>
+        <% } %>
+
+        <% if (perms['seo.view']) { %>
         <li class="<%= currentPath.startsWith('/seo') ? 'active' : '' %>">
           <a href="/2ef65f179f12439e317a23628b016653/seo" data-tooltip="SEO Manager">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <span>SEO Manager</span>
           </a>
         </li>
+        <% } %>
 
+        <% if (perms['media.view']) { %>
         <li class="<%= currentPath.startsWith('/media') ? 'active' : '' %>">
           <a href="/2ef65f179f12439e317a23628b016653/media" data-tooltip="Media Library">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
             <span>Media Library</span>
           </a>
         </li>
+        <% } %>
 
+        <% if (perms['redirects.view'] || perms['calendar.view'] || perms['activity.view_own'] || perms['activity.view_all'] || perms['settings.view'] || perms['users.view']) { %>
         <li class="sidebar-section-label">Site</li>
+        <% } %>
 
+        <% if (perms['redirects.view']) { %>
         <li class="<%= currentPath.startsWith('/redirects') ? 'active' : '' %>">
           <a href="/2ef65f179f12439e317a23628b016653/redirects" data-tooltip="Redirects">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="15,10 20,15 15,20"/><path d="M4 4v7a4 4 0 004 4h12"/></svg>
             <span>Redirects</span>
           </a>
         </li>
+        <% } %>
 
+        <% if (perms['calendar.view']) { %>
+        <li class="<%= currentPath.startsWith('/calendar') ? 'active' : '' %>">
+          <a href="/2ef65f179f12439e317a23628b016653/calendar" data-tooltip="Calendar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Calendar</span>
+          </a>
+        </li>
+        <% } %>
+
+        <% if (perms['activity.view_own'] || perms['activity.view_all']) { %>
         <li class="<%= currentPath.startsWith('/activity') ? 'active' : '' %>">
           <a href="/2ef65f179f12439e317a23628b016653/activity" data-tooltip="Activity Log">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
             <span>Activity Log</span>
           </a>
         </li>
+        <% } %>
 
+        <% if (perms['users.view']) { %>
+        <li class="<%= currentPath.startsWith('/users') ? 'active' : '' %>">
+          <a href="/2ef65f179f12439e317a23628b016653/users" data-tooltip="Users">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <span>Users</span>
+          </a>
+        </li>
+        <% } %>
+
+        <% if (perms['settings.view']) { %>
         <li class="<%= currentPath.startsWith('/settings') ? 'active' : '' %>">
           <a href="/2ef65f179f12439e317a23628b016653/settings" data-tooltip="Settings">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
             <span>Settings</span>
           </a>
         </li>
+        <% } %>
       </ul>
 
       <div class="sidebar-footer">
@@ -99,6 +142,11 @@
             <h1 class="page-title"><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Dashboard' %></h1>
           </div>
           <div class="header-right">
+            <button type="button" class="cmdk-trigger" id="cmdk-trigger" data-tooltip="Command palette">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Search</span>
+              <kbd>&#8984;K</kbd>
+            </button>
             <div class="header-actions-bar"><%- typeof headerActions !== 'undefined' && headerActions ? headerActions : '' %></div>
             <div class="header-user-menu">
               <button type="button" class="header-avatar" id="user-menu-toggle">
@@ -107,7 +155,7 @@
               <div class="header-user-dropdown" id="user-dropdown">
                 <div class="user-dropdown-info">
                   <strong><%= user %></strong>
-                  <span class="user-dropdown-role">Administrator</span>
+                  <span class="user-dropdown-role"><%= typeof userRoleLabel !== 'undefined' ? userRoleLabel : 'User' %></span>
                 </div>
                 <div class="user-dropdown-divider"></div>
                 <a href="/2ef65f179f12439e317a23628b016653/password" class="user-dropdown-item">

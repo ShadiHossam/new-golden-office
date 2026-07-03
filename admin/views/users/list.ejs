@@ -1,0 +1,66 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<div class="card">
+  <% if (users.length === 0) { %>
+  <div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+    <p>No users yet.</p>
+  </div>
+  <% } else { %>
+  <div style="overflow-x:auto;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Role</th>
+          <th>Overrides</th>
+          <th>Created</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(u) {
+          var roleInfo = roles.find(function(r) { return r.value === u.role; });
+        %>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:30px;height:30px;border-radius:var(--r);background:linear-gradient(135deg,var(--gold) 0%,#f0c040 100%);display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">
+                <%= u.username.charAt(0).toUpperCase() %>
+              </div>
+              <div style="font-weight:550;"><%= u.username %></div>
+            </div>
+          </td>
+          <td>
+            <span class="badge <%= u.role === 'admin' ? 'badge-gold' : (u.role === 'editor' ? 'badge-info' : 'badge-secondary') %>">
+              <%= roleInfo ? roleInfo.label : u.role %>
+            </span>
+          </td>
+          <td>
+            <% if (u.overrideCount > 0) { %>
+            <span class="badge badge-warning"><%= u.overrideCount %> custom</span>
+            <% } else { %>
+            <span class="text-muted fs-12">—</span>
+            <% } %>
+          </td>
+          <td class="text-muted fs-12"><%= new Date(u.created_at).toLocaleDateString() %></td>
+          <td class="text-end">
+            <% if (permissions && permissions['users.manage']) { %>
+            <a href="/2ef65f179f12439e317a23628b016653/users/<%= u.id %>/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+            <% if (u.id !== currentUserId) { %>
+            <form method="POST" action="/2ef65f179f12439e317a23628b016653/users/<%= u.id %>/delete" style="display:inline;" data-confirm="Delete user &quot;<%= u.username %>&quot;? This cannot be undone.">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+            </form>
+            <% } %>
+            <% } %>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+</div>
+
+<%- include('../layout-end') %>

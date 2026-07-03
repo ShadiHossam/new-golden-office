@@ -1,10 +1,19 @@
 const express = require('express');
 const { getActivityPaged, getActivityMeta, getActivity } = require('../lib/activity');
+const { hasPermission } = require('../lib/permissions');
 
 const router = express.Router();
 
+function requireActivityAccess(req, res, next) {
+  if (hasPermission(req.currentUser, 'activity.view_all') || hasPermission(req.currentUser, 'activity.view_own')) return next();
+  req.flash('danger', 'You do not have permission to access this feature.');
+  res.redirect('/2ef65f179f12439e317a23628b016653');
+}
+router.use(requireActivityAccess);
+
 router.get('/', (req, res) => {
-  const filterUser = req.query.user || 'all';
+  const canViewAll = hasPermission(req.currentUser, 'activity.view_all');
+  const filterUser = canViewAll ? (req.query.user || 'all') : req.currentUser.username;
   const filterAction = req.query.action || 'all';
   const query = req.query.q || '';
   const page = parseInt(req.query.page, 10) || 1;
@@ -28,7 +37,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/export', (req, res) => {
-  const filterUser = req.query.user || 'all';
+  const canViewAll = hasPermission(req.currentUser, 'activity.view_all');
+  const filterUser = canViewAll ? (req.query.user || 'all') : req.currentUser.username;
   const filterAction = req.query.action || 'all';
   const query = req.query.q || '';
 

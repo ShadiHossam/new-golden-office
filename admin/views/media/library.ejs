@@ -40,7 +40,7 @@
   <% media.forEach(function(m) { %>
   <div class="media-card" data-id="<%= m.id %>" data-url="/images/<%= m.filename %>" data-filename="<%= (m.original_name || m.filename).replace(/\"/g,'&quot;') %>" data-size="<%= m.size || 0 %>" data-date="<%= m.created_at %>" data-alt="<%= (m.alt || '').replace(/\"/g,'&quot;') %>" data-title="<%= (m.title || '').replace(/\"/g,'&quot;') %>" data-caption="<%= (m.caption || '').replace(/\"/g,'&quot;') %>">
     <div class="media-card-check" title="Select"></div>
-    <img src="/2ef65f179f12439e317a23628b016653/images/<%= m.filename %>" alt="<%= m.alt || m.original_name || m.filename %>" class="media-thumb" loading="lazy" onerror="this.style.background='#f4f6f9';this.style.minHeight='120px';">
+    <img src="/2ef65f179f12439e317a23628b016653<%= m.thumb_url || '/images/' + m.filename %>" alt="<%= m.alt || m.original_name || m.filename %>" class="media-thumb" loading="lazy" onerror="this.onerror=null;this.src='/2ef65f179f12439e317a23628b016653/images/<%= m.filename %>';">
     <div class="media-info">
       <div class="media-filename" title="<%= m.original_name || m.filename %>"><%= m.original_name || m.filename %></div>
       <div class="media-size"><%= m.size ? Math.round(m.size / 1024) + ' KB' : '' %><% if (m.size && m.created_at) { %> · <% } %><%= m.created_at ? new Date(m.created_at).toLocaleDateString('en-US', {month:'short',day:'numeric'}) : '' %></div>

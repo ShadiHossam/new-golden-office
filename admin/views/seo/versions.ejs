@@ -1,0 +1,59 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<div class="card mb-3">
+  <div class="card-header"><strong>Current Version</strong></div>
+  <div class="card-body" style="font-size:12.5px;">
+    <div style="margin-bottom:6px;"><span class="text-muted">Title:</span> <span dir="rtl" style="unicode-bidi:isolate;"><%= page.seo_title || '—' %></span></div>
+    <div><span class="text-muted">Description:</span> <span dir="rtl" style="unicode-bidi:isolate;"><%= page.meta_description || '—' %></span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header"><strong>History</strong> <span class="text-muted fs-12" style="font-weight:400;">(<%= versions.length %> saved version<%= versions.length !== 1 ? 's' : '' %>, most recent first)</span></div>
+  <% if (versions.length === 0) { %>
+  <div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 106 5.3L3 8"/><path d="M12 7v5l4 2"/></svg>
+    <p>No edits recorded yet. A snapshot is saved automatically each time this page's SEO is updated.</p>
+  </div>
+  <% } else { %>
+  <div style="overflow-x:auto;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Saved</th>
+          <th>By</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% versions.forEach(function(v) { %>
+        <tr>
+          <td class="fs-12" style="white-space:nowrap;"><%= new Date(v.saved_at).toLocaleString() %></td>
+          <td><span class="badge badge-secondary"><%= v.saved_by %></span></td>
+          <td style="max-width:220px;">
+            <div dir="rtl" style="unicode-bidi:isolate;font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><%= v.seo_title || '—' %></div>
+          </td>
+          <td style="max-width:280px;">
+            <div dir="rtl" style="unicode-bidi:isolate;font-size:12px;color:var(--text-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><%= v.meta_description || '—' %></div>
+          </td>
+          <td class="text-end">
+            <form method="POST" action="/2ef65f179f12439e317a23628b016653/seo/<%= page.id %>/versions/<%= v.id %>/restore" style="display:inline;" data-confirm="Restore SEO fields to the version saved <%= new Date(v.saved_at).toLocaleString() %>? The current values will be saved to history first so you can undo this too.">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button type="submit" class="btn btn-outline-primary btn-sm">Restore</button>
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+</div>
+
+<div style="margin-top:20px;">
+  <a href="/2ef65f179f12439e317a23628b016653/seo/<%= page.id %>/edit" class="btn btn-outline-secondary btn-sm">← Back to Editor</a>
+</div>
+
+<%- include('../layout-end') %>

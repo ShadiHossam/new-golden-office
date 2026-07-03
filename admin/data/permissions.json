@@ -1,0 +1,85 @@
+{
+  "roles": {
+    "admin": {
+      "pages.view": true,
+      "pages.create": true,
+      "pages.edit": true,
+      "pages.delete": true,
+      "pages.publish": true,
+      "seo.view": true,
+      "seo.edit": true,
+      "seo.link_checker": true,
+      "media.view": true,
+      "media.upload": true,
+      "media.delete": true,
+      "redirects.view": true,
+      "redirects.manage": true,
+      "calendar.view": true,
+      "activity.view_all": true,
+      "activity.view_own": true,
+      "users.view": true,
+      "users.manage": true,
+      "settings.view": true,
+      "settings.manage": true
+    },
+    "editor": {
+      "pages.view": true,
+      "pages.create": true,
+      "pages.edit": true,
+      "pages.delete": true,
+      "pages.publish": true,
+      "seo.view": true,
+      "seo.edit": true,
+      "seo.link_checker": true,
+      "media.view": true,
+      "media.upload": true,
+      "media.delete": true,
+      "redirects.view": true,
+      "redirects.manage": true,
+      "calendar.view": true,
+      "activity.view_all": false,
+      "activity.view_own": true,
+      "users.view": false,
+      "users.manage": false,
+      "settings.view": false,
+      "settings.manage": false
+    },
+    "viewer": {
+      "pages.view": true,
+      "pages.create": false,
+      "pages.edit": false,
+      "pages.delete": false,
+      "pages.publish": false,
+      "seo.view": true,
+      "seo.edit": false,
+      "seo.link_checker": false,
+      "media.view": true,
+      "media.upload": false,
+      "media.delete": false,
+      "redirects.view": true,
+      "redirects.manage": false,
+      "calendar.view": true,
+      "activity.view_all": false,
+      "activity.view_own": true,
+      "users.view": false,
+      "users.manage": false,
+      "settings.view": false,
+      "settings.manage": false
+    }
+  },
+  "role_meta": {
+    "admin": {
+      "label": "Administrator",
+      "description": "Full access to every feature"
+    },
+    "editor": {
+      "label": "Editor",
+      "description": "Manages pages, SEO, media and redirects"
+    },
+    "viewer": {
+      "label": "Viewer",
+      "description": "Read-only access to content areas"
+    }
+  },
+  "users": {}
+}

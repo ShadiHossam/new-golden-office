@@ -3,6 +3,11 @@
   </div>
 
   <script nonce="<%= cspNonce %>">
+    window.__ngoPermissions = <%- JSON.stringify(typeof permissions !== 'undefined' ? permissions : {}) %>;
+  </script>
+  <script src="/2ef65f179f12439e317a23628b016653/public/command-palette.js" nonce="<%= cspNonce %>"></script>
+
+  <script nonce="<%= cspNonce %>">
     // User dropdown toggle
     const menuToggle = document.getElementById('user-menu-toggle');
     const dropdown = document.getElementById('user-dropdown');

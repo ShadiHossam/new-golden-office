@@ -2,8 +2,11 @@ const express = require('express');
 const path = require('path');
 const { loadJson, saveJson } = require('../lib/db');
 const { logActivity } = require('../lib/activity');
+const { requirePermission } = require('../lib/permissions');
 
 const router = express.Router();
+const view = requirePermission('redirects.view');
+const manage = requirePermission('redirects.manage');
 const FILE = 'redirects.json';
 
 function getRedirects() { return loadJson(FILE); }
@@ -19,7 +22,7 @@ function normalizePath(raw) {
   return raw.startsWith('/') ? raw : '/' + raw;
 }
 
-router.get('/', (req, res) => {
+router.get('/', view, (req, res) => {
   const redirects = getRedirects();
   res.render('redirects/list', {
     pageTitle: 'Redirects',
@@ -30,7 +33,7 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', manage, (req, res) => {
   const from = normalizePath((req.body.from || '').trim());
   const to = normalizePath((req.body.to || '').trim());
   const status = parseInt(req.body.status, 10) || 301;
@@ -57,7 +60,7 @@ router.post('/', (req, res) => {
   res.redirect('/2ef65f179f12439e317a23628b016653/redirects');
 });
 
-router.post('/:id/edit', (req, res) => {
+router.post('/:id/edit', manage, (req, res) => {
   const id = parseInt(req.params.id, 10);
   const from = normalizePath((req.body.from || '').trim());
   const to = normalizePath((req.body.to || '').trim());
@@ -74,7 +77,7 @@ router.post('/:id/edit', (req, res) => {
   res.redirect('/2ef65f179f12439e317a23628b016653/redirects');
 });
 
-router.post('/:id/delete', (req, res) => {
+router.post('/:id/delete', manage, (req, res) => {
   const id = parseInt(req.params.id, 10);
   const list = getRedirects();
   const r = list.find(x => x.id === id);

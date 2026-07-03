@@ -4,8 +4,13 @@ const path = require('path');
 const fs = require('fs');
 const { addMedia, getMedia, saveMedia, deleteMedia, getMediaById } = require('../lib/db');
 const { logActivity } = require('../lib/activity');
+const { requirePermission, requirePermissionJson } = require('../lib/permissions');
+const { generateThumbnail, deleteThumbnail } = require('../lib/image-variants');
 
 const router = express.Router();
+const view = requirePermission('media.view');
+const uploadPerm = requirePermissionJson('media.upload');
+const delPerm = requirePermissionJson('media.delete');
 
 const IMAGES_DIR = path.join(__dirname, '..', '..', 'images');
 const ALLOWED_MIME = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
@@ -37,7 +42,7 @@ const upload = multer({
   }
 });
 
-router.get('/', (req, res) => {
+router.get('/', view, (req, res) => {
   const all = getMedia().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const search = req.query.q || '';
   const page = Math.max(1, parseInt(req.query.page, 10) || 1);
@@ -68,24 +73,28 @@ router.get('/', (req, res) => {
 });
 
 // AJAX upload — returns JSON
-router.post('/upload', upload.single('image'), (req, res) => {
+router.post('/upload', uploadPerm, upload.single('image'), async (req, res) => {
   if (!req.file) return res.json({ success: false, error: 'No file received.' });
+
+  const thumbUrl = await generateThumbnail(IMAGES_DIR, req.file.filename);
+
   const item = addMedia({
     filename: req.file.filename,
     original_name: req.file.originalname,
     mimetype: req.file.mimetype,
     size: req.file.size,
     url: `/images/${req.file.filename}`,
+    thumb_url: thumbUrl,
     alt: '',
     title: '',
     caption: ''
   });
   logActivity(req.session.username, 'Media uploaded', req.file.originalname);
-  res.json({ success: true, id: item.id, url: `/images/${req.file.filename}`, filename: req.file.filename });
+  res.json({ success: true, id: item.id, url: `/images/${req.file.filename}`, thumb_url: thumbUrl, filename: req.file.filename });
 });
 
 // Update alt/title/caption via API (lightbox save)
-router.post('/api/:id/update', (req, res) => {
+router.post('/api/:id/update', uploadPerm, (req, res) => {
   const id = parseInt(req.params.id, 10);
   const all = getMedia();
   const idx = all.findIndex(m => m.id === id);
@@ -98,7 +107,7 @@ router.post('/api/:id/update', (req, res) => {
 });
 
 // Bulk delete API
-router.post('/api/bulk-delete', (req, res) => {
+router.post('/api/bulk-delete', delPerm, (req, res) => {
   const ids = Array.isArray(req.body.ids) ? req.body.ids.map(Number) : [];
   if (!ids.length) return res.json({ success: false, error: 'No IDs provided.' });
   let deleted = 0;
@@ -107,6 +116,7 @@ router.post('/api/bulk-delete', (req, res) => {
     if (m) {
       const fp = path.join(IMAGES_DIR, m.filename);
       if (fs.existsSync(fp)) fs.unlinkSync(fp);
+      deleteThumbnail(IMAGES_DIR, m.filename);
       deleteMedia(id);
       deleted++;
     }
@@ -116,12 +126,13 @@ router.post('/api/bulk-delete', (req, res) => {
 });
 
 // Delete single file
-router.post('/:id/delete', (req, res) => {
+router.post('/:id/delete', requirePermission('media.delete'), (req, res) => {
   const id = parseInt(req.params.id, 10);
   const media = getMediaById(id);
   if (!media) { req.flash('danger', 'File not found.'); return res.redirect('/2ef65f179f12439e317a23628b016653/media'); }
   const filePath = path.join(IMAGES_DIR, media.filename);
   if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+  deleteThumbnail(IMAGES_DIR, media.filename);
   deleteMedia(id);
   logActivity(req.session.username, 'Media deleted', media.filename);
   req.flash('success', `"${media.filename}" deleted.`);
@@ -129,7 +140,7 @@ router.post('/:id/delete', (req, res) => {
 });
 
 // Legacy alt update
-router.post('/:id/alt', (req, res) => {
+router.post('/:id/alt', uploadPerm, (req, res) => {
   const id = parseInt(req.params.id, 10);
   const all = getMedia();
   const idx = all.findIndex(m => m.id === id);

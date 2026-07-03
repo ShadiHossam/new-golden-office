@@ -1,0 +1,92 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<form method="POST" action="<%= editUser ? '/2ef65f179f12439e317a23628b016653/users/' + editUser.id + '/edit' : '/2ef65f179f12439e317a23628b016653/users/new' %>">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+  <div class="row g-3">
+    <div class="col-lg-6">
+      <div class="card mb-3">
+        <div class="card-header"><strong>Account</strong></div>
+        <div class="card-body">
+          <div class="form-mb">
+            <label class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" value="<%= editUser ? editUser.username : '' %>" placeholder="jdoe" required minlength="3">
+          </div>
+          <div class="form-mb">
+            <label class="form-label"><%= editUser ? 'New Password (leave blank to keep current)' : 'Password' %></label>
+            <input type="password" name="password" class="form-control" placeholder="At least 12 characters" <%= editUser ? '' : 'required' %> minlength="12" autocomplete="new-password">
+          </div>
+          <div class="form-mb" style="margin-bottom:0;">
+            <label class="form-label">Role</label>
+            <select name="role" class="form-select">
+              <% roles.forEach(function(r) { %>
+              <option value="<%= r.value %>" <%= (editUser ? editUser.role : 'viewer') === r.value ? 'selected' : '' %>><%= r.label %></option>
+              <% }); %>
+            </select>
+            <div class="form-hint">Role determines the default permission set below. Individual permissions can still be overridden per user.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card" style="background:var(--surface-2);border-style:dashed;">
+        <div class="card-body" style="font-size:12.5px;color:var(--text-2);">
+          <strong style="display:block;margin-bottom:6px;color:var(--text);">How overrides work</strong>
+          Each permission below defaults to the selected role's setting (shown in the toggle). Choose <strong>Allow</strong> or <strong>Deny</strong> to override it for this user specifically, or leave it on <strong>Role Default</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-header"><strong>Permissions</strong></div>
+    <div class="card-body">
+      <% permissionGroups.forEach(function(group) { %>
+      <div class="settings-section">
+        <div class="settings-section-title"><%= group.label %></div>
+        <div style="overflow-x:auto;">
+          <table class="table" style="border-collapse:separate;border-spacing:0;">
+            <tbody>
+              <% group.permissions.forEach(function(perm) {
+                var roleDefault = effectivePerms[perm.key] === true;
+                var overrideVal = overrides.hasOwnProperty(perm.key) ? (overrides[perm.key] ? 'allow' : 'deny') : 'default';
+              %>
+              <tr>
+                <td style="padding:8px 12px;width:60%;"><%= perm.label %></td>
+                <td style="padding:8px 12px;">
+                  <div class="btn-group" style="display:inline-flex;border:1.5px solid rgba(0,0,0,0.09);border-radius:var(--r);overflow:hidden;">
+                    <label style="cursor:pointer;">
+                      <input type="radio" name="override_<%= perm.key %>" value="default" <%= overrideVal === 'default' ? 'checked' : '' %> style="display:none;" onchange="this.closest('.btn-group').querySelectorAll('span').forEach(s=>s.style.background='');this.nextElementSibling.style.background='var(--surface-3)';">
+                      <span style="padding:5px 10px;font-size:11.5px;display:inline-block;<%= overrideVal === 'default' ? 'background:var(--surface-3);' : '' %>">Role Default (<%= roleDefault ? 'Allow' : 'Deny' %>)</span>
+                    </label>
+                    <label style="cursor:pointer;border-left:1px solid rgba(0,0,0,0.09);">
+                      <input type="radio" name="override_<%= perm.key %>" value="allow" <%= overrideVal === 'allow' ? 'checked' : '' %> style="display:none;" onchange="this.closest('.btn-group').querySelectorAll('span').forEach(s=>s.style.background='');this.nextElementSibling.style.background='var(--green-soft)';">
+                      <span style="padding:5px 10px;font-size:11.5px;display:inline-block;color:#1a7a42;<%= overrideVal === 'allow' ? 'background:var(--green-soft);' : '' %>">Allow</span>
+                    </label>
+                    <label style="cursor:pointer;border-left:1px solid rgba(0,0,0,0.09);">
+                      <input type="radio" name="override_<%= perm.key %>" value="deny" <%= overrideVal === 'deny' ? 'checked' : '' %> style="display:none;" onchange="this.closest('.btn-group').querySelectorAll('span').forEach(s=>s.style.background='');this.nextElementSibling.style.background='var(--red-soft)';">
+                      <span style="padding:5px 10px;font-size:11.5px;display:inline-block;color:var(--red);<%= overrideVal === 'deny' ? 'background:var(--red-soft);' : '' %>">Deny</span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;gap:12px;">
+    <button type="submit" class="btn btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+      <%= editUser ? 'Save Changes' : 'Create User' %>
+    </button>
+    <a href="/2ef65f179f12439e317a23628b016653/users" class="btn btn-outline-secondary">Cancel</a>
+  </div>
+</form>
+
+<%- include('../layout-end') %>

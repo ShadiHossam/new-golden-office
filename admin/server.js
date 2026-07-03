@@ -15,7 +15,10 @@ const mediaRoutes = require('./routes/media');
 const settingsRoutes = require('./routes/settings');
 const activityRoutes = require('./routes/activity');
 const redirectsRoutes = require('./routes/redirects');
+const usersRoutes = require('./routes/users');
+const calendarRoutes = require('./routes/calendar');
 const { getUserById } = require('./lib/db');
+const { getEffectivePermissions, getAllRoles } = require('./lib/permissions');
 
 const app = express();
 const PORT = process.env.PORT || 4001;
@@ -130,6 +133,10 @@ function authRequired(req, res, next) {
     : req.flash('danger')[0]
     ? { type: 'danger', message: req.flash('danger')[0] }
     : null;
+  req.currentUser = user;
+  res.locals.permissions = getEffectivePermissions(user);
+  const roleInfo = getAllRoles().find(r => r.value === (user.role || 'viewer'));
+  res.locals.userRoleLabel = roleInfo ? roleInfo.label : (user.role || 'Viewer');
   next();
 }
 
@@ -174,6 +181,8 @@ app.use(`${ADMIN_PREFIX}/media`, mediaRoutes);
 app.use(`${ADMIN_PREFIX}/settings`, settingsRoutes);
 app.use(`${ADMIN_PREFIX}/activity`, activityRoutes);
 app.use(`${ADMIN_PREFIX}/redirects`, redirectsRoutes);
+app.use(`${ADMIN_PREFIX}/users`, usersRoutes);
+app.use(`${ADMIN_PREFIX}/calendar`, calendarRoutes);
 
 // Root redirect
 app.get('/', (req, res) => res.redirect(ADMIN_PREFIX));
