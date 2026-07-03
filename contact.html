@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تواصل مع نيو جولدن أوفيس — الإسكندرية | مصر</title>
   <meta name="description" content="تواصل مع نيو جولدن أوفيس في الإسكندرية. عنواننا: 26 عبد المنعم سند، الإبراهيمية، باب شرق. واتساب وهاتف: 01227392074">
+  <link rel="canonical" href="https://newgoldenoffice.com/contact.html">
   <meta name="keywords" content="تواصل نيو جولدن أوفيس، عنوان الإسكندرية، هاتف، واتساب، مستلزمات مكتبية إسكندرية">
   <meta property="og:title" content="تواصل مع نيو جولدن أوفيس — الإسكندرية">
   <meta property="og:description" content="تواصل مع نيو جولدن أوفيس في الإسكندرية. عنواننا: 26 عبد المنعم سند، الإبراهيمية، باب شرق. واتساب وهاتف: 01227392074">
+  <meta property="og:image" content="https://newgoldenoffice.com/images/hero-office.webp">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -442,10 +444,12 @@
                 </label>
                 <textarea id="message" name="message" placeholder="اكتب رسالتك أو استفسارك هنا..."></textarea>
               </div>
-              <button type="submit" class="form-submit-btn">
+              <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+              <button type="submit" class="form-submit-btn" id="formSubmitBtn">
                 <i class="fa-solid fa-paper-plane"></i>
                 إرسال الرسالة
               </button>
+              <p id="formErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:0.9rem"></p>
             </form>
             <div class="success-message" id="successMessage">
               <i class="fa-solid fa-circle-check"></i>
@@ -545,8 +549,35 @@
       e.preventDefault();
       const form = document.getElementById('contactForm');
       const successMsg = document.getElementById('successMessage');
-      form.style.display = 'none';
-      successMsg.style.display = 'block';
+      const errorMsg = document.getElementById('formErrorMessage');
+      const submitBtn = document.getElementById('formSubmitBtn');
+
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+
+      fetch('contact-handler.php', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(res => res.json().then(data => ({ ok: res.ok && data.ok, message: data.message })))
+        .then(({ ok, message }) => {
+          if (ok) {
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+          } else {
+            errorMsg.textContent = message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.';
+            errorMsg.style.display = 'block';
+          }
+        })
+        .catch(() => {
+          errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.';
+          errorMsg.style.display = 'block';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+        });
     }
 
     function toggleFaq(questionEl) {
