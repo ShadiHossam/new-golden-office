@@ -1,0 +1,165 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<% var isNew = !page; %>
+<% var p = page || { title:'', slug:'', breadcrumb_label:'', lead:'', body_html:'', seo_title:'', meta_description:'', meta_keywords:'', og_title:'', og_description:'', og_image:'', show_cta:false, status:'draft' }; %>
+
+<% if (p.status === 'published') { %>
+<div class="card mb-3" style="border-left:3px solid var(--green);">
+  <div class="card-body" style="font-size:12.5px;color:var(--text-2);display:flex;justify-content:space-between;align-items:center;">
+    <span>This page is <strong style="color:#1a7a42;">live</strong> at <code>/<%= p.slug %>.html</code>. Saving below republishes it immediately.</span>
+    <a href="/<%= p.slug %>.html" target="_blank" class="btn btn-outline-secondary btn-sm">View Live</a>
+  </div>
+</div>
+<% } %>
+
+<form method="POST" action="<%= isNew ? '/2ef65f179f12439e317a23628b016653/pages/new' : '/2ef65f179f12439e317a23628b016653/pages/' + p.id + '/edit' %>" id="page-form">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+  <input type="hidden" name="body_html" id="body_html_input">
+
+  <div class="row g-3">
+    <div class="col-lg-8">
+      <div class="card mb-3">
+        <div class="card-header"><strong>Page Basics</strong></div>
+        <div class="card-body">
+          <div class="form-mb">
+            <label class="form-label">Page Title (used as the H1)</label>
+            <input type="text" name="title" id="title-input" class="form-control" value="<%= p.title %>" placeholder="e.g. عروض الجمعة البيضاء" dir="rtl" required>
+          </div>
+          <div class="form-mb">
+            <label class="form-label">URL Slug <span style="color:var(--text-3);font-weight:400;">(English letters/numbers only — becomes /slug.html)</span></label>
+            <input type="text" name="slug" class="form-control" value="<%= p.slug %>" placeholder="e.g. black-friday-offer" <%= p.status === 'published' ? 'disabled' : '' %> style="direction:ltr;text-align:left;font-family:monospace;">
+            <% if (p.status === 'published') { %><div class="form-hint">Locked after publishing — changing it would orphan the live file.</div><% } %>
+          </div>
+          <div class="form-mb">
+            <label class="form-label">Breadcrumb Label <span style="color:var(--text-3);font-weight:400;">(shown in the small breadcrumb above the title; defaults to the title)</span></label>
+            <input type="text" name="breadcrumb_label" class="form-control" value="<%= p.breadcrumb_label %>" dir="rtl">
+          </div>
+          <div class="form-mb" style="margin-bottom:0;">
+            <label class="form-label">Lead Paragraph <span style="color:var(--text-3);font-weight:400;">(intro line under the title, optional)</span></label>
+            <textarea name="lead" class="form-control" rows="2" dir="rtl"><%= p.lead %></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-header"><strong>Page Content</strong></div>
+        <div class="card-body">
+          <div id="editor-toolbar" style="display:flex;flex-wrap:wrap;gap:4px;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid var(--border);">
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-cmd="bold" title="Bold"><b>B</b></button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-cmd="italic" title="Italic"><i>I</i></button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-block="h2" title="Heading">H2</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-block="h3" title="Subheading">H3</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-block="p" title="Paragraph">P</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-cmd="insertUnorderedList" title="Bullet list">• List</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-cmd="insertOrderedList" title="Numbered list">1. List</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-block="blockquote" title="Quote">"</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" id="link-btn" title="Insert link">🔗</button>
+            <button type="button" class="btn btn-outline-secondary btn-xs" data-cmd="removeFormat" title="Clear formatting">Clear</button>
+          </div>
+          <div id="body-editor" contenteditable="true" dir="rtl"
+               style="min-height:320px;padding:14px 16px;border:1.5px solid rgba(0,0,0,0.09);border-radius:var(--r);font-size:14.5px;line-height:1.8;outline:none;"
+          ><%- p.body_html || '<p>اكتب محتوى الصفحة هنا…</p>' %></div>
+          <div class="form-hint">This becomes the main content section of the page, styled exactly like the rest of the site.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><strong>SEO Meta Tags</strong></div>
+        <div class="card-body">
+          <div class="form-mb">
+            <label class="form-label">SEO Title <span style="color:var(--text-3);font-weight:400;">(leave blank to use the page title)</span></label>
+            <input type="text" name="seo_title" class="form-control" value="<%= p.seo_title %>" dir="rtl">
+          </div>
+          <div class="form-mb">
+            <label class="form-label">Meta Description</label>
+            <textarea name="meta_description" class="form-control" rows="3" dir="rtl"><%= p.meta_description %></textarea>
+          </div>
+          <div class="form-mb" style="margin-bottom:0;">
+            <label class="form-label">Meta Keywords</label>
+            <input type="text" name="meta_keywords" class="form-control" value="<%= p.meta_keywords %>" dir="rtl">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card mb-3" style="position:sticky;top:74px;">
+        <div class="card-header"><strong>Publish</strong></div>
+        <div class="card-body">
+          <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;cursor:pointer;margin-bottom:14px;">
+            <input type="checkbox" name="show_cta" <%= p.show_cta ? 'checked' : '' %> style="width:16px;height:16px;accent-color:var(--gold);">
+            Show "Contact us" banner at the bottom
+          </label>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-bottom:8px;">
+            <%= isNew ? 'Create Draft' : (p.status === 'published' ? 'Save & Republish' : 'Save Draft') %>
+          </button>
+          <% if (!isNew) { %>
+          <a href="/2ef65f179f12439e317a23628b016653/pages" class="btn btn-outline-secondary" style="width:100%;">Cancel</a>
+          <% } %>
+        </div>
+      </div>
+
+      <% if (!isNew) { %>
+      <% if (p.status !== 'published') { %>
+      <div class="card mb-3" style="border-left:3px solid var(--gold);">
+        <div class="card-body">
+          <div style="font-size:12.5px;color:var(--text-2);margin-bottom:10px;">Publishing writes a real <code>.html</code> file to the site and adds it to the SEO Manager.</div>
+          <form method="POST" action="/2ef65f179f12439e317a23628b016653/pages/<%= p.id %>/publish">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button type="submit" class="btn" style="width:100%;background:var(--green);color:#fff;">Publish Page</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+
+      <div class="card" style="border-left:3px solid var(--red);">
+        <div class="card-body">
+          <div style="font-size:12.5px;color:var(--text-2);margin-bottom:10px;">Deleting removes this page from the admin. <% if (p.status === 'published') { %>Optionally take the live file down too.<% } %></div>
+          <form method="POST" action="/2ef65f179f12439e317a23628b016653/pages/<%= p.id %>/delete" data-confirm="Delete &quot;<%= p.title %>&quot;? This cannot be undone.">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <% if (p.status === 'published') { %>
+            <label style="display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer;margin-bottom:10px;color:var(--red);">
+              <input type="checkbox" name="remove_file" style="width:16px;height:16px;accent-color:var(--red);">
+              Also delete the live file (/<%= p.slug %>.html)
+            </label>
+            <% } %>
+            <button type="submit" class="btn btn-outline-danger" style="width:100%;">Delete Page</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</form>
+
+<script nonce="<%= cspNonce %>">
+(function() {
+  var editor = document.getElementById('body-editor');
+  var form = document.getElementById('page-form');
+  var bodyInput = document.getElementById('body_html_input');
+  var titleInput = document.getElementById('title-input');
+
+  document.querySelectorAll('#editor-toolbar [data-cmd]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      editor.focus();
+      document.execCommand(this.dataset.cmd, false, null);
+    });
+  });
+  document.querySelectorAll('#editor-toolbar [data-block]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      editor.focus();
+      document.execCommand('formatBlock', false, this.dataset.block);
+    });
+  });
+  document.getElementById('link-btn').addEventListener('click', function() {
+    var url = prompt('Link URL:', 'https://');
+    if (url) { editor.focus(); document.execCommand('createLink', false, url); }
+  });
+
+  form.addEventListener('submit', function() {
+    bodyInput.value = editor.innerHTML;
+  });
+})();
+</script>
+
+<%- include('../layout-end') %>
