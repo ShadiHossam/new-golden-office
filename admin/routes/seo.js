@@ -87,8 +87,11 @@ router.post('/:id/update', edit, (req, res) => {
   const page = getSeoPageById(id);
   if (!page) return res.redirect('/2ef65f179f12439e317a23628b016653/seo');
 
-  // Snapshot the pre-edit state so this change can be undone later
-  saveVersion(page, req.session.username);
+  // Snapshot the pre-edit state so this change can be undone later. Read from the
+  // live HTML file first — seo.json can drift out of sync with what's actually on
+  // the page, and snapshotting the stale JSON would make "restore" reintroduce that drift.
+  const preEditLiveMeta = readHtmlMeta(getHtmlFilePath(page.path));
+  saveVersion({ ...page, ...(preEditLiveMeta || {}) }, req.session.username);
 
   const updates = {
     id,
@@ -147,7 +150,8 @@ router.post('/:id/versions/:versionId/restore', edit, (req, res) => {
   }
 
   // Snapshot the current state before overwriting, so restoring is itself undoable
-  saveVersion(page, req.session.username);
+  const preRestoreLiveMeta = readHtmlMeta(getHtmlFilePath(page.path));
+  saveVersion({ ...page, ...(preRestoreLiveMeta || {}) }, req.session.username);
 
   const restored = {
     id,

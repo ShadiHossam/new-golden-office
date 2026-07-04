@@ -1,3 +1,16 @@
+<%
+  // The live HTML file is the source of truth for what's actually on the site —
+  // seo.json can drift out of sync with it. Prefill from liveMeta so saving never
+  // silently blanks out a field the JSON record hadn't caught up with.
+  var f = {
+    seo_title: (liveMeta && liveMeta.seo_title) || page.seo_title || '',
+    meta_description: (liveMeta && liveMeta.meta_description) || page.meta_description || '',
+    meta_keywords: (liveMeta && liveMeta.meta_keywords) || page.meta_keywords || '',
+    og_title: (liveMeta && liveMeta.og_title) || page.og_title || '',
+    og_description: (liveMeta && liveMeta.og_description) || page.og_description || '',
+    og_image: (liveMeta && liveMeta.og_image) || page.og_image || ''
+  };
+%>
 <%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
 
 <form method="POST" action="/2ef65f179f12439e317a23628b016653/seo/<%= page.id %>/update">
@@ -37,19 +50,19 @@
         <div class="card-body">
           <div class="form-mb">
             <label class="form-label">SEO Title <span style="color:var(--text-3);font-weight:400;">(recommended: 50–60 characters)</span></label>
-            <input type="text" name="seo_title" class="form-control" value="<%= page.seo_title || '' %>" placeholder="Page title for search engines" dir="rtl" id="seo_title">
+            <input type="text" name="seo_title" class="form-control" value="<%= f.seo_title %>" placeholder="Page title for search engines" dir="rtl" id="seo_title">
             <div class="char-counter" id="seo_title_count">0 / 60</div>
           </div>
 
           <div class="form-mb">
             <label class="form-label">Meta Description <span style="color:var(--text-3);font-weight:400;">(recommended: 120–160 characters)</span></label>
-            <textarea name="meta_description" class="form-control" rows="3" placeholder="Description shown in search results" dir="rtl" id="meta_desc"><%= page.meta_description || '' %></textarea>
+            <textarea name="meta_description" class="form-control" rows="3" placeholder="Description shown in search results" dir="rtl" id="meta_desc"><%= f.meta_description %></textarea>
             <div class="char-counter" id="meta_desc_count">0 / 160</div>
           </div>
 
           <div class="form-mb">
             <label class="form-label">Meta Keywords <span style="color:var(--text-3);font-weight:400;">(comma separated, optional)</span></label>
-            <input type="text" name="meta_keywords" class="form-control" value="<%= page.meta_keywords || '' %>" placeholder="keyword1, keyword2, keyword3" dir="rtl">
+            <input type="text" name="meta_keywords" class="form-control" value="<%= f.meta_keywords %>" placeholder="keyword1, keyword2, keyword3" dir="rtl">
             <div class="form-hint">Keywords have minimal SEO impact but some crawlers still read them.</div>
           </div>
         </div>
@@ -60,21 +73,21 @@
         <div class="card-body">
           <div class="form-mb">
             <label class="form-label">OG Title <span style="color:var(--text-3);font-weight:400;">(leave empty to use SEO title)</span></label>
-            <input type="text" name="og_title" class="form-control" value="<%= page.og_title || '' %>" placeholder="Title for Facebook, Twitter, LinkedIn…" dir="rtl">
+            <input type="text" name="og_title" class="form-control" value="<%= f.og_title %>" placeholder="Title for Facebook, Twitter, LinkedIn…" dir="rtl">
           </div>
 
           <div class="form-mb">
             <label class="form-label">OG Description <span style="color:var(--text-3);font-weight:400;">(leave empty to use meta description)</span></label>
-            <textarea name="og_description" class="form-control" rows="2" placeholder="Description for social sharing…" dir="rtl"><%= page.og_description || '' %></textarea>
+            <textarea name="og_description" class="form-control" rows="2" placeholder="Description for social sharing…" dir="rtl"><%= f.og_description %></textarea>
           </div>
 
           <div class="form-mb" style="margin-bottom:0;">
             <label class="form-label">OG Image URL <span style="color:var(--text-3);font-weight:400;">(shown when shared on Facebook, WhatsApp, etc.)</span></label>
-            <input type="text" name="og_image" class="form-control" value="<%= page.og_image || '' %>" placeholder="https://newgoldenoffice.com/images/share.jpg" id="og_image_input">
+            <input type="text" name="og_image" class="form-control" value="<%= f.og_image %>" placeholder="https://newgoldenoffice.com/images/share.jpg" id="og_image_input">
             <div class="form-hint">Use an absolute URL. Recommended size: 1200×630 px.</div>
-            <% if (page.og_image) { %>
+            <% if (f.og_image) { %>
             <div style="margin-top:10px;">
-              <img src="<%= page.og_image %>" alt="OG preview" style="max-height:90px;border-radius:8px;border:1px solid var(--border);object-fit:cover;" id="og_image_preview" onerror="this.style.display='none'">
+              <img src="<%= f.og_image %>" alt="OG preview" style="max-height:90px;border-radius:8px;border:1px solid var(--border);object-fit:cover;" id="og_image_preview" onerror="this.style.display='none'">
             </div>
             <% } else { %>
             <div id="og_image_preview" style="display:none;margin-top:10px;">
@@ -102,9 +115,9 @@
         <div class="card-header"><strong>SERP Preview</strong></div>
         <div class="card-body">
           <div style="font-family:Arial,sans-serif;max-width:100%;">
-            <div id="serp-title" dir="rtl" style="font-size:18px;color:#1a0dab;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;text-align:right;"><%= page.seo_title || 'Your page title here' %></div>
+            <div id="serp-title" dir="rtl" style="font-size:18px;color:#1a0dab;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;text-align:right;"><%= f.seo_title || 'Your page title here' %></div>
             <div style="font-size:14px;color:#006621;margin:2px 0;">newgoldenoffice.com<%= page.url %></div>
-            <div id="serp-desc" dir="rtl" style="font-size:13px;color:#545454;line-height:1.58;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-align:right;"><%= page.meta_description || 'Your meta description will appear here. Write a compelling summary that makes users want to click.' %></div>
+            <div id="serp-desc" dir="rtl" style="font-size:13px;color:#545454;line-height:1.58;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-align:right;"><%= f.meta_description || 'Your meta description will appear here. Write a compelling summary that makes users want to click.' %></div>
           </div>
         </div>
       </div>
