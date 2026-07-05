@@ -433,7 +433,7 @@
           <!-- Google Maps Embed -->
           <div class="map-wrapper">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0!2d29.91!3d31.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNewGoldenOffice!5e0!3m2!1sen!2seg!4v1"
+              src="https://www.google.com/maps?q=26%20عبد%20المنعم%20سند،%20الإبراهيمية،%20باب%20شرق،%20الإسكندرية،%20مصر&output=embed"
               width="100%"
               height="250"
               style="border:0;border-radius:12px;display:block;"
@@ -476,6 +476,7 @@
                   <option value="ac">أجهزة التكييف</option>
                   <option value="cash-machines">ماكينات فارم وعد النقود</option>
                   <option value="office-supplies">المستلزمات المكتبية</option>
+                  <option value="other">استفسار عام / خدمة أخرى</option>
                 </select>
               </div>
               <div class="form-group">
@@ -531,7 +532,7 @@
       <div class="faq-list reveal">
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             <span>ما هي ساعات العمل الرسمية لدى نيو جولدن أوفيس؟</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </div>
@@ -541,7 +542,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             <span>هل تقدمون خدمات التوصيل والتركيب خارج الإسكندرية؟</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </div>
@@ -551,7 +552,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             <span>ما هي وسائل الدفع المتاحة؟</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </div>
@@ -561,7 +562,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question">
             <span>هل توجد ضمان على المنتجات والخدمات؟</span>
             <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
           </div>
@@ -621,18 +622,6 @@
         });
     }
 
-    function toggleFaq(questionEl) {
-      const item = questionEl.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(function(el) {
-        el.classList.remove('open');
-      });
-      // Open clicked if it was closed
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-    }
   </script>
 </body>
 </html>

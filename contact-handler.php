@@ -35,6 +35,7 @@ $services = [
     'ac' => 'أجهزة التكييف',
     'cash-machines' => 'ماكينات فارم وعد النقود',
     'office-supplies' => 'المستلزمات المكتبية',
+    'other' => 'استفسار عام / خدمة أخرى',
 ];
 $serviceLabel = $services[$service] ?? $service;
 

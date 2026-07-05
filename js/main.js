@@ -67,9 +67,122 @@ function injectHeroImage() {
   inner.appendChild(imgDiv);
 }
 
+const SEARCH_INDEX = [
+  { t: 'الرئيسية', u: 'index.html' },
+  { t: 'عن الشركة', u: 'about.html' },
+  { t: 'تواصل معنا', u: 'contact.html' },
+  { t: 'معرض الأعمال', u: 'portfolio.html' },
+  { t: 'مستلزمات مكتبية', u: 'office-supplies/index.html' },
+  { t: 'ورق A4', u: 'office-supplies/a4-paper.html' },
+  { t: 'ورق حراري وكاشير', u: 'office-supplies/thermal.html' },
+  { t: 'أقلام وأدوات كتابة', u: 'office-supplies/pens.html' },
+  { t: 'دفاتر ومفكرات', u: 'office-supplies/notebooks.html' },
+  { t: 'ملفات وأرشفة', u: 'office-supplies/files.html' },
+  { t: 'أختام مطاطية', u: 'office-supplies/stamps.html' },
+  { t: 'أظرف وتغليف', u: 'office-supplies/envelopes.html' },
+  { t: 'وايت بورد وسبورة', u: 'office-supplies/whiteboards.html' },
+  { t: 'دباسة ومشابك', u: 'office-supplies/binding.html' },
+  { t: 'بوست إت وورق لاصق', u: 'office-supplies/sticky-notes.html' },
+  { t: 'بطاريات وفلاشات USB', u: 'office-supplies/batteries-usb.html' },
+  { t: 'خدمات الطباعة', u: 'printing/index.html' },
+  { t: 'طباعة أوفست', u: 'printing/offset.html' },
+  { t: 'طباعة رقمية', u: 'printing/digital.html' },
+  { t: 'طباعة بنرات وفينيل', u: 'printing/banners.html' },
+  { t: 'بزنس كارد وبروشورات', u: 'printing/business-cards.html' },
+  { t: 'طباعة UV', u: 'printing/uv.html' },
+  { t: 'طباعة هدايا وأكواب', u: 'printing/gifts.html' },
+  { t: 'ماكينات التصوير والطابعات', u: 'copiers/index.html' },
+  { t: 'بيع ماكينات التصوير', u: 'copiers/buy.html' },
+  { t: 'بيع طابعات', u: 'copiers/printers.html' },
+  { t: 'صيانة ماكينات التصوير', u: 'copiers/maintenance.html' },
+  { t: 'كارتريدج وأحبار', u: 'copiers/cartridges.html' },
+  { t: 'كاميرات المراقبة', u: 'cameras/index.html' },
+  { t: 'تركيب كاميرات مراقبة', u: 'cameras/install.html' },
+  { t: 'أنظمة DVR و NVR', u: 'cameras/dvr-nvr.html' },
+  { t: 'كاميرات IP وواي فاي', u: 'cameras/ip-wifi.html' },
+  { t: 'صيانة أنظمة المراقبة', u: 'cameras/maintenance.html' },
+  { t: 'تكييفات', u: 'ac/index.html' },
+  { t: 'بيع تكييفات', u: 'ac/buy.html' },
+  { t: 'تركيب تكييفات', u: 'ac/installation.html' },
+  { t: 'صيانة وشحن فريون', u: 'ac/maintenance.html' },
+  { t: 'ماكينات فارم وعد النقود', u: 'cash-machines/index.html' },
+  { t: 'ماكينات عد النقود', u: 'cash-machines/counting.html' },
+  { t: 'كشف العملات المزيفة', u: 'cash-machines/detector.html' },
+  { t: 'ماكينات الفارم والختم', u: 'cash-machines/franking.html' },
+  { t: 'ماكينات تدمير المستندات', u: 'cash-machines/shredder.html' },
+];
+
+function initSiteSearch() {
+  const navContainer = document.querySelector('.navbar .container');
+  const hamburgerBtn = document.querySelector('.hamburger');
+  if (!navContainer || !hamburgerBtn || document.querySelector('.nav-search-toggle')) return;
+
+  const base = document.querySelector('link[data-base]')?.dataset.base ||
+    (window.location.pathname.split('/').filter(Boolean).length > 1 ? '../' : '');
+
+  const toggleBtn = document.createElement('button');
+  toggleBtn.type = 'button';
+  toggleBtn.className = 'nav-search-toggle';
+  toggleBtn.setAttribute('aria-label', 'بحث');
+  toggleBtn.innerHTML = '<i class="fas fa-search"></i>';
+  navContainer.insertBefore(toggleBtn, hamburgerBtn);
+
+  const panel = document.createElement('div');
+  panel.className = 'site-search-panel';
+  panel.innerHTML =
+    '<div class="site-search-inner">' +
+      '<div class="site-search-input-wrap">' +
+        '<i class="fas fa-search"></i>' +
+        '<input type="text" id="siteSearchInput" placeholder="ابحث عن منتج أو خدمة... مثال: ورق A4، كاميرا مراقبة" autocomplete="off">' +
+        '<button type="button" class="site-search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>' +
+      '</div>' +
+      '<div class="site-search-results"></div>' +
+    '</div>';
+  document.body.appendChild(panel);
+
+  const input = panel.querySelector('#siteSearchInput');
+  const results = panel.querySelector('.site-search-results');
+  const closeBtn = panel.querySelector('.site-search-close');
+
+  function renderResults(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) { results.innerHTML = ''; return; }
+    const matches = SEARCH_INDEX.filter(item => item.t.toLowerCase().includes(q)).slice(0, 8);
+    if (!matches.length) {
+      results.innerHTML = `<div class="site-search-empty">لا توجد نتائج مطابقة — جرّب كلمة أخرى أو <a href="${base}contact.html">تواصل معنا</a></div>`;
+      return;
+    }
+    results.innerHTML = matches.map(m => `<a class="site-search-result" href="${base}${m.u}">${m.t}</a>`).join('');
+  }
+
+  function openPanel() {
+    panel.classList.add('open');
+    setTimeout(() => input.focus(), 50);
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    input.value = '';
+    results.innerHTML = '';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    panel.classList.contains('open') ? closePanel() : openPanel();
+  });
+  closeBtn.addEventListener('click', closePanel);
+  input.addEventListener('input', () => renderResults(input.value));
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = results.querySelector('.site-search-result');
+      if (first) window.location.href = first.getAttribute('href');
+    }
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   injectHeroImage();
+  initSiteSearch();
 
   // ── Navbar scroll effect
   const navbar = document.querySelector('.navbar');
@@ -92,12 +205,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Mobile dropdown toggle
+  // First tap opens the dropdown; a second tap on the already-open label
+  // navigates to the category hub page instead of re-toggling forever.
   document.querySelectorAll('.nav-link[data-dropdown]').forEach(link => {
     link.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
-        e.preventDefault();
         const dropdown = link.nextElementSibling;
-        dropdown?.classList.toggle('open');
+        if (!dropdown?.classList.contains('open')) {
+          e.preventDefault();
+          dropdown?.classList.add('open');
+        }
       }
     });
   });

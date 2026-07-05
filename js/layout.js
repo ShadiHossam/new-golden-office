@@ -1,10 +1,8 @@
 // layout.js — Shared navbar + footer injected into every page
 (function () {
   const path = window.location.pathname;
-  const inSubdir = path.split('/').filter(Boolean).length > 1 ||
-    (path.includes('/') && !path.endsWith('/index.html') && path.split('/').length > 2);
   const base = (document.querySelector('link[data-base]')?.dataset.base) ||
-    (path.replace(/\/[^/]*$/, '').split('/').length > 2 ? '../' : '');
+    (path.split('/').filter(Boolean).length > 1 ? '../' : '');
 
   const B = base; // shorthand
 
@@ -18,6 +16,7 @@
     <ul class="nav-menu">
       <li class="nav-item"><a href="${B}index.html" class="nav-link">الرئيسية</a></li>
       <li class="nav-item"><a href="${B}about.html" class="nav-link">عن الشركة</a></li>
+      <li class="nav-item"><a href="${B}portfolio.html" class="nav-link">معرض أعمالنا</a></li>
       <li class="nav-item">
         <a href="${B}office-supplies/index.html" class="nav-link" data-dropdown>مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
@@ -98,7 +97,6 @@
         </div>
         <p class="footer-desc">نوفر لك الوقت والجهد — نجيب بأفضل حل لكل احتياج، بجودة مضمونة وأسعار تنافسية. شريكك الموثوق في مصر منذ عام 1990.</p>
         <div class="footer-social">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
           <a href="https://wa.me/201227392074" class="social-link"><i class="fab fa-whatsapp"></i></a>
           <a href="tel:+201227392074" class="social-link"><i class="fas fa-phone"></i></a>
         </div>
