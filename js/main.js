@@ -19,15 +19,18 @@ const HERO_CONFIG = [
   { p: /\/cameras\/ip-wifi/,         img: 'cameras-hub.webp',       icon: 'fa-wifi' },
   { p: /\/cameras\/maintenance/,     img: 'cameras-hub.webp',       icon: 'fa-wrench' },
   { p: /\/cameras/,                  img: 'cameras-hub.webp',       icon: 'fa-video' },
-  { p: /\/ac\/buy/,                  img: 'ac-hub.webp',            icon: 'fa-snowflake' },
-  { p: /\/ac\/installation/,         img: 'ac-hub.webp',            icon: 'fa-tools' },
-  { p: /\/ac\/maintenance/,          img: 'ac-hub.webp',            icon: 'fa-wrench' },
-  { p: /\/ac/,                       img: 'ac-hub.webp',            icon: 'fa-snowflake' },
-  { p: /\/cash-machines\/counting/,  img: 'cash-machines-hub.webp', icon: 'fa-money-bill-wave' },
-  { p: /\/cash-machines\/detector/,  img: 'cash-machines-hub.webp', icon: 'fa-search-dollar' },
-  { p: /\/cash-machines\/franking/,  img: 'cash-machines-hub.webp', icon: 'fa-stamp' },
-  { p: /\/cash-machines\/shredder/,  img: 'cash-machines-hub.webp', icon: 'fa-cut' },
-  { p: /\/cash-machines/,            img: 'cash-machines-hub.webp', icon: 'fa-money-bill-wave' },
+  // ac-hub.webp and cash-machines-hub.webp are factually wrong stock photos
+  // (a Bluetooth speaker and US dollar bills, respectively) — omitting `img`
+  // here falls back to the icon-only placeholder instead of showing them.
+  { p: /\/ac\/buy/,                                        icon: 'fa-snowflake' },
+  { p: /\/ac\/installation/,                                icon: 'fa-tools' },
+  { p: /\/ac\/maintenance/,                                 icon: 'fa-wrench' },
+  { p: /\/ac/,                                              icon: 'fa-snowflake' },
+  { p: /\/cash-machines\/counting/,                         icon: 'fa-money-bill-wave' },
+  { p: /\/cash-machines\/detector/,                         icon: 'fa-search-dollar' },
+  { p: /\/cash-machines\/franking/,                         icon: 'fa-stamp' },
+  { p: /\/cash-machines\/shredder/,                         icon: 'fa-cut' },
+  { p: /\/cash-machines/,                                   icon: 'fa-money-bill-wave' },
   { p: /\/office-supplies\/a4-paper/,img: 'office-supplies-hub.webp', icon: 'fa-file' },
   { p: /\/office-supplies\/thermal/, img: 'office-supplies-hub.webp', icon: 'fa-receipt' },
   { p: /\/office-supplies\/pens/,    img: 'office-supplies-hub.webp', icon: 'fa-pen' },
@@ -62,7 +65,7 @@ function injectHeroImage() {
   const imgDiv = document.createElement('div');
   imgDiv.className = 'page-hero-image';
   imgDiv.innerHTML =
-    `<img src="${base}images/${conf.img}" alt="" loading="lazy" onerror="this.style.display='none'">` +
+    (conf.img ? `<img src="${base}images/${conf.img}" alt="" loading="lazy" onerror="this.style.display='none'">` : '') +
     `<div class="page-hero-icon"><i class="fas ${conf.icon}"></i></div>`;
   inner.appendChild(imgDiv);
 }
