@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /css/
-Disallow: /js/
 Disallow: /2ef65f179f12439e317a23628b016653/
 
 Sitemap: https://newgoldenoffice.com/sitemap.xml

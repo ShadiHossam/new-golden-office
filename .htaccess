@@ -1,0 +1,16 @@
+# Canonical host + scheme: force https://newgoldenoffice.com (no www, no http)
+# Checks X-Forwarded-Proto because Cloudflare terminates TLS and can forward
+# to the origin over plain HTTP even when the visitor used https:// —
+# relying on %{HTTPS} alone here would risk a redirect loop.
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.newgoldenoffice\.com$ [NC]
+RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+</IfModule>
