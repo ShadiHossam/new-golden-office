@@ -17,6 +17,7 @@
       <li class="nav-item"><a href="${B}index.html" class="nav-link">الرئيسية</a></li>
       <li class="nav-item"><a href="${B}about.html" class="nav-link">عن الشركة</a></li>
       <li class="nav-item"><a href="${B}portfolio.html" class="nav-link">معرض أعمالنا</a></li>
+      <li class="nav-item"><a href="${B}blog/index.html" class="nav-link">المدونة</a></li>
       <li class="nav-item">
         <a href="${B}office-supplies/index.html" class="nav-link" data-dropdown>مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
@@ -118,6 +119,7 @@
           <li><a href="${B}index.html"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
           <li><a href="${B}about.html"><i class="fas fa-angle-left"></i> عن الشركة</a></li>
           <li><a href="${B}portfolio.html"><i class="fas fa-angle-left"></i> معرض أعمالنا</a></li>
+          <li><a href="${B}blog/index.html"><i class="fas fa-angle-left"></i> المدونة</a></li>
           <li><a href="${B}contact.html"><i class="fas fa-angle-left"></i> تواصل معنا</a></li>
         </ul>
       </div>
@@ -203,6 +205,7 @@
   // BreadcrumbList schema
   const PAGE_NAMES = {
     'about': 'عن الشركة', 'contact': 'تواصل معنا', 'portfolio': 'معرض أعمالنا',
+    'blog': 'المدونة',
     'privacy': 'سياسة الخصوصية', 'terms': 'الشروط والأحكام',
     'printing': 'خدمات الطباعة', 'offset': 'طباعة أوفست', 'digital': 'طباعة رقمية',
     'banners': 'طباعة بنرات', 'business-cards': 'كروت شخصية وبروشورات',

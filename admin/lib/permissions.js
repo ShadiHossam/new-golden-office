@@ -19,6 +19,17 @@ const PERMISSION_GROUPS = [
     ]
   },
   {
+    key: 'blog',
+    label: 'Blog',
+    permissions: [
+      { key: 'blog.view', label: 'View blog posts' },
+      { key: 'blog.create', label: 'Create posts' },
+      { key: 'blog.edit', label: 'Edit posts' },
+      { key: 'blog.delete', label: 'Delete posts' },
+      { key: 'blog.publish', label: 'Publish / unpublish' }
+    ]
+  },
+  {
     key: 'seo',
     label: 'SEO',
     permissions: [
@@ -69,7 +80,7 @@ const BUILTIN_DEFAULTS = {
     return [k, true];
   })),
   viewer: Object.fromEntries(ALL_PERMISSION_KEYS.map(k => {
-    const allowed = ['pages.view', 'seo.view', 'media.view', 'redirects.view', 'calendar.view', 'activity.view_own'];
+    const allowed = ['pages.view', 'blog.view', 'seo.view', 'media.view', 'redirects.view', 'calendar.view', 'activity.view_own'];
     return [k, allowed.includes(k)];
   }))
 };

@@ -1,0 +1,50 @@
+<%- include('../layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+
+<div class="card">
+  <% if (posts.length === 0) { %>
+  <div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+    <p>No blog posts yet. Create one to publish your first article.</p>
+  </div>
+  <% } else { %>
+  <div style="overflow-x:auto;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>URL</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Updated</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% posts.forEach(function(p) { %>
+        <tr>
+          <td><div class="seo-table-title"><%= p.title %></div></td>
+          <td><code class="seo-table-path">/blog/<%= p.slug %>.html</code></td>
+          <td class="text-muted fs-12"><%= p.category || '—' %></td>
+          <td>
+            <% if (p.status === 'published') { %>
+            <span class="badge badge-success">Published</span>
+            <% } else { %>
+            <span class="badge badge-secondary">Draft</span>
+            <% } %>
+          </td>
+          <td class="text-muted fs-12"><%= new Date(p.updated_at || p.created_at).toLocaleString() %></td>
+          <td class="text-end">
+            <% if (p.status === 'published') { %>
+            <a href="/blog/<%= p.slug %>.html" target="_blank" class="btn btn-outline-secondary btn-sm">View</a>
+            <% } %>
+            <a href="/2ef65f179f12439e317a23628b016653/blog/<%= p.id %>/edit" class="btn btn-outline-primary btn-sm">Edit</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+</div>
+
+<%- include('../layout-end') %>

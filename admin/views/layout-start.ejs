@@ -31,7 +31,7 @@
 
         <% var perms = typeof permissions !== 'undefined' ? permissions : {}; %>
 
-        <% if (perms['pages.view'] || perms['seo.view'] || perms['media.view']) { %>
+        <% if (perms['pages.view'] || perms['blog.view'] || perms['seo.view'] || perms['media.view']) { %>
         <li class="sidebar-section-label">Content</li>
         <% } %>
 
@@ -40,6 +40,15 @@
           <a href="/2ef65f179f12439e317a23628b016653/pages" data-tooltip="Pages">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
             <span>Pages</span>
+          </a>
+        </li>
+        <% } %>
+
+        <% if (perms['blog.view']) { %>
+        <li class="<%= currentPath.startsWith('/blog') ? 'active' : '' %>">
+          <a href="/2ef65f179f12439e317a23628b016653/blog" data-tooltip="Blog">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            <span>Blog</span>
           </a>
         </li>
         <% } %>
