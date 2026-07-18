@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // navigates to the category hub page instead of re-toggling forever.
   document.querySelectorAll('.nav-link[data-dropdown]').forEach(link => {
     link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1400) {
         const dropdown = link.nextElementSibling;
         if (!dropdown?.classList.contains('open')) {
           e.preventDefault();
