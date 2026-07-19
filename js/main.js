@@ -54,8 +54,10 @@ function injectHeroImage() {
   const heroContent = heroContainer?.querySelector('.page-hero-content');
   if (!heroContainer || !heroContent || heroContainer.querySelector('.page-hero-inner')) return;
 
+  const pathSegs = pathname.split('/').filter(Boolean);
+  const inSubdir = pathSegs.length > 1 || (pathSegs.length === 1 && !pathSegs[0].includes('.'));
   const base = document.querySelector('link[data-base]')?.dataset.base ||
-    (pathname.split('/').filter(Boolean).length > 1 ? '../' : '');
+    (inSubdir ? '../' : '');
 
   const inner = document.createElement('div');
   inner.className = 'page-hero-inner';
@@ -120,8 +122,10 @@ function initSiteSearch() {
   const hamburgerBtn = document.querySelector('.hamburger');
   if (!navContainer || !hamburgerBtn || document.querySelector('.nav-search-toggle')) return;
 
+  const searchPathSegs = window.location.pathname.split('/').filter(Boolean);
+  const searchInSubdir = searchPathSegs.length > 1 || (searchPathSegs.length === 1 && !searchPathSegs[0].includes('.'));
   const base = document.querySelector('link[data-base]')?.dataset.base ||
-    (window.location.pathname.split('/').filter(Boolean).length > 1 ? '../' : '');
+    (searchInSubdir ? '../' : '');
 
   const toggleBtn = document.createElement('button');
   toggleBtn.type = 'button';

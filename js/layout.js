@@ -1,8 +1,10 @@
 // layout.js — Shared navbar + footer injected into every page
 (function () {
   const path = window.location.pathname;
+  const pathSegs = path.split('/').filter(Boolean);
+  const inSubdir = pathSegs.length > 1 || (pathSegs.length === 1 && !pathSegs[0].includes('.'));
   const base = (document.querySelector('link[data-base]')?.dataset.base) ||
-    (path.split('/').filter(Boolean).length > 1 ? '../' : '');
+    (inSubdir ? '../' : '');
 
   const B = base; // shorthand
 
