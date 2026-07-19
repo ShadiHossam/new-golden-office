@@ -11,6 +11,8 @@ RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
 
+ErrorDocument 404 /404.html
+
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
 </IfModule>
