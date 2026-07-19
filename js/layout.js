@@ -11,79 +11,79 @@
   const NAV = `
 <nav class="navbar">
   <div class="container">
-    <a href="${B}index.html" class="navbar-brand">
+    <a href="${B}" class="navbar-brand">
       <img src="${B}images/logo.png" alt="نيو جولدن أوفيس" class="logo-img" onerror="this.style.display='none'">
       <div class="logo-text">نيو جولدن أوفيس</div>
     </a>
     <ul class="nav-menu">
-      <li class="nav-item"><a href="${B}index.html" class="nav-link">الرئيسية</a></li>
-      <li class="nav-item"><a href="${B}about.html" class="nav-link">عن الشركة</a></li>
-      <li class="nav-item"><a href="${B}portfolio.html" class="nav-link">معرض أعمالنا</a></li>
-      <li class="nav-item"><a href="${B}blog/index.html" class="nav-link">المدونة</a></li>
+      <li class="nav-item"><a href="${B}" class="nav-link">الرئيسية</a></li>
+      <li class="nav-item"><a href="${B}about" class="nav-link">عن الشركة</a></li>
+      <li class="nav-item"><a href="${B}portfolio" class="nav-link">معرض أعمالنا</a></li>
+      <li class="nav-item"><a href="${B}blog/" class="nav-link">المدونة</a></li>
       <li class="nav-item">
-        <a href="${B}office-supplies/index.html" class="nav-link" data-dropdown>مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i></a>
+        <a href="${B}office-supplies/" class="nav-link" data-dropdown>مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="${B}office-supplies/a4-paper.html"><i class="fas fa-file"></i> ورق A4</a>
-          <a href="${B}office-supplies/thermal.html"><i class="fas fa-receipt"></i> ورق حراري</a>
-          <a href="${B}office-supplies/pens.html"><i class="fas fa-pen"></i> أقلام وأدوات كتابة</a>
-          <a href="${B}office-supplies/notebooks.html"><i class="fas fa-book"></i> دفاتر ومفكرات</a>
-          <a href="${B}office-supplies/files.html"><i class="fas fa-folder"></i> ملفات وأرشفة</a>
+          <a href="${B}office-supplies/a4-paper"><i class="fas fa-file"></i> ورق A4</a>
+          <a href="${B}office-supplies/thermal"><i class="fas fa-receipt"></i> ورق حراري</a>
+          <a href="${B}office-supplies/pens"><i class="fas fa-pen"></i> أقلام وأدوات كتابة</a>
+          <a href="${B}office-supplies/notebooks"><i class="fas fa-book"></i> دفاتر ومفكرات</a>
+          <a href="${B}office-supplies/files"><i class="fas fa-folder"></i> ملفات وأرشفة</a>
           <div class="dropdown-divider"></div>
-          <a href="${B}office-supplies/stamps.html"><i class="fas fa-stamp"></i> أختام</a>
-          <a href="${B}office-supplies/envelopes.html"><i class="fas fa-envelope"></i> أظرف وتغليف</a>
-          <a href="${B}office-supplies/whiteboards.html"><i class="fas fa-chalkboard"></i> وايت بورد</a>
-          <a href="${B}office-supplies/binding.html"><i class="fas fa-paperclip"></i> أدوات ربط</a>
-          <a href="${B}office-supplies/sticky-notes.html"><i class="fas fa-sticky-note"></i> بوست إت</a>
-          <a href="${B}office-supplies/batteries-usb.html"><i class="fas fa-battery-three-quarters"></i> بطاريات وUSB</a>
+          <a href="${B}office-supplies/stamps"><i class="fas fa-stamp"></i> أختام</a>
+          <a href="${B}office-supplies/envelopes"><i class="fas fa-envelope"></i> أظرف وتغليف</a>
+          <a href="${B}office-supplies/whiteboards"><i class="fas fa-chalkboard"></i> وايت بورد</a>
+          <a href="${B}office-supplies/binding"><i class="fas fa-paperclip"></i> أدوات ربط</a>
+          <a href="${B}office-supplies/sticky-notes"><i class="fas fa-sticky-note"></i> بوست إت</a>
+          <a href="${B}office-supplies/batteries-usb"><i class="fas fa-battery-three-quarters"></i> بطاريات وUSB</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="${B}printing/index.html" class="nav-link" data-dropdown>خدمات الطباعة <i class="fas fa-chevron-down arrow"></i></a>
+        <a href="${B}printing/" class="nav-link" data-dropdown>خدمات الطباعة <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="${B}printing/offset.html"><i class="fas fa-print"></i> طباعة أوفست</a>
-          <a href="${B}printing/digital.html"><i class="fas fa-digital-tachograph"></i> طباعة رقمية</a>
-          <a href="${B}printing/banners.html"><i class="fas fa-image"></i> طباعة بنرات وفينيل</a>
-          <a href="${B}printing/business-cards.html"><i class="fas fa-id-card"></i> بزنس كارد وبروشورات</a>
-          <a href="${B}printing/uv.html"><i class="fas fa-sun"></i> طباعة UV</a>
-          <a href="${B}printing/gifts.html"><i class="fas fa-gift"></i> طباعة هدايا وأكواب</a>
+          <a href="${B}printing/offset"><i class="fas fa-print"></i> طباعة أوفست</a>
+          <a href="${B}printing/digital"><i class="fas fa-digital-tachograph"></i> طباعة رقمية</a>
+          <a href="${B}printing/banners"><i class="fas fa-image"></i> طباعة بنرات وفينيل</a>
+          <a href="${B}printing/business-cards"><i class="fas fa-id-card"></i> بزنس كارد وبروشورات</a>
+          <a href="${B}printing/uv"><i class="fas fa-sun"></i> طباعة UV</a>
+          <a href="${B}printing/gifts"><i class="fas fa-gift"></i> طباعة هدايا وأكواب</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="${B}copiers/index.html" class="nav-link" data-dropdown>ماكينات التصوير <i class="fas fa-chevron-down arrow"></i></a>
+        <a href="${B}copiers/" class="nav-link" data-dropdown>ماكينات التصوير <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="${B}copiers/buy.html"><i class="fas fa-copy"></i> بيع ماكينات التصوير</a>
-          <a href="${B}copiers/printers.html"><i class="fas fa-print"></i> بيع طابعات</a>
-          <a href="${B}copiers/maintenance.html"><i class="fas fa-tools"></i> صيانة ماكينات التصوير</a>
-          <a href="${B}copiers/cartridges.html"><i class="fas fa-tint"></i> كارتريدج وأحبار</a>
+          <a href="${B}copiers/buy"><i class="fas fa-copy"></i> بيع ماكينات التصوير</a>
+          <a href="${B}copiers/printers"><i class="fas fa-print"></i> بيع طابعات</a>
+          <a href="${B}copiers/maintenance"><i class="fas fa-tools"></i> صيانة ماكينات التصوير</a>
+          <a href="${B}copiers/cartridges"><i class="fas fa-tint"></i> كارتريدج وأحبار</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="${B}cameras/index.html" class="nav-link" data-dropdown>كاميرات المراقبة <i class="fas fa-chevron-down arrow"></i></a>
+        <a href="${B}cameras/" class="nav-link" data-dropdown>كاميرات المراقبة <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="${B}cameras/install.html"><i class="fas fa-video"></i> بيع وتركيب كاميرات</a>
-          <a href="${B}cameras/dvr-nvr.html"><i class="fas fa-hdd"></i> أنظمة DVR و NVR</a>
-          <a href="${B}cameras/ip-wifi.html"><i class="fas fa-wifi"></i> كاميرات IP وواي فاي</a>
-          <a href="${B}cameras/maintenance.html"><i class="fas fa-wrench"></i> صيانة أنظمة المراقبة</a>
+          <a href="${B}cameras/install"><i class="fas fa-video"></i> بيع وتركيب كاميرات</a>
+          <a href="${B}cameras/dvr-nvr"><i class="fas fa-hdd"></i> أنظمة DVR و NVR</a>
+          <a href="${B}cameras/ip-wifi"><i class="fas fa-wifi"></i> كاميرات IP وواي فاي</a>
+          <a href="${B}cameras/maintenance"><i class="fas fa-wrench"></i> صيانة أنظمة المراقبة</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="${B}ac/index.html" class="nav-link" data-dropdown>تكييفات <i class="fas fa-chevron-down arrow"></i></a>
+        <a href="${B}ac/" class="nav-link" data-dropdown>تكييفات <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="${B}ac/buy.html"><i class="fas fa-wind"></i> بيع تكييفات</a>
-          <a href="${B}ac/installation.html"><i class="fas fa-tools"></i> تركيب تكييفات</a>
-          <a href="${B}ac/maintenance.html"><i class="fas fa-wrench"></i> صيانة وشحن فريون</a>
+          <a href="${B}ac/buy"><i class="fas fa-wind"></i> بيع تكييفات</a>
+          <a href="${B}ac/installation"><i class="fas fa-tools"></i> تركيب تكييفات</a>
+          <a href="${B}ac/maintenance"><i class="fas fa-wrench"></i> صيانة وشحن فريون</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="${B}cash-machines/index.html" class="nav-link" data-dropdown>ماكينات فارم وعد <i class="fas fa-chevron-down arrow"></i></a>
+        <a href="${B}cash-machines/" class="nav-link" data-dropdown>ماكينات فارم وعد <i class="fas fa-chevron-down arrow"></i></a>
         <div class="dropdown">
-          <a href="${B}cash-machines/counting.html"><i class="fas fa-money-bill-wave"></i> ماكينات عد النقود</a>
-          <a href="${B}cash-machines/detector.html"><i class="fas fa-search-dollar"></i> كشف العملات المزيفة</a>
-          <a href="${B}cash-machines/franking.html"><i class="fas fa-stamp"></i> ماكينات الفارم والختم</a>
-          <a href="${B}cash-machines/shredder.html"><i class="fas fa-cut"></i> تدمير المستندات</a>
+          <a href="${B}cash-machines/counting"><i class="fas fa-money-bill-wave"></i> ماكينات عد النقود</a>
+          <a href="${B}cash-machines/detector"><i class="fas fa-search-dollar"></i> كشف العملات المزيفة</a>
+          <a href="${B}cash-machines/franking"><i class="fas fa-stamp"></i> ماكينات الفارم والختم</a>
+          <a href="${B}cash-machines/shredder"><i class="fas fa-cut"></i> تدمير المستندات</a>
         </div>
       </li>
-      <li class="nav-item"><a href="${B}contact.html" class="nav-link nav-cta">تواصل معنا</a></li>
+      <li class="nav-item"><a href="${B}contact" class="nav-link nav-cta">تواصل معنا</a></li>
     </ul>
     <button class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
   </div>
@@ -107,22 +107,22 @@
       <div class="footer-col">
         <h5>خدماتنا</h5>
         <ul class="footer-links">
-          <li><a href="${B}office-supplies/index.html"><i class="fas fa-angle-left"></i> مستلزمات مكتبية</a></li>
-          <li><a href="${B}printing/index.html"><i class="fas fa-angle-left"></i> خدمات الطباعة</a></li>
-          <li><a href="${B}copiers/index.html"><i class="fas fa-angle-left"></i> ماكينات التصوير</a></li>
-          <li><a href="${B}cameras/index.html"><i class="fas fa-angle-left"></i> كاميرات المراقبة</a></li>
-          <li><a href="${B}ac/index.html"><i class="fas fa-angle-left"></i> التكييفات</a></li>
-          <li><a href="${B}cash-machines/index.html"><i class="fas fa-angle-left"></i> ماكينات الفارم والعد</a></li>
+          <li><a href="${B}office-supplies/"><i class="fas fa-angle-left"></i> مستلزمات مكتبية</a></li>
+          <li><a href="${B}printing/"><i class="fas fa-angle-left"></i> خدمات الطباعة</a></li>
+          <li><a href="${B}copiers/"><i class="fas fa-angle-left"></i> ماكينات التصوير</a></li>
+          <li><a href="${B}cameras/"><i class="fas fa-angle-left"></i> كاميرات المراقبة</a></li>
+          <li><a href="${B}ac/"><i class="fas fa-angle-left"></i> التكييفات</a></li>
+          <li><a href="${B}cash-machines/"><i class="fas fa-angle-left"></i> ماكينات الفارم والعد</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>روابط سريعة</h5>
         <ul class="footer-links">
-          <li><a href="${B}index.html"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
-          <li><a href="${B}about.html"><i class="fas fa-angle-left"></i> عن الشركة</a></li>
-          <li><a href="${B}portfolio.html"><i class="fas fa-angle-left"></i> معرض أعمالنا</a></li>
-          <li><a href="${B}blog/index.html"><i class="fas fa-angle-left"></i> المدونة</a></li>
-          <li><a href="${B}contact.html"><i class="fas fa-angle-left"></i> تواصل معنا</a></li>
+          <li><a href="${B}"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
+          <li><a href="${B}about"><i class="fas fa-angle-left"></i> عن الشركة</a></li>
+          <li><a href="${B}portfolio"><i class="fas fa-angle-left"></i> معرض أعمالنا</a></li>
+          <li><a href="${B}blog/"><i class="fas fa-angle-left"></i> المدونة</a></li>
+          <li><a href="${B}contact"><i class="fas fa-angle-left"></i> تواصل معنا</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -138,9 +138,9 @@
     <div class="footer-bottom">
       <p>جميع الحقوق محفوظة &copy; <span id="current-year">2026</span> — نيو جولدن أوفيس</p>
       <div class="footer-bottom-links">
-        <a href="${B}privacy.html">سياسة الخصوصية</a>
-        <a href="${B}terms.html">الشروط والأحكام</a>
-        <a href="${B}contact.html">تواصل معنا</a>
+        <a href="${B}privacy">سياسة الخصوصية</a>
+        <a href="${B}terms">الشروط والأحكام</a>
+        <a href="${B}contact">تواصل معنا</a>
       </div>
     </div>
   </div>

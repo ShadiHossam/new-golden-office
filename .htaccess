@@ -11,6 +11,24 @@ RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
 
+# Clean URLs: /ac/buy instead of /ac/buy.html. THE_REQUEST reflects the
+# original client request line (never the internally-rewritten one below),
+# so these two conditions can't loop against each other.
+# /dir/index.html -> /dir/  (keeps the existing trailing-slash convention
+# already used for the 7 category hub pages)
+RewriteCond %{THE_REQUEST} \s/+(.*)index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# /anything.html -> /anything
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Serve the .html file internally for the clean extension-less URL, without
+# changing what the visitor sees in the address bar.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
 ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>
