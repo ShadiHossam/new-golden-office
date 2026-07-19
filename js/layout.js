@@ -152,9 +152,13 @@
   document.body.insertAdjacentHTML('beforeend', FOOTER);
 
   // Mark active nav link
+  const normalizePath = p => p.replace(/index\.html$/, '').replace(/\/$/, '') || '/';
+  const currentNorm = normalizePath(path);
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href') || '';
-    if (href && path.endsWith(href.replace(/^\.\.\//, '').replace(/^\.\//, ''))) {
+    if (!href) return;
+    const resolvedNorm = normalizePath(new URL(href, window.location.href).pathname);
+    if (resolvedNorm === currentNorm) {
       link.classList.add('active');
     }
   });
