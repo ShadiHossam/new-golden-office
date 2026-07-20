@@ -23,14 +23,22 @@ function formatDateAr(iso) {
 
 const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
 
+// og:image and sitemap <image:loc> both require absolute URLs per spec;
+// uploaded covers are stored root-relative (e.g. "/images/x.jpg") since
+// that's what works for the <img> tag on the page itself.
+function absoluteUrl(url) {
+  if (!url) return url;
+  return /^https?:\/\//i.test(url) ? url : `https://newgoldenoffice.com${url.startsWith('/') ? '' : '/'}${url}`;
+}
+
 function renderBlogPostHtml(post) {
   const title = escapeHtml(post.seo_title || post.title);
   const desc = escapeHtml(post.meta_description || post.excerpt);
   const keywords = escapeHtml(post.meta_keywords);
   const ogTitle = escapeHtml(post.og_title || post.seo_title || post.title);
   const ogDesc = escapeHtml(post.og_description || post.meta_description || post.excerpt);
-  const ogImage = escapeHtml(post.og_image || post.cover_image || DEFAULT_COVER);
-  const canonical = `https://newgoldenoffice.com/blog/${post.slug}.html`;
+  const ogImage = escapeHtml(absoluteUrl(post.og_image || post.cover_image) || DEFAULT_COVER);
+  const canonical = `https://newgoldenoffice.com/blog/${post.slug}`;
   const publishedIso = post.published_at || new Date().toISOString();
 
   const articleSchema = {
@@ -38,7 +46,7 @@ function renderBlogPostHtml(post) {
     '@type': 'Article',
     headline: post.title,
     description: post.meta_description || post.excerpt || '',
-    image: post.cover_image || post.og_image || DEFAULT_COVER,
+    image: absoluteUrl(post.cover_image || post.og_image) || DEFAULT_COVER,
     datePublished: publishedIso,
     dateModified: post.updated_at || publishedIso,
     author: { '@type': 'Organization', name: 'نيو جولدن أوفيس' },
@@ -100,7 +108,7 @@ function renderBlogPostHtml(post) {
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=5">
   <script type="application/ld+json">${JSON.stringify(articleSchema)}</script>
 </head>
 <body>
@@ -114,19 +122,26 @@ function renderBlogPostHtml(post) {
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="container">
-      <div class="page-hero-content">
-        <nav class="breadcrumb" aria-label="breadcrumb">
-          <a href="../index.html">الرئيسية</a>
-          <i class="fa-solid fa-chevron-left"></i>
-          <a href="../blog/index.html">المدونة</a>
-          <i class="fa-solid fa-chevron-left"></i>
-          <span>${escapeHtml(post.title)}</span>
-        </nav>
-        <h1 class="reveal">${escapeHtml(post.title)}</h1>
-        <p class="lead reveal delay-1" style="opacity:.85;font-size:14px;">
-          <i class="fa-regular fa-calendar"></i> ${formatDateAr(publishedIso)}
-          ${post.category ? ` &nbsp;·&nbsp; <i class="fa-solid fa-tag"></i> ${escapeHtml(post.category)}` : ''}
-        </p>
+      <div class="page-hero-inner">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="breadcrumb">
+            <a href="../">الرئيسية</a>
+            <i class="fa-solid fa-chevron-left"></i>
+            <a href="../blog/">المدونة</a>
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>${escapeHtml(post.title)}</span>
+          </nav>
+          <h1 class="reveal">${escapeHtml(post.title)}</h1>
+          <p class="lead reveal delay-1" style="opacity:.85;font-size:14px;">
+            <i class="fa-regular fa-calendar"></i> ${formatDateAr(publishedIso)}
+            ${post.category ? ` &nbsp;·&nbsp; <i class="fa-solid fa-tag"></i> ${escapeHtml(post.category)}` : ''}
+          </p>
+        </div>
+        <div class="page-hero-image">
+          ${post.cover_image
+            ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.title)}" loading="eager">`
+            : `<div class="page-hero-icon"><i class="fa-regular fa-newspaper"></i>${post.category ? `<span>${escapeHtml(post.category)}</span>` : ''}</div>`}
+        </div>
       </div>
     </div>
   </section>
@@ -134,7 +149,6 @@ function renderBlogPostHtml(post) {
   <!-- Post Content -->
   <section class="section">
     <div class="container" style="max-width:820px;">
-      ${post.cover_image ? `<img src="${escapeHtml(post.cover_image)}" alt="${escapeHtml(post.title)}" style="width:100%;border-radius:var(--radius);margin-bottom:28px;" loading="eager">` : ''}
       <div class="blog-post-body">${sanitizeBodyHtml(post.body_html)}</div>
     </div>
   </section>
@@ -145,7 +159,7 @@ function renderBlogPostHtml(post) {
         <h2>محتاج استشارة أو عرض سعر؟</h2>
         <p>فريقنا المتخصص جاهز لمساعدتك في اختيار أفضل الحلول لعملك</p>
         <div class="btn-group">
-          <a href="../contact.html" class="btn btn-primary btn-lg">
+          <a href="../contact" class="btn btn-primary btn-lg">
             <i class="fa-solid fa-phone"></i>
             تواصل معنا الآن
           </a>
@@ -171,7 +185,7 @@ function renderBlogIndexHtml(posts) {
     .sort((a, b) => new Date(b.published_at || b.updated_at) - new Date(a.published_at || a.updated_at));
 
   const cards = published.map(p => `
-      <a href="${escapeHtml(p.slug)}.html" class="blog-card reveal">
+      <a href="${escapeHtml(p.slug)}" class="blog-card reveal">
         <div class="blog-card-image" style="background-image:url('${escapeHtml(p.cover_image || DEFAULT_COVER)}')"></div>
         <div class="blog-card-body">
           ${p.category ? `<span class="blog-card-category">${escapeHtml(p.category)}</span>` : ''}
@@ -195,7 +209,7 @@ function renderBlogIndexHtml(posts) {
       hasPart: published.map(p => ({
         '@type': 'Article',
         headline: p.title,
-        url: `https://newgoldenoffice.com/blog/${p.slug}.html`
+        url: `https://newgoldenoffice.com/blog/${p.slug}`
       }))
     } : {})
   };
@@ -248,7 +262,7 @@ function renderBlogIndexHtml(posts) {
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=5">
   <script type="application/ld+json">${JSON.stringify(collectionSchema)}</script>
 </head>
 <body>
@@ -264,7 +278,7 @@ function renderBlogIndexHtml(posts) {
     <div class="container">
       <div class="page-hero-content">
         <nav class="breadcrumb" aria-label="breadcrumb">
-          <a href="../index.html">الرئيسية</a>
+          <a href="../">الرئيسية</a>
           <i class="fa-solid fa-chevron-left"></i>
           <span>المدونة</span>
         </nav>
@@ -288,4 +302,4 @@ function renderBlogIndexHtml(posts) {
 `;
 }
 
-module.exports = { renderBlogPostHtml, renderBlogIndexHtml };
+module.exports = { renderBlogPostHtml, renderBlogIndexHtml, absoluteUrl };

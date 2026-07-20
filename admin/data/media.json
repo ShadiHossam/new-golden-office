@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "id": 1,
+    "filename": "copier-mfp-office-1784572494696-842827.jpg",
+    "original_name": "candidate3.jpg",
+    "mimetype": "image/jpeg",
+    "size": 3701580,
+    "url": "/images/copier-mfp-office-1784572494696-842827.jpg",
+    "thumb_url": "/images/thumbs/copier-mfp-office-1784572494696-842827.webp",
+    "alt": "ماكينة تصوير مكتبية متعددة الوظائف على طاولة في مكتب",
+    "title": "",
+    "caption": "",
+    "created_at": "2026-07-20T18:34:54.911Z"
+  },
+  {
+    "id": 2,
+    "filename": "copier-scanning-office-1784572494919-541980.jpg",
+    "original_name": "candidate1.jpg",
+    "mimetype": "image/jpeg",
+    "size": 1347340,
+    "url": "/images/copier-scanning-office-1784572494919-541980.jpg",
+    "thumb_url": "/images/thumbs/copier-scanning-office-1784572494919-541980.webp",
+    "alt": "موظف يستخدم ماكينة تصوير لمسح مستند ضوئيًا في المكتب",
+    "title": "",
+    "caption": "",
+    "created_at": "2026-07-20T18:34:54.985Z"
+  },
+  {
+    "id": 3,
+    "filename": "printer-paper-tray-desk-1784572494985-248504.jpg",
+    "original_name": "candidate2.jpg",
+    "mimetype": "image/jpeg",
+    "size": 2895900,
+    "url": "/images/printer-paper-tray-desk-1784572494985-248504.jpg",
+    "thumb_url": "/images/thumbs/printer-paper-tray-desk-1784572494985-248504.webp",
+    "alt": "سحب درج الورق من طابعة مكتبية صغيرة",
+    "title": "",
+    "caption": "",
+    "created_at": "2026-07-20T18:34:55.121Z"
+  }
+]

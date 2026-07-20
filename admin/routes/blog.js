@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const { loadJson, saveJson, getSeoPages, saveSeoPages } = require('../lib/db');
-const { renderBlogPostHtml, renderBlogIndexHtml } = require('../lib/blog-templates');
+const { renderBlogPostHtml, renderBlogIndexHtml, absoluteUrl } = require('../lib/blog-templates');
 const { logActivity } = require('../lib/activity');
 const { requirePermission } = require('../lib/permissions');
 
@@ -83,7 +83,7 @@ function upsertSitemapEntry(post) {
   const loc = `https://newgoldenoffice.com/blog/${post.slug}.html`;
   const lastmod = post.updated_at || new Date().toISOString();
   const blockRe = new RegExp(`\\t<url>\\n\\t\\t<loc>${loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</loc>[\\s\\S]*?</url>\\n`, 'g');
-  const image = post.cover_image || post.og_image;
+  const image = absoluteUrl(post.cover_image || post.og_image);
   const block = `\t<url>\n\t\t<loc>${loc}</loc>\n\t\t<lastmod>${lastmod}</lastmod>\n${image ? `\t\t<image:image>\n\t\t\t<image:loc>${image}</image:loc>\n\t\t</image:image>\n` : ''}\t</url>\n`;
 
   xml = xml.replace(blockRe, '');

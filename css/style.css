@@ -14,6 +14,11 @@
 .blog-post-body h3{margin:28px 0 12px}
 .blog-post-body p{margin-bottom:1.2rem}
 .blog-post-body ul,.blog-post-body ol{margin:0 0 1.2rem;padding-right:1.4rem}
+.blog-post-body ul li,.blog-post-body ol li{position:relative;padding-right:14px;margin-bottom:.5rem}
+.blog-post-body ul li::before{content:'';position:absolute;right:-14px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--green-light)}
+.blog-post-body ol{counter-reset:blog-ol;padding-right:1.6rem}
+.blog-post-body ol li{list-style:none;counter-increment:blog-ol;padding-right:6px}
+.blog-post-body ol li::before{content:counter(blog-ol)".";position:absolute;right:-1.6rem;top:0;width:1.3rem;color:var(--green);font-family:var(--font-heading);font-weight:700;text-align:left}
 .blog-post-body img{border-radius:var(--radius);margin:20px 0}
 .blog-post-body blockquote{border-right:3px solid var(--green-light);padding:6px 18px;color:var(--text-muted);font-style:italic;margin:20px 0}
 @media (max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
