@@ -198,16 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   // ── Mobile hamburger
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu   = document.querySelector('.nav-menu');
+  const hamburger  = document.querySelector('.hamburger');
+  const navMenu    = document.querySelector('.nav-menu');
+  const navOverlay = document.querySelector('.nav-overlay');
   hamburger?.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('open');
+    navOverlay?.classList.toggle('open');
   });
   document.addEventListener('click', (e) => {
     if (!navbar?.contains(e.target)) {
       hamburger?.classList.remove('active');
       navMenu?.classList.remove('open');
+      navOverlay?.classList.remove('open');
     }
   });
 
@@ -301,6 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: target.offsetTop - offset - 20, behavior: 'smooth' });
         hamburger?.classList.remove('active');
         navMenu?.classList.remove('open');
+        navOverlay?.classList.remove('open');
       }
     });
   });

@@ -146,7 +146,8 @@
   </div>
 </footer>
 <a href="https://wa.me/201227392074?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدماتكم" class="whatsapp-float" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:+201227392074" class="phone-float" aria-label="اتصل بنا"><i class="fas fa-phone-alt"></i></a>`;
+<a href="tel:+201227392074" class="phone-float" aria-label="اتصل بنا"><i class="fas fa-phone-alt"></i></a>
+<div class="nav-overlay"></div>`;
 
   document.body.insertAdjacentHTML('afterbegin', NAV);
   document.body.insertAdjacentHTML('beforeend', FOOTER);
