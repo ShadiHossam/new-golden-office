@@ -76,10 +76,10 @@
     "og_title": "",
     "og_description": "",
     "og_image": "",
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-07-20T19:14:39.597Z",
-    "updated_at": "2026-07-20T19:14:39.597Z",
-    "published_at": null,
+    "updated_at": "2026-07-23T09:17:02.220Z",
+    "published_at": "2026-07-23T09:17:02.220Z",
     "scheduled_at": "2026-07-23T08:24:00.000Z"
   },
   {
