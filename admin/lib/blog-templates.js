@@ -150,6 +150,9 @@ function renderBlogPostHtml(post) {
   <section class="section">
     <div class="container" style="max-width:820px;">
       <div class="blog-post-body">${sanitizeBodyHtml(post.body_html)}</div>
+      <p class="blog-post-author" style="margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color:var(--text-muted);font-size:14px;">
+        <i class="fa-regular fa-pen-to-square"></i> بقلم: نيهال محمد
+      </p>
     </div>
   </section>
 
