@@ -391,10 +391,10 @@
     "og_title": "",
     "og_description": "",
     "og_image": "",
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-07-20T19:15:15.079Z",
-    "updated_at": "2026-07-20T19:15:15.079Z",
-    "published_at": null,
+    "updated_at": "2026-07-24T09:17:02.228Z",
+    "published_at": "2026-07-24T09:17:02.228Z",
     "scheduled_at": "2026-07-24T08:18:00.000Z"
   }
 ]
