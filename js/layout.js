@@ -16,9 +16,7 @@
       <div class="logo-text">نيو جولدن أوفيس</div>
     </a>
     <ul class="nav-menu">
-      <li class="nav-item"><a href="${B}" class="nav-link">الرئيسية</a></li>
       <li class="nav-item"><a href="${B}about" class="nav-link">عن الشركة</a></li>
-      <li class="nav-item"><a href="${B}portfolio" class="nav-link">معرض أعمالنا</a></li>
       <li class="nav-item"><a href="${B}blog/" class="nav-link">المدونة</a></li>
       <li class="nav-item">
         <a href="${B}office-supplies/" class="nav-link" data-dropdown>مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i></a>
