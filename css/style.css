@@ -21,5 +21,11 @@
 .blog-post-body ol li::before{content:counter(blog-ol)".";position:absolute;right:-1.6rem;top:0;width:1.3rem;color:var(--green);font-family:var(--font-heading);font-weight:700;text-align:left}
 .blog-post-body img{border-radius:var(--radius);margin:20px 0}
 .blog-post-body blockquote{border-right:3px solid var(--green-light);padding:6px 18px;color:var(--text-muted);font-style:italic;margin:20px 0}
+.blog-author-card{display:flex;align-items:flex-start;gap:16px;margin-top:40px;padding:22px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius)}
+.blog-author-avatar{width:60px;height:60px;border-radius:50%;background:var(--green-pale);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;border:1.5px solid var(--border);overflow:hidden}
+.blog-author-avatar img{width:100%;height:100%;object-fit:cover}
+.blog-author-label{display:block;font-family:var(--font-heading);font-size:0.75rem;font-weight:700;color:var(--green);margin-bottom:4px}
+.blog-author-name{font-size:1rem;margin-bottom:6px;color:#0f2d06}
+.blog-author-bio{font-size:0.9rem;margin-bottom:0}
 @media (max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.blog-grid{grid-template-columns:1fr}}

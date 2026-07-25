@@ -150,9 +150,14 @@ function renderBlogPostHtml(post) {
   <section class="section">
     <div class="container" style="max-width:820px;">
       <div class="blog-post-body">${sanitizeBodyHtml(post.body_html)}</div>
-      <p class="blog-post-author" style="margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color:var(--text-muted);font-size:14px;">
-        <i class="fa-regular fa-pen-to-square"></i> بقلم: نيهال محمد
-      </p>
+      <div class="blog-author-card">
+        <!-- No headshot yet — swap this div for <img src="..." alt="نيهال محمد"> once one is available -->
+        <div class="blog-author-avatar" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></div>
+        <div>
+          <span class="blog-author-label">الكاتبة</span>
+          <h3 class="blog-author-name">نيهال محمد</h3>
+        </div>
+      </div>
     </div>
   </section>
 
