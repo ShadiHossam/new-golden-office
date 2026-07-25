@@ -19,8 +19,12 @@ RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+(.*)index\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# /anything.html -> /anything
+# /anything.html -> /anything, except search-engine ownership-verification
+# files (e.g. yandex_*.html, google*.html) which must be served at their
+# exact .html URL with a direct 200 — verification crawlers don't follow
+# redirects.
 RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteCond %1 !^(yandex_|google)[a-z0-9]*$ [NC]
 RewriteRule ^ /%1 [R=301,L]
 
 # Serve the .html file internally for the clean extension-less URL, without
