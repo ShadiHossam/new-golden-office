@@ -16,15 +16,19 @@ if (!empty($_POST['website'])) {
     respond(true, 'OK');
 }
 
-$name    = trim($_POST['name'] ?? '');
-$phone   = trim($_POST['phone'] ?? '');
-$service = trim($_POST['service'] ?? '');
-$message = trim($_POST['message'] ?? '');
+$name       = trim($_POST['name'] ?? '');
+$phone      = trim($_POST['phone'] ?? '');
+$service    = trim($_POST['service'] ?? '');
+$message    = trim($_POST['message'] ?? '');
+$company    = trim($_POST['company'] ?? '');
+$subservice = trim($_POST['subservice'] ?? '');
+$source     = trim($_POST['source'] ?? '');
 
 if ($name === '' || $phone === '' || $service === '') {
     respond(false, 'الاسم ورقم الهاتف والخدمة مطلوبون');
 }
-if (mb_strlen($name) > 200 || mb_strlen($phone) > 50 || mb_strlen($service) > 200 || mb_strlen($message) > 5000) {
+if (mb_strlen($name) > 200 || mb_strlen($phone) > 50 || mb_strlen($service) > 200 || mb_strlen($message) > 5000
+    || mb_strlen($company) > 200 || mb_strlen($subservice) > 200 || mb_strlen($source) > 200) {
     respond(false, 'البيانات المدخلة طويلة جداً');
 }
 
@@ -45,13 +49,22 @@ $subject = '=?UTF-8?B?' . base64_encode('رسالة جديدة من نموذج �
 $bodyLines = [
     'الاسم: ' . $name,
     'رقم الهاتف: ' . $phone,
-    'الخدمة المطلوبة: ' . $serviceLabel,
-    'الرسالة:',
-    ($message !== '' ? $message : '(لا توجد رسالة)'),
-    '',
-    'تم الإرسال من: ' . ($_SERVER['HTTP_HOST'] ?? 'newgoldenoffice.usine.site'),
-    'وقت الإرسال: ' . date('Y-m-d H:i:s'),
 ];
+if ($company !== '') {
+    $bodyLines[] = 'اسم الشركة: ' . $company;
+}
+$bodyLines[] = 'الخدمة المطلوبة: ' . $serviceLabel;
+if ($subservice !== '') {
+    $bodyLines[] = 'تفاصيل الطلب: ' . $subservice;
+}
+$bodyLines[] = 'الرسالة:';
+$bodyLines[] = ($message !== '' ? $message : '(لا توجد رسالة)');
+$bodyLines[] = '';
+if ($source !== '') {
+    $bodyLines[] = 'مصدر الطلب: ' . $source;
+}
+$bodyLines[] = 'تم الإرسال من: ' . ($_SERVER['HTTP_HOST'] ?? 'newgoldenoffice.usine.site');
+$bodyLines[] = 'وقت الإرسال: ' . date('Y-m-d H:i:s');
 $body = implode("\n", $bodyLines);
 
 $fromDomain = preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? 'newgoldenoffice.usine.site');
