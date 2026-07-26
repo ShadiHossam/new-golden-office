@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "بوست إت وورق لاصق وتسميات",
+  "description": "بوست إت وأوراق لاصقة وتسميات للمكاتب في مصر — ألوان متعددة وأحجام مختلفة بالجملة.",
+  "serviceType": "أدوات مكتبية",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "نيو جولدن أوفيس",
+    "url": "https://newgoldenoffice.com",
+    "telephone": "+201227392074",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 عبد المنعم سند",
+      "addressLocality": "الإبراهيمية، باب شرق",
+      "addressRegion": "الإسكندرية",
+      "addressCountry": "EG"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "Egypt" }
+});
+---
+<BaseLayout
+  title="بوست إت وورق لاصق وتسميات في مصر | نيو جولدن أوفيس"
+  description="نيو جولدن أوفيس — بوست إت وأوراق لاصقة وتسميات وملصقات في مصر. أحجام وألوان متعددة بالجملة للمكاتب والشركات — توصيل سريع."
+  keywords="بوست إت مصر, ورق لاصق, تسميات لاصقة, ملصقات مكتبية, ستيكر ملاحظات, أوراق ملونة لاصقة, ماكينة تسميات, تصنيف مكتبي مصر"
+  schemaJson={schemaJson}
+  preloadImage="/images/office-supplies-hub.webp"
+>
+  <PageHero
+    title="بوست إت وورق لاصق وتسميات"
+    subtitle="نيو جولدن أوفيس — بوست إت وأوراق لاصقة وتسميات وملصقات في مصر. أحجام وألوان متعددة بالجملة للمكاتب والشركات"
+    heroImage="/images/office-supplies-hub.webp"
+    heroIcon="fa-sticky-note"
+    breadcrumbs={[
+      { label: 'الرئيسية', href: '/' },
+      { label: 'مستلزمات مكتبية', href: '/office-supplies' },
+      { label: 'بوست إت وورق لاصق' }
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="service-detail-grid">
+
+        <div class="service-content">
+
+          <h2>بوست إت وأوراق لاصقة للتنظيم المكتبي</h2>
+          <p>
+            من أكثر المستلزمات المكتبية عملية وانتشاراً، تقدم <strong>نيو جولدن أوفيس</strong> تشكيلة واسعة من أوراق الملاحظات اللاصقة (Post-it / Sticky Notes) والتسميات اللاصقة والملصقات المتنوعة التي تجعل التنظيم المكتبي أسهل وأجمل. نوفر جميع الأحجام والألوان بأسعار الجملة للأفراد والشركات.
+          </p>
+          <p>
+            أوراق الملاحظات اللاصقة ليست مجرد أداة للتذكير — إنها نظام تنظيم متكامل حين تُستخدم بشكل صحيح. تعتمد عليها المكاتب الاحترافية في إدارة المهام ومتابعة المشاريع والتواصل السريع بين أعضاء الفريق.
+          </p>
+
+          <h3>أنواع البوست إت والأوراق اللاصقة</h3>
+          <ul>
+            <li><strong>بوست إت قياسي 76×76 مم</strong> — الحجم الأكثر استخداماً، متوفر بحزم ألوان متعددة (أصفر، أخضر، وردي، أزرق، بنفسجي) وبحزم أحادية اللون</li>
+            <li><strong>بوست إت صغير 38×51 مم</strong> — مناسب للملاحظات القصيرة وتعليق التنبيهات على الملفات والمستندات</li>
+            <li><strong>بوست إت كبير 102×152 مم</strong> — لكتابة ملاحظات مطولة وقوائم المهام والتعليمات المفصلة</li>
+            <li><strong>بوست إت خطوط مفهرسة (Lined)</strong> — أوراق لاصقة بخطوط لضمان انتظام الكتابة وتسهيل القراءة</li>
+            <li><strong>بوست إت لعروض الشاشة</strong> — مصمم خصيصاً للصق على شاشات الكمبيوتر والشاشات الكبيرة في غرف الاجتماعات</li>
+          </ul>
+
+          <h3>فلاجات وعلامات التبويب (Index Flags)</h3>
+          <ul>
+            <li><strong>علامات تبويب شفافة</strong> — علامات صغيرة شبه شفافة للإشارة إلى صفحات محددة في الكتب والملفات دون إخفاء النص</li>
+            <li><strong>فلاجات ورقية ملونة</strong> — علامات ورقية بألوان زاهية للإشارة إلى أقسام مختلفة في وثيقة واحدة</li>
+            <li><strong>تابات كتب قابلة للكتابة</strong> — علامات تبويب يمكن الكتابة عليها لتحديد محتوى الصفحة أو القسم</li>
+            <li><strong>تابات فهرس هاشمي</strong> — للملفات والكتالوجات الكبيرة لتقسيمها وتنظيمها بشكل احترافي</li>
+            <li><strong>علامات "للتوقيع هنا"</strong> — علامات مطبوع عليها "وقّع هنا" بالأحمر لتسريع عملية الحصول على التوقيعات على العقود والوثائق</li>
+          </ul>
+
+          <h3>تسميات لاصقة (Labels)</h3>
+          <ul>
+            <li><strong>ورق تسميات A4</strong> — صفحات A4 مقسمة إلى خلايا تسمية متعددة، تطبع مباشرة من الطابعة الليزرية أو الإنكجت لتسمية الملفات والمنتجات</li>
+            <li><strong>ملصقات دائرية ملونة</strong> — للتصنيف اللوني السريع والإشارة إلى حالة المستند</li>
+            <li><strong>تسميات رقبة الملف</strong> — شرائط تسمية خاصة لظهر ملفات الحلقات لتعريف محتوى كل ملف</li>
+            <li><strong>ملصقات باركود وقيمة</strong> — لأصحاب المحلات والمخازن لتسعير المنتجات وإضافة الباركود</li>
+          </ul>
+
+          <h3>ماكينات التسمية</h3>
+          <p>
+            لمن يحتاج إلى تسمية احترافية سريعة ومرتبة، نوفر ماكينات التسمية (Label Makers) من ماركة Brother وDymo وغيرها. هذه الأجهزة الصغيرة تطبع ملصقات نصية أو تحتوي على صور ورموز مباشرة من الجهاز بجودة عالية ووضوح ممتاز. مثالية لتسمية أسلاك الكمبيوتر والملفات والأرفف وأدراج المكتب.
+          </p>
+
+          <h3>بوست إت مخصص بشعار شركتك</h3>
+          <p>
+            نوفر أوراق ملاحظات لاصقة مطبوعة بشعار شركتك واسمها وبياناتك — فكرة هدية مؤسسية رائعة ومفيدة. يمكن طباعة الشعار على الجزء العلوي من كل ورقة بلون أو بألوان متعددة. يبدأ الحد الأدنى من 100 حزمة. تواصل معنا للحصول على عينة وعرض سعر.
+          </p>
+
+        </div>
+
+        <div class="service-sidebar">
+          <div class="sidebar-card">
+            <h4>المستلزمات المكتبية</h4>
+            <div class="sidebar-services">
+              <a href="/office-supplies/a4-paper" class="sidebar-service-link"><span>ورق A4 وطباعة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/thermal" class="sidebar-service-link"><span>ورق حراري وكاشير</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/pens" class="sidebar-service-link"><span>أقلام وأدوات كتابة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/notebooks" class="sidebar-service-link"><span>دفاتر ومفكرات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/files" class="sidebar-service-link"><span>ملفات وأرشفة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/stamps" class="sidebar-service-link"><span>أختام ومستلزمات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/envelopes" class="sidebar-service-link"><span>أظرف وتغليف</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/whiteboards" class="sidebar-service-link"><span>وايت بورد وفلين بورد</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/binding" class="sidebar-service-link"><span>أدوات ربط ودباسة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/sticky-notes" class="sidebar-service-link active"><span>بوست إت وورق لاصق</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/batteries-usb" class="sidebar-service-link"><span>بطاريات وUSB</span><i class="fas fa-angle-left"></i></a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>تواصل معنا</h4>
+            <div class="contact-info">
+              <div class="contact-info-item"><i class="fas fa-phone"></i><span>01227392074</span></div>
+              <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></div>
+            </div>
+            <a href="/contact" class="btn btn-primary btn-sm" style="width:100%;text-align:center;margin-top:16px">اتصل بنا</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">كيف نعمل</div>
+        <h2>احصل على بوست إتك في 3 خطوات بسيطة</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>اختر الحجم واللون</h4>
+          <p>تصفح تشكيلتنا وحدد الحجم والألوان المناسبة لاحتياج مكتبك. إذا أردت بوست إت مطبوع بشعار شركتك، أرسل لنا شعارك.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>حدد الكمية</h4>
+          <p>أخبرنا بالكمية المطلوبة وسنرسل لك عرض سعر بأسعار الجملة. الطلبات الكبيرة تحصل على خصومات إضافية.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>استلم بسرعة</h4>
+          <p>نجهز طلبك ونوصله إليك سواء في الإسكندرية أو أي محافظة مصرية أخرى — توصيل سريع وموثوق مع ضمان سلامة المنتجات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="padding:60px 0;background:#f8f9fa">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">بوست إت مطبوع بشعار شركتك — هدية مؤسسية مميزة</h2>
+      <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نيو جولدن أوفيس توفر بوست إت مطبوع بشعار وبيانات شركتك للشركات والمؤسسات في مصر:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+        <div style="background:#fff;border-radius:12px;padding:20px;border-right:4px solid #f1c40f">
+          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">للتوزيع الداخلي</h3>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">بوست إت يحمل شعار شركتك لاستخدام موظفيك اليومي — يعزز هوية الشركة</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;border-right:4px solid #e74c3c">
+          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">هدية ترويجية</h3>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">وزّع بوست إت شركتك على عملائك كهدية مفيدة تبقى أمامهم يومياً</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;border-right:4px solid #9b59b6">
+          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">هدية المؤتمرات</h3>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">مثالي كهدية في المعارض والمؤتمرات لتقديم علامتك التجارية</p>
+        </div>
+      </div>
+      <p style="font-size:1rem;color:#555;margin-top:20px">الحد الأدنى للطلب 100 حزمة — تواصل معنا للحصول على عينة مجانية وعرض سعر.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">أسئلة شائعة</div>
+        <h2>أسئلة شائعة عن البوست إت والأوراق اللاصقة</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">هل البوست إت يترك أثراً على الجدران والأسطح؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">البوست إت الأصلي من 3M مصمم بغراء خاص قابل لإعادة الاستخدام لا يترك أثراً على معظم الأسطح عند الإزالة بحذر. تجنب تركه لفترات طويلة جداً (أكثر من بضعة أسابيع) على نفس المكان، خاصة في البيئات ذات الحرارة المرتفعة. للجدران المطلية الحديثة: اختبر على منطقة صغيرة أولاً للتأكد.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما الفرق بين البوست إت العادي وعلامات التبويب (Flags)؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">البوست إت العادي: ورقة لاصقة كاملة يمكن كتابة ملاحظات عليها، يُصلح لوضعه على أي سطح كمكرم أو جهاز كمبيوتر أو وثيقة. علامات التبويب (Flags): أصغر حجماً وأرق، تُستخدم لوضع إشارة على صفحة معينة في كتاب أو ملف لتسهيل العثور عليها لاحقاً، بعضها شبه شفاف لا يحجب النص.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل يمكن طباعة التسميات اللاصقة على طابعتي العادية؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">نعم، ورق التسميات A4 الذي نوفره مصمم للطباعة مباشرة على الطابعات الليزرية والإنكجت العادية. فقط تأكد من اختيار نوع الورق المناسب لطابعتك (ليزر أو إنكجت). نوفر ورق تسميات بعروض خلايا متعددة تناسب جميع الاستخدامات — من تسمية الملفات إلى بطاقات الأسعار.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما ماكينة التسمية الأنسب للمكتب؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">للمكتب الصغير أو الاستخدام الشخصي: ماكينة Brother PT-H110 أو ما يشابهها — صغيرة الحجم وسهلة الاستخدام بأشرطة TZe المتوفرة. للمكتب الكبير والاستخدام الكثيف: ماكينة تدعم الطباعة من الكمبيوتر مثل Brother QL-800 التي تطبع تسميات عالية الجودة بسرعة كبيرة. تواصل معنا لمعرفة الأفضل لاحتياجك.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل البوست إت المطبوع بشعار الشركة مختلف عن العادي في اللصق؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">لا، البوست إت المطبوع بشعار الشركة له نفس خصائص اللصق والإزالة تماماً — فقط الجزء العلوي من الورقة مطبوع بشعارك بينما الجزء الأسفل قابل للكتابة. نستخدم ورق وغراء عالي الجودة يضمن التصاقاً جيداً وإزالة نظيفة. يمكن اختيار لون الورق (أصفر، أبيض، أو ألوان أخرى) بما يتناسب مع هوية علامتك التجارية.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>اطلب بوست إت وتسميات بالجملة الآن</h2>
+      <p>تواصل مع نيو جولدن أوفيس للحصول على أفضل أسعار البوست إت والتسميات اللاصقة في مصر — توصيل سريع لجميع المحافظات</p>
+      <div class="btn-group">
+        <a href="/contact" class="btn btn-secondary btn-lg">اطلب عرض سعر</a>
+        <a href="tel:01227392074" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> 01227392074</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

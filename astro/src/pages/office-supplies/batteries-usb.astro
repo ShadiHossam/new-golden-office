@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "بطاريات وفلاشات USB ومستلزمات كمبيوتر",
+  "description": "بطاريات وفلاشات USB وذاكرات تخزين ومستلزمات كمبيوتر في مصر — بالجملة للمكاتب والشركات.",
+  "serviceType": "مستلزمات إلكترونية مكتبية",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "نيو جولدن أوفيس",
+    "url": "https://newgoldenoffice.com",
+    "telephone": "+201227392074",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 عبد المنعم سند",
+      "addressLocality": "الإبراهيمية، باب شرق",
+      "addressRegion": "الإسكندرية",
+      "addressCountry": "EG"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "Egypt" }
+});
+---
+<BaseLayout
+  title="بطاريات وفلاشات USB ومستلزمات إلكترونية في مصر | نيو جولدن أوفيس"
+  description="نيو جولدن أوفيس — بطاريات قلوية وقابلة للشحن وفلاشات USB وذاكرات SD وكابلات ومشتتات كهرباء في مصر. بالجملة للمكاتب والشركات."
+  keywords="بطاريات مكتبية مصر, بطاريات Duracell مصر, فلاشة USB, ذاكرة SD, كابل USB, مشتت كهرباء مكتبي, بطاريات AA AAA, بطاريات قابلة للشحن"
+  schemaJson={schemaJson}
+  preloadImage="/images/office-supplies-hub.webp"
+>
+  <PageHero
+    title="بطاريات وUSB ومستلزمات إلكترونية"
+    subtitle="نيو جولدن أوفيس — بطاريات قلوية وقابلة للشحن وفلاشات USB وذاكرات SD وكابلات ومشتتات كهرباء في مصر بالجملة للمكاتب والشركات"
+    heroImage="/images/office-supplies-hub.webp"
+    heroIcon="fa-battery-full"
+    breadcrumbs={[
+      { label: 'الرئيسية', href: '/' },
+      { label: 'مستلزمات مكتبية', href: '/office-supplies' },
+      { label: 'بطاريات وUSB' }
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="service-detail-grid">
+
+        <div class="service-content">
+
+          <h2>بطاريات ومستلزمات إلكترونية للمكاتب</h2>
+          <p>
+            لا يكتمل المكتب الحديث دون مخزون كافٍ من البطاريات ومستلزمات التخزين الرقمي والكابلات. في <strong>نيو جولدن أوفيس</strong>، نوفر للشركات والمؤسسات احتياجاتها الكاملة من المستلزمات الإلكترونية المكتبية بأسعار الجملة التنافسية وجودة موثوقة من أفضل الماركات العالمية.
+          </p>
+          <p>
+            من بطاريات الأجهزة اللاسلكية كالفئران والكيبورد إلى فلاشات USB للعروض التقديمية والتخزين — نوفر كل ما يحتاجه مكتبك للعمل بكفاءة دون انقطاع.
+          </p>
+
+          <h3>البطاريات المتاحة</h3>
+          <ul>
+            <li><strong>بطاريات AA قلوية</strong> — المقاس الأكثر طلباً، تستخدم في الفئران اللاسلكية والكيبوردات والريموت كونترول والأجهزة المكتبية الصغيرة، متوفرة من ماركات Duracell وEnergizer وPanasonic</li>
+            <li><strong>بطاريات AAA قلوية</strong> — للأجهزة الدقيقة والصغيرة كبعض أنواع الريموت والألعاب الإلكترونية والأجهزة الطبية الصغيرة</li>
+            <li><strong>بطاريات 9V</strong> — للأجهزة الأمنية وعدادات الكهرباء وبعض المعدات المختبرية</li>
+            <li><strong>بطاريات C وD</strong> — للأجهزة الكبيرة كالمصابيح الكشافة وبعض أجهزة الصوت</li>
+            <li><strong>بطاريات قابلة للشحن (NiMH)</strong> — اقتصادية على المدى البعيد، مثالية للأجهزة التي تستنزف البطاريات بسرعة كالفئران اللاسلكية في الاستخدام المكثف</li>
+            <li><strong>شاحن بطاريات</strong> — شواحن ذكية سريعة تشحن من 2 إلى 8 بطاريات في وقت واحد</li>
+          </ul>
+
+          <h3>فلاشات USB وذاكرات التخزين</h3>
+          <ul>
+            <li><strong>فلاشة USB 3.0</strong> — سرعة نقل عالية تصل إلى 100 MB/s، متوفرة بسعات 8 و16 و32 و64 و128 جيجابايت من ماركات Kingston وSandisk وHP</li>
+            <li><strong>فلاشة USB معدنية</strong> — بهيكل معدني متين مقاوم للصدمات والكسر، مثالية للاستخدام اليومي المكثف والنقل الدائم</li>
+            <li><strong>بطاقة SD و MicroSD</strong> — لكاميرات الأمن والكاميرات الرقمية وأجهزة POS والأجهزة اللوحية</li>
+            <li><strong>هارد ديسك خارجي (External HDD)</strong> — بسعات 1 و2 تيرابايت للنسخ الاحتياطي الدوري للبيانات المهمة</li>
+            <li><strong>USB Hub متعدد المنافذ</strong> — يضاعف منافذ USB في جهاز الكمبيوتر من 1 إلى 4-7 منافذ</li>
+          </ul>
+
+          <h3>كابلات ومستلزمات التوصيل</h3>
+          <ul>
+            <li><strong>كابل USB-A إلى USB-B للطابعات</strong> — الكابل القياسي لتوصيل الطابعات والسكانر بالكمبيوتر</li>
+            <li><strong>كابل USB-C</strong> — لشحن الأجهزة الحديثة ونقل البيانات بسرعة عالية</li>
+            <li><strong>كابل HDMI</strong> — لتوصيل الكمبيوتر بشاشات العرض والبروجيكتور وشاشات الاجتماعات</li>
+            <li><strong>مشتت كهرباء مكتبي (Power Strip)</strong> — بـ 6-8 مقابس مع فاصل أمان وحماية من الفولتاج العالي، مثالي لتغذية أجهزة المكتب المتعددة</li>
+            <li><strong>UPS احتياطي</strong> — مصدر طاقة احتياطي لحماية الأجهزة من انقطاع الكهرباء المفاجئ وتشويه الفولتاج</li>
+          </ul>
+
+          <h3>فلاشات USB بشعار شركتك</h3>
+          <p>
+            فلاشة USB المطبوع عليها شعار شركتك هي واحدة من أذكى الهدايا الترويجية المكتبية — مفيدة للغاية ويستخدمها متلقيها بشكل يومي مما يبقي علامتك التجارية أمامه دائماً. نوفر فلاشات USB بأشكال متعددة (كلاسيك، معدني، بلاستيك) مع طباعة الشعار بالليزر أو الحبر الملون، بسعات 8 و16 و32 جيجابايت. الحد الأدنى 50 قطعة.
+          </p>
+
+        </div>
+
+        <div class="service-sidebar">
+          <div class="sidebar-card">
+            <h4>المستلزمات المكتبية</h4>
+            <div class="sidebar-services">
+              <a href="/office-supplies/a4-paper" class="sidebar-service-link"><span>ورق A4 وطباعة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/thermal" class="sidebar-service-link"><span>ورق حراري وكاشير</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/pens" class="sidebar-service-link"><span>أقلام وأدوات كتابة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/notebooks" class="sidebar-service-link"><span>دفاتر ومفكرات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/files" class="sidebar-service-link"><span>ملفات وأرشفة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/stamps" class="sidebar-service-link"><span>أختام ومستلزمات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/envelopes" class="sidebar-service-link"><span>أظرف وتغليف</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/whiteboards" class="sidebar-service-link"><span>وايت بورد وفلين بورد</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/binding" class="sidebar-service-link"><span>أدوات ربط ودباسة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/sticky-notes" class="sidebar-service-link"><span>بوست إت وورق لاصق</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/batteries-usb" class="sidebar-service-link active"><span>بطاريات وUSB</span><i class="fas fa-angle-left"></i></a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>تواصل معنا</h4>
+            <div class="contact-info">
+              <div class="contact-info-item"><i class="fas fa-phone"></i><span>01227392074</span></div>
+              <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></div>
+            </div>
+            <a href="/contact" class="btn btn-primary btn-sm" style="width:100%;text-align:center;margin-top:16px">اتصل بنا</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">كيف نعمل</div>
+        <h2>احصل على احتياجاتك الإلكترونية في 3 خطوات</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>اختر ما تحتاجه</h4>
+          <p>حدد نوع البطاريات أو فلاشات USB أو الكابلات أو مشتتات الكهرباء التي تحتاج إليها. إذا لم تعرف أيها يناسبك — اتصل بنا ونساعدك في الاختيار.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>حدد الكمية</h4>
+          <p>أخبرنا بالكمية المطلوبة من كل منتج وسنرسل لك عرض سعر الجملة. كميات البطاريات الكبيرة تحصل على خصومات مميزة للشركات.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>استلم طلبك</h4>
+          <p>نرسل طلبك إليك في أسرع وقت ممكن مع ضمان مطابقة الجودة والمواصفات. توصيل لجميع محافظات مصر أو استلام من متجرنا.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="padding:60px 0;background:#f8f9fa">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">الماركات المتوفرة لدينا</h2>
+      <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نوفر البطاريات ومستلزمات التخزين من أفضل الماركات العالمية:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+        <div style="background:#fff;border-radius:12px;padding:20px;text-align:center;border-bottom:4px solid #c8a951">
+          <div style="font-size:1.2rem;font-weight:800;color:#1a1a2e;margin-bottom:6px">Duracell</div>
+          <p style="color:#555;font-size:0.85rem;line-height:1.5">الأطول عمراً — ضمان عالي الأداء</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;text-align:center;border-bottom:4px solid #3498db">
+          <div style="font-size:1.2rem;font-weight:800;color:#1a1a2e;margin-bottom:6px">Energizer</div>
+          <p style="color:#555;font-size:0.85rem;line-height:1.5">قوة فائقة — مثالية للأجهزة المكثفة</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;text-align:center;border-bottom:4px solid #27ae60">
+          <div style="font-size:1.2rem;font-weight:800;color:#1a1a2e;margin-bottom:6px">Kingston</div>
+          <p style="color:#555;font-size:0.85rem;line-height:1.5">فلاشات USB وذاكرات موثوقة بضمان</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;text-align:center;border-bottom:4px solid #e74c3c">
+          <div style="font-size:1.2rem;font-weight:800;color:#1a1a2e;margin-bottom:6px">SanDisk</div>
+          <p style="color:#555;font-size:0.85rem;line-height:1.5">بطاقات SD وفلاشات USB عالية السرعة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">أسئلة شائعة</div>
+        <h2>أسئلة شائعة عن البطاريات ومستلزمات USB</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">ما البطاريات الأنسب للفأرة والكيبورد اللاسلكي؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">أفضل خيارين للأجهزة اللاسلكية المكتبية: (1) بطاريات AA قلوية جودة عالية من Duracell أو Energizer — تعطي عمراً أطول وأداءً ثابتاً. (2) بطاريات AA قابلة للشحن NiMH — اقتصادية على المدى البعيد إذا كنت تستخدم فأرة لاسلكية بشكل مكثف. في المكاتب ذات الاستخدام الثقيل ننصح بالبطاريات القابلة للشحن مع شاحن جيد لتوفير التكاليف على المدى البعيد.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما سعة فلاشة USB المناسبة للمكتب؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">للاستخدام المكتبي العام (مستندات Office وPDF): فلاشة 16 جيجابايت كافية جداً. للعروض التقديمية التي تحتوي على صور وفيديو: 32 جيجابايت هي الخيار الأمثل. لنقل ملفات ضخمة ونسخ احتياطية كبيرة: 64 أو 128 جيجابايت. تأكد من اختيار USB 3.0 أو أسرع لتوفير وقتك في نقل البيانات.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل تقدمون فلاشات USB مطبوعة بشعار الشركة؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">نعم، نوفر فلاشات USB مطبوع عليها شعار شركتك بالليزر أو الحبر الملون. متوفرة بأشكال متعددة (معدني، بلاستيك، كلاسيك، دوّار) وبسعات 8 و16 و32 جيجابايت. الحد الأدنى للطلب 50 قطعة. تُعدّ من أجمل وأجدى الهدايا الترويجية المكتبية — تواصل معنا للحصول على عينة وعرض سعر.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل يجب شراء UPS لكل جهاز كمبيوتر في المكتب؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">لا يجب بالضرورة — ذلك يعتمد على طبيعة العمل وتكرار انقطاع الكهرباء في منطقتك. UPS ضروري لأجهزة الخوادم (Servers) وأجهزة الكمبيوتر التي تحتوي على بيانات حساسة قيد التشغيل وأجهزة POS. للأجهزة العادية: مشتت كهرباء مع حماية من التشويه قد يكون كافياً. استشرنا وسنساعدك في تحديد الحل الأنسب لاحتياجات مكتبك.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما الفرق بين USB 2.0 وUSB 3.0؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">USB 2.0: سرعة نقل قصوى 60 MB/s نظرياً (عملياً 20-25 MB/s) — كافٍ للمستندات العادية. USB 3.0: سرعة نقل قصوى 625 MB/s نظرياً (عملياً 60-100 MB/s) — أسرع بكثير لنقل الملفات الكبيرة. التعرف عليه: المنفذ الأزرق أو الشريحة الزرقاء داخل الفلاشة. ننصح دائماً بـ USB 3.0 لأن فارق السعر ضئيل بينما فارق الأداء كبير.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>اطلب بطاريات وUSB بالجملة الآن</h2>
+      <p>تواصل مع نيو جولدن أوفيس للحصول على أفضل أسعار البطاريات والمستلزمات الإلكترونية في مصر — توصيل سريع لجميع المحافظات</p>
+      <div class="btn-group">
+        <a href="/contact" class="btn btn-secondary btn-lg">اطلب عرض سعر</a>
+        <a href="tel:01227392074" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> 01227392074</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

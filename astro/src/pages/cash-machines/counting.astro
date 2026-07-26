@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ماكينات عد النقود",
+  "description": "ماكينات عد النقود للبنوك والمحلات في مصر — دقة عالية وسرعة كبيرة مع كشف العملات المزيفة تلقائياً.",
+  "serviceType": "ماكينات عد نقود",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "نيو جولدن أوفيس",
+    "url": "https://newgoldenoffice.com",
+    "telephone": "+201227392074",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 عبد المنعم سند",
+      "addressLocality": "الإبراهيمية، باب شرق",
+      "addressRegion": "الإسكندرية",
+      "addressCountry": "EG"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "Egypt" }
+});
+---
+
+<BaseLayout
+  title="ماكينات عد النقود في مصر — للبنوك والمحلات | نيو جولدن أوفيس"
+  description="ماكينات عد النقود في مصر للبيع. Glory، Cassida، Carnation — عد وفرز وكشف تزوير. مناسبة للبنوك والمحلات والصرافة. نيو جولدن أوفيس. 01227392074"
+  schemaJson={schemaJson}
+>
+<PageHero
+  title="ماكينات عد النقود في مصر — للبنوك والمحلات"
+  subtitle="ماكينات عد النقود الاحترافية للبنوك والمحلات وشركات الصرافة — عد سريع، دقة 100%، كشف العملات المزيفة"
+  heroImage="/images/copiers-hub.webp"
+  heroIcon="fa-money-bill-wave"
+  breadcrumbs={[
+    { label: 'الرئيسية', href: '/' },
+    { label: 'ماكينات الفارم والعد', href: '/cash-machines' },
+    { label: 'ماكينات عد النقود' }
+  ]}
+/>
+
+<section class="service-detail">
+  <div class="container"><div class="service-detail-grid">
+    <div class="service-content">
+
+      <h2>أنواع ماكينات عد النقود</h2>
+      <p>تتنوع ماكينات عد النقود في السوق المصري لتغطية احتياجات مختلفة، بدءاً من المحلات الصغيرة وصولاً إلى البنوك والمؤسسات المالية الكبرى. في نيو جولدن أوفيس، نوفر ثلاثة أنواع رئيسية لتناسب كل حجم عمل وكل ميزانية.</p>
+
+      <h3><i class="fas fa-layer-group" style="color:var(--secondary);margin-left:8px;"></i> عدادات الأوراق النقدية (Bill Counters)</h3>
+      <p>هي الأكثر شيوعاً في السوق المصري وتُعدّ الأساس في أي مكان يتعامل مع النقد اليومي. تعمل هذه الماكينات على عد الأوراق النقدية بسرعات تتراوح بين <strong>800 و1500 ورقة في الدقيقة</strong>. تتضمن نماذج متعددة تعمل مع الجنيه المصري والعملات الأجنبية كالدولار واليورو. تكتشف أي ورقة ناقصة أو إضافية فوراً وتتوقف عند اكتشاف ورقة مجعدة أو ملتصقة.</p>
+
+      <h3><i class="fas fa-coins" style="color:var(--secondary);margin-left:8px;"></i> عدادات العملات المعدنية (Coin Sorters)</h3>
+      <p>مخصصة للمحلات التجارية والمطاعم والمقاهي التي تتعامل يومياً بكميات كبيرة من العملات المعدنية. تفرز هذه الماكينات العملات تلقائياً حسب فئتها وتعدها بدقة تامة، ثم تقدم القيمة الإجمالية لكل فئة. تُزيل الحاجة لفرز العملات يدوياً خاصة عند إغلاق الخزنة في نهاية اليوم.</p>
+
+      <h3><i class="fas fa-sort-amount-up" style="color:var(--secondary);margin-left:8px;"></i> ماكينات العد والفرز متعددة الفئات (Mixed Denomination)</h3>
+      <p>الأكثر تطوراً والأعلى كفاءة. هذه الماكينات الذكية قادرة على قراءة كل ورقة نقدية وتحديد فئتها ثم حساب القيمة الإجمالية لكل فئة والمجموع الكلي تلقائياً. مثالية جداً للبنوك وشركات الصرافة ومراكز التسوية التي تستقبل نقداً مختلط الفئات.</p>
+
+      <h2>الماركات المتاحة لدينا</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>Glory:</strong> ماركة يابانية رائدة — الخيار الأول للبنوك الكبرى في مصر والعالم. جودة تصنيع استثنائية وعمر افتراضي طويل مع دقة لا تُضاهى</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>Cassida:</strong> ماركة أمريكية بجودة عالية وسعر تنافسي. تجمع بين الأداء الاحترافي والموثوقية وشائعة في شركات الصرافة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>Carnation:</strong> خيار اقتصادي ممتاز للمحلات الصغيرة والمتوسطة. أداء جيد بسعر مناسب لميزانيات المشاريع الناشئة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>Ribao:</strong> ماركة صينية موثوقة تحظى بشعبية متزايدة في السوق المصري</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>ماركات صينية موثوقة أخرى:</strong> تشكيلة من الأجهزة الصينية عالية الجودة التي خضعت لاختباراتنا قبل عرضها للبيع</span></li>
+      </ul>
+
+      <h2>مميزات ماكينات العد الحديثة</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>Batch Counting (العد بدفعات محددة):</strong> برمجة الماكينة للتوقف تلقائياً عند عدد محدد لتسهيل تجميع الحزم</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>Add Mode:</strong> تراكم الأرقام من عدة جولات عد متتالية للحصول على المجموع الكلي</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>كشف العملات المزيفة (UV+MG+IR):</strong> يجمع الكشف بالأشعة فوق البنفسجية مع الكشف المغناطيسي وأحياناً الأشعة تحت الحمراء</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>شاشة عرض مزدوجة:</strong> شاشة للمشغّل وأخرى للعميل لمزيد من الشفافية</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>بدء/إيقاف تلقائي:</strong> تبدأ العد فور وضع الأوراق وتتوقف عند اكتمال العد</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>التنظيف الذاتي:</strong> بعض الطرازات تأتي بخاصية تنظيف ذاتي للمسارات للحفاظ على الأداء</span></li>
+      </ul>
+
+      <h2>كيف تختار الماكينة المناسبة؟</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>الحجم اليومي للنقد:</strong> إذا كنت تعد آلاف الأوراق يومياً اختر سرعة 1200-1500 ورقة/دقيقة. للاستخدام المتوسط 800-1000 ورقة/دقيقة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الحاجة لفرز الفئات:</strong> إذا استقبلت نقداً مختلط الفئات يومياً فماكينة Mixed Denomination تستحق الاستثمار</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>مستوى كشف التزوير:</strong> في الأماكن عالية المخاطر اختر ماكينة بتقنيات UV+MG+IR معاً</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الميزانية المتاحة:</strong> لدينا خيارات لكل ميزانية من الاقتصادية للمشاريع الصغيرة حتى الاحترافية للمؤسسات الكبرى</span></li>
+      </ul>
+
+    </div>
+    <aside class="service-sidebar">
+      <div class="sidebar-card">
+        <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+        <div class="contact-info">
+          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+          <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات ماكينات الفارم والعد</h4>
+        <div class="sidebar-services">
+          <a href="/cash-machines/counting" class="sidebar-service-link active"><span>ماكينات عد النقود</span><i class="fas fa-angle-left"></i></a>
+          <a href="/cash-machines/detector" class="sidebar-service-link"><span>كشف العملات المزيفة</span><i class="fas fa-angle-left"></i></a>
+          <a href="/cash-machines/franking" class="sidebar-service-link"><span>ماكينات الفارم</span><i class="fas fa-angle-left"></i></a>
+          <a href="/cash-machines/shredder" class="sidebar-service-link"><span>تدمير المستندات</span><i class="fas fa-angle-left"></i></a>
+        </div>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+  <div class="container">
+    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">كيف تختار ماكينة عد النقود المناسبة لنشاطك؟</h2>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">قبل شراء ماكينة عد النقود في مصر، ضع في اعتبارك هذه المعايير:</p>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:#1a1a2e;color:#fff"><th style="padding:12px 16px;text-align:right">النشاط التجاري</th><th style="padding:12px 16px;text-align:right">الميزة المطلوبة</th><th style="padding:12px 16px;text-align:right">السرعة الموصى بها</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff;border-bottom:1px solid #eee"><td style="padding:12px 16px">محل أو كافيه صغير</td><td style="padding:12px 16px">كشف تزوير + عد بسيط</td><td style="padding:12px 16px">400-600 ورقة/دقيقة</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">سوبرماركت أو صيدلية</td><td style="padding:12px 16px">عد + فرز + تقرير</td><td style="padding:12px 16px">800-1000 ورقة/دقيقة</td></tr>
+          <tr style="background:#fff;border-bottom:1px solid #eee"><td style="padding:12px 16px">بنك أو صراف</td><td style="padding:12px 16px">دقة عالية + UV + MG + IR</td><td style="padding:12px 16px">1000+ ورقة/دقيقة</td></tr>
+          <tr style="background:#f8f9fa"><td style="padding:12px 16px">شركة أو مصنع</td><td style="padding:12px 16px">عد + فارم + إحصاء</td><td style="padding:12px 16px">800+ ورقة/دقيقة</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">طريقة العمل</div><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">١</div><h4>تواصل معنا</h4><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h4>عرض السعر</h4><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h4>التسليم</h4><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header"><div class="section-tag">أسئلة شائعة</div><h2>أسئلة شائعة عن ماكينات عد النقود</h2><div class="divider"></div></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">ما سرعة ماكينات عد النقود لديكم؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتراوح سرعات ماكيناتنا بين 800 و1500 ورقة في الدقيقة حسب الموديل. للبنوك والجهات ذات الحجم الكبير ننصح بالماكينات ذات السرعة العالية 1200-1500 ورقة/دقيقة، أما للمحلات فالسرعة 800-1000 كافية تماماً.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل ماكينة العد تكتشف العملات المزيفة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">معظم ماكيناتنا مزودة بخاصية كشف العملات المزيفة بتقنيات UV وMG وأحياناً IR. عند اكتشاف ورقة مشبوهة تتوقف الماكينة وتنبه المستخدم فوراً.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن للماكينة عد عملات مختلطة الفئات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، ماكينات Mixed Denomination تستطيع قراءة وتصنيف كل ورقة حسب فئتها تلقائياً وحساب القيمة الإجمالية، وهي مثالية للبنوك وشركات الصرافة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما أنسب ماكينة لمطعم أو محل صغير؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للاستخدام الخفيف إلى المتوسط في المطاعم والمحلات، ننصح بماكينة اقتصادية من فئة Cassida أو Carnation بسرعة 1000 ورقة/دقيقة مع خاصية كشف UV وMG.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل توفرون ضماناً وصيانة للأجهزة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، جميع الأجهزة تأتي مع ضمان لمدة سنة، ونوفر خدمة صيانة دورية وإصلاح الأعطال. يمكن إحضار الجهاز إلينا أو نرسل فني لموقعك في الإسكندرية والقاهرة.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <p>فريقنا جاهز للرد عليك فوراً — تواصل معنا واختر الجهاز المناسب لعملك</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="https://wa.me/201227392074" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> واتساب</a>
+      <a href="tel:+201227392074" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fas fa-phone-alt"></i> 01227392074</a>
+    </div>
+  </div>
+</section>
+</BaseLayout>

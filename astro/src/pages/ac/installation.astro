@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "تركيب تكييفات",
+  "description": "تركيب تكييفات احترافي في مصر بواسطة فنيين معتمدين — سبليت وكاسيت ومركزي مع ضمان سنة على التركيب.",
+  "serviceType": "تركيب تكييفات",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "نيو جولدن أوفيس",
+    "url": "https://newgoldenoffice.com",
+    "telephone": "+201227392074",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 عبد المنعم سند",
+      "addressLocality": "الإبراهيمية، باب شرق",
+      "addressRegion": "الإسكندرية",
+      "addressCountry": "EG"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "Egypt" }
+});
+---
+
+<BaseLayout
+  title="تركيب تكييفات في مصر — محترفين معتمدين | نيو جولدن أوفيس"
+  description="تركيب تكييفات في مصر بواسطة فنيين معتمدين — سبليت وكاسيت ومركزي. أنابيب نحاس أصلية، صرف صحيح، ضمان سنة على التركيب. نيو جولدن أوفيس الإسكندرية منذ 1990."
+  schemaJson={schemaJson}
+  preloadImage="/images/ac-hub.webp"
+>
+<PageHero
+  title="تركيب تكييفات في مصر — فنيون محترفون معتمدون"
+  subtitle="نيو جولدن أوفيس تقدم خدمة تركيب تكييفات احترافية في مصر منذ عام 1990. فنيونا المعتمدون يضمنون تركيباً دقيقاً وفق معايير الشركات المصنّعة لأعلى أداء وأطول عمر لتكييفك. نخدم الإسكندرية والقاهرة وجميع المحافظات."
+  heroImage="/images/ac-hub.webp"
+  heroIcon="fa-tools"
+  breadcrumbs={[
+    { label: 'الرئيسية', href: '/' },
+    { label: 'تكييفات', href: '/ac' },
+    { label: 'تركيب تكييفات' }
+  ]}
+/>
+
+<section class="service-detail">
+  <div class="container"><div class="service-detail-grid">
+    <div class="service-content">
+      <h2>لماذا التركيب الاحترافي يُطيل عمر تكييفك؟</h2>
+      <p>كثير من العملاء يتفاجؤون بأن سبب أعطال التكييف المتكررة ليس جودة الجهاز بل أخطاء في التركيب الأول. تركيب التكييف ليس مجرد تثبيت وحدتين وتوصيل الأنابيب — إنه عملية دقيقة تتطلب خبرة وأدوات متخصصة.</p>
+
+      <h3><i class="fas fa-exclamation-circle" style="color:var(--secondary);margin-left:8px;"></i> لماذا يهم التركيب الاحترافي؟</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>الكفاءة الكاملة:</strong> التركيب الصحيح يضمن حصولك على كامل طاقة التبريد المكتوبة على الجهاز — التركيب الخاطئ قد يُقلّل الكفاءة 20-30%</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>عمر أطول:</strong> أنابيب النحاس المتصلة بشكل صحيح مع العزل الجيد تحمي الكمبريسور من الزيادة في الضغط</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>توفير الكهرباء:</strong> الجهاز المركَّب صح يعمل في نطاق التصميم — لا يُجهد الكمبريسور بلا داعٍ</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الضمان ساري:</strong> كثير من الشركات ترفض الضمان إذا تبيّن أن التركيب لم يكن احترافياً — فريقنا مُعتمد من الشركات المصنّعة</span></li>
+      </ul>
+
+      <h3><i class="fas fa-clipboard-check" style="color:var(--secondary);margin-left:8px;"></i> متطلبات التركيب — نتحقق منها مسبقاً</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>مقاس الفتحة في الجدار:</strong> نحسب المكان الصح لمرور الأنابيب بعيداً عن الأسلاك الكهربائية والإنشاءات</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>التمديد الكهربائي:</strong> نتأكد من أن الدائرة الكهربائية تتحمل الحمل المطلوب ونوفر breaker منفصل إذا لزم</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>مكان الوحدة الخارجية:</strong> نختار الموضع الأمثل بعيداً عن مصادر الحرارة مع تهوية كافية</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>مسار الصرف:</strong> نصمم خط الصرف بميل صحيح لضمان سيلان الماء بعيداً عن الجدار تلقائياً</span></li>
+      </ul>
+
+      <h3><i class="fas fa-snowflake" style="color:var(--secondary);margin-left:8px;"></i> أنواع التركيب التي نتخصص فيها</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>تكييف سبليت حائطي (Wall Split):</strong> الأشيع في مصر — وحدة داخلية على الحائط ووحدة خارجية. يتضمن حفر القاعدة، تمرير الأنابيب، وسد الفتحة بإتقان</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>تكييف كانسيل (Concealed Duct):</strong> يُركَّب داخل الأسقف المعلقة — التبريد يصدر من الفتحات في السقف. يحتاج تخطيطاً دقيقاً للقنوات</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>تكييف كاسيت (Cassette):</strong> يُثبَّت في منتصف السقف ويوزع الهواء 4 اتجاهات — مثالي للمحلات والصالات الكبيرة</span></li>
+      </ul>
+
+      <h3><i class="fas fa-list-ol" style="color:var(--secondary);margin-left:8px;"></i> خطوات تركيب تكييف السبليت بالتفصيل</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><span><strong>الخطوة 1 — تحديد المواضع:</strong> نحدد موضع الوحدة الداخلية (مرتفعة بما يكفي، بعيدة عن المصادر الحرارية) وموضع الوحدة الخارجية على الشرفة أو الحائط الخارجي</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الخطوة 2 — تركيب اللوحة الخلفية:</strong> تثبيت لوحة الدعم (Back Plate) بمستوى دقيق وبراغٍ قوية في الجدار</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الخطوة 3 — حفر ثقب المرور:</strong> حفر ثقب قطر 7 سم في الجدار بزاوية ميل طفيفة نحو الخارج لتصريف الكثافة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الخطوة 4 — تمديد الأنابيب والأسلاك:</strong> تمديد أنابيب النحاس المعزولة وأسلاك التوصيل وخرطوم الصرف في sleeve واحدة منظمة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الخطوة 5 — تثبيت الوحدتين وتوصيلهما:</strong> تثبيت الوحدة الداخلية على اللوحة والوحدة الخارجية على القاعدة المعدنية، ثم توصيل الأنابيب بمفاتيح خاصة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>الخطوة 6 — تفريغ الهواء والاختبار:</strong> تفريغ الأنابيب من الهواء والرطوبة بمضخة Vacuum Pump ثم فتح الفريون واختبار التبريد والتدفئة</span></li>
+      </ul>
+
+      <div style="background:#f0f4ff;border-right:4px solid var(--secondary);padding:20px;border-radius:8px;margin:24px 0;">
+        <h4 style="margin-bottom:12px;"><i class="fas fa-info-circle" style="color:var(--secondary);margin-left:8px;"></i> تركيب احترافي مقابل تركيب عشوائي</h4>
+        <p style="font-size:0.95rem;color:#444;margin:0;line-height:1.7">التركيب الاحترافي يستخدم أنابيب نحاس أصلية بسُمك مناسب، مفاتيح توصيل معتمدة، وأدوات Vacuum Pump وManifold Gauge للتحقق من الضغط. التركيب العشوائي باستخدام أنابيب رديئة أو بدون تفريغ يُقلّل كفاءة الجهاز ويُعرّض الكمبريسور للتلف المبكر.</p>
+      </div>
+    </div>
+
+    <aside class="service-sidebar">
+      <div class="sidebar-card">
+        <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات التكييف</h4>
+        <div class="sidebar-services">
+          <a href="/ac/buy" class="sidebar-service-link"><span>بيع تكييفات</span><i class="fas fa-angle-left"></i></a>
+          <a href="/ac/installation" class="sidebar-service-link active"><span>تركيب تكييفات</span><i class="fas fa-angle-left"></i></a>
+          <a href="/ac/maintenance" class="sidebar-service-link"><span>صيانة وشحن فريون</span><i class="fas fa-angle-left"></i></a>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+        <div class="contact-info">
+          <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
+          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+          <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
+        </div>
+      </div>
+      <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
+        <h4 style="color:var(--secondary);border-color:var(--secondary);">احجز تركيب تكييفك</h4>
+        <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">احجز موعد التركيب وسنزورك في اليوم المناسب</p>
+        <a href="https://wa.me/201227392074?text=أريد%20حجز%20موعد%20تركيب%20تكييف" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> احجز الآن</a>
+      </div>
+    </aside>
+  </div></div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">كيف نعمل</div>
+      <h2>خطوات التركيب من الاتصال حتى التسليم</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">١</div><h4>معاينة مجانية</h4><p>فريقنا يزور المكان مجاناً للمعاينة وتحديد أفضل مواضع التركيب وحساب طول الأنابيب المطلوب ومتطلبات الكهرباء</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h4>تجهيز مكان التركيب</h4><p>نُجهّز كل ما يلزم — اللوحات والبراغي والأنابيب وأسلاك التوصيل ووضع الحواجز الواقية للأرضيات والأثاث</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h4>التركيب والاختبار والتسليم</h4><p>ننتهي من التركيب الكامل ونختبر التبريد والتدفئة والصرف وتحكم الريموت — ثم نُسلّمك الجهاز مع شرح كامل للاستخدام وبطاقة الضمان</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>ركّب تكييفك بيد أمينة ومحترفة</h2>
+    <p>لا تخاطر بتكييفك مع فنيين غير معتمدين — تواصل معنا الآن للحصول على معاينة مجانية وعرض سعر تركيب شامل</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="/contact" class="btn btn-outline btn-lg"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+      <a href="https://wa.me/201227392074?text=أريد%20تركيب%20تكييف%20احترافي" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fab fa-whatsapp" style="color:#25D366;"></i> واتساب مباشر</a>
+    </div>
+  </div>
+</section>
+</BaseLayout>

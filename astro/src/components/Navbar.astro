@@ -1,0 +1,102 @@
+---
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+const isActive = (prefix: string) =>
+  prefix === '/' ? currentPath === '/' : currentPath.startsWith(prefix);
+---
+
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="navbar-brand">
+      <img src="/images/logo.png" alt="نيو جولدن أوفيس" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">نيو جولدن أوفيس</div>
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="/about" class:list={['nav-link', { active: isActive('/about') }]}>عن الشركة</a>
+      </li>
+      <li class="nav-item">
+        <a href="/office-supplies" class:list={['nav-link', { active: isActive('/office-supplies') }]} data-dropdown>
+          مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/office-supplies/a4-paper"><i class="fas fa-file"></i> ورق A4</a>
+          <a href="/office-supplies/thermal"><i class="fas fa-receipt"></i> ورق حراري</a>
+          <a href="/office-supplies/pens"><i class="fas fa-pen"></i> أقلام وأدوات كتابة</a>
+          <a href="/office-supplies/notebooks"><i class="fas fa-book"></i> دفاتر ومفكرات</a>
+          <a href="/office-supplies/files"><i class="fas fa-folder"></i> ملفات وأرشفة</a>
+          <div class="dropdown-divider"></div>
+          <a href="/office-supplies/stamps"><i class="fas fa-stamp"></i> أختام</a>
+          <a href="/office-supplies/envelopes"><i class="fas fa-envelope"></i> أظرف وتغليف</a>
+          <a href="/office-supplies/whiteboards"><i class="fas fa-chalkboard"></i> وايت بورد</a>
+          <a href="/office-supplies/binding"><i class="fas fa-paperclip"></i> أدوات ربط</a>
+          <a href="/office-supplies/sticky-notes"><i class="fas fa-sticky-note"></i> بوست إت</a>
+          <a href="/office-supplies/batteries-usb"><i class="fas fa-battery-three-quarters"></i> بطاريات وUSB</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/printing" class:list={['nav-link', { active: isActive('/printing') }]} data-dropdown>
+          خدمات الطباعة <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/printing/offset"><i class="fas fa-print"></i> طباعة أوفست</a>
+          <a href="/printing/digital"><i class="fas fa-digital-tachograph"></i> طباعة رقمية</a>
+          <a href="/printing/banners"><i class="fas fa-image"></i> طباعة بنرات وفينيل</a>
+          <a href="/printing/business-cards"><i class="fas fa-id-card"></i> بزنس كارد وبروشورات</a>
+          <a href="/printing/uv"><i class="fas fa-sun"></i> طباعة UV</a>
+          <a href="/printing/gifts"><i class="fas fa-gift"></i> طباعة هدايا وأكواب</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/copiers" class:list={['nav-link', { active: isActive('/copiers') }]} data-dropdown>
+          ماكينات التصوير <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/copiers/buy"><i class="fas fa-copy"></i> بيع ماكينات التصوير</a>
+          <a href="/copiers/printers"><i class="fas fa-print"></i> بيع طابعات</a>
+          <a href="/copiers/maintenance"><i class="fas fa-tools"></i> صيانة ماكينات التصوير</a>
+          <a href="/copiers/cartridges"><i class="fas fa-tint"></i> كارتريدج وأحبار</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/cameras" class:list={['nav-link', { active: isActive('/cameras') }]} data-dropdown>
+          كاميرات المراقبة <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/cameras/install"><i class="fas fa-video"></i> بيع وتركيب كاميرات</a>
+          <a href="/cameras/dvr-nvr"><i class="fas fa-hdd"></i> أنظمة DVR و NVR</a>
+          <a href="/cameras/ip-wifi"><i class="fas fa-wifi"></i> كاميرات IP وواي فاي</a>
+          <a href="/cameras/maintenance"><i class="fas fa-wrench"></i> صيانة أنظمة المراقبة</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/ac" class:list={['nav-link', { active: isActive('/ac') }]} data-dropdown>
+          تكييفات <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/ac/buy"><i class="fas fa-wind"></i> بيع تكييفات</a>
+          <a href="/ac/installation"><i class="fas fa-tools"></i> تركيب تكييفات</a>
+          <a href="/ac/maintenance"><i class="fas fa-wrench"></i> صيانة وشحن فريون</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/cash-machines" class:list={['nav-link', { active: isActive('/cash-machines') }]} data-dropdown>
+          ماكينات فارم وعد <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/cash-machines/counting"><i class="fas fa-money-bill-wave"></i> ماكينات عد النقود</a>
+          <a href="/cash-machines/detector"><i class="fas fa-search-dollar"></i> كشف العملات المزيفة</a>
+          <a href="/cash-machines/franking"><i class="fas fa-stamp"></i> ماكينات الفارم والختم</a>
+          <a href="/cash-machines/shredder"><i class="fas fa-cut"></i> تدمير المستندات</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/contact" class:list={['nav-link nav-cta', { active: isActive('/contact') }]}>تواصل معنا</a>
+      </li>
+    </ul>
+    <button class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
+  </div>
+</nav>

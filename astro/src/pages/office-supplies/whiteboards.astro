@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "وايت بورد وفلين بورد",
+  "description": "وايت بورد وفلين بورد للمكاتب والفصول في مصر — أحجام متعددة وتركيب سريع.",
+  "serviceType": "وايت بورد مكتبي",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "نيو جولدن أوفيس",
+    "url": "https://newgoldenoffice.com",
+    "telephone": "+201227392074",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 عبد المنعم سند",
+      "addressLocality": "الإبراهيمية، باب شرق",
+      "addressRegion": "الإسكندرية",
+      "addressCountry": "EG"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "Egypt" }
+});
+---
+<BaseLayout
+  title="وايت بورد وفلين بورد في مصر | نيو جولدن أوفيس"
+  description="نيو جولدن أوفيس — مورد الوايت بورد والفلين بورد في مصر. أحجام متعددة للمكاتب والفصول الدراسية والشركات بأسعار تنافسية وتوصيل سريع."
+  keywords="وايت بورد مصر, لوح أبيض مكتبي, فلين بورد, سبورة بيضاء, وايت بورد أحجام كبيرة, وايت بورد الإسكندرية, ماركرات وايت بورد, إكسسوارات سبورة بيضاء"
+  schemaJson={schemaJson}
+  preloadImage="/images/office-supplies-hub.webp"
+>
+  <PageHero
+    title="وايت بورد وفلين بورد في مصر"
+    subtitle="نيو جولدن أوفيس — مورد الوايت بورد والفلين بورد في مصر. أحجام متعددة للمكاتب والفصول الدراسية والشركات بأسعار تنافسية"
+    heroImage="/images/office-supplies-hub.webp"
+    heroIcon="fa-chalkboard"
+    breadcrumbs={[
+      { label: 'الرئيسية', href: '/' },
+      { label: 'مستلزمات مكتبية', href: '/office-supplies' },
+      { label: 'وايت بورد وفلين بورد' }
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="service-detail-grid">
+
+        <div class="service-content">
+
+          <h2>وايت بورد وسبورات للمكاتب والفصول</h2>
+          <p>
+            الوايت بورد أداة لا غنى عنها في كل مكتب حديث وقاعة اجتماعات ومدرسة وقاعة تدريب. في <strong>نيو جولدن أوفيس</strong>، نوفر أوسع تشكيلة من الألواح البيضاء والفلين بورد والألواح المغناطيسية في الإسكندرية ومصر، بجميع الأحجام وبأسعار تنافسية تناسب الأفراد والشركات والمؤسسات التعليمية.
+          </p>
+          <p>
+            سواء كنت تبحث عن لوح صغير لمكتبك الخاص، أو لوح ضخم لقاعة الاجتماعات، أو مجموعة من الألواح لتجهيز فصول دراسية — لدينا ما يناسبك بجودة عالية وتركيب احترافي عند الطلب.
+          </p>
+
+          <h3>أنواع الألواح المتاحة</h3>
+          <ul>
+            <li><strong>وايت بورد عادي (Magnetic)</strong> — سطح أبيض لامع مغناطيسي يمكن استخدام المغناطيس لتعليق الأوراق عليه، مثالي لقاعات الاجتماعات والمكاتب</li>
+            <li><strong>وايت بورد بإطار ألومنيوم</strong> — إطار أنيق من الألومنيوم المصقول يضفي مظهراً احترافياً ويتحمل الاستخدام المكثف لسنوات</li>
+            <li><strong>فلين بورد (Cork Board)</strong> — لوح فلين طبيعي مثالي لتعليق الإشعارات والمستندات والصور باستخدام دبابيس الفلين</li>
+            <li><strong>لوح مزدوج (Combo Board)</strong> — يجمع نصف وايت بورد ونصف فلين بورد في لوح واحد عملي ومتعدد الاستخدامات</li>
+            <li><strong>وايت بورد قلاب (Flipchart)</strong> — حامل متحرك مع ألواح ورقية قابلة للتقليب، مثالي للعروض التقديمية والتدريب المتنقل</li>
+            <li><strong>لوح زجاجي (Glass Board)</strong> — لوح زجاجي فاخر بألوان متعددة لبيئات العمل الراقية</li>
+          </ul>
+
+          <h3>الأحجام المتوفرة</h3>
+          <p>نوفر الوايت بورد بمجموعة متنوعة من الأحجام تناسب مختلف الاحتياجات والفضاءات:</p>
+          <ul>
+            <li><strong>60×90 سم</strong> — للمكاتب الصغيرة والغرف الشخصية</li>
+            <li><strong>90×120 سم</strong> — الحجم الأكثر طلباً للمكاتب العادية وغرف الاجتماعات الصغيرة</li>
+            <li><strong>120×180 سم</strong> — لقاعات الاجتماعات المتوسطة والفصول الدراسية</li>
+            <li><strong>120×240 سم وما فوق</strong> — للقاعات الكبيرة والمراكز التدريبية</li>
+          </ul>
+
+          <h3>مستلزمات وإكسسوارات الوايت بورد</h3>
+          <p>بجانب الألواح، نوفر كامل الإكسسوارات اللازمة لتجهيز تجربة كتابة متكاملة:</p>
+          <ul>
+            <li><strong>ماركرات وايت بورد</strong> — ألوان متعددة بألوان مشبعة وقابلة للمسح بسهولة، متوفرة بأحجام رفيعة ومتوسطة وسميكة</li>
+            <li><strong>ممسحة وايت بورد (Eraser)</strong> — ممسحات فردية وممسحات مغناطيسية تُخزن مباشرة على اللوح</li>
+            <li><strong>بخاخ تنظيف الوايت بورد</strong> — محلول تنظيف خاص يزيل آثار الماركر القديمة والأوساخ العنيدة</li>
+            <li><strong>دبابيس فلين بورد</strong> — دبابيس ملونة ومشكلة للفلين بورد</li>
+            <li><strong>مغناطيس ألوان</strong> — مغناطيس قوي بأحجام وأشكال متعددة لتعليق الأوراق على الألواح المغناطيسية</li>
+            <li><strong>حامل وايت بورد (Easel)</strong> — حامل قابل للطي يجعل الوايت بورد متنقلاً</li>
+          </ul>
+
+          <h3>سيناريوهات الاستخدام</h3>
+          <p>
+            يُستخدم الوايت بورد في بيئات عمل متنوعة جداً. في <strong>الشركات والمكاتب</strong>: لعرض خطط المشاريع وجداول العمل وأفكار العصف الذهني في الاجتماعات. في <strong>المدارس والجامعات</strong>: للشرح والتدريس اليومي. في <strong>مراكز التدريب</strong>: للدورات والورش التدريبية. في <strong>عيادات الأطباء</strong>: لجداول المواعيد والملاحظات. اتصل بنا ونساعدك في اختيار الحجم والنوع المناسب.
+          </p>
+
+        </div>
+
+        <div class="service-sidebar">
+          <div class="sidebar-card">
+            <h4>المستلزمات المكتبية</h4>
+            <div class="sidebar-services">
+              <a href="/office-supplies/a4-paper" class="sidebar-service-link"><span>ورق A4 وطباعة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/thermal" class="sidebar-service-link"><span>ورق حراري وكاشير</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/pens" class="sidebar-service-link"><span>أقلام وأدوات كتابة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/notebooks" class="sidebar-service-link"><span>دفاتر ومفكرات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/files" class="sidebar-service-link"><span>ملفات وأرشفة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/stamps" class="sidebar-service-link"><span>أختام ومستلزمات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/envelopes" class="sidebar-service-link"><span>أظرف وتغليف</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/whiteboards" class="sidebar-service-link active"><span>وايت بورد وفلين بورد</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/binding" class="sidebar-service-link"><span>أدوات ربط ودباسة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/sticky-notes" class="sidebar-service-link"><span>بوست إت وورق لاصق</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/batteries-usb" class="sidebar-service-link"><span>بطاريات وUSB</span><i class="fas fa-angle-left"></i></a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>تواصل معنا</h4>
+            <div class="contact-info">
+              <div class="contact-info-item"><i class="fas fa-phone"></i><span>01227392074</span></div>
+              <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></div>
+            </div>
+            <a href="/contact" class="btn btn-primary btn-sm" style="width:100%;text-align:center;margin-top:16px">اتصل بنا</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">كيف نعمل</div>
+        <h2>احصل على وايت بوردك في 3 خطوات</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>اختر الحجم والنوع</h4>
+          <p>حدد الحجم المناسب لمكانك وحاجتك — من الحجم الصغير للمكتب إلى الحجم الكبير لقاعات الاجتماعات والتدريب. يمكنك زيارة متجرنا لمشاهدة العينات.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>أرسل طلبك</h4>
+          <p>تواصل معنا بالحجم والكمية المطلوبة وسنرسل لك عرض سعر فوري. نوفر أسعاراً خاصة للكميات الكبيرة للمدارس والشركات.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>استلم مع التركيب</h4>
+          <p>نوفر خدمة التوصيل وكذلك التركيب الاحترافي على الجدار داخل الإسكندرية. اطمن على جودة التركيب وثباته مع ضمان سلامة الجدار.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="padding:60px 0;background:#f8f9fa">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">دليل اختيار حجم الوايت بورد المناسب</h2>
+      <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">اختيار الحجم الصحيح يضمن تجربة استخدام مثالية. إليك الدليل السريع:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #3498db;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:#3498db;margin-bottom:8px">60×90</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">مكتب شخصي أو غرفة صغيرة — مثالي للملاحظات اليومية</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #27ae60;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:#27ae60;margin-bottom:8px">90×120</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">مكتب أو غرفة اجتماعات صغيرة — الأكثر طلباً</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #c8a951;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:#c8a951;margin-bottom:8px">120×180</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">قاعة اجتماعات متوسطة أو فصل دراسي</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #e74c3c;text-align:center">
+          <div style="font-size:1.5rem;font-weight:800;color:#e74c3c;margin-bottom:8px">120×240+</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">قاعات كبيرة ومراكز تدريب ومدارس</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">أسئلة شائعة</div>
+        <h2>أسئلة شائعة عن الوايت بورد والفلين بورد</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">ما الفرق بين الوايت بورد العادي والمغناطيسي؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">الوايت بورد العادي: سطحه من المينا الأبيض يقبل الكتابة بالماركر فقط ولا يقبل المغناطيس. الوايت بورد المغناطيسي: يحتوي على طبقة فولاذية خلف السطح الأبيض تجعله يقبل المغناطيس، مما يتيح تعليق الأوراق والمستندات عليه بدبابيس مغناطيسية. ننصح بالمغناطيسي دائماً لأنه يوفر وظيفتين بسعر قريب.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما أنسب حجم وايت بورد لغرفة الاجتماعات؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">يعتمد الاختيار على مساحة الغرفة وعدد المشاركين في الاجتماعات. للغرف الصغيرة (4-6 أشخاص): ننصح بمقاس 90×120 سم. للغرف المتوسطة (8-12 شخصاً): ننصح بمقاس 120×180 سم. للقاعات الكبيرة والمؤتمرات: ننصح بمقاس 120×240 سم أو أكبر. تواصل معنا وأخبرنا بأبعاد غرفتك وسنقترح الحجم المناسب.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل تقدمون خدمة تركيب الوايت بورد؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">نعم، نقدم خدمة التركيب الاحترافي للوايت بورد على الجدار داخل الإسكندرية والمناطق المجاورة. يقوم فريقنا بالتركيب المتقن مع ضمان الثبات وعدم الإضرار بالجدار. اتصل بنا لترتيب موعد التركيب المناسب لك.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">كيف أنظف الوايت بورد من الأثر القديم؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">للآثار الطازجة: الممسحة العادية تكفي. للآثار القديمة والعنيدة: استخدم بخاخ تنظيف الوايت بورد المتخصص — ارش المحلول على السطح واتركه دقيقتين ثم امسحه بقطعة قماش ناعمة. في حالة الآثار المتجمدة جداً: استخدم قليلاً من الكحول الطبي (Isopropyl Alcohol). تجنب استخدام المنظفات الكيميائية القوية التي قد تلحق الضرر بسطح اللوح.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل يتوفر فلين بورد بمقاسات كبيرة؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">نعم، نوفر الفلين بورد بأحجام متعددة تبدأ من 60×90 سم وتصل إلى 120×180 سم. يُستخدم الفلين بورد الكبير في مراكز العمل المفتوح (Open Space) لعرض جداول المشاريع والإشعارات المتعددة. يمكن أيضاً تركيب لوحات فلين مخصصة بأي مقاس حسب الطلب — تواصل معنا للاستفسار.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>جهز مكتبك بأفضل وايت بورد</h2>
+      <p>تواصل معنا الآن للحصول على عرض سعر مخصص — توصيل وتركيب احترافي في الإسكندرية ومصر</p>
+      <div class="btn-group">
+        <a href="/contact" class="btn btn-secondary btn-lg">اطلب عرض سعر</a>
+        <a href="tel:01227392074" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> 01227392074</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

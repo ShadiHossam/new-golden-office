@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "أدوات ربط ودباسة ولاصق",
+  "description": "دباسات وأدوات ربط وورق لاصق وغراء للمكاتب في مصر — جميع الماركات بأسعار الجملة.",
+  "serviceType": "أدوات مكتبية",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "نيو جولدن أوفيس",
+    "url": "https://newgoldenoffice.com",
+    "telephone": "+201227392074",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 عبد المنعم سند",
+      "addressLocality": "الإبراهيمية، باب شرق",
+      "addressRegion": "الإسكندرية",
+      "addressCountry": "EG"
+    }
+  },
+  "areaServed": { "@type": "Country", "name": "Egypt" }
+});
+---
+<BaseLayout
+  title="أدوات ربط ودباسة ولاصق في مصر | نيو جولدن أوفيس"
+  description="نيو جولدن أوفيس — دباسات ومشابك وأشرطة لاصقة وغراء ومقص وأدوات ربط مكتبية في مصر. جميع الماركات بأسعار الجملة للشركات والأفراد."
+  keywords="دباسة مكتبية مصر, مشابك ورق, شريط لاصق, سكوتش, غراء مكتبي, مقص مكتبي, أدوات ربط مكتبية, دبابيس دباسة"
+  schemaJson={schemaJson}
+  preloadImage="/images/office-supplies-hub.webp"
+>
+  <PageHero
+    title="أدوات ربط ودباسة ولاصق في مصر"
+    subtitle="نيو جولدن أوفيس — دباسات ومشابك وأشرطة لاصقة وغراء ومقص وأدوات ربط مكتبية في مصر. جميع الماركات بأسعار الجملة"
+    heroImage="/images/office-supplies-hub.webp"
+    heroIcon="fa-paperclip"
+    breadcrumbs={[
+      { label: 'الرئيسية', href: '/' },
+      { label: 'مستلزمات مكتبية', href: '/office-supplies' },
+      { label: 'أدوات ربط ودباسة' }
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="service-detail-grid">
+
+        <div class="service-content">
+
+          <h2>أدوات الربط والتثبيت المكتبية</h2>
+          <p>
+            الأدوات الصغيرة هي التي تُبقي المكتب منظماً وعمل الفريق سلساً. في <strong>نيو جولدن أوفيس</strong>، نوفر مجموعة متكاملة من أدوات الربط والتثبيت والقص التي لا يمكن لأي مكتب الاستغناء عنها — من الدباسة البسيطة إلى الدباسة الثقيلة المتطورة، ومن الشريط اللاصق الشفاف إلى أشرطة التغليف المتينة.
+          </p>
+          <p>
+            نحرص على توفير منتجات من أفضل الماركات العالمية والمحلية كـ Bostitch وARCOS وScotch وPrimo بأسعار تنافسية تناسب شراء الجملة للمكاتب والشركات.
+          </p>
+
+          <h3>الدباسات (Staplers)</h3>
+          <ul>
+            <li><strong>دباسة مكتبية قياسية</strong> — للاستخدام اليومي العادي، تستخدم دبابيس مقاس 26/6 أو 24/6، مثالية لربط ما يصل إلى 20-30 ورقة</li>
+            <li><strong>دباسة يد صغيرة (Mini)</strong> — مدمجة وخفيفة الوزن للحمل في الحقيبة والاستخدام المتنقل</li>
+            <li><strong>دباسة ثقيلة (Heavy Duty)</strong> — لربط كميات ورق كبيرة تصل إلى 100 ورقة أو أكثر، مثالية لمراكز الطباعة والأرشفة</li>
+            <li><strong>دباسة طويلة الذراع</strong> — تصل إلى منتصف الصفحة لصنع الكتيبات والمطبوعات المجلدة</li>
+            <li><strong>محرمة الدباسة (Remover)</strong> — أداة مخصصة لإزالة الدبابيس بأمان دون تمزيق الأوراق</li>
+          </ul>
+
+          <h3>مشابك الورق (Paper Clips)</h3>
+          <ul>
+            <li><strong>مشابك معدنية قياسية</strong> — متوفرة بأحجام صغيرة ومتوسطة وكبيرة وكبيرة جداً في أكياس بالجملة</li>
+            <li><strong>مشابك بلاستيكية ملونة</strong> — بألوان متعددة للتمييز والتصنيف اللوني للمستندات</li>
+            <li><strong>كبسات (Binder Clips)</strong> — بأحجام متعددة لربط المستندات الثقيلة والملفات الكبيرة دون تمزيق</li>
+            <li><strong>دبابيس رأس مستديرة (Push Pins)</strong> — للوحة الإعلانات والفلين بورد بألوان متنوعة</li>
+          </ul>
+
+          <h3>أشرطة لاصقة وسكوتش</h3>
+          <ul>
+            <li><strong>شريط سكوتش شفاف (Scotch Tape)</strong> — الأكثر استخداماً في المكاتب، متوفر بعروض وأطوال متعددة مع حامل ومن دونه</li>
+            <li><strong>شريط قناع (Masking Tape)</strong> — شريط ورقي قابل للكتابة عليه وسهل التقشير، يُستخدم للتعليم والتصنيف المؤقت</li>
+            <li><strong>شريط لاصق مزدوج الوجه (Double-sided)</strong> — يثبت الأشياء من الجانبين دون أن يُرى، مثالي للعروض والديكور</li>
+            <li><strong>شريط تغليف بني (Packaging Tape)</strong> — شريط بولي بروبيلين متين لإغلاق الكراتين ومستلزمات الشحن</li>
+            <li><strong>شريط فوم لاصق</strong> — لتثبيت الإطارات والصور على الجدران بثبات محكم</li>
+          </ul>
+
+          <h3>غراء ومقص</h3>
+          <ul>
+            <li><strong>صمغ ورق (Glue Stick)</strong> — سريع الجفاف ونظيف الاستخدام، مثالي للطلاب والأعمال الفنية واليدوية</li>
+            <li><strong>غراء سائل (Liquid Glue)</strong> — لاصق قوي للورق والكرتون والمواد المتنوعة</li>
+            <li><strong>سوبر غراء (Super Glue)</strong> — لاصق سيانواكريلات فائق القوة للإصلاح السريع</li>
+            <li><strong>مقص مكتبي ستانلس</strong> — بشفرات ستانلس ستيل حادة ومقبض مريح للاستخدام اليومي المكثف</li>
+            <li><strong>قاطع ورق (Cutter / Box Cutter)</strong> — بأنواع اليد والمكتبي لقطع الورق والكرتون بدقة</li>
+          </ul>
+
+        </div>
+
+        <div class="service-sidebar">
+          <div class="sidebar-card">
+            <h4>المستلزمات المكتبية</h4>
+            <div class="sidebar-services">
+              <a href="/office-supplies/a4-paper" class="sidebar-service-link"><span>ورق A4 وطباعة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/thermal" class="sidebar-service-link"><span>ورق حراري وكاشير</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/pens" class="sidebar-service-link"><span>أقلام وأدوات كتابة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/notebooks" class="sidebar-service-link"><span>دفاتر ومفكرات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/files" class="sidebar-service-link"><span>ملفات وأرشفة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/stamps" class="sidebar-service-link"><span>أختام ومستلزمات</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/envelopes" class="sidebar-service-link"><span>أظرف وتغليف</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/whiteboards" class="sidebar-service-link"><span>وايت بورد وفلين بورد</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/binding" class="sidebar-service-link active"><span>أدوات ربط ودباسة</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/sticky-notes" class="sidebar-service-link"><span>بوست إت وورق لاصق</span><i class="fas fa-angle-left"></i></a>
+              <a href="/office-supplies/batteries-usb" class="sidebar-service-link"><span>بطاريات وUSB</span><i class="fas fa-angle-left"></i></a>
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <h4>تواصل معنا</h4>
+            <div class="contact-info">
+              <div class="contact-info-item"><i class="fas fa-phone"></i><span>01227392074</span></div>
+              <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></div>
+            </div>
+            <a href="/contact" class="btn btn-primary btn-sm" style="width:100%;text-align:center;margin-top:16px">اتصل بنا</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">كيف نعمل</div>
+        <h2>احصل على أدواتك المكتبية في 3 خطوات</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>اختر ما تحتاجه</h4>
+          <p>تصفح قائمتنا الشاملة من أدوات الدباسة والمشابك والأشرطة اللاصقة والغراء والمقص، واختر الماركات والأنواع المناسبة لاحتياجات مكتبك.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>أخبرنا بالكمية</h4>
+          <p>حدد الكمية المطلوبة من كل منتج وسنرسل لك عرض سعر مفصل بأسعار الجملة. كلما زادت الكمية كلما انخفض سعر الوحدة.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>استلم طلبك</h4>
+          <p>نجهز طلبك ونوصله إليك بسرعة. يمكنك أيضاً الاستلام من متجرنا في الإسكندرية أو الاستفادة من خدمة التوصيل لجميع أنحاء مصر.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" style="padding:60px 0;background:#f8f9fa">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">أشهر الماركات المتوفرة</h2>
+      <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نوفر أدوات الربط المكتبية من أفضل الماركات العالمية والمحلية:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+        <div style="background:#fff;border-radius:12px;padding:24px;text-align:center;border-bottom:4px solid #3498db">
+          <div style="font-size:1.3rem;font-weight:800;color:#1a1a2e;margin-bottom:8px">Scotch / 3M</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">أشرطة لاصقة شفافة وسكوتش — الأعلى جودة عالمياً</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:24px;text-align:center;border-bottom:4px solid #27ae60">
+          <div style="font-size:1.3rem;font-weight:800;color:#1a1a2e;margin-bottom:8px">Bostitch</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">دباسات من الدرجة الأولى للاستخدام المكثف</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:24px;text-align:center;border-bottom:4px solid #c8a951">
+          <div style="font-size:1.3rem;font-weight:800;color:#1a1a2e;margin-bottom:8px">Primo / Deli</div>
+          <p style="color:#555;font-size:0.9rem;line-height:1.6">أدوات مكتبية متكاملة بسعر اقتصادي وجودة مقبولة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">أسئلة شائعة</div>
+        <h2>أسئلة شائعة عن أدوات الربط المكتبية</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">ما أنواع الدبابيس المتوافقة مع دباستي؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">أكثر الدباسات المكتبية تستخدم دبابيس مقاس 26/6 (الأكثر شيوعاً) أو 24/6. الدباسات الثقيلة تستخدم مقاسات أكبر مثل 23/8 أو 23/13. تحقق من مواصفات دباستك أو انظر إلى علبة الدبابيس القديمة. في حال الشك، اتصل بنا وأخبرنا بماركة وموديل دباستك وسنوجهك للمقاس الصحيح.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما الفرق بين مشابك الورق العادية والكبسات (Binder Clips)؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">مشابك الورق المعدنية العادية: خفيفة ومناسبة لربط عدد صغير من الأوراق (حتى 15 ورقة)، لا تترك أثراً على الورق تقريباً. الكبسات (Binder Clips): أقوى وأكثر قدرة لربط كميات أوراق أكبر (حتى 100 ورقة حسب الحجم)، تترك أثراً بسيطاً عند الإزالة. للملفات الثقيلة والتقارير الكبيرة — الكبسات هي الاختيار الأفضل.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">أي نوع شريط لاصق أنسب للاستخدام المكتبي؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">للاستخدام اليومي العام في المكاتب: شريط سكوتش شفاف (Scotch Tape) — يمكن الكتابة عليه وهو غير مرئي تقريباً على الورق. للتعليق المؤقت والتصنيف: شريط القناع (Masking Tape) — يُقشر بسهولة دون أثر. لتثبيت الأشياء بشكل دائم: الشريط اللاصق مزدوج الوجه. لإغلاق الكراتين والشحن: شريط التغليف البني.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">هل تتوفر أدوات الربط بالجملة للشركات؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">نعم، نوفر جميع أدوات الربط المكتبية بكميات الجملة للشركات والمؤسسات بأسعار مخفضة. يمكن الطلب بأي كمية وسنقدم لك عرض سعر خاص بالجملة. نوفر أيضاً خدمة التوريد الدوري المنتظم للشركات التي تحتاج إلى إعادة تخزين المستلزمات المكتبية بشكل متكرر.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">ما المقص المناسب للاستخدام المكتبي المكثف؟ <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">للاستخدام المكتبي العادي: مقص ستانلس ستيل بطول 21-25 سم مع مقبض مريح من البلاستيك أو المطاط. للاستخدام المكثف وقطع كميات كبيرة: مقص عالي الجودة بنصل تيتانيوم أو مطلي بالتيفلون لمنع تراكم الغراء. للعمل اليدوي الدقيق: مقص صغير بنصل حاد. تواصل معنا وسنرشدك للخيار المناسب لاحتياجك.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>اطلب أدوات مكتبك بالجملة الآن</h2>
+      <p>تواصل مع نيو جولدن أوفيس للحصول على أسعار الجملة في جميع الأدوات المكتبية — توصيل سريع لمصر كلها</p>
+      <div class="btn-group">
+        <a href="/contact" class="btn btn-secondary btn-lg">اطلب عرض سعر</a>
+        <a href="tel:01227392074" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> 01227392074</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
