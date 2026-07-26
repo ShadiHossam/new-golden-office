@@ -36,6 +36,9 @@ npm run build
 # --delete because Astro's dist/ fully owns the doc root going forward —
 # unlike the additive static-site rsync, leaving old files around here would
 # silently serve stale duplicate content next to the new directory routes.
-rsync -a --delete "$REPO_ROOT/astro/dist/" "$DOC_ROOT"
+# .htaccess is excluded from deletion: staging doc roots get a hand-placed,
+# not-in-git noindex .htaccess (same pattern as the legacy static site's
+# staging subdomain) that must survive repeated deploys.
+rsync -a --delete --exclude='.htaccess' "$REPO_ROOT/astro/dist/" "$DOC_ROOT"
 
 echo "Deployed astro/dist/ -> $DOC_ROOT"
