@@ -1,14 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="معرض أعمال نيو جولدن أوفيس، مشاريع مكتبية في مصر"
-  description="معرض أعمال نيو جولدن أوفيس، مشاريع طباعة وتوريد مستلزمات مكتبية وتركيب كاميرات وتكييفات للشركات والفنادق والمستشفيات في مصر."
-  keywords="معرض أعمال، مشاريع طباعة، كاميرات مراقبة، تكييفات، مستلزمات مكتبية، إسكندرية، مصر"
-  ogTitle="معرض أعمال نيو جولدن أوفيس، مشاريع مكتبية في مصر"
-  ogDescription="معرض أعمال نيو جولدن أوفيس، مشاريع طباعة وتوريد مستلزمات مكتبية وتركيب كاميرات وتكييفات للشركات والفنادق والمستشفيات في مصر."
-  ogImage="https://newgoldenoffice.com/images/hero-office.webp"
+  {...getSeoFor('/portfolio')}
 >
 <style is:global>
   .portfolio-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }

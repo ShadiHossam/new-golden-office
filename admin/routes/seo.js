@@ -1,6 +1,7 @@
 const express = require('express');
 const { getSeoPages, getSeoPageById, updateSeoPage } = require('../lib/db');
 const { readHtmlMeta, writeHtmlMeta, getHtmlFilePath } = require('../lib/seo-sync');
+const { writeAstroSeo, triggerAstroRebuild } = require('../lib/astro-sync');
 const { checkLinks } = require('../lib/link-checker');
 const { logActivity } = require('../lib/activity');
 const { saveVersion, getVersions, getVersion } = require('../lib/seo-versions');
@@ -103,12 +104,16 @@ router.post('/:id/update', edit, (req, res) => {
     og_image: (req.body.og_image || '').trim()
   };
 
-  // Write to actual HTML file
+  // Write to actual HTML file (legacy static site — stays authoritative until cutover)
   const filePath = getHtmlFilePath(page.path);
   const written = writeHtmlMeta(filePath, updates);
 
   // Save to JSON
   updateSeoPage(updates);
+
+  // Keep the Astro rewrite's SEO data source in sync too, so it's ready at cutover.
+  writeAstroSeo(page.url, updates);
+  triggerAstroRebuild();
 
   logActivity(req.session.username, 'SEO updated', `${page.label} (${page.path})${written ? '' : ' — HTML file not found'}`);
 
@@ -166,6 +171,8 @@ router.post('/:id/versions/:versionId/restore', edit, (req, res) => {
   const filePath = getHtmlFilePath(page.path);
   const written = writeHtmlMeta(filePath, restored);
   updateSeoPage(restored);
+  writeAstroSeo(page.url, restored);
+  triggerAstroRebuild();
 
   logActivity(req.session.username, 'SEO reverted', `${page.label} (${page.path}) → version from ${new Date(version.saved_at).toLocaleString()}`);
   req.flash('success', `Reverted "${page.label}" to the version from ${new Date(version.saved_at).toLocaleString()}.`);

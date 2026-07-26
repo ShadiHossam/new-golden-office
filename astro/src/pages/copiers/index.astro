@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="ماكينات التصوير والطابعات في مصر | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، خبرة أكثر من 27 عاماً في بيع وصيانة ماكينات التصوير والطابعات في مصر. ماكينات كانون، ريكو، كيوسيرا، توشيبا، زيروكس. خدمة في القاهرة والإسكندرية وجميع أنحاء مصر."
-  keywords="ماكينات تصوير في مصر, ماكينات تصوير القاهرة, ماكينات تصوير الإسكندرية, طابعات مصر, صيانة ماكينات تصوير, كانون, ريكو, كيوسيرا, توشيبا, زيروكس"
+  {...getSeoFor('/copiers')}
   preloadImage="/images/copiers-hub.webp"
-  ogTitle="ماكينات التصوير والطابعات في مصر | نيو جولدن أوفيس"
-  ogDescription="خبرة أكثر من 27 عاماً في بيع وصيانة ماكينات التصوير والطابعات. كانون، ريكو، كيوسيرا، توشيبا، زيروكس. نخدم جميع أنحاء مصر."
-  ogImage="https://newgoldenoffice.com/images/copiers-hub.webp"
 >
 <PageHero
   title="ماكينات التصوير والطابعات"

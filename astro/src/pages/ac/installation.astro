@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="تركيب تكييفات في مصر، محترفين معتمدين | نيو جولدن أوفيس"
-  description="تركيب تكييفات في مصر بأيدي فنيين محترفين معتمدين، سبليت وكاسيت ومخفي. خدمة في الإسكندرية والقاهرة وجميع المحافظات. نيو جولدن أوفيس منذ 1999."
+  {...getSeoFor('/ac/installation')}
   schemaJson={schemaJson}
   preloadImage="/images/ac-hub.webp"
-  keywords="تركيب تكييفات مصر, تركيب تكييف سبليت مصر, فني تركيب تكييفات الإسكندرية, تركيب تكييفات القاهرة, تركيب كاسيت مصر, فني تكييف معتمد"
-  ogTitle="تركيب تكييفات في مصر، فنيون محترفون | نيو جولدن أوفيس"
-  ogDescription="تركيب تكييفات احترافي بضمان في الإسكندرية والقاهرة وجميع محافظات مصر. سبليت وكاسيت وسبليت مخفي. اتصل بنا الآن."
-  ogImage="https://newgoldenoffice.com/images/webp-images/outdoor-air-conditioner-unit-on-the-wall-of-a-buil-2026-03-19-04-22-48-utc.webp"
 >
 <PageHero
   title="تركيب تكييفات في مصر — فنيون محترفون معتمدون"

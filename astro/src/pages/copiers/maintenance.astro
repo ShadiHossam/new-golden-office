@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="صيانة ماكينات التصوير والطابعات في مصر | نيو جولدن أوفيس"
-  description="صيانة ماكينات التصوير والطابعات في مصر. فريق فنيين متخصصين، قطع غيار أصلية، استجابة سريعة، ضمان على الإصلاح. نيو جولدن أوفيس الإسكندرية. 01227392074"
+  {...getSeoFor('/copiers/maintenance')}
   schemaJson={schemaJson}
   preloadImage="/images/copiers-hub.webp"
-  keywords="صيانة ماكينات تصوير, إصلاح طابعات, صيانة Xerox"
-  ogTitle="صيانة ماكينات التصوير والطابعات في مصر | نيو جولدن أوفيس"
-  ogDescription="صيانة ماكينات التصوير والطابعات في مصر. فريق فنيين متخصصين، قطع غيار أصلية، استجابة سريعة، ضمان على الإصلاح. نيو جولدن أوفيس الإسكندرية. 01227392074"
-  ogImage="https://newgoldenoffice.com/images/copiers-hub.webp"
 >
 <PageHero
   title="صيانة ماكينات التصوير والطابعات في مصر"

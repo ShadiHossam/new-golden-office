@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="دفاتر ومفكرات بالجملة في مصر | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، مورد الدفاتر والمفكرات المكتبية في مصر. دفاتر حلزونية، مفكرات تنفيذية، وكراسات بالجملة للشركات والمكاتب بأفضل الأسعار وتوصيل سريع."
-  keywords="دفاتر مكتبية مصر, مفكرات مصر, دفاتر حلزونية, كراسات بالجملة, مفكرات تنفيذية, دفاتر مطبوعة شعار شركة, دفاتر A4 A5 مصر, نيو جولدن أوفيس"
+  {...getSeoFor('/office-supplies/notebooks')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="دفاتر ومفكرات في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، مورد الدفاتر والمفكرات المكتبية في مصر. دفاتر حلزونية، مفكرات تنفيذية، وكراسات بالجملة للشركات والمكاتب بأفضل الأسعار وتوصيل سريع."
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="دفاتر ومفكرات وكراسات في مصر"

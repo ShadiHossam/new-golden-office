@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="أظرف بريدية وتغليف في مصر، بالجملة | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، مورد الأظرف ومستلزمات التغليف في مصر. أظرف ورقية وكرتونية ومبطنة بالجملة للشركات والأفراد في الإسكندرية ومصر."
-  keywords="أظرف بريدية مصر, أظرف ورقية الإسكندرية, أظرف A4 مصر, أظرف مبطنة, تغليف شحن, مستلزمات تغليف, كراتين شحن, فقاعات تغليف, أظرف تجارة إلكترونية"
+  {...getSeoFor('/office-supplies/envelopes')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="أظرف بريدية وتغليف في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، مورد الأظرف ومستلزمات التغليف في مصر. أظرف ورقية وكرتونية ومبطنة بالجملة للشركات والأفراد في الإسكندرية ومصر."
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="أظرف وكراتين تغليف في مصر"

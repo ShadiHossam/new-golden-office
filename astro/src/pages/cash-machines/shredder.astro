@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,13 +27,8 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="ماكينات تدمير المستندات في مصر، شريدر | نيو جولدن أوفيس"
-  description="ماكينات تدمير المستندات (شريدر) في مصر للبيع. قطع شريطي وقطع متقاطع ودقيق. P-2 إلى P-5. للمكتب والبنوك والشركات. نيو جولدن أوفيس. 01227392074"
+  {...getSeoFor('/cash-machines/shredder')}
   schemaJson={schemaJson}
-  keywords="شريدر مصر, ماكينة تدمير مستندات, تمزيق ورق"
-  ogTitle="ماكينات تدمير المستندات في مصر، شريدر | نيو جولدن أوفيس"
-  ogDescription="ماكينات تدمير المستندات (شريدر) في مصر للبيع. قطع شريطي وقطع متقاطع ودقيق. P-2 إلى P-5. للمكتب والبنوك والشركات. نيو جولدن أوفيس. 01227392074"
-  ogImage="https://newgoldenoffice.com/images/webp-images/hand-shredding-document-in-office-paper-shredder-2026-03-24-09-01-33-utc.webp"
 >
 <PageHero
   title="ماكينات تدمير المستندات في مصر — شريدر"

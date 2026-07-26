@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -18,13 +19,8 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="ماكينات الفارم والعد النقدي في مصر | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس الإسكندرية، متخصصون في بيع ماكينات عد النقود، أجهزة كشف العملات المزيفة، ماكينات الفارم والختم، وشريدر المستندات. خبرة 27 عاماً. اتصل: 01227392074"
+  {...getSeoFor('/cash-machines')}
   schemaJson={schemaJson}
-  keywords="ماكينات عد نقود في مصر, فارم نقود الإسكندرية, أجهزة عد النقود القاهرة, ماكينة فارم مصر, كشف عملات مزيفة, شريدر مستندات, ماكينة ختم, إدارة النقد مصر"
-  ogTitle="ماكينات الفارم والعد النقدي في مصر | نيو جولدن أوفيس الإسكندرية"
-  ogDescription="نيو جولدن أوفيس الإسكندرية، متخصصون في بيع ماكينات عد النقود، أجهزة كشف العملات المزيفة، ماكينات الفارم والختم، وشريدر المستندات. خبرة 27 عاماً. اتصل: 01227392074"
-  ogImage="https://newgoldenoffice.com/images/money-counting-machine-1-1784574483119-990294.webp"
 >
 <PageHero
   title="ماكينات الفارم والعد النقدي"

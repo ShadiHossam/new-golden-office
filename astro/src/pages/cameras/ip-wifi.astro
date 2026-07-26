@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="كاميرات IP وواي فاي، راقب من موبايلك | نيو جولدن أوفيس"
-  description="كاميرات IP وواي فاي في مصر، راقب منزلك ومحلك من موبايلك في أي مكان. كاميرات PTZ، صوت ثنائي الاتجاه، كشف ذكي. نيو جولدن أوفيس الإسكندرية."
+  {...getSeoFor('/cameras/ip-wifi')}
   schemaJson={schemaJson}
   preloadImage="/images/cameras-hub.webp"
-  keywords="كاميرات واي فاي مصر, كاميرات IP مصر, كاميرات لاسلكية الإسكندرية, كاميرات مراقبة واي فاي, كاميرات بدون كابل, PTZ مصر, كاميرا ذكية مصر"
-  ogTitle="كاميرات IP وواي فاي في مصر، نيو جولدن أوفيس"
-  ogDescription="كاميرات IP وواي فاي ذكية، راقب من موبايلك، صوت ثنائي الاتجاه، كشف وجوه وحركة وصوت في مصر."
-  ogImage="https://newgoldenoffice.com/images/cameras-hub.webp"
 >
 <PageHero
   title="كاميرات IP وواي فاي في مصر — راقب من موبايلك"

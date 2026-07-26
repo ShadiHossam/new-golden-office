@@ -1,14 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="سياسة الخصوصية، نيو جولدن أوفيس"
-  description="سياسة الخصوصية لشركة نيو جولدن أوفيس، كيف نجمع بياناتك ونستخدمها ونحميها."
+  {...getSeoFor('/privacy')}
   robots="noindex, follow"
-  ogTitle="سياسة الخصوصية، نيو جولدن أوفيس"
-  ogDescription="سياسة الخصوصية لشركة نيو جولدن أوفيس، كيف نجمع بياناتك ونستخدمها ونحميها."
-  ogImage="https://newgoldenoffice.com/images/hero-office.webp"
 >
 <style is:global>
   .policy-hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);padding:100px 0 60px;color:#fff;text-align:center;margin-top:var(--nav-height)}

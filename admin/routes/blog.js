@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { loadJson, saveJson, getSeoPages, saveSeoPages } = require('../lib/db');
 const { renderBlogPostHtml, renderBlogIndexHtml, absoluteUrl } = require('../lib/blog-templates');
+const { writeAstroBlogEntry, deleteAstroBlogEntry, triggerAstroRebuild } = require('../lib/astro-sync');
 const { logActivity } = require('../lib/activity');
 const { requirePermission } = require('../lib/permissions');
 
@@ -152,6 +153,8 @@ router.post('/new', create, (req, res) => {
 
   posts.push(post);
   savePosts(posts);
+  writeAstroBlogEntry(post);
+  triggerAstroRebuild();
   logActivity(req.session.username, 'Blog post created', `${post.title} (draft)`);
   req.flash('success', `Post "${post.title}" created as a draft.`);
   res.redirect(`/2ef65f179f12439e317a23628b016653/blog/${post.id}/edit`);
@@ -214,6 +217,9 @@ router.post('/:id/edit', edit, (req, res) => {
     writeBlogIndexFile();
   }
 
+  writeAstroBlogEntry(post);
+  triggerAstroRebuild();
+
   logActivity(req.session.username, 'Blog post updated', post.title);
   req.flash('success', `Post "${post.title}" saved${post.status === 'published' ? ' and republished' : ' as draft'}.`);
   res.redirect(`/2ef65f179f12439e317a23628b016653/blog/${id}/edit`);
@@ -245,6 +251,9 @@ router.post('/:id/publish', publish, (req, res) => {
   upsertSitemapEntry(post);
   writeBlogIndexFile();
 
+  writeAstroBlogEntry(post);
+  triggerAstroRebuild();
+
   logActivity(req.session.username, 'Blog post published', `${post.title} → /blog/${post.slug}.html`);
   req.flash('success', `"${post.title}" is now live at /blog/${post.slug}.html.`);
   res.redirect(`/2ef65f179f12439e317a23628b016653/blog/${id}/edit`);
@@ -265,6 +274,8 @@ router.post('/:id/delete', del, (req, res) => {
 
   savePosts(posts.filter(p => p.id !== id));
   writeBlogIndexFile();
+  deleteAstroBlogEntry(post.slug);
+  triggerAstroRebuild();
   logActivity(req.session.username, 'Blog post deleted', post.title);
   req.flash('success', `Post "${post.title}" deleted.`);
   res.redirect('/2ef65f179f12439e317a23628b016653/blog');

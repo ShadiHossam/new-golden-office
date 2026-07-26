@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="خدمات الطباعة في مصر | نيو جولدن أوفيس"
-  description="خدمات طباعة احترافية في مصر، أوفست، رقمية، بنرات، بزنس كارد، UV، هدايا. نيو جولدن أوفيس خبرة 27 عاماً."
-  keywords="طباعة في مصر، طباعة احترافية، طباعة أوفست، طباعة رقمية، بنرات، بزنس كارد، طباعة UV، طباعة هدايا، الإسكندرية"
+  {...getSeoFor('/printing')}
   preloadImage="/images/printing-hub.webp"
-  ogTitle="خدمات الطباعة في مصر | نيو جولدن أوفيس"
-  ogDescription="خدمات طباعة احترافية في مصر، أوفست، رقمية، بنرات، بزنس كارد، UV، هدايا. نيو جولدن أوفيس خبرة 27 عاماً."
-  ogImage="https://newgoldenoffice.com/images/printing-hub.webp"
 >
 <PageHero
   title="خدمات الطباعة الاحترافية في مصر"

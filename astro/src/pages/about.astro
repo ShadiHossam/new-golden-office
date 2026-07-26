@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="عن نيو جولدن أوفيس، شريكك في الأعمال منذ 1999 | مصر"
-  description="قصة نيو جولدن أوفيس منذ تأسيسها عام 1999 في الإسكندرية. خبرة 27 عاماً في خدمة الأعمال والشركات في مصر."
-  keywords="عن نيو جولدن أوفيس, تاريخ الشركة, الإسكندرية"
-  ogTitle="عن نيو جولدن أوفيس، شريكك في الأعمال منذ 1999"
-  ogDescription="قصة نيو جولدن أوفيس منذ تأسيسها عام 1999 في الإسكندرية. خبرة 27 عاماً في خدمة الأعمال والشركات في مصر."
+  {...getSeoFor('/about')}
   preloadImage="/images/about-team.webp"
-  ogImage="https://newgoldenoffice.com/images/about-team.webp"
 >
 <style is:global>
   .about-story-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="بوست إت وورق لاصق في مصر، بالجملة | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، بيع البوست إت والورق اللاصق وتاجات التسعير بالجملة في مصر. ألوان متعددة وأحجام مختلفة للمكاتب والمحلات. اتصل بنا على 01227392074"
-  keywords="بوست إت مصر, ورق لاصق مصر, بوست ات اسكندرية, تاجات تسعير, ملصقات مكتبية, sticky notes مصر, بوست إت بالجملة, ورق لاصق للمكاتب"
+  {...getSeoFor('/office-supplies/sticky-notes')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="بوست إت وورق لاصق في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، بيع البوست إت والورق اللاصق وتاجات التسعير بالجملة في مصر. ألوان متعددة وأحجام مختلفة للمكاتب والمحلات. اتصل بنا على 01227392074"
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="بوست إت وورق لاصق وتسميات"

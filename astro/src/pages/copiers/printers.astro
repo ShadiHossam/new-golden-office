@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="طابعات للبيع في مصر، ليزر وإنكجيت | نيو جولدن أوفيس"
-  description="طابعات ليزر وإنكجيت للبيع في مصر. HP، كانون، إبسون، براذر، سامسونج، أحادية اللون وملونة ومتعددة الوظائف. نيو جولدن أوفيس الإسكندرية. 01227392074"
+  {...getSeoFor('/copiers/printers')}
   schemaJson={schemaJson}
   preloadImage="/images/copiers-hub.webp"
-  keywords="طابعات ليزر مصر, طابعات انكجيت, HP Canon Brother"
-  ogTitle="طابعات للبيع في مصر، ليزر وإنكجيت | نيو جولدن أوفيس"
-  ogDescription="طابعات ليزر وإنكجيت للبيع في مصر. HP، كانون، إبسون، براذر، سامسونج، أحادية اللون وملونة ومتعددة الوظائف. نيو جولدن أوفيس الإسكندرية. 01227392074"
-  ogImage="https://newgoldenoffice.com/images/copiers-hub.webp"
 >
 <PageHero
   title="طابعات ليزر وإنكجيت للبيع في مصر"

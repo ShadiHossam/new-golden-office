@@ -1,15 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="نيو جولدن أوفيس | مستلزمات مكتبية والطباعة في مصر"
-  description="نيو جولدن أوفيس، خبرة 27 عاماً في بيع وصيانة ماكينات التصوير والطابعات، خدمات الطباعة بجميع أنواعها، كاميرات المراقبة، التكييفات، ماكينات عد النقود، والمستلزمات المكتبية في مصر."
-  keywords="ماكينات تصوير مصر, طباعة مصر, كاميرات مراقبة مصر, تكييفات مصر, ماكينات عد النقود, مستلزمات مكتبية"
-  ogTitle="نيو جولدن أوفيس، خبرة 27 عاماً في مصر"
-  ogDescription="خدمات متكاملة: طباعة، ماكينات تصوير، كاميرات مراقبة، تكييفات، ورق ومستلزمات مكتبية."
+  {...getSeoFor('/')}
   preloadImage="/images/hero-office.webp"
-  ogImage="https://newgoldenoffice.com/images/hero-office.webp"
 >
 
 <!-- ═══════════════ HERO ═══════════════ -->

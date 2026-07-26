@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="طباعة UV في مصر، على جميع الخامات | نيو جولدن أوفيس"
-  description="خدمة طباعة UV في مصر على البلاستيك والمعدن والزجاج والخشب. نيو جولدن أوفيس."
+  {...getSeoFor('/printing/uv')}
   schemaJson={schemaJson}
   preloadImage="/images/printing-hub.webp"
-  keywords="طباعة UV مصر, UV printing"
-  ogTitle="طباعة UV في مصر، على جميع الخامات | نيو جولدن أوفيس"
-  ogDescription="خدمة طباعة UV في مصر على البلاستيك والمعدن والزجاج والخشب. نيو جولدن أوفيس."
-  ogImage="https://newgoldenoffice.com/images/printing-hub.webp"
 >
 <PageHero
   title="طباعة UV في مصر — اطبع على أي خامة تريدها"

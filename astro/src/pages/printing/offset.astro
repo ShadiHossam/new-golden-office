@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="طباعة أوفست في مصر، للكميات الكبيرة | نيو جولدن أوفيس"
-  description="خدمة طباعة أوفست احترافية في مصر للكميات الكبيرة. جودة عالية وأسعار تنافسية. نيو جولدن أوفيس، خبرة 27 عاماً."
+  {...getSeoFor('/printing/offset')}
   schemaJson={schemaJson}
   preloadImage="/images/printing-hub.webp"
-  keywords="طباعة أوفست مصر, offset printing"
-  ogTitle="طباعة أوفست في مصر، نيو جولدن أوفيس"
-  ogDescription="خدمة طباعة أوفست احترافية في مصر للكميات الكبيرة. جودة عالية وأسعار تنافسية. نيو جولدن أوفيس، خبرة 27 عاماً."
-  ogImage="https://newgoldenoffice.com/images/printing-hub.webp"
 >
 <PageHero
   title="طباعة أوفست في مصر — جودة لا تُضاهى للكميات الكبيرة"

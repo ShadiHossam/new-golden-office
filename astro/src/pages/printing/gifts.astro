@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="طباعة على الهدايا والأكواب في مصر | نيو جولدن أوفيس"
-  description="طباعة على الأكواب والهدايا والتيشيرتات في مصر. مناسب للمناسبات والترويج. نيو جولدن أوفيس."
+  {...getSeoFor('/printing/gifts')}
   schemaJson={schemaJson}
   preloadImage="/images/printing-hub.webp"
-  keywords="هدايا دعائية مصر, هدايا ترويجية, طباعة على هدايا"
-  ogTitle="طباعة على الهدايا والأكواب في مصر، sublimation | نيو جولدن أوفيس"
-  ogDescription="طباعة على الأكواب والهدايا والتيشيرتات في مصر. مناسب للمناسبات والترويج. نيو جولدن أوفيس."
-  ogImage="https://newgoldenoffice.com/images/printing-hub.webp"
 >
 <PageHero
   title="طباعة على الهدايا والأكواب في مصر — هداياك بلمستك"

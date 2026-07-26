@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="ورق حراري وأرول كاشير في مصر، توصيل سريع | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، مورد معتمد للورق الحراري وأرول الكاشير في مصر. أحجام وأطوال متعددة لجميع ماكينات نقاط البيع والأجهزة المصرفية والفاكس. توصيل سريع لجميع أنحاء مصر."
-  keywords="ورق حراري مصر, أرول كاشير مصر, رول كاشير, ورق POS, ورق طابعة حرارية, رول حراري الاسكندرية, ورق ماكينة بيع, ورق صراف آلي"
+  {...getSeoFor('/office-supplies/thermal')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="ورق حراري وأرول كاشير في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، مورد معتمد للورق الحراري وأرول الكاشير في مصر. أحجام وأطوال متعددة لجميع ماكينات نقاط البيع والأجهزة المصرفية والفاكس. توصيل سريع لجميع أنحاء مصر."
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="ورق حراري وأرول كاشير في مصر"

@@ -1,0 +1,47 @@
+---
+// Generic renderer for custom pages created via the admin's Pages module
+// (astro/src/content/pages/*.json). Mirrors the old renderPageHtml() shell:
+// page-hero + breadcrumb + body + optional CTA banner.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => data.status === 'published');
+  return pages.map((page) => ({
+    params: { slug: page.data.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const d = page.data;
+---
+
+<BaseLayout
+  title={d.seo_title || d.title}
+  description={d.meta_description}
+  keywords={d.meta_keywords}
+  ogTitle={d.og_title || d.seo_title || d.title}
+  ogDescription={d.og_description || d.meta_description}
+  ogImage={d.og_image}
+  robots={d.robots || undefined}
+>
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="/">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>{d.title}</span>
+      </nav>
+      <h1 class="reveal">{d.title}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div set:html={d.body_html} />
+  </div>
+</section>
+</BaseLayout>

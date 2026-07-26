@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="بطاريات وفلاشات USB في مصر، ماركات عالمية | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، بيع البطاريات وفلاشات USB والإكسسوارات الإلكترونية بالجملة في مصر. ماركات عالمية Duracell وEnergizer وSanDisk بأسعار تنافسية. اتصل 01227392074"
-  keywords="بطاريات مصر, فلاش USB مصر, USB flash مصر, بطاريات بالجملة اسكندرية, Duracell مصر, Energizer مصر, فلاشة USB سانديسك, بطاريات مكتبية"
+  {...getSeoFor('/office-supplies/batteries-usb')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="بطاريات وفلاشات USB في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، بيع البطاريات وفلاشات USB والإكسسوارات الإلكترونية بالجملة في مصر. ماركات عالمية Duracell وEnergizer وSanDisk بأسعار تنافسية. اتصل 01227392074"
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="بطاريات وUSB ومستلزمات إلكترونية"

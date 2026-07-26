@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { loadJson, saveJson, getSeoPages, saveSeoPages } = require('../lib/db');
 const { renderPageHtml } = require('../lib/page-templates');
+const { writeAstroPageEntry, deleteAstroPageEntry, triggerAstroRebuild } = require('../lib/astro-sync');
 const { logActivity } = require('../lib/activity');
 const { requirePermission } = require('../lib/permissions');
 
@@ -30,7 +31,7 @@ function slugify(input) {
 }
 
 // Reserved names that would collide with existing top-level site files/dirs.
-const RESERVED_SLUGS = ['index', 'about', 'contact', 'privacy', 'terms', 'portfolio', 'admin', 'ac', 'cameras', 'copiers', 'cash-machines', 'office-supplies', 'printing', 'css', 'js', 'images'];
+const RESERVED_SLUGS = ['index', 'about', 'contact', 'privacy', 'terms', 'portfolio', 'admin', 'ac', 'cameras', 'copiers', 'cash-machines', 'office-supplies', 'printing', 'css', 'js', 'images', 'blog', 'alexandria', 'cairo'];
 
 function writePageFile(page) {
   const filePath = path.join(SITE_ROOT, `${page.slug}.html`);
@@ -117,6 +118,8 @@ router.post('/new', create, (req, res) => {
 
   pages.push(page);
   savePages(pages);
+  writeAstroPageEntry(page);
+  triggerAstroRebuild();
   logActivity(req.session.username, 'Page created', `${page.title} (draft)`);
   req.flash('success', `Page "${page.title}" created as a draft.`);
   res.redirect(`/2ef65f179f12439e317a23628b016653/pages/${page.id}/edit`);
@@ -176,6 +179,9 @@ router.post('/:id/edit', edit, (req, res) => {
     upsertSeoEntry(page);
   }
 
+  writeAstroPageEntry(page);
+  triggerAstroRebuild();
+
   logActivity(req.session.username, 'Page updated', page.title);
   req.flash('success', `Page "${page.title}" saved${page.status === 'published' ? ' and republished' : ' as draft'}.`);
   res.redirect(`/2ef65f179f12439e317a23628b016653/pages/${id}/edit`);
@@ -204,6 +210,9 @@ router.post('/:id/publish', publish, (req, res) => {
   page.updated_at = page.published_at;
   savePages(pages);
 
+  writeAstroPageEntry(page);
+  triggerAstroRebuild();
+
   logActivity(req.session.username, 'Page published', `${page.title} → /${page.slug}.html`);
   req.flash('success', `"${page.title}" is now live at /${page.slug}.html.`);
   res.redirect(`/2ef65f179f12439e317a23628b016653/pages/${id}/edit`);
@@ -222,6 +231,8 @@ router.post('/:id/delete', del, (req, res) => {
   }
 
   savePages(pages.filter(p => p.id !== id));
+  deleteAstroPageEntry(page.slug);
+  triggerAstroRebuild();
   logActivity(req.session.username, 'Page deleted', page.title);
   req.flash('success', `Page "${page.title}" deleted.`);
   res.redirect('/2ef65f179f12439e317a23628b016653/pages');

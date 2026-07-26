@@ -1,15 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 ---
 <BaseLayout
-  title="مستلزمات مكتبية في مصر، توصيل لكل مصر | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، مستلزماتك المكتبية كلها في مكان واحد. ورق A4، أقلام، دفاتر، ملفات، أختام، أظرف، وايت بورد، وأكثر. توصيل لجميع أنحاء مصر."
-  keywords="مستلزمات مكتبية مصر, ورق مكتبي, أقلام مكتبية, دفاتر مكتبية, لوازم مكتبية الإسكندرية, ورق A4 مصر, أختام مطاطية, ملفات أرشفة"
+  {...getSeoFor('/office-supplies')}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="مستلزمات مكتبية في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، مستلزماتك المكتبية كلها في مكان واحد. ورق A4، أقلام، دفاتر، ملفات، أختام، أظرف، وايت بورد، وأكثر. توصيل لجميع أنحاء مصر."
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="ورق ومستلزمات مكتبية في مصر — كل ما تحتاجه"

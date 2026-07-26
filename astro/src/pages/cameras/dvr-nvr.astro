@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="أنظمة DVR و NVR، مشاهدة عن بُعد | نيو جولدن أوفيس"
-  description="أجهزة DVR وNVR للتسجيل المستمر في مصر، قنوات 4/8/16/32، تخزين حتى 8TB، مشاهدة عن بُعد من الهاتف. نيو جولدن أوفيس الإسكندرية."
+  {...getSeoFor('/cameras/dvr-nvr')}
   schemaJson={schemaJson}
   preloadImage="/images/cameras-hub.webp"
-  keywords="DVR NVR مصر, جهاز تسجيل كاميرات مصر, DVR الإسكندرية, NVR القاهرة, جهاز مراقبة 8 قنوات, جهاز مراقبة 16 قنوات, Hikvision DVR مصر"
-  ogTitle="أنظمة DVR و NVR، نيو جولدن أوفيس"
-  ogDescription="أجهزة تسجيل DVR وNVR عالية الجودة بقنوات متعددة وتخزين ضخم. شاهد كاميراتك من هاتفك في أي مكان."
-  ogImage="https://newgoldenoffice.com/images/cameras-hub.webp"
 >
 <PageHero
   title="أنظمة DVR و NVR للتسجيل في مصر"

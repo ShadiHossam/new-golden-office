@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="ملفات وأرشفة مكتبية في مصر، توصيل سريع | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، وجهتك الأولى لحلول الأرشفة والملفات المكتبية في مصر. منتجات عالية الجودة بأسعار الجملة للشركات والمؤسسات مع توصيل سريع لجميع المحافظات."
-  keywords="ملفات أرشفة مصر, ملفات مكتبية, صناديق أرشيف, ملفات حلقات, ملفات معلقة, جيوب بلاستيك, ملفات شركات مصر, نيو جولدن أوفيس"
+  {...getSeoFor('/office-supplies/files')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="ملفات وأرشفة مكتبية في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، وجهتك الأولى لحلول الأرشفة والملفات المكتبية في مصر. منتجات عالية الجودة بأسعار الجملة للشركات والمؤسسات مع توصيل سريع لجميع المحافظات."
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="ملفات وأرشفة مكتبية في مصر"

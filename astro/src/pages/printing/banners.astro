@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="طباعة بنرات وفينيل في مصر، لافتات دعائية | نيو جولدن أوفيس"
-  description="طباعة بنرات ولافتات وفينيل لجميع المقاسات في مصر. جودة عالية وألوان زاهية. نيو جولدن أوفيس."
+  {...getSeoFor('/printing/banners')}
   schemaJson={schemaJson}
   preloadImage="/images/printing-hub.webp"
-  keywords="بنرات مصر, طباعة فينيل, لافتات دعائية"
-  ogTitle="طباعة بنرات وفينيل في مصر، لافتات دعائية | نيو جولدن أوفيس"
-  ogDescription="طباعة بنرات ولافتات وفينيل لجميع المقاسات في مصر. جودة عالية وألوان زاهية. نيو جولدن أوفيس."
-  ogImage="https://newgoldenoffice.com/images/printing-hub.webp"
 >
 <PageHero
   title="طباعة بنرات وفينيل في مصر — لافتاتك تتكلم عنك"

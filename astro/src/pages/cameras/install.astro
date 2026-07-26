@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="تركيب كاميرات مراقبة، معاينة مجانية | نيو جولدن أوفيس"
-  description="احجز تركيب كاميرات مراقبة في مصر مع نيو جولدن أوفيس، معاينة مجانية، فريق فني معتمد، وتسليم نظام كامل من Hikvision وDahua وUNIView وHILook وEZVIZ بضمان 3 سنوات."
+  {...getSeoFor('/cameras/install')}
   schemaJson={schemaJson}
   preloadImage="/images/cameras-hub.webp"
-  keywords="تركيب كاميرات مراقبة مصر, طلب تركيب كاميرات القاهرة, فني تركيب كاميرات الإسكندرية, معاينة كاميرات مراقبة مجانية, تركيب كاميرات للمحلات, تركيب كاميرات للمنازل"
-  ogTitle="طلب تركيب كاميرات مراقبة، معاينة مجانية | نيو جولدن أوفيس"
-  ogDescription="احجز معاينة مجانية وتركيب احترافي لكاميرات المراقبة في مصر، فريق فني معتمد وضمان 3 سنوات."
-  ogImage="https://newgoldenoffice.com/images/cameras-hub.webp"
 >
 <PageHero
   title="كاميرات مراقبة للبيع والتركيب في مصر"

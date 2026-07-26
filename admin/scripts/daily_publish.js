@@ -7,6 +7,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { loadJson, saveJson, getSeoPages, saveSeoPages } = require('../lib/db');
 const { renderBlogPostHtml, renderBlogIndexHtml, absoluteUrl } = require('../lib/blog-templates');
+const { writeAstroBlogEntry, triggerAstroRebuild } = require('../lib/astro-sync');
 
 const ADMIN_ROOT = path.join(__dirname, '..');
 const SITE_ROOT = path.join(ADMIN_ROOT, '..');
@@ -83,10 +84,16 @@ function main() {
     fs.writeFileSync(path.join(BLOG_DIR, `${post.slug}.html`), renderBlogPostHtml(post), 'utf-8');
     upsertSeoEntry(post);
     upsertSitemapEntry(post);
+
+    // Keep the Astro rewrite's content collection in sync too (see
+    // astro-migration-plan memory) — dual-write until Phase 6 cutover, when
+    // the legacy static-tree writes above get removed from this script.
+    writeAstroBlogEntry(post);
   }
 
   saveJson('blog.json', posts);
   fs.writeFileSync(path.join(BLOG_DIR, 'index.html'), renderBlogIndexHtml(loadJson('blog.json')), 'utf-8');
+  triggerAstroRebuild();
 
   try {
     sh(`rsync -a --exclude='admin' --exclude='.git' --exclude='.gitignore' ${SITE_ROOT}/ ${LIVE_DOC_ROOT}`);

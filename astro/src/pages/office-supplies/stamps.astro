@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 });
 ---
 <BaseLayout
-  title="أختام مطاطية وبصمة للشركات في مصر | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، صناعة الأختام المخصصة للشركات والأفراد في مصر. أختام مطاطية، ذاتية الحبر، تاريخية، تسليم خلال 24 ساعة في الإسكندرية ومصر."
-  keywords="أختام مصر, ختم شركة مصر, أختام مطاطية, ختم ذاتي الحبر, ختم مخصص, أختام الإسكندرية, بصمة شركة, ختم Trodat, ختم Colop, أوسادة حبر"
+  {...getSeoFor('/office-supplies/stamps')}
   schemaJson={schemaJson}
   preloadImage="/images/office-supplies-hub.webp"
-  ogTitle="أختام مطاطية وبصمة للشركات في مصر | نيو جولدن أوفيس"
-  ogDescription="نيو جولدن أوفيس، صناعة الأختام المخصصة للشركات والأفراد في مصر. أختام مطاطية، ذاتية الحبر، تاريخية، تسليم خلال 24 ساعة في الإسكندرية ومصر."
-  ogImage="https://newgoldenoffice.com/images/office-supplies-hub.webp"
 >
   <PageHero
     title="أختام ومستلزماتها في مصر"

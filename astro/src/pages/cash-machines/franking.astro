@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,13 +27,8 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="ماكينات الفارم والختم، يدوية وكهربائية | نيو جولدن أوفيس"
-  description="ماكينات الفارم والختم في مصر للبيع. ماكينات الفارم اليدوية والكهربائية، ترقيم المستندات، ختم التاريخ. نيو جولدن أوفيس الإسكندرية. 01227392074"
+  {...getSeoFor('/cash-machines/franking')}
   schemaJson={schemaJson}
-  keywords="ماكينة فارم مصر, ختم بنكي, فارم بنكي"
-  ogTitle="ماكينات الفارم والختم في مصر | نيو جولدن أوفيس"
-  ogDescription="ماكينات الفارم والختم في مصر للبيع. ماكينات الفارم اليدوية والكهربائية، ترقيم المستندات، ختم التاريخ. نيو جولدن أوفيس الإسكندرية. 01227392074"
-  ogImage="https://newgoldenoffice.com/images/webp-images/approved-rubber-stamp-on-financial-bar-graph-repor-2026-03-19-23-56-51-utc.webp"
 >
 <PageHero
   title="ماكينات الفارم والختم في مصر"

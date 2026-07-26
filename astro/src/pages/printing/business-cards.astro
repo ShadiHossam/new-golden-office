@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,14 +27,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="طباعة كروت شخصية وبروشورات في مصر | نيو جولدن أوفيس"
-  description="طباعة كروت شخصية وبروشورات دعائية احترافية في مصر. تصاميم أنيقة وورق فاخر. نيو جولدن أوفيس."
+  {...getSeoFor('/printing/business-cards')}
   schemaJson={schemaJson}
   preloadImage="/images/printing-hub.webp"
-  keywords="كروت شخصية مصر, بروشورات, طباعة كارت"
-  ogTitle="طباعة كروت شخصية وبروشورات في مصر | نيو جولدن أوفيس"
-  ogDescription="طباعة كروت شخصية وبروشورات دعائية احترافية في مصر. تصاميم أنيقة وورق فاخر. نيو جولدن أوفيس."
-  ogImage="https://newgoldenoffice.com/images/printing-hub.webp"
 >
 <PageHero
   title="طباعة كروت شخصية وبروشورات في مصر — انطباعك الأول"

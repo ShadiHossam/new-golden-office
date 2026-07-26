@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="كاميرات المراقبة في مصر، بأفضل الأسعار | نيو جولدن أوفيس"
-  description="نيو جولدن أوفيس، خبرة 27 عاماً في بيع وتركيب وصيانة كاميرات المراقبة في مصر. أنظمة Hikvision وDahua وUNIView وHILook بأفضل الأسعار في الإسكندرية والقاهرة."
+  {...getSeoFor('/cameras')}
   preloadImage="/images/cameras-hub.webp"
-  keywords="كاميرات مراقبة في مصر, كاميرات مراقبة الإسكندرية, كاميرات مراقبة القاهرة, تركيب كاميرات المراقبة مصر"
-  ogTitle="كاميرات المراقبة، نيو جولدن أوفيس"
-  ogDescription="بيع وتركيب وصيانة كاميرات المراقبة في مصر. خبرة 27 عاماً، ضمان 3 سنوات، خدمة 24 ساعة."
-  ogImage="https://newgoldenoffice.com/images/cameras-hub.webp"
 >
 <PageHero
   title="كاميرات المراقبة — حماية شاملة لمنزلك ومحلك"

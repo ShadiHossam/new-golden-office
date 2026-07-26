@@ -1,14 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="تواصل مع نيو جولدن أوفيس، الإسكندرية | مصر"
-  description="تواصل مع نيو جولدن أوفيس في الإسكندرية. عنواننا: 26 عبد المنعم سند، الإبراهيمية، باب شرق. واتساب وهاتف: 01227392074"
-  keywords="تواصل نيو جولدن أوفيس، عنوان الإسكندرية، هاتف، واتساب، مستلزمات مكتبية إسكندرية"
-  ogTitle="تواصل مع نيو جولدن أوفيس، الإسكندرية"
-  ogDescription="تواصل مع نيو جولدن أوفيس في الإسكندرية. عنواننا: 26 عبد المنعم سند، الإبراهيمية، باب شرق. واتساب وهاتف: 01227392074"
-  ogImage="https://newgoldenoffice.com/images/hero-office.webp"
+  {...getSeoFor('/contact')}
 >
 <style is:global>
   .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start; }

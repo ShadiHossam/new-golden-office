@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { getSeoFor } from '../../lib/siteSeo';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -25,14 +26,9 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="ماكينات تصوير للبيع، جديدة ومجددة | نيو جولدن أوفيس"
-  description="ماكينات تصوير للبيع في مصر من نيو جولدن أوفيس الإسكندرية. ريكو، كانون، كيوسيرا، توشيبا، زيروكس، جديدة ومجددة بضمان. خبرة 27 عاماً. 01227392074"
+  {...getSeoFor('/copiers/buy')}
   schemaJson={schemaJson}
   preloadImage="/images/copiers-hub.webp"
-  keywords="ماكينات تصوير للبيع, شراء ماكينة تصوير, Xerox Canon"
-  ogTitle="ماكينات تصوير للبيع في مصر | نيو جولدن أوفيس"
-  ogDescription="ماكينات تصوير للبيع في مصر من نيو جولدن أوفيس الإسكندرية. ريكو، كانون، كيوسيرا، توشيبا، زيروكس، جديدة ومجددة بضمان. خبرة 27 عاماً. 01227392074"
-  ogImage="https://newgoldenoffice.com/images/copiers-hub.webp"
 >
 <PageHero
   title="ماكينات تصوير للبيع في مصر — ريكو، كانون، كيوسيرا، توشيبا"

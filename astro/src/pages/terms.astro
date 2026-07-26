@@ -1,14 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
-  title="الشروط والأحكام، نيو جولدن أوفيس"
-  description="الشروط والأحكام العامة لاستخدام خدمات نيو جولدن أوفيس، بيع وصيانة ماكينات التصوير والطباعة والخدمات المكتبية في مصر."
+  {...getSeoFor('/terms')}
   robots="noindex, follow"
-  ogTitle="الشروط والأحكام، نيو جولدن أوفيس"
-  ogDescription="الشروط والأحكام العامة لاستخدام خدمات نيو جولدن أوفيس، بيع وصيانة ماكينات التصوير والطباعة والخدمات المكتبية في مصر."
-  ogImage="https://newgoldenoffice.com/images/hero-office.webp"
 >
 <style is:global>
   .policy-hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);padding:100px 0 60px;color:#fff;text-align:center;margin-top:var(--nav-height)}
