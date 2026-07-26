@@ -19,6 +19,9 @@ const isActive = (prefix: string) =>
         <a href="/about" class:list={['nav-link', { active: isActive('/about') }]}>عن الشركة</a>
       </li>
       <li class="nav-item">
+        <a href="/blog" class:list={['nav-link', { active: isActive('/blog') }]}>المدونة</a>
+      </li>
+      <li class="nav-item">
         <a href="/office-supplies" class:list={['nav-link', { active: isActive('/office-supplies') }]} data-dropdown>
           مستلزمات مكتبية <i class="fas fa-chevron-down arrow"></i>
         </a>

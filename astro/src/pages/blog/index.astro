@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const allPosts = await getCollection('blog', ({ data }) => data.status === 'published');
+const posts = allPosts.sort((a, b) =>
+  new Date(b.data.published_at || b.data.updated_at).getTime() -
+  new Date(a.data.published_at || a.data.updated_at).getTime()
+);
+
+function formatDateAr(iso: string) {
+  if (!iso) return '';
+  try {
+    return new Date(iso).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+  } catch {
+    return '';
+  }
+}
+
+const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
+
+const collectionSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'مدونة نيو جولدن أوفيس',
+  url: 'https://newgoldenoffice.com/blog/',
+  ...(posts.length
+    ? {
+        hasPart: posts.map((p) => ({
+          '@type': 'Article',
+          headline: p.data.title,
+          url: `https://newgoldenoffice.com/blog/${p.data.slug}`,
+        })),
+      }
+    : {}),
+});
+---
+
+<BaseLayout
+  title="مدونة نيو جولدن أوفيس | مقالات ونصائح عن مستلزمات مكتبية وطباعة وأنظمة أمان"
+  description="مقالات ونصائح من نيو جولدن أوفيس حول مستلزمات مكتبية، خدمات الطباعة، ماكينات التصوير، كاميرات المراقبة، والتكييفات في مصر."
+  ogTitle="مدونة نيو جولدن أوفيس"
+  ogDescription="مقالات ونصائح حول مستلزمات مكتبية وخدمات الطباعة وأنظمة الأمان في مصر."
+  schemaJson={collectionSchema}
+>
+<PageHero
+  title="المدونة"
+  subtitle="مقالات ونصائح حول مستلزمات مكتبية، طباعة، أنظمة أمان، وتكييفات في مصر"
+  heroImage="/images/hero-office.webp"
+  heroIcon="fa-newspaper"
+  showCta={false}
+  breadcrumbs={[
+    { label: 'الرئيسية', href: '/' },
+    { label: 'المدونة' }
+  ]}
+/>
+
+<section class="section">
+  <div class="container">
+    <div class="blog-grid">
+      {posts.length ? posts.map((post) => (
+        <a href={`/blog/${post.data.slug}`} class="blog-card reveal">
+          <div class="blog-card-image" style={`background-image:url('${post.data.cover_image || DEFAULT_COVER}')`}></div>
+          <div class="blog-card-body">
+            {post.data.category && <span class="blog-card-category">{post.data.category}</span>}
+            <h3>{post.data.title}</h3>
+            <p>{post.data.excerpt}</p>
+            <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> {formatDateAr(post.data.published_at || post.data.updated_at)}</span>
+          </div>
+        </a>
+      )) : (
+        <div class="empty-state" style="padding:60px 20px;text-align:center;grid-column:1/-1;">
+          <p style="color:var(--text-muted);">مقالات جديدة قريباً — تابعونا للحصول على نصائح ومقالات حول مستلزمات مكتبية وأنظمة أمان وطباعة.</p>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+</BaseLayout>

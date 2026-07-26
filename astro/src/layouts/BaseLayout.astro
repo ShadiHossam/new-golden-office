@@ -10,6 +10,7 @@ interface Props {
   keywords?: string;
   ogTitle?: string;
   ogDescription?: string;
+  ogImage?: string;
   schemaJson?: string;
   preloadImage?: string;
   robots?: string;
@@ -21,6 +22,7 @@ const {
   keywords,
   ogTitle,
   ogDescription,
+  ogImage,
   schemaJson,
   preloadImage,
   robots,
@@ -31,6 +33,9 @@ const pathname = Astro.url.pathname;
 const canonical = SITE + (pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname);
 const resolvedOgTitle = ogTitle ?? title;
 const resolvedOgDescription = ogDescription ?? description;
+const resolvedOgImage = ogImage
+  ? (ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`)
+  : `${SITE}/images/og-image.jpg`;
 
 // Build BreadcrumbList schema from pathname
 const segments = pathname.split('/').filter(s => s && s !== 'index.html' && !s.endsWith('.html'));
@@ -68,7 +73,7 @@ const localBusinessSchema = JSON.stringify({
     postalCode: '5423031',
     addressCountry: 'EG',
   },
-  foundingDate: '1990',
+  foundingDate: '1999',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -95,9 +100,9 @@ const localBusinessSchema = JSON.stringify({
   <meta property="og:description" content={resolvedOgDescription}>
   <meta property="og:type" content="website">
   <meta property="og:url" content={canonical}>
-  <meta property="og:image" content={`${SITE}/images/og-image.jpg`}>
+  <meta property="og:image" content={resolvedOgImage}>
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content={`${SITE}/images/og-image.jpg`}>
+  <meta name="twitter:image" content={resolvedOgImage}>
   <link rel="canonical" href={canonical}>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.status === 'published');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const p = post.data;
+
+function formatDateAr(iso: string) {
+  if (!iso) return '';
+  try {
+    return new Date(iso).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+  } catch {
+    return '';
+  }
+}
+
+const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
+const publishedIso = p.published_at || p.updated_at;
+const canonical = `https://newgoldenoffice.com/blog/${p.slug}`;
+
+const articleSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: p.title,
+  description: p.meta_description || p.excerpt || '',
+  image: p.cover_image || p.og_image || DEFAULT_COVER,
+  datePublished: publishedIso,
+  dateModified: p.updated_at || publishedIso,
+  author: { '@type': 'Organization', name: 'نيو جولدن أوفيس' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'نيو جولدن أوفيس',
+    logo: { '@type': 'ImageObject', url: 'https://newgoldenoffice.com/images/logo.png' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+});
+---
+
+<BaseLayout
+  title={p.seo_title || p.title}
+  description={p.meta_description || p.excerpt}
+  keywords={p.meta_keywords}
+  ogTitle={p.og_title || p.seo_title || p.title}
+  ogDescription={p.og_description || p.meta_description || p.excerpt}
+  ogImage={p.og_image || p.cover_image}
+  schemaJson={articleSchema}
+>
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <i class="fa-solid fa-chevron-left"></i>
+          <a href="/blog">المدونة</a>
+          <i class="fa-solid fa-chevron-left"></i>
+          <span>{p.title}</span>
+        </nav>
+        <h1 class="reveal">{p.title}</h1>
+        <p class="lead reveal delay-1" style="opacity:.85;font-size:14px;">
+          <i class="fa-regular fa-calendar"></i> {formatDateAr(publishedIso)}
+          {p.category && <Fragment>&nbsp;·&nbsp;<i class="fa-solid fa-tag"></i> {p.category}</Fragment>}
+        </p>
+      </div>
+      <div class="page-hero-image">
+        {p.cover_image
+          ? <img src={p.cover_image} alt={p.title} loading="eager">
+          : <div class="page-hero-icon"><i class="fa-regular fa-newspaper"></i>{p.category && <span>{p.category}</span>}</div>}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:820px;">
+    <div class="blog-post-body" set:html={p.body_html} />
+    <div class="blog-author-card">
+      <div class="blog-author-avatar" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></div>
+      <div>
+        <span class="blog-author-label">الكاتبة</span>
+        <h3 class="blog-author-name">نيهال محمد</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div class="reveal">
+      <h2>محتاج استشارة أو عرض سعر؟</h2>
+      <p>فريقنا المتخصص جاهز لمساعدتك في اختيار أفضل الحلول لعملك</p>
+      <div class="btn-group">
+        <a href="/contact" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-phone"></i>
+          تواصل معنا الآن
+        </a>
+        <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i>
+          واتساب
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</BaseLayout>

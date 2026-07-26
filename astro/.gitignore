@@ -26,3 +26,7 @@ pnpm-debug.log*
 # WIP content-drafting material, not yet migrated into src/content
 newgoldenoffice-articles/
 newgoldenoffice-content/
+
+# Phase 1 audit output, regenerable via scripts/reconcile-seo.cjs
+scripts/seo-reconciled.json
+scripts/seo-reconciliation-report.json
