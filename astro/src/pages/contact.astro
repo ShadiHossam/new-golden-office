@@ -100,7 +100,10 @@ import { getSeoFor } from '../lib/siteSeo';
               </select>
             </div>
             <div class="form-group"><label for="message"><i class="fa-solid fa-comment" style="margin-left:0.4rem;color:var(--secondary)"></i>رسالتك</label><textarea id="message" name="message" placeholder="اكتب رسالتك أو استفسارك هنا..."></textarea></div>
-            <button type="submit" class="form-submit-btn"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة</button>
+            <input type="hidden" name="source" value="contact">
+            <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+            <button type="submit" class="form-submit-btn" id="contactSubmitBtn"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة</button>
+            <p id="contactErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
           </form>
           <div class="success-message" id="successMessage">
             <i class="fa-solid fa-circle-check"></i>
@@ -164,8 +167,21 @@ import { getSeoFor } from '../lib/siteSeo';
 <script is:inline>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('successMessage').style.display = 'block';
+    const form = this;
+    const successMsg = document.getElementById('successMessage');
+    const errorMsg = document.getElementById('contactErrorMessage');
+    const submitBtn = document.getElementById('contactSubmitBtn');
+    errorMsg.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+      .then(function (result) {
+        if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+        else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+      })
+      .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+      .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
   });
 </script>
 </BaseLayout>

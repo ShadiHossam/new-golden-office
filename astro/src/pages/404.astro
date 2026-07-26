@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="الصفحة غير موجودة، نيو جولدن أوفيس"
+  description="عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها."
+  robots="noindex, follow"
+>
+<style>
+  .notfound-wrap{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:calc(var(--nav-height) + 40px) 24px 60px;text-align:center}
+  .notfound-code{font-family:var(--font-heading);font-weight:900;font-size:clamp(4rem,12vw,7rem);color:var(--green-pale);line-height:1;-webkit-text-stroke:2px var(--green-light)}
+  .notfound-title{margin:16px 0 12px}
+  .notfound-text{color:var(--text-muted);max-width:480px;margin:0 auto 32px}
+</style>
+
+<section class="notfound-wrap">
+  <div>
+    <div class="notfound-code">404</div>
+    <h1 class="notfound-title">الصفحة غير موجودة</h1>
+    <p class="notfound-text">عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها. يمكنك العودة للرئيسية أو تصفح خدماتنا.</p>
+    <div class="btn-group" style="justify-content:center">
+      <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> الصفحة الرئيسية</a>
+      <a href="https://wa.me/201227392074?text=مرحباً،%20لم%20أجد%20الصفحة%20التي%20أبحث%20عنها%20في%20الموقع" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> تواصل معنا</a>
+    </div>
+  </div>
+</section>
+</BaseLayout>
