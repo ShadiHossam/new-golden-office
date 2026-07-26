@@ -22,6 +22,19 @@ const SITE_SEO_PATH = path.join(ASTRO_ROOT, 'src', 'data', 'site-seo.json');
 const LOCK_PATH = path.join(ASTRO_ROOT, '.building');
 const LOG_PATH = path.join(__dirname, '..', 'data', 'astro-build.log');
 
+// On this o2switch/CloudLinux host, whatever `npm` this admin process would
+// find via PATH (from its own nodevenv activation at Passenger startup) is a
+// wrapper that always redirects installs to THIS app's venv — running it
+// against astro/ silently "succeeds" while writing to the wrong
+// node_modules entirely (see astro-migration-plan memory). Bypass it by
+// putting the real Node install's bin dir first on PATH for this subprocess
+// only. Falls back to the plain environment on hosts without this path
+// (e.g. local dev).
+const REAL_NODE_BIN = '/opt/alt/alt-nodejs22/root/usr/bin';
+const BUILD_ENV = fs.existsSync(REAL_NODE_BIN)
+  ? { ...process.env, PATH: `${REAL_NODE_BIN}:${process.env.PATH}` }
+  : process.env;
+
 function log(msg) {
   const line = `[${new Date().toISOString()}] ${msg}\n`;
   try { fs.appendFileSync(LOG_PATH, line); } catch (e) { /* logging is best-effort */ }
@@ -107,7 +120,7 @@ function triggerAstroRebuild() {
   fs.writeFileSync(LOCK_PATH, String(process.pid));
   log('Build started.');
 
-  execFile('npm', ['run', 'build'], { cwd: ASTRO_ROOT }, (err, stdout, stderr) => {
+  execFile('npm', ['run', 'build'], { cwd: ASTRO_ROOT, env: BUILD_ENV }, (err, stdout, stderr) => {
     if (err) {
       log(`Build FAILED: ${err.message}\n${stderr}`);
       try { fs.unlinkSync(LOCK_PATH); } catch (e) {}

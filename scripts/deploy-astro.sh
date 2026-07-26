@@ -19,6 +19,16 @@ set -euo pipefail
 DOC_ROOT="${1:?Usage: deploy-astro.sh <doc-root-path>}"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+# On this o2switch/CloudLinux host, the `npm` on PATH via any nodevenv
+# activate script is a wrapper (l.v.e-manager's npm_wrapper) that always
+# redirects installs to whichever *app's* venv you sourced (see
+# astro-migration-plan memory) — it silently "succeeds" while writing to the
+# wrong node_modules entirely if run from an unrelated directory like this
+# one. Bypass it by putting the real Node install's bin dir on PATH instead.
+if [ -d /opt/alt/alt-nodejs22/root/usr/bin ]; then
+  export PATH="/opt/alt/alt-nodejs22/root/usr/bin:$PATH"
+fi
+
 cd "$REPO_ROOT/astro"
 npm install
 npm run build
