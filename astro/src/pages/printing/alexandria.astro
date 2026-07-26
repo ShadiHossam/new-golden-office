@@ -1,0 +1,513 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://newgoldenoffice.com/printing/alexandria#service",
+      "name": "خدمات الطباعة في الإسكندرية",
+      "serviceType": "طباعة أوفست وديجيتال ومطبوعات داخلية وخارجية",
+      "areaServed": { "@type": "City", "name": "الإسكندرية" },
+      "provider": { "@id": "https://newgoldenoffice.com/#organization" },
+      "url": "https://newgoldenoffice.com/printing/alexandria"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"ما الفرق بين الطباعة الأوفست والديجيتال، وأيهما أوفر لكميتي؟","acceptedAnswer":{"@type":"Answer","text":"الأوفست يطبع بألواح ويصبح اقتصاديًا جدًا في الكميات الكبيرة لأن تكلفة النسخة تنخفض مع زيادة العدد. الديجيتال يطبع من الملف مباشرة، لذا هو الأسرع والأوفر للكميات الصغيرة والمتوسطة. أرسل لنا كميتك ومواصفاتك وسنحسب لك التكلفة بالطريقتين ونرشح الأوفر."}},
+        {"@type":"Question","name":"كم سعر طباعة 1000 كارت شخصي في الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"السعر يتحدد حسب الخامة (وزن الورق ونوعه)، التشطيب (مط، لامع، سلوفان، يوفي)، والطباعة وجهًا أو وجهين. أرسل مواصفاتك وستصلك التفاصيل في عرض سعر نهائي واضح قبل التنفيذ."}},
+        {"@type":"Question","name":"ما أقل كمية يمكن طباعتها؟","acceptedAnswer":{"@type":"Answer","text":"بفضل الطباعة الديجيتال لا يوجد حد أدنى مرهق: نطبع النسخ القليلة والعينات والطلبات الفردية. ومع زيادة الكمية ننقلك إلى الأوفست ليكون سعر النسخة أوفر."}},
+        {"@type":"Question","name":"كم مدة تنفيذ وتسليم الطلب؟","acceptedAnswer":{"@type":"Answer","text":"المدة تعتمد على نوع الطباعة والكمية والتشطيبات: الديجيتال أسرع، والأوفست يحتاج وقت تجهيز. عند تأكيد الطلب نتفق على موعد تسليم واضح ونلتزم به."}},
+        {"@type":"Question","name":"هل توصّلون الطلب لكل أحياء الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"نعم. فرق التسليم لدينا تغطي أحياء الإسكندرية: وسط البلد، المنشية، العطارين، سموحة، سيدي جابر، جليم، لوران، ميامي، والكورنيش، إضافة إلى منطقة الميناء."}},
+        {"@type":"Question","name":"هل يمكن الطلب أونلاين ورفع التصميم واستلام عيّنة قبل الطباعة؟","acceptedAnswer":{"@type":"Answer","text":"نعم. ترسل ملف التصميم عبر واتساب، نراجعه فنيًا ونرد بعرض السعر، ثم تعتمد بروفة نهائية قبل بدء الطباعة."}},
+        {"@type":"Question","name":"ما الخدمات التي تقدمها شركة الطباعة المحترفة؟","acceptedAnswer":{"@type":"Answer","text":"طباعة الأوفست والديجيتال، المطبوعات الداخلية والخارجية، المطبوعات التجارية، التشطيبات الفاخرة مثل اليوفي، الهدايا الدعائية، والتصميم والمراجعة الفنية قبل التنفيذ."}},
+        {"@type":"Question","name":"كيف أختار أفضل شركة طباعة في الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"قارن على أربعة أشياء: جودة نماذج أعمال حقيقية، وضوح عرض السعر قبل التنفيذ، الالتزام بمواعيد التسليم، ووجود مقر فعلي تستطيع زيارته داخل المدينة."}}
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="شركة طباعة في الإسكندرية | خبرة 27 عامًا | نيو جولدن أوفيس"
+  description="شركة طباعة في الإسكندرية بخبرة 27 عامًا: أوفست وديجيتال، كروت وفلايرات وبنرات ورول اب، تصميم وتنفيذ وتسليم لكل أحياء الإسكندرية. اطلب عرض سعرك الآن."
+  keywords="شركة طباعة في الإسكندرية، شركة طباعة اوفست في الاسكندرية، طباعة بنرات ولافتات في الاسكندرية، اسعار طباعة بزنس كارد الاسكندرية، طباعة يوفي الاسكندرية"
+  ogTitle="شركة طباعة في الإسكندرية | نيو جولدن أوفيس"
+  ogDescription="شركة طباعة في الإسكندرية بخبرة 27 عامًا: أوفست وديجيتال، كروت وفلايرات وبنرات ورول اب، تسليم لكل أحياء الإسكندرية."
+  ogImage="/images/printing-hub.webp"
+  robots="noindex, nofollow"
+  schemaJson={schemaJson}
+>
+<style>
+  .quote-section{padding:60px 0}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
+  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .form-group{margin-bottom:1.1rem}
+  .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(27,58,107,.1);background:#fff}
+  .form-group textarea{height:100px;resize:vertical}
+  .form-submit-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:#fff;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .form-submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,107,.25)}
+  .success-message{display:none;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem}
+  .success-message i{font-size:2.5rem;color:#4caf50;display:block;margin-bottom:.5rem}
+  .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
+  .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
+  .quote-alt-card .wa-icon{font-size:3rem}
+  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card p{opacity:.92;line-height:1.8}
+  @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <span>/</span>
+          <a href="/alexandria">خدماتنا في الإسكندرية</a>
+          <span>/</span>
+          <span class="current">شركة طباعة في الإسكندرية</span>
+        </nav>
+        <h1 class="reveal">شركة طباعة في الإسكندرية</h1>
+        <p class="lead reveal delay-1">أوفست وديجيتال، مطبوعات داخلية وخارجية، تصميم وتنفيذ وتسليم لكل أحياء الإسكندرية، من مقرنا الفعلي في الإبراهيمية، بخبرة 27 عامًا</p>
+      </div>
+      <div class="page-hero-image">
+        <img src="/images/webp-images/hi-tech-printing-equipment-in-print-workshop-2026-03-25-01-25-40-utc.webp" alt="شركة طباعة في الإسكندرية" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="27" data-suffix="+">0+</div>
+        <div class="stat-label">سنة خبرة في الطباعة</div>
+      </div>
+      <div class="stat-item reveal delay-1">
+        <div class="stat-num" data-target="4">0</div>
+        <div class="stat-label">تقنيات طباعة متاحة</div>
+      </div>
+      <div class="stat-item reveal delay-2">
+        <div class="stat-num" data-target="9">0</div>
+        <div class="stat-label">أحياء نغطيها بالتسليم يوميًا</div>
+      </div>
+      <div class="stat-item reveal delay-3">
+        <div class="stat-num" data-target="1">0</div>
+        <div class="stat-label">قطعة واحدة كحد أدنى للطلب</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>تبحث عن شركة طباعة في الإسكندرية تنفذ شغلك بجودة ثابتة وموعد مضبوط وسعر واضح قبل التنفيذ؟ نيو جولدن أوفيس تخدم شركات ومكاتب ومحال الإسكندرية منذ 27 عامًا من مقرنا في 26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية. قربنا منك يعني شيئًا عمليًا: تعتمد البروفة بسرعة، وتستلم مطبوعاتك بلا انتظار طويل، وتجد من تكلمه فورًا لو احتجت تعديلًا في اللحظة الأخيرة. من كارت شخصي واحد إلى حملة مطبوعات كاملة لشركتك، ننفذها كلها تحت سقف واحد: طباعة أوفست وديجيتال، مطبوعات داخلية وخارجية، تصميم وهوية بصرية، وتسليم يصل إليك في أي حي من أحياء الإسكندرية.</p>
+    </div>
+
+    <div class="section-header">
+      <h2>خدمات الطباعة التي نقدمها في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+        <h3 class="service-title">طباعة أوفست للكميات الكبيرة</h3>
+        <p class="service-desc">كتالوجات، بروشورات، فلايرات، أوراق رسمية بمعايير لون دقيقة. كلما زادت الكمية انخفضت تكلفة النسخة الواحدة.</p>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><i class="fas fa-bolt"></i></div>
+        <h3 class="service-title">طباعة ديجيتال للكميات الصغيرة والمستعجلة</h3>
+        <p class="service-desc">نسخ محدودة أو تسليم عاجل، بلا حد أدنى مرهق ولا انتظار لتجهيز ألواح طباعة.</p>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><i class="fas fa-store"></i></div>
+        <h3 class="service-title">طباعة إن دور للمساحات الداخلية</h3>
+        <p class="service-desc">استاندات، لوحات استقبال، ملصقات حوائط وفتارين، بخامات داخلية بألوان غنية وتفاصيل حادة.</p>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><i class="fas fa-sun"></i></div>
+        <h3 class="service-title">طباعة أوت دور تتحمل مناخ الإسكندرية</h3>
+        <p class="service-desc">بنرات ولافتات وفينيل واجهات بخامات مقاومة للشمس والرطوبة ورذاذ البحر، مناسبة لمحال الكورنيش.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>المطبوعات التي ننفذها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-id-card"></i></div>
+        <h3 class="service-title">كروت شخصية وبزنس كارد</h3>
+        <p class="service-desc">خامات وتشطيبات متعددة: مط، لامع، ورق سميك فاخر، سلوفان حراري، ويوفي انتقائي.</p>
+        <a href="/printing/business-cards" class="btn btn-outline btn-sm">طباعة بزنس كارد <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><i class="fas fa-book-open"></i></div>
+        <h3 class="service-title">فلايرات وبروشورات وكتالوجات</h3>
+        <p class="service-desc">مقاسات وطيّات مختلفة، مع ترشيح الورق والتشطيب حسب طريقة الاستخدام.</p>
+        <a href="/printing/digital" class="btn btn-outline btn-sm">طباعة رقمية <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><i class="fas fa-image"></i></div>
+        <h3 class="service-title">رول اب وبانر وفينيل</h3>
+        <p class="service-desc">لكل معرض أو افتتاح أو حملة موسمية، بخامات تناسب مكان الاستخدام الداخلي أو الخارجي.</p>
+        <a href="/printing/banners" class="btn btn-outline btn-sm">طباعة بنرات وفينيل <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+        <h3 class="service-title">طباعة يوفي وتشطيبات فاخرة</h3>
+        <p class="service-desc">ألوان بارزة ولمعان انتقائي يبرز اللوجو، مناسبة للكروت الفاخرة والأغلفة.</p>
+        <a href="/printing/uv" class="btn btn-outline btn-sm">طباعة UV <i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-gift"></i></div>
+        <h3 class="service-title">هدايا دعائية مطبوعة</h3>
+        <p class="service-desc">أقلام، أجندات، أكواب، ونوت بوك مطبوعة بشعار شركتك، من التصميم إلى التسليم.</p>
+        <a href="/printing/gifts" class="btn btn-outline btn-sm">طباعة هدايا وأكواب <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أوفست أم ديجيتال؟ اختر حسب كميتك</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">أكثر سؤال يصلنا من عملاء جدد: أي نوع طباعة أختار؟ الجواب يعتمد أساسًا على الكمية والاستعجال.</p>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead>
+          <tr style="background:var(--green-dark);color:var(--white)">
+            <th style="padding:14px 16px;text-align:right">المعيار</th>
+            <th style="padding:14px 16px;text-align:right">طباعة أوفست</th>
+            <th style="padding:14px 16px;text-align:right">طباعة ديجيتال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">الكمية المناسبة</td><td style="padding:12px 16px">الكميات الكبيرة (آلاف النسخ)</td><td style="padding:12px 16px">الكميات الصغيرة والمتوسطة</td></tr>
+          <tr style="background:var(--section-bg,#f8f9fa);border-bottom:1px solid #eee"><td style="padding:12px 16px">تكلفة النسخة</td><td style="padding:12px 16px">تنخفض كثيرًا مع زيادة الكمية</td><td style="padding:12px 16px">ثابتة تقريبًا مهما كانت الكمية</td></tr>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">سرعة البدء</td><td style="padding:12px 16px">تحتاج تجهيز ألواح قبل الطباعة</td><td style="padding:12px 16px">تبدأ فورًا من الملف مباشرة</td></tr>
+          <tr style="background:var(--section-bg,#f8f9fa);border-bottom:1px solid #eee"><td style="padding:12px 16px">ثبات الألوان</td><td style="padding:12px 16px">دقة لون عالية للكميات الضخمة</td><td style="padding:12px 16px">جودة ممتازة للأعمال اليومية</td></tr>
+          <tr style="background:var(--white)"><td style="padding:12px 16px">الأنسب لـ</td><td style="padding:12px 16px">كتالوجات، فلايرات حملات، أوراق رسمية</td><td style="padding:12px 16px">كروت عاجلة، منيوهات، عينات، دعوات</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لست متأكدًا أي الطريقتين أوفر لكميتك؟ أرسل لنا الكمية والمواصفات وسنحسبها لك بالطريقتين ونرشح الأوفر، وهذه المفاضلة نجيب عنها يوميًا منذ 27 عامًا.</p>
+    <div class="reveal" style="max-width:900px;margin:36px auto 0;border-radius:var(--radius-lg);overflow:hidden">
+      <img src="/images/webp-images/close-up-of-large-format-printer-heads-in-action-2026-01-06-09-29-23-utc.webp" alt="ماكينات طباعة نيو جولدن أوفيس في الإسكندرية" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما الذي يحدد أسعار الطباعة في الإسكندرية؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p style="text-align:center">لا يوجد سعر واحد ثابت للمطبوعات، لأن السعر النهائي يتكون من عوامل واضحة نراجعها معك قبل التنفيذ:</p>
+      <ul style="max-width:700px;margin:24px auto 0;padding-inline-start:20px;line-height:2.1">
+        <li><strong>نوع الطباعة:</strong> أوفست أم ديجيتال أم يوفي، ولكل تقنية اقتصادياتها.</li>
+        <li><strong>الخامة والورق:</strong> وزن الورق ونوعه (كوشيه، موديرن، كرافت، فينيل، بلاستيك) يغيّر التكلفة مباشرة.</li>
+        <li><strong>الكمية:</strong> في الأوفست تحديدًا، مضاعفة الكمية لا تعني مضاعفة السعر.</li>
+        <li><strong>التشطيبات:</strong> سلوفان، قص ليزر، تكسير، يوفي انتقائي، تذهيب؛ كل إضافة لها حسابها.</li>
+        <li><strong>المقاس وعدد الأوجه:</strong> وجه واحد أم وجهان، ومقاس قياسي أم مخصوص.</li>
+        <li><strong>حجم التعاقد:</strong> عقود التوريد الدورية للشركات لها معاملة سعرية أفضل من الطلبات المتفرقة.</li>
+      </ul>
+      <p style="margin-top:20px;text-align:center">بدل أن تخمن، أرسل لنا مواصفات طلبك على 01227392074 وستصلك تفاصيل السعر في عرض واضح بالبنود قبل أن تلتزم بأي شيء.</p>
+      <p style="margin-top:16px;text-align:center">مدة التنفيذ تعتمد على نوع الطباعة والكمية والتشطيبات المطلوبة. الذي نلتزم به دائمًا: موعد تسليم واضح نتفق عليه عند تأكيد الطلب، ونحترمه. ولأن التنفيذ والاستلام يتمان داخل الإسكندرية نفسها، لا تدخل شحنتك في دورة شحن بين المحافظات.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>نخدم كل أحياء الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p style="text-align:center">مقرنا في 26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية، وفرق التسليم لدينا تغطي أحياء الإسكندرية يوميًا:</p>
+      <ul style="max-width:750px;margin:24px auto 0;padding-inline-start:20px;line-height:2.1">
+        <li><strong>وسط البلد والمنشية والعطارين:</strong> قلب الحركة التجارية، حيث المحال والمكاتب التي تحتاج فلايرات وأوراقًا رسمية وبنرات عروض باستمرار.</li>
+        <li><strong>سموحة وسيدي جابر:</strong> الشركات والعيادات ومراكز الخدمات التي تطلب كروتًا وبروشورات وهوية مطبوعة كاملة.</li>
+        <li><strong>جليم ولوران وميامي:</strong> المحال والمطاعم والكافيهات التي تحتاج منيوهات ولافتات واستيكرز بجودة تليق بواجهاتها.</li>
+        <li><strong>الكورنيش:</strong> محال الواجهة البحرية التي تحتاج خامات أوت دور تتحمل الشمس والرطوبة طوال العام.</li>
+        <li><strong>قرب الميناء:</strong> شركات الاستيراد والتصدير والتخليص التي تحتاج مطبوعات رسمية ومجلدات وفواتير بكميات منتظمة.</li>
+      </ul>
+      <p style="margin-top:20px;text-align:center">وإذا كان لنشاطك فرع في القاهرة، فنحن نغطيها أيضًا بخدمة كاملة: اطلع على <a href="/printing/cairo">خدمات الطباعة في القاهرة</a> لتوحيد مطبوعات فروعك كلها عند مورد واحد بنفس الجودة ونفس الهوية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>مطبوعات لكل قطاع في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+        <h4>المطاعم والكافيهات</h4>
+        <p>منيوهات بخامات تتحمل الاستخدام اليومي، استيكرز تغليف، فلايرات دليفري، ولافتات عروض موسمية.</p>
+      </div>
+      <div class="feature-card reveal delay-1">
+        <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
+        <h4>العيادات والمراكز الطبية</h4>
+        <p>كروت مواعيد، روشتات وأوراق رسمية مطبوعة، بروشورات تعريفية، ولوحات إرشادية داخلية.</p>
+      </div>
+      <div class="feature-card reveal delay-2">
+        <div class="feature-icon"><i class="fas fa-ship"></i></div>
+        <h4>شركات الاستيراد والتصدير</h4>
+        <p>فواتير ومستندات بكميات منتظمة، مجلدات وأظرف رسمية، وأختام هوية موحدة.</p>
+      </div>
+      <div class="feature-card reveal delay-3">
+        <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h4>المدارس والمراكز التعليمية</h4>
+        <p>شهادات، بطاقات، كتيبات، وبنرات فعاليات ومواسم القبول.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-people-group"></i></div>
+        <h4>المعارض والمناسبات</h4>
+        <p>رول اب واستاندات وبنرات تُجهز بسرعة وتُنقل بسهولة وتظهر بشكل احترافي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>جهّز ملفك للطباعة بشكل صحيح</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:800px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="padding-inline-start:20px;line-height:2.1">
+        <li><strong>الصيغة:</strong> PDF بجودة طباعة هو الأفضل، ويليه ملفات التصميم المفتوحة.</li>
+        <li><strong>نظام الألوان:</strong> CMYK لا RGB، لأن ألوان الشاشة تختلف عن ألوان الطباعة.</li>
+        <li><strong>الدقة:</strong> صور بدقة 300 نقطة في البوصة حتى لا تخرج مهزوزة أو باهتة.</li>
+        <li><strong>مساحة القص (Bleed):</strong> اترك هامشًا خارج حدود التصميم حتى لا يقترب أي عنصر مهم من حافة القص.</li>
+        <li><strong>الخطوط:</strong> حوّل الخطوط إلى مسارات أو أرفقها مع الملف لتظهر كما صممتها بالضبط.</li>
+      </ul>
+      <p style="margin-top:16px;text-align:center">لا تقلق إن لم تكن متأكدًا من أي نقطة منها؛ نراجع كل ملف فنيًا قبل التنفيذ ونخبرك بأي ملاحظة، وهذه المراجعة جزء ثابت من خدمتنا وليست إضافة مدفوعة.</p>
+      <p style="margin-top:16px;text-align:center">أفضل طباعة في العالم لا تنقذ تصميمًا ضعيفًا. لذلك نقدم خدمة التصميم والهوية البصرية جنبًا إلى جنب مع الطباعة: تصميم من الصفر، تطوير هوية كاملة، أو مراجعة فنية لملفك الجاهز قبل التنفيذ.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا نيو جولدن أوفيس؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal delay-1">
+        <div class="feature-icon"><i class="fas fa-award"></i></div>
+        <h4>خبرة 27 عامًا</h4>
+        <p>نخدم شركات ومكاتب ومحال الإسكندرية منذ ما يقرب من ثلاثة عقود.</p>
+      </div>
+      <div class="feature-card reveal delay-2">
+        <div class="feature-icon"><i class="fas fa-building"></i></div>
+        <h4>مقر فعلي في الإسكندرية</h4>
+        <p>تقدر تزورنا، تعتمد البروفة بنفسك، وتتابع طلبك مباشرة.</p>
+      </div>
+      <div class="feature-card reveal delay-3">
+        <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+        <h4>كل شيء تحت سقف واحد</h4>
+        <p>تصميم، طباعة أوفست وديجيتال، إن دور وأوت دور، تشطيبات، وهدايا دعائية.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-medal"></i></div>
+        <h4>جودة ثابتة</h4>
+        <p>معايير لون ومراجعة قبل التسليم في كل طلب، من الكارت الواحد إلى آلاف النسخ.</p>
+      </div>
+      <div class="feature-card reveal delay-1">
+        <div class="feature-icon"><i class="fas fa-clock"></i></div>
+        <h4>مواعيد تُحترم</h4>
+        <p>موعد التسليم جزء من الاتفاق، لا وعد مطاط.</p>
+      </div>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">ولأن الطباعة جزء من منظومة أكبر لتجهيز المكاتب، ستجد لدينا أيضًا <a href="/copiers/alexandria">ماكينات تصوير المستندات في الإسكندرية</a> و<a href="/office-supplies/alexandria">الأدوات والمستلزمات المكتبية في الإسكندرية</a> وكل ما يحتاجه مكتبك ضمن <a href="/alexandria">خدماتنا في الإسكندرية</a>.</p>
+    <!-- TODO: real portfolio photos (business cards, catalogs, banners, roll-ups) pending — see punch list -->
+    <!-- TODO: real customer testimonial pending — see punch list -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تطلب مطبوعاتك؟ ثلاث خطوات من مكانك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>أرسل طلبك</h4>
+        <p>كلمنا على 01227392074 أو عبر واتساب، وأرفق ملف التصميم إن كان جاهزًا، أو اشرح لنا فكرتك لو تحتاج تصميمًا.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>استلم عرض السعر واعتمد البروفة</h4>
+        <p>نراجع ملفك فنيًا، نرد عليك بعرض سعر واضح بالبنود، ثم نرسل لك بروفة نهائية تعتمدها قبل بدء الطباعة.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>استلم مطبوعاتك</h4>
+        <p>ننفذ في الموعد المتفق عليه، وتستلم في مقرنا أو يصلك التسليم في أي حي من أحياء الإسكندرية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أسئلة شائعة عن الطباعة في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">ما الفرق بين الطباعة الأوفست والديجيتال، وأيهما أوفر لكميتي؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">الأوفست يطبع بألواح ويصبح اقتصاديًا جدًا في الكميات الكبيرة لأن تكلفة النسخة تنخفض مع زيادة العدد. الديجيتال يطبع من الملف مباشرة، لذا هو الأسرع والأوفر للكميات الصغيرة والمتوسطة. أرسل لنا كميتك ومواصفاتك وسنحسب لك التكلفة بالطريقتين ونرشح الأوفر.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">كم سعر طباعة 1000 كارت شخصي في الإسكندرية؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">السعر يتحدد حسب الخامة (وزن الورق ونوعه)، التشطيب (مط، لامع، سلوفان، يوفي)، والطباعة وجهًا أو وجهين. أرسل مواصفاتك على 01227392074 وستصلك التفاصيل في عرض سعر نهائي واضح قبل التنفيذ.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">ما أقل كمية يمكن طباعتها؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">بفضل الطباعة الديجيتال لا يوجد حد أدنى مرهق: نطبع النسخ القليلة والعينات والطلبات الفردية. ومع زيادة الكمية ننقلك إلى الأوفست ليكون سعر النسخة أوفر.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">كم مدة تنفيذ وتسليم الطلب؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">المدة تعتمد على نوع الطباعة والكمية والتشطيبات: الديجيتال أسرع، والأوفست يحتاج وقت تجهيز. عند تأكيد الطلب نتفق على موعد تسليم واضح ونلتزم به.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">هل توصّلون الطلب لكل أحياء الإسكندرية؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">نعم. فرق التسليم لدينا تغطي أحياء الإسكندرية: وسط البلد، المنشية، العطارين، سموحة، سيدي جابر، جليم، لوران، ميامي، والكورنيش، إضافة إلى منطقة الميناء لشركات الاستيراد والتصدير.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">هل يمكن الطلب أونلاين ورفع التصميم واستلام عيّنة قبل الطباعة؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">نعم. ترسل ملف التصميم عبر واتساب على 01227392074، نراجعه فنيًا ونرد بعرض السعر، ثم تعتمد بروفة نهائية قبل بدء الطباعة.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">ما الخدمات التي تقدمها شركة الطباعة المحترفة؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">شركة الطباعة المتكاملة تغطي طباعة الأوفست والديجيتال، المطبوعات الداخلية والخارجية، المطبوعات التجارية، التشطيبات الفاخرة مثل اليوفي، والهدايا الدعائية، إضافة إلى التصميم والمراجعة الفنية قبل التنفيذ.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">كيف أختار أفضل شركة طباعة في الإسكندرية؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">قارن على أربعة أشياء: جودة نماذج أعمال حقيقية تراها بنفسك، وضوح عرض السعر قبل التنفيذ، الالتزام بمواعيد التسليم، ووجود مقر فعلي تستطيع زيارته داخل المدينة. نحن نعمل في هذا المجال منذ 27 عامًا.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section quote-section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>اطلب عرض سعر طباعتك في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-form-card reveal">
+        <h3>أرسل تفاصيل طلبك</h3>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="q-name">الاسم الكامل</label>
+            <input type="text" id="q-name" name="name" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="q-phone">رقم الهاتف</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label for="q-company">اسم الشركة (اختياري)</label>
+            <input type="text" id="q-company" name="company" placeholder="اسم شركتك أو نشاطك">
+          </div>
+          <div class="form-group">
+            <label for="q-subservice">نوع الطباعة المطلوبة</label>
+            <select id="q-subservice" name="subservice" required>
+              <option value="" disabled selected>اختر نوع المطبوع</option>
+              <option value="أوفست">طباعة أوفست</option>
+              <option value="ديجيتال">طباعة ديجيتال</option>
+              <option value="بنرات ولافتات">بنرات ولافتات</option>
+              <option value="بزنس كارد">بزنس كارد</option>
+              <option value="طباعة UV">طباعة UV</option>
+              <option value="هدايا دعائية">هدايا دعائية</option>
+              <option value="غير ذلك">غير ذلك</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="q-message">تفاصيل إضافية (اختياري)</label>
+            <textarea id="q-message" name="message" placeholder="الكمية أو المقاس أو أي تفاصيل تساعدنا نجهزلك عرض سعر دقيق"></textarea>
+          </div>
+          <input type="hidden" name="service" value="printing">
+          <input type="hidden" name="source" value="printing/alexandria">
+          <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+          <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر
+          </button>
+          <p id="quoteErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
+        </form>
+        <div class="success-message" id="quoteSuccessMessage">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>تم استلام طلبك بنجاح! هيتواصل معاك فريقنا في أقرب وقت.</p>
+        </div>
+      </div>
+      <div class="quote-alt-card reveal delay-1">
+        <i class="fab fa-whatsapp wa-icon"></i>
+        <h3>تفضل تتكلم مباشرة؟</h3>
+        <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل الطباعة في الإسكندرية</p>
+        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20في%20الإسكندرية" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
+        </a>
+        <p style="margin-top:4px;font-size:.95rem">أو اتصل على 01227392074</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('quoteForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successMsg = document.getElementById('quoteSuccessMessage');
+      var errorMsg = document.getElementById('quoteErrorMessage');
+      var submitBtn = document.getElementById('quoteSubmitBtn');
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+        .then(function (result) {
+          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+        })
+        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+    });
+  })();
+</script>
+</BaseLayout>

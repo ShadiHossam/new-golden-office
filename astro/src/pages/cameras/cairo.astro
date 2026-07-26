@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://newgoldenoffice.com/cameras/cairo#service",
+      "name": "تركيب وصيانة كاميرات مراقبة في القاهرة",
+      "serviceType": "أنظمة كاميرات مراقبة للشركات والمنازل",
+      "url": "https://newgoldenoffice.com/cameras/cairo",
+      "areaServed": { "@type": "City", "name": "القاهرة" },
+      "provider": { "@id": "https://newgoldenoffice.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"هل يمكن مشاهدة الكاميرات من الموبايل؟","acceptedAnswer":{"@type":"Answer","text":"نعم، كل الأنظمة التي نركبها تُبرمج للمشاهدة المباشرة من الموبايل والتابلت واللابتوب مع إمكانية الرجوع للتسجيلات عن بُعد."}},
+        {"@type":"Question","name":"هل أستطيع مشاهدة فروعي في القاهرة والإسكندرية معًا؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أنظمة المشاهدة الموحدة تعرض كل الفروع في تطبيق واحد على الموبايل، مع صلاحيات منفصلة لكل مدير فرع."}},
+        {"@type":"Question","name":"كيف تتابعون التركيبات في القاهرة بدون فرع هناك؟","acceptedAnswer":{"@type":"Answer","text":"بأنظمة متابعة عن بُعد وفرق ميدانية منظمة تصل للموقع بمواعيد مجدولة، والدعم الفني يشخص أغلب الملاحظات عن بُعد فورًا."}},
+        {"@type":"Question","name":"هل تغطون منطقتي في القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"فرقنا الميدانية تعمل في التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي."}},
+        {"@type":"Question","name":"كم مدة حفظ التسجيلات وكم سعة الهارد المطلوبة؟","acceptedAnswer":{"@type":"Answer","text":"المدة تحددها سعة التخزين مقابل عدد الكاميرات ودقتها. أغلب المحلات تطلب من أسبوعين إلى شهر."}},
+        {"@type":"Question","name":"ما الأفضل: كاميرات IP أم نظام DVR؟","acceptedAnswer":{"@type":"Answer","text":"كاميرات IP مع NVR الخيار الأقوى للشركات والفروع المتعددة، وDVR مع كاميرات HD حل اقتصادي للمواقع الصغيرة."}},
+        {"@type":"Question","name":"كم تكلفة نظام 4 أو 8 كاميرات في القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"التكلفة تعتمد على نوع الكاميرات ودقتها وسعة التخزين، والرقم الدقيق يأتي بعد معاينة مجانية."}},
+        {"@type":"Question","name":"هل يوجد ضمان وعقد صيانة بعد التركيب؟","acceptedAnswer":{"@type":"Answer","text":"نعم، ضمان مكتوب على الأجهزة والتركيب، وعقد صيانة سنوي اختياري بزيارات دورية."}}
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="شركة كاميرات مراقبة في القاهرة | تركيب بضمان ومتابعة عن بعد"
+  description="شركة كاميرات مراقبة في القاهرة بخبرة 27 عامًا: معاينة مجانية، تركيب أنظمة IP وDVR بضمان مكتوب وعقد صيانة سنوي، ومشاهدة كل فروعك من موبايلك. اطلب عرض سعر."
+  keywords="شركة كاميرات مراقبة في القاهرة، تركيب كاميرات مراقبة القاهرة، مراقبة فروع متعددة القاهرة"
+  ogTitle="شركة كاميرات مراقبة في القاهرة | نيو جولدن أوفيس"
+  ogDescription="معاينة مجانية، تركيب أنظمة IP وDVR بضمان مكتوب، ومشاهدة كل فروعك من موبايلك في القاهرة."
+  ogImage="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp"
+  robots="noindex, nofollow"
+  schemaJson={schemaJson}
+>
+<style>
+  .quote-section{padding:60px 0}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
+  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .form-group{margin-bottom:1.1rem}
+  .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(27,58,107,.1);background:#fff}
+  .form-group textarea{height:100px;resize:vertical}
+  .form-submit-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:#fff;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .form-submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,107,.25)}
+  .success-message{display:none;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem}
+  .success-message i{font-size:2.5rem;color:#4caf50;display:block;margin-bottom:.5rem}
+  .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
+  .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
+  .quote-alt-card .wa-icon{font-size:3rem}
+  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card p{opacity:.92;line-height:1.8}
+  @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <span>/</span>
+          <a href="/cairo">خدماتنا في القاهرة</a>
+          <span>/</span>
+          <span class="current">شركة كاميرات مراقبة في القاهرة</span>
+        </nav>
+        <h1 class="reveal">شركة كاميرات مراقبة في القاهرة</h1>
+        <p class="lead reveal delay-1">معاينة مجانية، تركيب أنظمة IP وDVR بضمان مكتوب، ومراقبة كل فروعك من شاشة واحدة أينما كنت، بخبرة 27 عامًا</p>
+      </div>
+      <div class="page-hero-image">
+        <img src="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp" alt="شركة كاميرات مراقبة في القاهرة" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تأمين بيئات العمل</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5">0</div><div class="stat-label">مناطق أعمال نغطيها بمواعيد مجدولة</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع كاميرات نوفرها ونركبها</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">شاشة واحدة لمراقبة كل فروعك</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>أن ترى كل فروعك وأنت في مكتبك، هذه ليست ميزة إضافية بل أساس أي نظام مراقبة حديث. نيو جولدن أوفيس شركة كاميرات مراقبة في القاهرة بخبرة 27 عامًا في تأمين بيئات العمل: معاينة مجانية لموقعك، توريد وتركيب كاميرات أصلية بضمان مكتوب، برمجة المشاهدة عن بُعد من الموبايل، وعقود صيانة سنوية. نقطة قوتنا التي لا يقدمها غيرنا: أنظمة مراقبة الفروع المتعددة من شاشة واحدة، لأننا نحن أنفسنا ندير عملياتنا في القاهرة من الإسكندرية عن بُعد بانضباط كامل، ونبني لك نفس النموذج.</p>
+    </div>
+
+    <div class="section-header">
+      <h2>لماذا تحتاج شركة كاميرات مراقبة متخصصة لا مجرد فني تركيب؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h4>معاينة هندسية قبل أي توريد</h4><p>تحديد النقاط الحرجة وزوايا التغطية وعدد الكاميرات الفعلي المطلوب.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h4>أجهزة أصلية بضمان مكتوب</h4><p>ماركات معروفة بفواتير رسمية، لا أجهزة مجهولة المصدر.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-toolbox"></i></div><h4>تركيب وبرمجة باحترافية</h4><p>تمديدات منظمة، وربط المشاهدة بموبايلك قبل مغادرة الموقع.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h4>ما بعد البيع</h4><p>صيانة دورية ودعم فني يرد عليك، وهذا ما يفصل الشركات الجادة عن الباقين.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>المشاهدة من الموبايل ومراقبة فروع متعددة من شاشة واحدة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>هنا نقطة قوتنا الحقيقية. نحن أنفسنا ندير عمليات كاملة في القاهرة من مقرنا بالإسكندرية بأنظمة متابعة عن بُعد، ونعرف بالتجربة العملية اليومية كيف تُدار المواقع البعيدة بانضباط. هذه الخبرة نفسها نبنيها لك: شاشة موحدة تعرض كل فروعك في نفس اللحظة، صلاحيات متدرجة لكل مدير فرع، وتنبيهات حركة ذكية للمناطق الحساسة تصلك لحظيًا على الموبايل.</p>
+      <p style="margin-top:16px">مثال عملي: تفتح التطبيق صباحًا فتتأكد في دقيقة واحدة أن كل الفروع فتحت في موعدها، وتراجع مساء لقطات مناطق الكاش عند أي فرق في الحسابات، وتستقبل تنبيهًا فوريًا إن رُصدت حركة في مخزن مغلق بعد منتصف الليل. هذا مستوى السيطرة الذي يجعل الفرع البعيد تحت عينك كأنه الغرفة المجاورة.</p>
+    </div>
+    <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
+      <img src="/images/webp-images/business-professionals-meeting-at-conference-room-2026-01-05-00-29-12-utc.webp" alt="مراقبة فروع متعددة في القاهرة" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أنواع كاميرات المراقبة وأيها يناسب منشأتك</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">النوع</th><th style="padding:14px 16px;text-align:right">أبرز ما يميزه</th><th style="padding:14px 16px;text-align:right">الأنسب له</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">IP</td><td style="padding:12px 16px">جودة عالية ومشاهدة مركزية عن بُعد</td><td style="padding:12px 16px">الشركات والفروع المتعددة</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">HD / AHD</td><td style="padding:12px 16px">تكلفة اقتصادية وتوافق مع الكابلات القائمة</td><td style="padding:12px 16px">المحلات والمواقع الصغيرة</td></tr>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">PTZ</td><td style="padding:12px 16px">حركة وتقريب يغطيان مساحات واسعة</td><td style="padding:12px 16px">المخازن والمصانع والساحات</td></tr>
+          <tr style="background:#f8f9fa"><td style="padding:12px 16px">لاسلكية WiFi</td><td style="padding:12px 16px">تركيب سريع بلا تمديدات معقدة</td><td style="padding:12px 16px">المنازل والمكاتب الصغيرة</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">تفرقة مهمة أخرى: الكاميرا الخارجية مصممة لتتحمل شمس الصيف وأتربة القاهرة، بينما الداخلية أرخص لأنها لا تحتاج هذه الحماية. تركيب كاميرا داخلية في مكان مكشوف من أكثر الأخطاء التي نصلحها في مواقع ركبها آخرون.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>حلول حسب نشاطك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-house"></i></div><h4>المنازل والفيلات</h4><p>كاميرات خارجية برؤية ليلية للمداخل والأسوار، ومشاهدة من الموبايل وأنت مسافر.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>المحلات والمطاعم</h4><p>تغطية دقيقة للكاشير والمدخل، وتنبيهات حركة بعد ساعات الإغلاق.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>الشركات والمكاتب</h4><p>أنظمة IP بمشاهدة مركزية وصلاحيات وصول متدرجة للمديرين.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-warehouse"></i></div><h4>المصانع والمخازن</h4><p>كاميرات PTZ للمساحات الواسعة وتغطية لخطوط الإنتاج وبوابات الشحن.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما الذي يحدد تكلفة تركيب كاميرات المراقبة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:700px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>عدد الكاميرات ونوعها:</strong> IP أعلى تكلفة من HD لكنها استثمار أطول عمرًا للشركات.</li>
+        <li><strong>دقة الصورة:</strong> كلما ارتفعت الدقة ارتفع سعر الكاميرا واحتجت سعة تخزين أكبر.</li>
+        <li><strong>المسجل وسعة التخزين:</strong> عدد القنوات وعدد أيام الاحتفاظ المطلوبة.</li>
+        <li><strong>التمديدات وطبيعة الموقع:</strong> المسافات وعدد الأدوار والتشطيبات.</li>
+        <li><strong>حجم التعاقد:</strong> أنظمة الفروع المتعددة تحصل على تسعير مشروعات أفضل.</li>
+      </ul>
+      <div style="overflow-x:auto;max-width:700px;margin:24px auto 0">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+          <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:12px 16px;text-align:right">النظام</th><th style="padding:12px 16px;text-align:right">يناسب عادة</th></tr></thead>
+          <tbody>
+            <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">4 كاميرات</td><td style="padding:12px 16px">محل، عيادة، مكتب صغير</td></tr>
+            <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">8 كاميرات</td><td style="padding:12px 16px">شركة، مطعم، معرض</td></tr>
+            <tr style="background:var(--white)"><td style="padding:12px 16px">16 كاميرا</td><td style="padding:12px 16px">مصنع، مخزن، مبنى إداري</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:20px;text-align:center">اطلب معاينة مجانية وعرض سعر مفصل البنود على 01227392074.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الضمان وعقد الصيانة السنوي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">1</div><h4>ضمان مكتوب</h4><p>على الأجهزة والتركيب ببنود واضحة، تستلمه مع الفاتورة لا وعدًا على الهاتف.</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>عقد صيانة سنوي اختياري</h4><p>زيارات دورية: فحص الكاميرات، تنظيف العدسات، واختبار المشاهدة عن بُعد.</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>عقود الفروع المتعددة</h4><p>كل مواقعك في عقد واحد بجدول زيارات موحد وتقرير حالة دوري.</p></div>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">كاميرا معطلة وقت الحاجة أسوأ من عدم وجود كاميرا، لأنها تمنح شعورًا زائفًا بالأمان. الصيانة الدورية هي ما يجعل استثمارك يعمل يوم تحتاجه فعلًا.</p>
+    <!-- TODO: real customer testimonial pending — see punch list -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>المناطق التي نغطيها داخل القاهرة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>التجمع الخامس</h4><p>مقرات الشركات والإدارات التي تحتاج أنظمة IP حديثة بمشاهدة مركزية.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مدينة نصر</h4><p>كثافة تجارية عالية، محلات ومكاتب تحتاج تغطية مداخل ومناطق كاش دقيقة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h4>المعادي</h4><p>شركات ومكاتب مهنية تطلب أنظمة مرتبة المظهر بتمديدات مخفية.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h4>القاهرة الجديدة</h4><p>منشآت وفروع جديدة نجهزها بالكامل من الصفر.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>وسط البلد المالي</h4><p>مقرات وأنشطة تتعامل مع النقود يوميًا وتحتاج تسجيلًا موثوقًا طويل المدى.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الأسئلة الشائعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">هل يمكن مشاهدة الكاميرات من الموبايل؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، كل الأنظمة تُبرمج للمشاهدة المباشرة من الموبايل والتابلت واللابتوب مع إمكانية الرجوع للتسجيلات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل أستطيع مشاهدة فروعي في القاهرة والإسكندرية معًا؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، أنظمة المشاهدة الموحدة تعرض كل الفروع في تطبيق واحد بصلاحيات منفصلة لكل مدير فرع.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف تتابعون التركيبات في القاهرة بدون فرع هناك؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بأنظمة متابعة عن بُعد وفرق ميدانية منظمة تصل بمواعيد مجدولة، والدعم الفني يشخص أغلب الملاحظات فورًا.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تغطون منطقتي في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">فرقنا الميدانية تعمل في التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم مدة حفظ التسجيلات المطلوبة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تحددها سعة التخزين مقابل عدد الكاميرات ودقتها؛ أغلب المحلات تطلب من أسبوعين إلى شهر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الأفضل: كاميرات IP أم نظام DVR؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">IP مع NVR الخيار الأقوى للشركات والفروع المتعددة، وDVR مع HD حل اقتصادي للمواقع الصغيرة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم تكلفة نظام 4 أو 8 كاميرات في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">التكلفة تعتمد على النوع والدقة وسعة التخزين، والرقم الدقيق يأتي بعد معاينة مجانية.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يوجد ضمان وعقد صيانة بعد التركيب؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، ضمان مكتوب على الأجهزة والتركيب، وعقد صيانة سنوي اختياري.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section quote-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>اطلب معاينة مجانية لموقعك في القاهرة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-form-card reveal">
+        <h3>أرسل تفاصيل طلبك</h3>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="q-name">الاسم الكامل</label>
+            <input type="text" id="q-name" name="name" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="q-phone">رقم الهاتف</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label for="q-company">اسم الشركة (اختياري)</label>
+            <input type="text" id="q-company" name="company" placeholder="اسم شركتك أو نشاطك">
+          </div>
+          <div class="form-group">
+            <label for="q-subservice">نوع المكان</label>
+            <select id="q-subservice" name="subservice" required>
+              <option value="" disabled selected>اختر النوع</option>
+              <option value="محل تجاري">محل تجاري</option>
+              <option value="شركة أو مكتب">شركة أو مكتب</option>
+              <option value="فروع متعددة">فروع متعددة</option>
+              <option value="مخزن أو مصنع">مخزن أو مصنع</option>
+              <option value="منزل أو فيلا">منزل أو فيلا</option>
+              <option value="غير ذلك">غير ذلك</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="q-message">تفاصيل إضافية (اختياري)</label>
+            <textarea id="q-message" name="message" placeholder="عدد الفروع أو المداخل والمنطقة بالقاهرة"></textarea>
+          </div>
+          <input type="hidden" name="service" value="cameras">
+          <input type="hidden" name="source" value="cameras/cairo">
+          <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+          <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> اطلب المعاينة المجانية
+          </button>
+          <p id="quoteErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
+        </form>
+        <div class="success-message" id="quoteSuccessMessage">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>تم استلام طلبك بنجاح! هيتواصل معاك مندوب حسابك في أقرب وقت.</p>
+        </div>
+      </div>
+      <div class="quote-alt-card reveal delay-1">
+        <i class="fab fa-whatsapp wa-icon"></i>
+        <h3>تفضل تتكلم مباشرة؟</h3>
+        <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل كاميرات المراقبة في القاهرة</p>
+        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20مراقبة%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
+        </a>
+        <p style="margin-top:4px;font-size:.95rem">أو اتصل على 01227392074</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('quoteForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successMsg = document.getElementById('quoteSuccessMessage');
+      var errorMsg = document.getElementById('quoteErrorMessage');
+      var submitBtn = document.getElementById('quoteSubmitBtn');
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+        .then(function (result) {
+          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+        })
+        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+    });
+  })();
+</script>
+</BaseLayout>

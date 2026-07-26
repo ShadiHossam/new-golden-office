@@ -100,6 +100,18 @@ const isActive = (prefix: string) =>
         <a href="/contact" class:list={['nav-link nav-cta', { active: isActive('/contact') }]}>تواصل معنا</a>
       </li>
     </ul>
+    <button type="button" class="nav-search-toggle" aria-label="بحث"><i class="fas fa-search"></i></button>
     <button class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="site-search-panel">
+  <div class="site-search-inner">
+    <div class="site-search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="siteSearchInput" placeholder="ابحث عن منتج أو خدمة... مثال: ورق A4، كاميرا مراقبة" autocomplete="off">
+      <button type="button" class="site-search-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="site-search-results"></div>
+  </div>
+</div>

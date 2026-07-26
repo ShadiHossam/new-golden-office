@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://newgoldenoffice.com/cash-machines/cairo#service",
+      "name": "ماكينات عد نقود وكشف تزييف في القاهرة",
+      "serviceType": "توريد وصيانة ماكينات عد النقود وكشف التزييف",
+      "url": "https://newgoldenoffice.com/cash-machines/cairo",
+      "areaServed": { "@type": "City", "name": "القاهرة" },
+      "provider": { "@id": "https://newgoldenoffice.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"كيف أختار ماكينة عد النقود المناسبة لنشاطي؟","acceptedAnswer":{"@type":"Answer","text":"بثلاثة أسئلة: حجم الكاش اليومي، هل تعد فئات مفروزة أم مخلوطة، وهل تحتاج كشف تزييف مدمجًا."}},
+        {"@type":"Question","name":"ما الفرق بين ماكينة MIX وماكينة الفئة الواحدة؟","acceptedAnswer":{"@type":"Answer","text":"الفئة الواحدة تعد أوراقًا من نفس الفئة، وMIX تعد رزمة مخلوطة وتعطي القيمة الإجمالية بالجنيه."}},
+        {"@type":"Question","name":"هل كل ماكينات عد النقود تكشف التزوير؟","acceptedAnswer":{"@type":"Answer","text":"لا، بعض الموديلات الأساسية تعد فقط. أغلب الموديلات الحديثة تدمج كشفًا بـUV وMG."}},
+        {"@type":"Question","name":"كم سعر ماكينة عد النقود وكشف التزوير؟","acceptedAnswer":{"@type":"Answer","text":"يتحرك حسب النوع وتقنيات الكشف والماركة والسرعة وحجم التعاقد."}},
+        {"@type":"Question","name":"هل هناك ضمان وقطع غيار أصلية لماكينات جلوري؟","acceptedAnswer":{"@type":"Answer","text":"نعم، كل ماكينة تأتي بضمان موثق، ونحتفظ بقطع الغيار الأصلية وعلى رأسها جلوري."}},
+        {"@type":"Question","name":"كم يستغرق تصليح ماكينة عد النقود في القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"نبدأ بتشخيص هاتفي، وما يحتاج تدخلًا فنيًا يُجدول بزيارة ميدانية بمواعيد متفق عليها."}},
+        {"@type":"Question","name":"هل يمكن الحصول على تركيب وتدريب في الموقع؟","acceptedAnswer":{"@type":"Answer","text":"نعم، الفريق الميداني يركب الماكينة ويضبط إعدادات الكشف ويدرب أمين الخزينة."}}
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="شركة ماكينات عد نقود في القاهرة | جلوري وكشف تزييف"
+  description="شركة ماكينات عد نقود في القاهرة: أنواع الماكينات، مقارنة جلوري وLG وكاسيدا، كشف تزييف، صيانة ميدانية وضمان وقطع غيار أصلية. خبرة 27 عامًا. اطلب عرض سعر."
+  keywords="شركة ماكينات عد نقود في القاهرة، ماكينة عد فلوس القاهرة، جهاز كشف تزييف القاهرة"
+  ogTitle="شركة ماكينات عد نقود في القاهرة | نيو جولدن أوفيس"
+  ogDescription="أنواع الماكينات، مقارنة جلوري وLG وكاسيدا، كشف تزييف، صيانة ميدانية وضمان في القاهرة."
+  ogImage="/images/money-counting-machine-2-1784574483846-806461.webp"
+  robots="noindex, nofollow"
+  schemaJson={schemaJson}
+>
+<style>
+  .quote-section{padding:60px 0}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
+  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .form-group{margin-bottom:1.1rem}
+  .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(27,58,107,.1);background:#fff}
+  .form-group textarea{height:100px;resize:vertical}
+  .form-submit-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:#fff;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .form-submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,107,.25)}
+  .success-message{display:none;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem}
+  .success-message i{font-size:2.5rem;color:#4caf50;display:block;margin-bottom:.5rem}
+  .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
+  .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
+  .quote-alt-card .wa-icon{font-size:3rem}
+  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card p{opacity:.92;line-height:1.8}
+  @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <span>/</span>
+          <a href="/cairo">خدماتنا في القاهرة</a>
+          <span>/</span>
+          <span class="current">شركة ماكينات عد نقود في القاهرة</span>
+        </nav>
+        <h1 class="reveal">شركة ماكينات عد نقود في القاهرة</h1>
+        <p class="lead reveal delay-1">ماكينات عد وفرز مصرفية، كشف تزييف بأحدث التقنيات، وصيانة ميدانية للبنوك وشركات الصرافة وسلاسل التجزئة، بخبرة 27 عامًا</p>
+      </div>
+      <div class="page-hero-image">
+        <img src="/images/money-counting-machine-2-1784574483846-806461.webp" alt="شركة ماكينات عد نقود في القاهرة" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تجهيز البيئات المالية</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="4">0</div><div class="stat-label">عائلات ماكينات نوفرها</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="3">0</div><div class="stat-label">ماركات عالمية: جلوري وLG وكاسيدا</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="5">0</div><div class="stat-label">مناطق أعمال نغطيها بمسارات مجدولة</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>في نهاية كل يوم عمل، دقة عد النقود ليست تفصيلة بل خط الدفاع الأول ضد العجز والتلاعب والتزييف. نيو جولدن أوفيس شركة ماكينات عد نقود في القاهرة توفر للبنوك وشركات الصرافة وسلاسل التجزئة والمحلات كل ما تحتاجه خزينة منضبطة: ماكينة عد فلوس بسرعة ودقة تناسب حجم التداول، جهاز كشف تزييف بأحدث تقنيات الفحص، وماكينات فرز للعمليات المصرفية، مع صيانة ميدانية تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي.</p>
+    </div>
+
+    <div class="section-header">
+      <h2>أنواع ماكينات عد النقود: أيها يناسب نشاطك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-coins"></i></div><h3 class="service-title">ماكينات عد الفئة الواحدة</h3><p class="service-desc">الخيار الأساسي للمحلات والمطاعم والصيدليات، تعد رزمة من نفس الفئة بسرعة عالية.</p><a href="/cash-machines/counting" class="btn btn-outline btn-sm">ماكينات عد النقود <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-layer-group"></i></div><h3 class="service-title">ماكينات MIX متعددة الفئات</h3><p class="service-desc">تعد رزمة مخلوطة وتعطيك القيمة الإجمالية بالجنيه دون فرز مسبق.</p></div>
+      <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-building-columns"></i></div><h3 class="service-title">ماكينات الفرز المصرفية</h3><p class="service-desc">تعد وتفرز في نفس الوقت وترفض الورق المشبوه تلقائيًا، للبنوك وشركات الصرافة.</p></div>
+      <div class="service-card reveal delay-3"><div class="service-icon"><i class="fas fa-magnifying-glass"></i></div><h3 class="service-title">أجهزة كشف التزييف المستقلة</h3><p class="service-desc">للفحص الورقي الفردي عند الكاشير أو الشباك، يكمل ماكينة العد.</p><a href="/cash-machines/detector" class="btn btn-outline btn-sm">أجهزة كشف تزييف <i class="fas fa-arrow-left"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>القطاع المصرفي وشركات الصرافة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>فروع البنوك وشركات الصرافة في وسط البلد المالي والقاهرة الجديدة تتعامل مع أحجام نقد ضخمة يوميًا، ولا تحتمل خطأ في العد أو ورقة مزيفة تمر. نوفر لهذا القطاع ماكينات فرز وعد مصرفية بسرعات عالية وفرز حسب الفئة، مع دمج كشف التزييف أثناء العد، وأجهزة كشف بتقنيات فحص متعددة للتحقق الفوري عند الشبابيك، وموديلات متعددة العملات لشركات الصرافة التي تتداول الدولار واليورو.</p>
+    </div>
+    <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
+      <img src="/images/webp-images/approved-rubber-stamp-on-financial-bar-graph-repor-2026-03-19-23-56-51-utc.webp" alt="ماكينات عد نقود للقطاع المصرفي بالقاهرة" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>سلاسل التجزئة الكبرى: خزينة منضبطة في كل فرع</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="max-width:800px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لسلاسل السوبر ماركت والمطاعم والمحال المنتشرة في المعادي ومدينة نصر والتجمع الخامس، ماكينة عد النقود تختصر وقت تقفيل الخزينة يوميًا وتحسم فروق العهدة. نجهز فروعك كلها بمواصفات موحدة، فيعمل كل أمين خزينة بنفس النظام، وتحصل الإدارة المركزية على انضباط موحد عبر السلسلة، مع مورد واحد للصيانة والمستهلكات بدل التشتت بين موردين.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>مقارنة الماركات: جلوري وLG وكاسيدا</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">المعيار</th><th style="padding:14px 16px;text-align:right">جلوري (Glory)</th><th style="padding:14px 16px;text-align:right">LG</th><th style="padding:14px 16px;text-align:right">كاسيدا (Cassida)</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">التموضع</td><td style="padding:12px 16px">الفئة المصرفية الأعلى</td><td style="padding:12px 16px">توازن أداء وسعر</td><td style="padding:12px 16px">الفئة المكتبية العملية</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">الاستخدام الأمثل</td><td style="padding:12px 16px">بنوك، صرافات، تداول ضخم</td><td style="padding:12px 16px">شركات وفروع متوسطة</td><td style="padding:12px 16px">محلات ومكاتب</td></tr>
+          <tr style="background:var(--white)"><td style="padding:12px 16px">كشف التزييف</td><td style="padding:12px 16px">متعدد التقنيات</td><td style="padding:12px 16px">أساسية ومتقدمة حسب الموديل</td><td style="padding:12px 16px">UV وMG في أغلب الموديلات</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لا توجد ماركة "أفضل" بشكل مطلق، بل ماركة أنسب لحجم تداولك وميزانيتك. أخبرنا بطبيعة نشاطك وسنرشح لك الموديل الصحيح من واقع 27 عامًا من التوريد والصيانة.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>دليل الاختيار حسب حجم النشاط</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>محل أو صيدلية أو مطعم</h4><p>ماكينة فئة واحدة بكشف UV/MG مدمج، أولوية سهولة التشغيل.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>شركة أو مكتب تحصيل</h4><p>ماكينة MIX تعطي قيمة الخزينة مباشرة بفئاتها المخلوطة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-shop"></i></div><h4>سلسلة تجزئة متعددة الفروع</h4><p>موديل موحد MIX في كل الفروع بمواصفات واحدة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>بنك أو شركة صرافة</h4><p>ماكينات فرز مصرفية بكشف متعدد التقنيات وعقد صيانة يضمن الاستمرارية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما الذي يحدد سعر ماكينة عد النقود؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:700px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>نوع الماكينة:</strong> الفئة الواحدة أقل تكلفة، ثم MIX، ثم الفرز المصرفي في القمة.</li>
+        <li><strong>تقنيات كشف التزييف:</strong> كل تقنية إضافية (UV، MG، IR، فحص الأبعاد) ترفع السعر ومستوى الحماية.</li>
+        <li><strong>الماركة والموديل:</strong> الماركات المصرفية أعلى سعرًا من الفئة المكتبية.</li>
+        <li><strong>سرعة العد وسعة الأدراج:</strong> الموديلات الأسرع مصممة لتداول أضخم.</li>
+        <li><strong>حجم التعاقد:</strong> توريد فرع واحد يختلف عن تجهيز عشرة فروع.</li>
+      </ul>
+      <p style="margin-top:20px;text-align:center">اطلب عرض سعر مفصل بالموديلات والكميات على 01227392074.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الصيانة والإصلاح الميداني في القاهرة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">1</div><h4>تشخيص هاتفي أولي</h4><p>يحل نسبة كبيرة من المشكلات فورًا قبل أي زيارة.</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>فرق صيانة ميدانية</h4><p>تغطي المناطق التجارية بمسارات مجدولة، تصلك في موقعك.</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>عقود صيانة سنوية</h4><p>بزيارات وقائية مجدولة وأولوية استجابة عند الأعطال الطارئة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الأسئلة الشائعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">كيف أختار ماكينة عد النقود المناسبة لنشاطي؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بثلاثة أسئلة: حجم الكاش اليومي، هل تعد فئات مفروزة أم مخلوطة، وهل تحتاج كشف تزييف مدمجًا.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الفرق بين ماكينة MIX وماكينة الفئة الواحدة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الفئة الواحدة تعد أوراقًا من نفس الفئة، وMIX تعد رزمة مخلوطة وتعطي القيمة الإجمالية بالجنيه.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل كل ماكينات عد النقود تكشف التزوير؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا، بعض الموديلات الأساسية تعد فقط. أغلب الموديلات الحديثة تدمج كشفًا بـUV وMG.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سعر ماكينة عد النقود وكشف التزوير؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">يتحرك حسب النوع وتقنيات الكشف والماركة والسرعة وحجم التعاقد.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل هناك ضمان وقطع غيار أصلية لماكينات جلوري؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، كل ماكينة تأتي بضمان موثق، ونحتفظ بقطع الغيار الأصلية وعلى رأسها جلوري.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم يستغرق تصليح ماكينة عد النقود في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نبدأ بتشخيص هاتفي، وما يحتاج تدخلًا فنيًا يُجدول بزيارة ميدانية بمواعيد متفق عليها.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن الحصول على تركيب وتدريب في الموقع؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، الفريق الميداني يركب الماكينة ويضبط إعدادات الكشف ويدرب أمين الخزينة.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section quote-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>اطلب عرض سعر ماكينة عد النقود في القاهرة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-form-card reveal">
+        <h3>أرسل تفاصيل طلبك</h3>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="q-name">الاسم الكامل</label>
+            <input type="text" id="q-name" name="name" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="q-phone">رقم الهاتف</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label for="q-company">اسم الشركة (اختياري)</label>
+            <input type="text" id="q-company" name="company" placeholder="اسم شركتك أو نشاطك">
+          </div>
+          <div class="form-group">
+            <label for="q-subservice">نوع الجهاز</label>
+            <select id="q-subservice" name="subservice" required>
+              <option value="" disabled selected>اختر النوع</option>
+              <option value="ماكينة فئة واحدة">ماكينة فئة واحدة</option>
+              <option value="ماكينة MIX">ماكينة MIX متعددة الفئات</option>
+              <option value="ماكينة فرز مصرفية">ماكينة فرز مصرفية</option>
+              <option value="جهاز كشف تزييف مستقل">جهاز كشف تزييف مستقل</option>
+              <option value="تجهيز عدة فروع">تجهيز عدة فروع</option>
+              <option value="غير ذلك">غير ذلك</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="q-message">تفاصيل إضافية (اختياري)</label>
+            <textarea id="q-message" name="message" placeholder="حجم تعاملاتك النقدية اليومية ونوع نشاطك وعدد الفروع إن وجدت"></textarea>
+          </div>
+          <input type="hidden" name="service" value="cash-machines">
+          <input type="hidden" name="source" value="cash-machines/cairo">
+          <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+          <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر
+          </button>
+          <p id="quoteErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
+        </form>
+        <div class="success-message" id="quoteSuccessMessage">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>تم استلام طلبك بنجاح! هيتواصل معاك مندوب حسابك في أقرب وقت.</p>
+        </div>
+      </div>
+      <div class="quote-alt-card reveal delay-1">
+        <i class="fab fa-whatsapp wa-icon"></i>
+        <h3>تفضل تتكلم مباشرة؟</h3>
+        <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل ماكينات عد النقود في القاهرة</p>
+        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20ماكينة%20عد%20نقود%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
+        </a>
+        <p style="margin-top:4px;font-size:.95rem">أو اتصل على 01227392074</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('quoteForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successMsg = document.getElementById('quoteSuccessMessage');
+      var errorMsg = document.getElementById('quoteErrorMessage');
+      var submitBtn = document.getElementById('quoteSubmitBtn');
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+        .then(function (result) {
+          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+        })
+        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+    });
+  })();
+</script>
+</BaseLayout>

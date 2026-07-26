@@ -1,18 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 
-// Alexandria/Cairo local-SEO pages are noindex,nofollow pending owner
-// review (see seo-audit-2026-07 memory) — exclude them from the generated
-// sitemap so they don't get submitted for indexing ahead of that decision.
-const NOINDEX_PATHS = ['https://newgoldenoffice.com/alexandria', 'https://newgoldenoffice.com/cairo'];
+// Sitemap is hand-rolled (src/pages/{sitemap,page-sitemap,post-sitemap,category-sitemap}.xml.ts)
+// to replicate the old Yoast-style split + XSL-styled browser view — see src/lib/sitemap-data.ts
+// for the noindex exclusion list (Alexandria/Cairo, pending owner review).
 
 export default defineConfig({
   site: 'https://newgoldenoffice.com',
   output: 'static',
-  integrations: [
-    sitemap({
-      filter: (page) => !NOINDEX_PATHS.some((p) => page === p || page === `${p}/`),
-    }),
-  ],
 });

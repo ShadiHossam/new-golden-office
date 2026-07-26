@@ -74,6 +74,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>فحص مستوى الفريون:</strong> قياس ضغط الفريون بـ Manifold Gauge وإضافة الكمية المطلوبة إن لزم</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>تنظيف وفحص خرطوم الصرف:</strong> تنظيف خرطوم الصرف والتحقق من ميله وعدم انسداده</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>فحص الكمبريسور والكهرباء:</strong> قياس استهلاك الكمبريسور والتأكد من سلامة التوصيلات والكابلات</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>فحص المكثفات (Capacitors):</strong> فحص المكثفات واستبدال المعطوب منها، سبب شائع لأعطال الكمبرسور</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>فحص الموتورات والريش:</strong> فحص الموتورات الداخلية والخارجية والتأكد من سلامة الريش</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>اختبار وحدة التحكم والريموت:</strong> التأكد من استجابة الوحدة لجميع أوامر الريموت</span></li>
       </ul>
 
@@ -83,6 +85,7 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>فريون R410A:</strong> النوع الأشيع في التكييفات الحديثة — صديق للبيئة وأكفأ في نقل الحرارة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>فريون R32:</strong> الجيل الجديد الأكثر كفاءة وصداقة للبيئة — يُستخدم في التكييفات الحديثة من Samsung وMidea وLG</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>كشف تسريبات الفريون:</strong> إذا نقص الفريون مراراً فهذا يعني وجود تسريب — نُشخّصه ونُصلحه قبل إعادة الشحن</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>تنبيه مهم:</strong> لا يمكن تحويل تكييف R22 ليعمل بـ R410A دون تغيير مكونات جوهرية، والتحويل غير المتخصص يُتلف الكمبرسور. إذا كان تكييفك القديم يستهلك الفريون بسرعة، استشرنا لتقييم جدوى الصيانة مقابل الاستبدال</span></li>
       </ul>
 
       <h3><i class="fas fa-file-contract" style="color:var(--secondary);margin-left:8px;"></i> عقود الصيانة السنوية</h3>
@@ -116,9 +119,14 @@ const schemaJson = JSON.stringify({
               <td style="padding:10px 14px;background:#fff8e8;color:#333;vertical-align:top;">فحص الكمبريسور والكهرباء</td>
             </tr>
             <tr>
+              <td style="padding:10px 14px;background:#e8f4ff;color:#333;vertical-align:top;">التحقق من عدم وجود روائح غريبة</td>
+              <td style="padding:10px 14px;background:#e8fff0;color:#333;vertical-align:top;">فحص ضوضاء غير طبيعية</td>
+              <td style="padding:10px 14px;background:#fff8e8;color:#333;vertical-align:top;">تنظيف كويل المكثف</td>
+            </tr>
+            <tr>
               <td style="padding:10px 14px;background:#e8f4ff;color:#333;vertical-align:top;border-bottom:none;">—</td>
-              <td style="padding:10px 14px;background:#e8fff0;color:#333;vertical-align:top;border-bottom:none;">فحص ضوضاء غير طبيعية</td>
-              <td style="padding:10px 14px;background:#fff8e8;color:#333;vertical-align:top;border-bottom:none;">تنظيف كويل المكثف</td>
+              <td style="padding:10px 14px;background:#e8fff0;color:#333;vertical-align:top;border-bottom:none;">فحص الكابلات الكهربائية</td>
+              <td style="padding:10px 14px;background:#fff8e8;color:#333;vertical-align:top;border-bottom:none;">التأكد من سلامة التمديدات</td>
             </tr>
           </tbody>
         </table>

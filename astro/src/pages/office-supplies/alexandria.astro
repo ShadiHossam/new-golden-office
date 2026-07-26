@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://newgoldenoffice.com/office-supplies/alexandria#service",
+      "name": "توريد أدوات ومستلزمات مكتبية في الإسكندرية",
+      "serviceType": "توريد مستلزمات مكتبية للشركات",
+      "url": "https://newgoldenoffice.com/office-supplies/alexandria",
+      "provider": { "@id": "https://newgoldenoffice.com/#organization" },
+      "areaServed": { "@type": "City", "name": "الإسكندرية" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"أين أجد أدوات مكتبية للبيع في الإسكندرية بجودة موثوقة؟","acceptedAnswer":{"@type":"Answer","text":"في مقر نيو جولدن أوفيس داخل الإسكندرية: 26 عبد المنعم سند، الإبراهيمية، باب شرق. يمكنك زيارتنا لمعاينة الأصناف بنفسك، أو طلب التوريد لمكتبك مباشرة."}},
+        {"@type":"Question","name":"ما مناطق التوصيل داخل الإسكندرية وكم يستغرق؟","acceptedAnswer":{"@type":"Answer","text":"نغطي الإسكندرية بالكامل، مع استجابة أسرع في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران والمنشية والعطارين والكورنيش."}},
+        {"@type":"Question","name":"هل توفّرون توريد أدوات مكتبية دوري شهري للشركات؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نقدم عقود توريد بجدول شهري أو دوري ثابت، بقائمة أصناف وجودة متفق عليها، ومندوب حساب مخصص يراجع الاحتياج دوريًا."}},
+        {"@type":"Question","name":"ما الحد الأدنى للطلب وكيف أحصل على عرض سعر بالجملة؟","acceptedAnswer":{"@type":"Answer","text":"لا يوجد حد أدنى موحد. أرسل قائمة الأصناف والكميات التقريبية وسيصلك عرض سعر مفصل بشروط تناسب حجم استهلاكك."}},
+        {"@type":"Question","name":"هل تصدرون فواتير ضريبية للشركات والجهات؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نصدر فواتير ضريبية معتمدة لكل تعاملات الشركات والجهات ضمن نظام التوريد المؤسسي."}},
+        {"@type":"Question","name":"ما طرق الدفع المتاحة للشركات؟ وهل يوجد دفع آجل؟","acceptedAnswer":{"@type":"Answer","text":"نوفر التحويل البنكي والدفع النقدي، وللشركات المتعاقدة على توريد دوري يتاح حساب مؤسسي بشروط دفع آجل."}},
+        {"@type":"Question","name":"هل منتجاتكم أصلية؟ وما سياسة الاستبدال والضمان؟","acceptedAnswer":{"@type":"Answer","text":"نورد منتجات أصلية من ماركات معروفة، ونستبدل أي صنف يثبت به عيب مصنعي، وتُسلَّم الأصناف ذات الضمان المصنعي بضمانها الرسمي."}},
+        {"@type":"Question","name":"هل توفّرون الأثاث المكتبي والأحبار مع القرطاسية في مكان واحد؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نوفر القرطاسية والورق وأحبار الطابعات والسبورات والأثاث المكتبي ومعدات المكاتب من مورد واحد بفاتورة واحدة."}},
+        {"@type":"Question","name":"هل توفرون ورق A4 بالجملة لشركة في سموحة أو سيدي جابر؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نورد ورق A4 بالجملة لكل مناطق الإسكندرية، وسموحة وسيدي جابر ضمن مناطق الاستجابة السريعة لدينا."}}
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="شركة أدوات مكتبية في الإسكندرية | نيو جولدن أوفيس"
+  description="شركة أدوات مكتبية في الإسكندرية بخبرة 27 عامًا: مستلزمات مكتبية بالجملة، توريد دوري للشركات، أحبار طابعات، فواتير ضريبية ودفع آجل. اطلب عرض سعر."
+  keywords="شركة أدوات مكتبية في الإسكندرية، مستلزمات مكتبية بالجملة الاسكندرية، توريد مستلزمات مكتبية للشركات بالاسكندرية، ورق A4 بالجملة الاسكندرية"
+  ogTitle="شركة أدوات مكتبية في الإسكندرية | نيو جولدن أوفيس"
+  ogDescription="مستلزمات مكتبية بالجملة، توريد دوري للشركات، أحبار طابعات، فواتير ضريبية ودفع آجل في الإسكندرية."
+  ogImage="/images/office-supplies-hub.webp"
+  robots="noindex, nofollow"
+  schemaJson={schemaJson}
+>
+<style>
+  .quote-section{padding:60px 0}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
+  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .form-group{margin-bottom:1.1rem}
+  .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(27,58,107,.1);background:#fff}
+  .form-group textarea{height:100px;resize:vertical}
+  .form-submit-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:#fff;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .form-submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,107,.25)}
+  .success-message{display:none;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem}
+  .success-message i{font-size:2.5rem;color:#4caf50;display:block;margin-bottom:.5rem}
+  .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
+  .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
+  .quote-alt-card .wa-icon{font-size:3rem}
+  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card p{opacity:.92;line-height:1.8}
+  @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <span>/</span>
+          <a href="/alexandria">خدماتنا في الإسكندرية</a>
+          <span>/</span>
+          <span class="current">شركة أدوات مكتبية في الإسكندرية</span>
+        </nav>
+        <h1 class="reveal">شركة أدوات مكتبية في الإسكندرية</h1>
+        <p class="lead reveal delay-1">مستلزمات مكتبية بالجملة، توريد مؤسسي مجدول للشركات، فواتير ضريبية ودفع آجل، من مقر فعلي داخل الإسكندرية بخبرة 27 عامًا</p>
+      </div>
+      <div class="page-hero-image">
+        <img src="/images/office-supplies-flatlay-1-1784574480919-8717.webp" alt="شركة أدوات مكتبية في الإسكندرية" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في خدمة المكاتب</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="7">0</div><div class="stat-label">فئات منتجات متكاملة</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="6">0</div><div class="stat-label">أحياء تغطيها استجابتنا السريعة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">فاتورة واحدة لكل المستلزمات</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>تبحث عن شركة أدوات مكتبية في الإسكندرية تورد لك كل ما يحتاجه مكتبك من مصدر واحد وبنظام واضح؟ نيو جولدن أوفيس شركة سكندرية بخبرة 27 عامًا في تجهيز وخدمة المكاتب والشركات، ومقرنا الفعلي داخل المدينة: 26 عبد المنعم سند، الإبراهيمية، باب شرق. لأننا هنا في الإسكندرية، طلبك لا ينتظر شحنًا من محافظة أخرى، ومندوبنا يصلك بسرعة، وتتعامل مع فريق يعرف شوارع المدينة ومناطقها التجارية عن قرب. نخدم الشركات والمكاتب والمصانع والبنوك والعيادات والمدارس ومراكز التدريب بكل أحجامها.</p>
+    </div>
+
+    <div class="section-header">
+      <h2>فئات الأدوات المكتبية التي نوردها بالتفصيل</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-pen"></i></div><h3 class="service-title">قرطاسية وأدوات كتابة</h3><p class="service-desc">أقلام جافة وسائلة ورصاص، أقلام تحديد وتظليل، كشاكيل وبلوكنوت وأوراق ملاحظات لاصقة.</p></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-copy"></i></div><h3 class="service-title">ورق A4 وورق التصوير بالجملة</h3><p class="service-desc">كميات تناسب الشركات والمطابع ومراكز التصوير، بجودة ثابتة ومقاسات وأوزان مختلفة.</p><a href="/office-supplies/a4-paper" class="btn btn-outline btn-sm">ورق A4 بالجملة <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-folder-open"></i></div><h3 class="service-title">ملفات وأرشفة وتنظيم مستندات</h3><p class="service-desc">ملفات وحوافظ ودوسيهات وحافظات بلاستيكية وكرتونية وفواصل تسهّل الرجوع لأي ورقة.</p></div>
+      <div class="service-card reveal delay-3"><div class="service-icon"><i class="fas fa-fill-drip"></i></div><h3 class="service-title">أحبار طابعات ومستلزمات الطباعة</h3><p class="service-desc">أحبار وخراطيش ماكينات التصوير والطابعات الأصلية والمتوافقة.</p><a href="/copiers/cartridges" class="btn btn-outline btn-sm">أحبار وخراطيش <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-chalkboard"></i></div><h3 class="service-title">سبورات ووسائل عرض</h3><p class="service-desc">سبورات وايت بورد بمقاسات مختلفة لغرف الاجتماعات وقاعات التدريب، مع أقلامها وأدوات التثبيت.</p></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3 class="service-title">آلات حاسبة ولوازم المكتب الصغيرة</h3><p class="service-desc">آلات حاسبة، مشابك ودباسات وخرامات ومقصات وشرائط لاصقة وأختام.</p></div>
+      <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-graduation-cap"></i></div><h3 class="service-title">أدوات مدرسية وتدريبية</h3><p class="service-desc">كراسات وأقلام وألوان وأدوات هندسية بكميات الفصول الدراسية للمدارس ومراكز التدريب.</p></div>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب القرطاسية نوفر الأثاث المكتبي ومعدات المكاتب عبر خدماتنا الأخرى: <a href="/copiers/alexandria">ماكينات تصوير المستندات</a>، <a href="/copiers/printers">الطابعات المكتبية</a>، <a href="/cash-machines/alexandria">ماكينات عد النقود</a>، <a href="/cameras/alexandria">كاميرات المراقبة</a>، <a href="/ac/alexandria">التكييفات</a>، و<a href="/printing/alexandria">خدمات الطباعة</a>. فاتورة واحدة، جهة متابعة واحدة.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>التوريد المؤسسي المجدول (اشتراك دوري)</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">مع التعاقد الشهري أو الدوري نتفق معك على جدول توريد ثابت يناسب معدل استهلاكك، فتصل المستلزمات قبل أن تنفد دون أن تتابع أو تتصل في كل مرة.</p>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h4>مواعيد توريد متفق عليها</h4><p>تلتزم بها فرقنا بدقة دون تأخير.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h4>مندوب حساب مخصص</h4><p>يعرف احتياج شركتك ويراجع معك الأصناف دوريًا.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-sliders"></i></div><h4>مرونة في تعديل الكميات</h4><p>مع نمو فريقك أو تغير الاحتياج.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حساب مؤسسي وشروط دفع مرنة تشمل التحويل البنكي والدفع الآجل.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما الذي يحدد تكلفة الأدوات المكتبية؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:700px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>المواصفات والجودة:</strong> وزن الورق ودرجة بياضه، نوع الحبر أصلي أو متوافق، خامة الملفات.</li>
+        <li><strong>الكمية:</strong> سعر الكرتونة في طلب شهري متعاقد عليه يختلف عن الشراء المتقطع.</li>
+        <li><strong>الماركة:</strong> لكل فئة بدائل اقتصادية وأخرى ممتازة، نرشح الأنسب حسب الاستخدام الفعلي.</li>
+        <li><strong>حجم التعاقد ومدته:</strong> عقود التوريد الدورية تمنحك شروطًا أفضل من الطلبات المنفردة.</li>
+      </ul>
+      <p style="margin-top:20px;text-align:center">لهذا نفضل تقديم عرض سعر مخصص بدل نشر قوائم أسعار تتقادم سريعًا. تواصل معنا بقائمتك ويصلك العرض مفصلًا: 01227392074.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>مناطق التغطية والتوصيل داخل الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p style="text-align:center">نغطي الإسكندرية بالكامل، مع استجابة سريعة في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران، ونخدم كذلك الأسواق التجارية التقليدية في المنشية والعطارين، وشركات قطاع الاستيراد والتصدير القريبة من الميناء، والمحال والشركات الممتدة على الكورنيش. ولعقود التوريد المجدول تصل الطلبات في مواعيد ثابتة متفق عليها لا تحتاج متابعة منك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا نيو جولدن أوفيس؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>خبرة 27 عامًا</h4><p>في خدمة مكاتب وشركات الإسكندرية، بعملاء من الشركات والمصانع والجهات.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مقر فعلي داخل المدينة</h4><p>يمكنك زيارته لمعاينة الأصناف قبل التعاقد.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div><h4>تشكيلة واسعة</h4><p>قرطاسية وورق وأحبار وسبورات وأثاث ومعدات تحت سقف واحد.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حسابات مؤسسية للشركات المتعاقدة.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-medal"></i></div><h4>منتجات أصلية</h4><p>من ماركات معروفة، مع استبدال أي صنف يثبت به عيب مصنعي.</p></div>
+    </div>
+    <!-- TODO: real customer testimonial pending — see punch list -->
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أسئلة شائعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">أين أجد أدوات مكتبية للبيع في الإسكندرية بجودة موثوقة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">في مقر نيو جولدن أوفيس داخل الإسكندرية: 26 عبد المنعم سند، الإبراهيمية، باب شرق. يمكنك زيارتنا لمعاينة الأصناف بنفسك، أو طلب التوريد لمكتبك مباشرة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما مناطق التوصيل داخل الإسكندرية وكم يستغرق؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نغطي الإسكندرية بالكامل، مع استجابة أسرع في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران والمنشية والعطارين والكورنيش.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل توفّرون توريد أدوات مكتبية دوري شهري للشركات؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نقدم عقود توريد بجدول شهري أو دوري ثابت، بقائمة أصناف وجودة متفق عليها، ومندوب حساب مخصص.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الحد الأدنى للطلب وكيف أحصل على عرض سعر بالجملة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا يوجد حد أدنى موحد. أرسل قائمة الأصناف والكميات التقريبية على 01227392074 وسيصلك عرض سعر مفصل.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تصدرون فواتير ضريبية للشركات والجهات؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نصدر فواتير ضريبية معتمدة لكل تعاملات الشركات والجهات ضمن نظام التوريد المؤسسي.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما طرق الدفع المتاحة للشركات؟ وهل يوجد دفع آجل؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نوفر التحويل البنكي والدفع النقدي، وللشركات المتعاقدة على توريد دوري يتاح حساب مؤسسي بشروط دفع آجل.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل منتجاتكم أصلية؟ وما سياسة الاستبدال والضمان؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نورد منتجات أصلية من ماركات معروفة، ونستبدل أي صنف يثبت به عيب مصنعي.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل توفّرون الأثاث المكتبي والأحبار مع القرطاسية في مكان واحد؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر القرطاسية والورق وأحبار الطابعات والسبورات والأثاث المكتبي ومعدات المكاتب من مورد واحد بفاتورة واحدة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل توفرون ورق A4 بالجملة لشركة في سموحة أو سيدي جابر؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نورد ورق A4 بالجملة لكل مناطق الإسكندرية، وسموحة وسيدي جابر ضمن مناطق الاستجابة السريعة لدينا.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section quote-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>اطلب عرض سعر مستلزماتك المكتبية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-form-card reveal">
+        <h3>أرسل تفاصيل طلبك</h3>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="q-name">الاسم الكامل</label>
+            <input type="text" id="q-name" name="name" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="q-phone">رقم الهاتف</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label for="q-company">اسم الشركة (اختياري)</label>
+            <input type="text" id="q-company" name="company" placeholder="اسم شركتك أو نشاطك">
+          </div>
+          <div class="form-group">
+            <label for="q-subservice">نوع المستلزمات المطلوبة</label>
+            <select id="q-subservice" name="subservice" required>
+              <option value="" disabled selected>اختر النوع</option>
+              <option value="قرطاسية وأدوات كتابة">قرطاسية وأدوات كتابة</option>
+              <option value="ورق A4 بالجملة">ورق A4 بالجملة</option>
+              <option value="ملفات وأرشفة">ملفات وأرشفة</option>
+              <option value="أحبار طابعات">أحبار طابعات</option>
+              <option value="سبورات ووسائل عرض">سبورات ووسائل عرض</option>
+              <option value="توريد دوري شهري">توريد دوري شهري (تعاقد)</option>
+              <option value="غير ذلك">غير ذلك</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="q-message">تفاصيل إضافية (اختياري)</label>
+            <textarea id="q-message" name="message" placeholder="الكمية أو أي تفاصيل تساعدنا نجهزلك عرض سعر دقيق"></textarea>
+          </div>
+          <input type="hidden" name="service" value="office-supplies">
+          <input type="hidden" name="source" value="office-supplies/alexandria">
+          <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+          <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر
+          </button>
+          <p id="quoteErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
+        </form>
+        <div class="success-message" id="quoteSuccessMessage">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>تم استلام طلبك بنجاح! هيتواصل معاك فريقنا في أقرب وقت.</p>
+        </div>
+      </div>
+      <div class="quote-alt-card reveal delay-1">
+        <i class="fab fa-whatsapp wa-icon"></i>
+        <h3>تفضل تتكلم مباشرة؟</h3>
+        <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل المستلزمات المكتبية في الإسكندرية</p>
+        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20مستلزمات%20مكتبية%20في%20الإسكندرية" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
+        </a>
+        <p style="margin-top:4px;font-size:.95rem">أو اتصل على 01227392074</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('quoteForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successMsg = document.getElementById('quoteSuccessMessage');
+      var errorMsg = document.getElementById('quoteErrorMessage');
+      var submitBtn = document.getElementById('quoteSubmitBtn');
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+        .then(function (result) {
+          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+        })
+        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+    });
+  })();
+</script>
+</BaseLayout>

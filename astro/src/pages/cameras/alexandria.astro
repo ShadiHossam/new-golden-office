@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://newgoldenoffice.com/cameras/alexandria#service",
+      "name": "تركيب وصيانة كاميرات مراقبة في الإسكندرية",
+      "serviceType": "تركيب أنظمة كاميرات مراقبة",
+      "url": "https://newgoldenoffice.com/cameras/alexandria",
+      "provider": { "@id": "https://newgoldenoffice.com/#organization" },
+      "areaServed": { "@type": "City", "name": "الإسكندرية" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"كم سعر تركيب كاميرات المراقبة في الإسكندرية شامل التركيب؟","acceptedAnswer":{"@type":"Answer","text":"لا يوجد سعر موحد، فالتكلفة تتحدد بعدد الكاميرات ونوعها ودقتها وسعة التخزين وطبيعة التمديدات. المعاينة مجانية، وبعدها يصلك عرض سعر مكتوب."}},
+        {"@type":"Question","name":"كام كاميرا أحتاج لمحل أو فيلا أو شركة؟","acceptedAnswer":{"@type":"Answer","text":"العدد تحدده نقاط التغطية لا المساحة وحدها: المداخل والمخارج ونقاط الدفع والممرات والنقاط العمياء."}},
+        {"@type":"Question","name":"هارد 1 تيرا يسجل كام يوم؟","acceptedAnswer":{"@type":"Answer","text":"المدة تعتمد على عدد الكاميرات ودقة التسجيل ونظام الضغط ونمط التسجيل. عند المعاينة نحسب السعة المطلوبة لعدد الأيام الذي تحتاجه."}},
+        {"@type":"Question","name":"هل تسجل كاميرات المراقبة عند انقطاع الإنترنت؟","acceptedAnswer":{"@type":"Answer","text":"التسجيل محلي على جهاز DVR أو NVR، فانقطاع الإنترنت لا يوقفه، ويتوقف مؤقتًا المشاهدة عن بعد فقط."}},
+        {"@type":"Question","name":"ما الفرق بين DVR وNVR وأيهما أنسب لي؟","acceptedAnswer":{"@type":"Answer","text":"DVR للكاميرات التناظرية وAHD، وNVR لكاميرات IP بجودة أعلى وتوسعة أسهل. الأنسب يحدده حجم منشأتك."}},
+        {"@type":"Question","name":"أي ماركة أختار: هيكفيجن أم داهوا؟","acceptedAnswer":{"@type":"Answer","text":"كلتاهما ماركة عالمية موثوقة في مصر. أفضل نوع كاميرا هو المناسب للموقع، ونرشح التوليفة حسب الموقع والميزانية."}},
+        {"@type":"Question","name":"هل يمكنني مشاهدة الكاميرات من خارج البلاد؟","acceptedAnswer":{"@type":"Answer","text":"نعم، مع أنظمة IP تتابع البث الحي والتسجيلات من هاتفك من أي دولة."}},
+        {"@type":"Question","name":"كم مدة الضمان وكم سعر عقد الصيانة السنوي؟","acceptedAnswer":{"@type":"Answer","text":"كل الأجهزة أصلية بضمانها الرسمي، وعقد الصيانة السنوي يشمل زيارات دورية بتكلفة تُحدَّد حسب عدد الكاميرات."}},
+        {"@type":"Question","name":"هل تغطون منطقتي في الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"نغطي وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران والمنشية والعطارين والكورنيش باستجابة سريعة."}}
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="شركة كاميرات مراقبة في الإسكندرية | تركيب وصيانة"
+  description="شركة كاميرات مراقبة في الإسكندرية بخبرة 27 عامًا. تركيب كاميرات IP وأنظمة DVR وNVR بضمان وعقود صيانة، وتغطية لكل أحياء الإسكندرية. اطلب عرض سعر."
+  keywords="شركة كاميرات مراقبة في الإسكندرية، تركيب كاميرات مراقبة الاسكندرية، كاميرات مراقبة للمحلات بالاسكندرية"
+  ogTitle="شركة كاميرات مراقبة في الإسكندرية | نيو جولدن أوفيس"
+  ogDescription="تركيب كاميرات IP وأنظمة DVR وNVR بضمان وعقود صيانة، وتغطية لكل أحياء الإسكندرية."
+  ogImage="/images/webp-images/modern-cctv-camera-on-a-wall-with-a-blurred-multi-2026-01-08-06-13-58-utc.webp"
+  robots="noindex, nofollow"
+  schemaJson={schemaJson}
+>
+<style>
+  .quote-section{padding:60px 0}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
+  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .form-group{margin-bottom:1.1rem}
+  .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(27,58,107,.1);background:#fff}
+  .form-group textarea{height:100px;resize:vertical}
+  .form-submit-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:#fff;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .form-submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,107,.25)}
+  .success-message{display:none;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem}
+  .success-message i{font-size:2.5rem;color:#4caf50;display:block;margin-bottom:.5rem}
+  .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
+  .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
+  .quote-alt-card .wa-icon{font-size:3rem}
+  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card p{opacity:.92;line-height:1.8}
+  @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <span>/</span>
+          <a href="/alexandria">خدماتنا في الإسكندرية</a>
+          <span>/</span>
+          <span class="current">شركة كاميرات مراقبة في الإسكندرية</span>
+        </nav>
+        <h1 class="reveal">شركة كاميرات مراقبة في الإسكندرية</h1>
+        <p class="lead reveal delay-1">معاينة مجانية، تركيب كاميرات IP وأنظمة DVR وNVR، مشاهدة عن بعد من هاتفك، وعقود صيانة سنوية تراعي رطوبة الساحل، بخبرة 27 عامًا</p>
+      </div>
+      <div class="page-hero-image">
+        <img src="/images/webp-images/modern-cctv-camera-on-a-wall-with-a-blurred-multi-2026-01-08-06-13-58-utc.webp" alt="شركة كاميرات مراقبة في الإسكندرية" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تجهيز المنشآت</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع كاميرات نوردها ونركبها</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="2">0</div><div class="stat-label">ماركتان عالميتان بضمان رسمي</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">معاينة مجانية قبل أي عرض سعر</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>تبحث عن شركة كاميرات مراقبة في الإسكندرية تصمم لك نظامًا يحمي محلك أو شركتك فعلًا، لا مجرد كاميرات معلقة على الحائط؟ نيو جولدن أوفيس تعمل في تجهيز وخدمة منشآت الإسكندرية منذ 27 عامًا، من مقرنا الفعلي: 26 عبد المنعم سند، الإبراهيمية، باب شرق. نغطي المنظومة كاملة: معاينة الموقع مجانًا، اختيار أنواع الكاميرات المناسبة، التمديدات والتركيب، أجهزة التسجيل DVR وNVR، ضبط المتابعة من هاتفك، ثم الضمان وعقود الصيانة السنوية.</p>
+    </div>
+
+    <div class="section-header">
+      <h2>لماذا نيو جولدن أوفيس أفضل شركة كاميرات مراقبة في الإسكندرية؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>خبرة 27 عامًا</h4><p>في تجهيز وخدمة الشركات والمحلات، لا في بيع الأجهزة فقط.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h4>معاينة مجانية للموقع</h4><p>قبل أي عرض سعر، لأن التسعير الجاد يبدأ من فهم المكان.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h4>منظومة أمنية متكاملة</h4><p>توريد وتركيب وبرمجة وتدريب وصيانة من جهة واحدة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-water"></i></div><h4>أنظمة مقاسة على الساحل</h4><p>خامات تتحمل رطوبة البحر والإضاءة الخلفية القوية على واجهات الكورنيش.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أنواع كاميرات المراقبة التي نوردها ونركبها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-video"></i></div><h3 class="service-title">كاميرات IP الشبكية</h3><p class="service-desc">تنقل الصورة رقميًا بجودة عالية، مع تحليل حركة وميزات ذكية. الخيار الأول للمنشآت التي تريد توسعًا مستقبليًا.</p><a href="/cameras/ip-wifi" class="btn btn-outline btn-sm">كاميرات IP وواي فاي <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-cable-car"></i></div><h3 class="service-title">كاميرات AHD وTurbo HD</h3><p class="service-desc">أنظمة على الكابلات المحورية التقليدية بجودة HD وتكلفة اقتصادية.</p></div>
+      <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-arrows-spin"></i></div><h3 class="service-title">كاميرات PTZ المتحركة</h3><p class="service-desc">تتحرك أفقيًا ورأسيًا وتقرب الصورة، مثالية للمخازن والجراجات والساحات الواسعة.</p></div>
+      <div class="service-card reveal delay-3"><div class="service-icon"><i class="fas fa-moon"></i></div><h3 class="service-title">الرؤية الليلية الملونة ColorVu</h3><p class="service-desc">تحتفظ بالألوان في الإضاءة المنخفضة، فارق جوهري لتمييز لون سيارة أو ملابس ليلًا.</p></div>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)"><strong>معالجة الإضاءة الخلفية WDR</strong> أهم مواصفة للمنشآت السكندرية المطلة على البحر: بدونها يظهر الداخل من الباب مجرد ظل أسود أمام الضوء، ومعها يتوازن الداخل والخارج معًا.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كاميرات مراقبة للمحلات والواجهات التجارية على الكورنيش</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>المحلات على الكورنيش وفي المناطق التجارية والسياحية لها طبيعة خاصة: حركة زبائن كثيفة، واجهات مفتوحة، وموسم صيفي يتضاعف فيه الازدحام. نظام كاميرات مراقبة للمحلات بالإسكندرية يجب أن يتعامل مع هذا كله: كاميرات تلتقط الوجوه بوضوح عند المداخل رغم الإضاءة الخلفية القوية القادمة من البحر، وتغطية للممرات ونقاط الدفع، وتسجيل يحتفظ بأيام الذروة كاملة.</p>
+      <p style="margin-top:16px">في مواسم الصيف تحديدًا، الازدحام يرفع مخاطر السرقات الخاطفة والخلافات أمام المحل، فيصبح التسجيل الواضح دليلك الأول. نصمم التغطية بحيث تخدمك في اليوم العادي وفي ذروة أغسطس بنفس الكفاءة.</p>
+    </div>
+    <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
+      <img src="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp" alt="كاميرات مراقبة للمحلات في الإسكندرية" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الماركات التي نركبها: هيكفيجن وداهوا بضمان رسمي</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">وجه المقارنة</th><th style="padding:14px 16px;text-align:right">هيكفيجن Hikvision</th><th style="padding:14px 16px;text-align:right">داهوا Dahua</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">الانتشار وقطع الغيار</td><td style="padding:12px 16px">الأوسع انتشارًا، قطع غيار متوفرة بسهولة</td><td style="padding:12px 16px">انتشار واسع وتوفر جيد جدًا</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">تنوع الموديلات</td><td style="padding:12px 16px">تشكيلة ضخمة من الاقتصادي حتى الاحترافي</td><td style="padding:12px 16px">تشكيلة واسعة بأسعار تنافسية</td></tr>
+          <tr style="background:var(--white)"><td style="padding:12px 16px">الملاءمة</td><td style="padding:12px 16px">مشروعات تحتاج أوسع خيارات وميزات</td><td style="padding:12px 16px">مشروعات تريد قيمة قوية مقابل السعر</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">الأهم من اسم الماركة أن يكون الجهاز أصليًا وبضمان رسمي، ونساعدك في المفاضلة حسب ميزانيتك واحتياج موقعك الفعلي.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>باقات التركيب في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>باقة المحل</h4><p>تغطية مدخل ونقطة دفع وصالة عرض بعدد كاميرات مدروس وسعة تخزين تناسب أيام الذروة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>باقة الشركة والمكتب</h4><p>تغطية المداخل والاستقبال والممرات، مع صلاحيات مستخدمين متدرجة ومشاهدة عن بعد.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-house"></i></div><h4>باقة الفيلا والسكن</h4><p>تغطية الأسوار والمداخل والحديقة بكاميرات خارجية تتحمل مناخ الساحل.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-warehouse"></i></div><h4>باقة المخزن والمنشأة الكبيرة</h4><p>مزيج كاميرات ثابتة وPTZ للمساحات الواسعة مع تخزين ممتد وربط متعدد المواقع.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>المراقبة عن بعد والأمن السيبراني</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>مع أنظمة IP والربط الصحيح بالشبكة، تفتح تطبيق الموبايل فتشاهد البث الحي وتسترجع التسجيلات وتستقبل تنبيهات الحركة أينما كنت. انقطاع الإنترنت لا يوقف التسجيل لأنه محلي على جهاز DVR أو NVR، ووحدة UPS تُبقي التسجيل مستمرًا أثناء انقطاعات الكهرباء القصيرة.</p>
+      <p style="margin-top:16px">وزاوية يتجاهلها معظم من يركب الكاميرات في مصر: الكاميرا المتصلة بالإنترنت جهاز شبكي يمكن اختراقه إذا تُرك بإعداداته الافتراضية. في تركيباتنا نغيّر كل كلمات المرور الافتراضية من لحظة التشغيل الأول، ونؤمّن الوصول عن بعد بالقنوات المشفرة الموثوقة بدل فتح منافذ عشوائية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>مناطق نخدمها في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>وسط البلد:</strong> كثافة تجارية عالية ومبانٍ قديمة تحتاج خطط تمديد لا تتلف الواجهات.</li>
+        <li><strong>سموحة:</strong> شركات وعيادات تطلب أنظمة IP بجودة عالية وصلاحيات مستخدمين منظمة.</li>
+        <li><strong>سيدي جابر وميامي وجليم ولوران:</strong> مزيج سكني وتجاري بكاميرات خارجية مجهزة لمناخ الساحل.</li>
+        <li><strong>المنشية والعطارين:</strong> الأسواق التقليدية حيث تحتاج التمديدات حلولًا ذكية دون تكسير.</li>
+        <li><strong>الكورنيش:</strong> واجهات مطلة على البحر تفرض كاميرات بمعالجة إضاءة خلفية قوية وخامات تقاوم الملوحة.</li>
+        <li><strong>قرب الميناء:</strong> منشآت الاستيراد والتصدير حيث توثيق الحركة والبضائع مطلب تشغيلي.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أسئلة شائعة عن كاميرات المراقبة في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">كم سعر تركيب كاميرات المراقبة في الإسكندرية شامل التركيب؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا يوجد سعر موحد، فالتكلفة تتحدد بعدد الكاميرات ونوعها ودقتها وسعة التخزين. المعاينة مجانية.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كام كاميرا أحتاج لمحل أو فيلا أو شركة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">العدد تحدده نقاط التغطية لا المساحة وحدها: المداخل والمخارج ونقاط الدفع والممرات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هارد 1 تيرا يسجل كام يوم؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">يعتمد على عدد الكاميرات ودقة التسجيل ونظام الضغط ونمط التسجيل. نحسب لك السعة عند المعاينة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تسجل كاميرات المراقبة عند انقطاع الإنترنت؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">التسجيل محلي على جهاز DVR أو NVR، فانقطاع الإنترنت لا يوقفه.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الفرق بين DVR وNVR وأيهما أنسب لي؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">DVR للكاميرات التناظرية وAHD، وNVR لكاميرات IP بجودة أعلى وتوسعة أسهل.</div></div></div>
+      <div class="faq-item"><div class="faq-question">أي ماركة أختار: هيكفيجن أم داهوا؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كلتاهما موثوقة، ونرشح التوليفة الأنسب حسب الموقع والميزانية.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكنني مشاهدة الكاميرات من خارج البلاد؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، مع أنظمة IP تتابع البث الحي والتسجيلات من هاتفك من أي دولة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم مدة الضمان وكم سعر عقد الصيانة السنوي؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كل الأجهزة أصلية بضمانها الرسمي، وعقد الصيانة السنوي يشمل زيارات دورية حسب حجم النظام.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تغطون منطقتي في الإسكندرية؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نغطي وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران والمنشية والعطارين والكورنيش.</div></div></div>
+    </div>
+    <!-- TODO: real project details + installation photos + customer testimonial pending — see punch list -->
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="section quote-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>اطلب معاينة مجانية أو عرض سعر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-form-card reveal">
+        <h3>أرسل تفاصيل طلبك</h3>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="q-name">الاسم الكامل</label>
+            <input type="text" id="q-name" name="name" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="q-phone">رقم الهاتف</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label for="q-company">اسم الشركة (اختياري)</label>
+            <input type="text" id="q-company" name="company" placeholder="اسم شركتك أو نشاطك">
+          </div>
+          <div class="form-group">
+            <label for="q-subservice">نوع المكان</label>
+            <select id="q-subservice" name="subservice" required>
+              <option value="" disabled selected>اختر النوع</option>
+              <option value="محل تجاري">محل تجاري</option>
+              <option value="شركة أو مكتب">شركة أو مكتب</option>
+              <option value="فيلا أو منزل">فيلا أو منزل</option>
+              <option value="مخزن أو منشأة كبيرة">مخزن أو منشأة كبيرة</option>
+              <option value="عيادة أو صيدلية">عيادة أو صيدلية</option>
+              <option value="غير ذلك">غير ذلك</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="q-message">تفاصيل إضافية (اختياري)</label>
+            <textarea id="q-message" name="message" placeholder="عدد المداخل والمساحة وأي تفاصيل تساعدنا نجهزلك عرض سعر دقيق"></textarea>
+          </div>
+          <input type="hidden" name="service" value="cameras">
+          <input type="hidden" name="source" value="cameras/alexandria">
+          <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+          <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> اطلب المعاينة المجانية
+          </button>
+          <p id="quoteErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
+        </form>
+        <div class="success-message" id="quoteSuccessMessage">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>تم استلام طلبك بنجاح! هيتواصل معاك فريقنا في أقرب وقت.</p>
+        </div>
+      </div>
+      <div class="quote-alt-card reveal delay-1">
+        <i class="fab fa-whatsapp wa-icon"></i>
+        <h3>تفضل تتكلم مباشرة؟</h3>
+        <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل كاميرات المراقبة في الإسكندرية</p>
+        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20مراقبة%20في%20الإسكندرية" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
+        </a>
+        <p style="margin-top:4px;font-size:.95rem">أو اتصل على 01227392074</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('quoteForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successMsg = document.getElementById('quoteSuccessMessage');
+      var errorMsg = document.getElementById('quoteErrorMessage');
+      var submitBtn = document.getElementById('quoteSubmitBtn');
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+        .then(function (result) {
+          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+        })
+        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+    });
+  })();
+</script>
+</BaseLayout>
