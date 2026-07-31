@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>صيانة التكييف — الاستثمار الأذكى لحماية جهازك</h2>
+      <h2>شحن فريون مصر وصيانة التكييف — الاستثمار الأذكى لحماية جهازك</h2>
       <p>الصيانة الدورية تُطيل عمر التكييف بشكل كبير وتوفر فاتورة الكهرباء وتمنع الأعطال المكلفة. معظم مشاكل التكييف في مصر يمكن تفاديها بصيانة وقائية بسيطة كل 6 أشهر قبل بداية الصيف وبعد انتهائه.</p>
 
       <h3><i class="fas fa-heartbeat" style="color:var(--secondary);margin-left:8px;"></i> لماذا تحتاج لصيانة تكييفك؟</h3>
@@ -67,6 +68,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>تجمد الوحدة الداخلية</strong> — نقص فريون واضح</span></li>
       </ul>
 
+      <MidPageCTA formId="acMaintenanceMidCta" />
+
       <h3><i class="fas fa-tools" style="color:var(--secondary);margin-left:8px;"></i> ماذا تشمل خدمة الصيانة؟</h3>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>تنظيف الفلتر:</strong> غسيل الفلاتر وتعقيمها لضمان تدفق هواء نظيف وتوفير الكهرباء</span></li>
@@ -81,8 +84,8 @@ const schemaJson = JSON.stringify({
 
       <h3><i class="fas fa-wind" style="color:var(--secondary);margin-left:8px;"></i> شحن الفريون — R22 وR410A وR32</h3>
       <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>فريون R22:</strong> نوع قديم لا يزال موجوداً في التكييفات القديمة. متوفر لدينا مع قياس الضغط الدقيق لتحديد الكمية المناسبة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>فريون R410A:</strong> النوع الأشيع في التكييفات الحديثة — صديق للبيئة وأكفأ في نقل الحرارة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>فريون R22:</strong> مادة التبريد التقليدية المستخدمة في التكييفات المصنوعة قبل 2015 تقريباً، ويُمنع تدريجياً في كثير من الدول بسبب ضرره على طبقة الأوزون. لا يزال متوفراً لدينا مع قياس الضغط الدقيق لتحديد الكمية المناسبة، لكن أسعاره في ارتفاع مستمر بسبب تقليص الإنتاج العالمي</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>فريون R410A:</strong> النوع الأشيع في التكييفات الحديثة — صديق للبيئة وأكفأ في نقل الحرارة، يعمل بضغط أعلى ويتطلب معدات شحن مختلفة وزيوت خاصة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>فريون R32:</strong> الجيل الجديد الأكثر كفاءة وصداقة للبيئة — يُستخدم في التكييفات الحديثة من Samsung وMidea وLG</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>كشف تسريبات الفريون:</strong> إذا نقص الفريون مراراً فهذا يعني وجود تسريب — نُشخّصه ونُصلحه قبل إعادة الشحن</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>تنبيه مهم:</strong> لا يمكن تحويل تكييف R22 ليعمل بـ R410A دون تغيير مكونات جوهرية، والتحويل غير المتخصص يُتلف الكمبرسور. إذا كان تكييفك القديم يستهلك الفريون بسرعة، استشرنا لتقييم جدوى الصيانة مقابل الاستبدال</span></li>
@@ -91,11 +94,12 @@ const schemaJson = JSON.stringify({
       <h3><i class="fas fa-file-contract" style="color:var(--secondary);margin-left:8px;"></i> عقود الصيانة السنوية</h3>
       <p>للشركات والمحلات وأصحاب أنظمة التكييف المتعددة نوفر عقود صيانة سنوية تشمل:</p>
       <ul>
-        <li><i class="fas fa-check-circle"></i><span>زيارتان للصيانة الشاملة (قبل الصيف وبعده)</span></li>
-        <li><i class="fas fa-check-circle"></i><span>أولوية الاستجابة لطلبات الصيانة الطارئة</span></li>
-        <li><i class="fas fa-check-circle"></i><span>خصم 15-20% على شحن الفريون واستبدال قطع الغيار</span></li>
+        <li><i class="fas fa-check-circle"></i><span>زيارتان إلى أربع زيارات للصيانة الشاملة سنوياً حسب الاتفاق (قبل الصيف وبعده أساساً)</span></li>
+        <li><i class="fas fa-check-circle"></i><span>أولوية الاستجابة لطلبات الصيانة الطارئة خلال 24 ساعة</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>خصومات على قطع الغيار:</strong> أسعار مخفضة على قطع الغيار والمواد المستهلكة لعملاء العقود</span></li>
         <li><i class="fas fa-check-circle"></i><span>تقرير صيانة مكتوب ومفصل بعد كل زيارة</span></li>
       </ul>
+      <p>نخدم الإسكندرية والقاهرة والمدن المجاورة. تواصل معنا للحصول على عرض سعر لعقد صيانة مخصص لعدد وحداتك ومتطلباتك.</p>
 
       <div style="overflow-x:auto;margin-top:24px;">
         <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
@@ -182,7 +186,7 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">كم سعر شحن فريون تكييف في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">سعر شحن الفريون في مصر يتفاوت حسب نوع الفريون (R22 أو R410A أو R32) والكمية المطلوبة. سعر الفريون نفسه يتغير دورياً مع سعر الصرف. تواصل معنا للحصول على سعر محدّث — نقدم أسعاراً شفافة قبل البدء في أي عمل.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سعر شحن فريون تكييف في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">سعر شحن الفريون في مصر يتفاوت حسب نوع الفريون (R22 أو R410A أو R32) والكمية المطلوبة، ويشمل زيارة الفني وتشخيص السبب وإضافة الغاز. إذا كان هناك تسرب في المواسير، يُضاف سعر إصلاح التسرب. تواصل معنا للحصول على سعر محدّث — نقدم أسعاراً شفافة قبل البدء في أي عمل.</div></div></div>
     </div>
   </div>
 </section>

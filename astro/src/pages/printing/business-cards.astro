@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -58,6 +59,8 @@ const schemaJson = JSON.stringify({
 
         <h3>الكروت المطوية (Folded Business Cards)</h3>
         <p>كروت تُطوى إلى النصف لتوفير مساحة أكبر للمعلومات، مثالية للأطباء والمحامين وأصحاب المشاريع الذين يحتاجون إلى عرض معلومات تفصيلية أكثر أو قائمة خدمات موجزة.</p>
+
+        <MidPageCTA formId="prnBusinessCardsMidCta" />
 
         <h3>الكروت مع تشطيب UV بقعي (Spot UV)</h3>
         <p>تشطيب راقٍ يضيف لمسة لامعة على أجزاء محددة من الكرت (كالشعار أو الاسم) بينما تبقى بقية الكرت مطفية. يمنح الكرت طابعاً فاخراً ومميزاً يلفت الانتباه.</p>

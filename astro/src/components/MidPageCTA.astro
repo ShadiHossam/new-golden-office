@@ -1,0 +1,92 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  formId?: string;
+}
+
+const {
+  title = 'محتاج استشارة أو عرض سعر؟',
+  subtitle = 'املأ بياناتك وهيتفتحلك واتساب على طول برسالة جاهزة فيها طلبك — فريقنا بيرد خلال دقايق في أوقات العمل.',
+  formId = 'midCtaForm',
+} = Astro.props;
+---
+
+<section class="mid-cta">
+  <div class="container">
+    <div class="mid-cta-box">
+      <div class="mid-cta-info">
+        <span class="mid-cta-eyebrow"><i class="fa-brands fa-whatsapp"></i> رد سريع على واتساب</span>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+      </div>
+      <form class="mid-cta-form" id={formId}>
+        <div class="form-group">
+          <label class="form-label" for={`${formId}-name`}>الاسم</label>
+          <input type="text" id={`${formId}-name`} class="form-control" placeholder="اسمك بالكامل" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for={`${formId}-phone`}>رقم الهاتف</label>
+          <input type="tel" id={`${formId}-phone`} class="form-control" placeholder="01xxxxxxxxx" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for={`${formId}-msg`}>رسالتك</label>
+          <textarea id={`${formId}-msg`} class="form-control" placeholder="محتاج عرض سعر لـ..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-whatsapp mid-cta-submit"><i class="fa-brands fa-whatsapp"></i> إرسال عبر واتساب</button>
+        <p class="mid-cta-hint">هيفتح واتساب في تاب جديد برسالتك جاهزة — تقدر تعدلها قبل الإرسال</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mid-cta { padding: 48px 0; }
+  .mid-cta-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+  }
+  .mid-cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--wa);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+  .mid-cta-info h2 { margin-bottom: 12px; }
+  .mid-cta-info p { color: var(--text-muted); font-size: 0.98rem; }
+  .mid-cta-submit { width: 100%; justify-content: center; }
+  .mid-cta-hint { font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 10px; margin-bottom: 0; }
+  @media (max-width: 900px) {
+    .mid-cta-box { grid-template-columns: 1fr; padding: 28px; }
+  }
+</style>
+
+<script define:vars={{ formId }}>
+  (function () {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    const WA_NUMBER = '201227392074';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById(formId + '-name').value.trim();
+      const phone = document.getElementById(formId + '-phone').value.trim();
+      const msg = document.getElementById(formId + '-msg').value.trim();
+      const lines = [
+        'مرحبًا، اسمي ' + name + ' (' + phone + ')',
+        msg ? 'رسالتي: ' + msg : null,
+      ].filter(Boolean);
+      const text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + text, '_blank');
+    });
+  })();
+</script>

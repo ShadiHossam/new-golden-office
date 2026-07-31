@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -32,7 +33,7 @@ const schemaJson = JSON.stringify({
   preloadImage="/images/cameras-hub.webp"
 >
 <PageHero
-  title="كاميرات IP وواي فاي في مصر — راقب من موبايلك"
+  title="كاميرات واي فاي وIP في مصر — راقب من موبايلك"
   subtitle="كاميرات ذكية لاسلكية وشبكية للمنازل والمكاتب والمحلات — تثبيت سهل، مشاهدة فورية من هاتفك، كشف ذكي للوجوه والحركة والصوت مع تنبيهات لحظية"
   heroImage="/images/cameras-hub.webp"
   heroIcon="fa-wifi"
@@ -66,6 +67,7 @@ const schemaJson = JSON.stringify({
       </ul>
 
       <h3><i class="fas fa-arrows-alt" style="color:var(--secondary);margin-left:8px;"></i> كاميرات PTZ (الدوّارة)</h3>
+      <p>كاميرات PTZ (Pan-Tilt-Zoom) تمنحك السيطرة الكاملة على المراقبة:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>التحريك الأفقي (Pan):</strong> تدور 360 درجة لتغطية جميع الاتجاهات بكاميرة واحدة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>التحريك الرأسي (Tilt):</strong> تتحرك لأعلى ولأسفل لمتابعة الأشخاص والأحداث</span></li>
@@ -73,7 +75,10 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>المتابعة التلقائية:</strong> تتبع الأشخاص المتحركين تلقائياً دون أي تدخل منك</span></li>
       </ul>
 
+      <MidPageCTA formId="camIpWifiMidCta" />
+
       <h3><i class="fas fa-brain" style="color:var(--secondary);margin-left:8px;"></i> الكشف الذكي المتقدم</h3>
+      <p>كاميرات IP الحديثة مزودة بذكاء اصطناعي يميزها تماماً عن الكاميرات التقليدية:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>كشف الوجوه (Face Detection):</strong> تنبيهك عند ظهور وجه أمام الكاميرة مع إمكانية التعرف على الوجوه المسجلة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>كشف الحركة الذكي:</strong> يميز بين حركة الإنسان والحيوانات والرياح لتقليل التنبيهات الزائفة</span></li>
@@ -162,8 +167,8 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">هل تعمل كاميرات واي فاي عند انقطاع الإنترنت؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">عند انقطاع الإنترنت، تستمر الكاميرات في التسجيل على الـ MicroSD المحلية أو على جهاز NVR الموجود في شبكتك المحلية. فقط خاصية المشاهدة عن بُعد تنقطع.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كيف أعرف أن إشارة واي فاي كافية للكاميرة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نقوم بقياس قوة الإشارة في موقع الكاميرة قبل التثبيت. إذا كانت الإشارة ضعيفة، نوصي بتركيب Wireless Range Extender أو استخدام الكابل Cat6 بدلاً من Wi-Fi في تلك النقطة تحديداً.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تعمل كاميرات واي فاي عند انقطاع الإنترنت؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">عند انقطاع الإنترنت، تستمر الكاميرات في التسجيل على الـ MicroSD المحلية أو على جهاز NVR الموجود في شبكتك المحلية. فقط خاصية المشاهدة عن بُعد تنقطع، أي يمكنك رؤية الصور من الشاشة المتصلة بالنظام مباشرةً.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أعرف أن إشارة واي فاي كافية للكاميرة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نقوم بقياس قوة الإشارة في موقع الكاميرة قبل التثبيت. إذا كانت الإشارة ضعيفة، نوصي بتركيب Wireless Range Extender أو استخدام الكابل Cat6 بدلاً من Wi-Fi في تلك النقطة تحديداً. نضمن استقرار الاتصال 100%.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يمكن اختراق كاميرات واي فاي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الكاميرات الحديثة من Hikvision وDahua وEZVIZ تستخدم تشفير SSL/TLS قوي يحمي الصورة والبيانات. نحن نضبط كلمات مرور قوية ونفعّل التشفير عند التثبيت. باتباع الإرشادات الصحيحة، أمان الكاميرات الحديثة عالٍ جداً.</div></div></div>
       <div class="faq-item"><div class="faq-question">ما الفرق بين كاميرات PTZ وكاميرات واي فاي العادية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كاميرا PTZ هي نوع من كاميرات IP تتميز بالحركة الكاملة — تدور يمين ويسار وأعلى وأسفل وتكبّر. تستبدل عدة كاميرات ثابتة في الأماكن الكبيرة. الكاميرات العادية ثابتة الزاوية، أوفر وكافية في معظم التطبيقات المنزلية والتجارية.</div></div></div>
       <div class="faq-item"><div class="faq-question">ما سعر كاميرات IP وواي فاي في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار كاميرات الواي فاي وIP في مصر حسب الدقة والمواصفات. تواصل مع نيو جولدن أوفيس للحصول على عرض سعر مجاني يشمل الكاميرات والتركيب في القاهرة والإسكندرية وجميع أنحاء مصر.</div></div></div>
@@ -174,6 +179,7 @@ const schemaJson = JSON.stringify({
 <section class="content-section" style="padding:60px 0;background:#f8f9fa">
   <div class="container">
     <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">الفرق بين كاميرا IP وكاميرا الواي فاي — أيهما تختار؟</h2>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">كثير من عملائنا في الإسكندرية والقاهرة يسألون عن الفرق بين كاميرا IP وكاميرا الواي فاي قبل شراء نظام المراقبة. إليك المقارنة:</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
       <div style="background:#fff;border-radius:12px;padding:24px;border:2px solid #1a1a2e">
         <h3 style="font-size:1.15rem;font-weight:700;color:#1a1a2e;margin-bottom:12px">كاميرا IP (سلكية)</h3>

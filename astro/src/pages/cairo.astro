@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MidPageCTA from '../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -44,7 +45,7 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="خدماتنا في القاهرة | نيو جولدن أوفيس"
+  title="خدماتنا في القاهرة، طباعة ومستلزمات وتكييفات | نيو جولدن أوفيس"
   description="خدماتنا في القاهرة: طباعة، مستلزمات مكتبية، تكييفات، كاميرات مراقبة، ماكينات تصوير وعد نقود. خبرة 27 عامًا وتغطية كاملة لمناطق الأعمال. اطلب عرض سعر."
   keywords="خدماتنا في القاهرة، شركة نيو جولدن أوفيس بالقاهرة، خدمات متكاملة للشركات القاهرة"
   ogTitle="خدماتنا في القاهرة | نيو جولدن أوفيس"
@@ -137,7 +138,7 @@ const schemaJson = JSON.stringify({
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>خدماتنا في القاهرة: ست فئات متكاملة لتجهيز شركتك</h2>
+      <h2>شركة نيو جولدن أوفيس بالقاهرة: ست فئات متكاملة لتجهيز شركتك</h2>
       <div class="divider"></div>
     </div>
     <div class="services-grid">
@@ -235,6 +236,8 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+
+<MidPageCTA formId="cairoMidCta" />
 
 <section class="section">
   <div class="container">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -47,7 +48,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>الكارتريدج الأصلي مقابل المتوافق — أيهما تختار؟</h2>
+      <h2>حبر طابعة: الكارتريدج الأصلي مقابل المتوافق — أيهما تختار؟</h2>
       <p>يُعدّ هذا من أكثر الأسئلة التي يطرحها عملاؤنا، وفي نيو جولدن أوفيس نؤمن بالشفافية التامة في تقديم الخيارين بوضوح حتى يتخذ العميل القرار المناسب لاحتياجاته وميزانيته.</p>
 
       <h3>الكارتريدج الأصلي (OEM)</h3>
@@ -71,6 +72,8 @@ const schemaJson = JSON.stringify({
 
       <h3>كانون (Canon)</h3>
       <p>نوفر كارتريدجات Canon PIXMA بالحبر السائل لجميع الموديلات، وكارتريدجات تونر Canon imageCLASS (مثل CRG 328، 337، 047)، وتونر Canon imageRUNNER لجميع موديلات سلسلة iR وiR ADVANCE.</p>
+
+      <MidPageCTA formId="copCartridgesMidCta" />
 
       <h3>إبسون (Epson)</h3>
       <p>نوفر خراطيش حبر إبسون الأصلية لجميع موديلات PIXMA وEcoTank. كما نوفر زجاجات الحبر للتعبئة في أنظمة EcoTank وخزانات الحبر المتكاملة بجميع ألوانها (أسود، سيان، ماجنتا، أصفر).</p>

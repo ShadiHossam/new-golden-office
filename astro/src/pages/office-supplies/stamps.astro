@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -48,7 +49,7 @@ const schemaJson = JSON.stringify({
 
         <div class="service-content">
 
-          <h2>أختام احترافية لكل الاحتياجات</h2>
+          <h2>ختم شركة مصر — أختام احترافية لكل الاحتياجات</h2>
           <p>
             في عالم الأعمال، الختم ليس مجرد أداة — إنه هوية مؤسستك وعلامة رسميتك. في <strong>نيو جولدن أوفيس</strong>، نصنع أختاماً مخصصة تعكس احترافية شركتك بدقة عالية وجودة استثنائية. منذ عام 1999 ونحن نخدم الشركات والمؤسسات والأفراد في الإسكندرية ومختلف أنحاء مصر بمنتجات أختام من أعلى المواصفات.
           </p>
@@ -73,6 +74,8 @@ const schemaJson = JSON.stringify({
             <li><strong>حبر إعادة التعبئة</strong> — زجاجات حبر عالية الجودة لإعادة شحن الأوسادة بأسعار اقتصادية، متوفرة لأختام Trodat وColop وغيرها</li>
             <li><strong>مزيل الحبر</strong> — منظفات متخصصة لإزالة آثار الحبر من الأسطح والأختام بأمان وكفاءة</li>
           </ul>
+
+          <MidPageCTA formId="offStampsMidCta" />
 
           <h3>أختام الشركات والمؤسسات</h3>
           <p>
@@ -158,7 +161,8 @@ const schemaJson = JSON.stringify({
         <li><strong>راجع التصميم:</strong> نرسل لك صورة للتصميم قبل التصنيع للموافقة</li>
         <li><strong>استلم ختمك:</strong> جاهز خلال 24-48 ساعة، مع بصمة الاختبار</li>
       </ol>
-      <p style="font-size:1rem;color:#555;margin-top:16px">نخدم عملاءنا في الإسكندرية والقاهرة وجميع محافظات مصر مع التوصيل.</p>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin:24px 0 12px">ما هي المعلومات المطلوبة للختم؟</h3>
+      <p style="font-size:1rem;color:#555;line-height:1.8">اسم الشركة أو المؤسسة، العنوان، رقم الهاتف (اختياري)، الرقم الضريبي أو السجل التجاري (اختياري)، وشعار الشركة إن أردت إضافته. نخدم عملاءنا في الإسكندرية والقاهرة وجميع محافظات مصر مع التوصيل.</p>
     </div>
   </section>
 

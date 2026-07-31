@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -122,7 +123,7 @@ const schemaJson = JSON.stringify({
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>خدماتنا: تركيب وصيانة وإصلاح وشحن فريون</h2>
+      <h2>صيانة تكييف بالقاهرة وخدماتنا: تركيب وإصلاح وشحن فريون</h2>
       <div class="divider"></div>
     </div>
     <div class="services-grid">
@@ -165,6 +166,8 @@ const schemaJson = JSON.stringify({
     <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">القدرة الصحيحة تُحسب من المساحة وارتفاع السقف وعدد الأفراد والأجهزة واتجاه الشمس والدور، لهذا لا نبيع بالتليفون قدرة جاهزة، بل نعاين أو نراجع التفاصيل بدقة قبل الترشيح.</p>
   </div>
 </section>
+
+<MidPageCTA formId="acCairoMidCta" />
 
 <section class="section">
   <div class="container">

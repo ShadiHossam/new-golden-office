@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>أنواع ماكينات التصوير المتاحة للبيع</h2>
+      <h2>شراء ماكينة تصوير — الأنواع المتاحة للبيع</h2>
       <p>
         تتنوع ماكينات التصوير التي نوفرها في نيو جولدن أوفيس لتلبية كافة احتياجات الشركات والمكاتب ومحلات التصوير في مصر. نحرص على توفير أحدث الموديلات وأكثرها مبيعاً في السوق المصري بأسعار تنافسية ومع خدمة ما بعد البيع المتكاملة.
       </p>
@@ -70,6 +71,8 @@ const schemaJson = JSON.stringify({
       <p>
         نتعامل في نيو جولدن أوفيس مع أبرز الماركات العالمية في مجال ماكينات التصوير، ونقدم لعملائنا طيفاً واسعاً من الخيارات تناسب مختلف الميزانيات والاحتياجات.
       </p>
+
+      <MidPageCTA formId="copBuyMidCta" />
 
       <h3>ريكو (Ricoh) — سلسلة MP</h3>
       <p>

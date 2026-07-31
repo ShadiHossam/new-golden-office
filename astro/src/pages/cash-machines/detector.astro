@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -31,7 +32,7 @@ const schemaJson = JSON.stringify({
   schemaJson={schemaJson}
 >
 <PageHero
-  title="أجهزة كشف العملات المزيفة في مصر"
+  title="أجهزة كشف عملات مزيفة في مصر"
   subtitle="أجهزة كشف العملات المزيفة بتقنيات UV والأشعة تحت الحمراء والكشف المغناطيسي — حماية فورية وموثوقة لعملك"
   heroImage="/images/copiers-hub.webp"
   heroIcon="fa-search-dollar"
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>تقنيات كشف العملات المزيفة</h2>
+      <h2>جهاز كشف العملة — تقنيات كشف العملات المزيفة</h2>
       <p>التزوير مشكلة حقيقية تواجه التجار والمؤسسات المالية في مصر يومياً. الحل الأمثل هو أجهزة كشف العملات المزيفة الحديثة التي تجمع أكثر من تقنية للكشف لضمان أعلى مستوى من الحماية. في نيو جولدن أوفيس نوفر أحدث هذه الأجهزة وأكثرها موثوقية.</p>
 
       <h3><i class="fas fa-sun" style="color:var(--secondary);margin-left:8px;"></i> الأشعة فوق البنفسجية (UV)</h3>
@@ -85,6 +86,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>Safescan:</strong> هولندية الصنع بتقنيات متقدمة وتصميم أنيق يناسب المكاتب الراقية والفنادق</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>Pro CIS وماركات موثوقة أخرى:</strong> نوفر تشكيلة واسعة تضمن وجود الجهاز المناسب لكل ميزانية وكل احتياج</span></li>
       </ul>
+
+      <MidPageCTA formId="cashDetectorMidCta" />
 
       <h2>دقة الكشف والموثوقية — لماذا يهم عدد التقنيات؟</h2>
       <p>كلما زاد عدد تقنيات الكشف في الجهاز، زادت دقته وانخفض احتمال خطأ الكشف. جهاز UV وحده قد يفوته بعض حالات التزوير المتطورة التي تستخدم أحباراً فلورية مشابهة. أما الجهاز الذي يجمع UV+MG+IR فاحتمالية اختراقه تكاد تكون معدومة، لأن التزوير الجامع لكل هذه الخصائص معاً مكلف جداً وصعب التنفيذ بشكل عملي.</p>

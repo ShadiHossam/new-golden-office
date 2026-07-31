@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 ---
 <BaseLayout
@@ -23,7 +24,7 @@ import { getSeoFor } from '../../lib/siteSeo';
     <div class="container">
       <div class="section-header">
         <div class="section-tag">لماذا نيو جولدن أوفيس؟</div>
-        <h2>مستلزمات مكتبية متكاملة لكل احتياجاتك</h2>
+        <h2>ورق مكتبي ومستلزمات متكاملة لكل احتياجاتك</h2>
         <div class="divider"></div>
       </div>
       <div class="section-content" style="max-width:860px;margin:0 auto 40px;text-align:center">
@@ -125,6 +126,8 @@ import { getSeoFor } from '../../lib/siteSeo';
       </div>
     </div>
   </section>
+
+  <MidPageCTA formId="offIndexMidCta" />
 
   <section class="section section-bg">
     <div class="container">

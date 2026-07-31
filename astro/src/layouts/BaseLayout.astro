@@ -41,9 +41,12 @@ const resolvedOgImage = ogImage
 const segments = pathname.split('/').filter(s => s && s !== 'index.html' && !s.endsWith('.html'));
 const breadcrumbItems = [{ name: 'الرئيسية', url: SITE + '/' }];
 let builtUrl = SITE;
+const relSegments: string[] = [];
 segments.forEach(seg => {
   builtUrl += '/' + seg;
-  const name = PAGE_NAMES[seg] ?? seg;
+  relSegments.push(seg);
+  const relPath = relSegments.join('/');
+  const name = PAGE_NAMES[relPath] ?? PAGE_NAMES[seg] ?? seg;
   breadcrumbItems.push({ name, url: builtUrl + '/' });
 });
 const breadcrumbSchema = breadcrumbItems.length > 1 ? JSON.stringify({
@@ -82,6 +85,12 @@ const localBusinessSchema = JSON.stringify({
       closes: '18:00',
     },
   ],
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 31.2078,
+    longitude: 29.9133,
+  },
+  hasMap: 'https://share.google/DBHA1FMpRmsO9xqwU',
 });
 ---
 

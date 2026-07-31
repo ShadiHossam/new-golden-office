@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -45,10 +46,11 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>جهاز التسجيل: القلب النابض لنظام المراقبة</h2>
+      <h2>جهاز تسجيل كاميرات مصر: القلب النابض لنظام المراقبة</h2>
       <p>جهاز التسجيل هو العقل المدبر لأي نظام مراقبة — فهو يستقبل الصور من جميع الكاميرات ويخزّنها ويتيح لك مراجعتها في أي وقت. في نيو جولدن أوفيس، نوفر أفضل أجهزة DVR وNVR من Hikvision وDahua بجميع السعات والمواصفات لتناسب كل نوع من المشاريع سواء كانت منازل أو محلات أو مصانع أو فنادق.</p>
 
       <h3><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> الفرق بين DVR و NVR</h3>
+      <p>كثيراً ما يتساءل العملاء عن الفرق بين الجهازين، وإليك شرحاً مبسطاً:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>DVR (Digital Video Recorder):</strong> يعمل مع الكاميرات التقليدية Analog وHD-TVI عبر كابل Coaxial. الأرخص ثمناً والأوفر للمشاريع الموجودة سابقاً. يدعم دقة حتى 4K مع الكاميرات الحديثة.</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>NVR (Network Video Recorder):</strong> يعمل مع كاميرات IP عبر كابل Cat5e/Cat6 أو Wi-Fi. أعلى جودة صورة، يدعم PoE لتوصيل طاقة الكاميرا عبر الكابل نفسه، مثالي للمشاريع الجديدة.</span></li>
@@ -70,6 +72,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>4 TB:</strong> يخزّن حتى 60 يوم لنظام 8 كاميرات — الأنسب للمحلات التجارية</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>8 TB:</strong> للمشاريع الكبيرة التي تتطلب أرشفة طويلة المدى</span></li>
       </ul>
+
+      <MidPageCTA formId="camDvrNvrMidCta" />
 
       <h3><i class="fas fa-mobile-alt" style="color:var(--secondary);margin-left:8px;"></i> المشاهدة عن بُعد من الهاتف</h3>
       <ul>
@@ -166,8 +170,8 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="faq-list">
       <div class="faq-item"><div class="faq-question">هل يمكن استخدام الهاردسك العادي في جهاز DVR؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا يُنصح بذلك. الهاردسكات العادية مصممة للكمبيوتر وليست للتسجيل المستمر 24/7. نستخدم هاردسكات WD Purple أو Seagate SkyHawk المصممة خصيصاً للمراقبة وتتحمل التشغيل المستمر لسنوات طويلة بدون أعطال.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ماذا يحدث للتسجيلات عند امتلاء الهاردسك؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">عند امتلاء الهاردسك، يقوم الجهاز تلقائياً بحذف أقدم التسجيلات والكتابة فوقها — وهو ما يُسمى "الكتابة الدورية". هذا يضمن استمرار التسجيل بلا انقطاع.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كيف أشاهد الكاميرات من هاتفي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بعد التثبيت، نقوم بربط الجهاز بشبكة الإنترنت في موقعك. ثم نثبت التطبيق المخصص على هاتفك (Hik-Connect لـ Hikvision أو DMSS لـ Dahua) وندرّبك على استخدامه. بعدها يمكنك مشاهدة الكاميرات من أي مكان في العالم.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ماذا يحدث للتسجيلات عند امتلاء الهاردسك؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">عند امتلاء الهاردسك، يقوم الجهاز تلقائياً بحذف أقدم التسجيلات والكتابة فوقها — وهو ما يُسمى "الكتابة الدورية". هذا يضمن استمرار التسجيل بلا انقطاع. يمكنك أيضاً ضبط الجهاز لإيقاف التسجيل عند الامتلاء إذا كنت تريد الاحتفاظ بالتسجيلات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أشاهد الكاميرات من هاتفي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بعد التثبيت، نقوم بربط الجهاز بشبكة الإنترنت في موقعك. ثم نثبت التطبيق المخصص على هاتفك (Hik-Connect لـ Hikvision أو DMSS لـ Dahua) وندرّبك على استخدامه. بعدها يمكنك مشاهدة الكاميرات من أي مكان في العالم طالما هاتفك متصل بالإنترنت.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يمكن توسيع جهاز DVR الموجود بإضافة كاميرات جديدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، إذا كان لديك قنوات شاغرة في الجهاز يمكن إضافة كاميرات جديدة بسهولة. إذا لم يكن هناك قنوات شاغرة، يمكن استبدال الجهاز بآخر بعدد قنوات أكبر مع الإبقاء على نفس الكاميرات والكابلات في معظم الحالات.</div></div></div>
       <div class="faq-item"><div class="faq-question">ما ضمان جهاز DVR/NVR؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">جميع أجهزة DVR وNVR التي نبيعها تأتي بضمان سنة من المصنع وضماننا الإضافي يصل إلى 3 سنوات. في حالة أي عطل خلال فترة الضمان، نقوم بالإصلاح أو الاستبدال بشكل مجاني في أسرع وقت ممكن.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم سعر جهاز DVR أو NVR في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار أجهزة DVR وNVR في مصر حسب عدد القنوات وجودة التسجيل. تواصل مع نيو جولدن أوفيس للحصول على أفضل سعر مع ضمان وتركيب.</div></div></div>
@@ -178,6 +182,7 @@ const schemaJson = JSON.stringify({
 <section class="content-section" style="padding:60px 0;background:#f8f9fa">
   <div class="container">
     <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">الفرق بين DVR و NVR — أيهما الأفضل لك؟</h2>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">DVR وNVR كلاهما أجهزة تسجيل لكاميرات المراقبة، والفرق الأساسي بينهما:</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
       <div style="background:#fff;border-radius:12px;padding:24px;border:2px solid #1a1a2e">
         <h3 style="font-size:1.15rem;font-weight:700;color:#1a1a2e;margin-bottom:12px">DVR — Digital Video Recorder</h3>

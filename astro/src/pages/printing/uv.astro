@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -48,7 +49,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="service-detail-grid">
       <div class="service-content">
-        <h2>ما هي طباعة UV وكيف تعمل؟</h2>
+        <h2>ما هو UV printing وكيف يعمل؟</h2>
         <p>طباعة UV هي تقنية طباعة متطورة تستخدم أحبار خاصة تجف فورياً عند تعرضها للضوء فوق البنفسجي (Ultraviolet Light). هذه الأحبار الخاصة لا تتغلغل في الخامة بل تلتصق بسطحها بشكل مباشر، مما يجعلها قادرة على الطباعة على أي خامة بغض النظر عن مساميتها أو طبيعتها. في نيو جولدن أوفيس بالإسكندرية، نمتلك أحدث ماكينات الطباعة بالأشعة فوق البنفسجية التي تفتح أمامك آفاقاً لا حدود لها في عالم الطباعة.</p>
 
         <h2>الخامات التي تطبع عليها تقنية UV</h2>
@@ -65,6 +66,8 @@ const schemaJson = JSON.stringify({
 
         <h3>الخشب والـ MDF</h3>
         <p>طباعة UV على الخشب والـ MDF تفتح عالماً من إمكانيات الديكور الداخلي. من الأثاث المخصص إلى اللوحات الخشبية الفنية، الطباعة على الخشب بتقنية UV تمنح نتائج فاخرة وفريدة.</p>
+
+        <MidPageCTA formId="prnUvMidCta" />
 
         <h3>الجلد والمواد الجلدية</h3>
         <p>الطباعة على الجلد بتقنية UV تُستخدم في تخصيص المحافظ وأغطية الدفاتر والهدايا الجلدية الفاخرة. النتيجة ألوان حيوية تدوم طويلاً دون أن تتأثر بالاستخدام اليومي.</p>

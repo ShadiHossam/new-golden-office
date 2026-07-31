@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 ---
 
@@ -9,7 +10,7 @@ import { getSeoFor } from '../../lib/siteSeo';
   preloadImage="/images/cameras-hub.webp"
 >
 <PageHero
-  title="كاميرات المراقبة — حماية شاملة لمنزلك ومحلك"
+  title="كاميرات مراقبة في مصر — حماية شاملة لمنزلك ومحلك"
   subtitle="أنظمة مراقبة احترافية بأحدث التقنيات من Hikvision وDahua وUNIView وHILook — تركيب وضمان وصيانة في جميع أنحاء مصر"
   heroImage="/images/cameras-hub.webp"
   heroIcon="fa-video"
@@ -72,7 +73,12 @@ import { getSeoFor } from '../../lib/siteSeo';
       <p>منذ عام 1999، تُقدّم شركة نيو جولدن أوفيس خدمات متكاملة في مجال كاميرات المراقبة وأنظمة الأمن لأفراد وشركات وحكومات في جميع أنحاء مصر. مع تصاعد معدلات التحضر والنمو الاقتصادي في مصر، باتت كاميرات المراقبة ضرورة لا رفاهية — سواء لحماية المنزل أو المحل التجاري أو المصنع أو المجمع السكني.</p>
       <p>نتعامل مع أفضل الماركات العالمية في صناعة المراقبة: <strong>Hikvision</strong> الرائد العالمي الأول في كاميرات الأمن، و<strong>Dahua</strong> المعروف بأنظمته الذكية عالية الجودة، و<strong>UNIView</strong> المتخصص في الحلول الاحترافية، و<strong>HILook</strong> الخيار الأمثل للمشاريع ذات الميزانيات المدروسة. كل هذه الماركات متاحة لدينا بأسعار تنافسية مع ضمان موثَّق ودعم فني مستمر.</p>
       <h3 style="margin-top:32px;margin-bottom:16px;"><i class="fas fa-shield-alt" style="color:var(--secondary);margin-left:8px;"></i> لماذا كاميرات المراقبة ضرورة في مصر؟</h3>
-      <p>في ظل التوسع العمراني الكبير الذي تشهده مصر وتنامي المشاريع التجارية والسكنية، أصبح تأمين المنشآت من أولويات أصحاب الأعمال والأفراد على حد سواء. كاميرات المراقبة لا تقتصر على تسجيل الأحداث بعد وقوعها، بل هي رادع فعّال يمنع الحوادث قبل حدوثها.</p>
+      <p>في ظل التوسع العمراني الكبير الذي تشهده مصر وتنامي المشاريع التجارية والسكنية، أصبح تأمين المنشآت من أولويات أصحاب الأعمال والأفراد على حد سواء. كاميرات المراقبة لا تقتصر على تسجيل الأحداث بعد وقوعها، بل هي رادع فعّال يمنع الحوادث قبل حدوثها. كما توفر للمديرين وأصحاب المشاريع إمكانية مراقبة عمل موظفيهم عن بُعد من أي مكان في العالم عبر الهاتف الذكي.</p>
+      <p>تخدم أنظمة المراقبة الحديثة قطاعات متعددة: المحلات التجارية والسوبرماركت، المصانع والمستودعات، المستشفيات والعيادات، المدارس والجامعات، الفنادق والمطاعم، الشركات والمكاتب، فضلاً عن المنازل والفيلات والشقق السكنية. في كل هذه البيئات، نوفر الحل الأمثل المتناسب مع طبيعة المكان وحجمه وميزانيته.</p>
+      <MidPageCTA formId="camIndexMidCta" />
+
+      <h3 style="margin-top:32px;margin-bottom:16px;"><i class="fas fa-map-marker-alt" style="color:var(--secondary);margin-left:8px;"></i> نخدم جميع محافظات مصر</h3>
+      <p>بدأنا من الإسكندرية وامتدت خدماتنا لتشمل القاهرة الكبرى، الجيزة، طنطا، المنصورة، أسيوط، الأقصر، والمحافظات الجديدة كالعاصمة الإدارية الجديدة والعلمين الجديدة. فريقنا الفني المتنقل قادر على الوصول إليك أينما كنت لتقديم استشارة مجانية وتركيب احترافي وصيانة سريعة.</p>
       <h3 style="margin-top:32px;margin-bottom:16px;"><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px;"></i> ما يميزنا في كاميرات المراقبة</h3>
       <ul>
         <li><i class="fas fa-check"></i><span>استشارة مجانية لتقييم احتياجاتك وتحديد أفضل نظام مراقبة مناسب لمساحتك وميزانيتك</span></li>
@@ -122,10 +128,10 @@ import { getSeoFor } from '../../lib/siteSeo';
     </div>
     <div class="faq-list">
       <div class="faq-item"><div class="faq-question">كم كاميرا أحتاج لتأمين محلي أو مصنعي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">يعتمد العدد على مساحة المكان وطبيعته. للمحلات الصغيرة تكفي عادةً 4 كاميرات (مدخل، صندوق، 2 داخل). للمحلات المتوسطة 8 كاميرات. للمصانع والمستودعات الكبيرة نصمم أنظمة من 16 إلى 32 كاميرا أو أكثر. فريقنا يقوم بمعاينة مجانية ويوصي بالعدد والأماكن الأمثل.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل أستطيع مشاهدة الكاميرات من هاتفي أثناء السفر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم بالتأكيد. جميع أنظمتنا الحديثة تدعم المشاهدة عن بُعد عبر تطبيق مخصص على الهاتف (Android وiPhone). ما تحتاجه هو اتصال إنترنت في موقع الكاميرات وعلى هاتفك.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما الفرق بين الكاميرات الداخلية والخارجية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الكاميرات الخارجية مصممة لتحمّل عوامل الطقس (مطر، غبار، حرارة) وتحمل تصنيف IP66 أو IP67 للحماية. كما تتميز بزاوية رؤية أوسع ومدى رؤية ليلية أطول. الكاميرات الداخلية أصغر حجماً ومصممة للبيئات المغلقة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم يستغرق تركيب نظام الكاميرات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للمنازل والمحلات الصغيرة (4-8 كاميرات) يستغرق التركيب من 4 إلى 8 ساعات في نفس اليوم. للمشاريع الكبيرة (16 كاميرا فأكثر) قد يمتد العمل ليوم أو يومين.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما مدة تخزين التسجيلات وكيف يمكن استرجاعها؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تعتمد مدة التخزين على حجم الهاردسك وعدد الكاميرات وجودة التسجيل. بهاردسك 1TB يمكن تخزين التسجيلات من 7 إلى 30 يوم. بهاردسك 4TB تصل المدة لـ 60-90 يوم.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل أستطيع مشاهدة الكاميرات من هاتفي أثناء السفر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم بالتأكيد. جميع أنظمتنا الحديثة تدعم المشاهدة عن بُعد عبر تطبيق مخصص على الهاتف (Android وiPhone). ما تحتاجه هو اتصال إنترنت في موقع الكاميرات وعلى هاتفك، ويمكنك مشاهدة البث المباشر أو مراجعة التسجيلات من أي مكان في العالم.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الفرق بين الكاميرات الداخلية والخارجية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الكاميرات الخارجية مصممة لتحمّل عوامل الطقس (مطر، غبار، حرارة) وتحمل تصنيف IP66 أو IP67 للحماية. كما تتميز بزاوية رؤية أوسع ومدى رؤية ليلية أطول. الكاميرات الداخلية أصغر حجماً وأخف وزناً ومصممة للبيئات المغلقة. نوفر كلا النوعين بجميع المواصفات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم يستغرق تركيب نظام الكاميرات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للمنازل والمحلات الصغيرة (4-8 كاميرات) يستغرق التركيب من 4 إلى 8 ساعات في نفس اليوم. للمشاريع الكبيرة (16 كاميرا فأكثر) قد يمتد العمل ليوم أو يومين حسب مساحة المكان وتعقيد التمديدات. نلتزم بمواعيد محددة ولا نترك العمل حتى يعمل النظام بشكل كامل.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما مدة تخزين التسجيلات وكيف يمكن استرجاعها؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تعتمد مدة التخزين على حجم الهاردسك وعدد الكاميرات وجودة التسجيل. بهاردسك 1TB يمكن تخزين التسجيلات من 7 إلى 30 يوم. بهاردسك 4TB تصل المدة لـ 60-90 يوم. يمكن استرجاع أي تسجيل بسهولة من جهاز DVR/NVR أو من تطبيق الهاتف بتحديد التاريخ والوقت ثم التصدير إلى جهاز USB.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم سعر نظام كاميرات المراقبة في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار أنظمة كاميرات المراقبة في مصر حسب عدد الكاميرات وجودتها. تشمل الأسعار الكاميرات وجهاز التسجيل DVR/NVR والكابلات والتركيب الاحترافي. تواصل معنا للحصول على عرض سعر مجاني مخصص لاحتياجاتك.</div></div></div>
     </div>
   </div>
@@ -135,6 +141,7 @@ import { getSeoFor } from '../../lib/siteSeo';
   <div class="container">
     <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">أفضل كاميرات مراقبة في مصر 2025 — دليلك الشامل</h2>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">عند البحث عن أفضل كاميرات مراقبة في مصر، تبرز عدة ماركات عالمية تجمع بين الجودة العالية والسعر المناسب. في نيو جولدن أوفيس الإسكندرية نعمل مع Hikvision وDahua وUNIView وHILook وEZVIZ — وهي الأكثر مبيعاً وموثوقية في السوق المصري.</p>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">نخدم عملاءنا في القاهرة والإسكندرية وجميع محافظات مصر، ونوفر كاميرات مراقبة للمنازل والمحلات التجارية والمصانع والفنادق والمستشفيات. كل نظام مراقبة نركبه مصحوب بضمان وخدمة ما بعد البيع.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:24px">
       <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e0e0e0">
         <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">كاميرات للمنازل</h3>

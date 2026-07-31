@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>أنواع الشريدر حسب طريقة القطع</h2>
+      <h2>ماكينة تدمير مستندات — أنواع الشريدر حسب طريقة القطع</h2>
       <p>ليست كل ماكينات تدمير المستندات متساوية في مستوى الأمان. الفرق الجوهري بينها يكمن في طريقة تقطيع الورق وحجم القطع الناتجة. كلما كانت القطع أصغر، كان مستوى الأمان أعلى وصعوبة إعادة تجميع الوثيقة أكبر.</p>
 
       <h3><i class="fas fa-grip-lines" style="color:var(--secondary);margin-left:8px;"></i> القطع الشريطي Strip-Cut (مستوى P-2)</h3>
@@ -93,6 +94,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>سعة السلة (Bin Capacity):</strong> حجم سلة القصاصات — كلما كانت أكبر قللت تكرار التفريغ</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>مستوى الضجيج:</strong> الشريدرات المنزلية والمكتبية الحديثة أصبحت أكثر هدوءاً بكثير من الأجيال القديمة</span></li>
       </ul>
+
+      <MidPageCTA formId="cashShredderMidCta" />
 
       <h2>حالات الاستخدام في مصر</h2>
       <p>حماية البيانات أصبحت ضرورة قانونية وأخلاقية في بيئات العمل المصرية الحديثة. إليك أبرز القطاعات التي تحتاج شريدر المستندات:</p>

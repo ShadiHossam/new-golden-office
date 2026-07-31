@@ -9,12 +9,12 @@ export const NOINDEX_PATHS = ['/alexandria', '/cairo'];
 // The 6 category hub pages (each is a */index.astro route) — these get their
 // own file, mirroring the old Yoast category-sitemap.xml.
 export const CATEGORIES: SitemapPage[] = [
-  { path: '/printing/', image: '/images/printing-hub.webp' },
-  { path: '/copiers/', image: '/images/copiers-hub.webp' },
-  { path: '/cameras/', image: '/images/cameras-hub.webp' },
-  { path: '/ac/', image: '/images/ac-hub.webp' },
-  { path: '/cash-machines/', image: '/images/cash-machines-hub.webp' },
-  { path: '/office-supplies/', image: '/images/office-supplies-hub.webp' },
+  { path: '/printing', image: '/images/printing-hub.webp' },
+  { path: '/copiers', image: '/images/copiers-hub.webp' },
+  { path: '/cameras', image: '/images/cameras-hub.webp' },
+  { path: '/ac', image: '/images/ac-hub.webp' },
+  { path: '/cash-machines', image: '/images/cash-machines-hub.webp' },
+  { path: '/office-supplies', image: '/images/office-supplies-hub.webp' },
 ];
 
 // Every other indexable static page — mirrors the old Yoast page-sitemap.xml.

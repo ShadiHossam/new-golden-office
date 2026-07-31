@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -31,7 +32,7 @@ const schemaJson = JSON.stringify({
   preloadImage="/images/office-supplies-hub.webp"
 >
   <PageHero
-    title="أظرف وكراتين تغليف في مصر"
+    title="أظرف بريدية وكراتين تغليف في مصر"
     subtitle="نيو جولدن أوفيس — مورد الأظرف ومستلزمات التغليف في مصر. أظرف ورقية وكرتونية ومبطنة بالجملة للشركات والأفراد"
     heroImage="/images/office-supplies-hub.webp"
     heroIcon="fa-envelope"
@@ -56,7 +57,7 @@ const schemaJson = JSON.stringify({
             سواء كنت تحتاج إلى ظرف واحد لمراسلة رسمية، أو آلاف الأظرف لمراسلات دورية لشركتك، أو مستلزمات تغليف لمشروع شحن متكامل — لدينا ما تحتاجه بأسعار الجملة التنافسية وجودة موثوقة.
           </p>
 
-          <h3>أنواع الأظرف المتاحة</h3>
+          <h3>أظرف ورقية الإسكندرية — الأنواع المتاحة</h3>
           <ul>
             <li><strong>أظرف A4 (C4)</strong> — مقاس 229×324 مم لاستيعاب المستندات الكاملة دون طي، مثالية للعقود والتقارير والمراسلات الرسمية</li>
             <li><strong>أظرف C5 للأوراق A5</strong> — مقاس 162×229 مم للأوراق المطوية مرة واحدة، تُستخدم كثيراً في الفواتير والإشعارات</li>
@@ -77,6 +78,8 @@ const schemaJson = JSON.stringify({
             <li><strong>أكياس تغليف للملابس</strong> — أكياس بولي شفافة بمختلف القياسات لتغليف الملابس والمنسوجات</li>
             <li><strong>لافتات "هش - برفق"</strong> — ملصقات تحذيرية ملونة لتنبيه عمال الشحن والتوصيل</li>
           </ul>
+
+          <MidPageCTA formId="offEnvelopesMidCta" />
 
           <h3>حلول التغليف للتجارة الإلكترونية</h3>
           <p>

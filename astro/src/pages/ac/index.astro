@@ -1,12 +1,61 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ما الفرق بين تكييف الإنفرتر والعادي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تكييف الإنفرتر يتحكم في سرعة الضاغط ويضبطها حسب الحاجة، فيستهلك طاقة أقل بنسبة 30-50% من التكييف العادي الذي يشغل الضاغط بكامل طاقته أو يوقفه تماماً. الإنفرتر أغلى بالشراء لكنه يوفر فاتورة كهرباء أقل بكثير على المدى البعيد، وهو الأنسب في مصر حيث يعمل التكييف لساعات طويلة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم طن تكييف أحتاج لغرفتي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "كقاعدة عامة: غرفة حتى 15م² تحتاج 1 طن. غرفة 15-25م² تحتاج 1.5 طن. غرفة 25-35م² تحتاج 2 طن. صالة كبيرة 35-50م² تحتاج 2.5 إلى 3 طن. تعتمد هذه الأرقام على ارتفاع السقف وعدد النوافذ وعازلية الجدران وعدد الأشخاص. فريقنا يحسب السعة الصحيحة لك مجاناً."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم يستغرق تركيب تكييف سبليت؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تركيب تكييف سبليت واحد يستغرق من 2 إلى 4 ساعات حسب موقع التركيب وطول الأنابيب المطلوبة. إذا كانت هناك عدة تكييفات في نفس اليوم، نُنظّم الفريق لإنجاز الجميع في وقت معقول بدون إرباك أو إزعاج."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "متى يجب تنظيف فلتر التكييف؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ينبغي تنظيف فلتر الهواء كل شهر إلى شهرين خلال موسم الاستخدام الكثيف. الفلتر المتسخ يُقلل كفاءة التبريد ويزيد استهلاك الكهرباء ويُجهد الموتور. في الإسكندرية والقاهرة حيث يكون التلوث والغبار عالياً، ننصح بالتنظيف الشهري."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم تكلفة التكييف بالتركيب في مصر؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تكلفة التكييف بالتركيب في مصر تشمل سعر الجهاز + تكلفة التركيب، وتتفاوت حسب الحصان والمواصفات. تواصل معنا للحصول على عرض سعر مجاني."
+      }
+    }
+  ]
+});
 ---
 
 <BaseLayout
   {...getSeoFor('/ac')}
   preloadImage="/images/ac-hub.webp"
+  schemaJson={schemaJson}
 >
 <PageHero
   title="تكييفات في مصر — بيع وتركيب وصيانة"
@@ -75,6 +124,19 @@ import { getSeoFor } from '../../lib/siteSeo';
         <li><i class="fas fa-check"></i><span><strong>Midea:</strong> خيار ممتاز من حيث الجودة والسعر، من أكبر شركات التكييف عالمياً</span></li>
         <li><i class="fas fa-check"></i><span><strong>LG:</strong> تكييفات ذكية بتقنيات متطورة ومحرك الإنفرتر المزدوج الشهير</span></li>
       </ul>
+
+      <MidPageCTA formId="acIndexMidCta" />
+
+      <h3 style="margin-top:32px;margin-bottom:16px;"><i class="fas fa-th" style="color:var(--secondary);margin-left:8px;"></i> أنواع التكييفات المتاحة</h3>
+      <ul>
+        <li><i class="fas fa-check"></i><span><strong>تكييف السبليت (Split):</strong> الأكثر شيوعاً في المنازل والمكاتب، وحدة داخلية على الجدار ووحدة خارجية</span></li>
+        <li><i class="fas fa-check"></i><span><strong>تكييف الكاسيت (Cassette):</strong> يُركَّب في السقف، مثالي للمحلات التجارية والشركات والمساحات الكبيرة</span></li>
+        <li><i class="fas fa-check"></i><span><strong>التكييف المركزي (Central AC):</strong> للمباني الكبيرة والفنادق والمستشفيات والمجمعات التجارية</span></li>
+        <li><i class="fas fa-check"></i><span><strong>تكييف قناة الهواء (Ducted):</strong> نظام مخفي بالكامل مع توزيع الهواء عبر القنوات، يناسب المنازل الراقية</span></li>
+      </ul>
+
+      <h3 style="margin-top:32px;margin-bottom:16px;"><i class="fas fa-map-marker-alt" style="color:var(--secondary);margin-left:8px;"></i> نخدم جميع محافظات مصر</h3>
+      <p>من الإسكندرية إلى القاهرة الكبرى والجيزة وطنطا والمنصورة وجميع المحافظات، فريقنا الفني المتنقل يصل إليك في أسرع وقت ممكن لبيع وتركيب وصيانة تكييفك. للمشاريع الكبرى، نوفر فرق عمل متعددة لإنجاز العمل في الوقت المحدد.</p>
     </div>
   </div>
 </section>
@@ -116,10 +178,10 @@ import { getSeoFor } from '../../lib/siteSeo';
       <div class="divider"></div>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">ما الفرق بين تكييف الإنفرتر والعادي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تكييف الإنفرتر يتحكم في سرعة الضاغط ويضبطها حسب الحاجة، فيستهلك طاقة أقل بنسبة 30-50% من التكييف العادي. الإنفرتر أغلى بالشراء لكنه يوفر فاتورة كهرباء أقل بكثير على المدى البعيد، وهو الأنسب في مصر حيث يعمل التكييف لساعات طويلة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم طن تكييف أحتاج لغرفتي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كقاعدة عامة: غرفة حتى 15م² تحتاج 1 طن. غرفة 15-25م² تحتاج 1.5 طن. غرفة 25-35م² تحتاج 2 طن. صالة كبيرة 35-50م² تحتاج 2.5 إلى 3 طن. فريقنا يحسب السعة الصحيحة لك مجاناً.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم يستغرق تركيب تكييف سبليت؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تركيب تكييف سبليت واحد يستغرق من 2 إلى 4 ساعات حسب موقع التركيب وطول الأنابيب المطلوبة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">متى يجب تنظيف فلتر التكييف؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">ينبغي تنظيف فلتر الهواء كل شهر إلى شهرين خلال موسم الاستخدام الكثيف. الفلتر المتسخ يُقلل كفاءة التبريد ويزيد استهلاك الكهرباء ويُجهد الموتور.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الفرق بين تكييف الإنفرتر والعادي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تكييف الإنفرتر يتحكم في سرعة الضاغط ويضبطها حسب الحاجة، فيستهلك طاقة أقل بنسبة 30-50% من التكييف العادي الذي يشغل الضاغط بكامل طاقته أو يوقفه تماماً. الإنفرتر أغلى بالشراء لكنه يوفر فاتورة كهرباء أقل بكثير على المدى البعيد، وهو الأنسب في مصر حيث يعمل التكييف لساعات طويلة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم طن تكييف أحتاج لغرفتي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كقاعدة عامة: غرفة حتى 15م² تحتاج 1 طن. غرفة 15-25م² تحتاج 1.5 طن. غرفة 25-35م² تحتاج 2 طن. صالة كبيرة 35-50م² تحتاج 2.5 إلى 3 طن. تعتمد هذه الأرقام على ارتفاع السقف وعدد النوافذ وعازلية الجدران وعدد الأشخاص. فريقنا يحسب السعة الصحيحة لك مجاناً.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم يستغرق تركيب تكييف سبليت؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تركيب تكييف سبليت واحد يستغرق من 2 إلى 4 ساعات حسب موقع التركيب وطول الأنابيب المطلوبة. إذا كانت هناك عدة تكييفات في نفس اليوم، نُنظّم الفريق لإنجاز الجميع في وقت معقول بدون إرباك أو إزعاج.</div></div></div>
+      <div class="faq-item"><div class="faq-question">متى يجب تنظيف فلتر التكييف؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">ينبغي تنظيف فلتر الهواء كل شهر إلى شهرين خلال موسم الاستخدام الكثيف. الفلتر المتسخ يُقلل كفاءة التبريد ويزيد استهلاك الكهرباء ويُجهد الموتور. في الإسكندرية والقاهرة حيث يكون التلوث والغبار عالياً، ننصح بالتنظيف الشهري.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم تكلفة التكييف بالتركيب في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تكلفة التكييف بالتركيب في مصر تشمل سعر الجهاز + تكلفة التركيب، وتتفاوت حسب الحصان والمواصفات. تواصل معنا للحصول على عرض سعر مجاني.</div></div></div>
     </div>
   </div>

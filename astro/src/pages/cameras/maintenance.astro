@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -32,7 +33,7 @@ const schemaJson = JSON.stringify({
   preloadImage="/images/cameras-hub.webp"
 >
 <PageHero
-  title="صيانة وإصلاح كاميرات المراقبة في مصر"
+  title="صيانة كاميرات مراقبة في مصر — عقود سنوية وإصلاح سريع"
   subtitle="فريق صيانة متخصص لجميع أنواع كاميرات المراقبة وأجهزة DVR وNVR — استجابة سريعة، قطع غيار أصلية، عقود صيانة سنوية بأسعار تنافسية في جميع أنحاء مصر"
   heroImage="/images/cameras-hub.webp"
   heroIcon="fa-wrench"
@@ -46,10 +47,11 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>نظام مراقبة في أفضل حالة — دائماً</h2>
-      <p>كاميرات المراقبة تعمل 24 ساعة يومياً على مدار السنة، وهذا يعني أنها معرضة للغبار والحرارة والاهتراء أكثر من أي جهاز إلكتروني آخر. الصيانة الدورية ليست رفاهية بل ضرورة لضمان استمرار عمل نظامك بكفاءة عالية واكتشاف المشكلات قبل أن تتحول إلى أعطال مكلفة.</p>
+      <h2>إصلاح كاميرات مراقبة — نظام في أفضل حالة دائماً</h2>
+      <p>كاميرات المراقبة تعمل 24 ساعة يومياً على مدار السنة، وهذا يعني أنها معرضة للغبار والحرارة والاهتراء أكثر من أي جهاز إلكتروني آخر. الصيانة الدورية ليست رفاهية بل ضرورة لضمان استمرار عمل نظامك بكفاءة عالية واكتشاف المشكلات قبل أن تتحول إلى أعطال مكلفة. فريق نيو جولدن أوفيس يوفر خدمة صيانة شاملة لجميع أنواع أنظمة المراقبة.</p>
 
       <h3><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> أشهر مشكلات كاميرات المراقبة</h3>
+      <p>تواجه أنظمة المراقبة عدة مشكلات شائعة نتعامل معها يومياً:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>ضبابية الصورة أو ضعف الجودة:</strong> غالباً بسبب تراكم الغبار على العدسة أو تلف الزجاج الأمامي أو ضعف الإضاءة الليلية</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>انقطاع الصورة أو ضوضاء:</strong> مشكلة في الكابل أو الموصلات أو بطاقة التسجيل في جهاز DVR</span></li>
@@ -69,11 +71,14 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>فحص مسامير التثبيت:</strong> تشديد جميع مسامير وأذرع تثبيت الكاميرات لمنع الحركة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>تنظيف جهاز DVR/NVR:</strong> إزالة الغبار من فتحات التهوية وفحص مراوح التبريد</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>فحص الهاردسك:</strong> اختبار صحة الهاردسك للتنبه لأي بادئات تلف مبكراً</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>تحديث الفيرموير:</strong> تحديث برنامج الكاميرات وجهاز التسجيل لآخر إصدار</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>اختبار المشاهدة عن بُعد:</strong> التحقق من صحة ربط الهاتف وإعادة الإعداد إذا لزم</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>تحديث الفيرموير:</strong> تحديث برنامج الكاميرات وجهاز التسجيل لآخر إصدار لتحسين الأداء والأمان</span></li>
+        <li><i class="fas fa-check-circle"></i><span><strong>اختبار المشاهدة عن بُعد:</strong> التحقق من صحة ربط الهاتف والمشاهدة عن بُعد وإعادة الإعداد إذا لزم</span></li>
       </ul>
 
+      <MidPageCTA formId="camMaintenanceMidCta" />
+
       <h3><i class="fas fa-wrench" style="color:var(--secondary);margin-left:8px;"></i> إصلاح أعطال DVR وNVR</h3>
+      <p>نتخصص في إصلاح جميع أعطال أجهزة التسجيل بما في ذلك:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>استبدال الهاردسك:</strong> تركيب هاردسك جديد مع استرجاع التسجيلات القديمة إذا كانت لا تزال موجودة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>إصلاح مصدر الطاقة:</strong> إصلاح أو استبدال وحدة Power Supply المتضررة</span></li>
@@ -161,8 +166,8 @@ const schemaJson = JSON.stringify({
     <div class="faq-list">
       <div class="faq-item"><div class="faq-question">كم مرة تحتاج كاميرات المراقبة للصيانة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">توصي بصيانة وقائية كل 6 أشهر للأنظمة في البيئات التجارية والصناعية، وكل سنة للأنظمة المنزلية. الصيانة الدورية تُطيل عمر النظام وتمنع الأعطال المفاجئة التي قد تُعطّل المراقبة لأيام.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يمكن استرجاع التسجيلات من هاردسك تالف؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">في بعض الحالات نعم. إذا كان التلف جزئياً في الهاردسك وليس في جميع القطاعات، يمكن استخدام برامج متخصصة لاسترجاع جزء من التسجيلات. كلما أسرعت بالتواصل معنا عند تعطل الهاردسك، كانت فرص الاسترجاع أعلى.</div></div></div>
-      <div class="faq-item"><div class="faq-question">صورة الكاميرا أصبحت ضبابية — كيف أُصلحها؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الضبابية في معظم الأحيان بسبب تراكم الغبار على العدسة ويُحل بتنظيفها بقطعة قماش ناعمة ومحلول تنظيف مناسب. أحياناً تكون الضبابية بسبب تكثّف الرطوبة داخل الكاميرة وهنا نحتاج فتحها وتجفيفها.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تُصلحون كاميرات تم شراؤها من مكان آخر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نُصلح جميع أنواع وماركات أنظمة المراقبة بغض النظر عن مكان الشراء. فريقنا الفني معتمد ومتدرّب على Hikvision وDahua وUNIView وHILook وEZVIZ وغيرها.</div></div></div>
+      <div class="faq-item"><div class="faq-question">صورة الكاميرا أصبحت ضبابية — كيف أُصلحها؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الضبابية في معظم الأحيان بسبب تراكم الغبار على العدسة ويُحل بتنظيفها بقطعة قماش ناعمة ومحلول تنظيف مناسب. أحياناً تكون الضبابية بسبب تكثّف الرطوبة داخل الكاميرة (condensation) وهنا نحتاج فتحها وتجفيفها. في الحالتين يُحل المشكلة خلال زيارة صيانة واحدة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تُصلحون كاميرات تم شراؤها من مكان آخر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نُصلح جميع أنواع وماركات أنظمة المراقبة بغض النظر عن مكان الشراء. فريقنا الفني معتمد ومتدرّب على Hikvision وDahua وUNIView وHILook وEZVIZ وغيرها. نتعامل مع أعطال الكاميرات والأجهزة والكابلات بشكل احترافي.</div></div></div>
       <div class="faq-item"><div class="faq-question">ما تكلفة زيارة الصيانة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تكلفة زيارة الصيانة تعتمد على موقعك وطبيعة العطل. تواصل معنا لتحديد السعر بناءً على موقعك. عملاء عقود الصيانة السنوية يستمتعون بأولوية في المواعيد وخصم على تكلفة الزيارات والقطع.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم سعر صيانة كاميرات المراقبة في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار صيانة كاميرات المراقبة في مصر حسب نوع العطل وقطع الغيار المطلوبة. نوفر أيضاً عقود صيانة سنوية بأسعار مخفضة للشركات والمحلات — تواصل معنا للاستفسار.</div></div></div>
     </div>
@@ -172,6 +177,7 @@ const schemaJson = JSON.stringify({
 <section class="content-section" style="padding:60px 0;background:#f8f9fa">
   <div class="container">
     <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">أعطال كاميرات المراقبة الشائعة وكيف نصلحها</h2>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">فريق صيانة كاميرات المراقبة في نيو جولدن أوفيس الإسكندرية يتعامل يومياً مع هذه الأعطال الشائعة في مصر:</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
       <div style="background:#fff;border-radius:12px;padding:24px;border-right:4px solid #e74c3c">
         <h3 style="font-size:1rem;font-weight:700;color:#e74c3c;margin-bottom:8px">صورة ضبابية أو غير واضحة</h3>

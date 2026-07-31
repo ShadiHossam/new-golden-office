@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -48,7 +49,7 @@ const schemaJson = JSON.stringify({
 
         <div class="service-content">
 
-          <h2>لماذا تختار ورقنا الحراري؟</h2>
+          <h2>أرول كاشير مصر — لماذا تختار ورقنا الحراري؟</h2>
           <p>
             في نيو جولدن أوفيس، نوفر أرول الورق الحراري عالية الجودة التي تلبي احتياجات جميع القطاعات التجارية والمصرفية والخدمية في مصر. منذ تأسيسنا عام 1999 في الإسكندرية، نسعى دائمًا إلى تقديم منتجات تضمن وضوح الطباعة وثبات الألوان لأطول فترة ممكنة، مما يجعلنا الشريك الموثوق للشركات والمؤسسات الكبيرة والصغيرة على حد سواء.
           </p>
@@ -66,6 +67,8 @@ const schemaJson = JSON.stringify({
             <li><strong>80×80 م</strong> — للطابعات الاحترافية وأجهزة نقاط البيع التجارية الكبيرة</li>
             <li><strong>112×25 م</strong> — خاص بأجهزة الفاكس الحراري وبعض طابعات التذاكر</li>
           </ul>
+
+          <MidPageCTA formId="offThermalMidCta" />
 
           <h3>تطبيقات الورق الحراري</h3>
           <p>يُستخدم ورقنا الحراري في طيف واسع من الأجهزة والتطبيقات التجارية:</p>

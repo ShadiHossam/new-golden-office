@@ -1,6 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
+import '../../styles/blog-post.css';
+import * as cheerio from 'cheerio';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => data.status === 'published');
@@ -22,9 +25,80 @@ function formatDateAr(iso: string) {
   }
 }
 
+function estimateReadMinutes(html: string): number {
+  const text = html.replace(/<[^>]+>/g, ' ');
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 180));
+}
+
+interface Chapter { id: string; title: string; bodyHtml: string }
+interface Heading { id: string; text: string }
+
+function splitIntoChapters(html: string): { introHtml: string; chapters: Chapter[]; headings: Heading[] } {
+  const $ = cheerio.load(html, null, false);
+  const nodes = $.root().contents().toArray();
+  const isTag = (n: any) => n && n.type === 'tag';
+  const tagOf = (n: any) => (n.tagName || '').toLowerCase();
+
+  let firstH2Idx = -1;
+  for (let i = 0; i < nodes.length; i++) {
+    if (isTag(nodes[i]) && tagOf(nodes[i]) === 'h2') { firstH2Idx = i; break; }
+  }
+  if (firstH2Idx === -1) {
+    return { introHtml: html, chapters: [], headings: [] };
+  }
+
+  const introHtml = nodes.slice(0, firstH2Idx).map((n) => $.html(n)).join('');
+  const restNodes = nodes.slice(firstH2Idx);
+
+  const headings: Heading[] = [];
+  const chapters: Chapter[] = [];
+  let currentId = '';
+  let currentTitle = '';
+  let currentBody: any[] = [];
+  let idx = 0;
+
+  const flush = () => {
+    if (currentId) chapters.push({ id: currentId, title: currentTitle, bodyHtml: currentBody.map((n) => $.html(n)).join('') });
+  };
+
+  for (const n of restNodes) {
+    if (isTag(n) && tagOf(n) === 'h2') {
+      flush();
+      idx++;
+      currentId = `sec-${idx}`;
+      currentTitle = $(n).text().trim().replace(/\s+/g, ' ');
+      currentBody = [];
+      headings.push({ id: currentId, text: currentTitle });
+    } else {
+      currentBody.push(n);
+    }
+  }
+  flush();
+
+  return { introHtml, chapters, headings };
+}
+
+const { introHtml, chapters, headings } = splitIntoChapters(p.body_html);
+const readMinutes = estimateReadMinutes(p.body_html);
+
 const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
 const publishedIso = p.published_at || p.updated_at;
 const canonical = `https://newgoldenoffice.com/blog/${p.slug}`;
+
+// Related posts: same-category first, then fill with other published posts.
+// Sidebar and bottom grid draw from disjoint slices so they don't repeat.
+const allOtherPosts = await getCollection('blog', ({ data }) => data.status === 'published' && data.slug !== p.slug);
+const sameCategory = allOtherPosts.filter((e) => p.category && e.data.category === p.category);
+const others = allOtherPosts.filter((e) => !(p.category && e.data.category === p.category));
+const relatedPool = [...sameCategory, ...others].map((e) => ({
+  slug: e.data.slug,
+  title: e.data.title,
+  cover_image: e.data.cover_image || DEFAULT_COVER,
+  category: e.data.category,
+}));
+const sidebarRelated = relatedPool.slice(0, 3);
+const bottomRelated = relatedPool.length > 3 ? relatedPool.slice(3, 6) : relatedPool.slice(0, 3);
 
 const articleSchema = JSON.stringify({
   '@context': 'https://schema.org',
@@ -53,61 +127,177 @@ const articleSchema = JSON.stringify({
   ogImage={p.og_image || p.cover_image}
   schemaJson={articleSchema}
 >
-<section class="page-hero">
+<div class="bp-progress" aria-hidden="true"><span class="bp-progress-bar" id="bpProgressBar"></span></div>
+
+<section class="bp-hero">
   <div class="container">
-    <div class="page-hero-inner">
-      <div class="page-hero-content">
+    <div class="bp-hero-inner">
+      <div>
         <nav class="breadcrumb" aria-label="breadcrumb">
           <a href="/">الرئيسية</a>
           <i class="fa-solid fa-chevron-left"></i>
           <a href="/blog">المدونة</a>
-          <i class="fa-solid fa-chevron-left"></i>
-          <span>{p.title}</span>
+          {p.category && <Fragment><i class="fa-solid fa-chevron-left"></i><span class="current">{p.category}</span></Fragment>}
         </nav>
         <h1 class="reveal">{p.title}</h1>
-        <p class="lead reveal delay-1" style="opacity:.85;font-size:14px;">
-          <i class="fa-regular fa-calendar"></i> {formatDateAr(publishedIso)}
-          {p.category && <Fragment>&nbsp;·&nbsp;<i class="fa-solid fa-tag"></i> {p.category}</Fragment>}
-        </p>
+        <div class="bp-meta reveal delay-1">
+          <span class="bp-meta-item"><i class="fa-regular fa-calendar"></i> {formatDateAr(publishedIso)}</span>
+          {p.category && <span class="bp-meta-item"><i class="fa-solid fa-tag"></i> {p.category}</span>}
+          <span class="bp-meta-item"><i class="fa-regular fa-clock"></i> {readMinutes} دقائق قراءة</span>
+        </div>
       </div>
-      <div class="page-hero-image">
-        {p.cover_image
-          ? <img src={p.cover_image} alt={p.title} loading="eager">
-          : <div class="page-hero-icon"><i class="fa-regular fa-newspaper"></i>{p.category && <span>{p.category}</span>}</div>}
-      </div>
+      {p.cover_image && (
+        <div class="bp-hero-media">
+          <img src={p.cover_image} alt={p.title} loading="eager">
+          {p.category && <span class="bp-hero-media-cat">{p.category}</span>}
+        </div>
+      )}
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="max-width:820px;">
-    <div class="blog-post-body" set:html={p.body_html} />
-    <div class="blog-author-card">
-      <div class="blog-author-avatar" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></div>
-      <div>
-        <span class="blog-author-label">الكاتبة</span>
-        <h3 class="blog-author-name">نيهال محمد</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-banner">
+<section class="section bp-body">
   <div class="container">
-    <div class="reveal">
-      <h2>محتاج استشارة أو عرض سعر؟</h2>
-      <p>فريقنا المتخصص جاهز لمساعدتك في اختيار أفضل الحلول لعملك</p>
-      <div class="btn-group">
-        <a href="/contact" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-phone"></i>
-          تواصل معنا الآن
-        </a>
-        <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i>
-          واتساب
-        </a>
+    <div class="bp-grid">
+
+      <article class="bp-content" id="bpContent">
+        <Fragment set:html={introHtml} />
+
+        {headings.length > 0 && (
+          <details class="bp-toc">
+            <summary>
+              <div>
+                <span class="bp-toc-label">محتويات المقال</span>
+                <span class="bp-toc-title">ماذا ستقرأ في هذا الدليل</span>
+              </div>
+              <span class="bp-toc-chev">+</span>
+            </summary>
+            <ol class="bp-toc-list">
+              {headings.map((h) => (
+                <li><a href={`#${h.id}`}>{h.text}</a></li>
+              ))}
+            </ol>
+          </details>
+        )}
+
+        {chapters.map((c, i) => (
+          <Fragment>
+            <div class="bp-chapter" id={c.id}>
+              <div class="bp-chapter-head">
+                <span class="bp-chapter-num">{String(i + 1).padStart(2, '0')}</span>
+                <h2 class="bp-chapter-title">{c.title}</h2>
+              </div>
+              <Fragment set:html={c.bodyHtml} />
+            </div>
+            {chapters.length > 1 && i === Math.floor(chapters.length / 2) - 1 && (
+              <MidPageCTA formId="bpMidCta" />
+            )}
+          </Fragment>
+        ))}
+
+        <div class="bp-author-card">
+          <div class="bp-author-avatar" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></div>
+          <div>
+            <span class="bp-author-label">الكاتبة</span>
+            <h3 class="bp-author-name">نيهال محمد</h3>
+            <p class="bp-author-bio">كاتبة محتوى متخصصة في مجال المستلزمات والمعدات المكتبية</p>
+          </div>
+        </div>
+      </article>
+
+      {sidebarRelated.length > 0 && (
+        <aside class="bp-sidebar">
+          <div class="bp-side-card">
+            <div class="bp-side-label">مقالات ذات صلة</div>
+            <div class="bp-side-related">
+              {sidebarRelated.map((r) => (
+                <a class="bp-side-related-item" href={`/blog/${r.slug}`}>
+                  <img src={r.cover_image} alt={r.title} loading="lazy">
+                  <span>{r.title}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </aside>
+      )}
+    </div>
+
+    {bottomRelated.length > 0 && (
+      <div class="bp-related">
+        <h2 class="bp-related-title">مقالات مشابهة</h2>
+        <div class="bp-related-grid">
+          {bottomRelated.map((r) => (
+            <a class="bp-related-card" href={`/blog/${r.slug}`}>
+              <div class="bp-related-thumb"><img src={r.cover_image} alt={r.title} loading="lazy"></div>
+              <div class="bp-related-body">
+                {r.category && <span class="bp-related-tag">{r.category}</span>}
+                <h4>{r.title}</h4>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
+    )}
+
+    <div class="bp-wa-cta">
+      <div class="bp-wa-info">
+        <span class="bp-wa-eyebrow"><i class="fa-brands fa-whatsapp"></i> رد سريع على واتساب</span>
+        <h2>محتاج استشارة أو عرض سعر؟</h2>
+        <p>املأ بياناتك وهيتفتحلك واتساب على طول برسالة جاهزة فيها طلبك — فريقنا بيرد خلال دقايق في أوقات العمل.</p>
+      </div>
+      <form class="bp-wa-form" id="bpWaForm">
+        <div class="form-group">
+          <label for="bpWaName">الاسم</label>
+          <input type="text" id="bpWaName" placeholder="اسمك بالكامل" required>
+        </div>
+        <div class="form-group">
+          <label for="bpWaPhone">رقم الهاتف</label>
+          <input type="tel" id="bpWaPhone" placeholder="01xxxxxxxxx" required>
+        </div>
+        <div class="form-group">
+          <label for="bpWaMsg">رسالتك</label>
+          <textarea id="bpWaMsg" placeholder="محتاج عرض سعر لـ..."></textarea>
+        </div>
+        <button type="submit" class="bp-wa-submit"><i class="fa-brands fa-whatsapp"></i> إرسال عبر واتساب</button>
+        <p class="bp-wa-hint">هيفتح واتساب في تاب جديد برسالتك جاهزة — تقدر تعدلها قبل الإرسال</p>
+      </form>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const bar = document.getElementById('bpProgressBar');
+    const content = document.getElementById('bpContent');
+    if (!bar || !content) return;
+    function update() {
+      const rect = content.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
+      const pct = total > 0 ? (scrolled / total) * 100 : 0;
+      bar.style.width = pct + '%';
+    }
+    document.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  (function () {
+    const form = document.getElementById('bpWaForm');
+    if (!form) return;
+    const WA_NUMBER = '201227392074';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('bpWaName').value.trim();
+      const phone = document.getElementById('bpWaPhone').value.trim();
+      const msg = document.getElementById('bpWaMsg').value.trim();
+      const lines = [
+        'مرحبًا، اسمي ' + name + ' (' + phone + ')',
+        msg ? 'رسالتي: ' + msg : null,
+      ].filter(Boolean);
+      const text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + text, '_blank');
+    });
+  })();
+</script>
 </BaseLayout>

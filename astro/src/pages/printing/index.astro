@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 ---
@@ -25,7 +26,7 @@ import { getSeoFor } from '../../lib/siteSeo';
     <div class="container">
       <div class="section-header">
         <div class="section-tag">خدماتنا</div>
-        <h2>كل ما تحتاجه في عالم الطباعة تحت سقف واحد</h2>
+        <h2>طباعة احترافية — كل ما تحتاجه تحت سقف واحد</h2>
         <div class="divider"></div>
       </div>
 
@@ -138,6 +139,8 @@ import { getSeoFor } from '../../lib/siteSeo';
       </div>
     </div>
   </section>
+
+  <MidPageCTA formId="prnIndexMidCta" />
 
   <!-- HOW IT WORKS -->
   <section class="section section-bg">

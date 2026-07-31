@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>اختر تكييفك المثالي من تشكيلتنا الواسعة</h2>
+      <h2>تكييفات أسعار مصر — اختر تكييفك المثالي من تشكيلتنا الواسعة</h2>
       <p>نيو جولدن أوفيس توفر لك أكبر مخزون من التكييفات في الإسكندرية والقاهرة — من الماركات العالمية الأولى بأسعار مضمونة ومنافسة. سواء كنت تبحث عن تكييف اقتصادي لغرفة واحدة أو نظام تكييف مركزي لمبنى كامل، ستجد لدينا ما يناسبك.</p>
 
       <h3><i class="fas fa-th-list" style="color:var(--secondary);margin-left:8px;"></i> سبليت مقابل كاسيت مقابل مركزي</h3>
@@ -57,6 +58,7 @@ const schemaJson = JSON.stringify({
       </ul>
 
       <h3><i class="fas fa-tachometer-alt" style="color:var(--secondary);margin-left:8px;"></i> دليل اختيار السعة (BTU) حسب المساحة</h3>
+      <p>اختيار السعة الصحيحة أمر حاسم، تكييف أصغر من المطلوب لن يبرد بكفاءة وأكبر من المطلوب سيزيد الاستهلاك دون فائدة:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>حتى 15م² (غرفة صغيرة):</strong> 1 طن = 12,000 BTU — مناسب لغرفة النوم الصغيرة</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>15 — 22م² (غرفة متوسطة):</strong> 1.5 طن = 18,000 BTU — الأنسب لغرف النوم الرئيسية</span></li>
@@ -66,7 +68,10 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>فوق 55م² (محلات/صالات ضخمة):</strong> 4-5 طن أو عدة تكييفات — حسب التصميم</span></li>
       </ul>
 
+      <MidPageCTA formId="acBuyMidCta" />
+
       <h3><i class="fas fa-bolt" style="color:var(--secondary);margin-left:8px;"></i> إنفرتر أم عادي؟</h3>
+      <p>المقارنة الأهم عند شراء تكييف في مصر:</p>
       <ul>
         <li><i class="fas fa-check-circle"></i><span><strong>التكييف العادي (Fixed Speed):</strong> سعر شراء أرخص، لكن يستهلك طاقة ثابتة عالية. الأنسب إذا كان الاستخدام ساعات قليلة يومياً.</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>تكييف الإنفرتر:</strong> سعر أعلى بـ 20-40%، لكنه يوفر 30-50% من فاتورة الكهرباء. يُسترجع فرق السعر خلال موسم واحد أو اثنين. الأنسب للاستخدام اليومي الطويل في مصر.</span></li>
@@ -136,6 +141,7 @@ const schemaJson = JSON.stringify({
 <section class="content-section" style="padding:60px 0;background:#f8f9fa">
   <div class="container">
     <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">كيف تختار حصان التكييف المناسب لغرفتك؟ — دليل BTU</h2>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">اختيار حصان التكييف الخطأ يعني إما تبريد ناقص أو استهلاك زائد للكهرباء. استخدم هذا الجدول كدليل لاختيار التكييف المناسب:</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
         <thead><tr style="background:#1a1a2e;color:#fff"><th style="padding:12px 16px;text-align:right">مساحة الغرفة</th><th style="padding:12px 16px;text-align:right">الحصان الموصى به</th><th style="padding:12px 16px;text-align:right">BTU</th></tr></thead>
@@ -148,6 +154,7 @@ const schemaJson = JSON.stringify({
         </tbody>
       </table>
     </div>
+    <p style="font-size:0.9rem;color:#777;margin-top:12px">* للغرف ذات الأسقف العالية أو المطابخ أو الطوابق العلوية، يُنصح باختيار حصان أعلى.</p>
   </div>
 </section>
 

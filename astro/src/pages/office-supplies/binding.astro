@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -48,7 +49,7 @@ const schemaJson = JSON.stringify({
 
         <div class="service-content">
 
-          <h2>أدوات الربط والتثبيت المكتبية</h2>
+          <h2>شريط لاصق مكتبي مصر وأدوات الربط والتثبيت</h2>
           <p>
             الأدوات الصغيرة هي التي تُبقي المكتب منظماً وعمل الفريق سلساً. في <strong>نيو جولدن أوفيس</strong>، نوفر مجموعة متكاملة من أدوات الربط والتثبيت والقص التي لا يمكن لأي مكتب الاستغناء عنها — من الدباسة البسيطة إلى الدباسة الثقيلة المتطورة، ومن الشريط اللاصق الشفاف إلى أشرطة التغليف المتينة.
           </p>
@@ -62,6 +63,7 @@ const schemaJson = JSON.stringify({
             <li><strong>دباسة يد صغيرة (Mini)</strong> — مدمجة وخفيفة الوزن للحمل في الحقيبة والاستخدام المتنقل</li>
             <li><strong>دباسة ثقيلة (Heavy Duty)</strong> — لربط كميات ورق كبيرة تصل إلى 100 ورقة أو أكثر، مثالية لمراكز الطباعة والأرشفة</li>
             <li><strong>دباسة طويلة الذراع</strong> — تصل إلى منتصف الصفحة لصنع الكتيبات والمطبوعات المجلدة</li>
+            <li><strong>دباسة لإغلاق الكراتين</strong> — للتثبيت في بيئات المستودعات والشحن</li>
             <li><strong>محرمة الدباسة (Remover)</strong> — أداة مخصصة لإزالة الدبابيس بأمان دون تمزيق الأوراق</li>
           </ul>
 
@@ -71,6 +73,7 @@ const schemaJson = JSON.stringify({
             <li><strong>مشابك بلاستيكية ملونة</strong> — بألوان متعددة للتمييز والتصنيف اللوني للمستندات</li>
             <li><strong>كبسات (Binder Clips)</strong> — بأحجام متعددة لربط المستندات الثقيلة والملفات الكبيرة دون تمزيق</li>
             <li><strong>دبابيس رأس مستديرة (Push Pins)</strong> — للوحة الإعلانات والفلين بورد بألوان متنوعة</li>
+            <li><strong>مشابك تعليق</strong> — للتثبيت على الحوائط والأسطح المختلفة</li>
           </ul>
 
           <h3>أشرطة لاصقة وسكوتش</h3>
@@ -90,6 +93,8 @@ const schemaJson = JSON.stringify({
             <li><strong>مقص مكتبي ستانلس</strong> — بشفرات ستانلس ستيل حادة ومقبض مريح للاستخدام اليومي المكثف</li>
             <li><strong>قاطع ورق (Cutter / Box Cutter)</strong> — بأنواع اليد والمكتبي لقطع الورق والكرتون بدقة</li>
           </ul>
+
+          <MidPageCTA formId="offBindingMidCta" />
 
           <h3>دباسة مكتبية</h3>
           <p>دباسات يدوية وكهربائية للمكاتب، متوفرة بمقاسات 24/6 و26/6.</p>

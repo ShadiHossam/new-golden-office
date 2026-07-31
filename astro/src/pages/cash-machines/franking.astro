@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -31,7 +32,7 @@ const schemaJson = JSON.stringify({
   schemaJson={schemaJson}
 >
 <PageHero
-  title="ماكينات الفارم والختم في مصر"
+  title="ماكينة فارم وختم في مصر — يدوية وكهربائية"
   subtitle="ماكينات الفارم والختم لتنظيم النقود والمستندات — يدوية وكهربائية لجميع الاستخدامات المكتبية والحكومية والتجارية"
   heroImage="/images/copiers-hub.webp"
   heroIcon="fa-stamp"
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>ما هي ماكينة الفارم؟</h2>
+      <h2>ما هي ماكينة الفارم وختم بنكي؟</h2>
       <p>مصطلح "الفارم" (Franking) يُستخدم في السوق المصري للإشارة إلى مجموعة من الأجهزة المتخصصة في تنظيم وربط وتوثيق النقود والمستندات. ينقسم هذا المصطلح عملياً إلى نوعين رئيسيين يختلفان في الوظيفة لكنهما يشتركان في هدف واحد: التنظيم والتوثيق الدقيق.</p>
       <p><strong>فارم النقود (Cash Banding Machine):</strong> جهاز يربط مجموعة من الأوراق النقدية معاً بشريط ورقي خاص يُسمى "وشاح" أو "شريط الربط"، لتكوين حزم منظمة سهلة العد والتخزين والنقل. يستخدمه البنوك وشركات الصرافة والمؤسسات المالية يومياً لتنظيم النقد وتسهيل التدقيق المحاسبي.</p>
       <p><strong>فارم المستندات والختم:</strong> يشمل ماكينات الترقيم التسلسلي وأختام التاريخ الكهربائية، وتُستخدم لإضافة أرقام تسلسلية أو تواريخ على الوثائق الرسمية والإيصالات والفواتير، مما يضمن التوثيق الكامل والأمان القانوني للمعاملات.</p>
@@ -72,6 +73,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>مواد عالية الجودة:</strong> شرائط مصنوعة من ورق متين لا يتقطع أثناء الربط ولا يُتلف الأوراق النقدية</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>شرائط أصلية:</strong> ننصح باستخدام الشرائط المناسبة للجهاز لضمان أفضل أداء وعدم الانحشار</span></li>
       </ul>
+
+      <MidPageCTA formId="cashFrankingMidCta" />
 
       <h2>حالات الاستخدام في مصر</h2>
       <ul>

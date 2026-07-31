@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -41,7 +42,7 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="شركة طباعة القاهرة | أوفست وديجيتال | نيو جولدن أوفيس"
+  title="شركة طباعة في القاهرة، أوفست وديجيتال | نيو جولدن أوفيس"
   description="شركة طباعة القاهرة بخبرة 27 عامًا: أوفست وديجيتال، كروت وبروشورات وبنرات وتغليف وهدايا دعائية، بروفة قبل الطباعة وتسليم في مقرك. اطلب عرض سعر الآن."
   keywords="شركة طباعة القاهرة، طباعة اوفست القاهرة، طباعة بالجملة القاهرة، خدمات طباعة للشركات بالقاهرة"
   ogTitle="شركة طباعة القاهرة | نيو جولدن أوفيس"
@@ -188,7 +189,7 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>خدمات الطباعة الكاملة للشركات في القاهرة</h2>
+      <h2>طباعة اوفست القاهرة وخدماتنا الكاملة للشركات</h2>
       <div class="divider"></div>
     </div>
     <div class="services-grid">
@@ -261,6 +262,8 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+
+<MidPageCTA formId="prnCairoMidCta" />
 
 <section class="section">
   <div class="container">

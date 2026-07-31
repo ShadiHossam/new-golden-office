@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -31,7 +32,7 @@ const schemaJson = JSON.stringify({
   preloadImage="/images/office-supplies-hub.webp"
 >
   <PageHero
-    title="أقلام وأدوات كتابة في مصر — للمكاتب والمدارس"
+    title="أقلام مكتبية وأدوات كتابة في مصر — للمكاتب والمدارس"
     subtitle="نيو جولدن أوفيس — وجهتك الأولى لشراء الأقلام وأدوات الكتابة بالجملة في مصر. ماركات عالمية وأسعار تنافسية للشركات والمؤسسات"
     heroImage="/images/office-supplies-hub.webp"
     heroIcon="fa-pen"
@@ -48,7 +49,7 @@ const schemaJson = JSON.stringify({
 
         <div class="service-content">
 
-          <h2>مجموعة أقلام وأدوات الكتابة</h2>
+          <h2>أقلام بالجملة مصر — مجموعة أقلام وأدوات الكتابة</h2>
           <p>
             منذ تأسيسها عام 1999 في الإسكندرية، وفّرت نيو جولدن أوفيس للشركات والمؤسسات والمدارس أفضل ماركات الأقلام وأدوات الكتابة العالمية بأسعار منافسة. نؤمن بأن القلم الجيد هو أساس الإنتاجية، لذلك نختار بعناية كل منتج نضعه في متجرنا ليكون على أعلى مستوى من الجودة والموثوقية.
           </p>
@@ -67,6 +68,8 @@ const schemaJson = JSON.stringify({
             <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام وايت بورد</strong> — حبر قابل للمسح بسهولة من السبورات البيضاء، بأطراف رفيعة وعريضة وألوان متعددة</li>
             <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>ماركر دائم (Sharpie، Artline)</strong> — يكتب على أي سطح تقريبًا بما في ذلك البلاستيك والزجاج والمعدن، مقاوم للماء والشحوب</li>
           </ul>
+
+          <MidPageCTA formId="offPensMidCta" />
 
           <h3>أدوات تصحيح الكتابة</h3>
           <p>نوفر أيضًا مجموعة متكاملة من أدوات تصحيح الكتابة لضمان مستندات نظيفة واحترافية:</p>

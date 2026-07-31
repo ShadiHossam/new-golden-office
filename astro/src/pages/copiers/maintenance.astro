@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -31,7 +32,7 @@ const schemaJson = JSON.stringify({
   preloadImage="/images/copiers-hub.webp"
 >
 <PageHero
-  title="صيانة ماكينات التصوير والطابعات في مصر"
+  title="صيانة ماكينات تصوير وطابعات في مصر"
   subtitle="فريق فنيين متخصصين يصلح جميع ماركات ماكينات التصوير والطابعات بقطع غيار أصلية وضمان على الإصلاح"
   heroImage="/images/copiers-hub.webp"
   heroIcon="fa-tools"
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>أنواع خدمات الصيانة</h2>
+      <h2>إصلاح طابعات — أنواع خدمات الصيانة</h2>
       <p>
         نقدم في نيو جولدن أوفيس منظومة متكاملة من خدمات الصيانة لضمان استمرار عمل ماكيناتك وطابعاتك بأعلى كفاءة ممكنة. منذ تأسيسنا عام 1999 ونحن نقدم خدمات صيانة محترفة في الإسكندرية ومصر بأكملها.
       </p>
@@ -93,6 +94,8 @@ const schemaJson = JSON.stringify({
           <strong>مشاكل الشبكة والبرمجيات:</strong> إعادة ضبط إعدادات الشبكة، وتحديث البرامج الثابتة (Firmware)، وحل مشكلات التوصيل وتعريفات الطابعة على أجهزة الكمبيوتر.
         </li>
       </ul>
+
+      <MidPageCTA formId="copMaintenanceMidCta" />
 
       <h2>الماركات التي نصيانتها</h2>
       <p>

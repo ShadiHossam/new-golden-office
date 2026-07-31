@@ -4,6 +4,8 @@
 // page-hero + breadcrumb + body + optional CTA banner.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MidPageCTA from '../components/MidPageCTA.astro';
+import * as cheerio from 'cheerio';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages', ({ data }) => data.status === 'published');
@@ -15,6 +17,25 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const d = page.data;
+
+// Split body_html roughly in half (at a top-level block boundary) so the
+// mid-page CTA can be inserted between the two halves.
+function splitAtMidpoint(html: string): { firstHtml: string; secondHtml: string } {
+  const $ = cheerio.load(html, null, false);
+  const nodes = $.root().contents().toArray();
+  const blockNodes = nodes
+    .map((n, i) => ({ n, i }))
+    .filter(({ n }) => n.type === 'tag');
+  if (blockNodes.length < 4) {
+    return { firstHtml: html, secondHtml: '' };
+  }
+  const midIdx = blockNodes[Math.floor(blockNodes.length / 2)].i;
+  const firstHtml = nodes.slice(0, midIdx).map((n) => $.html(n)).join('');
+  const secondHtml = nodes.slice(midIdx).map((n) => $.html(n)).join('');
+  return { firstHtml, secondHtml };
+}
+
+const { firstHtml, secondHtml } = splitAtMidpoint(d.body_html || '');
 ---
 
 <BaseLayout
@@ -41,7 +62,17 @@ const d = page.data;
 
 <section class="section">
   <div class="container">
-    <div set:html={d.body_html} />
+    <div set:html={firstHtml} />
   </div>
 </section>
+
+{secondHtml && <MidPageCTA formId="pageMidCta" />}
+
+{secondHtml && (
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div set:html={secondHtml} />
+    </div>
+  </section>
+)}
 </BaseLayout>

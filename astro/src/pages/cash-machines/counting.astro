@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -31,7 +32,7 @@ const schemaJson = JSON.stringify({
   schemaJson={schemaJson}
 >
 <PageHero
-  title="ماكينات عد النقود في مصر — للبنوك والمحلات"
+  title="ماكينات عد نقود في مصر — للبنوك والمحلات"
   subtitle="ماكينات عد النقود الاحترافية للبنوك والمحلات وشركات الصرافة — عد سريع، دقة 100%، كشف العملات المزيفة"
   heroImage="/images/copiers-hub.webp"
   heroIcon="fa-money-bill-wave"
@@ -46,7 +47,7 @@ const schemaJson = JSON.stringify({
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
 
-      <h2>أنواع ماكينات عد النقود</h2>
+      <h2>عداد نقود مصر — أنواع ماكينات عد النقود</h2>
       <p>تتنوع ماكينات عد النقود في السوق المصري لتغطية احتياجات مختلفة، بدءاً من المحلات الصغيرة وصولاً إلى البنوك والمؤسسات المالية الكبرى. في نيو جولدن أوفيس، نوفر ثلاثة أنواع رئيسية لتناسب كل حجم عمل وكل ميزانية.</p>
 
       <h3><i class="fas fa-layer-group" style="color:var(--secondary);margin-left:8px;"></i> عدادات الأوراق النقدية (Bill Counters)</h3>
@@ -76,6 +77,8 @@ const schemaJson = JSON.stringify({
         <li><i class="fas fa-check-circle"></i><span><strong>بدء/إيقاف تلقائي:</strong> تبدأ العد فور وضع الأوراق وتتوقف عند اكتمال العد</span></li>
         <li><i class="fas fa-check-circle"></i><span><strong>التنظيف الذاتي:</strong> بعض الطرازات تأتي بخاصية تنظيف ذاتي للمسارات للحفاظ على الأداء</span></li>
       </ul>
+
+      <MidPageCTA formId="cashCountingMidCta" />
 
       <h2>من يحتاج ماكينة عد النقود؟</h2>
       <p>ماكينات عد النقود ليست حكراً على البنوك فقط، بل أصبحت ضرورة في كثير من الأماكن التجارية والخدمية في مصر. إليك أبرز الجهات التي تستفيد من هذه الأجهزة:</p>
