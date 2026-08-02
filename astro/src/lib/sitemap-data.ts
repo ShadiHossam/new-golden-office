@@ -4,7 +4,17 @@ export interface SitemapPage {
 }
 
 // Noindex,nofollow pages must never appear in any sitemap (see astro.config.mjs).
-export const NOINDEX_PATHS = ['/alexandria', '/cairo'];
+// Pages get removed from this list as they're gradually indexed — see
+// astro/.rollout-schedule.md for the rollout order.
+export const NOINDEX_PATHS = [
+  '/alexandria/ac', '/alexandria/cameras', '/alexandria/cash-machines',
+  '/alexandria/copiers', '/alexandria/office-supplies', '/alexandria/printing',
+  '/alexandria/office-setup',
+  '/cairo/ac', '/cairo/cameras', '/cairo/cash-machines',
+  '/cairo/copiers', '/cairo/office-supplies', '/cairo/printing',
+  '/cairo/office-setup',
+  '/printing/brochures',
+];
 
 // The 6 category hub pages (each is a */index.astro route) — these get their
 // own file, mirroring the old Yoast category-sitemap.xml.
@@ -26,6 +36,8 @@ export const PAGES: SitemapPage[] = [
   { path: '/privacy', image: '/images/hero-office.webp' },
   { path: '/terms', image: '/images/hero-office.webp' },
   { path: '/blog' },
+  { path: '/alexandria', image: '/images/about-team.webp' },
+  { path: '/cairo', image: '/images/about-team.webp' },
   { path: '/printing/offset', image: '/images/printing-hub.webp' },
   { path: '/printing/digital', image: '/images/printing-hub.webp' },
   { path: '/printing/banners', image: '/images/printing-hub.webp' },

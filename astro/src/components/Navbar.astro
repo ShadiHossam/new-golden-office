@@ -97,6 +97,15 @@ const isActive = (prefix: string) =>
         </div>
       </li>
       <li class="nav-item">
+        <a href="/alexandria" class:list={['nav-link', { active: isActive('/alexandria') || isActive('/cairo') }]} data-dropdown>
+          فروعنا <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <div class="dropdown">
+          <a href="/alexandria"><i class="fas fa-map-marker-alt"></i> الإسكندرية</a>
+          <a href="/cairo"><i class="fas fa-map-marker-alt"></i> القاهرة</a>
+        </div>
+      </li>
+      <li class="nav-item">
         <a href="/contact" class:list={['nav-link nav-cta', { active: isActive('/contact') }]}>تواصل معنا</a>
       </li>
     </ul>
