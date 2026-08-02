@@ -7,10 +7,10 @@ const schemaJson = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://newgoldenoffice.com/ac/cairo#service",
+      "@id": "https://newgoldenoffice.com/cairo/ac#service",
       "name": "بيع وتركيب وصيانة تكييفات في القاهرة",
       "serviceType": "تركيب وصيانة وإصلاح تكييفات وشحن فريون للشركات",
-      "url": "https://newgoldenoffice.com/ac/cairo",
+      "url": "https://newgoldenoffice.com/cairo/ac",
       "areaServed": [
         {"@type":"Place","name":"التجمع الخامس، القاهرة"},
         {"@type":"Place","name":"مدينة نصر، القاهرة"},
@@ -30,7 +30,11 @@ const schemaJson = JSON.stringify({
         {"@type":"Question","name":"هل تقدمون عقد صيانة سنويًا وكم سعره؟","acceptedAnswer":{"@type":"Answer","text":"نعم، عقود صيانة سنوية تشمل زيارات دورية مجدولة وتقارير حالة مكتوبة وأولوية استجابة للأعطال. السعر يحدد حسب عدد الوحدات ووتيرة الزيارات."}},
         {"@type":"Question","name":"كم يستغرق التركيب وهل تصلحون الأعطال بسرعة؟","acceptedAnswer":{"@type":"Answer","text":"تركيب الوحدة الواحدة ينجز عادة في زيارة واحدة. عملاء عقود الصيانة يحصلون على أولوية استجابة للأعطال."}},
         {"@type":"Question","name":"هل قطع الغيار أصلية وما مدة الضمان؟","acceptedAnswer":{"@type":"Answer","text":"نستخدم قطع غيار أصلية مطابقة لمواصفات الجهاز مع فاتورة رسمية، ونقدم ضمانًا مكتوبًا على التركيب والإصلاح."}},
-        {"@type":"Question","name":"هل تغطون كل أحياء القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"نغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي بفرق ميدانية متنقلة ومسارات مجدولة."}}
+        {"@type":"Question","name":"هل تغطون كل أحياء القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"نغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي ومصر الجديدة والشيخ زايد بفرق ميدانية متنقلة ومسارات مجدولة."}},
+        {"@type":"Question","name":"هل التكييف المركزي يستهلك كهرباء أكثر من السبليت؟","acceptedAnswer":{"@type":"Answer","text":"المقارنة ليست مطلقة؛ المركزي المصمم جيدًا لمساحة مفتوحة قد يكون أكفأ، والحكم الصحيح يأتي من دراسة المساحة قبل الشراء."}},
+        {"@type":"Question","name":"ما الفرق بين تكييف الانفرتر والتكييف العادي وأيهما أنسب للمكاتب؟","acceptedAnswer":{"@type":"Answer","text":"العادي يعمل بسرعة ثابتة يفصلها ويوصلها بالتبادل، والانفرتر يعدّل سرعة الكمبروسر باستمرار حسب الحمل الفعلي، فيعطي استهلاك كهرباء أقل وتبريدًا أكثر ثباتًا وضجيجًا أقل. سعر الشراء أعلى لكن التوفير في فاتورة الكهرباء غالبًا يعوّضه خلال موسمين إلى ثلاثة مواسم تشغيل مكثف."}},
+        {"@type":"Question","name":"كيف أحسب قدرة التكييف بالحصان تقريبيًا بنفسي؟","acceptedAnswer":{"@type":"Answer","text":"قاعدة تقريبية: كل حصان يبرد بارتياح 12 إلى 15 مترًا مربعًا في غرفة عادية الارتفاع بلا حمل حراري زائد، لكن الرقم يتغير مع ارتفاع السقف وعدد الأجهزة والأشخاص واتجاه الشمس والدور، والرقم النهائي نؤكده بعد مراجعة تفاصيل موقعك."}},
+        {"@type":"Question","name":"متى يكون الأنسب استبدال التكييف القديم بدل إصلاحه؟","acceptedAnswer":{"@type":"Answer","text":"إذا تجاوز عمر الجهاز 8 إلى 10 سنوات وتكرر العطل أكثر من مرتين في نفس الموسم، أو صار الإصلاح المطلوب يقارب نصف سعر جهاز جديد، الاستبدال عادة أوفر على المدى المتوسط."}}
       ]
     }
   ]
@@ -232,12 +236,67 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h4>المعادي</h4><p>مكاتب الشركات والمقرات الإدارية بمواعيد تناسب طبيعة كل عميل.</p></div>
       <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h4>القاهرة الجديدة</h4><p>المقرات الجديدة والتوسعات، من تجهيز الوحدات الأولى حتى عقود الصيانة الشاملة.</p></div>
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>وسط البلد المالي</h4><p>المباني الإدارية والمقرات العريقة التي تحتاج حلولًا مدروسة لطبيعة إنشاءاتها.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>مصر الجديدة</h4><p>الفيلات المحولة لمكاتب والمقرات الإدارية القديمة التي تحتاج تصميم تكييف يراعي طبيعة المبنى.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>الشيخ زايد و6 أكتوبر</h4><p>المقرات الإدارية والمجمعات المكتبية الحديثة، بتنسيق زيارات ضمن نفس مسارات الخدمة الغربية.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
+    <div class="section-header">
+      <h2>انفرتر أم عادي؟ دليل مبسط قبل قرار الشراء</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">المعيار</th><th style="padding:14px 16px;text-align:right">تكييف انفرتر</th><th style="padding:14px 16px;text-align:right">تكييف عادي</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">طريقة التشغيل</td><td style="padding:12px 16px">يعدّل سرعة الكمبروسر باستمرار حسب الحمل الفعلي</td><td style="padding:12px 16px">يعمل بسرعة ثابتة يفصلها ويوصلها بالتبادل</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">استهلاك الكهرباء</td><td style="padding:12px 16px">أقل على المدى الطويل خاصة بالتشغيل الطويل</td><td style="padding:12px 16px">أعلى مع ساعات التشغيل الكثيفة</td></tr>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">ثبات التبريد</td><td style="padding:12px 16px">حرارة مستقرة بلا تذبذب محسوس</td><td style="padding:12px 16px">تذبذب طفيف عند كل دورة فصل ووصل</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">مستوى الضجيج</td><td style="padding:12px 16px">أهدأ عمومًا خاصة عند التشغيل الجزئي</td><td style="padding:12px 16px">صوت أعلى قليلًا عند بدء التشغيل</td></tr>
+          <tr style="background:var(--white)"><td style="padding:12px 16px">سعر الشراء</td><td style="padding:12px 16px">أعلى، لكنه يتعوض من فاتورة الكهرباء خلال موسمين لثلاثة</td><td style="padding:12px 16px">أقل سعرًا مبدئيًا</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">للمكاتب ذات ساعات التشغيل الطويلة (أكثر من 8 ساعات يوميًا) ننصح بالانفرتر رغم فرق السعر المبدئي، لأن التوفير التراكمي في الكهرباء يفوقه خلال فترة قصيرة. أما الغرف قليلة الاستخدام فالعادي خيار اقتصادي منطقي.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>دليل سريع لحساب القدرة بنفسك قبل الاتصال بنا</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>قاعدة تقريبية مفيدة قبل أي مكالمة: كل حصان تكييف يبرد براحة من 12 إلى 15 مترًا مربعًا في غرفة عادية الارتفاع وبلا حمل حراري إضافي. يعني غرفة 20 مترًا مربعًا تحتاج غالبًا 1.5 حصان، ومساحة 30 مترًا تقترب من 2 حصان. لكن هذا الرقم تقديري أولي فقط، لأن عوامل أخرى تغيّره فعليًا: ارتفاع السقف الأعلى من المعتاد يرفع الحمل، عدد الأجهزة الإلكترونية والموظفين في الغرفة يضيف حرارة، واجهة الزجاج المواجهة للشمس تزيد الحمل الحراري بشكل ملحوظ خصوصًا في مكاتب القاهرة الجديدة والتجمع الخامس ذات الواجهات الزجاجية الكبيرة، والدور الأخير تحت السطح مباشرة يحتاج قدرة إضافية عن الأدوار الوسطى. لهذا نستخدم هذه القاعدة كنقطة انطلاق للمحادثة فقط، والقدرة النهائية المرشحة تأتي بعد معاينة أو مراجعة دقيقة لتفاصيل موقعك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>نصائح للحفاظ على عمر التكييف بين زيارات الصيانة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>لا تُغلق فتحات التهوية الخارجية:</strong> تراكم الأثاث أو الستائر أمام الوحدة الداخلية يقلل كفاءة التبريد ويرفع الاستهلاك.</li>
+        <li><strong>حافظ على مسافة تهوية حول الوحدة الخارجية:</strong> خاصة في المكاتب القريبة من مناطق الإنشاءات حيث تتراكم الأتربة بسرعة أكبر على المبادل الحراري.</li>
+        <li><strong>لا تشغّل التكييف على أقل درجة ممكنة ظنًا أنه يبرد أسرع:</strong> هذا يرهق الكمبروسر دون فائدة تبريد إضافية حقيقية.</li>
+        <li><strong>راقب خرطوم الصرف من الداخل:</strong> أي تنقيط مياه غير معتاد علامة مبكرة على انسداد يجب معالجته قبل أن يتلف الأسقف المعلقة.</li>
+        <li><strong>لا تؤجل أول علامة ضعف في التبريد:</strong> غالبًا فلتر متسخ بسيط، لكن تجاهله لأسابيع يحوّله إلى عطل كمبروسر مكلف.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">بيجهزلك مكتبك التكييف بس؟ عندنا كمان في القاهرة: <a href="/cairo/cameras">كاميرات مراقبة</a>، <a href="/cairo/copiers">ماكينات تصوير</a>، <a href="/cairo/office-supplies">مستلزمات مكتبية</a>، <a href="/cairo/cash-machines">ماكينات عد نقود</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. تجهيز شامل من الأول؟ شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
     <div class="section-header">
       <h2>أسئلة شائعة</h2>
       <div class="divider"></div>
@@ -251,6 +310,12 @@ const schemaJson = JSON.stringify({
       <div class="faq-item"><div class="faq-question">هل قطع الغيار أصلية وما مدة الضمان؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نستخدم قطع غيار أصلية مطابقة لمواصفات الجهاز مع فاتورة رسمية، وضمان مكتوب على التركيب والإصلاح.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل تغطون كل أحياء القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي بفرق ميدانية متنقلة.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل التكييف المركزي يستهلك كهرباء أكثر من السبليت؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">المقارنة ليست مطلقة؛ المركزي المصمم جيدًا لمساحة مفتوحة قد يكون أكفأ، والحكم الصحيح يأتي من دراسة المساحة قبل الشراء.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الفرق بين تكييف الانفرتر والتكييف العادي وأيهما أنسب للمكاتب؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الانفرتر يعدّل سرعة الكمبروسر باستمرار فيعطي استهلاكًا أقل وتبريدًا أكثر ثباتًا، والعادي أقل سعرًا مبدئيًا. للمكاتب طويلة التشغيل ننصح بالانفرتر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أحسب قدرة التكييف بالحصان تقريبيًا بنفسي؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">قاعدة تقريبية: كل حصان يبرد براحة 12 إلى 15 مترًا مربعًا، لكن ارتفاع السقف واتجاه الشمس وعدد الأجهزة تغيّر الرقم، والتأكيد النهائي بعد مراجعة تفاصيل موقعك.</div></div></div>
+      <div class="faq-item"><div class="faq-question">متى يكون الأنسب استبدال التكييف القديم بدل إصلاحه؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">إذا تجاوز عمره 8 إلى 10 سنوات وتكرر العطل أكثر من مرتين في نفس الموسم، أو قارب الإصلاح نصف سعر جهاز جديد، الاستبدال عادة أوفر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن ضمان استجابة سريعة لأعطال الطوارئ في القاهرة تحديدًا؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، عملاء عقود الصيانة السنوية يحصلون على أولوية استجابة لأعطال الطوارئ، وفرقنا الميدانية المنتشرة على مناطق التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة تتيح لنا الوصول بسرعة معقولة دون الحاجة لتنسيق زيارة من الإسكندرية في كل مرة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تختلف الماركات الموصى بها للمكاتب في القاهرة عن باقي المحافظات؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الماركات نفسها مناسبة في كل مصر، لكن بسبب كثافة الغبار في القاهرة ننصح بالتركيز على موديلات ذات فلاتر أسهل في التنظيف والفك، ونحرص على شرح جدول الصيانة الأنسب لكل عميل حسب موقع مكتبه تحديدًا داخل القاهرة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يشمل عقد الصيانة زيارة طارئة خارج الجدول المتفق عليه؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، عقودنا السنوية تشمل عدد زيارات طارئة إضافية بخلاف الزيارات الدورية المجدولة، وتفاصيل العدد والشروط تُحدَّد وتُكتب بوضوح في العقد قبل التوقيع حتى لا يكون هناك أي التباس لاحقًا.</div></div></div>
     </div>
     <!-- TODO: real customer testimonials + project details + real installation photos pending — see punch list -->
   </div>
@@ -296,7 +361,7 @@ const schemaJson = JSON.stringify({
             <textarea id="q-message" name="message" placeholder="عدد الوحدات والمنطقة بالقاهرة وأي تفاصيل تساعدنا نجهزلك عرض سعر دقيق"></textarea>
           </div>
           <input type="hidden" name="service" value="ac">
-          <input type="hidden" name="source" value="ac/cairo">
+          <input type="hidden" name="source" value="cairo/ac">
           <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
           <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
             <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر

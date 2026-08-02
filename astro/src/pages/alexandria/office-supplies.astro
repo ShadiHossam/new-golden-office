@@ -7,10 +7,10 @@ const schemaJson = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://newgoldenoffice.com/office-supplies/alexandria#service",
+      "@id": "https://newgoldenoffice.com/alexandria/office-supplies#service",
       "name": "توريد أدوات ومستلزمات مكتبية في الإسكندرية",
       "serviceType": "توريد مستلزمات مكتبية للشركات",
-      "url": "https://newgoldenoffice.com/office-supplies/alexandria",
+      "url": "https://newgoldenoffice.com/alexandria/office-supplies",
       "provider": { "@id": "https://newgoldenoffice.com/#organization" },
       "areaServed": { "@type": "City", "name": "الإسكندرية" }
     },
@@ -100,6 +100,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>تبحث عن شركة أدوات مكتبية في الإسكندرية تورد لك كل ما يحتاجه مكتبك من مصدر واحد وبنظام واضح؟ نيو جولدن أوفيس شركة سكندرية بخبرة 27 عامًا في تجهيز وخدمة المكاتب والشركات، ومقرنا الفعلي داخل المدينة: 26 عبد المنعم سند، الإبراهيمية، باب شرق. لأننا هنا في الإسكندرية، طلبك لا ينتظر شحنًا من محافظة أخرى، ومندوبنا يصلك بسرعة، وتتعامل مع فريق يعرف شوارع المدينة ومناطقها التجارية عن قرب. نخدم الشركات والمكاتب والمصانع والبنوك والعيادات والمدارس ومراكز التدريب بكل أحجامها.</p>
+      <p style="margin-top:16px">كوننا في الإسكندرية منذ 1999، بنينا علاقات مباشرة مع موزعين ومصنعين محليين وعالميين تتيح لنا أسعارًا تنافسية على أكثر الأصناف طلبًا، وشبكة توصيل داخلية سريعة لا تعتمد على شركات شحن خارجية قد تتأخر. هذا يعني أن طلبك العاجل يصلك في نفس اليوم أو اليوم التالي في أغلب الأحوال، وليس بعد انتظار أيام كما يحدث مع موردين من خارج المدينة.</p>
     </div>
 
     <div class="section-header">
@@ -107,7 +108,7 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-pen"></i></div><h3 class="service-title">قرطاسية وأدوات كتابة</h3><p class="service-desc">أقلام جافة وسائلة ورصاص، أقلام تحديد وتظليل، كشاكيل وبلوكنوت وأوراق ملاحظات لاصقة.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-pen"></i></div><h3 class="service-title">قرطاسية وأدوات كتابة</h3><p class="service-desc">أقلام جافة وسائلة ورصاص، أقلام تحديد وتظليل، كشاكيل وبلوكنوت وأوراق ملاحظات لاصقة، بماركات عالمية ومحلية موثوقة.</p></div>
       <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-copy"></i></div><h3 class="service-title">ورق A4 وورق التصوير بالجملة</h3><p class="service-desc">كميات تناسب الشركات والمطابع ومراكز التصوير، بجودة ثابتة ومقاسات وأوزان مختلفة.</p><a href="/office-supplies/a4-paper" class="btn btn-outline btn-sm">ورق A4 بالجملة <i class="fas fa-arrow-left"></i></a></div>
       <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-folder-open"></i></div><h3 class="service-title">ملفات وأرشفة وتنظيم مستندات</h3><p class="service-desc">ملفات وحوافظ ودوسيهات وحافظات بلاستيكية وكرتونية وفواصل تسهّل الرجوع لأي ورقة.</p></div>
       <div class="service-card reveal delay-3"><div class="service-icon"><i class="fas fa-fill-drip"></i></div><h3 class="service-title">أحبار طابعات ومستلزمات الطباعة</h3><p class="service-desc">أحبار وخراطيش ماكينات التصوير والطابعات الأصلية والمتوافقة.</p><a href="/copiers/cartridges" class="btn btn-outline btn-sm">أحبار وخراطيش <i class="fas fa-arrow-left"></i></a></div>
@@ -115,7 +116,7 @@ const schemaJson = JSON.stringify({
       <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3 class="service-title">آلات حاسبة ولوازم المكتب الصغيرة</h3><p class="service-desc">آلات حاسبة، مشابك ودباسات وخرامات ومقصات وشرائط لاصقة وأختام.</p></div>
       <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-graduation-cap"></i></div><h3 class="service-title">أدوات مدرسية وتدريبية</h3><p class="service-desc">كراسات وأقلام وألوان وأدوات هندسية بكميات الفصول الدراسية للمدارس ومراكز التدريب.</p></div>
     </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب القرطاسية نوفر الأثاث المكتبي ومعدات المكاتب عبر خدماتنا الأخرى: <a href="/copiers/alexandria">ماكينات تصوير المستندات</a>، <a href="/copiers/printers">الطابعات المكتبية</a>، <a href="/cash-machines/alexandria">ماكينات عد النقود</a>، <a href="/cameras/alexandria">كاميرات المراقبة</a>، <a href="/ac/alexandria">التكييفات</a>، و<a href="/printing/alexandria">خدمات الطباعة</a>. فاتورة واحدة، جهة متابعة واحدة.</p>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب القرطاسية نوفر الأثاث المكتبي ومعدات المكاتب عبر خدماتنا الأخرى: <a href="/alexandria/copiers">ماكينات تصوير المستندات</a>، <a href="/copiers/printers">الطابعات المكتبية</a>، <a href="/alexandria/cash-machines">ماكينات عد النقود</a>، <a href="/alexandria/cameras">كاميرات المراقبة</a>، <a href="/alexandria/ac">التكييفات</a>، و<a href="/alexandria/printing">خدمات الطباعة</a>. فاتورة واحدة، جهة متابعة واحدة.</p>
   </div>
 </section>
 
@@ -125,17 +126,33 @@ const schemaJson = JSON.stringify({
       <h2>التوريد المؤسسي المجدول (اشتراك دوري)</h2>
       <div class="divider"></div>
     </div>
-    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">مع التعاقد الشهري أو الدوري نتفق معك على جدول توريد ثابت يناسب معدل استهلاكك، فتصل المستلزمات قبل أن تنفد دون أن تتابع أو تتصل في كل مرة.</p>
+    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">مع التعاقد الشهري أو الدوري نتفق معك على جدول توريد ثابت يناسب معدل استهلاكك، فتصل المستلزمات قبل أن تنفد دون أن تتابع أو تتصل في كل مرة. هذا النظام أثبت فعاليته مع عشرات الشركات في الإسكندرية التي انتقلت من الطلب العشوائي المتكرر إلى جدول واضح يديره مندوب حساب واحد يعرف تفاصيل احتياجهم بدقة.</p>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h4>مواعيد توريد متفق عليها</h4><p>تلتزم بها فرقنا بدقة دون تأخير.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h4>مندوب حساب مخصص</h4><p>يعرف احتياج شركتك ويراجع معك الأصناف دوريًا.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-sliders"></i></div><h4>مرونة في تعديل الكميات</h4><p>مع نمو فريقك أو تغير الاحتياج.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حساب مؤسسي وشروط دفع مرنة تشمل التحويل البنكي والدفع الآجل.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h4>مواعيد توريد متفق عليها</h4><p>تلتزم بها فرقنا بدقة دون تأخير أو حاجة لمتابعة يومية من جانبك.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h4>مندوب حساب مخصص</h4><p>يعرف احتياج شركتك بالتفصيل ويراجع معك الأصناف والكميات دوريًا.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-sliders"></i></div><h4>مرونة في تعديل الكميات</h4><p>مع نمو فريقك أو تغير الاحتياج، بدون أي تعقيد إداري أو التزام صارم.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حساب مؤسسي وشروط دفع مرنة تشمل التحويل البنكي والدفع الآجل للعملاء الدائمين.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تختار مورد المستلزمات المكتبية المناسب؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>الخطأ الأكثر شيوعًا عند اختيار مورد مستلزمات مكتبية هو التركيز على السعر الأقل فقط دون النظر لموثوقية التوريد. مورد رخيص لكنه يتأخر في التسليم أو ينفد مخزونه فجأة يكلفك أكثر على المدى الطويل من مورد بسعر عادل لكن موثوق. ننصح دائمًا بتقييم المورد المحتمل من ثلاث زوايا: هل لديه مخزون كافٍ من الأصناف الأساسية باستمرار؟ هل يصدر فواتير ضريبية رسمية توثق كل عملية شراء؟ وهل يمكنك التواصل مع شخص واحد مسؤول عن حسابك بدل التعامل مع موظفين مختلفين في كل مرة؟</p>
+      <p style="margin-top:16px">إضافة لهذه المعايير الثلاثة، ننصح أيضًا بالتحقق من مرونة المورد في التعامل مع تغير احتياجك بمرور الوقت، فالشركة التي تنمو قد تحتاج كميات أكبر أو أصنافًا جديدة، والمورد الجيد يستوعب هذا التطور دون تعقيد إداري.</p>
+      <p style="margin-top:16px">نفتخر بأن كثيرًا من عملائنا في الإسكندرية بدأوا بطلب بسيط قبل سنوات واستمر التعامل معنا حتى اليوم، لأننا نتعامل مع كل طلب مهما كان صغيرًا بنفس الجدية التي نتعامل بها مع العقود الكبرى.</p>
+      <p style="margin-top:16px">هذا النهج يعكس فلسفتنا الأساسية: العلاقة طويلة المدى مع العميل أهم من أي صفقة واحدة، وهي ما بنى سمعتنا في السوق المحلي على مدار 27 عامًا من العمل المتواصل.</p>
+      <p style="margin-top:16px">في نيو جولدن أوفيس، نبني علاقة تعامل طويلة المدى مع كل عميل مؤسسي بدل التركيز على البيع لمرة واحدة. هذا يعني أننا نتذكر تفضيلاتك في الماركات والمواصفات، ونستبق احتياجك قبل أن ينفد المخزون لديك، ونعاملك كشريك تشغيلي لا كزبون عابر.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>ما الذي يحدد تكلفة الأدوات المكتبية؟</h2>
@@ -147,8 +164,37 @@ const schemaJson = JSON.stringify({
         <li><strong>الكمية:</strong> سعر الكرتونة في طلب شهري متعاقد عليه يختلف عن الشراء المتقطع.</li>
         <li><strong>الماركة:</strong> لكل فئة بدائل اقتصادية وأخرى ممتازة، نرشح الأنسب حسب الاستخدام الفعلي.</li>
         <li><strong>حجم التعاقد ومدته:</strong> عقود التوريد الدورية تمنحك شروطًا أفضل من الطلبات المنفردة.</li>
+        <li><strong>عدد الأصناف في نفس الطلب:</strong> تجميع عدة فئات في فاتورة واحدة يقلل تكلفة التوصيل مقارنة بطلبات منفصلة صغيرة.</li>
       </ul>
       <p style="margin-top:20px;text-align:center">لهذا نفضل تقديم عرض سعر مخصص بدل نشر قوائم أسعار تتقادم سريعًا. تواصل معنا بقائمتك ويصلك العرض مفصلًا: 01227392074.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أي نوع نشاط يعتمد على توريدنا المؤسسي؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>الشركات الصغيرة والمتوسطة</h4><p>طلب شهري ثابت يغطي احتياج الفريق كله دون متابعة يدوية متكررة من الإدارة أو المحاسب.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-industry"></i></div><h4>المصانع والمخازن</h4><p>احتياج مستمر من أدوات الأرشفة والقرطاسية للأقسام الإدارية والمحاسبية داخل المصنع نفسه.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>البنوك والعيادات</h4><p>معايير جودة أعلى للورق والأحبار، مع فواتير ضريبية منظمة لكل عملية توريد.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-graduation-cap"></i></div><h4>المدارس ومراكز التدريب</h4><p>كميات كبيرة من الكراسات والأقلام في مواعيد ثابتة تتوافق مع بداية الفصول الدراسية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا التوريد الدوري أوفر من الشراء المتقطع؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كثير من المكاتب تشتري مستلزماتها بشكل عشوائي كلما نفد صنف معين، وهذا النمط غالبًا أغلى على المدى الطويل من التعاقد على توريد دوري منتظم. الشراء المتقطع يعني دفع سعر القطعة أو العلبة الواحدة في كل مرة، بينما التعاقد الشهري أو الربع سنوي يفتح باب أسعار الجملة على كامل الكمية السنوية المتوقعة، مع ضمان عدم انقطاع أي صنف مهم في وقت حرج.</p>
+      <p style="margin-top:16px">كما أن التوريد الدوري يوفر وقت الموظف المسؤول عن المشتريات، الذي كان يضطر سابقًا لمتابعة المخزون يدويًا وطلب كل صنف على حدة. مع عقدنا، مندوب الحساب المخصص هو من يراجع معك الاستهلاك الفعلي دوريًا ويقترح تعديل الكميات حسب نمو الفريق أو تغير الاحتياج، فتتفرغ أنت لعملك الأساسي.</p>
     </div>
   </div>
 </section>
@@ -163,6 +209,7 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p style="text-align:center">نغطي الإسكندرية بالكامل، مع استجابة سريعة في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران، ونخدم كذلك الأسواق التجارية التقليدية في المنشية والعطارين، وشركات قطاع الاستيراد والتصدير القريبة من الميناء، والمحال والشركات الممتدة على الكورنيش. ولعقود التوريد المجدول تصل الطلبات في مواعيد ثابتة متفق عليها لا تحتاج متابعة منك.</p>
+      <p style="text-align:center;margin-top:16px">قربنا الجغرافي من كل هذه المناطق يعني أن فترة الانتظار بين تأكيد الطلب والتسليم أقصر بكثير من التعامل مع مورد من محافظة أخرى، وهو فارق يشعر به عملاؤنا بوضوح خاصة في الطلبات العاجلة غير المخطط لها.</p>
     </div>
   </div>
 </section>
@@ -174,13 +221,26 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>خبرة 27 عامًا</h4><p>في خدمة مكاتب وشركات الإسكندرية، بعملاء من الشركات والمصانع والجهات.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مقر فعلي داخل المدينة</h4><p>يمكنك زيارته لمعاينة الأصناف قبل التعاقد.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div><h4>تشكيلة واسعة</h4><p>قرطاسية وورق وأحبار وسبورات وأثاث ومعدات تحت سقف واحد.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حسابات مؤسسية للشركات المتعاقدة.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-medal"></i></div><h4>منتجات أصلية</h4><p>من ماركات معروفة، مع استبدال أي صنف يثبت به عيب مصنعي.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>خبرة 27 عامًا</h4><p>في خدمة مكاتب وشركات الإسكندرية، بعملاء من الشركات والمصانع والجهات الحكومية والخاصة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مقر فعلي داخل المدينة</h4><p>يمكنك زيارته لمعاينة الأصناف والتحدث مع الفريق قبل أي تعاقد.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div><h4>تشكيلة واسعة</h4><p>قرطاسية وورق وأحبار وسبورات وأثاث ومعدات تحت سقف واحد وفاتورة واحدة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حسابات مؤسسية للشركات المتعاقدة بشروط دفع واضحة ومرنة.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-medal"></i></div><h4>منتجات أصلية</h4><p>من ماركات معروفة، مع استبدال فوري لأي صنف يثبت به عيب مصنعي.</p></div>
     </div>
     <!-- TODO: real customer testimonial pending — see punch list -->
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الفرق بين موزع القرطاسية العادي ومورد التوريد المؤسسي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>محل القرطاسية العادي يخدم الزبون العابر: تدخل، تشتري، تخرج. مورد التوريد المؤسسي يعمل بمنطق مختلف تمامًا؛ فهو يبني علاقة طويلة المدى تشمل معرفة تفاصيل استهلاكك الشهري، الاحتفاظ بمخزون كافٍ من أصنافك المعتادة، وإصدار فواتير ضريبية منظمة تسهل عليك المحاسبة والمراجعة الداخلية. الفارق يظهر بوضوح عند الطلبات الكبيرة أو العاجلة، حيث يعرف المورد المؤسسي بالفعل ما تحتاجه دون الحاجة لشرح مطول في كل مرة.</p>
+      <p style="margin-top:16px">هذا هو بالضبط النموذج الذي نتبعه في نيو جولدن أوفيس مع عملائنا المؤسسيين في الإسكندرية؛ علاقة عمل مستمرة يديرها مندوب حساب واحد يعرف تاريخ تعاملك، بدل تعامل متكرر مع موظفين مختلفين في كل زيارة.</p>
+    </div>
   </div>
 </section>
 
@@ -200,6 +260,8 @@ const schemaJson = JSON.stringify({
       <div class="faq-item"><div class="faq-question">هل منتجاتكم أصلية؟ وما سياسة الاستبدال والضمان؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نورد منتجات أصلية من ماركات معروفة، ونستبدل أي صنف يثبت به عيب مصنعي.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل توفّرون الأثاث المكتبي والأحبار مع القرطاسية في مكان واحد؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر القرطاسية والورق وأحبار الطابعات والسبورات والأثاث المكتبي ومعدات المكاتب من مورد واحد بفاتورة واحدة.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل توفرون ورق A4 بالجملة لشركة في سموحة أو سيدي جابر؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نورد ورق A4 بالجملة لكل مناطق الإسكندرية، وسموحة وسيدي جابر ضمن مناطق الاستجابة السريعة لدينا.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن تخصيص قائمة أصناف ثابتة لعقد التوريد الشهري؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نبني معك قائمة أصناف وكميات ثابتة حسب استهلاكك الفعلي، ويمكن تعديلها في أي وقت مع مندوب حسابك دون تعقيد إداري.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تتعاملون مع طلبات عاجلة خارج جدول التوريد المتفق عليه؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، عملاء عقود التوريد الدوري يحصلون على أولوية في الطلبات العاجلة الإضافية بين المواعيد المجدولة عند الحاجة الفعلية.</div></div></div>
     </div>
   </div>
 </section>
@@ -245,7 +307,7 @@ const schemaJson = JSON.stringify({
             <textarea id="q-message" name="message" placeholder="الكمية أو أي تفاصيل تساعدنا نجهزلك عرض سعر دقيق"></textarea>
           </div>
           <input type="hidden" name="service" value="office-supplies">
-          <input type="hidden" name="source" value="office-supplies/alexandria">
+          <input type="hidden" name="source" value="alexandria/office-supplies">
           <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
           <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
             <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر

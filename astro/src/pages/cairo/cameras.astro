@@ -7,10 +7,10 @@ const schemaJson = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://newgoldenoffice.com/cameras/cairo#service",
+      "@id": "https://newgoldenoffice.com/cairo/cameras#service",
       "name": "تركيب وصيانة كاميرات مراقبة في القاهرة",
       "serviceType": "أنظمة كاميرات مراقبة للشركات والمنازل",
-      "url": "https://newgoldenoffice.com/cameras/cairo",
+      "url": "https://newgoldenoffice.com/cairo/cameras",
       "areaServed": { "@type": "City", "name": "القاهرة" },
       "provider": { "@id": "https://newgoldenoffice.com/#organization" }
     },
@@ -24,7 +24,10 @@ const schemaJson = JSON.stringify({
         {"@type":"Question","name":"كم مدة حفظ التسجيلات وكم سعة الهارد المطلوبة؟","acceptedAnswer":{"@type":"Answer","text":"المدة تحددها سعة التخزين مقابل عدد الكاميرات ودقتها. أغلب المحلات تطلب من أسبوعين إلى شهر."}},
         {"@type":"Question","name":"ما الأفضل: كاميرات IP أم نظام DVR؟","acceptedAnswer":{"@type":"Answer","text":"كاميرات IP مع NVR الخيار الأقوى للشركات والفروع المتعددة، وDVR مع كاميرات HD حل اقتصادي للمواقع الصغيرة."}},
         {"@type":"Question","name":"كم تكلفة نظام 4 أو 8 كاميرات في القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"التكلفة تعتمد على نوع الكاميرات ودقتها وسعة التخزين، والرقم الدقيق يأتي بعد معاينة مجانية."}},
-        {"@type":"Question","name":"هل يوجد ضمان وعقد صيانة بعد التركيب؟","acceptedAnswer":{"@type":"Answer","text":"نعم، ضمان مكتوب على الأجهزة والتركيب، وعقد صيانة سنوي اختياري بزيارات دورية."}}
+        {"@type":"Question","name":"هل يوجد ضمان وعقد صيانة بعد التركيب؟","acceptedAnswer":{"@type":"Answer","text":"نعم، ضمان مكتوب على الأجهزة والتركيب، وعقد صيانة سنوي اختياري بزيارات دورية."}},
+        {"@type":"Question","name":"هل الغبار والأتربة تؤثر على كاميرات المراقبة الخارجية في القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، الأتربة تتراكم على عدسة الكاميرا وهيكلها الخارجي فتضعف وضوح الصورة تدريجيًا خاصة في مواسم العواصف الترابية والمواقع القريبة من الطرق والإنشاءات. لهذا ننصح بتنظيف دوري للعدسات ضمن عقد الصيانة، واختيار كاميرات بتصنيف حماية مناسب (IP66 أو أعلى) للمواقع المكشوفة."}},
+        {"@type":"Question","name":"كيف أحسب سعة الهارد ديسك التي أحتاجها لعدد كاميراتي؟","acceptedAnswer":{"@type":"Answer","text":"يعتمد الحساب على عدد الكاميرات ودقتها ومعدل الإطارات وعدد أيام الحفظ المطلوبة. كاميرا واحدة عالية الدقة تسجل بدقة كاملة على مدار الساعة تستهلك مساحة أكبر بكثير من كاميرا اقتصادية بتسجيل عند الحركة فقط. نحدد لك السعة الدقيقة بعد معرفة عدد الكاميرات ومدة الاحتفاظ المطلوبة."}},
+        {"@type":"Question","name":"هل يمكن ربط نظام الكاميرات بجرس إنذار أو نظام تحكم في الدخول؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نربط أنظمة المراقبة بأجهزة الإنذار وأنظمة التحكم في الدخول بالبصمة أو الكارت في مشروع واحد متكامل، فتحصل على تنبيه فوري وتسجيل مصور لنفس الحدث في آن واحد."}}
       ]
     }
   ]
@@ -99,6 +102,11 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>أن ترى كل فروعك وأنت في مكتبك، هذه ليست ميزة إضافية بل أساس أي نظام مراقبة حديث. نيو جولدن أوفيس شركة كاميرات مراقبة في القاهرة بخبرة 27 عامًا في تأمين بيئات العمل: معاينة مجانية لموقعك، توريد وتركيب كاميرات أصلية بضمان مكتوب، برمجة المشاهدة عن بُعد من الموبايل، وعقود صيانة سنوية. نقطة قوتنا التي لا يقدمها غيرنا: أنظمة مراقبة الفروع المتعددة من شاشة واحدة، لأننا نحن أنفسنا ندير عملياتنا في القاهرة من الإسكندرية عن بُعد بانضباط كامل، ونبني لك نفس النموذج.</p>
+      <p style="margin-top:16px">هذا التخصص ليس نظريًا؛ فرقنا الميدانية في القاهرة تنفذ عشرات مشاريع التركيب سنويًا لعملاء من قطاعات مختلفة تمامًا، من المحلات الصغيرة إلى المقرات الإدارية الكبيرة، وهذا التنوع يمنحنا خبرة عملية في التعامل مع أي تحدٍ تقني قد يظهر أثناء التركيب أو التشغيل.</p>
+      <p style="margin-top:16px">نحرص أيضًا على تدريب عميلنا شخصيًا على استخدام تطبيق المشاهدة عن بُعد قبل مغادرة الفريق الفني للموقع، حتى لا تحتاج لطلب دعم إضافي لاحقًا لأمور بسيطة تتعلق بالاستخدام اليومي للنظام.</p>
+      <p style="margin-top:16px">نراجع أيضًا مع العميل زوايا التغطية بعد التركيب مباشرة للتأكد من أنها تغطي كل النقاط الحرجة المتفق عليها مسبقًا، بدل اكتشاف نقطة عمياء لاحقًا عند الحاجة الفعلية للتسجيل.</p>
+      <p style="margin-top:16px">نقدم أيضًا لعملائنا في القاهرة زيارة فحص مجانية بعد أول ستة أشهر من التركيب، للتأكد من استقرار النظام وسلامة كل الكابلات والوصلات.</p>
+      <p style="margin-top:16px">نتابع أيضًا أي تحديث برمجي مطلوب لتطبيق المشاهدة عن بُعد، ونبلغ عملاءنا به مباشرة لضمان استمرارية عمل النظام بأفضل أداء ممكن.</p>
     </div>
 
     <div class="section-header">
@@ -148,6 +156,19 @@ const schemaJson = JSON.stringify({
       </table>
     </div>
     <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">تفرقة مهمة أخرى: الكاميرا الخارجية مصممة لتتحمل شمس الصيف وأتربة القاهرة، بينما الداخلية أرخص لأنها لا تحتاج هذه الحماية. تركيب كاميرا داخلية في مكان مكشوف من أكثر الأخطاء التي نصلحها في مواقع ركبها آخرون.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تحدد عدد الكاميرات المناسب لمكتبك أو محلك في القاهرة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>العدد الصحيح يتحدد بنقاط التغطية الحرجة لا بمساحة المكان: المدخل الرئيسي، نقاط الدفع أو الاستقبال، المخارج الجانبية، والزوايا العمياء التي لا تغطيها كاميرا أخرى. مكتب صغير في التجمع الخامس قد يحتاج 4 كاميرات فقط بتوزيع ذكي، بينما فرع تجاري كبير في مدينة نصر أو وسط البلد المالي قد يحتاج 8 كاميرات أو أكثر لتغطية كل الطوابق والمداخل.</p>
+      <p style="margin-top:16px">في بيئة القاهرة، حيث الغبار كثيف خاصة قرب الطرق الرئيسية ومناطق الإنشاءات، ننصح باختيار كاميرات بأغطية مقاومة للغبار وجدول تنظيف أكثر تكرارًا للعدسات الخارجية مقارنة بالمدن الساحلية، لضمان بقاء جودة الصورة واضحة على المدى الطويل.</p>
+    </div>
   </div>
 </section>
 
@@ -225,12 +246,55 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h4>المعادي</h4><p>شركات ومكاتب مهنية تطلب أنظمة مرتبة المظهر بتمديدات مخفية.</p></div>
       <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h4>القاهرة الجديدة</h4><p>منشآت وفروع جديدة نجهزها بالكامل من الصفر.</p></div>
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>وسط البلد المالي</h4><p>مقرات وأنشطة تتعامل مع النقود يوميًا وتحتاج تسجيلًا موثوقًا طويل المدى.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>مصر الجديدة</h4><p>محلات وعيادات ومقار إدارية بمباني قديمة تحتاج تمديدات مرتبة تحافظ على شكل الواجهة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>الشيخ زايد و6 أكتوبر</h4><p>الفلل والمجمعات السكنية والإدارية الحديثة، بأنظمة IP متكاملة مع بوابات الدخول.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الغبار والأتربة وأثرها على عدسة الكاميرا وهيكلها الخارجي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>مثلما تتأثر التكييفات بغبار القاهرة، تتأثر الكاميرات الخارجية بنفس التحدي المناخي لكن بطريقة مختلفة: طبقة رقيقة من الأتربة على العدسة كافية لتقليل وضوح الصورة تدريجيًا دون أن يلاحظ أحد حتى تحتاج التسجيل فعليًا فتجده باهتًا أو ضبابيًا. الأتربة تتسلل أيضًا إلى فتحات التهوية في هيكل الكاميرا نفسه، خاصة في المواقع القريبة من الطرق الرئيسية ومناطق الإنشاءات المستمرة في القاهرة الجديدة والتجمع الخامس.</p>
+      <p style="margin-top:16px">لهذا نراعي نقطتين عند التركيب: اختيار كاميرا بتصنيف حماية مناسب (IP66 فأعلى) للمواقع المكشوفة تمامًا، وتحديد زاوية تركيب تقلل التعرض المباشر للرياح المحملة بالأتربة قدر الإمكان. وفي عقد الصيانة الاختياري ندرج تنظيف العدسات ضمن الزيارات الدورية، لأن كاميرا نظيفة لا تُرى فائدتها إلا يوم تحتاج مراجعة تسجيل حاسم فتجده واضحًا لا ضبابيًا.</p>
     </div>
   </div>
 </section>
 
 <section class="section section-bg">
   <div class="container">
+    <div class="section-header">
+      <h2>دليل حساب سعة التخزين ومدة حفظ التسجيلات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>سؤال يتكرر كثيرًا: "كام هارد أحتاج؟" والإجابة الصحيحة تعتمد على ثلاثة عوامل مجتمعة لا عامل واحد: عدد الكاميرات، دقة كل كاميرا (كلما زادت الدقة زاد حجم الملف)، ومدة الاحتفاظ المطلوبة بالتسجيل. كاميرا تسجل بدقة عالية على مدار الساعة تستهلك مساحة تخزين أضعاف كاميرا تسجل فقط عند رصد حركة، وهذا الخيار الأخير يوفر مساحة كبيرة لمن لا يحتاج تسجيلًا مستمرًا فعليًا.</p>
+      <p style="margin-top:16px">كقاعدة استرشادية: المحلات والصيدليات عادة تكتفي بأسبوعين إلى شهر من الحفظ، بينما البنوك وشركات الصرافة في وسط البلد المالي تطلب مددًا أطول تصل لعدة أشهر لأسباب تدقيق ومراجعة. نحدد السعة الدقيقة المطلوبة لموقعك بعد معرفة عدد الكاميرات ومدة الاحتفاظ التي يفرضها نشاطك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تكامل مع أجهزة الإنذار والتحكم في الدخول</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bell"></i></div><h4>ربط مع جرس الإنذار</h4><p>تنبيه فوري على الموبايل مع تسجيل مصور للحظة الإنذار نفسها.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-fingerprint"></i></div><h4>تكامل مع بصمة الدخول</h4><p>كل عملية دخول أو خروج تُربط بلقطة مصورة توثق الحدث.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-triangle-exclamation"></i></div><h4>تنبيهات حركة ذكية</h4><p>تحديد مناطق حساسة (كاشير، مخزن، بوابة) لتنبيهات فورية دون إزعاج من حركة عادية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">غير كاميرات المراقبة، نقدر نجهزلك في القاهرة: <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/copiers">ماكينات تصوير</a>، <a href="/cairo/office-supplies">مستلزمات مكتبية</a>، <a href="/cairo/cash-machines">ماكينات عد نقود</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. تجهيز شامل؟ شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
       <div class="divider"></div>
@@ -244,6 +308,10 @@ const schemaJson = JSON.stringify({
       <div class="faq-item"><div class="faq-question">ما الأفضل: كاميرات IP أم نظام DVR؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">IP مع NVR الخيار الأقوى للشركات والفروع المتعددة، وDVR مع HD حل اقتصادي للمواقع الصغيرة.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم تكلفة نظام 4 أو 8 كاميرات في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">التكلفة تعتمد على النوع والدقة وسعة التخزين، والرقم الدقيق يأتي بعد معاينة مجانية.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يوجد ضمان وعقد صيانة بعد التركيب؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، ضمان مكتوب على الأجهزة والتركيب، وعقد صيانة سنوي اختياري.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل الغبار والأتربة تؤثر على كاميرات المراقبة الخارجية في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، تتراكم على العدسة والهيكل الخارجي فتضعف وضوح الصورة تدريجيًا. ننصح بكاميرات بتصنيف حماية IP66 فأعلى للمواقع المكشوفة وتنظيف دوري ضمن عقد الصيانة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أحسب سعة الهارد ديسك التي أحتاجها لعدد كاميراتي؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">يعتمد على عدد الكاميرات ودقتها ومدة الحفظ المطلوبة. نحدد السعة الدقيقة بعد معرفة تفاصيل موقعك.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن ربط نظام الكاميرات بجرس إنذار أو نظام تحكم في الدخول؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نربطها في مشروع واحد متكامل فتحصل على تنبيه فوري وتسجيل مصور لنفس الحدث.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم يستغرق تركيب نظام كاميرات كامل لفرع في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تركيب نظام من 4 إلى 8 كاميرات يستغرق عادة يوم عمل واحد، من التمديد حتى ضبط تطبيق المشاهدة عن بُعد. الأنظمة الأكبر في المباني متعددة الطوابق قد تحتاج يومين حسب تعقيد التمديدات.</div></div></div>
     </div>
   </div>
 </section>
@@ -288,7 +356,7 @@ const schemaJson = JSON.stringify({
             <textarea id="q-message" name="message" placeholder="عدد الفروع أو المداخل والمنطقة بالقاهرة"></textarea>
           </div>
           <input type="hidden" name="service" value="cameras">
-          <input type="hidden" name="source" value="cameras/cairo">
+          <input type="hidden" name="source" value="cairo/cameras">
           <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
           <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
             <i class="fa-solid fa-paper-plane"></i> اطلب المعاينة المجانية

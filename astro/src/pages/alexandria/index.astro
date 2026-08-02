@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import MidPageCTA from '../components/MidPageCTA.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -25,12 +25,12 @@ const schemaJson = JSON.stringify({
         "@type": "OfferCatalog",
         "name": "خدمات نيو جولدن أوفيس في الإسكندرية",
         "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"خدمات الطباعة في الإسكندرية","url":"https://newgoldenoffice.com/printing/alexandria"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"الأدوات والمستلزمات المكتبية في الإسكندرية","url":"https://newgoldenoffice.com/office-supplies/alexandria"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"بيع وتركيب وصيانة التكييفات في الإسكندرية","url":"https://newgoldenoffice.com/ac/alexandria"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"أنظمة كاميرات المراقبة في الإسكندرية","url":"https://newgoldenoffice.com/cameras/alexandria"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"ماكينات التصوير والطابعات في الإسكندرية","url":"https://newgoldenoffice.com/copiers/alexandria"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"ماكينات عد النقود وكشف التزييف في الإسكندرية","url":"https://newgoldenoffice.com/cash-machines/alexandria"}}
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"خدمات الطباعة في الإسكندرية","url":"https://newgoldenoffice.com/alexandria/printing"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"الأدوات والمستلزمات المكتبية في الإسكندرية","url":"https://newgoldenoffice.com/alexandria/office-supplies"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"بيع وتركيب وصيانة التكييفات في الإسكندرية","url":"https://newgoldenoffice.com/alexandria/ac"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"أنظمة كاميرات المراقبة في الإسكندرية","url":"https://newgoldenoffice.com/alexandria/cameras"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"ماكينات التصوير والطابعات في الإسكندرية","url":"https://newgoldenoffice.com/alexandria/copiers"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"ماكينات عد النقود وكشف التزييف في الإسكندرية","url":"https://newgoldenoffice.com/alexandria/cash-machines"}}
         ]
       }
     },
@@ -42,7 +42,7 @@ const schemaJson = JSON.stringify({
         {"@type":"Question","name":"ما المناطق التي تغطيها خدماتكم داخل الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"نغطي مناطق الإسكندرية الرئيسية: وسط البلد، سموحة، سيدي جابر، ميامي، جليم، لوران، إضافة إلى أسواق المنشية والعطارين ومنطقة الميناء والكورنيش. تواصل معنا وسنؤكد لك التغطية والموعد المناسب."}},
         {"@type":"Question","name":"هل يمكن زيارة مقركم قبل التعاقد أو الشراء؟","acceptedAnswer":{"@type":"Answer","text":"نعم، وننصح بها. يمكنك زيارة مقرنا بالإسكندرية ومعاينة ماكينات التصوير وماكينات عد النقود ونماذج المطبوعات بنفسك قبل اتخاذ القرار."}},
         {"@type":"Question","name":"ما مواعيد التسليم والتركيب داخل الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"لأن مقرنا وفريقنا الفني داخل المدينة، التسليم سريع والاستجابة قريبة. نتفق معك على موعد واضح قبل تأكيد الطلب ونلتزم به، سواء كان توريد مستلزمات أو تركيب تكييف أو نظام كاميرات."}},
-        {"@type":"Question","name":"هل يمكن التعاقد على أكثر من خدمة معًا؟","acceptedAnswer":{"@type":"Answer","text":"نعم، وهذا ما يفعله معظم عملائنا من الشركات. جهة واحدة تتولى الطباعة والمستلزمات والأجهزة والصيانة، بحساب واحد ومتابعة واحدة وشروط أفضل لحجم التعاقد الأكبر."}},
+        {"@type":"Question","name":"هل يمكن التعاقد على أكثر من خدمة معًا؟","acceptedAnswer":{"@type":"Answer","text":"نعم. لو بتجهّز مكتب أو نشاط جديد بالكامل، عندنا صفحة مخصصة توضح كيف ننسق الست خدمات في مشروع واحد بعقد وفاتورة ومندوب حساب واحد: newgoldenoffice.com/alexandria/office-setup"}},
         {"@type":"Question","name":"هل تقدمون عقود صيانة سنوية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نقدم عقود صيانة وقائية سنوية للتكييفات وماكينات التصوير وأنظمة كاميرات المراقبة، بزيارات دورية مجدولة وأولوية استجابة عند أي عطل طارئ."}},
         {"@type":"Question","name":"هل تصدرون فواتير ضريبية وهل يوجد دفع آجل للشركات؟","acceptedAnswer":{"@type":"Answer","text":"نصدر فواتير ضريبية للشركات والجهات التي تحتاجها، ونوفر ترتيبات دفع مؤسسية تشمل الدفع الآجل للحسابات المتعاقدة بحسب الاتفاق."}},
         {"@type":"Question","name":"كيف أحصل على عرض سعر ومم يتحدد السعر؟","acceptedAnswer":{"@type":"Answer","text":"تواصل معنا وحدد احتياجك. يتحدد السعر حسب المواصفات والكمية والماركة وحجم التعاقد ونوع التركيب أو الصيانة المطلوبة، وتستلم عرضًا مفصلًا واضح البنود قبل أي التزام."}},
@@ -132,6 +132,7 @@ const schemaJson = JSON.stringify({
     <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>من قلب الإسكندرية، ومنذ 27 عامًا، تقدم شركة نيو جولدن أوفيس كل ما يحتاجه مكتبك أو شركتك في مكان واحد. خدماتنا في الإسكندرية تغطي 6 تخصصات كاملة: الطباعة، الأدوات المكتبية، التكييفات، كاميرات المراقبة، ماكينات التصوير، وماكينات عد النقود. مقرنا الفعلي في 26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية، وهذا فارق حقيقي: تزورنا وترى المنتجات قبل الشراء، ونصلك بسرعة أينما كنت في المدينة، وتجد من يرد عليك بعد البيع لأننا هنا فعلًا، لا مجرد رقم على الإنترنت.</p>
       <p style="margin-top:16px">نحن لسنا وسيطًا يجمع لك موردين متفرقين. نحن شركة توريدات وخدمات مكتبية بالإسكندرية تملك خبرة تشغيل حقيقية: نورد، نركب، نصون، ونبقى معك بعد البيع. فريق واحد ومسؤولية واحدة وحساب واحد. هذا ما جعل شركات ومصانع وبنوكًا وعيادات ومدارس ومحال تجارية في الإسكندرية تتعامل معنا لسنوات طويلة وتجدد التعاقد عامًا بعد عام.</p>
+      <p style="margin-top:16px">هذا التنوع في قاعدة عملائنا صقل خبرتنا في التعامل مع أي نوع نشاط تقريبًا، لأننا تعاملنا فعليًا مع تفاصيله من قبل ونعرف نقاط الحساسية الخاصة بكل قطاع — من متطلبات الأمان الصارمة للبنوك، إلى حساسية التوقيت لدى المصانع التي لا تحتمل توقف خط الإنتاج بسبب عطل بسيط في التكييف أو ماكينة التصوير.</p>
     </div>
 
     <div class="section-header">
@@ -144,44 +145,45 @@ const schemaJson = JSON.stringify({
         <div class="service-icon"><i class="fas fa-print"></i></div>
         <h3 class="service-title">خدمات الطباعة في الإسكندرية</h3>
         <p class="service-desc">طباعة أوفست وديجيتال، كروت شخصية، فلايرات، بروشورات، كتالوجات، رول أب، بنرات ولافتات فينيل. نراجع العينة معك في نفس المدينة قبل التنفيذ.</p>
-        <a href="/printing/alexandria" class="btn btn-outline btn-sm">خدمات الطباعة في الإسكندرية <i class="fas fa-arrow-left"></i></a>
+        <a href="/alexandria/printing" class="btn btn-outline btn-sm">خدمات الطباعة في الإسكندرية <i class="fas fa-arrow-left"></i></a>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
         <h3 class="service-title">الأدوات والمستلزمات المكتبية</h3>
         <p class="service-desc">ورق تصوير، أقلام، ملفات وأرشفة، قرطاسية، أحبار طابعات، سبورات. بيع بالجملة وعقود توريد دوري شهري بفواتير ضريبية للشركات.</p>
-        <a href="/office-supplies/alexandria" class="btn btn-outline btn-sm">الأدوات والمستلزمات المكتبية <i class="fas fa-arrow-left"></i></a>
+        <a href="/alexandria/office-supplies" class="btn btn-outline btn-sm">الأدوات والمستلزمات المكتبية <i class="fas fa-arrow-left"></i></a>
       </div>
 
       <div class="service-card reveal delay-1">
         <div class="service-icon"><i class="fas fa-snowflake"></i></div>
         <h3 class="service-title">بيع وتركيب وصيانة التكييفات</h3>
         <p class="service-desc">توريد وتركيب وصيانة تكييفات سبليت وشباك لأشهر الماركات، مع اختيار القدرة المناسبة ومتابعة دورية بشحن الفريون.</p>
-        <a href="/ac/alexandria" class="btn btn-outline btn-sm">بيع وتركيب وصيانة التكييفات <i class="fas fa-arrow-left"></i></a>
+        <a href="/alexandria/ac" class="btn btn-outline btn-sm">بيع وتركيب وصيانة التكييفات <i class="fas fa-arrow-left"></i></a>
       </div>
 
       <div class="service-card reveal delay-2">
         <div class="service-icon"><i class="fas fa-video"></i></div>
         <h3 class="service-title">أنظمة كاميرات المراقبة</h3>
         <p class="service-desc">كاميرات IP وWiFi، أجهزة تسجيل DVR وNVR، توريد وتركيب وبرمجة ومتابعة عن بعد من هاتفك أينما كنت.</p>
-        <a href="/cameras/alexandria" class="btn btn-outline btn-sm">أنظمة كاميرات المراقبة <i class="fas fa-arrow-left"></i></a>
+        <a href="/alexandria/cameras" class="btn btn-outline btn-sm">أنظمة كاميرات المراقبة <i class="fas fa-arrow-left"></i></a>
       </div>
 
       <div class="service-card reveal delay-3">
         <div class="service-icon"><i class="fas fa-copy"></i></div>
         <h3 class="service-title">ماكينات التصوير والطابعات</h3>
         <p class="service-desc">ماكينات تصوير وطابعات لماركات معروفة مثل ريكو وكانون وكونيكا مينولتا، مع أحبار وقطع غيار أصلية وعقود صيانة.</p>
-        <a href="/copiers/alexandria" class="btn btn-outline btn-sm">ماكينات التصوير والطابعات <i class="fas fa-arrow-left"></i></a>
+        <a href="/alexandria/copiers" class="btn btn-outline btn-sm">ماكينات التصوير والطابعات <i class="fas fa-arrow-left"></i></a>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
         <h3 class="service-title">ماكينات عد النقود وكشف التزييف</h3>
         <p class="service-desc">ماكينات عد نقود وكشف تزييف للبنوك والصرافات والمحال التجارية، لماركات متداولة مثل جلوري وكاسيدا، وماكينات فرم مستندات.</p>
-        <a href="/cash-machines/alexandria" class="btn btn-outline btn-sm">ماكينات عد النقود وكشف التزييف <i class="fas fa-arrow-left"></i></a>
+        <a href="/alexandria/cash-machines" class="btn btn-outline btn-sm">ماكينات عد النقود وكشف التزييف <i class="fas fa-arrow-left"></i></a>
       </div>
     </div>
+    <p style="max-width:800px;margin:32px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">بتفتح فرع جديد أو بتجهّز مكتب من الصفر وعايز الست خدمات دي منسقة في مشروع واحد؟ <a href="/alexandria/office-setup">صفحة تجهيز مكتب متكامل في الإسكندرية</a>.</p>
   </div>
 </section>
 
@@ -234,6 +236,7 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="intro-text" style="max-width:900px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>نخدم وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران، ونغطي الأسواق التقليدية في المنشية والعطارين حيث تتركز محال الجملة والتجارة. قربنا من الميناء يجعلنا خيارًا عمليًا لشركات الاستيراد والتصدير والتوكيلات الملاحية التي تحتاج تجهيزًا سريعًا لمكاتبها، ومحال ومطاعم وكافيهات الكورنيش تجد عندنا كل تجهيزات التشغيل من كاميرات وتكييف ومطبوعات في تعاقد واحد.</p>
+      <p style="margin-top:16px">كوننا موجودين فعليًا في المدينة منذ 1999، فرقنا الفنية تعرف تفاصيل كل حي جيدًا — من طبيعة المباني القديمة في وسط البلد التي تحتاج مراعاة خاصة عند تمديد الكابلات، إلى المجمعات الحديثة في سموحة وميامي ذات المعايير الإنشائية المختلفة. هذه المعرفة المحلية المتراكمة توفر عليك وقتًا وتفاصيل تقنية قد لا ينتبه لها فريق من خارج المدينة يزور الإسكندرية لأول مرة لتنفيذ مشروعك.</p>
       <p style="margin-top:16px">الميزة الحقيقية في التعامل مع جهة واحدة داخل المدينة؟ توفير الوقت والمسؤولية الواضحة. بدلًا من مورد للطباعة وآخر للتكييف وثالث للكاميرات ورابع للأحبار، فريق واحد يعرف شركتك ويتابع كل احتياجاتها ويصلك في أي حي من أحياء الإسكندرية.</p>
     </div>
   </div>
@@ -254,6 +257,25 @@ const schemaJson = JSON.stringify({
         <li><strong>التركيب والصيانة:</strong> طبيعة الموقع وعدد النقاط ونوع عقد الصيانة المطلوب بعد التركيب.</li>
       </ul>
       <p style="margin-top:20px;text-align:center">لهذا نقدم عرض سعر مخصصًا لكل عميل: تخبرنا باحتياجك، نعاينه أو نراجعه معك، ثم تستلم عرضًا واضح البنود بلا مفاجآت.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا الشركات في الإسكندرية تفضل مورد واحد لكل خدماتها؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>عندما تحتاج شركتك لتكييف مكتب جديد، وكاميرات مراقبة للمحل، ومستلزمات مكتبية شهرية، ومطبوعات لهويتك التجارية، التعامل مع أربعة موردين مختلفين يعني أربع فواتير منفصلة، وأربعة أشخاص مختلفين للتواصل معهم، وأربع جداول زمنية قد تتعارض مع بعضها. نيو جولدن أوفيس تحل هذه المشكلة بمنطق بسيط: جهة واحدة، مندوب حساب واحد، وفاتورة موحدة لكل ما تحتاجه.</p>
+      <p style="margin-top:16px">هذا التكامل ليس شعارًا تسويقيًا فقط؛ فريقنا الداخلي منظم بحيث يعرف كل قسم تفاصيل عملائه المشتركين مع الأقسام الأخرى، فإذا كنت عميلًا لدينا في التكييف وتحتاج لاحقًا كاميرات مراقبة، لا تبدأ من الصفر في شرح تفاصيل شركتك مرة أخرى لموظف جديد لا يعرف تاريخ تعاملك معنا سابقًا في أي قسم آخر.</p>
+      <p style="margin-top:16px">نفخر بأن كثيرًا من عملائنا في الإسكندرية توسّعوا معنا تدريجيًا من خدمة واحدة إلى التعامل الكامل عبر أقسامنا الستة، وهذا النمو في العلاقة هو أفضل دليل على جودة الخدمة التي نقدمها باستمرار.</p>
+      <p style="margin-top:16px">نحرص دائمًا على أن يشعر كل عميل، مهما كان حجم طلبه، بأنه يتعامل مع فريق يهتم فعليًا بنجاح عمله، لا مجرد بائع يبحث عن إتمام صفقة واحدة.</p>
+      <p style="margin-top:16px">هذا هو السبب الرئيسي وراء استمرار كثير من عملائنا معنا منذ سنوات طويلة، رغم وجود بدائل أخرى في السوق قد تبدو أرخص للوهلة الأولى.</p>
+      <p style="margin-top:16px">نرحب دائمًا بأي استفسار أو ملاحظة، ونعتبر كل تواصل فرصة لتحسين خدمتنا أكثر لعملائنا في الإسكندرية.</p>
+      <p style="margin-top:16px">تواصل معنا اليوم لتكتشف بنفسك الفارق الذي يقدمه شريك موثوق يعمل في مدينتك منذ 27 عامًا.</p>
+      <p style="margin-top:16px">فريقنا في انتظارك على 01227392074 أو عبر واتساب، وسنكون سعداء بمساعدتك في أي احتياج مكتبي أو تشغيلي لديك.</p>
     </div>
   </div>
 </section>
@@ -322,7 +344,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="faq-item">
         <div class="faq-question">هل يمكن التعاقد على أكثر من خدمة معًا؟<i class="fas fa-plus"></i></div>
-        <div class="faq-answer"><div class="faq-answer-inner">نعم، وهذا ما يفعله معظم عملائنا من الشركات. جهة واحدة تتولى الطباعة والمستلزمات والأجهزة والصيانة، بحساب واحد ومتابعة واحدة وشروط أفضل لحجم التعاقد الأكبر.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">نعم. لو بتجهّز مكتب أو نشاط جديد بالكامل، شوف <a href="/alexandria/office-setup">صفحة تجهيز المكتب المتكامل في الإسكندرية</a> اللي بتوضح إزاي ننسق الست خدمات في مشروع واحد بعقد وفاتورة ومندوب حساب واحد.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-question">هل تقدمون عقود صيانة سنوية؟<i class="fas fa-plus"></i></div>
@@ -339,6 +361,14 @@ const schemaJson = JSON.stringify({
       <div class="faq-item">
         <div class="faq-question">هل تخدمون مناطق خارج الإسكندرية؟<i class="fas fa-plus"></i></div>
         <div class="faq-answer"><div class="faq-answer-inner">نعم، نقدم تغطية خدمة كاملة في القاهرة تشمل التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد، بمسارات تسليم مجدولة وفرق ميدانية متنقلة.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">هل يمكن الحصول على استشارة مجانية قبل اتخاذ قرار الشراء؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">نعم، نقدم استشارة مجانية بدون التزام لكل خدماتنا. أخبرنا بطبيعة نشاطك واحتياجك، وسنساعدك في تحديد الحل الأنسب من حيث المواصفات والميزانية قبل أي قرار شراء.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">ما الفرق بين التعامل معكم والتعامل مع محل تجزئة عادي؟<i class="fas fa-plus"></i></div>
+        <div class="faq-answer"><div class="faq-answer-inner">محل التجزئة يخدمك مرة واحدة عند الشراء، بينما نحن نبني علاقة تعامل مستمرة تشمل الضمان والصيانة الدورية ومندوب حساب يعرف تاريخ تعاملك، وهذا يظهر فرقه الحقيقي بعد الشراء لا أثناءه فقط.</div></div>
       </div>
     </div>
   </div>

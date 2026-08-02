@@ -7,10 +7,10 @@ const schemaJson = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://newgoldenoffice.com/copiers/alexandria#service",
+      "@id": "https://newgoldenoffice.com/alexandria/copiers#service",
       "name": "بيع وصيانة ماكينات تصوير في الإسكندرية",
       "serviceType": "بيع وصيانة ماكينات تصوير مستندات",
-      "url": "https://newgoldenoffice.com/copiers/alexandria",
+      "url": "https://newgoldenoffice.com/alexandria/copiers",
       "provider": { "@id": "https://newgoldenoffice.com/#organization" },
       "areaServed": { "@type": "City", "name": "الإسكندرية" }
     },
@@ -99,6 +99,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>إذا كنت تبحث عن شركة ماكينات تصوير في الإسكندرية توفر الجهاز والحبر والصيانة وقطع الغيار من مكان واحد، فأنت في العنوان الصحيح. نيو جولدن أوفيس تخدم مكاتب وشركات ومدارس الإسكندرية منذ 27 عامًا من مقرنا الفعلي: 26 عبد المنعم سند، الإبراهيمية، باب شرق. نبيع ماكينات جديدة واستيراد خارج من أشهر الماركات، ونقدم صيانة وأحبارًا وتونر أصليًا، مع خيارات تقسيط وإيجار وعقود صيانة سنوية للشركات.</p>
+      <p style="margin-top:16px">كوننا في الإسكندرية منذ التأسيس عام 1999، نعرف تفاصيل السوق المحلي جيدًا: طبيعة مكاتب الاستيراد والتصدير حول الميناء، احتياجات المدارس والمعاهد المنتشرة في المدينة، ومتطلبات الشركات الصغيرة والمتوسطة التي تكوّن غالبية عملائنا. هذه المعرفة المتراكمة تجعلنا نرشح لك الحل الصحيح من أول محاولة بدل التجربة والخطأ.</p>
     </div>
 
     <div class="section-header">
@@ -109,6 +110,7 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>27 عامًا من العمل الفعلي</h4><p>مررنا بأجيال كاملة من الموديلات ونعرف ما يصمد في الاستخدام المصري الكثيف.</p></div>
       <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مقر حقيقي داخل الإسكندرية</h4><p>لا مخزن بعيد ولا وسيط. تزورنا وترى الماكينات وتستلم خدمتك من فريق تعرفه.</p></div>
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-scale-balanced"></i></div><h4>حيادية الماركة</h4><p>نوفر توشيبا وريكو وزيروكس وكيوسيرا وكانون وكونيكا مينولتا بترشيح محايد.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h4>دعم فني مستمر بعد البيع</h4><p>لا نتركك بعد التوقيع؛ نبقى معك لأي استفسار أو عطل طارئ طوال عمر الجهاز الافتراضي.</p></div>
     </div>
   </div>
 </section>
@@ -120,8 +122,8 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-star"></i></div><h3 class="service-title">الماكينة الجديدة</h3><p class="service-desc">أحدث التقنيات وأطول عمر تشغيلي وضمان كامل من اليوم الأول، للشركات التي لا تحتمل مفاجآت.</p><a href="/copiers/buy" class="btn btn-outline btn-sm">ماكينات للبيع <i class="fas fa-arrow-left"></i></a></div>
-      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-recycle"></i></div><h3 class="service-title">استيراد خارج (استعمال خارج)</h3><p class="service-desc">ماكينات مستعملة بحالة جيدة وعداد منخفض، مفحوصة وبضمان موثق، بتكلفة أقل وضوحًا.</p></div>
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-star"></i></div><h3 class="service-title">الماكينة الجديدة</h3><p class="service-desc">أحدث التقنيات وأطول عمر تشغيلي وضمان كامل من اليوم الأول، للشركات التي لا تحتمل مفاجآت أو انقطاعًا في العمل.</p><a href="/copiers/buy" class="btn btn-outline btn-sm">ماكينات للبيع <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-recycle"></i></div><h3 class="service-title">استيراد خارج (استعمال خارج)</h3><p class="service-desc">ماكينات مستعملة بحالة جيدة وعداد منخفض، مفحوصة وبضمان موثق، بتكلفة أقل وضوحًا ومناسبة للميزانيات المحدودة.</p></div>
     </div>
   </div>
 </section>
@@ -136,7 +138,7 @@ const schemaJson = JSON.stringify({
       <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
         <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">الماركة</th><th style="padding:14px 16px;text-align:right">أبرز ما تُعرف به</th><th style="padding:14px 16px;text-align:right">الأنسب لمن؟</th></tr></thead>
         <tbody>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">توشيبا e-Studio</td><td style="padding:12px 16px">انتشار واسع وقطع غيار متوفرة دائمًا</td><td style="padding:12px 16px">خيار عملي مضمون</td></tr>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">توشيبا e-Studio</td><td style="padding:12px 16px">انتشار واسع وقطع غيار متوفرة دائمًا في السوق المحلي</td><td style="padding:12px 16px">خيار عملي مضمون</td></tr>
           <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">ريكو Ricoh MP</td><td style="padding:12px 16px">تحمّل قوي للأحجام الكبيرة</td><td style="padding:12px 16px">الاستخدام الكثيف</td></tr>
           <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">زيروكس Xerox</td><td style="padding:12px 16px">جودة ألوان قوية</td><td style="padding:12px 16px">طباعة مواد ألوان وعروض</td></tr>
           <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">كيوسيرا Kyocera</td><td style="padding:12px 16px">مكونات طويلة العمر</td><td style="padding:12px 16px">تكلفة تشغيل منخفضة</td></tr>
@@ -156,7 +158,11 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p><strong>قرب الميناء، حيث لا يحتمل المستند التأخير.</strong> مكاتب الاستيراد والتصدير والتخليص حول الميناء تتعامل يوميًا مع مستندات شحن وفواتير وبوالص لا بد أن تُنسخ وتُطبع في وقتها. لهذه المكاتب نوفر ماكينات تتحمل الاستخدام الكثيف واستجابة صيانة سريعة، مع توريد أحبار منتظم.</p>
+      <p style="margin-top:16px">هذا القطاع تحديدًا لا يحتمل توقف ماكينة التصوير ولو ليوم واحد، لذلك نمنحه أولوية استجابة خاصة ضمن عقود الصيانة، مع احتفاظنا بمخزون قطع غيار جاهز للموديلات الأكثر انتشارًا في هذه المكاتب لتقليل وقت الإصلاح للحد الأدنى.</p>
+      <p style="margin-top:16px">نتابع أيضًا بشكل دوري أداء الماكينات المؤجرة أو المباعة لعملائنا في هذا القطاع، ونقترح الصيانة الوقائية أو الاستبدال قبل أن يتحول أي تراجع بسيط في الأداء إلى توقف كامل يعطل العمل.</p>
+      <p style="margin-top:16px">نحتفظ أيضًا بسجل صيانة مفصل لكل ماكينة نبيعها أو نؤجرها، ما يساعدنا في تشخيص أي عطل متكرر بسرعة أكبر بالاعتماد على تاريخ الجهاز الفعلي بدل البدء من الصفر في كل زيارة.</p>
       <p style="margin-top:16px"><strong>للمدارس والجامعات ومراكز الدروس.</strong> قطاع التعليم يطبع بكثافة موسمية عالية: مذكرات وامتحانات وأوراق عمل بكميات كبيرة في فترات ضيقة. نرشح ماكينات بسرعات إنتاج مناسبة وتكلفة نسخة اقتصادية، مع عقود صيانة تضمن جاهزية الماكينة في مواسم الامتحانات.</p>
+      <p style="margin-top:16px"><strong>للمحال التجارية ومكاتب الخدمات العامة.</strong> المحال التي تقدم خدمات تصوير وطباعة للجمهور تحتاج ماكينات تتحمل التشغيل شبه المستمر طوال ساعات العمل مع سرعة استرداد عالية بين الطلبات المتتالية. نساعدك في اختيار جهاز اقتصادي في التكلفة التشغيلية لأن هامش الربح في هذا النشاط يعتمد على تقليل تكلفة النسخة الواحدة قدر الإمكان.</p>
     </div>
   </div>
 </section>
@@ -168,9 +174,37 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h4>الأعطال المفاجئة</h4><p>تشخيص وإصلاح سريع بفنيين متخصصين وقطع غيار أصلية من مخزوننا داخل الإسكندرية.</p><a href="/copiers/maintenance" class="btn btn-outline btn-sm">صيانة الماكينات <i class="fas fa-arrow-left"></i></a></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-broom"></i></div><h4>الصيانة الوقائية الدورية</h4><p>تنظيف الوحدات، فحص الأسطوانات والسخانات، ومعايرة جودة الطباعة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-shield-halved"></i></div><h4>ضمان موثق</h4><p>كل ماكينة نبيعها، جديدة أو استيرادًا، تأتي بضمان موثق يحدد ما يغطيه بوضوح.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h4>الأعطال المفاجئة</h4><p>تشخيص وإصلاح سريع بفنيين متخصصين وقطع غيار أصلية من مخزوننا داخل الإسكندرية مباشرة.</p><a href="/copiers/maintenance" class="btn btn-outline btn-sm">صيانة الماكينات <i class="fas fa-arrow-left"></i></a></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-broom"></i></div><h4>الصيانة الوقائية الدورية</h4><p>تنظيف الوحدات، فحص الأسطوانات والسخانات، ومعايرة جودة الطباعة قبل ظهور أي مشكلة فعلية.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-shield-halved"></i></div><h4>ضمان موثق</h4><p>كل ماكينة نبيعها، جديدة أو استيرادًا، تأتي بضمان موثق يحدد ما يغطيه بوضوح ومدته الزمنية الدقيقة مكتوبة في الفاتورة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تختار سرعة وفئة ماكينة التصوير المناسبة لمكتبك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>أشهر خطأ يقع فيه أصحاب المكاتب هو شراء ماكينة أكبر أو أصغر من الحاجة الفعلية. الطريقة الصحيحة هي مراجعة عداد ماكينتك الحالية إن وجدت، أو حساب متوسط استهلاك الورق شهريًا من فواتير الشراء لثلاثة أشهر ماضية. مكتب صغير يطبع أقل من 3000 صفحة شهريًا يكفيه جهاز متعدد الوظائف بسرعة 20-30 نسخة في الدقيقة، بينما إدارة متوسطة تطبع بين 3000 و10000 صفحة تحتاج فئة 25-35 نسخة في الدقيقة لتعمل بارتياح دون إجهاد الجهاز.</p>
+      <p style="margin-top:16px">أما الشركات ذات أقسام التصوير المركزية أو مكاتب الاستيراد والتصدير قرب الميناء التي تطبع عشرات الآلاف من الصفحات شهريًا، فتحتاج فئة إنتاجية عالية فوق 35 نسخة في الدقيقة مع أدراج ورق متعددة وخيارات تجليد وفرز. نساعدك دائمًا في تحديد الفئة الصحيحة بناءً على حجم استهلاكك الفعلي بدل التخمين، لأن الفئة الأصغر من الحاجة تتعطل بسرعة والأكبر تُهدر تكلفة شراء غير ضرورية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أسئلة إضافية شائعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">هل يمكن ربط الماكينة بالشبكة والمسح الضوئي إلى البريد الإلكتروني؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نبرمج الماكينة للطباعة الشبكية من كل أجهزة المكتب، والمسح الضوئي المباشر إلى البريد الإلكتروني أو مجلد مشترك، مع صلاحيات وصول محددة لكل قسم عند الحاجة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم يستغرق توريد وتركيب ماكينة تصوير جديدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الأجهزة المتوفرة في المخزون يتم توريدها وتركيبها عادة خلال يوم إلى يومي عمل. أما الطلبات الخاصة بمواصفات معينة فقد تستغرق أسبوعًا إلى أسبوعين حسب التوريد من المصنّع أو الوكيل.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما أكثر الأعطال شيوعًا وكيف تُحل؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">انحشار الورق غالبًا بسبب بكرات تغذية متسخة، خطوط أو بقع على المطبوعات بسبب تونر منخفض أو وحدة تصوير متسخة. أغلبها يُحل بزيارة صيانة وقائية دورية واحدة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تقدمون استشارة مجانية لتقييم احتياجات مكتبي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نقدم زيارة استشارية مجانية بدون التزام لتقييم حجم طباعتك الحالي وعدد المستخدمين، ثم نقترح عليك الحل الأمثل من حيث نوع الجهاز والماركة والسعة.</div></div></div>
     </div>
   </div>
 </section>
@@ -184,6 +218,7 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <p style="max-width:800px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">الحبر الرديء يدمر الأسطوانة ويطفئ جودة المستندات تدريجيًا. نوفر <a href="/copiers/cartridges">أحبار وخراطيش ماكينات التصوير</a> الأصلية والمتوافقة عالية الجودة، مع توريد سريع وجدولة توريد شهرية للشركات. ونوفر قطع غيار أصلية: أسطوانات، سخانات، وحدات حرارية، ورولات سحب الورق. إذا كنت تجهز منظومة طباعة كاملة، اطلع على <a href="/copiers/printers">الطابعات المكتبية</a> لتكتمل المنظومة من مورد واحد.</p>
+    <p style="max-width:800px;margin:20px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نوفر أيضًا خدمة إعادة تعبئة الخراطيش الأصلية لمن يفضل توفير التكلفة دون التضحية بالجودة، بمعايير فحص صارمة تضمن نفس نتيجة الطباعة تقريبًا مقارنة بالخرطوشة الجديدة، وبضمان مكتوب على كل عملية تعبئة.</p>
   </div>
 </section>
 
@@ -194,9 +229,22 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-days"></i></div><h4>الإيجار الشهري</h4><p>ماكينة تعمل في مقرك بعقد يشمل الصيانة، بلا تكلفة شراء مقدمة، مناسب للمشاريع المؤقتة والفروع الجديدة.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-file-contract"></i></div><h4>عقود الصيانة السنوية</h4><p>زيارات وقائية منتظمة، أولوية استجابة عند الأعطال، وتقرير دوري عن حالة كل جهاز.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-days"></i></div><h4>الإيجار الشهري</h4><p>ماكينة تعمل في مقرك بعقد يشمل الصيانة، بلا تكلفة شراء مقدمة، مناسب للمشاريع المؤقتة والفروع الجديدة التي لا تريد استثمارًا كبيرًا مبكرًا.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-file-contract"></i></div><h4>عقود الصيانة السنوية</h4><p>زيارات وقائية منتظمة، أولوية استجابة عند الأعطال، وتقرير دوري عن حالة كل جهاز يصل لصاحب القرار مباشرة.</p></div>
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-credit-card"></i></div><h4>البيع بالتقسيط</h4><p>توزيع التكلفة على أشهر بدل دفعة واحدة، بأرقام كاملة قبل أي التزام.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>علامات تدل أن ماكينتك محتاجة صيانة أو استبدال</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>خطوط عمودية متكررة على كل المطبوعات، انحشار ورق يحدث أكثر من مرة أسبوعيًا رغم التنظيف، بطء ملحوظ في بدء الطباعة الأولى، أو ارتفاع مفاجئ في استهلاك التونر دون زيادة فعلية في حجم الطباعة — كل هذه علامات تستحق زيارة فحص قبل أن تتحول لعطل كامل يوقف العمل في مكتبك. لا تنتظر حتى يتوقف الجهاز تمامًا، فالتشخيص المبكر أرخص دائمًا من الإصلاح المتأخر.</p>
+      <p style="margin-top:16px">أما إذا تجاوزت الماكينة عمرها الافتراضي (عادة 5 إلى 7 سنوات للاستخدام المكتبي المتوسط) وأصبحت قطع غيارها نادرة أو مكلفة، فالاستبدال يكون غالبًا القرار الأكثر جدوى اقتصاديًا. فريقنا يقيّم حالة ماكينتك مجانًا في مقرنا بالإسكندرية ويقترح عليك الحل الأنسب سواء كان إصلاحًا بسيطًا أو استبدالًا كاملًا بماكينة جديدة أو مستوردة مفحوصة.</p>
     </div>
   </div>
 </section>
@@ -216,6 +264,11 @@ const schemaJson = JSON.stringify({
         <li><strong>الملحقات:</strong> وحدة تغذية، فرز، دوبلكس، وتجهيزات الشبكة.</li>
       </ul>
       <p style="margin-top:20px;text-align:center">اطلب عرض سعر عبر 01227392074 وسيصلك العرض مفصلًا: سعر الجهاز، الضمان، وتكلفة التشغيل المتوقعة.</p>
+      <ul style="max-width:700px;margin:20px auto 0;padding-inline-start:20px;line-height:2.1">
+        <li><strong>حجم التعاقد:</strong> شراء عدة ماكينات دفعة واحدة لفروع متعددة يفتح باب أسعار جملة أفضل.</li>
+        <li><strong>نوع العقد:</strong> شراء كامل، إيجار شهري، أو شراء مع عقد صيانة منفصل — كل خيار له هيكل تكلفة مختلف.</li>
+        <li><strong>موقع المكتب داخل الإسكندرية:</strong> يؤثر على سرعة الاستجابة الفنية أكثر من تأثيره على السعر النهائي.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -226,12 +279,14 @@ const schemaJson = JSON.stringify({
       <h2>مناطق نخدمها في الإسكندرية</h2>
       <div class="divider"></div>
     </div>
-    <p style="max-width:800px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">استجابة سريعة في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران، وخدمة منتظمة للأسواق التقليدية في المنشية والعطارين ولمحال الكورنيش، وتغطية كاملة لباقي مناطق الإسكندرية بمواعيد نتفق عليها. ونخدم القاهرة أيضًا عبر <a href="/copiers/cairo">صفحة ماكينات التصوير في القاهرة</a>.</p>
+    <p style="max-width:800px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">استجابة سريعة في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران، وخدمة منتظمة للأسواق التقليدية في المنشية والعطارين ولمحال الكورنيش، وتغطية كاملة لباقي مناطق الإسكندرية بمواعيد نتفق عليها. ونخدم القاهرة أيضًا عبر <a href="/cairo/copiers">صفحة ماكينات التصوير في القاهرة</a>.</p>
+    <p style="max-width:800px;margin:20px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">كوننا موجودين فعليًا في الإبراهيمية منذ 1999، فرقنا الفنية تعرف شوارع وأحياء الإسكندرية جيدًا، ما يعني وصولًا أسرع وتقديرًا دقيقًا لوقت الوصول عند حجز زيارة صيانة، بخلاف التعامل مع شركة من محافظة أخرى تحتاج وقتًا إضافيًا للتنقل.</p>
   </div>
 </section>
 
 <section class="section section-bg">
   <div class="container">
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">غير ماكينات التصوير، عندنا في الإسكندرية: <a href="/alexandria/ac">التكييفات</a>، <a href="/alexandria/cameras">كاميرات المراقبة</a>، <a href="/alexandria/cash-machines">ماكينات عد نقود</a>، <a href="/alexandria/office-supplies">مستلزمات مكتبية</a>، و<a href="/alexandria/printing">خدمات الطباعة</a>. تجهيز شامل؟ شوف <a href="/alexandria/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
     <div class="section-header">
       <h2>أسئلة شائعة عن ماكينات التصوير في الإسكندرية</h2>
       <div class="divider"></div>
@@ -291,7 +346,7 @@ const schemaJson = JSON.stringify({
             <textarea id="q-message" name="message" placeholder="حجم الاستهلاك الشهري ونوع المستندات وأي تفاصيل تساعدنا في الترشيح"></textarea>
           </div>
           <input type="hidden" name="service" value="copiers">
-          <input type="hidden" name="source" value="copiers/alexandria">
+          <input type="hidden" name="source" value="alexandria/copiers">
           <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
           <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
             <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر

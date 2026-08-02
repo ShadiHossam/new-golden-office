@@ -2,39 +2,55 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { getSeoFor } from '../lib/siteSeo';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"منذ متى تعمل نيو جولدن أوفيس في السوق المصري؟","acceptedAnswer":{"@type":"Answer","text":"تأسست الشركة عام 1999 في الإسكندرية، وتعمل بشكل متواصل منذ أكثر من 27 عامًا في خدمة الشركات والمؤسسات والأفراد في مصر."}},
+    {"@type":"Question","name":"ما عدد القطاعات التي تغطيها خدماتكم؟","acceptedAnswer":{"@type":"Answer","text":"نغطي ست قطاعات خدمية متكاملة: المستلزمات المكتبية، خدمات الطباعة، ماكينات التصوير والطابعات، كاميرات المراقبة، التكييفات، وماكينات عد النقود وكشف التزييف والفارم وتدمير المستندات."}},
+    {"@type":"Question","name":"هل تتعاملون مع الشركات الكبرى والمؤسسات الحكومية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، لدينا خبرة واسعة في التعامل مع الشركات الكبرى والفنادق والمستشفيات والمدارس والجهات الحكومية، مع عقود توريد وصيانة سنوية وفواتير ضريبية رسمية."}},
+    {"@type":"Question","name":"كيف تضمنون جودة المنتجات التي تبيعونها؟","acceptedAnswer":{"@type":"Answer","text":"نتعامل حصريًا مع موزعين ووكلاء معتمدين للماركات العالمية، ونقدم ضمانًا مكتوبًا على كل منتج وخدمة، مع دعم فني وقطع غيار أصلية بعد البيع."}},
+    {"@type":"Question","name":"هل يمكنني زيارة مقركم لمعاينة المنتجات؟","acceptedAnswer":{"@type":"Answer","text":"بالتأكيد، مقرنا ومعرضنا الرئيسي في الإبراهيمية، باب شرق بالإسكندرية، ونرحب بزيارتكم لمعاينة المنتجات مباشرة والتعرف على فريقنا."}},
+    {"@type":"Question","name":"هل تعملون خارج الإسكندرية أيضاً؟","acceptedAnswer":{"@type":"Answer","text":"نعم، نخدم عملاءنا في جميع محافظات مصر بما في ذلك القاهرة الكبرى والجيزة والدلتا والصعيد، عبر فرق ميدانية متنقلة وشبكة توصيل شاملة."}},
+    {"@type":"Question","name":"ما الذي يميزكم عن الموردين الآخرين في نفس المجال؟","acceptedAnswer":{"@type":"Answer","text":"الفارق الأساسي هو التكامل: بدلاً من التعامل مع ستة موردين مختلفين، تحصل على كل احتياجاتك المكتبية والتشغيلية من جهة واحدة تعرف تاريخ تعاملك وتقدم لك أسعار أفضل مع تعامل مؤسسي واضح."}},
+    {"@type":"Question","name":"كيف أبدأ التعامل مع نيو جولدن أوفيس؟","acceptedAnswer":{"@type":"Answer","text":"يمكنك التواصل معنا عبر الهاتف أو واتساب على 01227392074 أو من خلال نموذج التواصل في الموقع، وسنرد عليك بأفضل حل واقتراح مناسب لاحتياجك خلال وقت قصير."}}
+  ]
+});
 ---
 
 <BaseLayout
   {...getSeoFor('/about')}
   preloadImage="/images/about-team.webp"
+  schemaJson={schemaJson}
 >
 <style is:global>
   .about-story-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
   .about-story-text p { font-size:1.05rem; line-height:1.9; color:#444; margin-bottom:1.2rem; }
   .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
-  .stat-box { background:var(--primary,#1B3A6B); color:#fff; border-radius:16px; padding:2rem 1.5rem; text-align:center; box-shadow:0 4px 20px rgba(27,58,107,0.15); transition:transform 0.3s; }
+  .stat-box { background:var(--green,#2E7D14); color:#fff; border-radius:16px; padding:2rem 1.5rem; text-align:center; box-shadow:0 4px 20px rgba(46,125,20,0.15); transition:transform 0.3s; }
   .stat-box:hover { transform:translateY(-4px); }
-  .stat-box .stat-number { font-family:'Cairo',sans-serif; font-size:2.4rem; font-weight:900; color:var(--secondary,#E8A020); display:block; line-height:1; margin-bottom:0.4rem; }
+  .stat-box .stat-number { font-family:'Cairo',sans-serif; font-size:2.4rem; font-weight:900; color:var(--green-light,#5DB829); display:block; line-height:1; margin-bottom:0.4rem; }
   .stat-box .stat-label { font-size:0.95rem; opacity:0.9; font-family:'Tajawal',sans-serif; }
   .mvv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; }
-  .mvv-card { background:#fff; border-radius:16px; padding:2.2rem 1.8rem; text-align:center; box-shadow:0 4px 24px rgba(27,58,107,0.09); border-top:4px solid var(--secondary,#E8A020); transition:transform 0.3s,box-shadow 0.3s; }
-  .mvv-card:hover { transform:translateY(-5px); box-shadow:0 8px 32px rgba(27,58,107,0.15); }
-  .mvv-card .mvv-icon { width:70px; height:70px; background:linear-gradient(135deg,var(--primary,#1B3A6B),#2a5298); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; }
-  .mvv-card .mvv-icon i { font-size:1.8rem; color:var(--secondary,#E8A020); }
-  .mvv-card h3 { font-family:'Cairo',sans-serif; font-size:1.3rem; font-weight:700; color:var(--primary,#1B3A6B); margin-bottom:0.8rem; }
+  .mvv-card { background:#fff; border-radius:16px; padding:2.2rem 1.8rem; text-align:center; box-shadow:0 4px 24px rgba(46,125,20,0.09); border-top:4px solid var(--green-light,#5DB829); transition:transform 0.3s,box-shadow 0.3s; }
+  .mvv-card:hover { transform:translateY(-5px); box-shadow:0 8px 32px rgba(46,125,20,0.15); }
+  .mvv-card .mvv-icon { width:70px; height:70px; background:linear-gradient(135deg,var(--green,#2E7D14),var(--green-mid,#3D9A1E)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; }
+  .mvv-card .mvv-icon i { font-size:1.8rem; color:#fff; }
+  .mvv-card h3 { font-family:'Cairo',sans-serif; font-size:1.3rem; font-weight:700; color:#0f2d06; margin-bottom:0.8rem; }
   .mvv-card p { font-size:0.95rem; line-height:1.8; color:#555; }
   .services-overview-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-  .service-overview-card { background:#fff; border-radius:14px; padding:1.8rem 1.5rem; text-align:center; box-shadow:0 3px 16px rgba(27,58,107,0.08); border-bottom:3px solid var(--secondary,#E8A020); transition:transform 0.3s,box-shadow 0.3s; text-decoration:none; display:block; }
-  .service-overview-card:hover { transform:translateY(-5px); box-shadow:0 8px 28px rgba(27,58,107,0.14); }
-  .service-overview-card .svc-icon { font-size:2.4rem; color:var(--primary,#1B3A6B); margin-bottom:0.9rem; display:block; }
-  .service-overview-card h3 { font-family:'Cairo',sans-serif; font-size:1.1rem; font-weight:700; color:var(--primary,#1B3A6B); margin-bottom:0.4rem; }
+  .service-overview-card { background:#fff; border-radius:14px; padding:1.8rem 1.5rem; text-align:center; box-shadow:0 3px 16px rgba(46,125,20,0.08); border-bottom:3px solid var(--green-light,#5DB829); transition:transform 0.3s,box-shadow 0.3s; text-decoration:none; display:block; }
+  .service-overview-card:hover { transform:translateY(-5px); box-shadow:0 8px 28px rgba(46,125,20,0.14); }
+  .service-overview-card .svc-icon { font-size:2.4rem; color:var(--green,#2E7D14); margin-bottom:0.9rem; display:block; }
+  .service-overview-card h3 { font-family:'Cairo',sans-serif; font-size:1.1rem; font-weight:700; color:#0f2d06; margin-bottom:0.4rem; }
   .service-overview-card p { font-size:0.88rem; color:#666; line-height:1.6; }
   .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
-  .why-card { background:#fff; border-radius:14px; padding:2rem 1.5rem; text-align:center; box-shadow:0 3px 16px rgba(27,58,107,0.08); transition:transform 0.3s; }
+  .why-card { background:#fff; border-radius:14px; padding:2rem 1.5rem; text-align:center; box-shadow:0 3px 16px rgba(46,125,20,0.08); transition:transform 0.3s; }
   .why-card:hover { transform:translateY(-4px); }
-  .why-card .why-icon { width:65px; height:65px; background:linear-gradient(135deg,#f0f4ff,#dce6ff); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; }
-  .why-card .why-icon i { font-size:1.6rem; color:var(--primary,#1B3A6B); }
-  .why-card h3 { font-family:'Cairo',sans-serif; font-size:1.05rem; font-weight:700; color:var(--primary,#1B3A6B); margin-bottom:0.5rem; }
+  .why-card .why-icon { width:65px; height:65px; background:linear-gradient(135deg,#eef9e4,var(--green-pale,#e8f5e0)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; }
+  .why-card .why-icon i { font-size:1.6rem; color:var(--green,#2E7D14); }
+  .why-card h3 { font-family:'Cairo',sans-serif; font-size:1.05rem; font-weight:700; color:#0f2d06; margin-bottom:0.5rem; }
   .why-card p { font-size:0.9rem; color:#555; line-height:1.7; }
   @media(max-width:900px){.about-story-grid{grid-template-columns:1fr}.mvv-grid{grid-template-columns:1fr}.services-overview-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:600px){.services-overview-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}}
@@ -60,7 +76,7 @@ import { getSeoFor } from '../lib/siteSeo';
     </div>
     <div class="about-story-grid">
       <div class="about-story-text reveal">
-        <p>تأسست <strong>نيو جولدن أوفيس</strong> عام 1999 في قلب مدينة الإسكندرية، حيث بدأت رحلتها كمتجر صغير متخصص في المستلزمات المكتبية. منذ اليوم الأول، كان هدفنا واضحًا: تقديم أفضل المنتجات والخدمات للشركات والمؤسسات المصرية بأسعار عادلة وجودة لا تُضاهى.</p>
+        <p>تأسست <strong>نيو جولدن أوفيس</strong> عام 1999 في قلب مدينة الإسكندرية، حيث بدأت رحلتها كمتجر صغير متخصص في المستلزمات المكتبية وصيانة ماكينات التصوير. منذ اليوم الأول، كان هدفنا واضحًا: تقديم أفضل المنتجات والخدمات للشركات والمؤسسات المصرية بأسعار عادلة وجودة لا تُضاهى، وبناء علاقة تعامل تقوم على الثقة المتبادلة لا على صفقة بيع واحدة.</p>
         <p>على مدار العقود الماضية، نمت الشركة لتصبح مرجعًا موثوقًا في قطاعات الطباعة الاحترافية، ماكينات التصوير والطباعة، كاميرات المراقبة، أجهزة التكييف، وماكينات فارم وعد النقود. وسّعنا نطاق خدماتنا لتشمل الشركات الكبرى، والفنادق، والمستشفيات، والمدارس، والجهات الحكومية في الإسكندرية والقاهرة وسائر محافظات مصر.</p>
         <p>يقود فريق نيو جولدن أوفيس اليوم كوكبة من المتخصصين ذوي الخبرة العالية في مجالاتهم، ملتزمين بتقديم حلول مبتكرة تواكب متطلبات السوق المتغيرة. نفخر بثقة آلاف العملاء الذين رافقونا في هذه الرحلة، وهم الدافع الأقوى لمواصلة التطوير والتميز.</p>
       </div>
@@ -77,31 +93,88 @@ import { getSeoFor } from '../lib/siteSeo';
   </div>
 </section>
 
-<section style="padding:60px 0;background:#f8f9fa">
+<section style="padding:60px 0;background:var(--bg,#f8faf6)">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">تاريخ الشركة — رحلتنا عبر السنين من 1999 إلى اليوم</h2>
+    <h2 style="font-size:1.8rem;font-weight:700;color:#0f2d06;margin-bottom:24px">تاريخ الشركة — رحلتنا عبر السنين من 1999 إلى اليوم</h2>
     <div style="position:relative;padding-right:32px">
-      <div style="position:absolute;right:0;top:0;bottom:0;width:3px;background:#c8a951;border-radius:2px"></div>
+      <div style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--green-light,#5DB829);border-radius:2px"></div>
       <div style="margin-bottom:28px;position:relative">
-        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
-        <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">1999 — التأسيس</h3>
+        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:var(--green-light,#5DB829);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--green-light,#5DB829)"></div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--green-light,#5DB829);margin-bottom:4px">1999 — التأسيس</h3>
         <p style="color:#555;font-size:0.95rem;line-height:1.7">تأسست نيو جولدن أوفيس في الإسكندرية بمتجر صغير متخصص في ماكينات التصوير وقطع الغيار.</p>
       </div>
       <div style="margin-bottom:28px;position:relative">
-        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
-        <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">2000 — التوسع</h3>
+        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:var(--green-light,#5DB829);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--green-light,#5DB829)"></div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--green-light,#5DB829);margin-bottom:4px">2000 — التوسع</h3>
         <p style="color:#555;font-size:0.95rem;line-height:1.7">توسعنا لنضم خدمات الطباعة الاحترافية والمستلزمات المكتبية، لنصبح وجهة متكاملة لأعمال الشركات.</p>
       </div>
       <div style="margin-bottom:28px;position:relative">
-        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
-        <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">2010 — كاميرات المراقبة والتكييفات</h3>
+        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:var(--green-light,#5DB829);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--green-light,#5DB829)"></div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--green-light,#5DB829);margin-bottom:4px">2010 — كاميرات المراقبة والتكييفات</h3>
         <p style="color:#555;font-size:0.95rem;line-height:1.7">أضفنا خدمات تركيب كاميرات المراقبة والتكييفات لنوفر حلولاً شاملة لبيئة العمل.</p>
       </div>
-      <div style="position:relative">
-        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:#c8a951;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c8a951"></div>
-        <h3 style="font-size:1.1rem;font-weight:700;color:#c8a951;margin-bottom:4px">2025، 26 عاماً من الثقة</h3>
-        <p style="color:#555;font-size:0.95rem;line-height:1.7">اليوم، نخدم أكثر من 5,000 عميل في القاهرة والإسكندرية وجميع أنحاء مصر بستة خدمات متكاملة.</p>
+      <div style="margin-bottom:28px;position:relative">
+        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:var(--green-light,#5DB829);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--green-light,#5DB829)"></div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--green-light,#5DB829);margin-bottom:4px">2016 — ماكينات عد النقود وكشف التزييف</h3>
+        <p style="color:#555;font-size:0.95rem;line-height:1.7">استجابة لطلب متزايد من البنوك ومحلات الصرافة والمنشآت التجارية، أضفنا قسمًا متخصصًا في ماكينات عد النقود وأجهزة كشف العملات المزيفة وماكينات الفارم والختم البريدي.</p>
       </div>
+      <div style="margin-bottom:28px;position:relative">
+        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:var(--green-light,#5DB829);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--green-light,#5DB829)"></div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--green-light,#5DB829);margin-bottom:4px">2020 — التوسع الجغرافي إلى القاهرة الكبرى</h3>
+        <p style="color:#555;font-size:0.95rem;line-height:1.7">بنينا شبكة فرق ميدانية وشراكات لوجستية مكّنتنا من خدمة عملاء القاهرة الكبرى والجيزة بنفس مستوى الجودة والالتزام بالمواعيد الذي اعتاده عملاؤنا في الإسكندرية.</p>
+      </div>
+      <div style="position:relative">
+        <div style="position:absolute;right:-40px;top:4px;width:16px;height:16px;background:var(--green-light,#5DB829);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--green-light,#5DB829)"></div>
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--green-light,#5DB829);margin-bottom:4px">2026 — أكثر من 27 عاماً من الثقة</h3>
+        <p style="color:#555;font-size:0.95rem;line-height:1.7">اليوم، نخدم أكثر من 5,000 عميل في القاهرة والإسكندرية وجميع أنحاء مصر بستة خدمات متكاملة، ونواصل الاستثمار في تدريب فرقنا الفنية ومواكبة أحدث الماركات العالمية في كل قطاع نعمل به.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>فريقنا: خبرة متخصصة في كل قسم</h2>
+      <div class="divider"></div>
+      <p>لا يوجد "موظف عام" يبيع كل شيء — كل قسم من أقسامنا الستة له فريقه الخاص المدرّب تحديدًا على منتجاته وخدماته</p>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>فني تركيب التكييفات لدينا مختلف تمامًا عن فني صيانة كاميرات المراقبة، وموظف مبيعات المستلزمات المكتبية يمتلك معرفة مختلفة عن مستشار الطباعة الذي يرشدك لاختيار طريقة الطباعة الأنسب لميزانيتك. هذا التخصص الداخلي هو سر قدرتنا على تقديم خدمة عالية الجودة في ستة مجالات مختلفة تمامًا في نفس الوقت، بدلاً من أن نكون "متجرًا عامًا" بمعرفة سطحية في كل شيء. حتى فريق المبيعات نفسه مقسّم داخليًا حسب القطاع، فمن يتابع عملاء الشركات والمؤسسات الكبرى غير من يتابع الطلبات الفردية والمكاتب الصغيرة، لأن طبيعة كل تعامل تختلف من حيث حجم الطلب ووتيرة التكرار ومتطلبات التوثيق.</p>
+      <p style="margin-top:16px">كل فني جديد ينضم إلى فريقنا يمر بفترة تدريب داخلي على يد الفنيين الأقدم قبل التعامل المباشر مع العملاء، ونحرص على تحديث مهارات الفريق بشكل دوري كلما ظهرت تقنية جديدة في أي من مجالاتنا — سواء كانت تقنية إنفرتر جديدة في التكييفات، أو جيل جديد من كاميرات الشبكة (IP)، أو تحديثات في ماكينات كشف التزييف. هذا الاستثمار المستمر في تدريب الفريق هو ما يضمن حصولك على استشارة دقيقة، لا مجرد بيع، ويجعلنا قادرين على مواكبة أي تطور تقني في أي من قطاعاتنا الستة دون أن يفوتنا شيء.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>التزامنا بالجودة والضمان</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>لا نبيع منتجات من مصادر غير موثوقة مهما كان السعر مغريًا. جميع منتجاتنا في كل الأقسام الستة أصلية 100% ومصدرها موزعون ووكلاء معتمدون رسميًا من الشركات المصنّعة، مع فواتير رسمية تثبت مصدر كل منتج. هذا الالتزام قد يعني أحيانًا أن سعرنا ليس الأرخص في السوق، لكنه يضمن لك عمرًا افتراضيًا أطول للمنتج وقطع غيار متوفرة وضمانًا حقيقيًا قابلاً للتنفيذ.</p>
+      <p style="margin-top:16px">نقدم ضمانًا مكتوبًا على كل عملية بيع وتركيب، ونفرّق بوضوح بين ضمان المصنّع على الجهاز نفسه وضمان الشركة على جودة التركيب والخدمة. في حال حدوث أي عطل ضمن فترة الضمان، فريق الدعم الفني لدينا يستجيب بأولوية واضحة، لأننا نعتبر خدمة ما بعد البيع جزءًا أساسيًا من المنتج نفسه، لا خدمة إضافية اختيارية.</p>
+      <p style="margin-top:16px">هذا النهج ينعكس أيضًا في طريقة تعاملنا مع الشكاوى النادرة التي قد تحدث؛ فبدلاً من التهرب من المسؤولية أو إحالة العميل لجهة أخرى، نتعامل مع أي مشكلة كفرصة لإثبات التزامنا الحقيقي، ونحرص على حلها بأسرع وقت ممكن وبأقل إزعاج للعميل. هذه الفلسفة تحديدًا هي ما بنى سمعتنا في السوق المصري على مدار 27 عامًا، وهي السبب في أن جزءًا كبيرًا من عملائنا الجدد يصلوننا عبر توصية عميل قديم راضٍ عن التعامل، لا عبر إعلان مدفوع.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>أسئلة شائعة عن الشركة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">منذ متى تعمل نيو جولدن أوفيس في السوق المصري؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تأسست الشركة عام 1999 في الإسكندرية، وتعمل بشكل متواصل منذ أكثر من 27 عامًا في خدمة الشركات والمؤسسات والأفراد في مصر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما عدد القطاعات التي تغطيها خدماتكم؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نغطي ست قطاعات خدمية متكاملة: المستلزمات المكتبية، خدمات الطباعة، ماكينات التصوير والطابعات، كاميرات المراقبة، التكييفات، وماكينات عد النقود وكشف التزييف والفارم وتدمير المستندات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تتعاملون مع الشركات الكبرى والمؤسسات الحكومية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، لدينا خبرة واسعة في التعامل مع الشركات الكبرى والفنادق والمستشفيات والمدارس والجهات الحكومية، مع عقود توريد وصيانة سنوية وفواتير ضريبية رسمية.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف تضمنون جودة المنتجات التي تبيعونها؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نتعامل حصريًا مع موزعين ووكلاء معتمدين للماركات العالمية، ونقدم ضمانًا مكتوبًا على كل منتج وخدمة، مع دعم فني وقطع غيار أصلية بعد البيع.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكنني زيارة مقركم لمعاينة المنتجات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بالتأكيد، مقرنا ومعرضنا الرئيسي في الإبراهيمية، باب شرق بالإسكندرية، ونرحب بزيارتكم لمعاينة المنتجات مباشرة والتعرف على فريقنا.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تعملون خارج الإسكندرية أيضاً؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نخدم عملاءنا في جميع محافظات مصر بما في ذلك القاهرة الكبرى والجيزة والدلتا والصعيد، عبر فرق ميدانية متنقلة وشبكة توصيل شاملة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الذي يميزكم عن الموردين الآخرين في نفس المجال؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الفارق الأساسي هو التكامل: بدلاً من التعامل مع ستة موردين مختلفين، تحصل على كل احتياجاتك من جهة واحدة تعرف تاريخ تعاملك وتقدم لك أسعارًا أفضل مع تعامل مؤسسي واضح.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أبدأ التعامل مع نيو جولدن أوفيس؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تواصل معنا عبر الهاتف أو واتساب على 01227392074 أو من خلال نموذج التواصل في الموقع، وسنرد عليك بأفضل حل واقتراح مناسب لاحتياجك خلال وقت قصير.</div></div></div>
     </div>
   </div>
 </section>
@@ -126,7 +199,7 @@ import { getSeoFor } from '../lib/siteSeo';
       <div class="mvv-card reveal delay-2">
         <div class="mvv-icon"><i class="fa-solid fa-star"></i></div>
         <h3>قيمنا</h3>
-        <p>الجودة أولاً في كل ما نقدمه، والنزاهة في تعاملاتنا، والاحترام الكامل لعملائنا وشركائنا. نؤمن بالتطوير المستمر والابتكار لمواكبة تطلعات السوق المتجددة.</p>
+        <p>الجودة أولاً في كل ما نقدمه، والنزاهة في تعاملاتنا، والاحترام الكامل لعملائنا وشركائنا. نؤمن بالتطوير المستمر والابتكار لمواكبة تطلعات السوق المتجددة، وبأن الشفافية في التسعير والمواعيد أهم من أي ربح قصير المدى.</p>
       </div>
     </div>
   </div>
@@ -161,6 +234,54 @@ import { getSeoFor } from '../lib/siteSeo';
       <div class="why-card reveal delay-1"><div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>جودة مضمونة</h3><p>نتعامل مع أفضل الموردين والعلامات التجارية العالمية لضمان جودة كل منتج وخدمة نقدمها.</p></div>
       <div class="why-card reveal delay-2"><div class="why-icon"><i class="fa-solid fa-tags"></i></div><h3>أسعار منافسة</h3><p>نقدم أفضل الأسعار في السوق مع الحفاظ على أعلى معايير الجودة، مع عروض خاصة للكميات الكبيرة.</p></div>
       <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-headset"></i></div><h3>خدمة ما بعد البيع</h3><p>فريق متخصص للصيانة والدعم الفني يضمن استمرارية عمل معداتك دون انقطاع أو تأخير.</p></div>
+      <div class="why-card reveal delay-1"><div class="why-icon"><i class="fa-solid fa-layer-group"></i></div><h3>مورد واحد لكل احتياجاتك</h3><p>توفر الوقت والجهد بالتعامل مع جهة واحدة تفهم تاريخ تعاملك بدلًا من التنقل بين موردين متعددين.</p></div>
+      <div class="why-card reveal delay-2"><div class="why-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div><h3>تعامل مؤسسي شفاف</h3><p>عروض أسعار رسمية وفواتير ضريبية وعقود صيانة مكتوبة، بلا غموض في الشروط أو المستحقات.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>القطاعات التي نخدمها</h2>
+      <div class="divider"></div>
+      <p>على مدار 27 عامًا، بنينا خبرة عميقة في تلبية احتياجات قطاعات مختلفة تمامًا في طبيعتها</p>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>الشركات الصغيرة والمتوسطة تحتاج عادة تجهيزًا متكاملًا بميزانية مدروسة، بينما المؤسسات الكبرى والبنوك تحتاج عقود توريد وصيانة سنوية مع مندوب حساب مخصص. المدارس والجامعات تطلب منا توريد مستلزمات مكتبية بالجملة وطباعة مناهج ونماذج امتحانات، بينما تحتاج المستشفيات والعيادات إلى كاميرات مراقبة أمنية وتكييفات مركزية موثوقة تعمل دون انقطاع. الفنادق والمطاعم من جهتها تجمع بين حاجتها لأنظمة مراقبة شاملة وماكينات عد نقود للخزائن وطباعة قوائم وهوية بصرية احترافية.</p>
+      <p style="margin-top:16px">هذا التنوع في قاعدة عملائنا هو ما صقل خبرتنا وجعلنا قادرين على التعامل مع أي نوع نشاط تقريبًا، لأننا تعاملنا فعليًا مع تفاصيله من قبل ونعرف نقاط الحساسية الخاصة بكل قطاع.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>الماركات العالمية التي نتعامل بها</h2>
+      <div class="divider"></div>
+      <p>أكثر من 50 ماركة عالمية معتمدة موزعة على أقسامنا الستة</p>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="padding-inline-start:20px;line-height:2.1">
+        <li><strong>التكييفات:</strong> Carrier، Koldair، Samsung، Sharp، Midea، LG</li>
+        <li><strong>كاميرات المراقبة:</strong> Hikvision، Dahua وأنظمة DVR وNVR المتوافقة معها</li>
+        <li><strong>ماكينات التصوير والطابعات:</strong> Canon، Ricoh، Kyocera، Xerox، مع كارتريدج HP وEpson الأصلي والمتوافق</li>
+        <li><strong>المستلزمات المكتبية:</strong> BIC، Pilot، Stabilo، Pentel، Sharpie، Artline وغيرها</li>
+      </ul>
+      <p style="margin-top:20px">حرصنا الدائم على التعامل مع موزعين ووكلاء معتمدين رسميًا هو ما يضمن لك منتجًا أصليًا بضمان قابل للتنفيذ، لا مجرد وعد شفهي.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>نهجنا في التسعير</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>لا نؤمن بسياسة "سعر واحد يناسب الجميع". سعر تكييف مركزي لمبنى إداري يختلف جوهريًا عن سعر تكييف سبليت لغرفة واحدة، وسعر توريد مستلزمات مكتبية شهري لمدرسة يختلف عن طلب فردي لمكتب صغير. لهذا نبدأ دائمًا بفهم حجم الاحتياج الفعلي قبل تقديم أي رقم، ونوضح بالتفصيل ما الذي يدخل ضمن السعر — المنتج، التركيب إن وُجد، الضمان، وأي خدمة صيانة لاحقة — بدلًا من رقم إجمالي غامض.</p>
+      <p style="margin-top:16px">للكميات الكبيرة والعقود السنوية، نقدم دائمًا أسعارًا تفضيلية تعكس حجم التعامل المستمر، وللعملاء الجدد الذين يتعاملون معنا لأول مرة، نحرص أن تكون تجربتهم الأولى شفافة تمامًا من حيث السعر والمواعيد، لأننا نعرف أن أول انطباع هو ما يقرر إن كانت هذه بداية علاقة تعامل طويلة أم صفقة واحدة لا تتكرر.</p>
     </div>
   </div>
 </section>

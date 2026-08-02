@@ -7,10 +7,10 @@ const schemaJson = JSON.stringify({
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://newgoldenoffice.com/cash-machines/cairo#service",
+      "@id": "https://newgoldenoffice.com/cairo/cash-machines#service",
       "name": "ماكينات عد نقود وكشف تزييف في القاهرة",
       "serviceType": "توريد وصيانة ماكينات عد النقود وكشف التزييف",
-      "url": "https://newgoldenoffice.com/cash-machines/cairo",
+      "url": "https://newgoldenoffice.com/cairo/cash-machines",
       "areaServed": { "@type": "City", "name": "القاهرة" },
       "provider": { "@id": "https://newgoldenoffice.com/#organization" }
     },
@@ -23,7 +23,10 @@ const schemaJson = JSON.stringify({
         {"@type":"Question","name":"كم سعر ماكينة عد النقود وكشف التزوير؟","acceptedAnswer":{"@type":"Answer","text":"يتحرك حسب النوع وتقنيات الكشف والماركة والسرعة وحجم التعاقد."}},
         {"@type":"Question","name":"هل هناك ضمان وقطع غيار أصلية لماكينات جلوري؟","acceptedAnswer":{"@type":"Answer","text":"نعم، كل ماكينة تأتي بضمان موثق، ونحتفظ بقطع الغيار الأصلية وعلى رأسها جلوري."}},
         {"@type":"Question","name":"كم يستغرق تصليح ماكينة عد النقود في القاهرة؟","acceptedAnswer":{"@type":"Answer","text":"نبدأ بتشخيص هاتفي، وما يحتاج تدخلًا فنيًا يُجدول بزيارة ميدانية بمواعيد متفق عليها."}},
-        {"@type":"Question","name":"هل يمكن الحصول على تركيب وتدريب في الموقع؟","acceptedAnswer":{"@type":"Answer","text":"نعم، الفريق الميداني يركب الماكينة ويضبط إعدادات الكشف ويدرب أمين الخزينة."}}
+        {"@type":"Question","name":"هل يمكن الحصول على تركيب وتدريب في الموقع؟","acceptedAnswer":{"@type":"Answer","text":"نعم، الفريق الميداني يركب الماكينة ويضبط إعدادات الكشف ويدرب أمين الخزينة."}},
+        {"@type":"Question","name":"ما الفرق العملي بين تقنيات الكشف UV وMG وIR؟","acceptedAnswer":{"@type":"Answer","text":"الأشعة فوق البنفسجية UV تكشف العلامات المضيئة الخاصة في الورقة الحقيقية، والمغناطيسية MG تكشف الحبر المغناطيسي المطبوع في مواضع محددة، والأشعة تحت الحمراء IR تفحص أنماطًا غير مرئية للعين المجردة. الماكينات المصرفية تجمع التقنيات الثلاث معًا لأعلى دقة، بينما تكتفي الماكينات المكتبية الاقتصادية بتقنية أو اثنتين."}},
+        {"@type":"Question","name":"كم سرعة عد الماكينة وهل السرعة الأعلى تعني دقة أقل؟","acceptedAnswer":{"@type":"Answer","text":"لا، السرعة والدقة مسارين منفصلين في التصميم الجيد. الماكينات المصرفية تعد آلاف الأوراق في الدقيقة مع الحفاظ على دقة الكشف لأنها مصممة لهذا الحمل، لكن ماكينة اقتصادية مدفوعة لسرعة أعلى من تصميمها الأساسي قد تفوّت أوراقًا مشبوهة. نرشح السرعة المناسبة فعليًا لحجم تداولك لا الأعلى رقمًا فقط."}},
+        {"@type":"Question","name":"هل تغطون كل مناطق القاهرة بالصيانة الميدانية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، فرقنا الميدانية تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي ومصر الجديدة بمسارات مجدولة."}}
       ]
     }
   ]
@@ -98,6 +101,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>في نهاية كل يوم عمل، دقة عد النقود ليست تفصيلة بل خط الدفاع الأول ضد العجز والتلاعب والتزييف. نيو جولدن أوفيس شركة ماكينات عد نقود في القاهرة توفر للبنوك وشركات الصرافة وسلاسل التجزئة والمحلات كل ما تحتاجه خزينة منضبطة: ماكينة عد فلوس بسرعة ودقة تناسب حجم التداول، جهاز كشف تزييف بأحدث تقنيات الفحص، وماكينات فرز للعمليات المصرفية، مع صيانة ميدانية تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي.</p>
+      <p style="margin-top:16px">نحن لا نبيع جهازًا فقط، بل نساعدك في تصميم منظومة إدارة النقد الكاملة لنشاطك: من عدد الماكينات المطلوبة لكل خزينة، إلى نوع التقنية المناسبة لحجم عملياتك اليومي، وحتى جدول الصيانة الوقائية الذي يمنع أي عطل مفاجئ في يوم تسوية محاسبية حرج.</p>
     </div>
 
     <div class="section-header">
@@ -121,6 +125,7 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>فروع البنوك وشركات الصرافة في وسط البلد المالي والقاهرة الجديدة تتعامل مع أحجام نقد ضخمة يوميًا، ولا تحتمل خطأ في العد أو ورقة مزيفة تمر. نوفر لهذا القطاع ماكينات فرز وعد مصرفية بسرعات عالية وفرز حسب الفئة، مع دمج كشف التزييف أثناء العد، وأجهزة كشف بتقنيات فحص متعددة للتحقق الفوري عند الشبابيك، وموديلات متعددة العملات لشركات الصرافة التي تتداول الدولار واليورو.</p>
+      <p style="margin-top:16px">بالنسبة لسلاسل المحلات والسوبر ماركت المنتشرة في مدينة نصر والتجمع الخامس، الأولوية تكون لسرعة إغلاق الكاشيرات في نهاية الوردية دون التضحية بالدقة، ولهذا نرشح موديلات اقتصادية موثوقة تجمع بين السرعة الكافية وكشف التزييف الأساسي بتقنية UV وMG، بسعر يناسب الميزانية التشغيلية لهذا النوع من الأنشطة.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
       <img src="/images/webp-images/approved-rubber-stamp-on-financial-bar-graph-repor-2026-03-19-23-56-51-utc.webp" alt="ماكينات عد نقود للقطاع المصرفي بالقاهرة" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
@@ -155,6 +160,23 @@ const schemaJson = JSON.stringify({
       </table>
     </div>
     <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لا توجد ماركة "أفضل" بشكل مطلق، بل ماركة أنسب لحجم تداولك وميزانيتك. أخبرنا بطبيعة نشاطك وسنرشح لك الموديل الصحيح من واقع 27 عامًا من التوريد والصيانة.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تختار ماكينة العد المناسبة لطبيعة نشاطك في القاهرة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>فرع بنكي أو مكتب صرافة في وسط البلد المالي يحتاج ماكينة عد مختلطة الفئات (Mixed Denomination) بسرعة عالية وتقنيات كشف تزييف متعددة (UV+MG+IR)، لأن الحجم اليومي كبير ولا مجال لخطأ في التسوية المحاسبية. أما سوبر ماركت أو صيدلية في مدينة نصر أو التجمع الخامس فتحتاج أولوية لسرعة إغلاق الكاشيرات آخر الوردية، فماكينة اقتصادية بسرعة متوسطة مع كشف UV+MG تكون كافية تمامًا.</p>
+      <p style="margin-top:16px">نراعي أيضًا عامل سهولة التدريب على الجهاز؛ الموظفين في المحلات ذات معدل دوران وظيفي عالٍ يحتاجون جهازًا بسيطًا لا يستغرق وقتًا طويلاً لتعلمه، بينما فرق العمليات المصرفية المتخصصة تتقن الأجهزة الأكثر تعقيدًا بسرعة نظرًا لطبيعة تدريبها المستمر.</p>
+      <p style="margin-top:16px">نشرح دائمًا طريقة الاستخدام والصيانة الأساسية للموظف المسؤول قبل مغادرة الفريق الفني للموقع، لتقليل الحاجة لطلب دعم فني متكرر لأمور بسيطة يمكن حلها ذاتيًا.</p>
+      <p style="margin-top:16px">نراجع أيضًا مع كل عميل جديد أفضل ممارسات الصيانة اليومية البسيطة، كتنظيف السطح الخارجي وتجنب الأتربة، لإطالة عمر الجهاز بين زيارات الصيانة الدورية.</p>
+      <p style="margin-top:16px">نوفر أيضًا لعملاء القاهرة إمكانية استبدال جهاز مؤقت أثناء فترة الإصلاح الطويل، حتى لا يتوقف عملك المصرفي أو التجاري اليومي بسبب عطل فني.</p>
+      <p style="margin-top:16px">الشركات ومكاتب المحاسبة في القاهرة الجديدة والمعادي غالبًا تحتاج جهازًا متوسط الحجم يمكن نقله بين الفروع، مع دقة عد عالية للتعامل مع مدفوعات الموظفين والموردين. فريقنا يرشح الماكينة المناسبة بعد فهم حجم التعامل النقدي اليومي الفعلي لنشاطك، ويشرح لك الفروق العملية بين الموديلات المتاحة بصراحة تامة.</p>
+    </div>
   </div>
 </section>
 
@@ -208,8 +230,64 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تقنيات كشف التزييف بالتفصيل: UV وMG وIR</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">التقنية</th><th style="padding:14px 16px;text-align:right">آلية العمل</th><th style="padding:14px 16px;text-align:right">أهميتها</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">UV (فوق بنفسجية)</td><td style="padding:12px 16px">تكشف العلامات المضيئة الخاصة المطبوعة بحبر خاص لا يظهر إلا تحت هذا الضوء</td><td style="padding:12px 16px">أساس الكشف الأول وأكثرها انتشارًا</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">MG (مغناطيسية)</td><td style="padding:12px 16px">تكشف الحبر المغناطيسي المطبوع في مواضع محددة من الورقة الحقيقية</td><td style="padding:12px 16px">تصعّب التزييف بالطباعة العادية</td></tr>
+          <tr style="background:var(--white)"><td style="padding:12px 16px">IR (تحت حمراء)</td><td style="padding:12px 16px">تفحص أنماطًا وطبقات غير مرئية للعين المجردة داخل نسيج الورقة</td><td style="padding:12px 16px">أعلى مستوى دقة، معتمدة في القطاع المصرفي</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">الماكينات المصرفية المخصصة للبنوك وشركات الصرافة تجمع التقنيات الثلاث معًا لتحقيق أعلى دقة كشف ممكنة، بينما تكتفي أغلب الماكينات المكتبية الاقتصادية للمحلات بتقنية أو اثنتين وهو كافٍ لمعظم الاستخدامات اليومية. الفرق الحقيقي في السرعة أيضًا: الماكينات المصرفية مصممة لتعد آلاف الأوراق في الدقيقة دون أن تفقد دقة الكشف، بينما دفع ماكينة اقتصادية لسرعة أعلى من تصميمها الأساسي قد يفوّت ورقة مشبوهة.</p>
+  </div>
+</section>
+
 <section class="section section-bg">
   <div class="container">
+    <div class="section-header">
+      <h2>دليل الأعطال الشائعة في ماكينات عد النقود</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="padding-inline-start:20px;line-height:2.1">
+        <li><strong>انحشار الأوراق أو تعثر السحب:</strong> غالبًا بسبب أوراق نقدية مجعدة أو متسخة أو أطراف ملتصقة ببعضها.</li>
+        <li><strong>عد غير دقيق أو تكرار العد الخاطئ:</strong> يحتاج معايرة أو تنظيف لبكرات السحب المتسخة بتراكم الغبار وزيوت الأصابع.</li>
+        <li><strong>رفض أوراق سليمة باعتبارها مشبوهة:</strong> إعدادات حساسية الكشف تحتاج ضبطًا دقيقًا حسب حالة العملة المتداولة فعليًا.</li>
+        <li><strong>الشاشة لا تعرض العدد أو القيمة بشكل صحيح:</strong> عادة عطل في وحدة العرض أو حاجة لتحديث برمجي بسيط.</li>
+        <li><strong>ضوضاء غير معتادة أثناء التشغيل:</strong> علامة مبكرة على تآكل في المحرك أو البكرات تستدعي فحصًا قبل أن يتوقف الجهاز تمامًا وقت الحاجة.</li>
+      </ul>
+      <p style="margin-top:16px;text-align:center">أغلب هذه الأعطال يُحل بتشخيص هاتفي أولي أو زيارة ميدانية واحدة، لكن الإهمال المتكرر لأعراض بسيطة هو ما يحوّلها لأعطال أكبر تكلفة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>مناطق تغطيتنا داخل القاهرة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>التجمع الخامس</h4><p>مقرات الشركات والفروع المصرفية الحديثة بحجم تداول يومي مرتفع.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مدينة نصر</h4><p>كثافة محلات وسلاسل تجزئة تحتاج ماكينات اقتصادية سريعة الإعداد.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h4>المعادي</h4><p>مكاتب تحصيل وشركات تتعامل مع دفعات نقدية دورية.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h4>القاهرة الجديدة</h4><p>فروع بنكية وتجارية جديدة نجهزها من أول ماكينة حتى عقد الصيانة السنوي.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>وسط البلد المالي</h4><p>أعلى كثافة بنوك وشركات صرافة، وأكثر مناطقنا طلبًا للماكينات المصرفية متعددة العملات.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب ماكينات عد النقود، نخدمك في القاهرة بـ <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/cameras">كاميرات المراقبة</a>، <a href="/cairo/copiers">ماكينات التصوير</a>، <a href="/cairo/office-supplies">المستلزمات المكتبية</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. لتجهيز فرع كامل شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
       <div class="divider"></div>
@@ -222,6 +300,12 @@ const schemaJson = JSON.stringify({
       <div class="faq-item"><div class="faq-question">هل هناك ضمان وقطع غيار أصلية لماكينات جلوري؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، كل ماكينة تأتي بضمان موثق، ونحتفظ بقطع الغيار الأصلية وعلى رأسها جلوري.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم يستغرق تصليح ماكينة عد النقود في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نبدأ بتشخيص هاتفي، وما يحتاج تدخلًا فنيًا يُجدول بزيارة ميدانية بمواعيد متفق عليها.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يمكن الحصول على تركيب وتدريب في الموقع؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، الفريق الميداني يركب الماكينة ويضبط إعدادات الكشف ويدرب أمين الخزينة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما الفرق العملي بين تقنيات الكشف UV وMG وIR؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">UV تكشف العلامات المضيئة الخاصة، وMG تكشف الحبر المغناطيسي، وIR تفحص أنماطًا غير مرئية داخل الورقة. الماكينات المصرفية تجمع الثلاثة معًا لأعلى دقة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سرعة عد الماكينة وهل السرعة الأعلى تعني دقة أقل؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا، الماكينات المصرفية مصممة للسرعة العالية مع الحفاظ على الدقة. نرشح السرعة المناسبة فعليًا لحجم تداولك.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تغطون كل مناطق القاهرة بالصيانة الميدانية؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، فرقنا الميدانية تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي ومصر الجديدة بمسارات مجدولة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن معايرة الماكينة لعملات مختلفة غير الجنيه المصري؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، الماكينات المصرفية المتقدمة تدعم برمجة عدة عملات، مفيدة لمكاتب الصرافة والشركات التي تتعامل مع عملات أجنبية بجانب الجنيه المصري.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تقدمون عقود صيانة سنوية لماكينات العد وكشف التزييف؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، عقودنا تشمل معايرة دورية لدقة العد وكشف التزييف، وتنظيف الأجزاء الداخلية، مع أولوية استجابة لأي عطل طارئ يؤثر على العمل اليومي.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم يستغرق توريد وتركيب ماكينة عد جديدة في القاهرة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الأجهزة المتوفرة في المخزون تُسلَّم عادة خلال يوم إلى يومي عمل مع شرح كامل للاستخدام والمعايرة الأولية أمام العميل قبل مغادرة الفريق الفني للموقع.</div></div></div>
     </div>
   </div>
 </section>
@@ -266,7 +350,7 @@ const schemaJson = JSON.stringify({
             <textarea id="q-message" name="message" placeholder="حجم تعاملاتك النقدية اليومية ونوع نشاطك وعدد الفروع إن وجدت"></textarea>
           </div>
           <input type="hidden" name="service" value="cash-machines">
-          <input type="hidden" name="source" value="cash-machines/cairo">
+          <input type="hidden" name="source" value="cairo/cash-machines">
           <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
           <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
             <i class="fa-solid fa-paper-plane"></i> اطلب عرض السعر

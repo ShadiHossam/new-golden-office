@@ -1,0 +1,429 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MidPageCTA from '../../components/MidPageCTA.astro';
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://newgoldenoffice.com/alexandria/office-setup#service",
+      "url": "https://newgoldenoffice.com/alexandria/office-setup",
+      "name": "تجهيز مكتب أو نشاط متكامل في الإسكندرية",
+      "description": "تنسيق ست خدمات (طباعة، مستلزمات مكتبية، تكييفات، كاميرات مراقبة، ماكينات تصوير، ماكينات عد نقود) في مشروع تجهيز واحد للمكاتب والمحال الجديدة في الإسكندرية، بعقد وفاتورة ومندوب حساب واحد، ومقر فعلي تعاين فيه المعدات بنفسك.",
+      "serviceType": "تجهيز مكاتب ومحال متكامل",
+      "areaServed": { "@type": "City", "name": "الإسكندرية" },
+      "provider": { "@id": "https://newgoldenoffice.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"هل لازم أطلب كل الخدمات مع بعض؟","acceptedAnswer":{"@type":"Answer","text":"لأ، ابدأ بأي خدمة أو خدمتين تحتاجهم فعلًا، وضيف الباقي على نفس الحساب وقت ما تحتاجه — المشروع مصمم يكبر معاك مش يبدأ كامل من أول يوم."}},
+        {"@type":"Question","name":"إزاي بيتحدد ترتيب تنفيذ الخدمات؟","acceptedAnswer":{"@type":"Answer","text":"التكييف والتمديدات الكهربائية أولًا قبل ما تتقفل الحوائط، بعدها كابلات الشبكة وتركيب الكاميرات، بعدها الأثاث والمستلزمات وماكينات التصوير والعد، وآخر حاجة الطباعة والهوية البصرية عشان تتظبط على شكل المكان النهائي."}},
+        {"@type":"Question","name":"ينفع أزور مقركم وأشوف الأجهزة قبل ما نبدأ المشروع؟","acceptedAnswer":{"@type":"Answer","text":"أكيد، وده فرق حقيقي عندنا في الإسكندرية. مقرنا في الإبراهيمية تقدر تزوره وتعاين ماكينات التصوير وماكينات عد النقود وعينات المطبوعات بنفسك قبل ما تلتزم بأي حاجة."}},
+        {"@type":"Question","name":"هل السعر بيبقى أوفر لو حجزت أكثر من خدمة مع بعض؟","acceptedAnswer":{"@type":"Answer","text":"في الغالب أيوه، لأن حجم التعاقد الأكبر بيدّينا مساحة نرشحلك فيها شروط أفضل. السعر النهائي بيتحدد حسب مواصفات كل خدمة، فابعتلنا التفاصيل ويوصلك عرض واحد شامل."}},
+        {"@type":"Question","name":"مين المسؤول عن تنسيق الفرق المختلفة؟","acceptedAnswer":{"@type":"Answer","text":"مندوب حساب واحد بيتابع مشروعك من المعاينة للتسليم، وبما إن فريقنا كله داخل المدينة، التنسيق والاستجابة بيكونوا أسرع من مشروع بيتابعه فريق من محافظة تانية."}},
+        {"@type":"Question","name":"كام مدة تنفيذ مشروع تجهيز متكامل عادةً؟","acceptedAnswer":{"@type":"Answer","text":"بيعتمد على حجم المكان وعدد الخدمات، بس كمتوسط: مكتب أو محل متوسط الحجم بياخد من أسبوعين لأربع أسابيع من المعاينة للتسليم النهائي."}},
+        {"@type":"Question","name":"هل ينفع أبدأ بالتكييف والكاميرات بس وأأجل الطباعة لبعدين؟","acceptedAnswer":{"@type":"Answer","text":"أكيد، وده الترتيب المنطقي أصلًا. نجهزلك خطة مرحلية توضح إيه اللي لازم يتنفذ الأول وإيه اللي ينفع يتأجل لميزانية تانية، من غير ما يتأثر باقي المشروع."}},
+        {"@type":"Question","name":"هل تقدروا تشتغلوا بره ساعات العمل عشان منوقفش النشاط؟","acceptedAnswer":{"@type":"Answer","text":"نعم، خصوصًا في مشروعات توسعة مكان قائم أو محل شغال. نتفق مع مندوب حسابك على جدول تنفيذ بره ساعات الذروة أو في أيام محددة يقل فيها التأثير على نشاطك."}},
+        {"@type":"Question","name":"هل فيه ضمان موحد على كل الخدمات المنسقة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، عقد وفاتورة واحدة يعني ضمان موثق وواضح لكل بند بدل ما تلاحق ست ضمانات من ست جهات مختلفة لو حصلت مشكلة في أي جزء من المشروع."}}
+      ]
+    }
+  ]
+});
+---
+
+<BaseLayout
+  title="تجهيز مكتب أو نشاط متكامل في الإسكندرية — طباعة وتكييف وكاميرات ومستلزمات | نيو جولدن أوفيس"
+  description="بتجهّز مكتب أو محل جديد في الإسكندرية؟ ننسق التكييف والكاميرات والمستلزمات المكتبية وماكينات التصوير والعد والطباعة في مشروع واحد، ومقرنا الفعلي تقدر تزوره وتعاين المعدات بنفسك."
+  keywords="تجهيز مكتب متكامل الإسكندرية، تجهيز محل جديد الإسكندرية، تأسيس نشاط الإسكندرية"
+  ogTitle="تجهيز مكتب أو نشاط متكامل في الإسكندرية | نيو جولدن أوفيس"
+  ogDescription="ننسق ست خدمات تجهيز المكاتب والمحال في مشروع واحد بعقد وفاتورة ومندوب حساب واحد — الإسكندرية."
+  ogImage="/images/about-team.webp"
+  robots="noindex, nofollow"
+  schemaJson={schemaJson}
+>
+<style>
+  .quote-section{padding:60px 0}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
+  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .form-group{margin-bottom:1.1rem}
+  .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-dark);box-shadow:0 0 0 3px rgba(27,58,107,.1);background:#fff}
+  .form-group textarea{height:100px;resize:vertical}
+  .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .checkbox-item{display:flex;align-items:center;gap:8px;font-family:'Tajawal',sans-serif;font-size:0.92rem;color:#333}
+  .checkbox-item input{width:auto}
+  .form-submit-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:#fff;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .form-submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,107,.25)}
+  .success-message{display:none;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem}
+  .success-message i{font-size:2.5rem;color:#4caf50;display:block;margin-bottom:.5rem}
+  .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
+  .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
+  .quote-alt-card .wa-icon{font-size:3rem}
+  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card p{opacity:.92;line-height:1.8}
+  @media(max-width:768px){.quote-grid{grid-template-columns:1fr}.checkbox-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <nav class="breadcrumb">
+          <a href="/">الرئيسية</a>
+          <span>/</span>
+          <a href="/alexandria">خدماتنا في الإسكندرية</a>
+          <span>/</span>
+          <span class="current">تجهيز مكتب متكامل</span>
+        </nav>
+        <h1 class="reveal">تجهيز مكتب أو نشاط متكامل في الإسكندرية</h1>
+        <p class="lead reveal delay-1">بتجهّز مكتب أو محل جديد؟ ننسق التكييف والكاميرات والمستلزمات المكتبية وماكينات التصوير والعد والطباعة في مشروع واحد، ومقرنا الفعلي بالإبراهيمية تقدر تزوره وتعاين المعدات بنفسك قبل ما تلتزم</p>
+      </div>
+      <div class="page-hero-image">
+        <img src="/images/webp-images/business-professionals-meeting-at-conference-room-2026-01-05-00-29-12-utc.webp" alt="تجهيز مكتب متكامل في الإسكندرية" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num" data-target="6">0</div>
+        <div class="stat-label">خدمات تحت مشروع واحد</div>
+      </div>
+      <div class="stat-item reveal delay-1">
+        <div class="stat-num" data-target="1">0</div>
+        <div class="stat-label">مندوب حساب يتابع المشروع كامل</div>
+      </div>
+      <div class="stat-item reveal delay-2">
+        <div class="stat-num" data-target="4">0</div>
+        <div class="stat-label">مراحل تنفيذ مرتبة</div>
+      </div>
+      <div class="stat-item reveal delay-3">
+        <div class="stat-num" data-target="1">0</div>
+        <div class="stat-label">مقر فعلي تعاين فيه المعدات</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>لما تجهّز مكتب أو محل جديد، المشكلة الحقيقية مش في اختيار الأجهزة، المشكلة في التنسيق: فريق التكييف بييجي قبل الكهربائي، فريق الكاميرات بيلاقي الحوائط اتقفلت، والمطبوعات بتتأخر لحد ما يتحدد شكل المكان النهائي. نيو جولدن أوفيس بتاخد المشكلة دي منك: مندوب حساب واحد بيبني خطة تنفيذ مرحلية للست خدمات بترتيب صح من أول يوم، وبما إن مقرنا وفريقنا داخل الإسكندرية، تقدر تزورنا وتعاين المعدات بنفسك قبل ما تلتزم بأي حاجة.</p>
+      <p style="margin-top:16px">الخدمة دي مش موجهة بس لمشروعات كبيرة. صاحب صيدلية بيفتتح فرع تاني، أو عيادة بتنقل لعيادة أوسع، أو شركة صغيرة بتوسع مكتبها من غرفتين لثلاث غرف، كلهم بيستفيدوا من نفس فكرة التنسيق المركزي: خطة واحدة، مندوب واحد، وفاتورة واحدة، بدل ما يبقى كل جزء من التجهيز مشروعًا منفصلًا بحد ذاته يحتاج متابعة مستقلة.</p>
+    </div>
+
+    <div class="section-header">
+      <h2>الست خدمات اللي بتتنسق في مشروعك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-snowflake"></i></div><h3 class="service-title">التكييفات</h3><p class="service-desc">أول مرحلة تنفيذ — قبل ما تتقفل الحوائط أو يتركّب أي جهاز حساس.</p><a href="/alexandria/ac" class="btn btn-outline btn-sm">التفاصيل <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-video"></i></div><h3 class="service-title">كاميرات المراقبة</h3><p class="service-desc">تمديد كابلات الشبكة وتركيب الكاميرات بعد التكييف مباشرة.</p><a href="/alexandria/cameras" class="btn btn-outline btn-sm">التفاصيل <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-copy"></i></div><h3 class="service-title">ماكينات تصوير المستندات</h3><p class="service-desc">عايناها بنفسك في مقرنا قبل ما تتركّب في مكتبك.</p><a href="/alexandria/copiers" class="btn btn-outline btn-sm">التفاصيل <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-3"><div class="service-icon"><i class="fas fa-pen-ruler"></i></div><h3 class="service-title">الأدوات والمستلزمات المكتبية</h3><p class="service-desc">توريد أول دفعة تجهيز مع بدء عقد التوريد الدوري.</p><a href="/alexandria/office-supplies" class="btn btn-outline btn-sm">التفاصيل <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-money-bill-wave"></i></div><h3 class="service-title">ماكينات عد النقود</h3><p class="service-desc">للمحال والفروع اللي بتتعامل نقدي، بتتركب مع باقي المعدات.</p><a href="/alexandria/cash-machines" class="btn btn-outline btn-sm">التفاصيل <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-print"></i></div><h3 class="service-title">الطباعة والهوية البصرية</h3><p class="service-desc">آخر مرحلة عمدًا — بعد ما تتأكد من شكل المكان النهائي.</p><a href="/alexandria/printing" class="btn btn-outline btn-sm">التفاصيل <i class="fas fa-arrow-left"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>إزاي بيتم تنفيذ مشروع تجهيز متكامل؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h4>معاينة شاملة</h4>
+        <p>مندوب حسابك ييجي يعاين المكان، يشوف القدرة الكهربائية، توزيع المساحة، ونقاط التركيب المطلوبة لكل خدمة.</p>
+      </div>
+      <div class="step-card reveal delay-1">
+        <div class="step-num">2</div>
+        <h4>خطة تنفيذ مرحلية</h4>
+        <p>يوصلك جدول زمني واضح: التكييف والكهرباء، بعدين الشبكة والكاميرات، بعدين الأثاث والمستلزمات، وأخيرًا الطباعة والهوية.</p>
+      </div>
+      <div class="step-card reveal delay-2">
+        <div class="step-num">3</div>
+        <h4>تنفيذ منسّق</h4>
+        <p>كل فريق بييجي في موعده المحدد من غير تعارض، وبما إننا داخل المدينة الاستجابة والمتابعة أسرع.</p>
+      </div>
+      <div class="step-card reveal delay-3">
+        <div class="step-num">4</div>
+        <h4>تسليم واحد وضمان موحد</h4>
+        <p>تستلم المكان جاهز بالكامل، بعقد وفاتورة وضمان موحد، مش أوراق متفرقة من ست جهات.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما الذي يحدد تكلفة مشروع التجهيز الكامل؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p style="text-align:center">لا يوجد رقم إجمالي ثابت لمشروع تجهيز، لأن كل مشروع مختلف في احتياجه. لكن أهم العوامل التي تحدد التكلفة الإجمالية:</p>
+      <ul style="max-width:750px;margin:24px auto 0;padding-inline-start:20px;line-height:2.1">
+        <li><strong>مساحة المكان وعدد الغرف:</strong> تحدد عدد وحدات التكييف والكاميرات المطلوبة وكمية المستلزمات.</li>
+        <li><strong>عدد الخدمات المطلوبة معًا:</strong> مشروع يشمل الست خدمات مختلف عن مشروع يبدأ بخدمتين فقط.</li>
+        <li><strong>حالة البنية التحتية الحالية:</strong> مكان جاهز للتشطيب يختلف تكلفة عن مكان يحتاج تعديلات كهربائية أولًا.</li>
+        <li><strong>فئة المعدات المختارة:</strong> اقتصادية أم احترافية، في كل خدمة من الست خدمات.</li>
+        <li><strong>هل هناك عقد صيانة سنوي مصاحب:</strong> يضاف كبند منفصل واضح في نفس العرض.</li>
+      </ul>
+      <p style="margin-top:20px;text-align:center">لهذا نبني عرض السعر بعد المعاينة أو بعد مراجعة تفاصيلك الدقيقة، ونقدمه لك مقسّمًا على كل خدمة حتى ترى بوضوح إلى أين يذهب كل جنيه، بدل رقم إجمالي غامض.</p>
+    </div>
+  </div>
+</section>
+
+<MidPageCTA formId="alexSetupMidCta" />
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>لمين الخدمة دي؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مكتب أو محل جديد بالكامل</h4><p>نشاط بيفتتح لأول مرة في الإسكندرية ومحتاج تجهيز من الصفر بميعاد افتتاح محدد.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-arrows-up-down-left-right"></i></div><h4>توسعة مكان قائم</h4><p>مكتب أو محل موجود بيكبّر مساحته ومحتاج يضيف تكييف وكاميرات ومعدات إضافية.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-truck-moving"></i></div><h4>نقل مقر بالكامل</h4><p>نشاط بينقل مكانه ومحتاج كل حاجة تتظبط قبل يوم الانتقال، من التكييف للهوية البصرية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الميزانية والتخطيط: من أين نبدأ؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>أكتر سؤال بيوصلنا من عملاء بيجهزوا مكان جديد: "الميزانية عندي محدودة، أبدأ بإيه؟". الإجابة مش واحدة لكل الحالات، لكن فيه منطق ثابت نتبعه: الأول البنية التحتية اللي بتتقفل بيها الحوائط — التكييف والتمديدات الكهربائية وكابلات الشبكة — لأن تأجيلها لبعد التشطيب يعني تكسير وتكلفة إضافية مضاعفة. بعدها الأمان (الكاميرات) لأنه بيحمي استثمارك من أول يوم تشغيل. بعد كده معدات التشغيل اليومي (ماكينات التصوير والعد والمستلزمات المكتبية). وآخر حاجة الطباعة والهوية البصرية، لأنها بتتظبط أحسن على شكل المكان النهائي.</p>
+      <p style="margin-top:16px">مش شرط تنفذ الأربع مراحل بميزانية واحدة. نقدر نحطلك خطة تنفيذ على مرحلتين أو تلاتة تتماشى مع تدفقك المالي، وتبدأ التشغيل بالأساسيات وتضيف الباقي تدريجيًا على نفس الحساب والعقد، من غير ما تدفع تكلفة معاينة أو تنسيق إضافية في كل مرة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>علامات إن مشروعك محتاج تنسيق مركزي مش موردين منفصلين</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>مش كل تجهيز محتاج مشروعًا منسقًا. لو محتاج جهاز واحد أو خدمة واحدة بس، الأسرع إنك تطلبها مباشرة من صفحتها. لكن فيه علامات واضحة تقولك إن التنسيق المركزي هو الأوفر لك وقتًا ومجهودًا: عندك أكتر من ثلاث خدمات هتتنفذ في وقت متقارب، عندك ميعاد افتتاح أو انتقال محدد ومش قادر تخاطر بتعارض مواعيد الموردين، المكان لسه في مرحلة التشطيب وقرارات التكييف والكهرباء لسه ما اتاخدتش، أو ببساطة مش عندك وقت تتابع ست جهات مختلفة وعايز تتصل برقم واحد لأي مشكلة تحصل بعد التسليم.</p>
+      <p style="margin-top:16px">لو حاسس إن أي علامة من دي بتنطبق عليك، مشروع التجهيز المتكامل بيوفرلك دمج المعاينات في زيارة واحدة، وجدولة التنفيذ بترتيب مدروس، ومسؤولية واحدة لو أي جزء احتاج متابعة بعد التسليم.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>إيه اللي بنسأل عنه في المعاينة الأولى؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>المساحة وتقسيم الغرف:</strong> عدد الغرف والمكاتب، وأماكن الأبواب والنوافذ اللي بتأثر على توزيع التكييف والكاميرات.</li>
+        <li><strong>القدرة الكهربائية المتاحة:</strong> عشان نحدد لو محتاجين تقوية تيار قبل تركيب أجهزة إضافية.</li>
+        <li><strong>عدد الموظفين والزبائن المتوقع:</strong> بيأثر على قدرة التكييف وعدد نقاط الطباعة وسرعة ماكينة العد.</li>
+        <li><strong>ميعاد الافتتاح أو الانتقال:</strong> عشان نبني الجدول الزمني بالعكس من تاريخ التسليم للخلف.</li>
+        <li><strong>ميزانيتك التقريبية:</strong> عشان نرتب لك الأولويات بدل ما نقترح حلولًا فوق احتياجك الفعلي.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أخطاء شائعة عند تجهيز مكتب أو نشاط جديد</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>تركيب التكييف بعد التشطيب:</strong> يعني تكسير في الحوائط والأسقف المعلقة، وتكلفة إضافية كان ممكن تتجنبها بترتيب صح من الأول.</li>
+        <li><strong>تأجيل قرار الكاميرات لحد آخر لحظة:</strong> بيخلي الفني يمد كابلات ظاهرة على الحوائط بدل ما تتخفى داخل التشطيب.</li>
+        <li><strong>شراء أجهزة بمواصفات أعلى من الاحتياج الفعلي:</strong> ميزانية بتضيع على قدرة تبريد أو سرعة طباعة مش هتستخدمها.</li>
+        <li><strong>الاعتماد على أكتر من مورد بلا جدول تنفيذ واحد:</strong> بيؤدي لتعارض مواعيد، وأحيانًا فريق بيلاقي شغل فريق تاني اتعمل بشكل يمنعه من إكمال شغله.</li>
+        <li><strong>تجاهل عقد الصيانة من البداية:</strong> يبدو توفيرًا في الأول، لكنه بيتحول لتكلفة أعلى مع أول عطل غير متوقع بدون أولوية استجابة.</li>
+        <li><strong>طباعة الهوية البصرية قبل تثبيت شكل المكان النهائي:</strong> بيؤدي لإعادة طباعة لافتات أو كروت لو تغيّر أي تفصيلة في التصميم الداخلي.</li>
+      </ul>
+      <p style="margin-top:16px;text-align:center">معظم الأخطاء دي بتحصل لما كل خدمة تتحجز من جهة منفصلة بلا خطة موحدة. الغرض من مشروع التجهيز المتكامل بالضبط هو تفادي هذه الأخطاء من أول معاينة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>دليل التجهيز حسب نوع نشاطك</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">كل نشاط له أولويات تجهيز مختلفة. إليك ملخص سريع لما يحتاجه كل نوع عادةً، قبل أن نضبط التفاصيل الدقيقة في المعاينة:</p>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مكتب إداري أو شركة خدمية</h4><p>تكييف سبليت أو مركزي للغرف والاجتماعات، كاميرات للاستقبال والممرات، ماكينة تصوير وطابعة، مستلزمات مكتبية بعقد توريد دوري، ومطبوعات هوية رسمية (كروت وأوراق شركة).</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>محل تجاري أو معرض</h4><p>تكييف يراعي مساحة العرض وحركة الزبائن، كاميرات تغطي المدخل ونقطة الدفع والنقاط العمياء، ماكينة عد نقود وكشف تزييف لو التعاملات نقدية، ولافتات ومطبوعات نقطة بيع.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-stethoscope"></i></div><h4>عيادة أو مركز طبي</h4><p>تكييف هادئ يراعي راحة المرضى، كاميرات للاستقبال والممرات مع مراعاة خصوصية غرف الكشف، ماكينة تصوير للتقارير والروشتات، وكروت مواعيد وأوراق رسمية مطبوعة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-utensils"></i></div><h4>مطعم أو كافيه</h4><p>تكييف لمساحة الجلوس والمطبخ منفصل عن بعضه غالبًا، كاميرات للمطبخ والصالة وخزينة الكاشير، ماكينة عد نقود لتصفية الشيفت، ومنيوهات ولافتات مطبوعة بخامات تتحمل الاستخدام اليومي.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>نغطي مشروعك في أي حي بالإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
+        <li><strong>الإبراهيمية ومحيط مقرنا:</strong> أسرع منطقة استجابة عندنا، لأننا فعليًا على بعد دقائق منها.</li>
+        <li><strong>سموحة ومحرم بك:</strong> الأبراج الإدارية والمقرات الجديدة، بخطط تنفيذ تراعي لوائح المباني الحديثة.</li>
+        <li><strong>سيدي جابر وكامب شيزار ولوران وجليم وميامي:</strong> مزيج من المكاتب والمحال والعيادات، بمواعيد تنفيذ تتوافق مع ساعات نشاطك.</li>
+        <li><strong>وسط البلد والمنشية والعطارين:</strong> المحال والمباني القديمة التي تحتاج خطط تمديد لا تتلف الواجهات التراثية.</li>
+        <li><strong>المنتزه:</strong> المشروعات والفروع الجديدة في النطاق الشرقي للمدينة، ضمن نفس مسارات التنفيذ اليومية.</li>
+        <li><strong>الكورنيش وقرب الميناء:</strong> المحال والمكاتب المطلة على البحر أو القريبة من حركة الاستيراد والتصدير، بمراعاة خاصة لمقاومة الرطوبة والملوحة في التركيبات الخارجية.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>مشروع منسق ولا موردين منفصلين؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">المعيار</th><th style="padding:14px 16px;text-align:right">مشروع منسّق معنا</th><th style="padding:14px 16px;text-align:right">6 موردين منفصلين</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">ترتيب التنفيذ</td><td style="padding:12px 16px">خطة مرحلية واحدة مدروسة</td><td style="padding:12px 16px">كل مورد بيحدد موعده لوحده — تعارض متوقع</td></tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">معاينة المعدات</td><td style="padding:12px 16px">مقر فعلي تزوره وتشوف بنفسك</td><td style="padding:12px 16px">تعتمد على كلام كل مورد لوحده</td></tr>
+          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">الفواتير والعقود</td><td style="padding:12px 16px">عقد وفاتورة واحدة</td><td style="padding:12px 16px">ست عقود وست فواتير منفصلة</td></tr>
+          <tr style="background:#f8f9fa"><td style="padding:12px 16px">وقتك في التنسيق</td><td style="padding:12px 16px">شبه معدوم — مندوبك بيتابع</td><td style="padding:12px 16px">أنت اللي بتتابع وتنسق بين الجميع</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أسئلة شائعة عن تجهيز المكتب المتكامل</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">هل لازم أطلب كل الخدمات مع بعض؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لأ، ابدأ بأي خدمة أو خدمتين تحتاجهم فعلًا، وضيف الباقي على نفس الحساب وقت ما تحتاجه.</div></div></div>
+      <div class="faq-item"><div class="faq-question">إزاي بيتحدد ترتيب تنفيذ الخدمات؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">التكييف والتمديدات الكهربائية أولًا قبل ما تتقفل الحوائط، بعدها كابلات الشبكة وتركيب الكاميرات، بعدها الأثاث والمستلزمات، وآخر حاجة الطباعة والهوية البصرية.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ينفع أزور مقركم وأشوف الأجهزة قبل ما نبدأ المشروع؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">أكيد، وده فرق حقيقي عندنا في الإسكندرية. مقرنا في الإبراهيمية تقدر تزوره وتعاين ماكينات التصوير وماكينات عد النقود وعينات المطبوعات بنفسك قبل أي التزام.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل السعر بيبقى أوفر لو حجزت أكثر من خدمة مع بعض؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">في الغالب أيوه، لأن حجم التعاقد الأكبر بيدّينا مساحة نرشحلك فيها شروط أفضل. السعر النهائي بيتحدد حسب مواصفات كل خدمة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">مين المسؤول عن تنسيق الفرق المختلفة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">مندوب حساب واحد بيتابع مشروعك من المعاينة للتسليم، وبما إن فريقنا كله داخل المدينة، التنسيق والاستجابة أسرع.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كام مدة تنفيذ مشروع تجهيز متكامل عادةً؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بيعتمد على حجم المكان وعدد الخدمات، بس كمتوسط مكتب أو محل متوسط الحجم بياخد من أسبوعين لأربع أسابيع من المعاينة للتسليم.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل ينفع أبدأ بالتكييف والكاميرات بس وأأجل الطباعة لبعدين؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">أكيد، وده الترتيب المنطقي أصلًا. نجهزلك خطة مرحلية توضح إيه اللي لازم يتنفذ الأول وإيه اللي ينفع يتأجل لميزانية تانية، من غير ما يتأثر باقي المشروع.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تقدروا تشتغلوا بره ساعات العمل عشان منوقفش النشاط؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، خصوصًا في مشروعات توسعة مكان قائم أو محل شغال. نتفق مع مندوب حسابك على جدول تنفيذ بره ساعات الذروة أو في أيام محددة يقل فيها التأثير على نشاطك.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل فيه ضمان موحد على كل الخدمات المنسقة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، عقد وفاتورة واحدة يعني ضمان موثق وواضح لكل بند بدل ما تلاحق ست ضمانات من ست جهات مختلفة لو حصلت مشكلة في أي جزء من المشروع.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section quote-section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>ابدأ مشروع تجهيز مكتبك في الإسكندرية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-form-card reveal">
+        <h3>أرسل تفاصيل مشروعك</h3>
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="q-name">الاسم الكامل</label>
+            <input type="text" id="q-name" name="name" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="q-phone">رقم الهاتف</label>
+            <input type="tel" id="q-phone" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="form-group">
+            <label for="q-company">اسم الشركة (اختياري)</label>
+            <input type="text" id="q-company" name="company" placeholder="اسم شركتك أو نشاطك">
+          </div>
+          <div class="form-group">
+            <label>الخدمات المطلوبة (اختر أكتر من واحدة)</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="services[]" value="ac"> تكييفات</label>
+              <label class="checkbox-item"><input type="checkbox" name="services[]" value="cameras"> كاميرات مراقبة</label>
+              <label class="checkbox-item"><input type="checkbox" name="services[]" value="copiers"> ماكينات تصوير</label>
+              <label class="checkbox-item"><input type="checkbox" name="services[]" value="office-supplies"> مستلزمات مكتبية</label>
+              <label class="checkbox-item"><input type="checkbox" name="services[]" value="cash-machines"> ماكينات عد نقود</label>
+              <label class="checkbox-item"><input type="checkbox" name="services[]" value="printing"> طباعة وهوية بصرية</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="q-message">تفاصيل المشروع (اختياري)</label>
+            <textarea id="q-message" name="message" placeholder="مساحة المكتب أو المحل، الحي بالإسكندرية، وموعد الافتتاح المتوقع لو عندك"></textarea>
+          </div>
+          <input type="hidden" name="service" value="office-setup">
+          <input type="hidden" name="source" value="alexandria/office-setup">
+          <input type="text" name="website" id="q-website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+          <button type="submit" class="form-submit-btn" id="quoteSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> اطلب معاينة ومشروع
+          </button>
+          <p id="quoteErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
+        </form>
+        <div class="success-message" id="quoteSuccessMessage">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>تم استلام طلبك بنجاح! هيتواصل معاك مندوب حسابك في أقرب وقت.</p>
+        </div>
+      </div>
+      <div class="quote-alt-card reveal delay-1">
+        <i class="fab fa-whatsapp wa-icon"></i>
+        <h3>تفضل تتكلم مباشرة؟</h3>
+        <p>كلمنا على واتساب وهنرد عليك فورًا لترتيب معاينة مشروعك في الإسكندرية</p>
+        <a href="https://wa.me/201227392074?text=أريد%20تجهيز%20مكتب%20متكامل%20في%20الإسكندرية" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
+        </a>
+        <p style="margin-top:4px;font-size:.95rem">أو اتصل على 01227392074</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('quoteForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successMsg = document.getElementById('quoteSuccessMessage');
+      var errorMsg = document.getElementById('quoteErrorMessage');
+      var submitBtn = document.getElementById('quoteSubmitBtn');
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
+        .then(function (result) {
+          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
+          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
+        })
+        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
+        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+    });
+  })();
+</script>
+</BaseLayout>
