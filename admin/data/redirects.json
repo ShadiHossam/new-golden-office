@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "id": 1,
+    "from": "/printing/alexandria",
+    "to": "/alexandria/printing",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 2,
+    "from": "/printing/cairo",
+    "to": "/cairo/printing",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 3,
+    "from": "/copiers/alexandria",
+    "to": "/alexandria/copiers",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 4,
+    "from": "/copiers/cairo",
+    "to": "/cairo/copiers",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 5,
+    "from": "/cameras/alexandria",
+    "to": "/alexandria/cameras",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 6,
+    "from": "/cameras/cairo",
+    "to": "/cairo/cameras",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 7,
+    "from": "/ac/alexandria",
+    "to": "/alexandria/ac",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 8,
+    "from": "/ac/cairo",
+    "to": "/cairo/ac",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 9,
+    "from": "/cash-machines/alexandria",
+    "to": "/alexandria/cash-machines",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 10,
+    "from": "/cash-machines/cairo",
+    "to": "/cairo/cash-machines",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 11,
+    "from": "/office-supplies/alexandria",
+    "to": "/alexandria/office-supplies",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  },
+  {
+    "id": 12,
+    "from": "/office-supplies/cairo",
+    "to": "/cairo/office-supplies",
+    "status": 301,
+    "created_at": "2026-08-04T20:28:52.513Z"
+  }
+]

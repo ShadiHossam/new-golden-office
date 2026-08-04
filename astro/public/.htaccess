@@ -12,11 +12,7 @@ RewriteEngine On
 # the extensionless URL instead, so it's a real 200, not a redirect.
 DirectorySlash Off
 
-# Pre-restructure geo URLs: the site used to serve these under
-# /category/city (e.g. /printing/alexandria) before the routes moved to
-# /city/category (e.g. /alexandria/printing). No redirect existed for the
-# old pattern, so any indexed or bookmarked link to it 404s. Redirect each
-# old path straight to its current equivalent.
+# BEGIN MANAGED REDIRECTS -- generated from admin/data/redirects.json, do not hand-edit
 RewriteRule ^printing/alexandria/?$ /alexandria/printing [R=301,L]
 RewriteRule ^printing/cairo/?$ /cairo/printing [R=301,L]
 RewriteRule ^copiers/alexandria/?$ /alexandria/copiers [R=301,L]
@@ -29,6 +25,7 @@ RewriteRule ^cash-machines/alexandria/?$ /alexandria/cash-machines [R=301,L]
 RewriteRule ^cash-machines/cairo/?$ /cairo/cash-machines [R=301,L]
 RewriteRule ^office-supplies/alexandria/?$ /alexandria/office-supplies [R=301,L]
 RewriteRule ^office-supplies/cairo/?$ /cairo/office-supplies [R=301,L]
+# END MANAGED REDIRECTS
 
 RewriteCond %{HTTP_HOST} ^www\.newgoldenoffice\.com$ [NC]
 RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]

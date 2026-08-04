@@ -3,6 +3,8 @@ const path = require('path');
 const { loadJson, saveJson } = require('../lib/db');
 const { logActivity } = require('../lib/activity');
 const { requirePermission } = require('../lib/permissions');
+const { syncHtaccessRedirects } = require('../lib/htaccess-redirects');
+const { triggerAstroRebuild } = require('../lib/astro-sync');
 
 const router = express.Router();
 const view = requirePermission('redirects.view');
@@ -12,6 +14,15 @@ const FILE = 'redirects.json';
 function getRedirects() { return loadJson(FILE); }
 function saveRedirects(data) { saveJson(FILE, data); }
 function nextId(list) { return list.length ? Math.max(...list.map(r => r.id)) + 1 : 1; }
+
+// Persists the JSON store, regenerates the live .htaccess redirect block to
+// match, and kicks off the same build+deploy pipeline blog/page edits use —
+// otherwise a saved redirect would silently do nothing on the real site.
+function applyRedirects(list) {
+  saveRedirects(list);
+  syncHtaccessRedirects(list);
+  triggerAstroRebuild();
+}
 
 function normalizePath(raw) {
   if (!raw) return '';
@@ -54,7 +65,7 @@ router.post('/', manage, (req, res) => {
   }
 
   list.push({ id: nextId(list), from, to: status === 410 ? '' : to, status, created_at: new Date().toISOString() });
-  saveRedirects(list);
+  applyRedirects(list);
   logActivity(req.session.username, 'Redirect added', `${from} → ${to || 'Gone'} (${status})`);
   req.flash('success', 'Redirect added.');
   res.redirect('/2ef65f179f12439e317a23628b016653/redirects');
@@ -71,7 +82,7 @@ router.post('/:id/edit', manage, (req, res) => {
   if (idx < 0) { req.flash('danger', 'Redirect not found.'); return res.redirect('/2ef65f179f12439e317a23628b016653/redirects'); }
 
   list[idx] = { ...list[idx], from, to: status === 410 ? '' : to, status };
-  saveRedirects(list);
+  applyRedirects(list);
   logActivity(req.session.username, 'Redirect updated', `${from} (${status})`);
   req.flash('success', 'Redirect updated.');
   res.redirect('/2ef65f179f12439e317a23628b016653/redirects');
@@ -82,7 +93,7 @@ router.post('/:id/delete', manage, (req, res) => {
   const list = getRedirects();
   const r = list.find(x => x.id === id);
   if (!r) { req.flash('danger', 'Redirect not found.'); return res.redirect('/2ef65f179f12439e317a23628b016653/redirects'); }
-  saveRedirects(list.filter(x => x.id !== id));
+  applyRedirects(list.filter(x => x.id !== id));
   logActivity(req.session.username, 'Redirect deleted', r.from);
   req.flash('success', 'Redirect deleted.');
   res.redirect('/2ef65f179f12439e317a23628b016653/redirects');
