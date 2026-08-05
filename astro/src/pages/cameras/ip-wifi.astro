@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -106,85 +109,87 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>تقنية المستقبل في مراقبة المنازل والأعمال</h2>
-      <p>كاميرات IP وواي فاي هي أحدث ما وصلت إليه تقنيات المراقبة الحديثة. بدلاً من التعقيد الذي تفرضه الكاميرات التقليدية من كابلات طويلة وإعدادات معقدة، أصبح بإمكانك تثبيت كاميرة في أي مكان تريده والبدء في المشاهدة من هاتفك خلال دقائق. نيو جولدن أوفيس تقدم حلول IP وواي فاي متكاملة للمنازل والمكاتب والمحلات التجارية في جميع أنحاء مصر.</p>
+      <ContentIntro
+        heading="تقنية المستقبل في مراقبة المنازل والأعمال"
+        text="كاميرات IP وواي فاي هي أحدث ما وصلت إليه تقنيات المراقبة الحديثة. بدلاً من التعقيد الذي تفرضه الكاميرات التقليدية من كابلات طويلة وإعدادات معقدة، أصبح بإمكانك تثبيت كاميرة في أي مكان تريده والبدء في المشاهدة من هاتفك خلال دقائق. نيو جولدن أوفيس تقدم حلول IP وواي فاي متكاملة للمنازل والمكاتب والمحلات التجارية في جميع أنحاء مصر."
+      />
 
       <h3><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> IP مقابل Analog: أيهما تختار؟</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات Analog التقليدية:</strong> تحتاج كابل Coaxial لكل كاميرة وجهاز DVR. الأرخص في الأنظمة الكبيرة ولكنها أقل مرونة في التثبيت</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات IP (شبكية):</strong> تعمل عبر شبكة Cat6 أو Wi-Fi، دقة صورة أعلى بكثير، إعداد أسهل، قابلة للتوسع بلا حدود</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>النتيجة:</strong> للمشاريع الجديدة ننصح بـ IP لجودتها العالية ومرونتها؛ للأنظمة الموجودة Analog تبقى خياراً اقتصادياً ممتازاً</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'كاميرات Analog التقليدية', text: 'تحتاج كابل Coaxial لكل كاميرة وجهاز DVR. الأرخص في الأنظمة الكبيرة ولكنها أقل مرونة في التثبيت' },
+        { title: 'كاميرات IP (شبكية)', text: 'تعمل عبر شبكة Cat6 أو Wi-Fi، دقة صورة أعلى بكثير، إعداد أسهل، قابلة للتوسع بلا حدود' },
+        { title: 'النتيجة', text: 'للمشاريع الجديدة ننصح بـ IP لجودتها العالية ومرونتها؛ للأنظمة الموجودة Analog تبقى خياراً اقتصادياً ممتازاً' },
+      ]} />
 
       <h3><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> مميزات كاميرات واي فاي</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>تثبيت بدون كابلات:</strong> لا تحتاج سوى مقبس كهرباء وشبكة Wi-Fi موجودة مسبقاً في المكان</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>المرونة في الموضع:</strong> يمكن نقل الكاميرة وتغيير مكانها بسهولة دون أي أعمال توصيل</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التثبيت السريع:</strong> يستغرق تثبيت كاميرة واي فاي 15 دقيقة فقط مقارنة بساعات للكاميرات التقليدية</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>المشاهدة الفورية:</strong> تبدأ في رؤية الصورة على هاتفك فوراً بعد إعداد الكاميرة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التحديثات التلقائية:</strong> الكاميرات تتلقى تحديثات برمجية تلقائية لتحسين الأداء وإضافة مميزات جديدة</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-plug', title: 'تثبيت بدون كابلات', text: 'لا تحتاج سوى مقبس كهرباء وشبكة Wi-Fi موجودة مسبقاً في المكان' },
+        { icon: 'fa-arrows-alt', title: 'المرونة في الموضع', text: 'يمكن نقل الكاميرة وتغيير مكانها بسهولة دون أي أعمال توصيل' },
+        { icon: 'fa-bolt', title: 'التثبيت السريع', text: 'يستغرق تثبيت كاميرة واي فاي 15 دقيقة فقط مقارنة بساعات للكاميرات التقليدية' },
+        { icon: 'fa-mobile-alt', title: 'المشاهدة الفورية', text: 'تبدأ في رؤية الصورة على هاتفك فوراً بعد إعداد الكاميرة' },
+        { icon: 'fa-sync', title: 'التحديثات التلقائية', text: 'الكاميرات تتلقى تحديثات برمجية تلقائية لتحسين الأداء وإضافة مميزات جديدة' },
+      ]} />
 
       <h3><i class="fas fa-arrows-alt" style="color:var(--secondary);margin-left:8px;"></i> كاميرات PTZ (الدوّارة)</h3>
       <p>كاميرات PTZ (Pan-Tilt-Zoom) تمنحك السيطرة الكاملة على المراقبة:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>التحريك الأفقي (Pan):</strong> تدور 360 درجة لتغطية جميع الاتجاهات بكاميرة واحدة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التحريك الرأسي (Tilt):</strong> تتحرك لأعلى ولأسفل لمتابعة الأشخاص والأحداث</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التكبير الضوئي (Zoom):</strong> تكبير ضوئي حتى 20x لرؤية التفاصيل الدقيقة من مسافة بعيدة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>المتابعة التلقائية:</strong> تتبع الأشخاص المتحركين تلقائياً دون أي تدخل منك</span></li>
-      </ul>
+      <IconCardGrid columns={4} items={[
+        { icon: 'fa-arrows-alt-h', title: 'التحريك الأفقي (Pan)', text: 'تدور 360 درجة لتغطية جميع الاتجاهات بكاميرة واحدة' },
+        { icon: 'fa-arrows-alt-v', title: 'التحريك الرأسي (Tilt)', text: 'تتحرك لأعلى ولأسفل لمتابعة الأشخاص والأحداث' },
+        { icon: 'fa-search-plus', title: 'التكبير الضوئي (Zoom)', text: 'تكبير ضوئي حتى 20x لرؤية التفاصيل الدقيقة من مسافة بعيدة' },
+        { icon: 'fa-walking', title: 'المتابعة التلقائية', text: 'تتبع الأشخاص المتحركين تلقائياً دون أي تدخل منك' },
+      ]} />
 
       <MidPageCTA formId="camIpWifiMidCta" />
 
       <h3><i class="fas fa-brain" style="color:var(--secondary);margin-left:8px;"></i> الكشف الذكي المتقدم</h3>
       <p>كاميرات IP الحديثة مزودة بذكاء اصطناعي يميزها تماماً عن الكاميرات التقليدية:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف الوجوه (Face Detection):</strong> تنبيهك عند ظهور وجه أمام الكاميرة مع إمكانية التعرف على الوجوه المسجلة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف الحركة الذكي:</strong> يميز بين حركة الإنسان والحيوانات والرياح لتقليل التنبيهات الزائفة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف الصوت (Sound Detection):</strong> تنبيهك عند ارتفاع الأصوات كالصراخ أو كسر الزجاج</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف البكاء:</strong> متاح في كاميرات المنازل للرد الفوري على بكاء الأطفال</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف اختراق المنطقة:</strong> رسم مناطق محظورة ويتلقى تنبيهاً فور دخول أحد إليها</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-user', title: 'كشف الوجوه (Face Detection)', text: 'تنبيهك عند ظهور وجه أمام الكاميرة مع إمكانية التعرف على الوجوه المسجلة' },
+        { icon: 'fa-running', title: 'كشف الحركة الذكي', text: 'يميز بين حركة الإنسان والحيوانات والرياح لتقليل التنبيهات الزائفة' },
+        { icon: 'fa-volume-up', title: 'كشف الصوت (Sound Detection)', text: 'تنبيهك عند ارتفاع الأصوات كالصراخ أو كسر الزجاج' },
+        { icon: 'fa-baby', title: 'كشف البكاء', text: 'متاح في كاميرات المنازل للرد الفوري على بكاء الأطفال' },
+        { icon: 'fa-shield-alt', title: 'كشف اختراق المنطقة', text: 'رسم مناطق محظورة ويتلقى تنبيهاً فور دخول أحد إليها' },
+      ]} />
 
       <h3><i class="fas fa-microphone" style="color:var(--secondary);margin-left:8px;"></i> الصوت ثنائي الاتجاه (Two-Way Audio)</h3>
       <p>كاميرات IP الحديثة مزودة بمكبر صوت وميكروفون يتيح لك التحدث مع من يظهر أمام الكاميرة مباشرةً من هاتفك — مثالي للتعامل مع الزوار والعمال والمراقبة التفاعلية.</p>
 
       <h3><i class="fas fa-cloud" style="color:var(--secondary);margin-left:8px;"></i> خيارات التخزين</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>التخزين السحابي:</strong> نسخ احتياطية في السحابة لضمان عدم فقدان التسجيلات حتى لو تعطّل الجهاز أو سُرق</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>MicroSD محلية:</strong> تخزين محلي في الكاميرة نفسها حتى 256GB بدون الحاجة لجهاز DVR</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>NAS Storage:</strong> تخزين شبكي محلي لاحترافيين يريدون أرشفة طويلة المدى</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'التخزين السحابي', text: 'نسخ احتياطية في السحابة لضمان عدم فقدان التسجيلات حتى لو تعطّل الجهاز أو سُرق' },
+        { title: 'MicroSD محلية', text: 'تخزين محلي في الكاميرة نفسها حتى 256GB بدون الحاجة لجهاز DVR' },
+        { title: 'NAS Storage', text: 'تخزين شبكي محلي لاحترافيين يريدون أرشفة طويلة المدى' },
+      ]} />
 
       <h3><i class="fas fa-mobile-alt" style="color:var(--secondary);margin-left:8px;"></i> التحكم عبر التطبيق</h3>
       <p>جميع كاميرات IP وواي فاي لدينا تأتي بتطبيق مجاني يدعم Android وiPhone يتيح لك:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span>مشاهدة البث المباشر بجودة عالية في أي وقت</span></li>
-        <li><i class="fas fa-check-circle"></i><span>مراجعة التسجيلات السابقة وتصديرها</span></li>
-        <li><i class="fas fa-check-circle"></i><span>التحكم في كاميرات PTZ من هاتفك</span></li>
-        <li><i class="fas fa-check-circle"></i><span>استقبال تنبيهات فورية على الهاتف</span></li>
-        <li><i class="fas fa-check-circle"></i><span>ضبط إعدادات الكاميرة والحركة والصوت</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-play-circle', text: 'مشاهدة البث المباشر بجودة عالية في أي وقت' },
+        { icon: 'fa-film', text: 'مراجعة التسجيلات السابقة وتصديرها' },
+        { icon: 'fa-arrows-alt', text: 'التحكم في كاميرات PTZ من هاتفك' },
+        { icon: 'fa-bell', text: 'استقبال تنبيهات فورية على الهاتف' },
+        { icon: 'fa-sliders-h', text: 'ضبط إعدادات الكاميرة والحركة والصوت' },
+      ]} />
 
       <h3><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> حل مشكلات الاتصال الشائعة في كاميرات واي فاي</h3>
       <p>على عكس كاميرات النظام التقليدي، أغلب مشكلات كاميرات واي فاي وIP لا علاقة لها بعطل في الجهاز نفسه بل بإعدادات الشبكة، وإليك أشهرها وحلولها:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>الكاميرا تظهر "غير متصلة" (Offline) في التطبيق:</strong> غالباً بسبب انقطاع مؤقت في الإنترنت أو تغيّر كلمة مرور الراوتر. إعادة تشغيل الراوتر والكاميرا معاً تحل المشكلة في أغلب الحالات خلال دقائق</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>بطء أو تقطّع البث المباشر:</strong> ناتج عادةً عن ضعف إشارة واي فاي أو ازدحام الشبكة بأجهزة كثيرة — نوصي بتخصيص شبكة واي فاي منفصلة (Guest Network) للكاميرات لتخفيف الحمل عن شبكة الاستخدام اليومي</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>إشعارات متأخرة أو لا تصل إطلاقاً:</strong> قد يكون السبب إعدادات توفير الطاقة في الهاتف التي توقف عمل التطبيق في الخلفية — نساعدك في ضبط إعدادات الهاتف بالشكل الصحيح لتصلك التنبيهات فوراً</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>نسيان كلمة مرور الكاميرا أو التطبيق:</strong> نوفر خدمة استرجاع آمنة عبر الرقم التسلسلي للجهاز أو إعادة الضبط من المصنع مع محاولة الحفاظ على الإعدادات الأساسية قدر الإمكان</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>تحديثات التطبيق تسبب مشاكل توافق مؤقتة:</strong> نتابع تحديثات الشركات المصنّعة عن كثب ونرشدك متى يكون التحديث آمناً ومتى يُفضّل الانتظار لإصدار أكثر استقراراً</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-unlink', title: 'الكاميرا تظهر "غير متصلة" (Offline) في التطبيق', text: 'غالباً بسبب انقطاع مؤقت في الإنترنت أو تغيّر كلمة مرور الراوتر. إعادة تشغيل الراوتر والكاميرا معاً تحل المشكلة في أغلب الحالات خلال دقائق' },
+        { icon: 'fa-hourglass-half', title: 'بطء أو تقطّع البث المباشر', text: 'ناتج عادةً عن ضعف إشارة واي فاي أو ازدحام الشبكة بأجهزة كثيرة — نوصي بتخصيص شبكة واي فاي منفصلة (Guest Network) للكاميرات لتخفيف الحمل عن شبكة الاستخدام اليومي' },
+        { icon: 'fa-bell-slash', title: 'إشعارات متأخرة أو لا تصل إطلاقاً', text: 'قد يكون السبب إعدادات توفير الطاقة في الهاتف التي توقف عمل التطبيق في الخلفية — نساعدك في ضبط إعدادات الهاتف بالشكل الصحيح لتصلك التنبيهات فوراً' },
+        { icon: 'fa-key', title: 'نسيان كلمة مرور الكاميرا أو التطبيق', text: 'نوفر خدمة استرجاع آمنة عبر الرقم التسلسلي للجهاز أو إعادة الضبط من المصنع مع محاولة الحفاظ على الإعدادات الأساسية قدر الإمكان' },
+        { icon: 'fa-sync-alt', title: 'تحديثات التطبيق تسبب مشاكل توافق مؤقتة', text: 'نتابع تحديثات الشركات المصنّعة عن كثب ونرشدك متى يكون التحديث آمناً ومتى يُفضّل الانتظار لإصدار أكثر استقراراً' },
+      ]} />
 
       <h3><i class="fas fa-user-friends" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات استخدام يومية لكاميرات IP وواي فاي</h3>
       <p>ما يميز هذه الفئة من الكاميرات أنها دخلت في تفاصيل حياة الناس اليومية بطرق لم تكن ممكنة مع الأنظمة التقليدية:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>الآباء العاملون:</strong> مراقبة الأطفال والمربية من مكان العمل مباشرة عبر الهاتف، مع تنبيه فوري عند البكاء أو أي حركة غير معتادة في غرفة الطفل</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>الاطمئنان على كبار السن:</strong> كاميرات بصوت ثنائي الاتجاه تتيح لأفراد العائلة التواصل الفوري مع الوالدين المسنين والاطمئنان عليهم في أي وقت من اليوم</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>أصحاب الأعمال متعددة الفروع:</strong> ربط عدة فروع بكاميرات IP على حساب واحد في التطبيق لمراقبة جميع المواقع من شاشة واحدة دون الحاجة لزيارة كل فرع بشكل يومي</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>أصحاب العقارات الساحلية والمسافرون:</strong> كاميرات تعمل بالطاقة الشمسية أو البطارية لمراقبة الفيلات والشاليهات الساحلية التي تبقى خالية معظم أيام السنة دون كهرباء دائمة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>الطلاب والمقيمون في شقق مستقلة:</strong> كاميرة واي فاي بسيطة عند الباب لمراقبة الزوار واستلام الطرود بأمان دون أي تمديدات أو تعديلات في الشقة المستأجرة</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-briefcase', title: 'الآباء العاملون', text: 'مراقبة الأطفال والمربية من مكان العمل مباشرة عبر الهاتف، مع تنبيه فوري عند البكاء أو أي حركة غير معتادة في غرفة الطفل' },
+        { icon: 'fa-hand-holding-heart', title: 'الاطمئنان على كبار السن', text: 'كاميرات بصوت ثنائي الاتجاه تتيح لأفراد العائلة التواصل الفوري مع الوالدين المسنين والاطمئنان عليهم في أي وقت من اليوم' },
+        { icon: 'fa-store-alt', title: 'أصحاب الأعمال متعددة الفروع', text: 'ربط عدة فروع بكاميرات IP على حساب واحد في التطبيق لمراقبة جميع المواقع من شاشة واحدة دون الحاجة لزيارة كل فرع بشكل يومي' },
+        { icon: 'fa-umbrella-beach', title: 'أصحاب العقارات الساحلية والمسافرون', text: 'كاميرات تعمل بالطاقة الشمسية أو البطارية لمراقبة الفيلات والشاليهات الساحلية التي تبقى خالية معظم أيام السنة دون كهرباء دائمة' },
+        { icon: 'fa-door-open', title: 'الطلاب والمقيمون في شقق مستقلة', text: 'كاميرة واي فاي بسيطة عند الباب لمراقبة الزوار واستلام الطرود بأمان دون أي تمديدات أو تعديلات في الشقة المستأجرة' },
+      ]} />
     </div>
 
     <aside class="service-sidebar">
