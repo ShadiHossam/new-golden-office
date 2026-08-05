@@ -1,0 +1,34 @@
+---
+interface CardItem {
+  icon: string;
+  title?: string;
+  text: string;
+}
+
+interface Props {
+  items: CardItem[];
+  columns?: 2 | 3 | 4;
+}
+
+const { items, columns = 4 } = Astro.props;
+---
+
+<div class:list={['features-grid', 'icon-card-grid', `cols-${columns}`]}>
+  {items.map((item, i) => (
+    <div class:list={['feature-card', 'reveal', i > 0 && i <= 4 ? `delay-${i}` : '']}>
+      <div class="feature-icon"><i class={`fas ${item.icon}`}></i></div>
+      {item.title && <h4>{item.title}</h4>}
+      <p>{item.text}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  /* .features-grid is repeat(4,1fr) by default in global.css, with its own
+     responsive collapse at 1024/768/480px. Only override column count above
+     that first breakpoint, so we never fight the existing mobile behavior. */
+  @media (min-width: 1025px) {
+    .icon-card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .icon-card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

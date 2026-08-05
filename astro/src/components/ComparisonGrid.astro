@@ -1,0 +1,49 @@
+---
+interface ComparisonItem {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  items: ComparisonItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="comparison-grid">
+  {items.map((item) => (
+    <div class="comparison-card">
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .comparison-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    border-top: 4px solid var(--secondary);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .comparison-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .comparison-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

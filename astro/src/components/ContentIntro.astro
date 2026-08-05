@@ -1,0 +1,22 @@
+---
+interface Props {
+  heading: string;
+  text: string;
+}
+
+const { heading, text } = Astro.props;
+---
+
+<div class="content-intro">
+  <h2>{heading}</h2>
+  <p>{text}</p>
+</div>
+
+<style>
+  .content-intro { margin-bottom: 32px; }
+  .content-intro p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+</style>
