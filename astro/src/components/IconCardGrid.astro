@@ -18,7 +18,7 @@ const { items, columns = 4 } = Astro.props;
     <div class:list={['feature-card', 'reveal', i > 0 && i <= 4 ? `delay-${i}` : '']}>
       <div class="feature-icon"><i class={`fas ${item.icon}`}></i></div>
       {item.title && <h4>{item.title}</h4>}
-      <p>{item.text}</p>
+      <p set:html={item.text} />
     </div>
   ))}
 </div>
