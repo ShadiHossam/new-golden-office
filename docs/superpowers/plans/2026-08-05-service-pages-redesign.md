@@ -413,20 +413,23 @@ This batch (just `ac/maintenance.astro`) is deployed alone first, specifically t
 git push origin master
 ```
 
-- [ ] **Step 2: SSH in and deploy**
+- [x] **Step 2: SSH in and deploy — VERIFIED WORKING 2026-08-05**
+
+`node_modules/.bin/npm` on this host is a CloudLinux `l.v.e-manager` wrapper script tied to the admin app's context (`/home/zash7309/nodevenv/apps/new-golden-office/admin/22/bin/npm` → `npm_wrapper`) — do not source its `activate` or call it directly for the astro build, it can hijack npm resolution for other projects on the host (per project memory). Instead, prepend the real Node 22 binaries directory to `PATH`:
 
 ```bash
 ssh -i ~/.ssh/id_ed25519_o2switch zash7309@cuivre.o2switch.net
 cd /home/zash7309/apps/new-golden-office
 git pull origin master
+export PATH=/opt/alt/alt-nodejs22/root/usr/bin:$PATH
 cd astro
 npm run build
 rsync -a --delete dist/ /home/zash7309/newgoldenoffice.com/
 ```
 
-If the build step fails with a module-resolution or npm error, check for the CloudLinux npm-wrapper issue first (see project memory: sourcing another app's `nodevenv` activate script on this host hijacks `npm` for every project — fix is ensuring the real system Node's `bin/` directory is first on `PATH`, not a sourced nodevenv activate).
+`astro/node_modules` already exists on the server from the initial cutover — no `npm install` needed for a routine content-only redeploy. If a future change adds a new dependency, run `npm install` (with the same `PATH` export) before `npm run build`.
 
-- [ ] **Step 3: Verify the deploy actually landed**
+- [x] **Step 3: Verify the deploy actually landed — VERIFIED**
 
 From your local machine (not the server):
 
@@ -434,11 +437,11 @@ From your local machine (not the server):
 curl -s https://newgoldenoffice.com/ac/maintenance | grep -o 'icon-card-grid' | head -1
 ```
 
-Expected output: `icon-card-grid` (proves the new component's markup is live, not just that `rsync` exited 0).
+Expected output: `icon-card-grid` (proves the new component's markup is live, not just that `rsync` exited 0). Also spot-check `curl -sI https://newgoldenoffice.com/some-fake-path` still returns the custom `404` (confirms `.htaccess` survived the `--delete`).
 
-- [ ] **Step 4: Record the verified sequence**
+- [x] **Step 4: Record the verified sequence — DONE**
 
-If steps 1-3 above needed any correction (wrong path, different build command, etc.), update this task's commands in this plan file before continuing — Task 10's loop reuses this exact sequence unattended for the remaining 38 pages, so it must be correct now.
+The exact commands above (Step 2) are confirmed working as of 2026-08-05 — Task 8's loop reuses this exact sequence unattended for the remaining 38 pages.
 
 ---
 
