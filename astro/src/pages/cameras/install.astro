@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -105,88 +108,90 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>طلب تركيب كاميرات القاهرة والإسكندرية — احترافية وجودة لا تُقارَن</h2>
-      <p>تُقدّم شركة نيو جولدن أوفيس، التي تأسست عام 1999 في الإسكندرية، خدمة متكاملة لبيع وتركيب كاميرات المراقبة في جميع أنحاء مصر. نوفر حلول مراقبة مناسبة للمنازل والشقق السكنية والمحلات التجارية والسوبرماركت والمصانع والشركات والمجمعات السكنية. فريقنا الفني المتخصص يصمم لك النظام المثالي بعد معاينة مجانية للمكان.</p>
+      <ContentIntro
+        heading="طلب تركيب كاميرات القاهرة والإسكندرية — احترافية وجودة لا تُقارَن"
+        text="تُقدّم شركة نيو جولدن أوفيس، التي تأسست عام 1999 في الإسكندرية، خدمة متكاملة لبيع وتركيب كاميرات المراقبة في جميع أنحاء مصر. نوفر حلول مراقبة مناسبة للمنازل والشقق السكنية والمحلات التجارية والسوبرماركت والمصانع والشركات والمجمعات السكنية. فريقنا الفني المتخصص يصمم لك النظام المثالي بعد معاينة مجانية للمكان."
+      />
 
       <h3><i class="fas fa-video" style="color:var(--secondary);margin-left:8px;"></i> الماركات المتاحة لدينا</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>Hikvision</strong> — الرائد العالمي الأول في صناعة كاميرات المراقبة، جودة لا مثيل لها بتقنيات متطورة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>Dahua</strong> — أنظمة مراقبة ذكية بتقنية الذكاء الاصطناعي ودقة تصل إلى 8 ميجابكسل</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>UNIView (UNV)</strong> — حلول احترافية مناسبة للمشاريع الكبيرة والمؤسسات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>HILook</strong> — الخيار الأمثل للجودة العالية بأسعار مناسبة للمشاريع المتوسطة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>EZVIZ</strong> — كاميرات ذكية سهلة الاستخدام مثالية للمنازل والمكاتب الصغيرة</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'Hikvision', text: 'الرائد العالمي الأول في صناعة كاميرات المراقبة، جودة لا مثيل لها بتقنيات متطورة' },
+        { title: 'Dahua', text: 'أنظمة مراقبة ذكية بتقنية الذكاء الاصطناعي ودقة تصل إلى 8 ميجابكسل' },
+        { title: 'UNIView (UNV)', text: 'حلول احترافية مناسبة للمشاريع الكبيرة والمؤسسات' },
+        { title: 'HILook', text: 'الخيار الأمثل للجودة العالية بأسعار مناسبة للمشاريع المتوسطة' },
+        { title: 'EZVIZ', text: 'كاميرات ذكية سهلة الاستخدام مثالية للمنازل والمكاتب الصغيرة' },
+      ]} />
 
       <h3><i class="fas fa-camera" style="color:var(--secondary);margin-left:8px;"></i> أنواع الكاميرات المتوفرة</h3>
       <p>نوفر تشكيلة شاملة من الكاميرات تناسب كل احتياج وبيئة:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات داخلية (Indoor):</strong> صغيرة الحجم، مخفية أو ظاهرة، مناسبة للمحلات والمكاتب والمنازل</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات خارجية (Outdoor):</strong> مقاومة للماء والغبار بتصنيف IP66/67، تتحمل قسوة الطقس المصري</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات Dome:</strong> شكل نصف كروي أنيق، مناسبة للأسقف، زاوية رؤية 130 درجة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات Bullet:</strong> اسطوانية الشكل، مدى رؤية أطول، مثالية للمداخل والطرقات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كاميرات PTZ:</strong> متحركة يُمكن التحكم بها عن بُعد، مناسبة للمواقف والأماكن الواسعة</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-home', title: 'كاميرات داخلية (Indoor)', text: 'صغيرة الحجم، مخفية أو ظاهرة، مناسبة للمحلات والمكاتب والمنازل' },
+        { icon: 'fa-cloud-sun-rain', title: 'كاميرات خارجية (Outdoor)', text: 'مقاومة للماء والغبار بتصنيف IP66/67، تتحمل قسوة الطقس المصري' },
+        { icon: 'fa-circle', title: 'كاميرات Dome', text: 'شكل نصف كروي أنيق، مناسبة للأسقف، زاوية رؤية 130 درجة' },
+        { icon: 'fa-video', title: 'كاميرات Bullet', text: 'اسطوانية الشكل، مدى رؤية أطول، مثالية للمداخل والطرقات' },
+        { icon: 'fa-arrows-alt', title: 'كاميرات PTZ', text: 'متحركة يُمكن التحكم بها عن بُعد، مناسبة للمواقف والأماكن الواسعة' },
+      ]} />
 
       <h3><i class="fas fa-eye" style="color:var(--secondary);margin-left:8px;"></i> دقة الصورة المتاحة</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>2MP (1080p Full HD):</strong> مناسبة للاستخدام العام في المحلات والمنازل بسعر اقتصادي</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>4MP (2K):</strong> دقة أعلى للتعرف على التفاصيل والوجوه بوضوح أكبر</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>8MP (4K Ultra HD):</strong> أعلى دقة متاحة للمشاريع التي تتطلب تفاصيل دقيقة جداً</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: '2MP (1080p Full HD)', text: 'مناسبة للاستخدام العام في المحلات والمنازل بسعر اقتصادي' },
+        { title: '4MP (2K)', text: 'دقة أعلى للتعرف على التفاصيل والوجوه بوضوح أكبر' },
+        { title: '8MP (4K Ultra HD)', text: 'أعلى دقة متاحة للمشاريع التي تتطلب تفاصيل دقيقة جداً' },
+      ]} />
 
       <MidPageCTA formId="camInstallMidCta" />
 
       <h3><i class="fas fa-moon" style="color:var(--secondary);margin-left:8px;"></i> تقنيات الرؤية الليلية</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>الأشعة تحت الحمراء (IR):</strong> رؤية ليلية كلاسيكية بمدى يصل إلى 60 متر</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>Full Color Night:</strong> رؤية ملونة في الظلام الدامس بدون حاجة لإضاءة إضافية</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>Smart Light:</strong> إضاءة تلقائية عند الكشف عن حركة مشبوهة</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'الأشعة تحت الحمراء (IR)', text: 'رؤية ليلية كلاسيكية بمدى يصل إلى 60 متر' },
+        { title: 'Full Color Night', text: 'رؤية ملونة في الظلام الدامس بدون حاجة لإضاءة إضافية' },
+        { title: 'Smart Light', text: 'إضاءة تلقائية عند الكشف عن حركة مشبوهة' },
+      ]} />
 
       <h3><i class="fas fa-tools" style="color:var(--secondary);margin-left:8px;"></i> عملية التركيب الاحترافية</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>المعاينة المجانية:</strong> زيارة المكان وتحديد أفضل نقاط تركيب الكاميرات ومسارات الكابلات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>تمديد الكابلات:</strong> نستخدم كابلات Coaxial عالية الجودة أو Cat6 لأنظمة IP مع حماية PVC للتمديدات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التثبيت الدقيق:</strong> ثبات تام للكاميرات بزوايا محسوبة لتغطية أقصى مساحة ممكنة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>الضبط والإعداد:</strong> ضبط جهاز التسجيل DVR/NVR وربطه بالإنترنت للمشاهدة عن بُعد</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التدريب الكامل:</strong> شرح تفصيلي لكيفية استخدام النظام ومشاهدة الكاميرات من الهاتف</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-clipboard-check', title: 'المعاينة المجانية', text: 'زيارة المكان وتحديد أفضل نقاط تركيب الكاميرات ومسارات الكابلات' },
+        { icon: 'fa-network-wired', title: 'تمديد الكابلات', text: 'نستخدم كابلات Coaxial عالية الجودة أو Cat6 لأنظمة IP مع حماية PVC للتمديدات' },
+        { icon: 'fa-thumbtack', title: 'التثبيت الدقيق', text: 'ثبات تام للكاميرات بزوايا محسوبة لتغطية أقصى مساحة ممكنة' },
+        { icon: 'fa-sliders-h', title: 'الضبط والإعداد', text: 'ضبط جهاز التسجيل DVR/NVR وربطه بالإنترنت للمشاهدة عن بُعد' },
+        { icon: 'fa-graduation-cap', title: 'التدريب الكامل', text: 'شرح تفصيلي لكيفية استخدام النظام ومشاهدة الكاميرات من الهاتف' },
+      ]} />
 
       <h3><i class="fas fa-network-wired" style="color:var(--secondary);margin-left:8px;"></i> أنواع الكابلات المستخدمة</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>كابل Coaxial RG59:</strong> للكاميرات التقليدية Analog وHD-TVI، ثابت وموثوق</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كابل Cat5e/Cat6:</strong> لكاميرات IP، يدعم بروتوكول PoE لتوصيل الطاقة والبيانات بكابل واحد</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>حماية PVC وقنوات السيلكون:</strong> تمديدات نظيفة ومحمية تدوم لسنوات طويلة</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'كابل Coaxial RG59', text: 'للكاميرات التقليدية Analog وHD-TVI، ثابت وموثوق' },
+        { title: 'كابل Cat5e/Cat6', text: 'لكاميرات IP، يدعم بروتوكول PoE لتوصيل الطاقة والبيانات بكابل واحد' },
+        { title: 'حماية PVC وقنوات السيلكون', text: 'تمديدات نظيفة ومحمية تدوم لسنوات طويلة' },
+      ]} />
 
       <h3><i class="fas fa-route" style="color:var(--secondary);margin-left:8px;"></i> تحديات تمديد الكابلات وكيف نتغلب عليها</h3>
       <p>كل مبنى له طبيعة إنشائية مختلفة تفرض تحديات خاصة أثناء التركيب، وهذا الجزء غالباً ما يُهمَل عند التخطيط الذاتي دون خبرة فنية:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>حدود المسافة لكل نوع كابل:</strong> كابل Coaxial RG59 يعمل بكفاءة حتى 200 متر تقريباً، بينما Cat6 العادي محدود بـ100 متر قبل أن تضعف الإشارة — نستخدم مقويات إشارة (Repeaters) أو محولات الألياف الضوئية عند الحاجة لمسافات أطول في المصانع والمستودعات الكبيرة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>المباني ذات الجدران الخرسانية السميكة:</strong> نلجأ للتمديد الخارجي المحمي عبر قنوات بلاستيكية مثبتة بعناية بدل الحفر العشوائي الذي يضعف البنية الإنشائية</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>العبور بين الطوابق أو بين مبانٍ منفصلة:</strong> نخطط مسار الكابل مسبقاً عبر فتحات الخدمات الموجودة أصلاً في المبنى لتفادي أي تمديدات ظاهرة أو غير آمنة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التداخل الكهرومغناطيسي:</strong> في المصانع القريبة من ماكينات كهربائية ثقيلة، نستخدم كابلات مُدرَّعة (Shielded) لمنع تشويش الصورة الناتج عن الحقول الكهرومغناطيسية</span></li>
-      </ul>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-ruler', title: 'حدود المسافة لكل نوع كابل', text: 'كابل Coaxial RG59 يعمل بكفاءة حتى 200 متر تقريباً، بينما Cat6 العادي محدود بـ100 متر قبل أن تضعف الإشارة — نستخدم مقويات إشارة (Repeaters) أو محولات الألياف الضوئية عند الحاجة لمسافات أطول في المصانع والمستودعات الكبيرة' },
+        { icon: 'fa-building', title: 'المباني ذات الجدران الخرسانية السميكة', text: 'نلجأ للتمديد الخارجي المحمي عبر قنوات بلاستيكية مثبتة بعناية بدل الحفر العشوائي الذي يضعف البنية الإنشائية' },
+        { icon: 'fa-route', title: 'العبور بين الطوابق أو بين مبانٍ منفصلة', text: 'نخطط مسار الكابل مسبقاً عبر فتحات الخدمات الموجودة أصلاً في المبنى لتفادي أي تمديدات ظاهرة أو غير آمنة' },
+        { icon: 'fa-bolt', title: 'التداخل الكهرومغناطيسي', text: 'في المصانع القريبة من ماكينات كهربائية ثقيلة، نستخدم كابلات مُدرَّعة (Shielded) لمنع تشويش الصورة الناتج عن الحقول الكهرومغناطيسية' },
+      ]} />
 
       <h3><i class="fas fa-map-marked-alt" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات التركيب حسب نوع المكان</h3>
       <p>خطة التركيب ونقاط الكاميرات تختلف جذرياً حسب طبيعة المبنى، وإليك كيف نتعامل مع كل حالة:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>فيلات ومنازل مستقلة:</strong> نغطي المداخل الرئيسية والخلفية والحديقة والسور الخارجي، مع مراعاة اتجاه الشمس لتجنب الوهج (Glare) في ساعات معينة من اليوم، والتركيب عادة يستغرق يوماً واحداً</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>شقق سكنية ومباني إيجار:</strong> نستخدم تمديدات سطحية أنيقة أو كاميرات واي فاي لا تتطلب حفراً أو تعديلات دائمة في الجدران، وهو الخيار الأمثل للمستأجرين الذين لا يريدون إتلاف الحائط</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>محلات تجارية داخل مولات أو أسواق:</strong> نأخذ إذناً من إدارة المبنى قبل أي تمديد ظاهر، ونعتمد غالباً على مسارات الأسقف المعلقة (False Ceiling) لإخفاء الكابلات بالكامل</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>مصانع ومستودعات:</strong> التركيب هنا يتطلب سلالم ورافعات للوصول لارتفاعات عالية، وكابلات مقاومة للحرارة والأتربة، وقد يمتد العمل ليومين أو ثلاثة حسب حجم المنشأة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>مواقع إنشائية تحت التشييد:</strong> نوفر حلولاً مؤقتة تعمل بالبطارية والطاقة الشمسية لمراقبة المعدات والمواد قبل اكتمال التوصيلات الكهربائية الدائمة</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-home', title: 'فيلات ومنازل مستقلة', text: 'نغطي المداخل الرئيسية والخلفية والحديقة والسور الخارجي، مع مراعاة اتجاه الشمس لتجنب الوهج (Glare) في ساعات معينة من اليوم، والتركيب عادة يستغرق يوماً واحداً' },
+        { icon: 'fa-building', title: 'شقق سكنية ومباني إيجار', text: 'نستخدم تمديدات سطحية أنيقة أو كاميرات واي فاي لا تتطلب حفراً أو تعديلات دائمة في الجدران، وهو الخيار الأمثل للمستأجرين الذين لا يريدون إتلاف الحائط' },
+        { icon: 'fa-store', title: 'محلات تجارية داخل مولات أو أسواق', text: 'نأخذ إذناً من إدارة المبنى قبل أي تمديد ظاهر، ونعتمد غالباً على مسارات الأسقف المعلقة (False Ceiling) لإخفاء الكابلات بالكامل' },
+        { icon: 'fa-industry', title: 'مصانع ومستودعات', text: 'التركيب هنا يتطلب سلالم ورافعات للوصول لارتفاعات عالية، وكابلات مقاومة للحرارة والأتربة، وقد يمتد العمل ليومين أو ثلاثة حسب حجم المنشأة' },
+        { icon: 'fa-hard-hat', title: 'مواقع إنشائية تحت التشييد', text: 'نوفر حلولاً مؤقتة تعمل بالبطارية والطاقة الشمسية لمراقبة المعدات والمواد قبل اكتمال التوصيلات الكهربائية الدائمة' },
+      ]} />
 
       <h3><i class="fas fa-times-circle" style="color:var(--secondary);margin-left:8px;"></i> أخطاء شائعة في تركيب الكاميرات يجب تجنبها</h3>
       <p>نصادف كثيراً عملاء حاولوا التركيب بأنفسهم أو استعانوا بفني غير متخصص ووقعوا في هذه الأخطاء المتكررة:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>تركيب الكاميرا في مواجهة الشمس مباشرة:</strong> يسبب وهجاً شديداً يجعل الصورة غير واضحة في أوقات معينة من اليوم — الحل هو اختيار زاوية مائلة أو استخدام كاميرات بتقنية WDR لموازنة الإضاءة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>الارتفاع الخاطئ:</strong> التركيب المنخفض جداً يُعرّض الكاميرا للتلاعب أو السرقة، والمرتفع جداً يُصعّب التعرف على الوجوه — الارتفاع المثالي عادة بين 2.5 و3.5 متر حسب زاوية العدسة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>إهمال المناطق العمياء (Blind Spots):</strong> تركيب عدد قليل من الكاميرات بدون تخطيط يترك زوايا كاملة غير مغطاة — لهذا تُعد المعاينة الميدانية المجانية خطوة أساسية لا نتجاوزها أبداً</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كابلات وموصلات رخيصة غير محمية:</strong> تتلف بسرعة مع الرطوبة والحرارة في الصيف المصري، ونستخدم دائماً موصلات مقاومة للماء ومحمية بغلاف مطاطي</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>عدم اختبار زاوية Wi-Fi قبل التثبيت النهائي:</strong> في كاميرات واي فاي، التركيب في نقطة ضعيفة الإشارة يسبب انقطاعاً متكرراً — نقيس قوة الإشارة دائماً قبل التثبيت النهائي بالمسامير</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-sun', title: 'تركيب الكاميرا في مواجهة الشمس مباشرة', text: 'يسبب وهجاً شديداً يجعل الصورة غير واضحة في أوقات معينة من اليوم — الحل هو اختيار زاوية مائلة أو استخدام كاميرات بتقنية WDR لموازنة الإضاءة' },
+        { icon: 'fa-arrows-alt-v', title: 'الارتفاع الخاطئ', text: 'التركيب المنخفض جداً يُعرّض الكاميرا للتلاعب أو السرقة، والمرتفع جداً يُصعّب التعرف على الوجوه — الارتفاع المثالي عادة بين 2.5 و3.5 متر حسب زاوية العدسة' },
+        { icon: 'fa-low-vision', title: 'إهمال المناطق العمياء (Blind Spots)', text: 'تركيب عدد قليل من الكاميرات بدون تخطيط يترك زوايا كاملة غير مغطاة — لهذا تُعد المعاينة الميدانية المجانية خطوة أساسية لا نتجاوزها أبداً' },
+        { icon: 'fa-plug', title: 'كابلات وموصلات رخيصة غير محمية', text: 'تتلف بسرعة مع الرطوبة والحرارة في الصيف المصري، ونستخدم دائماً موصلات مقاومة للماء ومحمية بغلاف مطاطي' },
+        { icon: 'fa-wifi', title: 'عدم اختبار زاوية Wi-Fi قبل التثبيت النهائي', text: 'في كاميرات واي فاي، التركيب في نقطة ضعيفة الإشارة يسبب انقطاعاً متكرراً — نقيس قوة الإشارة دائماً قبل التثبيت النهائي بالمسامير' },
+      ]} />
 
       <div class="cta-banner" style="margin-top:40px;border-radius:12px;">
         <h2>احصل على معاينة مجانية لمكانك</h2>
