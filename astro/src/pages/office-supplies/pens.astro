@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -64,35 +67,35 @@ const schemaJson = JSON.stringify({
       <div class="service-detail-grid">
 
         <div class="service-content">
-          <h2>أقلام بالجملة مصر — مجموعة أقلام وأدوات الكتابة</h2>
-          <p>
-            منذ تأسيسها عام 1999 في الإسكندرية، وفّرت نيو جولدن أوفيس للشركات والمؤسسات والمدارس أفضل ماركات الأقلام وأدوات الكتابة العالمية بأسعار منافسة. نؤمن بأن القلم الجيد هو أساس الإنتاجية، لذلك نختار بعناية كل منتج نضعه في متجرنا ليكون على أعلى مستوى من الجودة والموثوقية.
-          </p>
+          <ContentIntro
+            heading="أقلام بالجملة مصر — مجموعة أقلام وأدوات الكتابة"
+            text="منذ تأسيسها عام 1999 في الإسكندرية، وفّرت نيو جولدن أوفيس للشركات والمؤسسات والمدارس أفضل ماركات الأقلام وأدوات الكتابة العالمية بأسعار منافسة. نؤمن بأن القلم الجيد هو أساس الإنتاجية، لذلك نختار بعناية كل منتج نضعه في متجرنا ليكون على أعلى مستوى من الجودة والموثوقية."
+          />
           <p>
             نقدم تشكيلة هائلة تضم مئات الأنواع والألوان والأحجام من أقلام الحبر الجاف والجل والحبر السائل وأقلام الرصاص الميكانيكية والهايلايتر وأقلام الوايت بورد والماركر الدائم. سواء كنت تبحث عن أقلام يومية بسيطة للمكتب أو أقلام فاخرة للهدايا المؤسسية، ستجد ما تبحث عنه لدينا.
           </p>
 
           <h3>أنواع الأقلام المتاحة</h3>
           <p>نوفر مجموعة شاملة من أقلام الكتابة لكل الاستخدامات والمناسبات:</p>
-          <ul>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام حبر جاف (BIC، Pentel، Pilot)</strong> — الخيار الأمثل للكتابة اليومية في المكاتب والمدارس، بألوان أزرق وأسود وأحمر وكميات جملة بأسعار مميزة</li>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام جل</strong> — تكتب بسلاسة استثنائية وتعطي خطًا دقيقًا وواضحًا، مثالية للتوقيعات والكتابة الاحترافية</li>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام حبر سائل (Rollerball)</strong> — تجمع بين سلاسة قلم الجل وجفاف قلم الحبر الجاف، مثالية للكتابة السريعة والمريحة</li>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام رصاص ميكانيكية</strong> — بقياسات 0.5mm و0.7mm وريفيل قابلة للاستبدال، مناسبة للرسم الهندسي والكتابة الدقيقة</li>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام فوسفورية (هايلايتر) بألوان متعددة</strong> — لتمييز النصوص المهمة في المستندات والكتب، متوفرة بألوان أصفر وبرتقالي وأخضر وزهري وأزرق</li>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>أقلام وايت بورد</strong> — حبر قابل للمسح بسهولة من السبورات البيضاء، بأطراف رفيعة وعريضة وألوان متعددة</li>
-            <li><i class="fas fa-pen" style="color:var(--secondary);margin-left:8px"></i> <strong>ماركر دائم (Sharpie، Artline)</strong> — يكتب على أي سطح تقريبًا بما في ذلك البلاستيك والزجاج والمعدن، مقاوم للماء والشحوب</li>
-          </ul>
+          <IconCardGrid columns={4} items={[
+            { icon: 'fa-pen', title: 'أقلام حبر جاف (BIC، Pentel، Pilot)', text: 'الخيار الأمثل للكتابة اليومية في المكاتب والمدارس، بألوان أزرق وأسود وأحمر وكميات جملة بأسعار مميزة' },
+            { icon: 'fa-pen-fancy', title: 'أقلام جل', text: 'تكتب بسلاسة استثنائية وتعطي خطًا دقيقًا وواضحًا، مثالية للتوقيعات والكتابة الاحترافية' },
+            { icon: 'fa-pen-nib', title: 'أقلام حبر سائل (Rollerball)', text: 'تجمع بين سلاسة قلم الجل وجفاف قلم الحبر الجاف، مثالية للكتابة السريعة والمريحة' },
+            { icon: 'fa-pencil-alt', title: 'أقلام رصاص ميكانيكية', text: 'بقياسات 0.5mm و0.7mm وريفيل قابلة للاستبدال، مناسبة للرسم الهندسي والكتابة الدقيقة' },
+            { icon: 'fa-highlighter', title: 'أقلام فوسفورية (هايلايتر) بألوان متعددة', text: 'لتمييز النصوص المهمة في المستندات والكتب، متوفرة بألوان أصفر وبرتقالي وأخضر وزهري وأزرق' },
+            { icon: 'fa-chalkboard', title: 'أقلام وايت بورد', text: 'حبر قابل للمسح بسهولة من السبورات البيضاء، بأطراف رفيعة وعريضة وألوان متعددة' },
+            { icon: 'fa-marker', title: 'ماركر دائم (Sharpie، Artline)', text: 'يكتب على أي سطح تقريبًا بما في ذلك البلاستيك والزجاج والمعدن، مقاوم للماء والشحوب' },
+          ]} />
 
           <MidPageCTA formId="offPensMidCta" />
 
           <h3>أدوات تصحيح الكتابة</h3>
           <p>نوفر أيضًا مجموعة متكاملة من أدوات تصحيح الكتابة لضمان مستندات نظيفة واحترافية:</p>
-          <ul>
-            <li><i class="fas fa-eraser" style="color:var(--secondary);margin-left:8px"></i> <strong>سائل تصحيح (Tipp-Ex، BIC Wite-Out)</strong> — يغطي الأخطاء فوريًا ويجف بسرعة للكتابة فوقه، متوفر بأحجام مختلفة</li>
-            <li><i class="fas fa-eraser" style="color:var(--secondary);margin-left:8px"></i> <strong>شريط تصحيح</strong> — يصحح الأخطاء بدون سائل أو وقت انتظار للجفاف، مريح للاستخدام وأكثر نظافة</li>
-            <li><i class="fas fa-eraser" style="color:var(--secondary);margin-left:8px"></i> <strong>ممحاة بلاستيك وكاوتش</strong> — بأشكال وأحجام متنوعة، للرصاص والأقلام الخاصة، ناعمة ولا تترك أثرًا على الورق</li>
-          </ul>
+          <IconCardGrid columns={3} items={[
+            { icon: 'fa-eraser', title: 'سائل تصحيح (Tipp-Ex، BIC Wite-Out)', text: 'يغطي الأخطاء فوريًا ويجف بسرعة للكتابة فوقه، متوفر بأحجام مختلفة' },
+            { icon: 'fa-tape', title: 'شريط تصحيح', text: 'يصحح الأخطاء بدون سائل أو وقت انتظار للجفاف، مريح للاستخدام وأكثر نظافة' },
+            { icon: 'fa-shapes', title: 'ممحاة بلاستيك وكاوتش', text: 'بأشكال وأحجام متنوعة، للرصاص والأقلام الخاصة، ناعمة ولا تترك أثرًا على الورق' },
+          ]} />
 
           <p>
             نوفر خدمة التوريد المؤسسي التي تتيح للشركات والمدارس والمستشفيات والجهات الحكومية الحصول على احتياجاتها من الأقلام وأدوات الكتابة دفعة واحدة بأسعار الجملة مع إمكانية الطلب الدوري المنتظم.
@@ -194,32 +197,14 @@ const schemaJson = JSON.stringify({
     <div class="container">
       <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">أقلام للشركات والمؤسسات بالجملة — مقارنة الماركات</h2>
       <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نوفر أقلام مكتبية بالجملة للشركات والفنادق والمستشفيات في مصر. إليك مقارنة الماركات الأكثر طلباً:</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #3498db">
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">BIC</h3>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">الأكثر مبيعاً، سعر مناسب، موثوقة للاستخدام اليومي في المكاتب.</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #e74c3c">
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">Pilot</h3>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">كتابة سلسة، تدوم طويلاً، مفضلة للتوقيعات والاستخدام الاحترافي.</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #27ae60">
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">Stabilo</h3>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">ألوان متعددة، ممتازة للتمييز والإبراز في المستندات والملفات.</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #9b59b6">
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">Pentel</h3>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">تدفق حبر ثابت، أقلام رصاص ميكانيكية دقيقة، خيار موثوق للاستخدام المكتبي والهندسي.</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #f39c12">
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">Sharpie / Artline</h3>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">ماركر دائم قوي يكتب على أي سطح تقريبًا، مقاوم للماء والشحوب، مثالي للتغليف والتخزين.</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #16a085">
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px">Staedtler / Faber-Castell</h3>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">جودة ألمانية في الرصاص والأقلام الاحترافية، خيار مفضل للرسم الهندسي والدقة العالية.</p>
-        </div>
-      </div>
+      <ComparisonGrid items={[
+        { title: 'BIC', text: 'الأكثر مبيعاً، سعر مناسب، موثوقة للاستخدام اليومي في المكاتب.' },
+        { title: 'Pilot', text: 'كتابة سلسة، تدوم طويلاً، مفضلة للتوقيعات والاستخدام الاحترافي.' },
+        { title: 'Stabilo', text: 'ألوان متعددة، ممتازة للتمييز والإبراز في المستندات والملفات.' },
+        { title: 'Pentel', text: 'تدفق حبر ثابت، أقلام رصاص ميكانيكية دقيقة، خيار موثوق للاستخدام المكتبي والهندسي.' },
+        { title: 'Sharpie / Artline', text: 'ماركر دائم قوي يكتب على أي سطح تقريبًا، مقاوم للماء والشحوب، مثالي للتغليف والتخزين.' },
+        { title: 'Staedtler / Faber-Castell', text: 'جودة ألمانية في الرصاص والأقلام الاحترافية، خيار مفضل للرسم الهندسي والدقة العالية.' },
+      ]} />
       <p style="font-size:1rem;color:#555;margin-top:20px">نوفر خدمة الأقلام المخصصة بشعار شركتك — مثالية للهدايا الترويجية والمؤتمرات. نخدم عملاءنا في القاهرة والإسكندرية وجميع مصر.</p>
 
       <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin:28px 0 12px">متى تختار كل نوع؟ سيناريوهات عملية</h3>
