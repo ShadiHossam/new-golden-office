@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -105,93 +108,95 @@ const schemaJson = JSON.stringify({
 <section class="service-detail">
   <div class="container"><div class="service-detail-grid">
     <div class="service-content">
-      <h2>جهاز تسجيل كاميرات مصر: القلب النابض لنظام المراقبة</h2>
-      <p>جهاز التسجيل هو العقل المدبر لأي نظام مراقبة — فهو يستقبل الصور من جميع الكاميرات ويخزّنها ويتيح لك مراجعتها في أي وقت. في نيو جولدن أوفيس، نوفر أفضل أجهزة DVR وNVR من Hikvision وDahua بجميع السعات والمواصفات لتناسب كل نوع من المشاريع سواء كانت منازل أو محلات أو مصانع أو فنادق.</p>
+      <ContentIntro
+        heading="جهاز تسجيل كاميرات مصر: القلب النابض لنظام المراقبة"
+        text="جهاز التسجيل هو العقل المدبر لأي نظام مراقبة — فهو يستقبل الصور من جميع الكاميرات ويخزّنها ويتيح لك مراجعتها في أي وقت. في نيو جولدن أوفيس، نوفر أفضل أجهزة DVR وNVR من Hikvision وDahua بجميع السعات والمواصفات لتناسب كل نوع من المشاريع سواء كانت منازل أو محلات أو مصانع أو فنادق."
+      />
 
       <h3><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> الفرق بين DVR و NVR</h3>
       <p>كثيراً ما يتساءل العملاء عن الفرق بين الجهازين، وإليك شرحاً مبسطاً:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>DVR (Digital Video Recorder):</strong> يعمل مع الكاميرات التقليدية Analog وHD-TVI عبر كابل Coaxial. الأرخص ثمناً والأوفر للمشاريع الموجودة سابقاً. يدعم دقة حتى 4K مع الكاميرات الحديثة.</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>NVR (Network Video Recorder):</strong> يعمل مع كاميرات IP عبر كابل Cat5e/Cat6 أو Wi-Fi. أعلى جودة صورة، يدعم PoE لتوصيل طاقة الكاميرا عبر الكابل نفسه، مثالي للمشاريع الجديدة.</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'DVR (Digital Video Recorder)', text: 'يعمل مع الكاميرات التقليدية Analog وHD-TVI عبر كابل Coaxial. الأرخص ثمناً والأوفر للمشاريع الموجودة سابقاً. يدعم دقة حتى 4K مع الكاميرات الحديثة.' },
+        { title: 'NVR (Network Video Recorder)', text: 'يعمل مع كاميرات IP عبر كابل Cat5e/Cat6 أو Wi-Fi. أعلى جودة صورة، يدعم PoE لتوصيل طاقة الكاميرا عبر الكابل نفسه، مثالي للمشاريع الجديدة.' },
+      ]} />
 
       <h3><i class="fas fa-th-large" style="color:var(--secondary);margin-left:8px;"></i> أعداد القنوات المتاحة</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>4 قنوات:</strong> مثالي للمنازل والمحلات الصغيرة، يكفي لتغطية مدخل رئيسي وغرف أو أركان قليلة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>8 قنوات:</strong> الأنسب للمحلات والمكاتب المتوسطة، يتيح تغطية شاملة لجميع أرجاء المكان</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>16 قنوات:</strong> للمحلات الكبيرة والشركات والفنادق الصغيرة ومجمعات التسوق</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>32 قنوات فأكثر:</strong> للمصانع والمستشفيات والمجمعات السكنية والمشاريع الضخمة</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: '4 قنوات', text: 'مثالي للمنازل والمحلات الصغيرة، يكفي لتغطية مدخل رئيسي وغرف أو أركان قليلة' },
+        { title: '8 قنوات', text: 'الأنسب للمحلات والمكاتب المتوسطة، يتيح تغطية شاملة لجميع أرجاء المكان' },
+        { title: '16 قنوات', text: 'للمحلات الكبيرة والشركات والفنادق الصغيرة ومجمعات التسوق' },
+        { title: '32 قنوات فأكثر', text: 'للمصانع والمستشفيات والمجمعات السكنية والمشاريع الضخمة' },
+      ]} />
 
       <h3><i class="fas fa-hdd" style="color:var(--secondary);margin-left:8px;"></i> سعة التخزين (الهاردسك)</h3>
       <p>نوفر هاردسكات WD Purple وSeagate SkyHawk المصممة خصيصاً للتسجيل المستمر في أنظمة المراقبة:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>1 TB:</strong> يخزّن 7 إلى 15 يوم تسجيل لنظام 4 كاميرات 2MP</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>2 TB:</strong> يخزّن 20 إلى 30 يوم تسجيل لنفس النظام</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>4 TB:</strong> يخزّن حتى 60 يوم لنظام 8 كاميرات — الأنسب للمحلات التجارية</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>8 TB:</strong> للمشاريع الكبيرة التي تتطلب أرشفة طويلة المدى</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: '1 TB', text: 'يخزّن 7 إلى 15 يوم تسجيل لنظام 4 كاميرات 2MP' },
+        { title: '2 TB', text: 'يخزّن 20 إلى 30 يوم تسجيل لنفس النظام' },
+        { title: '4 TB', text: 'يخزّن حتى 60 يوم لنظام 8 كاميرات — الأنسب للمحلات التجارية' },
+        { title: '8 TB', text: 'للمشاريع الكبيرة التي تتطلب أرشفة طويلة المدى' },
+      ]} />
 
       <MidPageCTA formId="camDvrNvrMidCta" />
 
       <h3><i class="fas fa-mobile-alt" style="color:var(--secondary);margin-left:8px;"></i> المشاهدة عن بُعد من الهاتف</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>تطبيق Hik-Connect (Hikvision):</strong> يتيح مشاهدة البث المباشر والتسجيلات السابقة من هاتفك في أي مكان</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>تطبيق DMSS (Dahua):</strong> واجهة سهلة وسريعة لإدارة الكاميرات بالكامل من الهاتف</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التنبيهات الفورية:</strong> يرسل الجهاز إشعاراً على هاتفك فور رصد أي حركة في الكاميرات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>تصدير التسجيلات:</strong> يمكن تصدير أي مقطع إلى USB أو إرساله مباشرةً عبر الهاتف</span></li>
-      </ul>
+      <IconCardGrid columns={4} items={[
+        { icon: 'fa-mobile-alt', title: 'تطبيق Hik-Connect (Hikvision)', text: 'يتيح مشاهدة البث المباشر والتسجيلات السابقة من هاتفك في أي مكان' },
+        { icon: 'fa-mobile', title: 'تطبيق DMSS (Dahua)', text: 'واجهة سهلة وسريعة لإدارة الكاميرات بالكامل من الهاتف' },
+        { icon: 'fa-bell', title: 'التنبيهات الفورية', text: 'يرسل الجهاز إشعاراً على هاتفك فور رصد أي حركة في الكاميرات' },
+        { icon: 'fa-file-export', title: 'تصدير التسجيلات', text: 'يمكن تصدير أي مقطع إلى USB أو إرساله مباشرةً عبر الهاتف' },
+      ]} />
 
       <h3><i class="fas fa-shield-alt" style="color:var(--secondary);margin-left:8px;"></i> تقنيات الكشف الذكي</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف الحركة (Motion Detection):</strong> يُسجّل فقط عند وجود حركة لتوفير مساحة التخزين</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف العبور الخطي (Line Crossing):</strong> تنبيه عند تجاوز خط افتراضي تحدده أنت</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف التسلل في المنطقة (Intrusion Detection):</strong> تنبيه عند دخول شخص إلى منطقة محظورة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>كشف الوجوه (Face Detection):</strong> متاح في الأجهزة المتقدمة لتحديد هوية الأشخاص</span></li>
-      </ul>
+      <IconCardGrid columns={4} items={[
+        { icon: 'fa-running', title: 'كشف الحركة (Motion Detection)', text: 'يُسجّل فقط عند وجود حركة لتوفير مساحة التخزين' },
+        { icon: 'fa-arrows-alt-h', title: 'كشف العبور الخطي (Line Crossing)', text: 'تنبيه عند تجاوز خط افتراضي تحدده أنت' },
+        { icon: 'fa-user-shield', title: 'كشف التسلل في المنطقة (Intrusion Detection)', text: 'تنبيه عند دخول شخص إلى منطقة محظورة' },
+        { icon: 'fa-user', title: 'كشف الوجوه (Face Detection)', text: 'متاح في الأجهزة المتقدمة لتحديد هوية الأشخاص' },
+      ]} />
 
       <h3><i class="fas fa-compress-alt" style="color:var(--secondary);margin-left:8px;"></i> تقنيات الضغط المتاحة</h3>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>H.264:</strong> ضغط قياسي متوافق مع جميع الأجهزة، جودة جيدة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>H.265:</strong> ضغط متطور يوفر 50% من مساحة التخزين بنفس الجودة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>H.265+:</strong> أحدث تقنية من Hikvision تقلل المساحة حتى 75% مقارنة بـ H.264</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'H.264', text: 'ضغط قياسي متوافق مع جميع الأجهزة، جودة جيدة' },
+        { title: 'H.265', text: 'ضغط متطور يوفر 50% من مساحة التخزين بنفس الجودة' },
+        { title: 'H.265+', text: 'أحدث تقنية من Hikvision تقلل المساحة حتى 75% مقارنة بـ H.264' },
+      ]} />
 
       <h3><i class="fas fa-calculator" style="color:var(--secondary);margin-left:8px;"></i> كيف تحسب سعة التخزين المطلوبة بدقة؟</h3>
       <p>بدلاً من التخمين، نحسب لكل عميل السعة المناسبة بناءً على معدل البت (Bitrate) لكل كاميرا وعدد أيام الأرشفة المطلوبة وأسلوب التسجيل المختار. عملياً، كاميرة 2MP بضغط H.265+ تستهلك تقريباً 4 إلى 6 جيجابايت يومياً عند التسجيل المستمر، بينما كاميرة 4MP تستهلك من 8 إلى 12 جيجابايت يومياً. اختيار أسلوب التسجيل يغيّر هذا الحساب جذرياً:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>التسجيل المستمر (24/7):</strong> يستهلك أكبر مساحة تخزين لكنه يضمن عدم فقدان أي لحظة — الأنسب للمصانع والبنوك ومحال الذهب والمجوهرات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التسجيل عند الحركة فقط (Motion-Triggered):</strong> يوفر من 60 إلى 80% من مساحة التخزين مقارنة بالتسجيل المستمر — مثالي للمنازل والمكاتب ذات الحركة المتوسطة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>التسجيل المجدول (Scheduled Recording):</strong> تسجيل في أوقات محددة فقط، مثل ساعات العمل الرسمية — مناسب للمحلات التي تُغلق أبوابها ليلاً</span></li>
-      </ul>
+      <ComparisonGrid items={[
+        { title: 'التسجيل المستمر (24/7)', text: 'يستهلك أكبر مساحة تخزين لكنه يضمن عدم فقدان أي لحظة — الأنسب للمصانع والبنوك ومحال الذهب والمجوهرات' },
+        { title: 'التسجيل عند الحركة فقط (Motion-Triggered)', text: 'يوفر من 60 إلى 80% من مساحة التخزين مقارنة بالتسجيل المستمر — مثالي للمنازل والمكاتب ذات الحركة المتوسطة' },
+        { title: 'التسجيل المجدول (Scheduled Recording)', text: 'تسجيل في أوقات محددة فقط، مثل ساعات العمل الرسمية — مناسب للمحلات التي تُغلق أبوابها ليلاً' },
+      ]} />
 
       <h3><i class="fas fa-network-wired" style="color:var(--secondary);margin-left:8px;"></i> الشبكة والكهرباء لأنظمة NVR — ما يجب معرفته</h3>
       <p>عند التحول لنظام IP بالكامل عبر NVR، هناك اعتبارات إضافية لا وجود لها في أنظمة DVR التقليدية القائمة على الكابل المحوري، ويغفل عنها كثير من العملاء عند التخطيط:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>مفاتيح الشبكة الداعمة لـ PoE (PoE Switch):</strong> توفر الطاقة والبيانات لكل كاميرا عبر كابل واحد فقط، وتحدد عدد الكاميرات التي يمكن توصيلها دفعة واحدة حسب عدد منافذها (8/16/24 منفذ)</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>عرض النطاق الترددي للشبكة (Bandwidth):</strong> كل كاميرا 4K تستهلك جزءاً محسوباً من سرعة الشبكة الداخلية، لذا نصمم الشبكة بحيث لا تتأثر أجهزة الكمبيوتر والطابعات بحركة بيانات الكاميرات</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>مصدر طاقة احتياطي (UPS):</strong> ننصح به دوماً لجهاز التسجيل ذاته لضمان استمرار التسجيل لدقائق أو ساعات عند انقطاع الكهرباء المفاجئ، وهي ظاهرة متكررة في مصر خاصةً في فصل الصيف</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>الأرشفة الاحتياطية (RAID/Backup):</strong> للمشاريع الحساسة كالبنوك والمصانع الكبرى، نوفر أجهزة تسجيل بخاصية RAID تُخزّن نسخة مطابقة على أكثر من هاردسك في آن واحد، فإذا تعطل أحدها لا تُفقد أي بيانات</span></li>
-      </ul>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-network-wired', title: 'مفاتيح الشبكة الداعمة لـ PoE (PoE Switch)', text: 'توفر الطاقة والبيانات لكل كاميرا عبر كابل واحد فقط، وتحدد عدد الكاميرات التي يمكن توصيلها دفعة واحدة حسب عدد منافذها (8/16/24 منفذ)' },
+        { icon: 'fa-tachometer-alt', title: 'عرض النطاق الترددي للشبكة (Bandwidth)', text: 'كل كاميرا 4K تستهلك جزءاً محسوباً من سرعة الشبكة الداخلية، لذا نصمم الشبكة بحيث لا تتأثر أجهزة الكمبيوتر والطابعات بحركة بيانات الكاميرات' },
+        { icon: 'fa-battery-full', title: 'مصدر طاقة احتياطي (UPS)', text: 'ننصح به دوماً لجهاز التسجيل ذاته لضمان استمرار التسجيل لدقائق أو ساعات عند انقطاع الكهرباء المفاجئ، وهي ظاهرة متكررة في مصر خاصةً في فصل الصيف' },
+        { icon: 'fa-copy', title: 'الأرشفة الاحتياطية (RAID/Backup)', text: 'للمشاريع الحساسة كالبنوك والمصانع الكبرى، نوفر أجهزة تسجيل بخاصية RAID تُخزّن نسخة مطابقة على أكثر من هاردسك في آن واحد، فإذا تعطل أحدها لا تُفقد أي بيانات' },
+      ]} />
 
       <h3><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> أعطال أجهزة DVR/NVR الأكثر شيوعاً</h3>
       <p>على عكس مشكلات الكاميرات نفسها، أعطال جهاز التسجيل لها طابع مختلف ونتعامل معها يومياً في مصر:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>الجهاز لا يُقلع (No Power/No Boot):</strong> غالباً بسبب تلف مصدر الطاقة الداخلي أو مشكلة في اللوحة الأم، يحتاج فحصاً واستبدال القطعة التالفة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>فقدان قناة أو أكثر فجأة:</strong> قد يكون بسبب تلف الكابل أو منفذ الاستقبال في الجهاز نفسه، أو تعارض عنوان IP في حالة أنظمة NVR</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>بطء الواجهة أو تجمد الشاشة:</strong> عادةً ناتج عن امتلاء الهاردسك بالكامل أو قِدَم إصدار الفيرموير، ويُحل بالتنظيف أو التحديث</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>عدم ظهور التسجيلات القديمة رغم وجود مساحة:</strong> قد يكون بسبب تهيئة غير صحيحة للهاردسك أو تلف في جدول الفهرسة، ويحتاج أدوات استرجاع متخصصة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>تعارض في عناوين الشبكة (IP Conflict) في أنظمة NVR:</strong> يحدث عند تكرار نفس عنوان IP بين كاميرتين، ويُحل بإعادة توزيع العناوين بشكل صحيح ومنظم</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-power-off', title: 'الجهاز لا يُقلع (No Power/No Boot)', text: 'غالباً بسبب تلف مصدر الطاقة الداخلي أو مشكلة في اللوحة الأم، يحتاج فحصاً واستبدال القطعة التالفة' },
+        { icon: 'fa-video-slash', title: 'فقدان قناة أو أكثر فجأة', text: 'قد يكون بسبب تلف الكابل أو منفذ الاستقبال في الجهاز نفسه، أو تعارض عنوان IP في حالة أنظمة NVR' },
+        { icon: 'fa-hourglass-half', title: 'بطء الواجهة أو تجمد الشاشة', text: 'عادةً ناتج عن امتلاء الهاردسك بالكامل أو قِدَم إصدار الفيرموير، ويُحل بالتنظيف أو التحديث' },
+        { icon: 'fa-search', title: 'عدم ظهور التسجيلات القديمة رغم وجود مساحة', text: 'قد يكون بسبب تهيئة غير صحيحة للهاردسك أو تلف في جدول الفهرسة، ويحتاج أدوات استرجاع متخصصة' },
+        { icon: 'fa-exclamation-circle', title: 'تعارض في عناوين الشبكة (IP Conflict) في أنظمة NVR', text: 'يحدث عند تكرار نفس عنوان IP بين كاميرتين، ويُحل بإعادة توزيع العناوين بشكل صحيح ومنظم' },
+      ]} />
 
       <h3><i class="fas fa-industry" style="color:var(--secondary);margin-left:8px;"></i> أي جهاز تختار حسب طبيعة نشاطك؟</h3>
       <p>اختيار عدد القنوات وسعة التخزين يجب أن يُبنى على طبيعة نشاطك ومستوى الحساسية، وليس فقط على السعر الأقل:</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i><span><strong>منزل أو شقة سكنية (4-6 كاميرات):</strong> يكفي جهاز بـ4 أو 8 قنوات وهاردسك 1-2TB مع تسجيل عند الحركة فقط لتوفير المساحة</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>محل تجاري أو صيدلية (6-10 كاميرات):</strong> نوصي بجهاز 8 أو 16 قناة وهاردسك 2-4TB، مع تسجيل مستمر على كاميرات الصندوق والمدخل تحديداً</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>مصنع أو مستودع (16-32 كاميرا):</strong> جهاز NVR بقنوات 16 أو 32 مع دعم RAID وهاردسك 8TB أو أكثر، مع تسجيل مستمر ونسخ احتياطي</span></li>
-        <li><i class="fas fa-check-circle"></i><span><strong>بنوك ومحال ذهب ومجوهرات:</strong> نوصي دوماً بأعلى دقة ممكنة مع RAID وتسجيل مستمر واحتفاظ لا يقل عن 90 يوماً لتحقيق التوافق مع متطلبات التأمين والجهات الرقابية</span></li>
-      </ul>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-home', title: 'منزل أو شقة سكنية (4-6 كاميرات)', text: 'يكفي جهاز بـ4 أو 8 قنوات وهاردسك 1-2TB مع تسجيل عند الحركة فقط لتوفير المساحة' },
+        { icon: 'fa-store', title: 'محل تجاري أو صيدلية (6-10 كاميرات)', text: 'نوصي بجهاز 8 أو 16 قناة وهاردسك 2-4TB، مع تسجيل مستمر على كاميرات الصندوق والمدخل تحديداً' },
+        { icon: 'fa-industry', title: 'مصنع أو مستودع (16-32 كاميرا)', text: 'جهاز NVR بقنوات 16 أو 32 مع دعم RAID وهاردسك 8TB أو أكثر، مع تسجيل مستمر ونسخ احتياطي' },
+        { icon: 'fa-gem', title: 'بنوك ومحال ذهب ومجوهرات', text: 'نوصي دوماً بأعلى دقة ممكنة مع RAID وتسجيل مستمر واحتفاظ لا يقل عن 90 يوماً لتحقيق التوافق مع متطلبات التأمين والجهات الرقابية' },
+      ]} />
 
       <div class="cta-banner" style="margin-top:40px;border-radius:12px;">
         <h2>استشر خبراءنا في اختيار جهاز التسجيل المناسب</h2>
