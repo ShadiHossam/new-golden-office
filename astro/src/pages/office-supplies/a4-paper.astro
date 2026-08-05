@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -48,10 +51,10 @@ const schemaJson = JSON.stringify({
       <div class="service-detail-grid">
 
         <div class="service-content">
-          <h2>ورق A4 — الخيار الأول للمكاتب والشركات في مصر</h2>
-          <p>
-            يُعدّ ورق A4 من أكثر المستلزمات المكتبية طلباً على الإطلاق، إذ لا يمكن لأي مكتب أو شركة أو مؤسسة الاستغناء عنه يوماً واحداً. في <strong>نيو جولدن أوفيس</strong>، نوفر أشمل تشكيلة من ورق الطباعة A4 في الإسكندرية ومصر، مع ضمان التوافق مع جميع أنواع الطابعات والناسخات الليزرية والنافثة للحبر.
-          </p>
+          <ContentIntro
+            heading="ورق A4 — الخيار الأول للمكاتب والشركات في مصر"
+            text="يُعدّ ورق A4 من أكثر المستلزمات المكتبية طلباً على الإطلاق، إذ لا يمكن لأي مكتب أو شركة أو مؤسسة الاستغناء عنه يوماً واحداً. في نيو جولدن أوفيس، نوفر أشمل تشكيلة من ورق الطباعة A4 في الإسكندرية ومصر، مع ضمان التوافق مع جميع أنواع الطابعات والناسخات الليزرية والنافثة للحبر."
+          />
           <p>
             نتعامل مع الشركات والمصانع والمدارس بنفس مستوى الاهتمام بالتفاصيل مهما كان حجم الطلب، ونضمن دائمًا توريد ورق من نفس الدفعة والجودة عند التعاقد الدوري، لتفادي أي فارق ملحوظ في اللون أو السمك بين شحنة وأخرى قد يؤثر على مظهر مستنداتك المطبوعة.
           </p>
@@ -67,41 +70,20 @@ const schemaJson = JSON.stringify({
 
           <h3 style="margin-top:32px;color:var(--primary)">ورق طباعة مصر — الأوزان المتاحة وما يناسبك</h3>
           <p>اختيار الوزن الصحيح للورق يؤثر مباشرة على جودة الطباعة وعمر الماكينة. نوفر لك:</p>
-          <ul style="list-style:none;padding:0;margin:16px 0 24px">
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check-circle" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>ورق 80 جرام</strong> — الخيار الأمثل للطباعة اليومية ووثائق المكتب. سماكة جيدة تمنع ظهور الطباعة من الخلف وتُعطي مظهراً احترافياً.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check-circle" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>ورق 75 جرام</strong> — التوازن المثالي بين السعر والجودة. شائع الاستخدام في الشركات والمؤسسات التي تحتاج طباعة بكميات كبيرة بتكلفة معقولة.</div>
-            </li>
-            <li style="padding:10px 0;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check-circle" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>ورق 70 جرام</strong> — الخيار الاقتصادي للطباعة الداخلية والمسودات. مناسب جداً للحجم العالي من الطباعة حيث يكون المحتوى أهم من السماكة.</div>
-            </li>
-          </ul>
+          <ComparisonGrid items={[
+            { title: 'ورق 80 جرام', text: 'الخيار الأمثل للطباعة اليومية ووثائق المكتب. سماكة جيدة تمنع ظهور الطباعة من الخلف وتُعطي مظهراً احترافياً.' },
+            { title: 'ورق 75 جرام', text: 'التوازن المثالي بين السعر والجودة. شائع الاستخدام في الشركات والمؤسسات التي تحتاج طباعة بكميات كبيرة بتكلفة معقولة.' },
+            { title: 'ورق 70 جرام', text: 'الخيار الاقتصادي للطباعة الداخلية والمسودات. مناسب جداً للحجم العالي من الطباعة حيث يكون المحتوى أهم من السماكة.' },
+          ]} />
 
           <h3 style="color:var(--primary)">أبرز الماركات لدينا</h3>
           <p>نحرص على توفير أفضل ماركات ورق الطباعة العالمية المعتمدة والموثوقة في السوق المصري:</p>
-          <ul style="list-style:none;padding:0;margin:16px 0 24px">
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-star" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>Double A</strong> — الماركة التايلاندية الأولى عالمياً في ورق الطباعة. بياض ممتاز يصل 104%، سطح أملس، ومقاومة للانحناء داخل الطابعة.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-star" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>Navigator</strong> — ماركة برتغالية مشهورة بجودتها العالية وسعرها التنافسي. مثالية للمكاتب التي تحتاج جودة ممتازة بتكلفة مناسبة.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-star" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>Xerox</strong> — الماركة الأمريكية الأيقونية. ورق مصمم خصيصاً للناسخات والطابعات الليزرية بمعايير دقة عالية جداً. الأنسب لطباعة الوثائق القانونية والعقود.</div>
-            </li>
-            <li style="padding:10px 0;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-star" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>IK</strong> — ماركة اندونيسية واسعة الانتشار في مصر. توفر جودة جيدة بأسعار تنافسية جداً، مثالية للمؤسسات التعليمية والجهات الحكومية.</div>
-            </li>
-          </ul>
+          <IconCardGrid columns={4} items={[
+            { icon: 'fa-star', title: 'Double A', text: 'الماركة التايلاندية الأولى عالمياً في ورق الطباعة. بياض ممتاز يصل 104%، سطح أملس، ومقاومة للانحناء داخل الطابعة.' },
+            { icon: 'fa-star', title: 'Navigator', text: 'ماركة برتغالية مشهورة بجودتها العالية وسعرها التنافسي. مثالية للمكاتب التي تحتاج جودة ممتازة بتكلفة مناسبة.' },
+            { icon: 'fa-star', title: 'Xerox', text: 'الماركة الأمريكية الأيقونية. ورق مصمم خصيصاً للناسخات والطابعات الليزرية بمعايير دقة عالية جداً. الأنسب لطباعة الوثائق القانونية والعقود.' },
+            { icon: 'fa-star', title: 'IK', text: 'ماركة اندونيسية واسعة الانتشار في مصر. توفر جودة جيدة بأسعار تنافسية جداً، مثالية للمؤسسات التعليمية والجهات الحكومية.' },
+          ]} />
 
           <MidPageCTA formId="offA4PaperMidCta" />
 
@@ -115,71 +97,35 @@ const schemaJson = JSON.stringify({
 
           <h3 style="color:var(--primary)">بيع بالرزمة أو الكرتونة أو الجملة</h3>
           <p>نبيع ورق A4 بجميع الكميات التي تحتاجها:</p>
-          <ul style="list-style:none;padding:0;margin:16px 0 24px">
-            <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:12px;align-items:center">
-              <i class="fas fa-cube" style="color:var(--secondary)"></i>
-              <span><strong>رزمة واحدة (500 ورقة)</strong> — للاستخدام الشخصي أو التجربة</span>
-            </li>
-            <li style="padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:12px;align-items:center">
-              <i class="fas fa-box" style="color:var(--secondary)"></i>
-              <span><strong>كرتونة (5 رزم = 2500 ورقة)</strong> — الحجم الأمثل للمكاتب المتوسطة</span>
-            </li>
-            <li style="padding:8px 0;display:flex;gap:12px;align-items:center">
-              <i class="fas fa-boxes" style="color:var(--secondary)"></i>
-              <span><strong>أكثر من 10 كرتونة</strong> — أسعار جملة حصرية مع خصومات تصل 20%</span>
-            </li>
-          </ul>
+          <ComparisonGrid items={[
+            { title: 'رزمة واحدة (500 ورقة)', text: 'للاستخدام الشخصي أو التجربة' },
+            { title: 'كرتونة (5 رزم = 2500 ورقة)', text: 'الحجم الأمثل للمكاتب المتوسطة' },
+            { title: 'أكثر من 10 كرتونة', text: 'أسعار جملة حصرية مع خصومات تصل 20%' },
+          ]} />
           <p>
             اتصل بنا على <strong>01227392074</strong> لمعرفة أسعار اليوم وتوافر الكميات. نحدّث أسعارنا باستمرار لنضمن لك دائماً أفضل سعر في السوق.
           </p>
 
           <h3 style="color:var(--primary)">ورق A4 حسب طبيعة استخدامك</h3>
           <p>اختيار الورق المناسب يختلف حسب طبيعة نشاطك، وهذه أبرز التوصيات التي نقدمها لعملائنا وفق نوع منشآتهم:</p>
-          <ul style="list-style:none;padding:0;margin:16px 0 24px">
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-briefcase" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>المكاتب والشركات العادية</strong> — ورق 75 أو 80 جرام بنسبة بياض 96-100% يمنحك توازناً ممتازاً بين الجودة والتكلفة لطباعة المراسلات والتقارير اليومية.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-print" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>المطابع ومكاتب الطباعة التجارية</strong> — تحتاج إلى ثبات تام في المواصفات بين الأحمال المختلفة، لذلك ننصح بالتعاقد على كمية ثابتة من ماركة واحدة (مثل Xerox أو Double A) بدلاً من تبديل الماركات، لتفادي أي فروقات دقيقة في السماكة أو البياض قد تظهر في جودة الطباعة النهائية.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-school" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>المدارس والجامعات</strong> — الورق الاقتصادي 70 جرام مناسب جداً للامتحانات والمذكرات الداخلية عالية الكمية، مع الاحتفاظ بورق 80 جرام للشهادات والوثائق الرسمية التي تحتاج مظهراً أرقى.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-hospital" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>المستشفيات والعيادات</strong> — نوصي بورق 80 جرام لملفات المرضى نظراً لتكرار التعامل معها وحاجتها للمتانة، مع إمكانية استخدام ورق ملون لتصنيف الأقسام الطبية المختلفة بسرعة.</div>
-            </li>
-            <li style="padding:10px 0;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-landmark" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div><strong>الجهات الحكومية</strong> — الالتزام بالمواصفات الرسمية المعتمدة أولوية، ونوفر ورقاً بمواصفات ثابتة موثقة تناسب متطلبات التوريد الحكومي والمناقصات.</div>
-            </li>
-          </ul>
+          <IconCardGrid columns={3} items={[
+            { icon: 'fa-briefcase', title: 'المكاتب والشركات العادية', text: 'ورق 75 أو 80 جرام بنسبة بياض 96-100% يمنحك توازناً ممتازاً بين الجودة والتكلفة لطباعة المراسلات والتقارير اليومية.' },
+            { icon: 'fa-print', title: 'المطابع ومكاتب الطباعة التجارية', text: 'تحتاج إلى ثبات تام في المواصفات بين الأحمال المختلفة، لذلك ننصح بالتعاقد على كمية ثابتة من ماركة واحدة (مثل Xerox أو Double A) بدلاً من تبديل الماركات، لتفادي أي فروقات دقيقة في السماكة أو البياض قد تظهر في جودة الطباعة النهائية.' },
+            { icon: 'fa-school', title: 'المدارس والجامعات', text: 'الورق الاقتصادي 70 جرام مناسب جداً للامتحانات والمذكرات الداخلية عالية الكمية، مع الاحتفاظ بورق 80 جرام للشهادات والوثائق الرسمية التي تحتاج مظهراً أرقى.' },
+            { icon: 'fa-hospital', title: 'المستشفيات والعيادات', text: 'نوصي بورق 80 جرام لملفات المرضى نظراً لتكرار التعامل معها وحاجتها للمتانة، مع إمكانية استخدام ورق ملون لتصنيف الأقسام الطبية المختلفة بسرعة.' },
+            { icon: 'fa-landmark', title: 'الجهات الحكومية', text: 'الالتزام بالمواصفات الرسمية المعتمدة أولوية، ونوفر ورقاً بمواصفات ثابتة موثقة تناسب متطلبات التوريد الحكومي والمناقصات.' },
+          ]} />
 
           <h3 style="color:var(--primary)">كيف تحافظ على جودة ورق A4 وتخزنه بشكل صحيح</h3>
           <p>
             التخزين غير السليم للورق يمكن أن يفسد جودته حتى قبل استخدامه، مما يسبب مشاكل انحشار متكررة في الطابعات والناسخات. إليك أهم النصائح التي نشاركها مع عملائنا:
           </p>
-          <ul style="list-style:none;padding:0;margin:16px 0 24px">
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div>احفظ الورق في مكان جاف بعيداً عن الرطوبة، فالرطوبة تجعل حواف الورق تتموج وتسبب انحشاره داخل الطابعة.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div>لا تفتح الرزمة إلا عند الحاجة الفعلية للاستخدام — الغلاف البلاستيكي المحكم يحافظ على مستوى الرطوبة الداخلي المناسب للورق.</div>
-            </li>
-            <li style="padding:10px 0;border-bottom:1px solid #eee;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div>خزّن الكراتين مرفوعة عن الأرض على منصة أو رف، وتجنب وضعها مباشرة على أرضية قد تتسرب منها الرطوبة.</div>
-            </li>
-            <li style="padding:10px 0;display:flex;gap:12px;align-items:flex-start">
-              <i class="fas fa-check" style="color:var(--secondary);margin-top:4px;flex-shrink:0"></i>
-              <div>عند تعبئة درج الطابعة، لا تتجاوز الحد الأقصى الموصى به وتجنب خلط رزم مختلفة العمر أو الماركة في نفس الدرج لتفادي فروقات السماكة الطفيفة.</div>
-            </li>
-          </ul>
+          <IconCardGrid columns={2} items={[
+            { icon: 'fa-tint', text: 'احفظ الورق في مكان جاف بعيداً عن الرطوبة، فالرطوبة تجعل حواف الورق تتموج وتسبب انحشاره داخل الطابعة.' },
+            { icon: 'fa-box', text: 'لا تفتح الرزمة إلا عند الحاجة الفعلية للاستخدام — الغلاف البلاستيكي المحكم يحافظ على مستوى الرطوبة الداخلي المناسب للورق.' },
+            { icon: 'fa-arrow-up', text: 'خزّن الكراتين مرفوعة عن الأرض على منصة أو رف، وتجنب وضعها مباشرة على أرضية قد تتسرب منها الرطوبة.' },
+            { icon: 'fa-print', text: 'عند تعبئة درج الطابعة، لا تتجاوز الحد الأقصى الموصى به وتجنب خلط رزم مختلفة العمر أو الماركة في نفس الدرج لتفادي فروقات السماكة الطفيفة.' },
+          ]} />
 
           <h3 style="color:var(--primary)">ورق A4 صديق للبيئة (معاد التدوير)</h3>
           <p>

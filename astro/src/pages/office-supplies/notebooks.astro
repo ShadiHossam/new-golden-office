@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -66,21 +68,23 @@ const schemaJson = JSON.stringify({
       <div class="service-detail-grid">
 
         <div class="service-content">
-          <h2>تشكيلة الدفاتر والمفكرات</h2>
-          <p>في نيو جولدن أوفيس، نقدم تشكيلة واسعة ومتنوعة من الدفاتر والمفكرات التي تلبي احتياجات الشركات والمكاتب والمؤسسات التعليمية في جميع أنحاء مصر. نحرص على توفير منتجات عالية الجودة تجمع بين المتانة والأناقة، مع الحفاظ على أسعار تنافسية تناسب عمليات الشراء بالجملة.</p>
+          <ContentIntro
+            heading="تشكيلة الدفاتر والمفكرات"
+            text="في نيو جولدن أوفيس، نقدم تشكيلة واسعة ومتنوعة من الدفاتر والمفكرات التي تلبي احتياجات الشركات والمكاتب والمؤسسات التعليمية في جميع أنحاء مصر. نحرص على توفير منتجات عالية الجودة تجمع بين المتانة والأناقة، مع الحفاظ على أسعار تنافسية تناسب عمليات الشراء بالجملة."
+          />
           <p>نتعامل مع أفضل الموردين والمصنعين المحليين والدوليين لضمان الحصول على منتجات تستوفي أعلى معايير الجودة. كل دفتر يُختار بعناية ليضمن ورقًا ناعمًا لا يُنزّ الحبر، وغلافًا متينًا يحمي المحتوى، وتجليدًا محكمًا يتحمل الاستخدام اليومي المكثف.</p>
 
           <h3>أنواع الدفاتر المتاحة</h3>
-          <ul>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>دفاتر حلزونية بأحجام A4 وA5</strong> — بأغطية صلبة وناعمة، تُفتح 360 درجة، خيار عملي للاجتماعات والاستخدام اليومي المكثف</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>دفاتر مقواة بغلاف صلب</strong> — للاستخدام التنفيذي والمهني، تحافظ على شكلها مع كثرة النقل داخل الحقائب</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>لوحات كتابة قانونية (Legal Pad)</strong> — بأحجام متعددة وورق أصفر أو أبيض مسطر، شائعة في المكاتب القانونية والاستشارية</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>مفكرات تنفيذية فاخرة</strong> — بتصاميم راقية للمدراء وكبار الموظفين، غالبًا بورق أثقل وإغلاق مغناطيسي أو بشريط مطاطي</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>كراسات مسطرة وسادة (بلانك) وبمربعات</strong> — للاستخدامات المختلفة من الكتابة العادية إلى الرسم البياني والحسابات</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>دفاتر التخطيط اليومي والأسبوعي والشهري (Planner)</strong> — بجداول جاهزة لتنظيم المهام والمواعيد، مثالية لمديري المشاريع وفرق العمل</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>دفاتر ملاحظات صغيرة (Pocket Notebook)</strong> — للحمل في الجيب، مناسبة لمندوبي المبيعات والمهندسين الميدانيين</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>كراسات الرسم والتخطيط</strong> — بأوراق مخصصة أثقل وزنًا تتحمل ألوان الرصاص والفحم دون تمزق</li>
-          </ul>
+          <IconCardGrid columns={4} items={[
+            { icon: 'fa-book', title: 'دفاتر حلزونية بأحجام A4 وA5', text: 'بأغطية صلبة وناعمة، تُفتح 360 درجة، خيار عملي للاجتماعات والاستخدام اليومي المكثف' },
+            { icon: 'fa-book-open', title: 'دفاتر مقواة بغلاف صلب', text: 'للاستخدام التنفيذي والمهني، تحافظ على شكلها مع كثرة النقل داخل الحقائب' },
+            { icon: 'fa-balance-scale', title: 'لوحات كتابة قانونية (Legal Pad)', text: 'بأحجام متعددة وورق أصفر أو أبيض مسطر، شائعة في المكاتب القانونية والاستشارية' },
+            { icon: 'fa-gem', title: 'مفكرات تنفيذية فاخرة', text: 'بتصاميم راقية للمدراء وكبار الموظفين، غالبًا بورق أثقل وإغلاق مغناطيسي أو بشريط مطاطي' },
+            { icon: 'fa-table', title: 'كراسات مسطرة وسادة (بلانك) وبمربعات', text: 'للاستخدامات المختلفة من الكتابة العادية إلى الرسم البياني والحسابات' },
+            { icon: 'fa-calendar-alt', title: 'دفاتر التخطيط اليومي والأسبوعي والشهري (Planner)', text: 'بجداول جاهزة لتنظيم المهام والمواعيد، مثالية لمديري المشاريع وفرق العمل' },
+            { icon: 'fa-shoe-prints', title: 'دفاتر ملاحظات صغيرة (Pocket Notebook)', text: 'للحمل في الجيب، مناسبة لمندوبي المبيعات والمهندسين الميدانيين' },
+            { icon: 'fa-pencil-ruler', title: 'كراسات الرسم والتخطيط', text: 'بأوراق مخصصة أثقل وزنًا تتحمل ألوان الرصاص والفحم دون تمزق' },
+          ]} />
 
           <h3>دفاتر مطبوعة بشعار شركتك</h3>
           <p>تُعدّ الدفاتر المطبوعة بشعار الشركة من أكثر هدايا الشركات شيوعًا وتأثيرًا. في نيو جولدن أوفيس نوفر خدمة طباعة احترافية على الدفاتر والمفكرات تشمل طباعة الشعار على الغلاف الأمامي، وطباعة اسم الشركة ومعلومات الاتصال على الصفحة الداخلية الأولى، بالإضافة إلى إمكانية تخصيص الألوان لتتوافق مع هوية علامتك التجارية.</p>
@@ -97,12 +101,12 @@ const schemaJson = JSON.stringify({
           </p>
 
           <h3>أنواع التجليد ومتانتها</h3>
-          <ul>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>تجليد حلزوني سلكي (Wire-O)</strong> — يسمح بفتح الدفتر 360 درجة وطيه للخلف، مثالي لمن يكتب أثناء الوقوف أو في الاجتماعات المتنقلة، لكنه أقل صلابة عند التخزين الطويل بكثافة</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>تجليد خياطة (Sewn/Stitched)</strong> — الصفحات مخيطة من المنتصف في طبقات (Signatures)، وهو الأكثر متانة ويحافظ على تماسك الصفحات حتى مع الاستخدام اليومي المكثف لسنوات</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>تجليد لاصق (Perfect Binding)</strong> — شائع في الدفاتر الاقتصادية متوسطة السماكة، اقتصادي التكلفة لكنه أقل قدرة على الفتح المسطح الكامل</li>
-            <li><i class="fas fa-check" style="color:var(--secondary);margin-left:8px"></i> <strong>غلاف صلب مقوى (Hardcover)</strong> — يحمي الصفحات الداخلية من الطي والتجعد أثناء النقل داخل الحقيبة، خيار مثالي للمفكرات التنفيذية التي تُستخدم يوميًا خارج المكتب</li>
-          </ul>
+          <IconCardGrid columns={2} items={[
+            { icon: 'fa-circle-notch', title: 'تجليد حلزوني سلكي (Wire-O)', text: 'يسمح بفتح الدفتر 360 درجة وطيه للخلف، مثالي لمن يكتب أثناء الوقوف أو في الاجتماعات المتنقلة، لكنه أقل صلابة عند التخزين الطويل بكثافة' },
+            { icon: 'fa-cut', title: 'تجليد خياطة (Sewn/Stitched)', text: 'الصفحات مخيطة من المنتصف في طبقات (Signatures)، وهو الأكثر متانة ويحافظ على تماسك الصفحات حتى مع الاستخدام اليومي المكثف لسنوات' },
+            { icon: 'fa-tint', title: 'تجليد لاصق (Perfect Binding)', text: 'شائع في الدفاتر الاقتصادية متوسطة السماكة، اقتصادي التكلفة لكنه أقل قدرة على الفتح المسطح الكامل' },
+            { icon: 'fa-shield-alt', title: 'غلاف صلب مقوى (Hardcover)', text: 'يحمي الصفحات الداخلية من الطي والتجعد أثناء النقل داخل الحقيبة، خيار مثالي للمفكرات التنفيذية التي تُستخدم يوميًا خارج المكتب' },
+          ]} />
 
           <h3>دفاتر لكل قطاع: من المدرسة إلى المستشفى إلى الوزارة</h3>
           <p>
@@ -190,13 +194,13 @@ const schemaJson = JSON.stringify({
     <div class="container">
       <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">دفاتر بشعار شركتك — طباعة مخصصة بالجملة</h2>
       <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">نوفر دفاتر مكتبية مطبوعة بشعار شركتك وألوانك للشركات والفنادق والمستشفيات في مصر. مثالية كهدايا ترويجية أو لتوحيد هوية الشركة في الاجتماعات:</p>
-      <ul style="list-style:none;padding:0;line-height:2.2;color:#444">
-        <li>✅ غلاف مطبوع بشعارك وألوان علامتك التجارية</li>
-        <li>✅ حجم وعدد صفحات حسب طلبك (A4, A5, A6)</li>
-        <li>✅ خطوط، مربعات، أو صفحات بيضاء</li>
-        <li>✅ كميات من 50 دفتر فأكثر</li>
-        <li>✅ توصيل لجميع أنحاء مصر</li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-check-circle', text: 'غلاف مطبوع بشعارك وألوان علامتك التجارية' },
+        { icon: 'fa-check-circle', text: 'حجم وعدد صفحات حسب طلبك (A4, A5, A6)' },
+        { icon: 'fa-check-circle', text: 'خطوط، مربعات، أو صفحات بيضاء' },
+        { icon: 'fa-check-circle', text: 'كميات من 50 دفتر فأكثر' },
+        { icon: 'fa-check-circle', text: 'توصيل لجميع أنحاء مصر' },
+      ]} />
       <p style="font-size:1rem;color:#555;margin-top:16px">نخدم عملاءنا في القاهرة والإسكندرية وجميع محافظات مصر — تواصل معنا للحصول على عينة وعرض سعر.</p>
 
       <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin:28px 0 12px">سيناريوهات شائعة لطلبات الجملة</h3>
