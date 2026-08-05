@@ -2,6 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -48,10 +51,10 @@ const schemaJson = JSON.stringify({
       <div class="service-detail-grid">
 
         <div class="service-content">
-          <h2>وايت بورد وسبورة مصر للمكاتب والفصول</h2>
-          <p>
-            الوايت بورد أداة لا غنى عنها في كل مكتب حديث وقاعة اجتماعات ومدرسة وقاعة تدريب. في <strong>نيو جولدن أوفيس</strong>، نوفر أوسع تشكيلة من الألواح البيضاء والفلين بورد والألواح المغناطيسية في الإسكندرية ومصر، بجميع الأحجام وبأسعار تنافسية تناسب الأفراد والشركات والمؤسسات التعليمية.
-          </p>
+          <ContentIntro
+            heading="وايت بورد وسبورة مصر للمكاتب والفصول"
+            text="الوايت بورد أداة لا غنى عنها في كل مكتب حديث وقاعة اجتماعات ومدرسة وقاعة تدريب. في نيو جولدن أوفيس، نوفر أوسع تشكيلة من الألواح البيضاء والفلين بورد والألواح المغناطيسية في الإسكندرية ومصر، بجميع الأحجام وبأسعار تنافسية تناسب الأفراد والشركات والمؤسسات التعليمية."
+          />
           <p>
             منذ تأسيسنا عام 1999، لاحظنا أن أكبر مشكلة يواجهها عملاؤنا ليست في العثور على وايت بورد، بل في اختيار المقاس والنوع الصحيح الذي يخدم غرضهم فعليًا دون إهدار ميزانية على مواصفات لا يحتاجونها. لهذا نحرص دائمًا على سؤال العميل عن طبيعة استخدامه الفعلي قبل الترشيح — هل هو للعرض التقديمي اليومي؟ للتدريس؟ لتنظيم مهام الفريق؟ كل استخدام له مقاس ونوع سطح أنسب من غيره.
           </p>
@@ -75,38 +78,38 @@ const schemaJson = JSON.stringify({
           </p>
 
           <h3>أنواع الألواح المتاحة</h3>
-          <ul>
-            <li><strong>وايت بورد عادي (Magnetic)</strong> — سطح أبيض لامع مغناطيسي يمكن استخدام المغناطيس لتعليق الأوراق عليه، مثالي لقاعات الاجتماعات والمكاتب</li>
-            <li><strong>وايت بورد بإطار ألومنيوم</strong> — إطار أنيق من الألومنيوم المصقول يضفي مظهراً احترافياً ويتحمل الاستخدام المكثف لسنوات</li>
-            <li><strong>فلين بورد (Cork Board)</strong> — لوح فلين طبيعي مثالي لتعليق الإشعارات والمستندات والصور باستخدام دبابيس الفلين</li>
-            <li><strong>لوح مزدوج (Combo Board)</strong> — يجمع نصف وايت بورد ونصف فلين بورد في لوح واحد عملي ومتعدد الاستخدامات</li>
-            <li><strong>وايت بورد قلاب (Flipchart)</strong> — حامل متحرك مع ألواح ورقية قابلة للتقليب، مثالي للعروض التقديمية والتدريب المتنقل</li>
-            <li><strong>لوح زجاجي (Glass Board)</strong> — لوح زجاجي فاخر بألوان متعددة لبيئات العمل الراقية</li>
-            <li><strong>سبورة خضراء</strong> — للفصول الدراسية، مثالية للتعليم التقليدي بالطباشير</li>
-          </ul>
+          <IconCardGrid columns={4} items={[
+            { icon: 'fa-magnet', title: 'وايت بورد عادي (Magnetic)', text: 'سطح أبيض لامع مغناطيسي يمكن استخدام المغناطيس لتعليق الأوراق عليه، مثالي لقاعات الاجتماعات والمكاتب' },
+            { icon: 'fa-border-all', title: 'وايت بورد بإطار ألومنيوم', text: 'إطار أنيق من الألومنيوم المصقول يضفي مظهراً احترافياً ويتحمل الاستخدام المكثف لسنوات' },
+            { icon: 'fa-thumbtack', title: 'فلين بورد (Cork Board)', text: 'لوح فلين طبيعي مثالي لتعليق الإشعارات والمستندات والصور باستخدام دبابيس الفلين' },
+            { icon: 'fa-clone', title: 'لوح مزدوج (Combo Board)', text: 'يجمع نصف وايت بورد ونصف فلين بورد في لوح واحد عملي ومتعدد الاستخدامات' },
+            { icon: 'fa-scroll', title: 'وايت بورد قلاب (Flipchart)', text: 'حامل متحرك مع ألواح ورقية قابلة للتقليب، مثالي للعروض التقديمية والتدريب المتنقل' },
+            { icon: 'fa-square', title: 'لوح زجاجي (Glass Board)', text: 'لوح زجاجي فاخر بألوان متعددة لبيئات العمل الراقية' },
+            { icon: 'fa-chalkboard-teacher', title: 'سبورة خضراء', text: 'للفصول الدراسية، مثالية للتعليم التقليدي بالطباشير' },
+          ]} />
 
           <h3>الأحجام المتوفرة</h3>
           <p>نوفر الوايت بورد بمجموعة متنوعة من الأحجام تناسب مختلف الاحتياجات والفضاءات:</p>
-          <ul>
-            <li><strong>60×90 سم</strong> — للمكاتب الصغيرة والغرف الشخصية</li>
-            <li><strong>90×120 سم</strong> — الحجم الأكثر طلباً للمكاتب العادية وغرف الاجتماعات الصغيرة</li>
-            <li><strong>120×180 سم</strong> — لقاعات الاجتماعات المتوسطة والفصول الدراسية</li>
-            <li><strong>120×240 سم وما فوق</strong> — للقاعات الكبيرة والمراكز التدريبية</li>
-          </ul>
+          <ComparisonGrid items={[
+            { title: '60×90 سم', text: 'للمكاتب الصغيرة والغرف الشخصية' },
+            { title: '90×120 سم', text: 'الحجم الأكثر طلباً للمكاتب العادية وغرف الاجتماعات الصغيرة' },
+            { title: '120×180 سم', text: 'لقاعات الاجتماعات المتوسطة والفصول الدراسية' },
+            { title: '120×240 سم وما فوق', text: 'للقاعات الكبيرة والمراكز التدريبية' },
+          ]} />
 
           <MidPageCTA formId="offWhiteboardsMidCta" />
 
           <h3>مستلزمات وإكسسوارات الوايت بورد</h3>
           <p>بجانب الألواح، نوفر كامل الإكسسوارات اللازمة لتجهيز تجربة كتابة متكاملة:</p>
-          <ul>
-            <li><strong>ماركرات وايت بورد</strong> — ألوان متعددة بألوان مشبعة وقابلة للمسح بسهولة، متوفرة بأحجام رفيعة ومتوسطة وسميكة</li>
-            <li><strong>ممسحة وايت بورد (Eraser)</strong> — ممسحات فردية وممسحات مغناطيسية تُخزن مباشرة على اللوح</li>
-            <li><strong>بخاخ تنظيف الوايت بورد</strong> — محلول تنظيف خاص يزيل آثار الماركر القديمة والأوساخ العنيدة</li>
-            <li><strong>دبابيس فلين بورد</strong> — دبابيس ملونة ومشكلة للفلين بورد</li>
-            <li><strong>مغناطيس ألوان</strong> — مغناطيس قوي بأحجام وأشكال متعددة لتعليق الأوراق على الألواح المغناطيسية</li>
-            <li><strong>حامل وايت بورد (Easel)</strong> — حامل قابل للطي يجعل الوايت بورد متنقلاً</li>
-            <li><strong>رف الأقلام السفلي</strong> — مثبت أسفل اللوحة لحفظ الأقلام والممحاة</li>
-          </ul>
+          <IconCardGrid columns={4} items={[
+            { icon: 'fa-marker', title: 'ماركرات وايت بورد', text: 'ألوان متعددة بألوان مشبعة وقابلة للمسح بسهولة، متوفرة بأحجام رفيعة ومتوسطة وسميكة' },
+            { icon: 'fa-eraser', title: 'ممسحة وايت بورد (Eraser)', text: 'ممسحات فردية وممسحات مغناطيسية تُخزن مباشرة على اللوح' },
+            { icon: 'fa-spray-can', title: 'بخاخ تنظيف الوايت بورد', text: 'محلول تنظيف خاص يزيل آثار الماركر القديمة والأوساخ العنيدة' },
+            { icon: 'fa-thumbtack', title: 'دبابيس فلين بورد', text: 'دبابيس ملونة ومشكلة للفلين بورد' },
+            { icon: 'fa-magnet', title: 'مغناطيس ألوان', text: 'مغناطيس قوي بأحجام وأشكال متعددة لتعليق الأوراق على الألواح المغناطيسية' },
+            { icon: 'fa-grip-lines', title: 'حامل وايت بورد (Easel)', text: 'حامل قابل للطي يجعل الوايت بورد متنقلاً' },
+            { icon: 'fa-pen', title: 'رف الأقلام السفلي', text: 'مثبت أسفل اللوحة لحفظ الأقلام والممحاة' },
+          ]} />
 
           <h3>سيناريوهات الاستخدام</h3>
           <p>
@@ -187,24 +190,12 @@ const schemaJson = JSON.stringify({
     <div class="container">
       <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">دليل اختيار حجم الوايت بورد المناسب</h2>
       <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">اختيار الحجم الصحيح يضمن تجربة استخدام مثالية ويوفر عليك تكلفة شراء لوح أكبر من حاجتك الفعلية أو أصغر منها بما يضطرك لاستبداله سريعًا. إليك الدليل السريع:</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #3498db;text-align:center">
-          <div style="font-size:1.5rem;font-weight:800;color:#3498db;margin-bottom:8px">60×90</div>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">مكتب شخصي أو غرفة صغيرة — مثالي للملاحظات اليومية</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #27ae60;text-align:center">
-          <div style="font-size:1.5rem;font-weight:800;color:#27ae60;margin-bottom:8px">90×120</div>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">مكتب أو غرفة اجتماعات صغيرة — الأكثر طلباً</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #c8a951;text-align:center">
-          <div style="font-size:1.5rem;font-weight:800;color:#c8a951;margin-bottom:8px">120×180</div>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">قاعة اجتماعات متوسطة أو فصل دراسي</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #e74c3c;text-align:center">
-          <div style="font-size:1.5rem;font-weight:800;color:#e74c3c;margin-bottom:8px">120×240+</div>
-          <p style="color:#555;font-size:0.9rem;line-height:1.6">قاعات كبيرة ومراكز تدريب ومدارس</p>
-        </div>
-      </div>
+      <ComparisonGrid items={[
+        { title: '60×90', text: 'مكتب شخصي أو غرفة صغيرة — مثالي للملاحظات اليومية' },
+        { title: '90×120', text: 'مكتب أو غرفة اجتماعات صغيرة — الأكثر طلباً' },
+        { title: '120×180', text: 'قاعة اجتماعات متوسطة أو فصل دراسي' },
+        { title: '120×240+', text: 'قاعات كبيرة ومراكز تدريب ومدارس' },
+      ]} />
     </div>
   </section>
 

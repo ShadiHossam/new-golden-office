@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
+import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 ---
 <BaseLayout
@@ -203,28 +205,12 @@ import { getSeoFor } from '../../lib/siteSeo';
     <div class="container">
       <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">توريد مستلزمات مكتبية للشركات والمؤسسات في مصر</h2>
       <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نخدم عملاءنا في <a href="/cairo/office-supplies">القاهرة</a> و<a href="/alexandria/office-supplies">الإسكندرية</a> وجميع محافظات مصر بتوريد المستلزمات المكتبية للشركات والمؤسسات والمصانع والفنادق والمستشفيات. ما يميزنا عن متاجر التجزئة الكبرى:</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #1a1a2e;text-align:center">
-          <div style="font-size:2rem;margin-bottom:8px">💰</div>
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:6px">أسعار الجملة</h3>
-          <p style="color:#666;font-size:0.9rem">خصومات خاصة للطلبات الكبيرة والعقود السنوية</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #1a1a2e;text-align:center">
-          <div style="font-size:2rem;margin-bottom:8px">🚚</div>
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:6px">توصيل لجميع المحافظات</h3>
-          <p style="color:#666;font-size:0.9rem">توصيل سريع لجميع أنحاء مصر بأمان تام</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #1a1a2e;text-align:center">
-          <div style="font-size:2rem;margin-bottom:8px">🏷️</div>
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:6px">تخصيص بشعار الشركة</h3>
-          <p style="color:#666;font-size:0.9rem">دفاتر، أظرف، أقلام وأختام بشعارك وألوان علامتك التجارية</p>
-        </div>
-        <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #1a1a2e;text-align:center">
-          <div style="font-size:2rem;margin-bottom:8px">📋</div>
-          <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:6px">عقود توريد دورية</h3>
-          <p style="color:#666;font-size:0.9rem">نوفر اتفاقيات توريد شهرية أو فصلية بأسعار ثابتة مضمونة</p>
-        </div>
-      </div>
+      <IconCardGrid columns={4} items={[
+        { icon: 'fa-money-bill-wave', title: 'أسعار الجملة', text: 'خصومات خاصة للطلبات الكبيرة والعقود السنوية' },
+        { icon: 'fa-truck', title: 'توصيل لجميع المحافظات', text: 'توصيل سريع لجميع أنحاء مصر بأمان تام' },
+        { icon: 'fa-tag', title: 'تخصيص بشعار الشركة', text: 'دفاتر، أظرف، أقلام وأختام بشعارك وألوان علامتك التجارية' },
+        { icon: 'fa-clipboard-list', title: 'عقود توريد دورية', text: 'نوفر اتفاقيات توريد شهرية أو فصلية بأسعار ثابتة مضمونة' },
+      ]} />
     </div>
   </section>
 
@@ -238,24 +224,24 @@ import { getSeoFor } from '../../lib/siteSeo';
         <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">
           اختيار مورد المستلزمات المكتبية ليس قراراً بسيطاً، فهو يؤثر على استمرارية عملك اليومي وميزانيتك على المدى الطويل. إليك أهم المعايير التي ننصح كل عميل بالنظر إليها عند اختيار مورده:
         </p>
-        <ul>
-          <li><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px"></i> <strong>عمق المخزون واستمراريته</strong> — المورد الجيد يحتفظ بمخزون كافٍ من الأصناف الأساسية بحيث لا يضطر عميله للانتظار أسابيع لتوفر صنف نفد فجأة. نحن نحتفظ بمخزون دائم يغطي أكثر من ألف منتج مكتبي.</li>
-          <li><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px"></i> <strong>وضوح التسعير وثبات الأسعار</strong> — التذبذب المستمر في الأسعار يصعّب التخطيط المالي. نحدّث أسعارنا بشفافية ونثبتها في العقود السنوية مع عملائنا المؤسسيين لتجنب أي مفاجآت.</li>
-          <li><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px"></i> <strong>المرونة في الكميات</strong> — سواء أردت شراء قلم واحد أو حاوية كاملة من الورق، يجب أن يستوعب المورد الجيد الطلبات الصغيرة والضخمة بنفس الجدية والاهتمام.</li>
-          <li><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px"></i> <strong>سرعة التوصيل وتغطيته الجغرافية</strong> — نغطي كل محافظات مصر، وليس الإسكندرية والقاهرة فقط، مع التزام واضح بمواعيد التسليم المتفق عليها.</li>
-          <li><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px"></i> <strong>الفوترة الضريبية السليمة</strong> — بالنسبة للشركات، الفاتورة الإلكترونية المطابقة لمتطلبات مصلحة الضرائب المصرية ضرورة وليست رفاهية.</li>
-          <li><i class="fas fa-check-circle" style="color:var(--secondary);margin-left:8px"></i> <strong>الدعم بعد البيع</strong> — إمكانية الاستبدال أو الإرجاع في حال وجود عيب تصنيع، وخط تواصل مباشر لأي استفسار أو طلب عاجل.</li>
-        </ul>
+        <IconCardGrid columns={3} items={[
+          { icon: 'fa-warehouse', title: 'عمق المخزون واستمراريته', text: 'المورد الجيد يحتفظ بمخزون كافٍ من الأصناف الأساسية بحيث لا يضطر عميله للانتظار أسابيع لتوفر صنف نفد فجأة. نحن نحتفظ بمخزون دائم يغطي أكثر من ألف منتج مكتبي.' },
+          { icon: 'fa-tags', title: 'وضوح التسعير وثبات الأسعار', text: 'التذبذب المستمر في الأسعار يصعّب التخطيط المالي. نحدّث أسعارنا بشفافية ونثبتها في العقود السنوية مع عملائنا المؤسسيين لتجنب أي مفاجآت.' },
+          { icon: 'fa-balance-scale', title: 'المرونة في الكميات', text: 'سواء أردت شراء قلم واحد أو حاوية كاملة من الورق، يجب أن يستوعب المورد الجيد الطلبات الصغيرة والضخمة بنفس الجدية والاهتمام.' },
+          { icon: 'fa-shipping-fast', title: 'سرعة التوصيل وتغطيته الجغرافية', text: 'نغطي كل محافظات مصر، وليس الإسكندرية والقاهرة فقط، مع التزام واضح بمواعيد التسليم المتفق عليها.' },
+          { icon: 'fa-file-invoice', title: 'الفوترة الضريبية السليمة', text: 'بالنسبة للشركات، الفاتورة الإلكترونية المطابقة لمتطلبات مصلحة الضرائب المصرية ضرورة وليست رفاهية.' },
+          { icon: 'fa-headset', title: 'الدعم بعد البيع', text: 'إمكانية الاستبدال أو الإرجاع في حال وجود عيب تصنيع، وخط تواصل مباشر لأي استفسار أو طلب عاجل.' },
+        ]} />
 
         <h3 style="margin-top:32px;color:var(--primary)">دليل تخطيط ميزانية المستلزمات المكتبية الشهرية</h3>
         <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">
           أحد أكثر الأسئلة التي نسمعها من عملائنا الجدد: "كم يجب أن أخصص شهرياً للمستلزمات المكتبية؟" الإجابة تعتمد على حجم فريقك وطبيعة عملك، لكن كقاعدة عامة استرشادية:
         </p>
-        <ul>
-          <li><i class="fas fa-calculator" style="color:var(--secondary);margin-left:8px"></i> <strong>مكتب صغير (حتى 10 موظفين)</strong> — ميزانية شهرية تغطي رزمة إلى رزمتي ورق A4 لكل موظف تقريباً، مع تجديد دوري لأدوات الكتابة والملفات كل شهرين إلى ثلاثة.</li>
-          <li><i class="fas fa-calculator" style="color:var(--secondary);margin-left:8px"></i> <strong>شركة متوسطة (10-50 موظف)</strong> — يُفضّل عقد توريد شهري ثابت يغطي الورق والأقلام وأدوات الأرشفة معاً، مما يمنحك خصم كمية أكبر من الشراء المتقطع.</li>
-          <li><i class="fas fa-calculator" style="color:var(--secondary);margin-left:8px"></i> <strong>مؤسسة كبيرة (أكثر من 50 موظف)</strong> — ننصح بعقد سنوي بأسعار ثابتة مع جدولة تسليم شهرية أو ربع سنوية، وهو ما يوفر عادة 15-25% مقارنة بالشراء العشوائي غير المخطط.</li>
-        </ul>
+        <ComparisonGrid items={[
+          { title: 'مكتب صغير (حتى 10 موظفين)', text: 'ميزانية شهرية تغطي رزمة إلى رزمتي ورق A4 لكل موظف تقريباً، مع تجديد دوري لأدوات الكتابة والملفات كل شهرين إلى ثلاثة.' },
+          { title: 'شركة متوسطة (10-50 موظف)', text: 'يُفضّل عقد توريد شهري ثابت يغطي الورق والأقلام وأدوات الأرشفة معاً، مما يمنحك خصم كمية أكبر من الشراء المتقطع.' },
+          { title: 'مؤسسة كبيرة (أكثر من 50 موظف)', text: 'ننصح بعقد سنوي بأسعار ثابتة مع جدولة تسليم شهرية أو ربع سنوية، وهو ما يوفر عادة 15-25% مقارنة بالشراء العشوائي غير المخطط.' },
+        ]} />
         <p style="font-size:1.05rem;line-height:1.9;color:#444">
           نحن جاهزون لمساعدتك في وضع خطة الشراء الأنسب لحجم منشأتك ونوع نشاطها — اتصل بنا على <strong>01227392074</strong> واحصل على استشارة مجانية.
         </p>
