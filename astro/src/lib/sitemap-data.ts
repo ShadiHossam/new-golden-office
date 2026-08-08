@@ -6,15 +6,7 @@ export interface SitemapPage {
 // Noindex,nofollow pages must never appear in any sitemap (see astro.config.mjs).
 // Pages get removed from this list as they're gradually indexed — see
 // astro/.rollout-schedule.md for the rollout order.
-export const NOINDEX_PATHS = [
-  '/alexandria/cameras', '/alexandria/cash-machines',
-  '/alexandria/copiers', '/alexandria/office-supplies', '/alexandria/printing',
-  '/alexandria/office-setup',
-  '/cairo/cameras', '/cairo/cash-machines',
-  '/cairo/copiers', '/cairo/office-supplies', '/cairo/printing',
-  '/cairo/office-setup',
-  '/printing/brochures',
-];
+export const NOINDEX_PATHS: string[] = [];
 
 // The 6 category hub pages (each is a */index.astro route) — these get their
 // own file, mirroring the old Yoast category-sitemap.xml.
@@ -40,12 +32,25 @@ export const PAGES: SitemapPage[] = [
   { path: '/cairo', image: '/images/about-team.webp' },
   { path: '/alexandria/ac', image: '/images/ac-hub.webp' },
   { path: '/cairo/ac', image: '/images/ac-hub.webp' },
+  { path: '/alexandria/cameras', image: '/images/cameras-hub.webp' },
+  { path: '/cairo/cameras', image: '/images/cameras-hub.webp' },
+  { path: '/alexandria/cash-machines', image: '/images/cash-machines-hub.webp' },
+  { path: '/cairo/cash-machines', image: '/images/cash-machines-hub.webp' },
+  { path: '/alexandria/copiers', image: '/images/copiers-hub.webp' },
+  { path: '/cairo/copiers', image: '/images/copiers-hub.webp' },
+  { path: '/alexandria/office-supplies', image: '/images/office-supplies-hub.webp' },
+  { path: '/cairo/office-supplies', image: '/images/office-supplies-hub.webp' },
+  { path: '/alexandria/printing', image: '/images/printing-hub.webp' },
+  { path: '/cairo/printing', image: '/images/printing-hub.webp' },
+  { path: '/alexandria/office-setup', image: '/images/about-team.webp' },
+  { path: '/cairo/office-setup', image: '/images/about-team.webp' },
   { path: '/printing/offset', image: '/images/printing-hub.webp' },
   { path: '/printing/digital', image: '/images/printing-hub.webp' },
   { path: '/printing/banners', image: '/images/printing-hub.webp' },
   { path: '/printing/business-cards', image: '/images/printing-hub.webp' },
   { path: '/printing/uv', image: '/images/printing-hub.webp' },
   { path: '/printing/gifts', image: '/images/printing-hub.webp' },
+  { path: '/printing/brochures', image: '/images/printing-hub.webp' },
   { path: '/copiers/buy', image: '/images/copiers-hub.webp' },
   { path: '/copiers/printers', image: '/images/copiers-hub.webp' },
   { path: '/copiers/maintenance', image: '/images/copiers-hub.webp' },

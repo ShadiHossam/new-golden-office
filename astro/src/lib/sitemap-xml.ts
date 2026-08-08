@@ -1,5 +1,10 @@
+import { execSync } from 'node:child_process';
+import { existsSync, statSync } from 'node:fs';
+import path from 'node:path';
+
 const SITE = 'https://newgoldenoffice.com';
 const XSL = `${SITE}/main-sitemap.xsl`;
+const PAGES_DIR = path.join(process.cwd(), 'src', 'pages');
 
 export interface UrlEntry {
   loc: string;
@@ -9,6 +14,40 @@ export interface UrlEntry {
 
 function escapeXml(value: string): string {
   return value.replace(/&/g, '&amp;');
+}
+
+export function toW3CDateTime(date: Date): string {
+  return date.toISOString().replace(/\.\d{3}Z$/, '+00:00');
+}
+
+// Maps a route path (e.g. "/ac/buy") to its .astro source file, matching
+// Astro's own file-based routing (foo/bar.astro, falling back to foo/bar/index.astro).
+export function resolvePageSourceFile(urlPath: string): string {
+  const trimmed = urlPath === '/' ? 'index' : urlPath.replace(/^\//, '');
+  const direct = path.join(PAGES_DIR, `${trimmed}.astro`);
+  if (existsSync(direct)) return direct;
+  return path.join(PAGES_DIR, trimmed, 'index.astro');
+}
+
+// Real "last modified" for a static page is when its source last changed in
+// git — falls back to filesystem mtime, then now, for uncommitted files.
+export function getFileLastModified(filePath: string): Date {
+  try {
+    const output = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+      cwd: process.cwd(),
+      stdio: ['ignore', 'pipe', 'ignore'],
+    })
+      .toString()
+      .trim();
+    if (output) return new Date(output);
+  } catch {
+    // not a git repo, or git unavailable at build time — fall through
+  }
+  try {
+    return statSync(filePath).mtime;
+  } catch {
+    return new Date();
+  }
 }
 
 export function renderUrlset(entries: UrlEntry[]): string {

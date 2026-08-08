@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { renderUrlset, XML_HEADERS } from '../lib/sitemap-xml';
+import { renderUrlset, XML_HEADERS, toW3CDateTime } from '../lib/sitemap-xml';
 
 export const GET: APIRoute = async () => {
   const posts = await getCollection('blog', ({ data }) => data.status === 'published');
@@ -8,7 +8,7 @@ export const GET: APIRoute = async () => {
   const xml = renderUrlset(
     posts.map((post) => ({
       loc: `https://newgoldenoffice.com/blog/${post.data.slug}`,
-      lastmod: new Date(post.data.updated_at || post.data.published_at || post.data.created_at).toISOString(),
+      lastmod: toW3CDateTime(new Date(post.data.updated_at || post.data.published_at || post.data.created_at)),
       image: post.data.cover_image || undefined,
     }))
   );
