@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ContentIntro from '../../components/ContentIntro.astro';
+import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
 const schemaJson = JSON.stringify({
@@ -124,10 +126,10 @@ const schemaJson = JSON.stringify({
 
       <!-- Main Content -->
       <div class="service-content">
-        <h2>نجيب بأفضل حل لكل احتياج في عالم ماكينات التصوير والطابعات</h2>
-        <p>
-          منذ تأسيس شركة نيو جولدن أوفيس عام 1999 في الإسكندرية، ونحن نُقدم خدمات متكاملة في مجال ماكينات التصوير والطابعات لعملائنا في جميع أنحاء مصر. بدأت رحلتنا بمحل صغير في الإبراهيمية، وتطورنا على مدى أكثر من 27 عاماً لنصبح أحد أبرز المراجع الموثوقة في سوق ماكينات التصوير والطابعات في مصر.
-        </p>
+        <ContentIntro
+          heading="نجيب بأفضل حل لكل احتياج في عالم ماكينات التصوير والطابعات"
+          text="منذ تأسيس شركة نيو جولدن أوفيس عام 1999 في الإسكندرية، ونحن نُقدم خدمات متكاملة في مجال ماكينات التصوير والطابعات لعملائنا في جميع أنحاء مصر. بدأت رحلتنا بمحل صغير في الإبراهيمية، وتطورنا على مدى أكثر من 27 عاماً لنصبح أحد أبرز المراجع الموثوقة في سوق ماكينات التصوير والطابعات في مصر."
+        />
         <p>
           نحن نتعامل مع أكبر الماركات العالمية في مجال ماكينات التصوير، وفي مقدمتها: <strong>كانون Canon</strong> بسلاسلها المتعددة من imageRUNNER وiR ADVANCE، وماكينات <strong>ريكو Ricoh</strong> بسلسلة MP الشهيرة، وماكينات <strong>كيوسيرا Kyocera</strong> بتقنية TASKalfa المتطورة، فضلاً عن ماكينات <strong>توشيبا Toshiba</strong> سلسلة e-STUDIO و<strong>زيروكس Xerox</strong> WorkCentre.
         </p>
@@ -136,32 +138,12 @@ const schemaJson = JSON.stringify({
         </p>
 
         <h3>خدماتنا في مجال ماكينات التصوير والطابعات</h3>
-        <div class="features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:24px 0;">
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-copy" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>بيع ماكينات التصوير</h4>
-            <p>نوفر أحدث ماكينات التصوير الجديدة والمجددة من كانون وريكو وكيوسيرا وتوشيبا وزيروكس بأسعار منافسة.</p>
-            <a href="/copiers/buy" class="btn btn-outline btn-sm" style="margin-top:12px;display:inline-flex;">اعرف المزيد</a>
-          </div>
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-print" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>بيع طابعات</h4>
-            <p>طابعات ليزر وإنكجيت من HP وكانون وإبسون وبراذر لجميع الاستخدامات المنزلية والمكتبية ومحلات الطباعة.</p>
-            <a href="/copiers/printers" class="btn btn-outline btn-sm" style="margin-top:12px;display:inline-flex;">اعرف المزيد</a>
-          </div>
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-tools" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>صيانة ماكينات التصوير</h4>
-            <p>فريق فنيين متخصصين لصيانة جميع أنواع وماركات ماكينات التصوير والطابعات مع ضمان على الإصلاح.</p>
-            <a href="/copiers/maintenance" class="btn btn-outline btn-sm" style="margin-top:12px;display:inline-flex;">اعرف المزيد</a>
-          </div>
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-tint" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>كارتريدج وأحبار</h4>
-            <p>كارتريدج أصلي وبديل لجميع موديلات الطابعات، خدمة تعبئة الكارتريدج، توفير أحبار الليزر والإنكجيت.</p>
-            <a href="/copiers/cartridges" class="btn btn-outline btn-sm" style="margin-top:12px;display:inline-flex;">اعرف المزيد</a>
-          </div>
-        </div>
+        <IconCardGrid columns={4} items={[
+          { icon: 'fa-copy', title: 'بيع ماكينات التصوير', text: 'نوفر أحدث ماكينات التصوير الجديدة والمجددة من كانون وريكو وكيوسيرا وتوشيبا وزيروكس بأسعار منافسة. <a href="/copiers/buy">اعرف المزيد</a>' },
+          { icon: 'fa-print', title: 'بيع طابعات', text: 'طابعات ليزر وإنكجيت من HP وكانون وإبسون وبراذر لجميع الاستخدامات المنزلية والمكتبية ومحلات الطباعة. <a href="/copiers/printers">اعرف المزيد</a>' },
+          { icon: 'fa-tools', title: 'صيانة ماكينات التصوير', text: 'فريق فنيين متخصصين لصيانة جميع أنواع وماركات ماكينات التصوير والطابعات مع ضمان على الإصلاح. <a href="/copiers/maintenance">اعرف المزيد</a>' },
+          { icon: 'fa-tint', title: 'كارتريدج وأحبار', text: 'كارتريدج أصلي وبديل لجميع موديلات الطابعات، خدمة تعبئة الكارتريدج، توفير أحبار الليزر والإنكجيت. <a href="/copiers/cartridges">اعرف المزيد</a>' },
+        ]} />
 
         <h3>لماذا تختار نيو جولدن أوفيس؟</h3>
         <p>
@@ -185,28 +167,12 @@ const schemaJson = JSON.stringify({
         <p>
           قبل أن تقرر شراء ماكينة تصوير أو طابعة، يجدر أولاً تحديد فئة الاستخدام التي تنطبق عليك، لأن السعر والسرعة ودورة الإنتاج المناسبة تختلف اختلافاً جذرياً من فئة إلى أخرى. إليك دليل سريع يوضح ما ننصح به فعلياً لكل نوع من عملائنا:
         </p>
-        <div class="features-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:24px 0;">
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-user-tie" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>المكتب الصغير (1-10 موظفين)</h4>
-            <p>طابعة أو ماكينة متعددة الوظائف متوسطة السرعة (20-30 صفحة/دقيقة) تكفي غالباً، خاصة إذا كان حجم الطباعة الشهري أقل من 3000 ورقة. الأولوية هنا للتوفير في الشراء الأولي وسهولة التشغيل.</p>
-          </div>
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-print" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>محل الطباعة أو التصوير</h4>
-            <p>يحتاج ماكينة إنتاجية بسرعة 60-100+ صفحة/دقيقة ودورة إنتاج شهرية عالية جداً، مع أدراج ورق متعددة وقدرة على تحمل الاستخدام المكثف يومياً دون تعطل. هنا تكلفة الصفحة أهم من سعر الشراء.</p>
-          </div>
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-school" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>المدارس والجهات التعليمية</h4>
-            <p>احتياج موسمي متغير بين فترات الامتحانات (طباعة كثيفة) وباقي العام (طباعة معتدلة). ننصح غالباً بماكينة متوسطة إلى كبيرة مع عقد صيانة يضمن جاهزيتها في فترات الذروة.</p>
-          </div>
-          <div class="feature-card" style="background:var(--bg-light);border-radius:12px;padding:24px;border-right:4px solid var(--secondary);">
-            <i class="fas fa-building" style="font-size:2rem;color:var(--secondary);margin-bottom:12px;display:block;"></i>
-            <h4>الشركات والمؤسسات الكبرى</h4>
-            <p>عادة تحتاج أكثر من جهاز موزع على الأقسام، مع شبكة موحدة وإدارة مركزية للطباعة، وعقد صيانة شامل يضمن استمرارية العمل دون توقف في أي قسم.</p>
-          </div>
-        </div>
+        <IconCardGrid columns={2} items={[
+          { icon: 'fa-user-tie', title: 'المكتب الصغير (1-10 موظفين)', text: 'طابعة أو ماكينة متعددة الوظائف متوسطة السرعة (20-30 صفحة/دقيقة) تكفي غالباً، خاصة إذا كان حجم الطباعة الشهري أقل من 3000 ورقة. الأولوية هنا للتوفير في الشراء الأولي وسهولة التشغيل.' },
+          { icon: 'fa-print', title: 'محل الطباعة أو التصوير', text: 'يحتاج ماكينة إنتاجية بسرعة 60-100+ صفحة/دقيقة ودورة إنتاج شهرية عالية جداً، مع أدراج ورق متعددة وقدرة على تحمل الاستخدام المكثف يومياً دون تعطل. هنا تكلفة الصفحة أهم من سعر الشراء.' },
+          { icon: 'fa-school', title: 'المدارس والجهات التعليمية', text: 'احتياج موسمي متغير بين فترات الامتحانات (طباعة كثيفة) وباقي العام (طباعة معتدلة). ننصح غالباً بماكينة متوسطة إلى كبيرة مع عقد صيانة يضمن جاهزيتها في فترات الذروة.' },
+          { icon: 'fa-building', title: 'الشركات والمؤسسات الكبرى', text: 'عادة تحتاج أكثر من جهاز موزع على الأقسام، مع شبكة موحدة وإدارة مركزية للطباعة، وعقد صيانة شامل يضمن استمرارية العمل دون توقف في أي قسم.' },
+        ]} />
 
         <!-- How It Works -->
         <h3 style="margin-top:40px;">كيف نعمل؟</h3>
@@ -398,14 +364,14 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div style="max-width:860px;margin:0 auto;">
-      <ul>
-        <li><i class="fas fa-check"></i><span><strong>سرعة الطباعة (PPM):</strong> كل زيادة في عدد الصفحات بالدقيقة تعني آلية طباعة أقوى وأغلى في التصنيع، خاصة في الفئة التي تتجاوز 50 صفحة/دقيقة</span></li>
-        <li><i class="fas fa-check"></i><span><strong>حالة الجهاز (جديد أو مجدد):</strong> الماكينات المجددة توفر توفيراً كبيراً في التكلفة الأولية مقابل ضمان أقصر نسبياً</span></li>
-        <li><i class="fas fa-check"></i><span><strong>عدد أدراج الورق والسعة الإجمالية:</strong> كل درج إضافي ووحدة تغذية ورق كبيرة يرفعان السعر لكنهما يقللان تدخل الموظف اليدوي</span></li>
-        <li><i class="fas fa-check"></i><span><strong>دعم الألوان:</strong> الماكينات الملونة أعلى سعراً في الشراء وفي تكلفة التونر مقارنة بالأبيض والأسود فقط</span></li>
-        <li><i class="fas fa-check"></i><span><strong>خيارات التشطيب والتجليد:</strong> وحدات التدبيس والثقب والطي الأوتوماتيكي تُضاف كتكلفة إضافية لكنها توفر وقتاً كبيراً في محلات الطباعة</span></li>
-        <li><i class="fas fa-check"></i><span><strong>مدة الضمان ونوع عقد الصيانة:</strong> الضمان الممتد وعقد الصيانة الشامل يرفعان الاستثمار الأولي لكنهما يخفضان مفاجآت تكلفة الصيانة لاحقاً</span></li>
-      </ul>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-tachometer-alt', title: 'سرعة الطباعة (PPM)', text: 'كل زيادة في عدد الصفحات بالدقيقة تعني آلية طباعة أقوى وأغلى في التصنيع، خاصة في الفئة التي تتجاوز 50 صفحة/دقيقة' },
+        { icon: 'fa-recycle', title: 'حالة الجهاز (جديد أو مجدد)', text: 'الماكينات المجددة توفر توفيراً كبيراً في التكلفة الأولية مقابل ضمان أقصر نسبياً' },
+        { icon: 'fa-layer-group', title: 'عدد أدراج الورق والسعة الإجمالية', text: 'كل درج إضافي ووحدة تغذية ورق كبيرة يرفعان السعر لكنهما يقللان تدخل الموظف اليدوي' },
+        { icon: 'fa-palette', title: 'دعم الألوان', text: 'الماكينات الملونة أعلى سعراً في الشراء وفي تكلفة التونر مقارنة بالأبيض والأسود فقط' },
+        { icon: 'fa-cut', title: 'خيارات التشطيب والتجليد', text: 'وحدات التدبيس والثقب والطي الأوتوماتيكي تُضاف كتكلفة إضافية لكنها توفر وقتاً كبيراً في محلات الطباعة' },
+        { icon: 'fa-shield-alt', title: 'مدة الضمان ونوع عقد الصيانة', text: 'الضمان الممتد وعقد الصيانة الشامل يرفعان الاستثمار الأولي لكنهما يخفضان مفاجآت تكلفة الصيانة لاحقاً' },
+      ]} />
       <p>نُقدم دائماً تفصيلاً واضحاً لكل بند من هذه التكاليف قبل التنفيذ، حتى تعرف بالضبط أين تذهب ميزانيتك وما البديل الأنسب لحجم استخدامك الفعلي بدلاً من الشراء بمواصفات أعلى أو أقل من حاجتك.</p>
     </div>
   </div>
