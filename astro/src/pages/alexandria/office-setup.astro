@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 
 const schemaJson = JSON.stringify({
@@ -387,7 +388,7 @@ const schemaJson = JSON.stringify({
         </form>
         <div class="success-message" id="quoteSuccessMessage">
           <i class="fa-solid fa-circle-check"></i>
-          <p>تم استلام طلبك بنجاح! هيتواصل معاك مندوب حسابك في أقرب وقت.</p>
+          <p>جاري تجهيز رسالتك على واتساب — أكمل الإرسال من هناك وهيرد عليك فريقنا خلال دقائق.</p>
         </div>
       </div>
       <div class="quote-alt-card reveal delay-1">
@@ -407,23 +408,51 @@ const schemaJson = JSON.stringify({
   (function () {
     var form = document.getElementById('quoteForm');
     if (!form) return;
+    var WA_NUMBER = '201227392074';
+    var SERVICE_LABELS = {
+      'printing': 'خدمات الطباعة',
+      'copiers': 'ماكينات التصوير والطباعة',
+      'cameras': 'كاميرات المراقبة',
+      'ac': 'أجهزة التكييف',
+      'cash-machines': 'ماكينات فرز وعد النقود',
+      'office-supplies': 'المستلزمات المكتبية',
+      'office-setup': 'تجهيز مكتب متكامل',
+      'other': 'استفسار عام / خدمة أخرى'
+    };
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var successMsg = document.getElementById('quoteSuccessMessage');
-      var errorMsg = document.getElementById('quoteErrorMessage');
-      var submitBtn = document.getElementById('quoteSubmitBtn');
-      errorMsg.style.display = 'none';
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.7';
-      fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
-        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
-        .then(function (result) {
-          if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
-          else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
-        })
-        .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
-        .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
+      var name = document.getElementById('q-name').value.trim();
+      var phone = document.getElementById('q-phone').value.trim();
+      var companyEl = document.getElementById('q-company');
+      var company = companyEl ? companyEl.value.trim() : '';
+      var hiddenService = form.querySelector('input[name="service"]');
+      var selectService = document.getElementById('q-service');
+      var serviceCode = hiddenService ? hiddenService.value : (selectService ? selectService.value : '');
+      var serviceLabel = SERVICE_LABELS[serviceCode] || serviceCode;
+      var subserviceEl = document.getElementById('q-subservice');
+      var subservice = subserviceEl ? subserviceEl.value.trim() : '';
+      var messageEl = document.getElementById('q-message');
+      var message = messageEl ? messageEl.value.trim() : '';
+      var extraChecked = form.querySelectorAll('input[name="services[]"]:checked');
+      var extraServices = [];
+      for (var i = 0; i < extraChecked.length; i++) {
+        extraServices.push(SERVICE_LABELS[extraChecked[i].value] || extraChecked[i].value);
+      }
+      var lines = [
+        'مرحبًا، اسمي ' + name + ' (' + phone + ')',
+        company ? 'اسم الشركة: ' + company : null,
+        'الخدمة المطلوبة: ' + serviceLabel,
+        subservice ? 'تفاصيل الطلب: ' + subservice : null,
+        extraServices.length ? 'خدمات إضافية مطلوبة: ' + extraServices.join('، ') : null,
+        message ? 'رسالتي: ' + message : null
+      ].filter(Boolean);
+      var text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + text, '_blank');
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
     });
   })();
 </script>
+<RelatedGuides category="مستلزمات مكتبية" />
 </BaseLayout>

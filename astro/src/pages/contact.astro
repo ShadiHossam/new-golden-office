@@ -124,7 +124,7 @@ const schemaJson = JSON.stringify({
           </form>
           <div class="success-message" id="successMessage">
             <i class="fa-solid fa-circle-check"></i>
-            <p>تم إرسال رسالتك بنجاح! سنتواصل معك في أقرب وقت ممكن.</p>
+            <p>جاري تجهيز رسالتك على واتساب — أكمل الإرسال من هناك وسنتواصل معك في أقرب وقت ممكن.</p>
           </div>
         </div>
       </div>
@@ -232,23 +232,36 @@ const schemaJson = JSON.stringify({
 </section>
 
 <script is:inline>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = this;
-    const successMsg = document.getElementById('successMessage');
-    const errorMsg = document.getElementById('contactErrorMessage');
-    const submitBtn = document.getElementById('contactSubmitBtn');
-    errorMsg.style.display = 'none';
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.7';
-    fetch('/contact-handler.php', { method: 'POST', body: new FormData(form) })
-      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok && data.ok, message: data.message }; }); })
-      .then(function (result) {
-        if (result.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; }
-        else { errorMsg.textContent = result.message || 'حدث خطأ، برجاء المحاولة مرة أخرى أو التواصل عبر واتساب.'; errorMsg.style.display = 'block'; }
-      })
-      .catch(function () { errorMsg.textContent = 'تعذر الإرسال، برجاء المحاولة عبر واتساب.'; errorMsg.style.display = 'block'; })
-      .finally(function () { submitBtn.disabled = false; submitBtn.style.opacity = '1'; });
-  });
+  (function () {
+    var WA_NUMBER = '201227392074';
+    var SERVICE_LABELS = {
+      'printing': 'خدمات الطباعة',
+      'copiers': 'ماكينات التصوير والطباعة',
+      'cameras': 'كاميرات المراقبة',
+      'ac': 'أجهزة التكييف',
+      'cash-machines': 'ماكينات فرز وعد النقود',
+      'office-supplies': 'المستلزمات المكتبية',
+      'other': 'استفسار عام / خدمة أخرى'
+    };
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var form = this;
+      var successMsg = document.getElementById('successMessage');
+      var name = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var serviceEl = document.getElementById('service');
+      var serviceLabel = SERVICE_LABELS[serviceEl.value] || serviceEl.value;
+      var message = document.getElementById('message').value.trim();
+      var lines = [
+        'مرحبًا، اسمي ' + name + ' (' + phone + ')',
+        'الخدمة المطلوبة: ' + serviceLabel,
+        message ? 'رسالتي: ' + message : null
+      ].filter(Boolean);
+      var text = encodeURIComponent(lines.join('\n'));
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + text, '_blank');
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    });
+  })();
 </script>
 </BaseLayout>

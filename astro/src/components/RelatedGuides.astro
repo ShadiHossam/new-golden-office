@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  category?: string;
+  limit?: number;
+  title?: string;
+}
+
+const { category, limit = 3, title = 'أدلة ومقالات ذات صلة' } = Astro.props;
+
+const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
+
+const allPublished = await getCollection('blog', ({ data }) => data.status === 'published');
+const pool = category ? allPublished.filter((e) => e.data.category === category) : allPublished;
+const posts = pool
+  .sort((a, b) => new Date(b.data.published_at || b.data.updated_at || 0).getTime() - new Date(a.data.published_at || a.data.updated_at || 0).getTime())
+  .slice(0, limit)
+  .map((e) => ({
+    slug: e.data.slug,
+    title: e.data.title,
+    excerpt: e.data.excerpt,
+    cover_image: e.data.cover_image || DEFAULT_COVER,
+  }));
+---
+
+{posts.length > 0 && (
+  <section class="related-guides section">
+    <div class="container">
+      <h2 class="related-guides-title">{title}</h2>
+      <div class="related-guides-grid">
+        {posts.map((post) => (
+          <a class="related-guides-card" href={`/blog/${post.slug}`}>
+            <div class="related-guides-thumb"><img src={post.cover_image} alt={post.title} loading="lazy"></div>
+            <div class="related-guides-body">
+              <h3>{post.title}</h3>
+              {post.excerpt && <p>{post.excerpt}</p>}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .related-guides { padding: 50px 0; }
+  .related-guides-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; color: #1a1a2e; }
+  .related-guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 760px) { .related-guides-grid { grid-template-columns: 1fr; } }
+  .related-guides-card { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; display: block; transition: transform .2s, box-shadow .2s; }
+  .related-guides-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .related-guides-thumb { height: 160px; overflow: hidden; }
+  .related-guides-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .related-guides-body { padding: 18px 20px; }
+  .related-guides-body h3 { font-size: 1rem; line-height: 1.5; margin: 0 0 8px; color: #0f2d06; }
+  .related-guides-body p {
+    font-size: .85rem; color: #666; line-height: 1.6; margin: 0;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+</style>
