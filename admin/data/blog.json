@@ -790,10 +790,10 @@
     "og_title": "",
     "og_description": "",
     "og_image": "",
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-08-22T10:19:31.796929Z",
-    "updated_at": "2026-08-22T10:19:31.796929Z",
-    "published_at": "",
+    "updated_at": "2026-08-27T08:17:01.903Z",
+    "published_at": "2026-08-27T08:17:01.903Z",
     "scheduled_at": "2026-08-27T08:00:00Z"
   },
   {
