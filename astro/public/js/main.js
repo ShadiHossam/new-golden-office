@@ -202,4 +202,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── WhatsApp / phone click attribution (GA4)
+  // Fires on every wa.me / tel: link sitewide (inline hero CTAs + shared
+  // Footer/WhatsAppFloat components) so leads can be traced back to the
+  // page/section that produced them.
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
+    if (!link || typeof gtag !== 'function') return;
+    gtag('event', link.href.includes('wa.me') ? 'whatsapp_click' : 'phone_click', {
+      page_path: window.location.pathname,
+      link_text: link.textContent.trim().slice(0, 100),
+    });
+  });
+
 });

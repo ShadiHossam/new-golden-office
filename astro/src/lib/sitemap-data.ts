@@ -24,7 +24,6 @@ export const PAGES: SitemapPage[] = [
   { path: '/', image: '/images/hero-office.webp' },
   { path: '/about', image: '/images/about-team.webp' },
   { path: '/contact', image: '/images/hero-office.webp' },
-  { path: '/portfolio', image: '/images/hero-office.webp' },
   { path: '/privacy', image: '/images/hero-office.webp' },
   { path: '/terms', image: '/images/hero-office.webp' },
   { path: '/blog' },

@@ -1,7 +1,6 @@
 export const PAGE_NAMES: Record<string, string> = {
   'about': 'عن الشركة',
   'contact': 'تواصل معنا',
-  'portfolio': 'معرض أعمالنا',
   'blog': 'المدونة',
   'alexandria': 'خدماتنا في الإسكندرية',
   'cairo': 'خدماتنا في القاهرة',

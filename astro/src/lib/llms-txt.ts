@@ -16,7 +16,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   'office-supplies': 'Office Supplies',
 };
 
-const COMPANY_PATHS = ['/', '/about', '/contact', '/portfolio'];
+const COMPANY_PATHS = ['/', '/about', '/contact'];
 const LEGAL_PATHS = ['/privacy', '/terms'];
 
 function pageLabel(path: string): string {

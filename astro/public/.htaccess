@@ -25,6 +25,7 @@ RewriteRule ^cash-machines/alexandria/?$ /alexandria/cash-machines [R=301,L]
 RewriteRule ^cash-machines/cairo/?$ /cairo/cash-machines [R=301,L]
 RewriteRule ^office-supplies/alexandria/?$ /alexandria/office-supplies [R=301,L]
 RewriteRule ^office-supplies/cairo/?$ /cairo/office-supplies [R=301,L]
+RewriteRule ^portfolio/?$ /about [R=301,L]
 # END MANAGED REDIRECTS
 
 RewriteCond %{HTTP_HOST} ^www\.newgoldenoffice\.com$ [NC]
