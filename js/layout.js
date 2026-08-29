@@ -118,7 +118,6 @@
         <ul class="footer-links">
           <li><a href="${B}"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
           <li><a href="${B}about"><i class="fas fa-angle-left"></i> عن الشركة</a></li>
-          <li><a href="${B}portfolio"><i class="fas fa-angle-left"></i> معرض أعمالنا</a></li>
           <li><a href="${B}blog/"><i class="fas fa-angle-left"></i> المدونة</a></li>
           <li><a href="${B}contact"><i class="fas fa-angle-left"></i> تواصل معنا</a></li>
         </ul>
@@ -209,7 +208,7 @@
 
   // BreadcrumbList schema
   const PAGE_NAMES = {
-    'about': 'عن الشركة', 'contact': 'تواصل معنا', 'portfolio': 'معرض أعمالنا',
+    'about': 'عن الشركة', 'contact': 'تواصل معنا',
     'blog': 'المدونة',
     'privacy': 'سياسة الخصوصية', 'terms': 'الشروط والأحكام',
     'printing': 'خدمات الطباعة', 'offset': 'طباعة أوفست', 'digital': 'طباعة رقمية',
