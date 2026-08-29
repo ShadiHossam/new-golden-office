@@ -26,6 +26,7 @@ interface Props {
   schemaJson?: string;
   preloadImage?: string;
   robots?: string;
+  breadcrumbLabel?: string;
 }
 
 const {
@@ -38,6 +39,7 @@ const {
   schemaJson,
   preloadImage,
   robots,
+  breadcrumbLabel,
 } = Astro.props;
 
 const SITE = 'https://newgoldenoffice.com';
@@ -54,11 +56,12 @@ const segments = pathname.split('/').filter(s => s && s !== 'index.html' && !s.e
 const breadcrumbItems = [{ name: 'الرئيسية', url: SITE + '/' }];
 let builtUrl = SITE;
 const relSegments: string[] = [];
-segments.forEach(seg => {
+segments.forEach((seg, i) => {
   builtUrl += '/' + seg;
   relSegments.push(seg);
   const relPath = relSegments.join('/');
-  const name = PAGE_NAMES[relPath] ?? PAGE_NAMES[seg] ?? seg;
+  const isLast = i === segments.length - 1;
+  const name = (isLast && breadcrumbLabel) || PAGE_NAMES[relPath] || PAGE_NAMES[seg] || seg;
   breadcrumbItems.push({ name, url: builtUrl + '/' });
 });
 const breadcrumbSchema = breadcrumbItems.length > 1 ? JSON.stringify({
@@ -75,6 +78,7 @@ const breadcrumbSchema = breadcrumbItems.length > 1 ? JSON.stringify({
 const localBusinessSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://newgoldenoffice.com/#organization',
   name: 'نيو جولدن أوفيس',
   alternateName: 'New Golden Office',
   description: 'بيع وصيانة ماكينات التصوير والطابعات، خدمات الطباعة، كاميرات المراقبة، التكييفات، ماكينات عد النقود، والمستلزمات المكتبية في مصر',

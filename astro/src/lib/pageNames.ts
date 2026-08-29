@@ -43,4 +43,6 @@ export const PAGE_NAMES: Record<string, string> = {
   'binding': 'دباسة ومشابك',
   'sticky-notes': 'بوست إت',
   'batteries-usb': 'بطاريات وUSB',
+  'office-setup': 'تجهيز مكتب متكامل',
+  'brochures': 'بروشورات وفلايرات',
 };
