@@ -1,7 +1,6 @@
-# Canonical host + scheme: force https://newgoldenoffice.com (no www, no http)
-# Checks X-Forwarded-Proto because Cloudflare terminates TLS and can forward
-# to the origin over plain HTTP even when the visitor used https:// —
-# relying on %{HTTPS} alone here would risk a redirect loop.
+# Canonical URL enforcement: everything resolves to
+# https://newgoldenoffice.com/<path> — no www, no http, no trailing slash,
+# no .html, no index.html.
 RewriteEngine On
 
 # Astro builds every route as <page>/index.html (directory format), so
@@ -13,21 +12,56 @@ RewriteEngine On
 DirectorySlash Off
 
 # BEGIN MANAGED REDIRECTS -- generated from admin/data/redirects.json, do not hand-edit
-RewriteRule ^printing/alexandria/?$ /alexandria/printing [R=301,L]
-RewriteRule ^printing/cairo/?$ /cairo/printing [R=301,L]
-RewriteRule ^copiers/alexandria/?$ /alexandria/copiers [R=301,L]
-RewriteRule ^copiers/cairo/?$ /cairo/copiers [R=301,L]
-RewriteRule ^cameras/alexandria/?$ /alexandria/cameras [R=301,L]
-RewriteRule ^cameras/cairo/?$ /cairo/cameras [R=301,L]
-RewriteRule ^ac/alexandria/?$ /alexandria/ac [R=301,L]
-RewriteRule ^ac/cairo/?$ /cairo/ac [R=301,L]
-RewriteRule ^cash-machines/alexandria/?$ /alexandria/cash-machines [R=301,L]
-RewriteRule ^cash-machines/cairo/?$ /cairo/cash-machines [R=301,L]
-RewriteRule ^office-supplies/alexandria/?$ /alexandria/office-supplies [R=301,L]
-RewriteRule ^office-supplies/cairo/?$ /cairo/office-supplies [R=301,L]
-RewriteRule ^portfolio/?$ /about [R=301,L]
+RewriteRule ^printing/alexandria/?$ https://newgoldenoffice.com/alexandria/printing [R=301,L]
+RewriteRule ^printing/cairo/?$ https://newgoldenoffice.com/cairo/printing [R=301,L]
+RewriteRule ^copiers/alexandria/?$ https://newgoldenoffice.com/alexandria/copiers [R=301,L]
+RewriteRule ^copiers/cairo/?$ https://newgoldenoffice.com/cairo/copiers [R=301,L]
+RewriteRule ^cameras/alexandria/?$ https://newgoldenoffice.com/alexandria/cameras [R=301,L]
+RewriteRule ^cameras/cairo/?$ https://newgoldenoffice.com/cairo/cameras [R=301,L]
+RewriteRule ^ac/alexandria/?$ https://newgoldenoffice.com/alexandria/ac [R=301,L]
+RewriteRule ^ac/cairo/?$ https://newgoldenoffice.com/cairo/ac [R=301,L]
+RewriteRule ^cash-machines/alexandria/?$ https://newgoldenoffice.com/alexandria/cash-machines [R=301,L]
+RewriteRule ^cash-machines/cairo/?$ https://newgoldenoffice.com/cairo/cash-machines [R=301,L]
+RewriteRule ^office-supplies/alexandria/?$ https://newgoldenoffice.com/alexandria/office-supplies [R=301,L]
+RewriteRule ^office-supplies/cairo/?$ https://newgoldenoffice.com/cairo/office-supplies [R=301,L]
+RewriteRule ^portfolio/?$ https://newgoldenoffice.com/about [R=301,L]
 # END MANAGED REDIRECTS
 
+# URL-form canonicalization. Every target below is absolute
+# (https://newgoldenoffice.com/...) so a request that's wrong in BOTH host/scheme
+# AND path form — e.g. http://www.newgoldenoffice.com/ac/buy.html — is corrected
+# in a SINGLE 301, instead of bouncing off the host rules below for a second hop.
+# All three match on THE_REQUEST, the original client request line, which the
+# internal rewrites at the bottom never modify — that is what keeps them from
+# looping against those. Their targets are already fully canonical, so a
+# follow-up request on the target can't re-match any of them either.
+
+# /dir/index.html -> /dir. The optional /? swallows the trailing slash in the
+# same pass, so this can't hand off to the trailing-slash rule for a second hop.
+RewriteCond %{THE_REQUEST} \s/+(.*?)/?index\.html[\s?] [NC]
+RewriteRule ^ https://newgoldenoffice.com/%1 [R=301,L]
+
+# /anything.html -> /anything, except search-engine ownership-verification
+# files (e.g. yandex_*.html, google*.html) which must be served at their
+# exact .html URL with a direct 200 — verification crawlers don't follow
+# redirects. Must stay below the index.html rule above, or /dir/index.html
+# would land on /dir/index here.
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteCond %1 !^(yandex_|google)[a-z0-9]*$ [NC]
+RewriteRule ^ https://newgoldenoffice.com/%1 [R=301,L]
+
+# /page/ -> /page. DirectorySlash Off (above) already serves the trailing-slash
+# form as a real 200 with a self-canonical tag pointing at the no-slash URL, so
+# this was never a broken page — but leaving it as a live 200 means crawlers
+# keep spending budget on a duplicate instead of just following a redirect.
+RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
+RewriteRule ^ https://newgoldenoffice.com/%1 [R=301,L]
+
+# Host/scheme fallback, for requests the rules above didn't already send to the
+# canonical origin (e.g. https://www.newgoldenoffice.com/ itself).
+# X-Forwarded-Proto is checked because Cloudflare terminates TLS and can forward
+# to the origin over plain HTTP even when the visitor used https:// — relying on
+# %{HTTPS} alone here would risk a redirect loop.
 RewriteCond %{HTTP_HOST} ^www\.newgoldenoffice\.com$ [NC]
 RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
 
@@ -35,37 +69,13 @@ RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^(.*)$ https://newgoldenoffice.com/$1 [R=301,L]
 
+# Internal rewrites below — these change what gets served, never what the
+# visitor sees in the address bar.
+
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_FILENAME}/index.html -f
 RewriteRule ^(.*[^/])$ $1/index.html [L]
 
-# /page/ -> /page. DirectorySlash Off (above) already serves the trailing-slash
-# form as a real 200 with a self-canonical tag pointing at the no-slash URL, so
-# this was never a broken page — but leaving it as a live 200 means crawlers
-# keep spending budget on a duplicate instead of just following a redirect.
-# THE_REQUEST-based so it can't loop against the internal directory rule above.
-RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
-
-# Clean URLs: /ac/buy instead of /ac/buy.html. THE_REQUEST reflects the
-# original client request line (never the internally-rewritten one below),
-# so these two conditions can't loop against each other.
-# /dir/index.html -> /dir/ for anyone requesting the literal filename
-# (the DirectorySlash-off rule above already makes /dir the real canonical
-# URL — this just catches stray links to the index.html itself).
-RewriteCond %{THE_REQUEST} \s/+(.*)index\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
-
-# /anything.html -> /anything, except search-engine ownership-verification
-# files (e.g. yandex_*.html, google*.html) which must be served at their
-# exact .html URL with a direct 200 — verification crawlers don't follow
-# redirects.
-RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
-RewriteCond %1 !^(yandex_|google)[a-z0-9]*$ [NC]
-RewriteRule ^ /%1 [R=301,L]
-
-# Serve the .html file internally for the clean extension-less URL, without
-# changing what the visitor sees in the address bar.
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]

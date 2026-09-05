@@ -19,12 +19,22 @@ function stripNewlines(str) {
   return String(str || '').replace(/[\r\n]/g, '');
 }
 
+const CANONICAL_ORIGIN = 'https://newgoldenoffice.com';
+
+// Site-relative targets are emitted absolute so a request that's wrong in both
+// host and path (http://www.…/portfolio) is fixed in one 301 rather than
+// bouncing off the host-canonicalization rules further down the .htaccess.
+function toAbsolute(to) {
+  if (/^https?:\/\//i.test(to)) return to;
+  return `${CANONICAL_ORIGIN}${to.startsWith('/') ? to : `/${to}`}`;
+}
+
 function buildRuleLine(r) {
   const from = escapeRegex(stripNewlines(r.from).replace(/^\//, ''));
   if (r.status === 410) {
     return `RewriteRule ^${from}/?$ - [G,L]`;
   }
-  const to = stripNewlines(r.to) || '/';
+  const to = toAbsolute(stripNewlines(r.to) || '/');
   const code = r.status === 302 ? 302 : 301;
   return `RewriteRule ^${from}/?$ ${to} [R=${code},L]`;
 }
