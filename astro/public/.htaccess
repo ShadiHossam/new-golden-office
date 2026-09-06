@@ -130,17 +130,25 @@ ErrorDocument 404 /404.html
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
 
-  # Static assets, conservative default.
-  <FilesMatch "\.(css|js|mjs|woff2|woff|ttf|webp|jpe?g|png|gif|svg|ico|avif)$">
-    Header set Cache-Control "public, max-age=2592000"
-  </FilesMatch>
-
-  # Content-addressed paths: safe to freeze for a year. Written after the block
-  # above so it wins for these URLs.
+  # Content-addressed paths: safe to freeze for a year. Defined before the
+  # general static-asset rule below, but that ordering doesn't actually decide
+  # precedence — Apache applies <FilesMatch> sections after plain directives
+  # regardless of where they sit in the file, so a plain Header here and a
+  # <FilesMatch>-wrapped Header below both matching the same .webp request
+  # would have the FilesMatch one win no matter which is written first or last.
+  # Making the two conditions mutually exclusive (env= / env=!) is what
+  # actually guarantees correctness, not the order below.
   SetEnvIf Request_URI "^/_astro/"   IMMUTABLE_ASSET=1
   SetEnvIf Request_URI "^/images/v/" IMMUTABLE_ASSET=1
   SetEnvIf Request_URI "^/fonts/"    IMMUTABLE_ASSET=1
   Header set Cache-Control "public, max-age=31536000, immutable" env=IMMUTABLE_ASSET
+
+  # Static assets, conservative default — everything NOT already caught by the
+  # immutable rule above (env=!IMMUTABLE_ASSET is what makes this safe to
+  # coexist with it; see note above).
+  <FilesMatch "\.(css|js|mjs|woff2|woff|ttf|webp|jpe?g|png|gif|svg|ico|avif)$">
+    Header set Cache-Control "public, max-age=2592000" env=!IMMUTABLE_ASSET
+  </FilesMatch>
 
   # HTML must always revalidate.
   <FilesMatch "\.html$">
