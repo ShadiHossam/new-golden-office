@@ -110,8 +110,10 @@ const localBusinessSchema = JSON.stringify({
     streetAddress: '26 عبد المنعم سند',
     addressLocality: 'الإبراهيمية، باب شرق',
     addressRegion: 'الإسكندرية',
-    // postalCode intentionally omitted: the previous value (5423031) was not a
-    // valid Egyptian code — Egypt uses 5 digits. Better absent than wrong.
+    // 21524 — Ibrahimeya, Alexandria's real 5-digit code (Egyptian National
+    // Postal Organization / egyxa.com, cross-checked 2026-09-06). The old
+    // value (5423031) was 7 digits and not a valid Egyptian postcode at all.
+    postalCode: '21524',
     addressCountry: 'EG',
   },
   // The business serves all of Egypt from an Alexandria HQ; areaServed is what
@@ -120,6 +122,11 @@ const localBusinessSchema = JSON.stringify({
     '@type': 'Country',
     name: 'Egypt',
   },
+  // Multi-category (printing, copiers, AC, CCTV, cash machines, supplies) with
+  // both retail items and installation/maintenance contracts — "$$" reflects
+  // a mid-range mix rather than a single number that would misrepresent most
+  // of the catalog.
+  priceRange: '$$',
   foundingDate: '1999',
   openingHoursSpecification: [
     {
