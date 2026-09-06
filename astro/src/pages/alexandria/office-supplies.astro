@@ -1,4 +1,5 @@
 ---
+import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
@@ -79,7 +80,7 @@ const schemaJson = JSON.stringify({
         <p class="lead reveal delay-1">مستلزمات مكتبية بالجملة، توريد مؤسسي مجدول للشركات، فواتير ضريبية ودفع آجل، من مقر فعلي داخل الإسكندرية بخبرة 27 عامًا</p>
       </div>
       <div class="page-hero-image">
-        <img src="/images/office-supplies-flatlay-1-1784574480919-8717.webp" alt="شركة أدوات مكتبية في الإسكندرية" loading="eager">
+        <Img src="/images/office-supplies-flatlay-1-1784574480919-8717.webp" alt="شركة أدوات مكتبية في الإسكندرية" preset="hero" priority />
       </div>
     </div>
   </div>
@@ -129,10 +130,10 @@ const schemaJson = JSON.stringify({
     </div>
     <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">مع التعاقد الشهري أو الدوري نتفق معك على جدول توريد ثابت يناسب معدل استهلاكك، فتصل المستلزمات قبل أن تنفد دون أن تتابع أو تتصل في كل مرة. هذا النظام أثبت فعاليته مع عشرات الشركات في الإسكندرية التي انتقلت من الطلب العشوائي المتكرر إلى جدول واضح يديره مندوب حساب واحد يعرف تفاصيل احتياجهم بدقة. لتخطيط استهلاكك الشهري بدقة قبل التعاقد، راجع <a href="/blog/office-supplies-checklist">تشيك ليست المستلزمات المكتبية الشهرية</a>.</p>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h4>مواعيد توريد متفق عليها</h4><p>تلتزم بها فرقنا بدقة دون تأخير أو حاجة لمتابعة يومية من جانبك.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h4>مندوب حساب مخصص</h4><p>يعرف احتياج شركتك بالتفصيل ويراجع معك الأصناف والكميات دوريًا.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-sliders"></i></div><h4>مرونة في تعديل الكميات</h4><p>مع نمو فريقك أو تغير الاحتياج، بدون أي تعقيد إداري أو التزام صارم.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حساب مؤسسي وشروط دفع مرنة تشمل التحويل البنكي والدفع الآجل للعملاء الدائمين.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h3>مواعيد توريد متفق عليها</h3><p>تلتزم بها فرقنا بدقة دون تأخير أو حاجة لمتابعة يومية من جانبك.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h3>مندوب حساب مخصص</h3><p>يعرف احتياج شركتك بالتفصيل ويراجع معك الأصناف والكميات دوريًا.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-sliders"></i></div><h3>مرونة في تعديل الكميات</h3><p>مع نمو فريقك أو تغير الاحتياج، بدون أي تعقيد إداري أو التزام صارم.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h3>فواتير ضريبية ودفع آجل</h3><p>حساب مؤسسي وشروط دفع مرنة تشمل التحويل البنكي والدفع الآجل للعملاء الدائمين.</p></div>
     </div>
   </div>
 </section>
@@ -179,10 +180,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>الشركات الصغيرة والمتوسطة</h4><p>طلب شهري ثابت يغطي احتياج الفريق كله دون متابعة يدوية متكررة من الإدارة أو المحاسب.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-industry"></i></div><h4>المصانع والمخازن</h4><p>احتياج مستمر من أدوات الأرشفة والقرطاسية للأقسام الإدارية والمحاسبية داخل المصنع نفسه.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>البنوك والعيادات</h4><p>معايير جودة أعلى للورق والأحبار، مع فواتير ضريبية منظمة لكل عملية توريد.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-graduation-cap"></i></div><h4>المدارس ومراكز التدريب</h4><p>كميات كبيرة من الكراسات والأقلام في مواعيد ثابتة تتوافق مع بداية الفصول الدراسية.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>الشركات الصغيرة والمتوسطة</h3><p>طلب شهري ثابت يغطي احتياج الفريق كله دون متابعة يدوية متكررة من الإدارة أو المحاسب.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-industry"></i></div><h3>المصانع والمخازن</h3><p>احتياج مستمر من أدوات الأرشفة والقرطاسية للأقسام الإدارية والمحاسبية داخل المصنع نفسه.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>البنوك والعيادات</h3><p>معايير جودة أعلى للورق والأحبار، مع فواتير ضريبية منظمة لكل عملية توريد.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-graduation-cap"></i></div><h3>المدارس ومراكز التدريب</h3><p>كميات كبيرة من الكراسات والأقلام في مواعيد ثابتة تتوافق مع بداية الفصول الدراسية.</p></div>
     </div>
   </div>
 </section>
@@ -223,11 +224,11 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>خبرة 27 عامًا</h4><p>في خدمة مكاتب وشركات الإسكندرية، بعملاء من الشركات والمصانع والجهات الحكومية والخاصة.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مقر فعلي داخل المدينة</h4><p>يمكنك زيارته لمعاينة الأصناف والتحدث مع الفريق قبل أي تعاقد.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div><h4>تشكيلة واسعة</h4><p>قرطاسية وورق وأحبار وسبورات وأثاث ومعدات تحت سقف واحد وفاتورة واحدة.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h4>فواتير ضريبية ودفع آجل</h4><p>حسابات مؤسسية للشركات المتعاقدة بشروط دفع واضحة ومرنة.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-medal"></i></div><h4>منتجات أصلية</h4><p>من ماركات معروفة، مع استبدال فوري لأي صنف يثبت به عيب مصنعي.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في خدمة مكاتب وشركات الإسكندرية، بعملاء من الشركات والمصانع والجهات الحكومية والخاصة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مقر فعلي داخل المدينة</h3><p>يمكنك زيارته لمعاينة الأصناف والتحدث مع الفريق قبل أي تعاقد.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div><h3>تشكيلة واسعة</h3><p>قرطاسية وورق وأحبار وسبورات وأثاث ومعدات تحت سقف واحد وفاتورة واحدة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>فواتير ضريبية ودفع آجل</h3><p>حسابات مؤسسية للشركات المتعاقدة بشروط دفع واضحة ومرنة.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-medal"></i></div><h3>منتجات أصلية</h3><p>من ماركات معروفة، مع استبدال فوري لأي صنف يثبت به عيب مصنعي.</p></div>
     </div>
     <!-- TODO: real customer testimonial pending — see punch list -->
   </div>

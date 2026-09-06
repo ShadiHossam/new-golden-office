@@ -1,4 +1,5 @@
 ---
+import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
@@ -81,7 +82,7 @@ const schemaJson = JSON.stringify({
         <p class="lead reveal delay-1">معاينة مجانية، تركيب أنظمة IP وDVR بضمان مكتوب، ومراقبة كل فروعك من شاشة واحدة أينما كنت، بخبرة 27 عامًا</p>
       </div>
       <div class="page-hero-image">
-        <img src="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp" alt="شركة كاميرات مراقبة في القاهرة" loading="eager">
+        <Img src="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp" alt="شركة كاميرات مراقبة في القاهرة" preset="hero" priority />
       </div>
     </div>
   </div>
@@ -115,10 +116,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h4>معاينة هندسية قبل أي توريد</h4><p>تحديد النقاط الحرجة وزوايا التغطية وعدد الكاميرات الفعلي المطلوب.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h4>أجهزة أصلية بضمان مكتوب</h4><p>ماركات معروفة بفواتير رسمية، لا أجهزة مجهولة المصدر.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-toolbox"></i></div><h4>تركيب وبرمجة باحترافية</h4><p>تمديدات منظمة، وربط المشاهدة بموبايلك قبل مغادرة الموقع.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h4>ما بعد البيع</h4><p>صيانة دورية ودعم فني يرد عليك، وهذا ما يفصل الشركات الجادة عن الباقين.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>معاينة هندسية قبل أي توريد</h3><p>تحديد النقاط الحرجة وزوايا التغطية وعدد الكاميرات الفعلي المطلوب.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h3>أجهزة أصلية بضمان مكتوب</h3><p>ماركات معروفة بفواتير رسمية، لا أجهزة مجهولة المصدر.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-toolbox"></i></div><h3>تركيب وبرمجة باحترافية</h3><p>تمديدات منظمة، وربط المشاهدة بموبايلك قبل مغادرة الموقع.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>ما بعد البيع</h3><p>صيانة دورية ودعم فني يرد عليك، وهذا ما يفصل الشركات الجادة عن الباقين.</p></div>
     </div>
   </div>
 </section>
@@ -134,7 +135,7 @@ const schemaJson = JSON.stringify({
       <p style="margin-top:16px">مثال عملي: تفتح التطبيق صباحًا فتتأكد في دقيقة واحدة أن كل الفروع فتحت في موعدها، وتراجع مساء لقطات مناطق الكاش عند أي فرق في الحسابات، وتستقبل تنبيهًا فوريًا إن رُصدت حركة في مخزن مغلق بعد منتصف الليل. هذا مستوى السيطرة الذي يجعل الفرع البعيد تحت عينك كأنه الغرفة المجاورة.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
-      <img src="/images/webp-images/business-professionals-meeting-at-conference-room-2026-01-05-00-29-12-utc.webp" alt="مراقبة فروع متعددة في القاهرة" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+      <Img src="/images/webp-images/business-professionals-meeting-at-conference-room-2026-01-05-00-29-12-utc.webp" alt="مراقبة فروع متعددة في القاهرة" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
     </div>
   </div>
 </section>
@@ -182,10 +183,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-house"></i></div><h4>المنازل والفيلات</h4><p>كاميرات خارجية برؤية ليلية للمداخل والأسوار، ومشاهدة من الموبايل وأنت مسافر.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>المحلات والمطاعم</h4><p>تغطية دقيقة للكاشير والمدخل، وتنبيهات حركة بعد ساعات الإغلاق.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>الشركات والمكاتب</h4><p>أنظمة IP بمشاهدة مركزية وصلاحيات وصول متدرجة للمديرين.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-warehouse"></i></div><h4>المصانع والمخازن</h4><p>كاميرات PTZ للمساحات الواسعة وتغطية لخطوط الإنتاج وبوابات الشحن.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-house"></i></div><h3>المنازل والفيلات</h3><p>كاميرات خارجية برؤية ليلية للمداخل والأسوار، ومشاهدة من الموبايل وأنت مسافر.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>المحلات والمطاعم</h3><p>تغطية دقيقة للكاشير والمدخل، وتنبيهات حركة بعد ساعات الإغلاق.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>الشركات والمكاتب</h3><p>أنظمة IP بمشاهدة مركزية وصلاحيات وصول متدرجة للمديرين.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-warehouse"></i></div><h3>المصانع والمخازن</h3><p>كاميرات PTZ للمساحات الواسعة وتغطية لخطوط الإنتاج وبوابات الشحن.</p></div>
     </div>
   </div>
 </section>
@@ -226,9 +227,9 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">1</div><h4>ضمان مكتوب</h4><p>على الأجهزة والتركيب ببنود واضحة، تستلمه مع الفاتورة لا وعدًا على الهاتف.</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>عقد صيانة سنوي اختياري</h4><p>زيارات دورية: فحص الكاميرات، تنظيف العدسات، واختبار المشاهدة عن بُعد.</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>عقود الفروع المتعددة</h4><p>كل مواقعك في عقد واحد بجدول زيارات موحد وتقرير حالة دوري.</p></div>
+      <div class="step-card reveal"><div class="step-num">1</div><h3>ضمان مكتوب</h3><p>على الأجهزة والتركيب ببنود واضحة، تستلمه مع الفاتورة لا وعدًا على الهاتف.</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h3>عقد صيانة سنوي اختياري</h3><p>زيارات دورية: فحص الكاميرات، تنظيف العدسات، واختبار المشاهدة عن بُعد.</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>عقود الفروع المتعددة</h3><p>كل مواقعك في عقد واحد بجدول زيارات موحد وتقرير حالة دوري.</p></div>
     </div>
     <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">كاميرا معطلة وقت الحاجة أسوأ من عدم وجود كاميرا، لأنها تمنح شعورًا زائفًا بالأمان. الصيانة الدورية هي ما يجعل استثمارك يعمل يوم تحتاجه فعلًا.</p>
     <!-- TODO: real customer testimonial pending — see punch list -->
@@ -242,13 +243,13 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>التجمع الخامس</h4><p>مقرات الشركات والإدارات التي تحتاج أنظمة IP حديثة بمشاهدة مركزية.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مدينة نصر</h4><p>كثافة تجارية عالية، محلات ومكاتب تحتاج تغطية مداخل ومناطق كاش دقيقة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h4>المعادي</h4><p>شركات ومكاتب مهنية تطلب أنظمة مرتبة المظهر بتمديدات مخفية.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h4>القاهرة الجديدة</h4><p>منشآت وفروع جديدة نجهزها بالكامل من الصفر.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>وسط البلد المالي</h4><p>مقرات وأنشطة تتعامل مع النقود يوميًا وتحتاج تسجيلًا موثوقًا طويل المدى.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>مصر الجديدة</h4><p>محلات وعيادات ومقار إدارية بمباني قديمة تحتاج تمديدات مرتبة تحافظ على شكل الواجهة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>الشيخ زايد و6 أكتوبر</h4><p>الفلل والمجمعات السكنية والإدارية الحديثة، بأنظمة IP متكاملة مع بوابات الدخول.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>التجمع الخامس</h3><p>مقرات الشركات والإدارات التي تحتاج أنظمة IP حديثة بمشاهدة مركزية.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مدينة نصر</h3><p>كثافة تجارية عالية، محلات ومكاتب تحتاج تغطية مداخل ومناطق كاش دقيقة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>المعادي</h3><p>شركات ومكاتب مهنية تطلب أنظمة مرتبة المظهر بتمديدات مخفية.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h3>القاهرة الجديدة</h3><p>منشآت وفروع جديدة نجهزها بالكامل من الصفر.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>وسط البلد المالي</h3><p>مقرات وأنشطة تتعامل مع النقود يوميًا وتحتاج تسجيلًا موثوقًا طويل المدى.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>مصر الجديدة</h3><p>محلات وعيادات ومقار إدارية بمباني قديمة تحتاج تمديدات مرتبة تحافظ على شكل الواجهة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>الشيخ زايد و6 أكتوبر</h3><p>الفلل والمجمعات السكنية والإدارية الحديثة، بأنظمة IP متكاملة مع بوابات الدخول.</p></div>
     </div>
     <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نخدم عملاءنا أيضاً خارج القاهرة — <a href="/alexandria/cameras">نغطي أيضًا الإسكندرية</a> حيث مقرنا الرئيسي منذ 27 عامًا.</p>
   </div>
@@ -287,9 +288,9 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bell"></i></div><h4>ربط مع جرس الإنذار</h4><p>تنبيه فوري على الموبايل مع تسجيل مصور للحظة الإنذار نفسها.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-fingerprint"></i></div><h4>تكامل مع بصمة الدخول</h4><p>كل عملية دخول أو خروج تُربط بلقطة مصورة توثق الحدث.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-triangle-exclamation"></i></div><h4>تنبيهات حركة ذكية</h4><p>تحديد مناطق حساسة (كاشير، مخزن، بوابة) لتنبيهات فورية دون إزعاج من حركة عادية.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>ربط مع جرس الإنذار</h3><p>تنبيه فوري على الموبايل مع تسجيل مصور للحظة الإنذار نفسها.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-fingerprint"></i></div><h3>تكامل مع بصمة الدخول</h3><p>كل عملية دخول أو خروج تُربط بلقطة مصورة توثق الحدث.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-triangle-exclamation"></i></div><h3>تنبيهات حركة ذكية</h3><p>تحديد مناطق حساسة (كاشير، مخزن، بوابة) لتنبيهات فورية دون إزعاج من حركة عادية.</p></div>
     </div>
   </div>
 </section>

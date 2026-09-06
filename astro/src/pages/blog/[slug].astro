@@ -1,9 +1,12 @@
 ---
+import Img from '../../components/Img.astro';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import ServiceLinks from '../../components/ServiceLinks.astro';
 import '../../styles/blog-post.css';
 import * as cheerio from 'cheerio';
+import { enhanceImages, normalizeHeadings } from '../../lib/enhance-post-html';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => data.status === 'published');
@@ -79,7 +82,9 @@ function splitIntoChapters(html: string): { introHtml: string; chapters: Chapter
   return { introHtml, chapters, headings };
 }
 
-const { introHtml, chapters, headings } = splitIntoChapters(p.body_html);
+// Images inside stored post HTML get the same srcset / width / height / lazy
+// treatment as images in .astro templates — see src/lib/enhance-images.ts.
+const { introHtml, chapters, headings } = splitIntoChapters(normalizeHeadings(enhanceImages(p.body_html)));
 const readMinutes = estimateReadMinutes(p.body_html);
 
 const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
@@ -127,6 +132,9 @@ const articleSchema = JSON.stringify({
   ogImage={p.og_image || p.cover_image}
   schemaJson={articleSchema}
   breadcrumbLabel={p.title}
+  ogType="article"
+  publishedTime={p.published_at || p.created_at}
+  modifiedTime={p.updated_at || p.published_at || p.created_at}
 >
 <div class="bp-progress" aria-hidden="true"><span class="bp-progress-bar" id="bpProgressBar"></span></div>
 
@@ -149,7 +157,7 @@ const articleSchema = JSON.stringify({
       </div>
       {p.cover_image && (
         <div class="bp-hero-media">
-          <img src={p.cover_image} alt={p.title} loading="eager">
+          <Img src={p.cover_image} alt={p.title} preset="cover" priority />
           {p.category && <span class="bp-hero-media-cat">{p.category}</span>}
         </div>
       )}
@@ -196,6 +204,8 @@ const articleSchema = JSON.stringify({
           </Fragment>
         ))}
 
+        <ServiceLinks category={p.category} />
+
         <div class="bp-author-card">
           <div class="bp-author-avatar" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></div>
           <div>
@@ -213,7 +223,7 @@ const articleSchema = JSON.stringify({
             <div class="bp-side-related">
               {sidebarRelated.map((r) => (
                 <a class="bp-side-related-item" href={`/blog/${r.slug}`}>
-                  <img src={r.cover_image} alt={r.title} loading="lazy">
+                  <Img src={r.cover_image} alt={r.title} preset="micro" />
                   <span>{r.title}</span>
                 </a>
               ))}
@@ -229,10 +239,10 @@ const articleSchema = JSON.stringify({
         <div class="bp-related-grid">
           {bottomRelated.map((r) => (
             <a class="bp-related-card" href={`/blog/${r.slug}`}>
-              <div class="bp-related-thumb"><img src={r.cover_image} alt={r.title} loading="lazy"></div>
+              <div class="bp-related-thumb"><Img src={r.cover_image} alt={r.title} preset="thumb" /></div>
               <div class="bp-related-body">
                 {r.category && <span class="bp-related-tag">{r.category}</span>}
-                <h4>{r.title}</h4>
+                <h3>{r.title}</h3>
               </div>
             </a>
           ))}

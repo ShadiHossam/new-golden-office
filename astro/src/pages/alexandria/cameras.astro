@@ -1,4 +1,5 @@
 ---
+import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
@@ -79,7 +80,7 @@ const schemaJson = JSON.stringify({
         <p class="lead reveal delay-1">معاينة مجانية، تركيب كاميرات IP وأنظمة DVR وNVR، مشاهدة عن بعد من هاتفك، وعقود صيانة سنوية تراعي رطوبة الساحل، بخبرة 27 عامًا</p>
       </div>
       <div class="page-hero-image">
-        <img src="/images/webp-images/modern-cctv-camera-on-a-wall-with-a-blurred-multi-2026-01-08-06-13-58-utc.webp" alt="شركة كاميرات مراقبة في الإسكندرية" loading="eager">
+        <Img src="/images/webp-images/modern-cctv-camera-on-a-wall-with-a-blurred-multi-2026-01-08-06-13-58-utc.webp" alt="شركة كاميرات مراقبة في الإسكندرية" preset="hero" priority />
       </div>
     </div>
   </div>
@@ -109,10 +110,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h4>خبرة 27 عامًا</h4><p>في تجهيز وخدمة الشركات والمحلات، لا في بيع الأجهزة فقط.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h4>معاينة مجانية للموقع</h4><p>قبل أي عرض سعر، لأن التسعير الجاد يبدأ من فهم المكان.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h4>منظومة أمنية متكاملة</h4><p>توريد وتركيب وبرمجة وتدريب وصيانة من جهة واحدة.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-water"></i></div><h4>أنظمة مقاسة على الساحل</h4><p>خامات تتحمل رطوبة البحر والإضاءة الخلفية القوية على واجهات الكورنيش.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في تجهيز وخدمة الشركات والمحلات، لا في بيع الأجهزة فقط.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>معاينة مجانية للموقع</h3><p>قبل أي عرض سعر، لأن التسعير الجاد يبدأ من فهم المكان.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h3>منظومة أمنية متكاملة</h3><p>توريد وتركيب وبرمجة وتدريب وصيانة من جهة واحدة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-water"></i></div><h3>أنظمة مقاسة على الساحل</h3><p>خامات تتحمل رطوبة البحر والإضاءة الخلفية القوية على واجهات الكورنيش.</p></div>
     </div>
   </div>
 </section>
@@ -148,7 +149,7 @@ const schemaJson = JSON.stringify({
       <p style="margin-top:16px">في مواسم الصيف تحديدًا، الازدحام يرفع مخاطر السرقات الخاطفة والخلافات أمام المحل، فيصبح التسجيل الواضح دليلك الأول. نصمم التغطية بحيث تخدمك في اليوم العادي وفي ذروة أغسطس بنفس الكفاءة.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
-      <img src="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp" alt="كاميرات مراقبة للمحلات في الإسكندرية" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+      <Img src="/images/webp-images/modern-white-security-camera-technology-for-survei-2026-01-07-00-31-34-utc.webp" alt="كاميرات مراقبة للمحلات في الإسكندرية" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
     </div>
   </div>
 </section>
@@ -199,10 +200,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-shop"></i></div><h4>المحلات التجارية</h4><p>تركيز على نقاط الدفع والمخارج لمنع السرقة ومتابعة أداء الموظفين والعملاء يوميًا.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-home"></i></div><h4>الفيلات والشقق السكنية</h4><p>تغطية المداخل والحديقة والمواقف مع إمكانية المشاهدة من الهاتف أثناء السفر أو العمل.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-industry"></i></div><h4>المصانع والمخازن</h4><p>مراقبة خطوط الإنتاج وبوابات الدخول والخروج ومناطق تخزين البضائع الحساسة.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>المكاتب والشركات</h4><p>مراقبة المدخل الرئيسي وقاعات الاجتماعات وغرف الخوادم والأرشيف الحساس.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-shop"></i></div><h3>المحلات التجارية</h3><p>تركيز على نقاط الدفع والمخارج لمنع السرقة ومتابعة أداء الموظفين والعملاء يوميًا.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-home"></i></div><h3>الفيلات والشقق السكنية</h3><p>تغطية المداخل والحديقة والمواقف مع إمكانية المشاهدة من الهاتف أثناء السفر أو العمل.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-industry"></i></div><h3>المصانع والمخازن</h3><p>مراقبة خطوط الإنتاج وبوابات الدخول والخروج ومناطق تخزين البضائع الحساسة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>المكاتب والشركات</h3><p>مراقبة المدخل الرئيسي وقاعات الاجتماعات وغرف الخوادم والأرشيف الحساس.</p></div>
     </div>
   </div>
 </section>
@@ -236,10 +237,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-store"></i></div><h4>باقة المحل</h4><p>تغطية مدخل ونقطة دفع وصالة عرض بعدد كاميرات مدروس وسعة تخزين تناسب أيام الذروة.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>باقة الشركة والمكتب</h4><p>تغطية المداخل والاستقبال والممرات، مع صلاحيات مستخدمين متدرجة ومشاهدة عن بعد.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-house"></i></div><h4>باقة الفيلا والسكن</h4><p>تغطية الأسوار والمداخل والحديقة بكاميرات خارجية تتحمل مناخ الساحل.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-warehouse"></i></div><h4>باقة المخزن والمنشأة الكبيرة</h4><p>مزيج كاميرات ثابتة وPTZ للمساحات الواسعة مع تخزين ممتد وربط متعدد المواقع.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>باقة المحل</h3><p>تغطية مدخل ونقطة دفع وصالة عرض بعدد كاميرات مدروس وسعة تخزين تناسب أيام الذروة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>باقة الشركة والمكتب</h3><p>تغطية المداخل والاستقبال والممرات، مع صلاحيات مستخدمين متدرجة ومشاهدة عن بعد.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-house"></i></div><h3>باقة الفيلا والسكن</h3><p>تغطية الأسوار والمداخل والحديقة بكاميرات خارجية تتحمل مناخ الساحل.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-warehouse"></i></div><h3>باقة المخزن والمنشأة الكبيرة</h3><p>مزيج كاميرات ثابتة وPTZ للمساحات الواسعة مع تخزين ممتد وربط متعدد المواقع.</p></div>
     </div>
   </div>
 </section>

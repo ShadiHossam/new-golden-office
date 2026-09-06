@@ -1,0 +1,102 @@
+---
+/**
+ * Responsive <img> backed by src/data/image-manifest.json.
+ *
+ * Emits srcset + sizes + intrinsic width/height, so:
+ *   - phones download a 400w or 800w file instead of the desktop asset
+ *   - the browser reserves the right box before the image lands (no CLS)
+ *
+ * Regenerate the manifest with: node scripts/optimize-images.mjs
+ *
+ * `priority` marks the LCP image on a page: eager + fetchpriority=high.
+ * Everything else stays lazy. Never mark more than one image per page.
+ */
+import manifest from '../data/image-manifest.json';
+import imageMeta from '../data/image-meta.json';
+
+type Entry = { w: number; h: number; variants: [number, string][] };
+type Meta = { alt: string; title: string };
+
+/**
+ * Display widths per role, measured from public/styles/global.css.
+ *   hero    .page-hero-image is 360px wide, 300px under 1024px,
+ *           and display:none under 768px — hence the 1px branch, which
+ *           tells the browser to pick the cheapest candidate on phones.
+ *   card    homepage service cards: 3-up grid inside a 1200px container.
+ *   cover   blog cover image inside .container-sm (820px - 48px padding).
+ *   thumb   related-guides / bp-related thumbnails, ~300px in a 3-up grid.
+ *   content in-article and geo-page section images, full content width.
+ */
+const PRESETS = {
+  hero: '(max-width: 768px) 1px, (max-width: 1024px) 300px, 360px',
+  card: '(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 380px',
+  // .bp-hero-media sits in a `1fr 380px` grid, full width under 860px.
+  cover: '(max-width: 860px) 100vw, 380px',
+  // .bp-related-grid / .related-guides-grid: 3-up, 1-up under 760px.
+  thumb: '(max-width: 760px) 100vw, 380px',
+  // .bp-side-related-item img is a fixed 52px square.
+  micro: '52px',
+  // Article column: 1200px container minus the 280px sidebar and gaps.
+  content: '(max-width: 960px) 100vw, 828px',
+  full: '100vw',
+} as const;
+
+interface Props {
+  src: string;
+  alt: string;
+  preset?: keyof typeof PRESETS;
+  sizes?: string;
+  priority?: boolean;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  src,
+  alt,
+  preset = 'content',
+  sizes,
+  priority = false,
+  class: className,
+  ...rest
+} = Astro.props;
+
+// Blog covers can arrive as absolute URLs (the DEFAULT_COVER fallback, and
+// anything the admin CMS stores fully-qualified), so normalise to the
+// site-relative key the manifest is built with before looking up.
+const key = src.replace(/^https?:\/\/(www\.)?newgoldenoffice\.com/, '');
+const entry = (manifest as Record<string, Entry>)[key];
+const hasVariants = !!entry?.variants?.length;
+
+// alt/title describe the picture, so they come from the per-image map rather
+// than from whichever page the image happens to sit on — one shared photo used
+// as five posts' cover otherwise ends up with five different alts, and a post's
+// three images all end up with one. The `alt` prop is the fallback for anything
+// outside the map: the logo (which keeps its brand alt and gets no title, per
+// "logos and icons excluded") and any image the CMS adds after the last
+// `node scripts/build-image-meta.mjs` run.
+// Regenerate with: node scripts/build-image-meta.mjs
+const meta = (imageMeta as Record<string, Meta>)[key];
+const resolvedAlt = meta?.alt ?? alt;
+const resolvedTitle = meta?.title;
+
+// Largest variant is the src, so a browser that ignores srcset still gets a
+// re-encoded WebP rather than the original.
+const resolvedSrc = hasVariants ? entry.variants[entry.variants.length - 1][1] : src;
+const srcset = hasVariants ? entry.variants.map(([w, u]) => `${u} ${w}w`).join(', ') : undefined;
+---
+
+<img
+  src={resolvedSrc}
+  srcset={srcset}
+  sizes={srcset ? (sizes ?? PRESETS[preset]) : undefined}
+  width={entry?.w}
+  height={entry?.h}
+  alt={resolvedAlt}
+  title={resolvedTitle}
+  loading={priority ? 'eager' : 'lazy'}
+  fetchpriority={priority ? 'high' : undefined}
+  decoding={priority ? 'sync' : 'async'}
+  class={className}
+  {...rest}
+/>

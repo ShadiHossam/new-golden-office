@@ -1,4 +1,5 @@
 ---
+import Img from './Img.astro';
 const year = new Date().getFullYear();
 ---
 
@@ -9,7 +10,7 @@ const year = new Date().getFullYear();
       <!-- Brand -->
       <div class="footer-brand">
         <a href="/" class="footer-logo-wrap">
-          <img src="/images/logo.png" alt="نيو جولدن أوفيس" class="footer-logo-img" onerror="this.style.display='none'">
+          <Img src="/images/logo.png" alt="نيو جولدن أوفيس" preset="micro" class="footer-logo-img" onerror="this.style.display='none'" />
           <div>
             <div class="footer-logo-name">نيو جولدن أوفيس</div>
             <div class="footer-logo-en">NEW GOLDEN OFFICE</div>
@@ -24,7 +25,7 @@ const year = new Date().getFullYear();
 
       <!-- Services -->
       <div class="footer-col">
-        <h5>خدماتنا</h5>
+        <h2>خدماتنا</h2>
         <ul class="footer-links">
           <li><a href="/office-supplies">مستلزمات مكتبية</a></li>
           <li><a href="/printing">خدمات الطباعة</a></li>
@@ -37,7 +38,7 @@ const year = new Date().getFullYear();
 
       <!-- Quick Links -->
       <div class="footer-col">
-        <h5>روابط سريعة</h5>
+        <h2>روابط سريعة</h2>
         <ul class="footer-links">
           <li><a href="/">الرئيسية</a></li>
           <li><a href="/about">عن الشركة</a></li>
@@ -50,7 +51,7 @@ const year = new Date().getFullYear();
 
       <!-- Contact -->
       <div class="footer-col">
-        <h5>تواصل معنا</h5>
+        <h2>تواصل معنا</h2>
         <div class="footer-contact-items">
           <div class="footer-contact-item">
             <i class="fas fa-map-marker-alt"></i>
@@ -166,6 +167,7 @@ const year = new Date().getFullYear();
 }
 
 /* Columns */
+.footer-col h2,
 .footer-col h5 {
   font-family: var(--font-heading);
   font-weight: 700;

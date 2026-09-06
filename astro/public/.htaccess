@@ -82,6 +82,73 @@ RewriteRule ^(.*)$ $1.html [L]
 
 ErrorDocument 404 /404.html
 
+# ---------------------------------------------------------------------------
+# Compression. Text formats compress 70-80%; images, woff2 and video are
+# already compressed and are deliberately left out.
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/xsl
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/ld+json
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+  </IfModule>
+</IfModule>
+
+# Brotli where the host offers it — a better ratio than gzip on text. Both
+# blocks can be active at once; Apache picks by the client's Accept-Encoding.
+<IfModule mod_brotli.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml text/xsl
+    AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/json application/ld+json
+    AddOutputFilterByType BROTLI_COMPRESS application/xml application/rss+xml application/atom+xml
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+  </IfModule>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Cache policy.
+#   HTML            revalidate every time, so a redeploy is live immediately.
+#   /_astro/        filenames carry a build hash.
+#   /images/v/      variant filenames carry their width and are never rewritten.
+#   /fonts/         icon subsets carry a content hash (build-icon-subset.mjs);
+#                   the Cairo/Tajawal faces are stable.
+#   other images    30 days — the base files keep stable names and could be
+#                   re-encoded by scripts/optimize-images.mjs.
+#   sitemaps        1 hour, so search engines pick up changes quickly.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/xsl "access plus 1 hour"
+</IfModule>
+
 <IfModule mod_headers.c>
   Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+
+  # Static assets, conservative default.
+  <FilesMatch "\.(css|js|mjs|woff2|woff|ttf|webp|jpe?g|png|gif|svg|ico|avif)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # Content-addressed paths: safe to freeze for a year. Written after the block
+  # above so it wins for these URLs.
+  SetEnvIf Request_URI "^/_astro/"   IMMUTABLE_ASSET=1
+  SetEnvIf Request_URI "^/images/v/" IMMUTABLE_ASSET=1
+  SetEnvIf Request_URI "^/fonts/"    IMMUTABLE_ASSET=1
+  Header set Cache-Control "public, max-age=31536000, immutable" env=IMMUTABLE_ASSET
+
+  # HTML must always revalidate.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Crawl-facing files stay fresh.
+  <FilesMatch "^(.*sitemap.*\.xml|robots\.txt|llms\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
 </IfModule>

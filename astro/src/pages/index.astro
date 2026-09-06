@@ -1,4 +1,5 @@
 ---
+import Img from '../components/Img.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getSeoFor } from '../lib/siteSeo';
 
@@ -76,7 +77,7 @@ const schemaJson = JSON.stringify({
 
 <BaseLayout
   {...getSeoFor('/')}
-  preloadImage="/images/hero-office.webp"
+  preloadImage="/images/v/hero-office-800.webp"
   schemaJson={schemaJson}
 >
 
@@ -91,7 +92,10 @@ const schemaJson = JSON.stringify({
           شريكك الموثوق في مصر منذ عام 1999
         </div>
         <h1 class="animate delay-1">
-          <span>شركة طباعة ومستلزمات مكتبية</span><br>
+          {/* Explicit {' '} — the build collapses the newline after <br>, which
+              made the H1 read as one run-together word ("مكتبيةكل") to parsers
+              and screen readers even though it looked right on screen. */}
+          <span>شركة طباعة ومستلزمات مكتبية</span><br />{' '}
           كل ما يحتاجه مكتبك في مكان واحد
         </h1>
         <p class="lead animate delay-2">
@@ -125,8 +129,8 @@ const schemaJson = JSON.stringify({
         </div>
       </div>
 
-      <div class="hero-panel hero-panel-photo animate delay-2" style="background-image:url('/images/hero-office.webp')">
-        <img src="/images/logo.png" alt="نيو جولدن أوفيس" class="hero-panel-logo" fetchpriority="high" width="88" height="88">
+      <div class="hero-panel hero-panel-photo animate delay-2" style="background-image:url('/images/v/hero-office-800.webp')">
+        <Img src="/images/logo.png" alt="نيو جولدن أوفيس" preset="micro" priority class="hero-panel-logo" />
         <div class="hero-panel-since">شريكك الموثوق منذ عام</div>
         <div class="hero-panel-year">١٩٩٩</div>
         <div class="hero-panel-divider"></div>
@@ -154,42 +158,42 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="services-grid">
       <a href="/office-supplies" class="service-card reveal">
-        <div class="service-card-img"><img src="/images/office-supplies-hub.webp" alt="مستلزمات مكتبية" loading="lazy"></div>
+        <div class="service-card-img"><Img src="/images/office-supplies-hub.webp" alt="مستلزمات مكتبية" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-briefcase"></i></div>
         <h3>ورق ومستلزمات مكتبية</h3>
         <p>ورق A4، ورق حراري، أقلام، دفاتر، ملفات، أختام، وجميع المستلزمات المكتبية — توصيل سريع لجميع أنحاء مصر</p>
         <span class="service-link">تعرف أكثر <i class="fas fa-arrow-left"></i></span>
       </a>
       <a href="/printing" class="service-card reveal delay-1">
-        <div class="service-card-img"><img src="/images/printing-hub.webp" alt="خدمات الطباعة" loading="lazy"></div>
+        <div class="service-card-img"><Img src="/images/printing-hub.webp" alt="خدمات الطباعة" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-print"></i></div>
         <h3>خدمات الطباعة</h3>
         <p>طباعة أوفست، رقمية، بنرات، بزنس كارد، UV، وطباعة على الهدايا — نجيب بأفضل نتيجة لكل مشروع</p>
         <span class="service-link">تعرف أكثر <i class="fas fa-arrow-left"></i></span>
       </a>
       <a href="/copiers" class="service-card reveal delay-2">
-        <div class="service-card-img"><img src="/images/copiers-hub.webp" alt="ماكينات التصوير" loading="lazy"></div>
+        <div class="service-card-img"><Img src="/images/copiers-hub.webp" alt="ماكينات التصوير" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-copy"></i></div>
         <h3>ماكينات التصوير والطابعات</h3>
         <p>بيع وصيانة ماكينات التصوير والطابعات وتعبئة الكارتريدج لجميع الماركات العالمية</p>
         <span class="service-link">تعرف أكثر <i class="fas fa-arrow-left"></i></span>
       </a>
       <a href="/cameras" class="service-card reveal">
-        <div class="service-card-img"><img src="/images/cameras-hub.webp" alt="كاميرات المراقبة" loading="lazy"></div>
+        <div class="service-card-img"><Img src="/images/cameras-hub.webp" alt="كاميرات المراقبة" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-video"></i></div>
         <h3>كاميرات المراقبة</h3>
         <p>بيع وتركيب وصيانة كاميرات المراقبة وأنظمة DVR وNVR وكاميرات IP وواي فاي</p>
         <span class="service-link">تعرف أكثر <i class="fas fa-arrow-left"></i></span>
       </a>
       <a href="/ac" class="service-card reveal delay-1">
-        <div class="service-card-img"><img src="/images/ac-hub.webp" alt="التكييفات" loading="lazy"></div>
+        <div class="service-card-img"><Img src="/images/ac-hub.webp" alt="التكييفات" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-wind"></i></div>
         <h3>التكييفات</h3>
         <p>بيع وتركيب وصيانة جميع أنواع التكييفات السبليت والكاسيت وشحن الفريون</p>
         <span class="service-link">تعرف أكثر <i class="fas fa-arrow-left"></i></span>
       </a>
       <a href="/cash-machines" class="service-card reveal delay-2">
-        <div class="service-card-img"><img src="/images/cash-machines-hub.webp" alt="ماكينات عد النقود" loading="lazy"></div>
+        <div class="service-card-img"><Img src="/images/cash-machines-hub.webp" alt="ماكينات عد النقود" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
         <h3>ماكينات الفارم والعد النقدي</h3>
         <p>ماكينات عد النقود، كشف العملات المزيفة، ماكينات الفارم والختم، وتدمير المستندات</p>
@@ -238,7 +242,7 @@ const schemaJson = JSON.stringify({
 
 <!-- ═══════════════ IMAGE BANNER ═══════════════ -->
 <div class="image-banner">
-  <img src="/images/about-team.webp" alt="فريق نيو جولدن أوفيس" loading="lazy">
+  <Img src="/images/about-team.webp" alt="فريق نيو جولدن أوفيس" preset="content" />
   <div class="image-banner-overlay">
     <h3>نوفر لك الوقت ونجيب بأفضل حل لكل احتياج</h3>
     <p>شريكك الموثوق في مصر منذ 1999 — جودة مضمونة وأسعار تنافسية</p>
@@ -256,32 +260,32 @@ const schemaJson = JSON.stringify({
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-history"></i></div>
-        <h4>نفهم احتياجك ونجيب بأفضل حل</h4>
+        <h3>نفهم احتياجك ونجيب بأفضل حل</h3>
         <p>خبرة متراكمة منذ 1999 تجعلنا نختصر عليك الوقت والبحث ونقدم لك الحل الأمثل مباشرة</p>
       </div>
       <div class="feature-card reveal delay-1">
         <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-        <h4>ضمان شامل على جميع المنتجات</h4>
+        <h3>ضمان شامل على جميع المنتجات</h3>
         <p>نضمن لك جميع المنتجات والخدمات مع دعم فني متواصل وقطع غيار أصلية</p>
       </div>
       <div class="feature-card reveal delay-2">
         <div class="feature-icon"><i class="fas fa-tags"></i></div>
-        <h4>أسعار تنافسية ومرنة</h4>
+        <h3>أسعار تنافسية ومرنة</h3>
         <p>نقدم أفضل الأسعار في السوق مع إمكانية التقسيط والتفاوض على الكميات الكبيرة</p>
       </div>
       <div class="feature-card reveal delay-3">
         <div class="feature-icon"><i class="fas fa-headset"></i></div>
-        <h4>خدمة ما بعد البيع</h4>
+        <h3>خدمة ما بعد البيع</h3>
         <p>فريق دعم فني متخصص لصيانة منتجاتك وضمان استمرارية عملك دون انقطاع</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-        <h4>مورد واحد بدل خمسة</h4>
+        <h3>مورد واحد بدل خمسة</h3>
         <p>بدل التنقل بين مورد مستلزمات ومطبعة وفني تكييف وفني كاميرات، كل احتياجاتك تُدار من جهة واحدة تعرف تاريخ تعاملك وتفهم احتياجك</p>
       </div>
       <div class="feature-card reveal delay-1">
         <div class="feature-icon"><i class="fas fa-file-invoice"></i></div>
-        <h4>تعامل مؤسسي واضح</h4>
+        <h3>تعامل مؤسسي واضح</h3>
         <p>عروض أسعار رسمية وفواتير ضريبية وعقود صيانة مكتوبة للشركات والمؤسسات، بلا غموض في الشروط أو المستحقات</p>
       </div>
     </div>
@@ -392,9 +396,9 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">1</div><h4>تواصل معنا</h4><p>اتصل أو راسلنا على واتساب أو املأ نموذج التواصل، وأخبرنا باحتياجك سواء كان منتجًا واحدًا أو تجهيز مكتب كامل</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>استشارة وعرض سعر</h4><p>فريقنا يفهم احتياجك بدقة، ويرشح لك المنتج أو الحل الأنسب، ويرسل عرض سعر مفصل وشفاف بلا رسوم مخفية</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>تنفيذ ومتابعة</h4><p>بعد الموافقة، ننفذ التوريد أو التركيب في الموعد المتفق عليه، ونبقى معك لأي دعم فني أو صيانة لاحقة</p></div>
+      <div class="step-card reveal"><div class="step-num">1</div><h3>تواصل معنا</h3><p>اتصل أو راسلنا على واتساب أو املأ نموذج التواصل، وأخبرنا باحتياجك سواء كان منتجًا واحدًا أو تجهيز مكتب كامل</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h3>استشارة وعرض سعر</h3><p>فريقنا يفهم احتياجك بدقة، ويرشح لك المنتج أو الحل الأنسب، ويرسل عرض سعر مفصل وشفاف بلا رسوم مخفية</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>تنفيذ ومتابعة</h3><p>بعد الموافقة، ننفذ التوريد أو التركيب في الموعد المتفق عليه، ونبقى معك لأي دعم فني أو صيانة لاحقة</p></div>
     </div>
   </div>
 </section>
@@ -408,12 +412,12 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>الشركات الصغيرة والمتوسطة</h4><p>تجهيز مكتب كامل من المستلزمات إلى التكييف والطابعة، بميزانية مدروسة ودعم مستمر</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>الشركات الكبرى والمؤسسات</h4><p>عقود توريد وصيانة سنوية، فواتير ضريبية رسمية، ومندوب حساب مخصص لمتابعة كل التفاصيل</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-graduation-cap"></i></div><h4>المدارس والجامعات</h4><p>مستلزمات مكتبية بالجملة، طباعة مناهج ونماذج امتحانات، وتكييف وصيانة القاعات الدراسية</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-briefcase-medical"></i></div><h4>المستشفيات والعيادات</h4><p>كاميرات مراقبة أمنية، تكييفات مركزية، وأرشفة ملفات المرضى بحلول ملفات وأدوات تنظيم متخصصة</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-hotel"></i></div><h4>الفنادق والمطاعم</h4><p>أنظمة مراقبة شاملة، ماكينات عد النقود للخزائن، وطباعة قوائم وهوية بصرية احترافية</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-landmark"></i></div><h4>الجهات الحكومية والبنوك</h4><p>ماكينات كشف تزييف وعد نقود بمعايير أمان صارمة، وأنظمة أرشفة وتدمير مستندات موثوقة</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>الشركات الصغيرة والمتوسطة</h3><p>تجهيز مكتب كامل من المستلزمات إلى التكييف والطابعة، بميزانية مدروسة ودعم مستمر</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>الشركات الكبرى والمؤسسات</h3><p>عقود توريد وصيانة سنوية، فواتير ضريبية رسمية، ومندوب حساب مخصص لمتابعة كل التفاصيل</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-graduation-cap"></i></div><h3>المدارس والجامعات</h3><p>مستلزمات مكتبية بالجملة، طباعة مناهج ونماذج امتحانات، وتكييف وصيانة القاعات الدراسية</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-briefcase-medical"></i></div><h3>المستشفيات والعيادات</h3><p>كاميرات مراقبة أمنية، تكييفات مركزية، وأرشفة ملفات المرضى بحلول ملفات وأدوات تنظيم متخصصة</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-hotel"></i></div><h3>الفنادق والمطاعم</h3><p>أنظمة مراقبة شاملة، ماكينات عد النقود للخزائن، وطباعة قوائم وهوية بصرية احترافية</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-landmark"></i></div><h3>الجهات الحكومية والبنوك</h3><p>ماكينات كشف تزييف وعد نقود بمعايير أمان صارمة، وأنظمة أرشفة وتدمير مستندات موثوقة</p></div>
     </div>
   </div>
 </section>

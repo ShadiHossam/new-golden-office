@@ -24,15 +24,18 @@ const schemaJson = JSON.stringify({
 >
 <style is:global>
   .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start; }
+  .contact-info-col h2,
   .contact-info-col h3 { font-family:'Cairo',sans-serif; font-size:1.3rem; font-weight:700; color:var(--primary,#1B3A6B); margin-bottom:1.5rem; }
   .contact-card { background:#fff; border-radius:14px; padding:1.3rem 1.5rem; margin-bottom:1rem; display:flex; align-items:flex-start; gap:1rem; box-shadow:0 3px 14px rgba(27,58,107,0.08); border-right:4px solid var(--secondary,#E8A020); transition:transform 0.3s; }
   .contact-card:hover { transform:translateX(-4px); }
   .contact-card .cc-icon { width:48px; height:48px; background:linear-gradient(135deg,var(--primary,#1B3A6B),#2a5298); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
   .contact-card .cc-icon i { font-size:1.2rem; color:var(--secondary,#E8A020); }
+  .contact-card .cc-content h3,
   .contact-card .cc-content h4 { font-family:'Cairo',sans-serif; font-size:0.9rem; font-weight:700; color:#888; margin-bottom:0.25rem; }
   .contact-card .cc-content p,.contact-card .cc-content a { font-size:1rem; color:var(--primary,#1B3A6B); font-weight:600; text-decoration:none; line-height:1.5; }
   .contact-card .cc-content a:hover { color:var(--secondary,#E8A020); }
   .map-wrapper { margin-top:1.2rem; border-radius:14px; overflow:hidden; box-shadow:0 4px 18px rgba(27,58,107,0.12); }
+  .contact-form-col h2,
   .contact-form-col h3 { font-family:'Cairo',sans-serif; font-size:1.3rem; font-weight:700; color:var(--primary,#1B3A6B); margin-bottom:1.5rem; }
   .contact-form { background:#fff; border-radius:18px; padding:2.2rem; box-shadow:0 4px 24px rgba(27,58,107,0.1); }
   .form-group { margin-bottom:1.3rem; }
@@ -81,7 +84,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info-col reveal">
-        <h3>معلومات التواصل</h3>
+        <h2>معلومات التواصل</h2>
         <div style="background:#f8f9fa;border-radius:12px;padding:20px;margin-bottom:20px">
           <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:12px"><i class="fas fa-clock" style="color:#c8a951;margin-left:8px"></i>مواعيد العمل</h3>
           <div style="display:grid;gap:8px;font-size:0.95rem;color:#555">
@@ -99,7 +102,7 @@ const schemaJson = JSON.stringify({
         </div>
       </div>
       <div class="contact-form-col reveal delay-1">
-        <h3>أرسل لنا رسالة</h3>
+        <h2>أرسل لنا رسالة</h2>
         <div class="contact-form">
           <form id="contactForm">
             <div class="form-group"><label for="name"><i class="fa-solid fa-user" style="margin-left:0.4rem;color:var(--secondary)"></i>الاسم الكامل</label><input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required></div>
@@ -195,10 +198,10 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">1</div><h4>استلام واستيعاب الطلب</h4><p>يستلم فريقنا رسالتك أو مكالمتك ويوجهها فورًا إلى القسم المختص بخدمتك — سواء كانت مستلزمات مكتبية أو تكييفات أو أي من خدماتنا الست</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>فهم الاحتياج بدقة</h4><p>نطرح عليك بعض الأسئلة لفهم احتياجك الفعلي — المساحة، الكمية، الميزانية، الموعد المطلوب — لنرشح لك الحل الأنسب وليس فقط الأغلى أو الأرخص</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>عرض سعر مفصل</h4><p>نرسل لك عرض سعر واضح يوضح المنتج أو الخدمة والتكلفة والمدة الزمنية، مع الإجابة على أي استفسار إضافي لديك</p></div>
-      <div class="step-card reveal"><div class="step-num">4</div><h4>التنفيذ والمتابعة</h4><p>بعد موافقتك، ننفذ التوريد أو التركيب في الموعد المتفق عليه، ونبقى على تواصل لأي دعم فني لاحق أو صيانة دورية</p></div>
+      <div class="step-card reveal"><div class="step-num">1</div><h3>استلام واستيعاب الطلب</h3><p>يستلم فريقنا رسالتك أو مكالمتك ويوجهها فورًا إلى القسم المختص بخدمتك — سواء كانت مستلزمات مكتبية أو تكييفات أو أي من خدماتنا الست</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h3>فهم الاحتياج بدقة</h3><p>نطرح عليك بعض الأسئلة لفهم احتياجك الفعلي — المساحة، الكمية، الميزانية، الموعد المطلوب — لنرشح لك الحل الأنسب وليس فقط الأغلى أو الأرخص</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>عرض سعر مفصل</h3><p>نرسل لك عرض سعر واضح يوضح المنتج أو الخدمة والتكلفة والمدة الزمنية، مع الإجابة على أي استفسار إضافي لديك</p></div>
+      <div class="step-card reveal"><div class="step-num">4</div><h3>التنفيذ والمتابعة</h3><p>بعد موافقتك، ننفذ التوريد أو التركيب في الموعد المتفق عليه، ونبقى على تواصل لأي دعم فني لاحق أو صيانة دورية</p></div>
     </div>
   </div>
 </section>

@@ -1,4 +1,5 @@
 ---
+import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
@@ -88,7 +89,7 @@ const schemaJson = JSON.stringify({
         <p class="lead reveal delay-1">أوفست وديجيتال، كروت وبروشورات وبنرات وتغليف وهدايا دعائية، بروفة تعتمدها وتسليم في مقر شركتك، بخبرة 27 عامًا ونظام تشغيل كامل بدون فرع</p>
       </div>
       <div class="page-hero-image">
-        <img src="/images/webp-images/man-and-woman-working-with-printing-machine-2026-01-08-07-07-12-utc.webp" alt="شركة طباعة القاهرة" loading="eager">
+        <Img src="/images/webp-images/man-and-woman-working-with-printing-machine-2026-01-08-07-07-12-utc.webp" alt="شركة طباعة القاهرة" preset="hero" priority />
       </div>
     </div>
   </div>
@@ -137,27 +138,27 @@ const schemaJson = JSON.stringify({
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-award"></i></div>
-        <h4>خبرة 27 عامًا</h4>
+        <h3>خبرة 27 عامًا</h3>
         <p>في تنفيذ مطبوعات الشركات، أقدمية يصعب أن تجدها عند منافس.</p>
       </div>
       <div class="feature-card reveal delay-1">
         <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-        <h4>مسؤول حساب واحد</h4>
+        <h3>مسؤول حساب واحد</h3>
         <p>رقم واحد يعرف تاريخ طلباتك ومواصفاتك بالكامل.</p>
       </div>
       <div class="feature-card reveal delay-2">
         <div class="feature-icon"><i class="fas fa-check-double"></i></div>
-        <h4>بروفة قبل الطباعة</h4>
+        <h3>بروفة قبل الطباعة</h3>
         <p>في كل طلب، فلا مفاجآت في اللون أو المقاس أو النص.</p>
       </div>
       <div class="feature-card reveal delay-3">
         <div class="feature-icon"><i class="fas fa-truck"></i></div>
-        <h4>تسليم في مقرك</h4>
+        <h3>تسليم في مقرك</h3>
         <p>داخل مناطق الأعمال الرئيسية في القاهرة.</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-        <h4>تشكيلة كاملة</h4>
+        <h3>تشكيلة كاملة</h3>
         <p>من الكارت الشخصي إلى التغليف والتعاقدات الدورية، فلا تحتاج موردًا ثانيًا.</p>
       </div>
     </div>
@@ -175,17 +176,17 @@ const schemaJson = JSON.stringify({
     <div class="steps-grid">
       <div class="step-card reveal">
         <div class="step-num">1</div>
-        <h4>مسارات تسليم مجدولة</h4>
+        <h3>مسارات تسليم مجدولة</h3>
         <p>تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي.</p>
       </div>
       <div class="step-card reveal delay-1">
         <div class="step-num">2</div>
-        <h4>مندوب حساب مخصص</h4>
+        <h3>مندوب حساب مخصص</h3>
         <p>يستلم ملفاتك، يرسل البروفة، يجيب أسئلتك الفنية، ويتابع الطلب حتى الاستلام.</p>
       </div>
       <div class="step-card reveal delay-2">
         <div class="step-num">3</div>
-        <h4>فرق ميدانية متنقلة</h4>
+        <h3>فرق ميدانية متنقلة</h3>
         <p>تصل إليك للمعاينة والاستلام والتسليم أينما كان مقر شركتك.</p>
       </div>
     </div>
@@ -241,12 +242,12 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div><h4>سنوات الخبرة الحقيقية</h4><p>الخبرة الطويلة تعني نظام تشغيل ناضجًا لا يتعطل مع أول طلب معقد.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-check-double"></i></div><h4>البروفة قبل الطباعة</h4><p>شركة لا تعرض عليك بروفة تعتمدها هي شركة تراهن بأموالك. اجعلها شرطًا غير قابل للتفاوض.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h4>وضوح عرض السعر</h4><p>عرض مفصل البنود يحميك من تكاليف مفاجئة عند الاستلام.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-images"></i></div><h4>نماذج أعمال منفذة</h4><p>اطلب رؤية عينات فعلية من شغل الشركة، فجودة الطباعة تُرى ولا تُوصف.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-truck"></i></div><h4>التسليم حتى مقرك</h4><p>الوقت الذي يقضيه موظفوك في المشاوير للمطبعة تكلفة خفية تدفعها شركتك.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h4>مسؤول تواصل ثابت</h4><p>إعادة شرح طلبك لشخص جديد في كل مرة وصفة مضمونة للأخطاء.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-clock-rotate-left"></i></div><h3>سنوات الخبرة الحقيقية</h3><p>الخبرة الطويلة تعني نظام تشغيل ناضجًا لا يتعطل مع أول طلب معقد.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-check-double"></i></div><h3>البروفة قبل الطباعة</h3><p>شركة لا تعرض عليك بروفة تعتمدها هي شركة تراهن بأموالك. اجعلها شرطًا غير قابل للتفاوض.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>وضوح عرض السعر</h3><p>عرض مفصل البنود يحميك من تكاليف مفاجئة عند الاستلام.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-images"></i></div><h3>نماذج أعمال منفذة</h3><p>اطلب رؤية عينات فعلية من شغل الشركة، فجودة الطباعة تُرى ولا تُوصف.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-truck"></i></div><h3>التسليم حتى مقرك</h3><p>الوقت الذي يقضيه موظفوك في المشاوير للمطبعة تكلفة خفية تدفعها شركتك.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h3>مسؤول تواصل ثابت</h3><p>إعادة شرح طلبك لشخص جديد في كل مرة وصفة مضمونة للأخطاء.</p></div>
     </div>
   </div>
 </section>
@@ -296,7 +297,7 @@ const schemaJson = JSON.stringify({
       <p style="margin-top:16px;text-align:center">ولطلبات الفعاليات والمؤتمرات التي لا تحتمل التأجيل، لدينا <strong>مسار استعجال</strong> بأولوية تشغيل خاصة: أخبرنا بموعد فعاليتك من أول اتصال، ونؤكد لك فورًا إمكانية التنفيذ ومدة التسليم المستعجل.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
-      <img src="/images/webp-images/close-up-of-large-format-printer-heads-in-action-2026-01-06-09-29-23-utc.webp" alt="ماكينات طباعة نيو جولدن أوفيس لخدمة القاهرة" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+      <Img src="/images/webp-images/close-up-of-large-format-printer-heads-in-action-2026-01-06-09-29-23-utc.webp" alt="ماكينات طباعة نيو جولدن أوفيس لخدمة القاهرة" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
     </div>
   </div>
 </section>
@@ -308,11 +309,11 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>البنوك والشركات المالية</h4><p>في وسط البلد المالي: أوراق رسمية ومطبوعات معاملات بمعايير دقة صارمة عبر الفروع.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>الشركات العقارية</h4><p>في التجمع الخامس والقاهرة الجديدة: بروشورات مشروعات فاخرة وبنرات مواقع البيع.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-scale-balanced"></i></div><h4>المكاتب الاستشارية والقانونية</h4><p>في المعادي ووسط البلد: فولدرات وملفات تقديم رسمية بتشطيبات راقية.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-utensils"></i></div><h4>سلاسل المطاعم والمحال</h4><p>منيوهات وأكياس ورقية وعبوات تغليف مطبوعة تتحمل الاستخدام اليومي.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-people-group"></i></div><h4>منظمو الفعاليات والمعارض</h4><p>بنرات ورول أب واستاندات وبطاقات دخول بمواعيد تسليم لا تحتمل التأخير.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>البنوك والشركات المالية</h3><p>في وسط البلد المالي: أوراق رسمية ومطبوعات معاملات بمعايير دقة صارمة عبر الفروع.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>الشركات العقارية</h3><p>في التجمع الخامس والقاهرة الجديدة: بروشورات مشروعات فاخرة وبنرات مواقع البيع.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-scale-balanced"></i></div><h3>المكاتب الاستشارية والقانونية</h3><p>في المعادي ووسط البلد: فولدرات وملفات تقديم رسمية بتشطيبات راقية.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-utensils"></i></div><h3>سلاسل المطاعم والمحال</h3><p>منيوهات وأكياس ورقية وعبوات تغليف مطبوعة تتحمل الاستخدام اليومي.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-people-group"></i></div><h3>منظمو الفعاليات والمعارض</h3><p>بنرات ورول أب واستاندات وبطاقات دخول بمواعيد تسليم لا تحتمل التأخير.</p></div>
     </div>
   </div>
 </section>
@@ -343,9 +344,9 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">1</div><h4>مراجعة فنية للملف</h4><p>نفحص نظام الألوان CMYK، ودقة الصور، وهوامش القص، والخطوط قبل أي تشغيل.</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>بروفة تعتمدها بنفسك</h4><p>لا يدخل أي طلب للتشغيل قبل اعتمادك للبروفة. ما تعتمده هو ما تستلمه.</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>فحص قبل التسليم</h4><p>عينات من كل تشغيلة تُفحص للتأكد من ثبات اللون وجودة القص من أول نسخة لآخر نسخة.</p></div>
+      <div class="step-card reveal"><div class="step-num">1</div><h3>مراجعة فنية للملف</h3><p>نفحص نظام الألوان CMYK، ودقة الصور، وهوامش القص، والخطوط قبل أي تشغيل.</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h3>بروفة تعتمدها بنفسك</h3><p>لا يدخل أي طلب للتشغيل قبل اعتمادك للبروفة. ما تعتمده هو ما تستلمه.</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>فحص قبل التسليم</h3><p>عينات من كل تشغيلة تُفحص للتأكد من ثبات اللون وجودة القص من أول نسخة لآخر نسخة.</p></div>
     </div>
     <!-- TODO: real project details + customer testimonial + real portfolio photos pending — see punch list -->
   </div>

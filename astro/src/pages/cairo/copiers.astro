@@ -1,4 +1,5 @@
 ---
+import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
@@ -80,7 +81,7 @@ const schemaJson = JSON.stringify({
         <p class="lead reveal delay-1">بيع وإيجار وصيانة ماكينات تصوير المستندات، وعقود إدارة أساطيل كاملة للشركات الكبرى، بخبرة 27 عامًا مع كبرى الماركات</p>
       </div>
       <div class="page-hero-image">
-        <img src="/images/copier-scanning-office-1784572494919-541980.jpg" alt="شركة ماكينات تصوير في القاهرة" loading="eager">
+        <Img src="/images/copier-scanning-office-1784572494919-541980.jpg" alt="شركة ماكينات تصوير في القاهرة" preset="hero" priority />
       </div>
     </div>
   </div>
@@ -129,13 +130,13 @@ const schemaJson = JSON.stringify({
       <p style="margin-top:16px">بدلًا من أن يتصل كل قسم بمورد مختلف كلما تعطلت ماكينته، يصبح لديك مندوب حساب واحد يعرف موقع كل جهاز وتاريخ صيانته وحالته الفنية الحالية. هذا التنظيم يقلل بشكل ملحوظ عدد الأعطال المفاجئة لأن الصيانة الوقائية تُنفذ بجدول ثابت بدل الانتظار حتى يتوقف الجهاز عن العمل، ويمنح إدارة الشركة رؤية واضحة عن أداء الأسطول ككل بدل معلومات متناثرة بين الأقسام والفروع المختلفة.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-clipboard-list"></i></div><h4>حصر كامل للأسطول</h4><p>بحالته الفنية وعدادات التشغيل لكل جهاز على حدة.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h4>زيارات صيانة موحدة</h4><p>تغطي الأسطول كله بجدول واحد منسق مسبقًا.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h4>تقارير دورية للإدارة</h4><p>حالة كل ماكينة، الأعطال المتكررة، وتوصيات الاستبدال المستقبلية.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h4>مندوب حساب واحد</h4><p>مسؤول عن الأسطول كله بدلًا من التعامل مع موردين متفرقين لكل قسم أو فرع.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-clipboard-list"></i></div><h3>حصر كامل للأسطول</h3><p>بحالته الفنية وعدادات التشغيل لكل جهاز على حدة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h3>زيارات صيانة موحدة</h3><p>تغطي الأسطول كله بجدول واحد منسق مسبقًا.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>تقارير دورية للإدارة</h3><p>حالة كل ماكينة، الأعطال المتكررة، وتوصيات الاستبدال المستقبلية.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-user-tie"></i></div><h3>مندوب حساب واحد</h3><p>مسؤول عن الأسطول كله بدلًا من التعامل مع موردين متفرقين لكل قسم أو فرع.</p></div>
     </div>
     <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
-      <img src="/images/webp-images/fiew-laser-printers-in-electronic-computer-store-2026-01-05-05-44-21-utc.webp" alt="عقود صيانة أسطول ماكينات التصوير بالقاهرة" loading="lazy" style="width:100%;height:340px;object-fit:cover;display:block">
+      <Img src="/images/webp-images/fiew-laser-printers-in-electronic-computer-store-2026-01-05-05-44-21-utc.webp" alt="عقود صيانة أسطول ماكينات التصوير بالقاهرة" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
     </div>
   </div>
 </section>
@@ -190,11 +191,11 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h4>التجمع الخامس</h4><p>مقرات الشركات ومباني الأعمال الحديثة التي تعتمد على أساطيل ماكينات تصوير متعددة الطوابق والإدارات.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h4>مدينة نصر</h4><p>كثافة مكتبية وتجارية عالية تحتاج استجابة سريعة لأعطال الطباعة اليومية المتكررة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h4>المعادي</h4><p>مكاتب الشركات والمقرات الإدارية بمواعيد صيانة تناسب طبيعة كل عميل ونوع نشاطه.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h4>القاهرة الجديدة</h4><p>المقرات الجديدة والتوسعات، من التوريد الأول حتى عقود الصيانة الشاملة لاحقًا.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h4>وسط البلد المالي</h4><p>المباني الإدارية والمقرات العريقة التي تحتاج حلولًا مدروسة تراعي طبيعة إنشاءاتها القديمة.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>التجمع الخامس</h3><p>مقرات الشركات ومباني الأعمال الحديثة التي تعتمد على أساطيل ماكينات تصوير متعددة الطوابق والإدارات.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مدينة نصر</h3><p>كثافة مكتبية وتجارية عالية تحتاج استجابة سريعة لأعطال الطباعة اليومية المتكررة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>المعادي</h3><p>مكاتب الشركات والمقرات الإدارية بمواعيد صيانة تناسب طبيعة كل عميل ونوع نشاطه.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h3>القاهرة الجديدة</h3><p>المقرات الجديدة والتوسعات، من التوريد الأول حتى عقود الصيانة الشاملة لاحقًا.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>وسط البلد المالي</h3><p>المباني الإدارية والمقرات العريقة التي تحتاج حلولًا مدروسة تراعي طبيعة إنشاءاتها القديمة.</p></div>
     </div>
     <p style="max-width:800px;margin:20px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">ونخدم الإسكندرية أيضًا عبر <a href="/alexandria/copiers">صفحة ماكينات التصوير في الإسكندرية</a>.</p>
   </div>
@@ -260,9 +261,9 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-star"></i></div><h4>الماكينة الجديدة</h4><p>عمر تشغيلي كامل وأحدث تقنيات وضمان وكيل رسمي، للأساطيل الكبيرة والتشغيل الكثيف طويل المدى.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-recycle"></i></div><h4>ماكينة الاستيراد</h4><p>عدادات تشغيل منخفضة وحالة فنية ممتازة بجزء من سعر الجديد، للمكاتب الصغيرة والمتوسطة الميزانية.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-magnifying-glass"></i></div><h4>الفيصل هو الفحص لا المصدر</h4><p>كل ماكينة استيراد نبيعها تمر بفحص فني كامل قبل العرض، ونطلعك بصراحة على حالتها الفعلية وعداد تشغيلها الدقيق قبل الشراء.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>الماكينة الجديدة</h3><p>عمر تشغيلي كامل وأحدث تقنيات وضمان وكيل رسمي، للأساطيل الكبيرة والتشغيل الكثيف طويل المدى.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-recycle"></i></div><h3>ماكينة الاستيراد</h3><p>عدادات تشغيل منخفضة وحالة فنية ممتازة بجزء من سعر الجديد، للمكاتب الصغيرة والمتوسطة الميزانية.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-magnifying-glass"></i></div><h3>الفيصل هو الفحص لا المصدر</h3><p>كل ماكينة استيراد نبيعها تمر بفحص فني كامل قبل العرض، ونطلعك بصراحة على حالتها الفعلية وعداد تشغيلها الدقيق قبل الشراء.</p></div>
     </div>
   </div>
 </section>
@@ -274,9 +275,9 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">1</div><h4>تشخيص هاتفي فوري</h4><p>نشخص أغلب الأعطال هاتفيًا فيصل الفني بقطعة الغيار الصحيحة من أول زيارة.</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">2</div><h4>فرق ميدانية مجدولة</h4><p>تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي يوميًا.</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">3</div><h4>أولوية استجابة للعقود</h4><p>زمن استجابة مستهدف مكتوب في العقد التزامًا لا وعدًا شفهيًا.</p></div>
+      <div class="step-card reveal"><div class="step-num">1</div><h3>تشخيص هاتفي فوري</h3><p>نشخص أغلب الأعطال هاتفيًا فيصل الفني بقطعة الغيار الصحيحة من أول زيارة.</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">2</div><h3>فرق ميدانية مجدولة</h3><p>تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي يوميًا.</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>أولوية استجابة للعقود</h3><p>زمن استجابة مستهدف مكتوب في العقد التزامًا لا وعدًا شفهيًا.</p></div>
     </div>
     <!-- TODO: real customer testimonial pending — see punch list -->
   </div>

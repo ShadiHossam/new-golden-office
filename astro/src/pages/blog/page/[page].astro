@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import BlogGrid from '../../../components/BlogGrid.astro';
+import { getSortedPosts, countPages, POSTS_PER_PAGE } from '../../../lib/blog-list';
+
+/** Pages 2..N only — page 1 is served by /blog. */
+export async function getStaticPaths() {
+  const posts = await getSortedPosts();
+  const totalPages = countPages(posts.length);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => {
+    const page = i + 2;
+    return {
+      params: { page: String(page) },
+      props: {
+        page,
+        totalPages,
+        pagePosts: posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE),
+      },
+    };
+  });
+}
+
+const { page, totalPages, pagePosts } = Astro.props;
+---
+
+<BaseLayout
+  title={`المدونة — صفحة ${page} | نيو جولدن أوفيس`}
+  description={`الصفحة ${page} من مقالات نيو جولدن أوفيس حول مستلزمات مكتبية، خدمات الطباعة، ماكينات التصوير، كاميرات المراقبة، والتكييفات في مصر.`}
+  ogTitle={`مدونة نيو جولدن أوفيس — صفحة ${page}`}
+  ogDescription="مقالات ونصائح حول مستلزمات مكتبية وخدمات الطباعة وأنظمة الأمان في مصر."
+  breadcrumbLabel={`صفحة ${page}`}
+>
+<PageHero
+  title="المدونة"
+  subtitle={`الصفحة ${page} من ${totalPages}`}
+  heroImage="/images/hero-office.webp"
+  heroAlt="مدونة نيو جولدن أوفيس — نصائح المستلزمات المكتبية والطباعة"
+  heroIcon="fa-newspaper"
+  showCta={false}
+  breadcrumbs={[
+    { label: 'الرئيسية', href: '/' },
+    { label: 'المدونة', href: '/blog' },
+    { label: `صفحة ${page}` }
+  ]}
+/>
+
+<BlogGrid posts={pagePosts} page={page} totalPages={totalPages} />
+</BaseLayout>

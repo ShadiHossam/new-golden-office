@@ -1,0 +1,159 @@
+---
+/**
+ * Contextual links from a blog post into the commercial pages it's about.
+ *
+ * Before this existed, the service hubs had 3 in-body inbound links each —
+ * everything else pointed at them through the navbar, which spreads link
+ * equity evenly instead of topically. Each post now points at the hub for its
+ * own category plus the sub-services a reader of that post would actually want.
+ *
+ * Anchors are written as descriptive phrases rather than bare page titles.
+ */
+
+interface ServiceLink {
+  href: string;
+  label: string;
+}
+
+interface Group {
+  hub: ServiceLink;
+  links: ServiceLink[];
+}
+
+const BY_CATEGORY: Record<string, Group> = {
+  'ماكينات التصوير': {
+    hub: { href: '/copiers', label: 'ماكينات التصوير والطابعات في مصر' },
+    links: [
+      { href: '/copiers/buy', label: 'شراء ماكينة تصوير جديدة أو مجددة بضمان' },
+      { href: '/copiers/printers', label: 'طابعات ليزر وإنكجيت للمكاتب' },
+      { href: '/copiers/maintenance', label: 'عقود صيانة ماكينات التصوير' },
+      { href: '/copiers/cartridges', label: 'كارتريدج وأحبار أصلية' },
+    ],
+  },
+  'كاميرات المراقبة': {
+    hub: { href: '/cameras', label: 'كاميرات المراقبة وأنظمة الأمان' },
+    links: [
+      { href: '/cameras/install', label: 'تركيب كاميرات مراقبة للشركات والمحال' },
+      { href: '/cameras/ip-wifi', label: 'كاميرات IP وواي فاي للمتابعة من الموبايل' },
+      { href: '/cameras/dvr-nvr', label: 'أجهزة تسجيل DVR و NVR' },
+      { href: '/cameras/maintenance', label: 'صيانة كاميرات المراقبة' },
+    ],
+  },
+  'مستلزمات مكتبية': {
+    hub: { href: '/office-supplies', label: 'المستلزمات المكتبية بالجملة' },
+    links: [
+      { href: '/office-supplies/a4-paper', label: 'ورق A4 بأسعار الجملة' },
+      { href: '/office-supplies/pens', label: 'أقلام وأدوات كتابة للمكاتب' },
+      { href: '/office-supplies/files', label: 'ملفات وحوافظ وأنظمة أرشفة' },
+      { href: '/office-supplies/stamps', label: 'أختام الشركات والفواتير' },
+    ],
+  },
+  'الطباعة': {
+    hub: { href: '/printing', label: 'خدمات الطباعة للشركات' },
+    links: [
+      { href: '/printing/offset', label: 'طباعة أوفست للكميات الكبيرة' },
+      { href: '/printing/digital', label: 'طباعة رقمية سريعة للكميات الصغيرة' },
+      { href: '/printing/business-cards', label: 'كروت شخصية وبروشورات' },
+      { href: '/printing/banners', label: 'بنرات ولافتات ورول أب' },
+    ],
+  },
+  'تكييفات': {
+    hub: { href: '/ac', label: 'تكييفات المكاتب والمحال' },
+    links: [
+      { href: '/ac/buy', label: 'شراء تكييفات بأفضل الأسعار' },
+      { href: '/ac/installation', label: 'تركيب تكييفات بضمان' },
+      { href: '/ac/maintenance', label: 'عقود صيانة التكييفات السنوية' },
+    ],
+  },
+  'ماكينات عد النقود وفرم الورق': {
+    hub: { href: '/cash-machines', label: 'ماكينات عد النقود وتدمير المستندات' },
+    links: [
+      { href: '/cash-machines/counting', label: 'ماكينات عد النقود للبنوك والمحال' },
+      { href: '/cash-machines/detector', label: 'أجهزة كشف العملات المزيفة' },
+      { href: '/cash-machines/franking', label: 'ماكينات الفارم والختم' },
+      { href: '/cash-machines/shredder', label: 'شريدر تدمير المستندات' },
+    ],
+  },
+};
+
+interface Props {
+  category?: string;
+}
+
+const { category } = Astro.props;
+const group = category ? BY_CATEGORY[category] : undefined;
+---
+
+{group && (
+  <aside class="bp-services" aria-labelledby="bp-services-title">
+    <h2 id="bp-services-title" class="bp-services-title">
+      خدمات ذات صلة من <a href="/about">نيو جولدن أوفيس</a>
+    </h2>
+    <p class="bp-services-lead">
+      لو المقال ده يخص شغلك، دي الصفحات اللي هتلاقي فيها التفاصيل والأسعار —
+      <a href={group.hub.href}>{group.hub.label}</a>.
+    </p>
+    <ul class="bp-services-list">
+      {group.links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+    </ul>
+  </aside>
+)}
+
+<style>
+  .bp-services {
+    margin: 36px 0 8px;
+    padding: 26px 28px;
+    background: var(--green-pale, #f2f8ef);
+    border: 1.5px solid var(--border, #dfe7da);
+    border-radius: var(--radius-lg, 16px);
+  }
+  .bp-services-title {
+    font-size: 1.12rem;
+    margin: 0 0 10px;
+    color: #0f2d06;
+  }
+  .bp-services-lead {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    margin: 0 0 16px;
+    color: #40503a;
+  }
+  .bp-services-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (max-width: 620px) {
+    .bp-services-list { grid-template-columns: 1fr; }
+    .bp-services { padding: 22px 20px; }
+  }
+  .bp-services-list li {
+    position: relative;
+    padding-inline-start: 18px;
+    font-size: 0.93rem;
+    line-height: 1.65;
+  }
+  .bp-services-list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green-light, #6aa84f);
+  }
+  .bp-services a {
+    color: var(--green, #2e7d14);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .bp-services a:hover { border-bottom-color: currentColor; }
+</style>

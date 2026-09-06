@@ -2,6 +2,8 @@ export const PAGE_NAMES: Record<string, string> = {
   'about': 'عن الشركة',
   'contact': 'تواصل معنا',
   'blog': 'المدونة',
+  // routing-only segment in /blog/page/N — hidden from the breadcrumb trail
+  'blog/page': '',
   'alexandria': 'خدماتنا في الإسكندرية',
   'cairo': 'خدماتنا في القاهرة',
   'privacy': 'سياسة الخصوصية',

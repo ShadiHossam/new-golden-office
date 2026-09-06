@@ -1,36 +1,26 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import BlogGrid from '../../components/BlogGrid.astro';
+import { getSortedPosts, countPages, POSTS_PER_PAGE } from '../../lib/blog-list';
 
-const allPosts = await getCollection('blog', ({ data }) => data.status === 'published');
-const posts = allPosts.sort((a, b) =>
-  new Date(b.data.published_at || b.data.updated_at).getTime() -
-  new Date(a.data.published_at || a.data.updated_at).getTime()
-);
+const posts = await getSortedPosts();
+const totalPages = countPages(posts.length);
+const pagePosts = posts.slice(0, POSTS_PER_PAGE);
 
-function formatDateAr(iso: string) {
-  if (!iso) return '';
-  try {
-    return new Date(iso).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
-  } catch {
-    return '';
-  }
-}
-
-const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
-
+// hasPart lists every post in the series, not just this page's slice, so the
+// collection stays a complete description of the blog.
 const collectionSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'مدونة نيو جولدن أوفيس',
-  url: 'https://newgoldenoffice.com/blog/',
+  url: 'https://newgoldenoffice.com/blog',
   ...(posts.length
     ? {
         hasPart: posts.map((p) => ({
           '@type': 'Article',
-          headline: p.data.title,
-          url: `https://newgoldenoffice.com/blog/${p.data.slug}`,
+          headline: p.title,
+          url: `https://newgoldenoffice.com/blog/${p.slug}`,
         })),
       }
     : {}),
@@ -48,6 +38,7 @@ const collectionSchema = JSON.stringify({
   title="المدونة"
   subtitle="مقالات ونصائح حول مستلزمات مكتبية، طباعة، أنظمة أمان، وتكييفات في مصر"
   heroImage="/images/hero-office.webp"
+  heroAlt="مدونة نيو جولدن أوفيس — نصائح المستلزمات المكتبية والطباعة"
   heroIcon="fa-newspaper"
   showCta={false}
   breadcrumbs={[
@@ -56,25 +47,5 @@ const collectionSchema = JSON.stringify({
   ]}
 />
 
-<section class="section">
-  <div class="container">
-    <div class="blog-grid">
-      {posts.length ? posts.map((post) => (
-        <a href={`/blog/${post.data.slug}`} class="blog-card reveal">
-          <div class="blog-card-image" style={`background-image:url('${post.data.cover_image || DEFAULT_COVER}')`}></div>
-          <div class="blog-card-body">
-            {post.data.category && <span class="blog-card-category">{post.data.category}</span>}
-            <h3>{post.data.title}</h3>
-            <p>{post.data.excerpt}</p>
-            <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> {formatDateAr(post.data.published_at || post.data.updated_at)}</span>
-          </div>
-        </a>
-      )) : (
-        <div class="empty-state" style="padding:60px 20px;text-align:center;grid-column:1/-1;">
-          <p style="color:var(--text-muted);">مقالات جديدة قريباً — تابعونا للحصول على نصائح ومقالات حول مستلزمات مكتبية وأنظمة أمان وطباعة.</p>
-        </div>
-      )}
-    </div>
-  </div>
-</section>
+<BlogGrid posts={pagePosts} page={1} totalPages={totalPages} />
 </BaseLayout>

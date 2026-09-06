@@ -1,0 +1,10 @@
+Superseded 2026-09-06. This script derived alt/title text from the page/post
+an image appeared on, which produced descriptions of the PAGE, not the image
+(e.g. a hub photo used on 4 pages got 4 different alts; a post's 3 photos all
+got the post's title as their one shared alt).
+
+src/data/image-meta.json is now hand-written after visually reviewing every
+image in the library (contact sheets in the sheets/ dir this run generated).
+Edit that file directly for corrections. If new images are added later, add
+their entries to image-meta.json by hand, looking at the actual photo — do not
+resurrect this script's derive-from-content approach.

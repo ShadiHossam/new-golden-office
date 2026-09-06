@@ -1,4 +1,6 @@
 ---
+import Img from './Img.astro';
+
 interface Breadcrumb {
   label: string;
   href?: string;
@@ -9,11 +11,12 @@ interface Props {
   subtitle?: string;
   breadcrumbs: Breadcrumb[];
   heroImage: string;
+  heroAlt?: string;
   heroIcon: string;
   showCta?: boolean;
 }
 
-const { title, subtitle, breadcrumbs, heroImage, heroIcon, showCta = true } = Astro.props;
+const { title, subtitle, breadcrumbs, heroImage, heroAlt, heroIcon, showCta = true } = Astro.props;
 ---
 
 <section class="page-hero">
@@ -45,7 +48,7 @@ const { title, subtitle, breadcrumbs, heroImage, heroIcon, showCta = true } = As
         )}
       </div>
       <div class="page-hero-image">
-        <img src={heroImage} alt="" loading="lazy" onerror="this.style.display='none'">
+        <Img src={heroImage} alt={heroAlt ?? title} preset="hero" priority />
         <div class="page-hero-icon"><i class={`fas ${heroIcon}`}></i></div>
       </div>
     </div>

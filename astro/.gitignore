@@ -30,3 +30,8 @@ newgoldenoffice-content/
 # Phase 1 audit output, regenerable via scripts/reconcile-seo.cjs
 scripts/seo-reconciled.json
 scripts/seo-reconciliation-report.json
+
+# Runtime build lock written by admin/lib/astro-sync.js during a triggered
+# rebuild (contains the build process's PID) — transient, never meant to be
+# tracked. Got committed by accident once; this stops it from recurring.
+.building

@@ -1,4 +1,5 @@
 ---
+import Img from '../components/Img.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { getSeoFor } from '../lib/siteSeo';
@@ -21,7 +22,6 @@ const schemaJson = JSON.stringify({
 
 <BaseLayout
   {...getSeoFor('/about')}
-  preloadImage="/images/about-team.webp"
   schemaJson={schemaJson}
 >
 <style is:global>
@@ -81,7 +81,7 @@ const schemaJson = JSON.stringify({
         <p>يقود فريق نيو جولدن أوفيس اليوم كوكبة من المتخصصين ذوي الخبرة العالية في مجالاتهم، ملتزمين بتقديم حلول مبتكرة تواكب متطلبات السوق المتغيرة. نفخر بثقة آلاف العملاء الذين رافقونا في هذه الرحلة، وهم الدافع الأقوى لمواصلة التطوير والتميز.</p>
       </div>
       <div class="about-story-visual reveal delay-1">
-        <img src="/images/about-team.webp" alt="فريق نيو جولدن أوفيس — 27 عاماً من الخبرة" loading="lazy">
+        <Img src="/images/about-team.webp" alt="فريق نيو جولدن أوفيس — 27 عاماً من الخبرة" preset="content" />
         <div class="stats-grid">
           <div class="stat-box"><span class="stat-number">+27</span><span class="stat-label">سنة خبرة في السوق</span></div>
           <div class="stat-box"><span class="stat-number">+5000</span><span class="stat-label">عميل راضٍ يثق بنا</span></div>

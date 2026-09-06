@@ -1,0 +1,118 @@
+---
+import Img from './Img.astro';
+
+interface PostCard {
+  slug: string;
+  title: string;
+  excerpt?: string;
+  category?: string;
+  cover_image?: string;
+  date: string;
+}
+
+interface Props {
+  posts: PostCard[];
+  page: number;
+  totalPages: number;
+}
+
+const { posts, page, totalPages } = Astro.props;
+
+const DEFAULT_COVER = '/images/og-image.jpg';
+
+function formatDateAr(iso: string) {
+  if (!iso) return '';
+  try {
+    return new Date(iso).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+  } catch {
+    return '';
+  }
+}
+
+/** Page 1 lives at /blog; later pages at /blog/page/N (kept off /blog/<n> so
+ *  they can't collide with the /blog/[slug] post route). */
+const hrefFor = (n: number) => (n <= 1 ? '/blog' : `/blog/page/${n}`);
+const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+---
+
+<section class="section">
+  <div class="container">
+    <div class="blog-grid">
+      {posts.length ? posts.map((post) => (
+        <a href={`/blog/${post.slug}`} class="blog-card reveal">
+          <div class="blog-card-image">
+            <Img src={post.cover_image || DEFAULT_COVER} alt={post.title} preset="card" />
+          </div>
+          <div class="blog-card-body">
+            {post.category && <span class="blog-card-category">{post.category}</span>}
+            <h2>{post.title}</h2>
+            <p>{post.excerpt}</p>
+            <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> {formatDateAr(post.date)}</span>
+          </div>
+        </a>
+      )) : (
+        <div class="empty-state" style="padding:60px 20px;text-align:center;grid-column:1/-1;">
+          <p style="color:var(--text-muted);">مقالات جديدة قريباً — تابعونا للحصول على نصائح ومقالات حول مستلزمات مكتبية وأنظمة أمان وطباعة.</p>
+        </div>
+      )}
+    </div>
+
+    {totalPages > 1 && (
+      <nav class="blog-pagination" aria-label="تصفح صفحات المدونة">
+        {page > 1 && (
+          <a class="blog-page-link blog-page-nav" href={hrefFor(page - 1)} rel="prev">
+            <i class="fa-solid fa-chevron-right"></i> السابق
+          </a>
+        )}
+        <ol class="blog-page-list">
+          {pageNumbers.map((n) => (
+            <li>
+              {n === page
+                ? <span class="blog-page-link is-current" aria-current="page">{n}</span>
+                : <a class="blog-page-link" href={hrefFor(n)}>{n}</a>}
+            </li>
+          ))}
+        </ol>
+        {page < totalPages && (
+          <a class="blog-page-link blog-page-nav" href={hrefFor(page + 1)} rel="next">
+            التالي <i class="fa-solid fa-chevron-left"></i>
+          </a>
+        )}
+      </nav>
+    )}
+  </div>
+</section>
+
+<style>
+  /* Card art was a CSS background-image, which can't carry a srcset — so a
+     phone downloaded the desktop-sized cover for every card. A real <img>
+     lets the browser pick a card-sized variant instead. */
+  .blog-card-image { height: 180px; overflow: hidden; }
+  .blog-card-image :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .blog-pagination {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 10px; margin-top: 44px;
+  }
+  .blog-page-list {
+    display: flex; gap: 8px; list-style: none; margin: 0; padding: 0;
+  }
+  .blog-page-link {
+    display: inline-flex; align-items: center; gap: 7px;
+    min-width: 42px; height: 42px; padding: 0 14px;
+    justify-content: center;
+    border: 1.5px solid var(--border); border-radius: var(--radius);
+    background: var(--white); color: #0f2d06;
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.92rem;
+    text-decoration: none; transition: var(--transition);
+  }
+  .blog-page-link:hover { border-color: var(--green-light); color: var(--green); }
+  .blog-page-link.is-current {
+    background: var(--green); border-color: var(--green); color: var(--white); cursor: default;
+  }
+  .blog-page-link i { font-size: 0.75rem; }
+  @media (max-width: 480px) {
+    .blog-page-nav span { display: none; }
+    .blog-page-link { min-width: 38px; height: 38px; padding: 0 10px; font-size: 0.85rem; }
+  }
+</style>

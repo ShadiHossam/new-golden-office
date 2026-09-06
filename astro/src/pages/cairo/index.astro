@@ -1,4 +1,5 @@
 ---
+import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
@@ -89,7 +90,7 @@ const schemaJson = JSON.stringify({
         <p class="lead reveal delay-1">تغطية خدمة كاملة للشركات في القاهرة: طباعة، مستلزمات مكتبية، تكييفات، كاميرات مراقبة، ماكينات تصوير، وماكينات عد نقود، بمسارات تسليم مجدولة ومندوب حساب مخصص لكل عميل</p>
       </div>
       <div class="page-hero-image">
-        <img src="/images/webp-images/cityscape-of-cairo-2026-03-25-06-11-05-utc.webp" alt="خدماتنا في القاهرة" loading="eager">
+        <Img src="/images/webp-images/cityscape-of-cairo-2026-03-25-06-11-05-utc.webp" alt="خدماتنا في القاهرة" preset="hero" priority />
       </div>
     </div>
   </div>
@@ -224,22 +225,22 @@ const schemaJson = JSON.stringify({
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
-        <h4>ضمان واضح</h4>
+        <h3>ضمان واضح</h3>
         <p>على المعدات التي نوردها، بشروط مكتوبة تعرفها قبل الشراء لا بعده.</p>
       </div>
       <div class="feature-card reveal delay-1">
         <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
-        <h4>عقود صيانة سنوية</h4>
+        <h3>عقود صيانة سنوية</h3>
         <p>للتكييفات وماكينات التصوير وأنظمة الكاميرات وماكينات عد النقود، بزيارات دورية مجدولة.</p>
       </div>
       <div class="feature-card reveal delay-2">
         <div class="feature-icon"><i class="fas fa-box"></i></div>
-        <h4>قطع غيار وأحبار أصلية</h4>
+        <h3>قطع غيار وأحبار أصلية</h3>
         <p>لأن قطعة غيار رديئة تكلفك لاحقًا أضعاف ما وفرته.</p>
       </div>
       <div class="feature-card reveal delay-3">
         <div class="feature-icon"><i class="fas fa-route"></i></div>
-        <h4>استجابة ميدانية بمواعيد متفق عليها</h4>
+        <h3>استجابة ميدانية بمواعيد متفق عليها</h3>
         <p>ينسقها مندوب حسابك مباشرة دون دوامة تحويلات بين الأقسام.</p>
       </div>
     </div>
@@ -276,32 +277,32 @@ const schemaJson = JSON.stringify({
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-award"></i></div>
-        <h4>خبرة 27 عامًا</h4>
+        <h3>خبرة 27 عامًا</h3>
         <p>تراكم حقيقي في فهم بيئة العمل المصرية وتجهيز وخدمة المكاتب والشركات.</p>
       </div>
       <div class="feature-card reveal delay-1">
         <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-        <h4>مورد واحد لست فئات خدمة</h4>
+        <h3>مورد واحد لست فئات خدمة</h3>
         <p>توفير في الوقت والإجراءات والتفاوض وعدد الموردين الذين تديرهم.</p>
       </div>
       <div class="feature-card reveal delay-2">
         <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-        <h4>مندوب حساب مخصص</h4>
+        <h3>مندوب حساب مخصص</h3>
         <p>يعرف شركتك بالاسم ويتابع كل طلب من البداية للنهاية.</p>
       </div>
       <div class="feature-card reveal delay-3">
         <div class="feature-icon"><i class="fas fa-file-invoice"></i></div>
-        <h4>فاتورة ضريبية وعقود دورية</h4>
+        <h3>فاتورة ضريبية وعقود دورية</h3>
         <p>تناسب الشركات والمؤسسات التي تحتاج مستندات محاسبية منتظمة.</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon"><i class="fas fa-route"></i></div>
-        <h4>مسارات تسليم مجدولة</h4>
+        <h3>مسارات تسليم مجدولة</h3>
         <p>فرق ميدانية متنقلة تغطي مناطق الأعمال الرئيسية بمواعيد منتظمة.</p>
       </div>
       <div class="feature-card reveal delay-1">
         <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
-        <h4>ضمان وصيانة سنوية</h4>
+        <h3>ضمان وصيانة سنوية</h3>
         <p>ضمان مكتوب وعقود صيانة سنوية وقطع غيار أصلية بعد البيع.</p>
       </div>
     </div>
@@ -317,17 +318,17 @@ const schemaJson = JSON.stringify({
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h4>تواصل معنا</h4>
+        <h3>تواصل معنا</h3>
         <p>اتصل بنا على 01227392074 أو راسلنا واذكر احتياجك.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h4>مندوب حساب يتابعك</h4>
+        <h3>مندوب حساب يتابعك</h3>
         <p>يتواصل معك مندوب حساب لفهم التفاصيل وترتيب معاينة إن لزمت.</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h4>عرض سعر واضح</h4>
+        <h3>عرض سعر واضح</h3>
         <p>يصلك عرض سعر واضح ببنود مكتوبة. لا التزام قبل أن تعرف كل شيء.</p>
       </div>
     </div>
