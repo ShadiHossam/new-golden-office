@@ -240,6 +240,10 @@ router.post('/:id/publish', publish, (req, res) => {
     req.flash('danger', `A file already exists at "/blog/${post.slug}.html". Choose a different URL slug.`);
     return res.redirect(`/2ef65f179f12439e317a23628b016653/blog/${id}/edit`);
   }
+  if (!(post.cover_image || '').trim()) {
+    req.flash('danger', 'This post has no cover image. Add one before publishing.');
+    return res.redirect(`/2ef65f179f12439e317a23628b016653/blog/${id}/edit`);
+  }
 
   post.status = 'published';
   post.published_at = new Date().toISOString();

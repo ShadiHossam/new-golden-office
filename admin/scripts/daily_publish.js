@@ -34,7 +34,14 @@ function sh(cmd) {
 function main() {
   const posts = loadJson('blog.json');
   const now = new Date();
-  const due = posts.filter(p => p.status === 'draft' && p.scheduled_at && new Date(p.scheduled_at) <= now);
+  const dueAll = posts.filter(p => p.status === 'draft' && p.scheduled_at && new Date(p.scheduled_at) <= now);
+
+  // A post with no cover image never goes live — it stays a draft and keeps
+  // being reported here until someone adds a picture.
+  const due = dueAll.filter(p => (p.cover_image || '').trim());
+  for (const p of dueAll.filter(p => !(p.cover_image || '').trim())) {
+    log(`SKIPPED (no cover image): ${p.slug}`);
+  }
 
   if (!due.length) {
     log('No due posts.');

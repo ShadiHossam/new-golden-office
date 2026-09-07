@@ -7,7 +7,8 @@
     "start": "node server.js",
     "dev": "node server.js",
     "seed": "node db/seed.js",
-    "media:thumbs": "node scripts/backfill-thumbs.js"
+    "media:thumbs": "node scripts/backfill-thumbs.js",
+    "blog:queue": "node scripts/queue-articles.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
