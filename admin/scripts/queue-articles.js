@@ -41,14 +41,33 @@ const IMAGES_DIR = path.join(__dirname, '..', '..', 'astro', 'public', 'images')
 const IMAGE_EXTS = ['.webp', '.jpg', '.jpeg', '.png'];
 
 const CATEGORIES = {
-  'تكييفات': /(^|-)(ac|hvac|air-condition|tak?yeef)/,
-  'كاميرات المراقبة': /(^|-)(cctv|camera|cameras|surveillance|security)/,
-  'ماكينات التصوير': /(^|-)(copier|copiers|photocopier|scanner)/,
-  'الطباعة': /(^|-)(print|printing|printer|offset)/,
-  'ماكينات عد النقود وفرم الورق': /(^|-)(cash|money|counter|counting|shredder)/,
-  'مستلزمات مكتبية': /(^|-)(office|supplies|paper|pens|stationery|filing|envelope)/,
+  'تكييفات': /(^|-)(ac|hvac|air-condition|tak?yeef)|تكييف/,
+  'كاميرات المراقبة': /(^|-)(cctv|camera|cameras|surveillance|security)|كاميرا|مراقبة/,
+  'ماكينات التصوير': /(^|-)(copier|copiers|photocopier|scanner)|تصوير/,
+  'الطباعة': /(^|-)(print|printing|printer|offset)|طباعة|مطبعة|طابعة/,
+  'ماكينات عد النقود وفرم الورق': /(^|-)(cash|money|counter|counting|shredder)|عد النقود|ماكينات العد|شريدر|فرم الورق|كاشف التزوير/,
+  'مستلزمات مكتبية': /(^|-)(office|supplies|paper|pens|stationery|filing|envelope)|قرطاسية|مستلزمات|ورق/,
 };
 const FALLBACK_CATEGORY = 'مستلزمات مكتبية';
+
+// The article pipeline stamps each file with a `cluster:` — either "A · الطباعة"
+// or a site path like "/copiers/buy". Both forms reduce to a site category;
+// clusters with no category of their own (geo, corporate supply) fall through
+// to keyword inference.
+const CLUSTERS = {
+  'الطباعة': 'الطباعة',
+  'مستلزمات مكتبية': 'مستلزمات مكتبية',
+  'كاميرات المراقبة': 'كاميرات المراقبة',
+  'ماكينات التصوير': 'ماكينات التصوير',
+  'تكييفات': 'تكييفات',
+  'ماكينات العد والشريدر': 'ماكينات عد النقود وفرم الورق',
+  'printing': 'الطباعة',
+  'office-supplies': 'مستلزمات مكتبية',
+  'copiers': 'ماكينات التصوير',
+  'cameras': 'كاميرات المراقبة',
+  'cash-machines': 'ماكينات عد النقود وفرم الورق',
+  'ac': 'تكييفات',
+};
 
 function parseArgs(argv) {
   const opts = { folder: DEFAULT_FOLDER, time: '08:00', every: 1, dryRun: false, start: null, category: null };
@@ -99,9 +118,61 @@ function inline(text) {
     .replace(/`([^`]+)`/g, '<code>$1</code>');
 }
 
+function splitRow(line) {
+  return line.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map(c => c.trim());
+}
+
+function tableToHtml(header, rows) {
+  const out = ['<table>', '  <thead>', '    <tr>'];
+  for (const cell of header) out.push(`      <th>${inline(cell)}</th>`);
+  out.push('    </tr>', '  </thead>', '  <tbody>');
+  for (const row of rows) {
+    out.push('    <tr>');
+    for (let i = 0; i < header.length; i++) out.push(`      <td>${inline(row[i] || '')}</td>`);
+    out.push('    </tr>');
+  }
+  out.push('  </tbody>', '</table>');
+  return out.join('\n');
+}
+
+// The generated articles open with a <KeyPoints points={[{title, detail}]} />
+// block — a component that was never built. It renders as the same summary list
+// the hand-written posts already carry, so it lands in the chapter outline too.
+function keyPointsToHtml(block) {
+  const items = [];
+  const point = /\{\s*title:\s*"([\s\S]*?)"\s*,\s*detail:\s*"([\s\S]*?)"\s*,?\s*\}/g;
+  let match;
+  while ((match = point.exec(block))) {
+    const title = match[1].replace(/\s+/g, ' ').trim();
+    const detail = match[2].replace(/\s+/g, ' ').trim();
+    if (!title) continue;
+    items.push(detail ? `<strong>${inline(title)}</strong> — ${inline(detail)}` : inline(title));
+  }
+  if (!items.length) return '';
+  return ['<h2>أهم النقاط في سطور (Key Takeaways)</h2>', '<ul>',
+    ...items.map(i => `  <li>${i}</li>`), '</ul>'].join('\n');
+}
+
+function fencedToHtml(lang, code) {
+  if (lang === 'json') {
+    try {
+      const data = JSON.parse(code);
+      if (data && data['@context']) {
+        return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+      }
+    } catch (e) {
+      // Not parseable — fall through and show it as a code block rather than
+      // publishing a broken schema.
+    }
+  }
+  const escaped = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return `<pre><code>${escaped}</code></pre>`;
+}
+
 // Markdown subset the article writers actually use: h1-h4, bullet and numbered
-// lists, paragraphs, and a bold-only line (the FAQ question convention), which
-// becomes an h3 so it lands in the page outline and the FAQ schema.
+// lists, tables, paragraphs, and a bold-only line (the FAQ question
+// convention), which becomes an h3 so it lands in the page outline and the FAQ
+// schema.
 function markdownToHtml(body) {
   const lines = body.split(/\r?\n/);
   const out = [];
@@ -122,9 +193,57 @@ function markdownToHtml(body) {
     list = null;
   };
 
-  for (const raw of lines) {
-    const line = raw.trim();
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
     if (!line) { flushPara(); flushList(); continue; }
+
+    if (/^<KeyPoints\b/.test(line)) {
+      flushPara(); flushList();
+      const start = i;
+      while (i < lines.length && !/\]\}\s*\/>/.test(lines[i])) i++;
+      const html = keyPointsToHtml(lines.slice(start, i + 1).join('\n'));
+      if (html) out.push(html);
+      continue;
+    }
+
+    if (line.startsWith('|') && /^\|[\s:|-]+\|$/.test((lines[i + 1] || '').trim())) {
+      flushPara(); flushList();
+      const header = splitRow(line);
+      const rows = [];
+      i += 2;
+      while (i < lines.length && lines[i].trim().startsWith('|')) rows.push(splitRow(lines[i++].trim()));
+      i--;
+      out.push(tableToHtml(header, rows));
+      continue;
+    }
+
+    // Each article carries its FAQ schema as either a <script> tag or a ```json
+    // fence. Both become one JSON-LD script in the built HTML, which is where
+    // Google reads it from — never visible text.
+    if (/^<script\b/i.test(line)) {
+      flushPara(); flushList();
+      const start = i;
+      while (i < lines.length && !/<\/script>/i.test(lines[i])) i++;
+      out.push(lines.slice(start, i + 1).join('\n'));
+      continue;
+    }
+
+    if (line.startsWith('```')) {
+      flushPara(); flushList();
+      const lang = line.slice(3).trim().toLowerCase();
+      const start = ++i;
+      while (i < lines.length && !lines[i].trim().startsWith('```')) i++;
+      out.push(fencedToHtml(lang, lines.slice(start, i).join('\n')));
+      continue;
+    }
+
+    // A line that is one bare HTML tag — the articles wrap each table in a
+    // horizontally scrolling div — passes through instead of becoming a <p>.
+    if (/^<\/?[a-z][^>]*>$/i.test(line)) {
+      flushPara(); flushList();
+      out.push(line);
+      continue;
+    }
 
     const heading = line.match(/^(#{2,4})\s+(.*)$/);
     if (heading) {
@@ -164,7 +283,7 @@ function markdownToHtml(body) {
 function firstParagraph(body) {
   for (const block of body.split(/\r?\n\s*\r?\n/)) {
     const text = block.trim();
-    if (!text || /^#/.test(text) || /^[-*\d]/.test(text)) continue;
+    if (!text || /^[#<|]/.test(text) || /^[-*\d]/.test(text)) continue;
     return text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*`]/g, '').replace(/\s+/g, ' ');
   }
   return '';
@@ -175,6 +294,13 @@ function excerptFrom(body, max = 160) {
   if (text.length <= max) return text;
   const cut = text.slice(0, max);
   return cut.slice(0, cut.lastIndexOf(' ')).replace(/[،,.\s]+$/, '') + '…';
+}
+
+function categoryFromCluster(cluster) {
+  if (!cluster) return null;
+  const value = cluster.replace(/^[A-Za-z]\s*[·.\-]\s*/, '').trim();
+  const key = value.startsWith('/') ? value.slice(1).split('/')[0] : value;
+  return CLUSTERS[key] || null;
 }
 
 function inferCategory(slug, title) {
@@ -284,7 +410,8 @@ async function main() {
     if (existingSlugs.has(slug)) { skipped.push({ file, slug }); continue; }
     if (queued.some(q => q.slug === slug)) { problems.push(`${file}: duplicate slug "${slug}" within this batch`); continue; }
 
-    const category = (meta.category || opts.category || inferCategory(slug, title) || FALLBACK_CATEGORY).trim();
+    const category = (meta.category || categoryFromCluster(meta.cluster) || opts.category
+      || inferCategory(slug, title) || FALLBACK_CATEGORY).trim();
     const excerpt = (meta.excerpt || excerptFrom(content)).trim();
     const bodyHtml = markdownToHtml(content);
 
@@ -307,6 +434,7 @@ async function main() {
       cover_image: cover,
       excerpt,
       tags: (meta.tags || '').trim(),
+      seo_title: (meta.meta_title || title).trim(),
       meta_description: (meta.meta_description || excerpt).trim(),
       body_html: bodyHtml,
       pinned_date: meta.date || null,
@@ -344,7 +472,7 @@ async function main() {
       category: item.category,
       tags: item.tags,
       body_html: item.body_html,
-      seo_title: item.title,
+      seo_title: item.seo_title,
       meta_description: item.meta_description,
       meta_keywords: '',
       og_title: '',
