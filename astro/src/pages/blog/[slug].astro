@@ -6,7 +6,7 @@ import MidPageCTA from '../../components/MidPageCTA.astro';
 import ServiceLinks from '../../components/ServiceLinks.astro';
 import '../../styles/blog-post.css';
 import * as cheerio from 'cheerio';
-import { enhanceImages, normalizeHeadings } from '../../lib/enhance-post-html';
+import { enhanceImages, normalizeHeadings, wrapTables } from '../../lib/enhance-post-html';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => data.status === 'published');
@@ -84,7 +84,7 @@ function splitIntoChapters(html: string): { introHtml: string; chapters: Chapter
 
 // Images inside stored post HTML get the same srcset / width / height / lazy
 // treatment as images in .astro templates — see src/lib/enhance-images.ts.
-const { introHtml, chapters, headings } = splitIntoChapters(normalizeHeadings(enhanceImages(p.body_html)));
+const { introHtml, chapters, headings } = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(p.body_html))));
 const readMinutes = estimateReadMinutes(p.body_html);
 
 const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';

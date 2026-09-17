@@ -57,6 +57,21 @@ export function enhanceImages(html: string, sizes: string = DEFAULT_SIZES): stri
 }
 
 /**
+ * Wraps every <table> in stored post HTML in a horizontally scrollable div, so
+ * a wide comparison table scrolls inside the article on a phone instead of
+ * pushing the whole page wider than the screen.
+ */
+export function wrapTables(html: string): string {
+  if (!html) return html;
+  const $ = cheerio.load(html, null, false);
+  $("table").each((_, el) => {
+    const $el = $(el);
+    if (!$el.parent().hasClass("bp-table-wrap")) $el.wrap("<div class=\"bp-table-wrap\"></div>");
+  });
+  return $.html();
+}
+
+/**
  * Removes heading-level skips inside stored post HTML.
  *
  * The page's own <h1> is the post title, so the first heading in the body must
