@@ -311,8 +311,71 @@ function inferCategory(slug, title) {
   return null;
 }
 
+// sharp may only be installed in the Astro project (it is on a dev machine),
+// so look there too before giving up.
 function tryRequireSharp() {
-  try { return require('sharp'); } catch (e) { return null; }
+  for (const id of ['sharp', path.join(__dirname, '..', '..', 'astro', 'node_modules', 'sharp')]) {
+    try { return require(id); } catch (e) { /* try the next location */ }
+  }
+  return null;
+}
+
+// Blog pictures never show wider than ~772px, so 1200px covers 1.5x screens.
+const MAX_IMAGE_WIDTH = 1200;
+
+function findSibling(folder, name) {
+  return IMAGE_EXTS.map(ext => path.join(folder, name + ext)).find(p => fs.existsSync(p));
+}
+
+// Copies a picture into astro/public/images as WebP and returns its public URL.
+async function publishSibling(sibling, outBase, dryRun) {
+  // sharp is only installed where the admin app runs; without it the picture
+  // is copied across untouched rather than failing the whole queue.
+  const converter = tryRequireSharp();
+  const outName = `${outBase}${converter ? '.webp' : path.extname(sibling).toLowerCase()}`;
+  if (!dryRun) {
+    fs.mkdirSync(IMAGES_DIR, { recursive: true });
+    const outPath = path.join(IMAGES_DIR, outName);
+    if (converter) {
+      await converter(sibling).resize({ width: MAX_IMAGE_WIDTH, withoutEnlargement: true }).webp({ quality: 78 }).toFile(outPath);
+    }
+    else fs.copyFileSync(sibling, outPath);
+  }
+  return `/images/${outName}`;
+}
+
+// Pictures beyond the cover sit next to the article as <name>-2.jpg,
+// <name>-3.jpg, … (fetch-article-images.js saves them that way).
+async function resolveBodyImages(folder, file, slug, dryRun) {
+  const base = file.replace(/\.md$/, '');
+  const urls = [];
+  for (let n = 2; ; n++) {
+    const sibling = findSibling(folder, `${base}-${n}`);
+    if (!sibling) break;
+    urls.push(await publishSibling(sibling, `${slug}-${n}`, dryRun));
+  }
+  return urls;
+}
+
+// Spreads body pictures across the article's chapters, each placed after its
+// chapter's opening paragraph so the heading still leads. The Key Takeaways
+// summary and the FAQ are left without pictures.
+function insertBodyImages(html, urls) {
+  if (!urls.length) return html;
+  const lines = html.split('\n');
+  const chapters = lines
+    .map((line, i) => ({ line, i }))
+    .filter(({ line }) => /^<h2>/.test(line) && !/أهم النقاط|أسئلة شائعة|الأسئلة الشائعة/.test(line));
+  if (!chapters.length) return html;
+
+  const inserts = urls.map((url, n) => {
+    const chapter = chapters[Math.min(chapters.length - 1, Math.floor((n + 1) * chapters.length / (urls.length + 1)))];
+    const at = /^<p>/.test(lines[chapter.i + 1] || '') ? chapter.i + 2 : chapter.i + 1;
+    const alt = chapter.line.replace(/<[^>]+>/g, '').trim();
+    return { at, tag: `<img src="${escapeAttr(url)}" alt="${escapeAttr(alt)}" loading="lazy">` };
+  });
+  for (const { at, tag } of inserts.sort((a, b) => b.at - a.at)) lines.splice(at, 0, tag);
+  return lines.join('\n');
 }
 
 // Resolves the article's cover picture, copying a sibling image into
@@ -329,20 +392,8 @@ async function resolveCover(folder, file, slug, meta, body, dryRun) {
   }
 
   const base = file.replace(/\.md$/, '');
-  const sibling = IMAGE_EXTS.map(ext => path.join(folder, base + ext)).find(p => fs.existsSync(p));
-  if (sibling) {
-    // sharp is only installed where the admin app runs; without it the picture
-    // is copied across untouched rather than failing the whole queue.
-    const converter = path.extname(sibling).toLowerCase() === '.webp' ? null : tryRequireSharp();
-    const outName = `${slug}-cover${converter ? '.webp' : path.extname(sibling).toLowerCase()}`;
-    if (!dryRun) {
-      fs.mkdirSync(IMAGES_DIR, { recursive: true });
-      const outPath = path.join(IMAGES_DIR, outName);
-      if (converter) await converter(sibling).webp({ quality: 82 }).toFile(outPath);
-      else fs.copyFileSync(sibling, outPath);
-    }
-    return `/images/${outName}`;
-  }
+  const sibling = findSibling(folder, base);
+  if (sibling) return publishSibling(sibling, `${slug}-cover`, dryRun);
 
   const inlineImage = body.match(/!\[[^\]]*\]\(([^)\s]+)\)/);
   if (inlineImage) {
@@ -425,6 +476,7 @@ async function main() {
       continue;
     }
     if (!cover) { noPicture.push({ file, slug }); continue; }
+    const bodyImages = await resolveBodyImages(opts.folder, file, slug, opts.dryRun);
 
     queued.push({
       file,
@@ -436,7 +488,7 @@ async function main() {
       tags: (meta.tags || '').trim(),
       seo_title: (meta.meta_title || title).trim(),
       meta_description: (meta.meta_description || excerpt).trim(),
-      body_html: bodyHtml,
+      body_html: insertBodyImages(bodyHtml, bodyImages),
       pinned_date: meta.date || null,
     });
   }
@@ -505,7 +557,8 @@ async function main() {
   for (const p of added) {
     console.log(`  ${p.scheduled_at.slice(0, 10)}  ${p.slug}`);
     console.log(`              ${p.title}`);
-    console.log(`              ${p.category} · ${p.cover_image}`);
+    const bodyPictures = (p.body_html.match(/<img /g) || []).length;
+    console.log(`              ${p.category} · ${p.cover_image}${bodyPictures ? ` + ${bodyPictures} in article` : ' · ONLY THE COVER, no picture in the article'}`);
   }
 
   if (opts.dryRun) {

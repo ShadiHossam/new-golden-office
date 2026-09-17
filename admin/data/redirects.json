@@ -89,5 +89,19 @@
     "to": "/about",
     "status": 301,
     "created_at": "2026-08-29T00:00:00.000Z"
+  },
+  {
+    "id": 14,
+    "from": "/blog/adawat-tanzim-al-maktab",
+    "to": "/blog/office-organization-tools-guide",
+    "status": 301,
+    "created_at": "2026-09-08T00:00:00.000Z"
+  },
+  {
+    "id": 15,
+    "from": "/blog/egypt-photocopier-prices-2025",
+    "to": "/blog/egypt-photocopier-prices",
+    "status": 301,
+    "created_at": "2026-09-08T00:00:00.000Z"
   }
 ]
