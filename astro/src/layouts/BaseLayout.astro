@@ -33,6 +33,8 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   schemaJson?: string;
+  /** Extra JSON-LD blocks, e.g. FAQ schema carried inside a post's stored HTML. */
+  extraSchemas?: string[];
   preloadImage?: string;
   robots?: string;
   breadcrumbLabel?: string;
@@ -49,6 +51,7 @@ const {
   publishedTime,
   modifiedTime,
   schemaJson,
+  extraSchemas = [],
   preloadImage,
   robots,
   breadcrumbLabel,
@@ -209,6 +212,7 @@ const localBusinessSchema = JSON.stringify({
   <script type="application/ld+json" set:html={localBusinessSchema} />
   {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
   {schemaJson && <script type="application/ld+json" set:html={schemaJson} />}
+  {extraSchemas.map((json) => <script type="application/ld+json" set:html={json} />)}
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->

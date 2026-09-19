@@ -84,7 +84,16 @@ function splitIntoChapters(html: string): { introHtml: string; chapters: Chapter
 
 // Images inside stored post HTML get the same srcset / width / height / lazy
 // treatment as images in .astro templates — see src/lib/enhance-images.ts.
-const { introHtml, chapters, headings } = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(p.body_html))));
+// The generated articles carry their FAQ schema as a <script> inside the
+// stored HTML, and set:html drops script tags — so pull them out here and
+// emit them as real schema tags alongside the page's own.
+const bodySchemas: string[] = [];
+const bodyHtmlWithoutSchema = p.body_html.replace(
+  /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi,
+  (_match, json) => { bodySchemas.push(json.trim()); return ''; },
+);
+
+const { introHtml, chapters, headings } = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(bodyHtmlWithoutSchema))));
 const readMinutes = estimateReadMinutes(p.body_html);
 
 const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
@@ -131,6 +140,7 @@ const articleSchema = JSON.stringify({
   ogDescription={p.og_description || p.meta_description || p.excerpt}
   ogImage={p.og_image || p.cover_image}
   schemaJson={articleSchema}
+  extraSchemas={[...(p.schemas ?? []), ...bodySchemas]}
   breadcrumbLabel={p.title}
   ogType="article"
   publishedTime={p.published_at || p.created_at}

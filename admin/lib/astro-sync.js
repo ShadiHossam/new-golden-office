@@ -40,12 +40,29 @@ function log(msg) {
   try { fs.appendFileSync(LOG_PATH, line); } catch (e) { /* logging is best-effort */ }
 }
 
+// The generated articles carry FAQ schema as a <script type="application/ld+json">
+// inside body_html. sanitizeBodyHtml strips every script (rightly — the CMS is
+// not a place to inject JS), so lift the schema out first and store it in its
+// own field for the blog template to emit. Anything that is not valid JSON is
+// dropped with the rest.
+function extractSchemas(html) {
+  const out = [];
+  const pattern = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let match;
+  while ((match = pattern.exec(String(html || '')))) {
+    const json = match[1].trim();
+    try { JSON.parse(json); out.push(json); } catch (e) { /* not schema — leave it out */ }
+  }
+  return out;
+}
+
 function writeAstroBlogEntry(post) {
   fs.mkdirSync(BLOG_DIR, { recursive: true });
   const entry = {
     title: post.title,
     slug: post.slug,
     body_html: sanitizeBodyHtml(post.body_html || ''),
+    schemas: extractSchemas(post.body_html),
     excerpt: post.excerpt || '',
     cover_image: post.cover_image || '',
     category: post.category || '',

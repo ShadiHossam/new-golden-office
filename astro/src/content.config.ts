@@ -7,6 +7,8 @@ const blog = defineCollection({
     title: z.string(),
     slug: z.string(),
     body_html: z.string(),
+    // JSON-LD lifted out of body_html at publish time (FAQ schema, mostly).
+    schemas: z.array(z.string()).optional().default([]),
     excerpt: z.string().optional().default(''),
     cover_image: z.string().optional().default(''),
     category: z.string().optional().default(''),
