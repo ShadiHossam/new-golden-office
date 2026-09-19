@@ -1043,10 +1043,10 @@
     "og_title": "",
     "og_description": "",
     "og_image": "",
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-09-17T19:15:46Z",
-    "updated_at": "2026-09-17T19:15:46Z",
-    "published_at": null,
+    "updated_at": "2026-09-19T08:17:01.758Z",
+    "published_at": "2026-09-19T08:17:01.758Z",
     "scheduled_at": "2026-09-19T08:00:00Z",
     "source_file": "10.md"
   },
