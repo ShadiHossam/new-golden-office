@@ -1065,10 +1065,10 @@
     "og_title": "",
     "og_description": "",
     "og_image": "",
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-09-17T19:15:46Z",
-    "updated_at": "2026-09-17T19:15:46Z",
-    "published_at": null,
+    "updated_at": "2026-09-20T08:17:01.905Z",
+    "published_at": "2026-09-20T08:17:01.905Z",
     "scheduled_at": "2026-09-20T08:00:00Z",
     "source_file": "103.md"
   },
