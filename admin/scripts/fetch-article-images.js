@@ -191,6 +191,41 @@ figcaption{color:#666;font-size:12px;margin-top:4px}.missing{color:#b00}
   fs.writeFileSync(path.join(folder, '_image-review.html'), html);
 }
 
+// Tells whether a picture looks the same as one already known: a 64-bit
+// difference hash, so resizing and recompression don't hide a repeat.
+async function pictureIndex(dirs) {
+  let sharp = null;
+  for (const id of ['sharp', path.join(__dirname, '..', '..', 'astro', 'node_modules', 'sharp')]) {
+    try { sharp = require(id); break; } catch (e) { /* try the next */ }
+  }
+  if (!sharp) throw new Error('sharp is needed to check for repeated pictures — run npm install in astro/');
+  const hash = async (file) => {
+    const data = await sharp(file).greyscale().resize(9, 8, { fit: 'fill' }).raw().toBuffer();
+    let h = 0n;
+    for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++) h = (h << 1n) | (data[y * 9 + x] > data[y * 9 + x + 1] ? 1n : 0n);
+    return h;
+  };
+  const distance = (a, b) => { let d = 0, x = a ^ b; while (x) { d += Number(x & 1n); x >>= 1n; } return d; };
+  const known = [];
+  const walk = (dir) => fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => {
+    const p = path.join(dir, e.name);
+    // v/ only holds resized copies; _rejected and _originals aren't in use.
+    if (e.isDirectory()) return ['v', '_rejected', '_originals', '_image-cache'].includes(e.name) ? [] : walk(p);
+    return IMAGE_EXTS.includes(path.extname(e.name).toLowerCase()) ? [p] : [];
+  }) : [];
+  for (const file of dirs.flatMap(walk)) {
+    try { known.push({ file, h: await hash(file) }); } catch (e) { /* unreadable — skip */ }
+  }
+  return {
+    async match(file) {
+      const h = await hash(file);
+      const hit = known.find(k => k.file !== file && distance(k.h, h) <= 6);
+      return hit ? path.relative(process.cwd(), hit.file) : null;
+    },
+    async add(file) { known.push({ file, h: await hash(file) }); },
+  };
+}
+
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
   const keys = { pexels: process.env.PEXELS_KEY, pixabay: process.env.PIXABAY_KEY };
@@ -210,6 +245,10 @@ async function main() {
     for (const s of [...(entry.slots || []), ...(entry.rejected || [])]) used.add(s.id);
     for (const s of entry.slots || []) if (s.source in perSource) perSource[s.source]++;
   }
+
+  // Pictures already on the site, or already picked for this batch, compared by
+  // how they look rather than by name or photo ID.
+  const seen = await pictureIndex([path.join(__dirname, '..', '..', 'astro', 'public', 'images'), opts.folder]);
 
   const bases = fs.readdirSync(opts.folder)
     .filter(f => f.endsWith('.md') && !f.startsWith('_'))
@@ -243,7 +282,9 @@ async function main() {
       const bySource = [...sources].sort((a, b) => perSource[a] - perSource[b]);
       let pick = null;
       let query = null;
-      for (const source of bySource) {
+      let file = `${name}.jpg`;
+      let failed = null;
+      search: for (const source of bySource) {
         for (const q of ordered) {
           let results;
           try {
@@ -253,31 +294,40 @@ async function main() {
             if (!opts.dryRun) fs.writeFileSync(creditsPath, JSON.stringify(credits, null, 2));
             throw e;
           }
-          pick = rank(q, results).find(c => !used.has(c.id));
-          if (pick) { query = q; break; }
+          for (const candidate of rank(q, results)) {
+            if (used.has(candidate.id)) continue;
+            used.add(candidate.id);
+            if (opts.dryRun) { pick = candidate; query = q; break search; }
+            try {
+              file = await download(candidate, path.join(opts.folder, name));
+            } catch (e) {
+              failed = e.message;
+              continue;
+            }
+            // A different photo ID can still be the same photo — re-uploaded to
+            // the other site, or already on our own pages under another name.
+            const twin = await seen.match(path.join(opts.folder, file));
+            if (twin) {
+              fs.unlinkSync(path.join(opts.folder, file));
+              entry.rejected.push({ slot, id: candidate.id, page: candidate.page, reason: `same picture as ${twin}` });
+              console.log(`  … ${name}: ${candidate.id} is the same picture as ${twin}, trying the next one`);
+              continue;
+            }
+            await seen.add(path.join(opts.folder, file));
+            pick = candidate;
+            query = q;
+            break search;
+          }
         }
-        if (pick) break;
       }
 
       if (!pick) {
         notFound.push(name);
-        console.log(`  ✗ ${name}: nothing matched ${JSON.stringify(ordered)}`);
+        console.log(`  ✗ ${name}: ${failed || `nothing matched ${JSON.stringify(ordered)}`}`);
         continue;
       }
-      used.add(pick.id);
       perSource[pick.source]++;
-
-      let file = `${name}.jpg`;
-      if (!opts.dryRun) {
-        try {
-          file = await download(pick, path.join(opts.folder, name));
-        } catch (e) {
-          notFound.push(name);
-          console.log(`  ✗ ${name}: ${e.message}`);
-          continue;
-        }
-        saved++;
-      }
+      if (!opts.dryRun) saved++;
       entry.slots.push({ slot, file, query, source: pick.source, id: pick.id, page: pick.page, author: pick.author, text: pick.text.trim() });
       console.log(`  ✓ ${file}  ${pick.source}  “${query}”`);
     }
