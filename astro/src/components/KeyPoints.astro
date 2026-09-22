@@ -1,0 +1,32 @@
+---
+import type { KeyPoint } from '../lib/enhance-post-html';
+
+interface Props { points: KeyPoint[] }
+const { points } = Astro.props;
+---
+{points.length > 0 && (
+  <section class="bp-keys" aria-labelledby="bpKeysTitle">
+    <h2 class="bp-keys-title" id="bpKeysTitle">أهم النقاط</h2>
+    <ul class="bp-keys-list">
+      {points.map((pt) => (
+        <li class="bp-key">
+          {pt.detail ? (
+            <details>
+              <summary>
+                <span class="bp-key-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <span class="bp-key-text" set:html={pt.title} />
+                <span class="bp-key-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="bp-key-detail" set:html={pt.detail} />
+            </details>
+          ) : (
+            <div class="bp-key-row">
+              <span class="bp-key-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+              <span class="bp-key-text" set:html={pt.title} />
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

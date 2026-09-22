@@ -75,6 +75,24 @@
    ]
   ]
  },
+ "/images/ac-filter-cleaning-cairo-dust-cover-u.webp": {
+  "w": 1200,
+  "h": 798,
+  "variants": [
+   [
+    400,
+    "/images/v/ac-filter-cleaning-cairo-dust-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ac-filter-cleaning-cairo-dust-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ac-filter-cleaning-cairo-dust-cover-u-1200.webp"
+   ]
+  ]
+ },
  "/images/ac-hub.webp": {
   "w": 800,
   "h": 533,
@@ -86,6 +104,24 @@
    [
     800,
     "/images/v/ac-hub-800.webp"
+   ]
+  ]
+ },
+ "/images/ac-maintenance-presummer-alexandria-salt-corrosion-cover-u.webp": {
+  "w": 1200,
+  "h": 798,
+  "variants": [
+   [
+    400,
+    "/images/v/ac-maintenance-presummer-alexandria-salt-corrosion-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ac-maintenance-presummer-alexandria-salt-corrosion-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ac-maintenance-presummer-alexandria-salt-corrosion-cover-u-1200.webp"
    ]
   ]
  },
@@ -144,6 +180,90 @@
    [
     900,
     "/images/adawat-tanzim-al-maktab-3-1786220445000-568979.webp"
+   ]
+  ]
+ },
+ "/images/alexandria-cash-machines-hero.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/alexandria-cash-machines-hero-400.webp"
+   ],
+   [
+    800,
+    "/images/v/alexandria-cash-machines-hero-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/alexandria-cash-machines-hero-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/alexandria-cash-machines-hero-1600.webp"
+   ]
+  ]
+ },
+ "/images/alexandria-copiers-hero.webp": {
+  "w": 1280,
+  "h": 848,
+  "variants": [
+   [
+    400,
+    "/images/v/alexandria-copiers-hero-400.webp"
+   ],
+   [
+    800,
+    "/images/v/alexandria-copiers-hero-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/alexandria-copiers-hero-1200.webp"
+   ],
+   [
+    1280,
+    "/images/alexandria-copiers-hero.webp"
+   ]
+  ]
+ },
+ "/images/alexandria-office-supplies-hero.webp": {
+  "w": 1280,
+  "h": 843,
+  "variants": [
+   [
+    400,
+    "/images/v/alexandria-office-supplies-hero-400.webp"
+   ],
+   [
+    800,
+    "/images/v/alexandria-office-supplies-hero-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/alexandria-office-supplies-hero-1200.webp"
+   ],
+   [
+    1280,
+    "/images/alexandria-office-supplies-hero.webp"
+   ]
+  ]
+ },
+ "/images/buy-vs-rent-copier-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/buy-vs-rent-copier-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/buy-vs-rent-copier-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/buy-vs-rent-copier-cover-u-1200.webp"
    ]
   ]
  },
@@ -219,6 +339,60 @@
    ]
   ]
  },
+ "/images/cash-counter-banks-retail-cairo-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cash-counter-banks-retail-cairo-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cash-counter-banks-retail-cairo-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cash-counter-banks-retail-cairo-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/cash-counter-before-holidays-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cash-counter-before-holidays-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cash-counter-before-holidays-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cash-counter-before-holidays-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/cash-counter-shops-alexandria-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cash-counter-shops-alexandria-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cash-counter-shops-alexandria-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cash-counter-shops-alexandria-cover-u-1200.webp"
+   ]
+  ]
+ },
  "/images/cash-machines-hub.webp": {
   "w": 800,
   "h": 533,
@@ -230,6 +404,24 @@
    [
     800,
     "/images/v/cash-machines-hub-800.webp"
+   ]
+  ]
+ },
+ "/images/cctv-factories-warehouses-alexandria-cover-u.webp": {
+  "w": 1200,
+  "h": 993,
+  "variants": [
+   [
+    400,
+    "/images/v/cctv-factories-warehouses-alexandria-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cctv-factories-warehouses-alexandria-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cctv-factories-warehouses-alexandria-cover-u-1200.webp"
    ]
   ]
  },
@@ -287,6 +479,24 @@
    ]
   ]
  },
+ "/images/cctv-shops-alexandria-corniche-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cctv-shops-alexandria-corniche-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cctv-shops-alexandria-corniche-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cctv-shops-alexandria-corniche-cover-u-1200.webp"
+   ]
+  ]
+ },
  "/images/company-seals-egypt-office-supplies-guide-1-1786220562000-334004.webp": {
   "w": 1115,
   "h": 1600,
@@ -338,6 +548,42 @@
    [
     1067,
     "/images/company-seals-egypt-office-supplies-guide-3-1786220598000-752577.webp"
+   ]
+  ]
+ },
+ "/images/copier-fleet-maintenance-contract-cairo-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/copier-fleet-maintenance-contract-cairo-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/copier-fleet-maintenance-contract-cairo-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/copier-fleet-maintenance-contract-cairo-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/copier-import-export-alexandria-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/copier-import-export-alexandria-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/copier-import-export-alexandria-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/copier-import-export-alexandria-cover-u-1200.webp"
    ]
   ]
  },
@@ -573,6 +819,24 @@
    ]
   ]
  },
+ "/images/egypt-photocopier-prices-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/egypt-photocopier-prices-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/egypt-photocopier-prices-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/egypt-photocopier-prices-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/hero-office.webp": {
   "w": 1200,
   "h": 800,
@@ -704,6 +968,24 @@
    [
     1068,
     "/images/laser-photocopier-color-vs-black-white-office-guide-3-1786220827000-677261.webp"
+   ]
+  ]
+ },
+ "/images/laser-photocopier-color-vs-black-white-office-guide-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/laser-photocopier-color-vs-black-white-office-guide-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/laser-photocopier-color-vs-black-white-office-guide-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/laser-photocopier-color-vs-black-white-office-guide-body-u-1200.webp"
    ]
   ]
  },
@@ -898,6 +1180,24 @@
    ]
   ]
  },
+ "/images/office-ac-electricity-saving-cover-u.webp": {
+  "w": 1200,
+  "h": 801,
+  "variants": [
+   [
+    400,
+    "/images/v/office-ac-electricity-saving-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-ac-electricity-saving-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-ac-electricity-saving-cover-u-1200.webp"
+   ]
+  ]
+ },
  "/images/office-envelopes-packaging-types-sizes-guide-1-1786220772000-918760.webp": {
   "w": 1600,
   "h": 1068,
@@ -957,6 +1257,24 @@
    [
     1067,
     "/images/office-envelopes-packaging-types-sizes-guide-3-1786220793000-848364.webp"
+   ]
+  ]
+ },
+ "/images/office-envelopes-packaging-types-sizes-guide-body-u.webp": {
+  "w": 1200,
+  "h": 795,
+  "variants": [
+   [
+    400,
+    "/images/v/office-envelopes-packaging-types-sizes-guide-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-envelopes-packaging-types-sizes-guide-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-envelopes-packaging-types-sizes-guide-body-u-1200.webp"
    ]
   ]
  },
@@ -1076,6 +1394,24 @@
    ]
   ]
  },
+ "/images/office-pens-writing-tools-guide-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/office-pens-writing-tools-guide-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-pens-writing-tools-guide-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-pens-writing-tools-guide-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/office-printer-1-1784574490402-190414.webp": {
   "w": 1068,
   "h": 1600,
@@ -1131,6 +1467,42 @@
    [
     1600,
     "/images/v/office-printer-3-1784574492260-155439-1600.webp"
+   ]
+  ]
+ },
+ "/images/office-setup-alexandria-smouha-cover-u.webp": {
+  "w": 1200,
+  "h": 675,
+  "variants": [
+   [
+    400,
+    "/images/v/office-setup-alexandria-smouha-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-setup-alexandria-smouha-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-setup-alexandria-smouha-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/office-setup-cairo-tagamoa-cover-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/office-setup-cairo-tagamoa-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-setup-cairo-tagamoa-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-setup-cairo-tagamoa-cover-u-1200.webp"
    ]
   ]
  },
@@ -1510,6 +1882,60 @@
    ]
   ]
  },
+ "/images/paper-shredder-buying-guide-cover-u.webp": {
+  "w": 1200,
+  "h": 901,
+  "variants": [
+   [
+    400,
+    "/images/v/paper-shredder-buying-guide-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/paper-shredder-buying-guide-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/paper-shredder-buying-guide-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/print-file-preparation-2.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/print-file-preparation-2-400.webp"
+   ],
+   [
+    800,
+    "/images/v/print-file-preparation-2-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/print-file-preparation-2-1200.webp"
+   ]
+  ]
+ },
+ "/images/print-file-preparation-cover.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/print-file-preparation-cover-400.webp"
+   ],
+   [
+    800,
+    "/images/v/print-file-preparation-cover-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/print-file-preparation-cover-1200.webp"
+   ]
+  ]
+ },
  "/images/printer-paper-tray-desk-1784572494985-248504.jpg": {
   "w": 1067,
   "h": 1600,
@@ -1539,6 +1965,42 @@
    [
     800,
     "/images/v/printing-hub-800.webp"
+   ]
+  ]
+ },
+ "/images/printing-terms-2.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/printing-terms-2-400.webp"
+   ],
+   [
+    800,
+    "/images/v/printing-terms-2-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/printing-terms-2-1200.webp"
+   ]
+  ]
+ },
+ "/images/printing-terms-cover.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/printing-terms-cover-400.webp"
+   ],
+   [
+    800,
+    "/images/v/printing-terms-cover-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/printing-terms-cover-1200.webp"
    ]
   ]
  },
@@ -1662,6 +2124,42 @@
    ]
   ]
  },
+ "/images/reception-area-setup-2.webp": {
+  "w": 1200,
+  "h": 684,
+  "variants": [
+   [
+    400,
+    "/images/v/reception-area-setup-2-400.webp"
+   ],
+   [
+    800,
+    "/images/v/reception-area-setup-2-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/reception-area-setup-2-1200.webp"
+   ]
+  ]
+ },
+ "/images/reception-area-setup-cover.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/reception-area-setup-cover-400.webp"
+   ],
+   [
+    800,
+    "/images/v/reception-area-setup-cover-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/reception-area-setup-cover-1200.webp"
+   ]
+  ]
+ },
  "/images/reduce-printing-costs-1-1784574479150-146646.webp": {
   "w": 1067,
   "h": 1600,
@@ -1721,6 +2219,60 @@
    [
     1600,
     "/images/v/reduce-printing-costs-3-1784574480416-948374-1600.webp"
+   ]
+  ]
+ },
+ "/images/remote-cctv-multi-branch-cairo-cover-u.webp": {
+  "w": 1200,
+  "h": 950,
+  "variants": [
+   [
+    400,
+    "/images/v/remote-cctv-multi-branch-cairo-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/remote-cctv-multi-branch-cairo-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/remote-cctv-multi-branch-cairo-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/safety-signage-2.webp": {
+  "w": 1200,
+  "h": 796,
+  "variants": [
+   [
+    400,
+    "/images/v/safety-signage-2-400.webp"
+   ],
+   [
+    800,
+    "/images/v/safety-signage-2-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/safety-signage-2-1200.webp"
+   ]
+  ]
+ },
+ "/images/safety-signage-cover.webp": {
+  "w": 1200,
+  "h": 675,
+  "variants": [
+   [
+    400,
+    "/images/v/safety-signage-cover-400.webp"
+   ],
+   [
+    800,
+    "/images/v/safety-signage-cover-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/safety-signage-cover-1200.webp"
    ]
   ]
  },

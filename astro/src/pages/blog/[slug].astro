@@ -4,9 +4,10 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import ServiceLinks from '../../components/ServiceLinks.astro';
+import KeyPoints from '../../components/KeyPoints.astro';
 import '../../styles/blog-post.css';
 import * as cheerio from 'cheerio';
-import { enhanceImages, normalizeHeadings, wrapTables } from '../../lib/enhance-post-html';
+import { enhanceImages, extractKeyPoints, normalizeHeadings, wrapTables } from '../../lib/enhance-post-html';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => data.status === 'published');
@@ -93,7 +94,10 @@ const bodyHtmlWithoutSchema = p.body_html.replace(
   (_match, json) => { bodySchemas.push(json.trim()); return ''; },
 );
 
-const { introHtml, chapters, headings } = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(bodyHtmlWithoutSchema))));
+// The "أهم النقاط" summary renders as its own expandable card, not chapter 01.
+const { html: bodyHtmlWithoutKeys, points: keyPoints } = extractKeyPoints(bodyHtmlWithoutSchema);
+
+const { introHtml, chapters, headings } = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(bodyHtmlWithoutKeys))));
 const readMinutes = estimateReadMinutes(p.body_html);
 
 const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
@@ -181,6 +185,8 @@ const articleSchema = JSON.stringify({
 
       <article class="bp-content" id="bpContent">
         <Fragment set:html={introHtml} />
+
+        <KeyPoints points={keyPoints} />
 
         {headings.length > 0 && (
           <details class="bp-toc">

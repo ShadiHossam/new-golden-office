@@ -14,6 +14,8 @@
 //   --count=N           pictures per article, cover included (default 2)
 //   --only=1,2,3        just these articles (filenames without .md)
 //   --sources=a,b       pexels,pixabay (default both — whichever has a key)
+//   --pages=N           result pages to search per phrase, 40 photos each (default 1);
+//                       raise it once the first page's matches are all used up
 //   --dry-run           search and report, download nothing
 //
 // The queries file maps each article to English search phrases:
@@ -38,12 +40,13 @@ const BLOCKED = /\b(beer|wine|alcohol\w*|whisk(e)?y|vodka|cocktail|pub|bar count
 const CACHE_MS = 23 * 3600 * 1000;
 
 function parseArgs(argv) {
-  const opts = { folder: null, queries: null, count: 2, only: null, sources: ['pexels', 'pixabay'], dryRun: false };
+  const opts = { folder: null, queries: null, count: 2, only: null, sources: ['pexels', 'pixabay'], pages: 1, dryRun: false };
   for (const arg of argv) {
     if (arg === '--dry-run') opts.dryRun = true;
     else if (arg.startsWith('--queries=')) opts.queries = path.resolve(arg.slice(10));
     else if (arg.startsWith('--count=')) opts.count = parseInt(arg.slice(8), 10);
     else if (arg.startsWith('--only=')) opts.only = arg.slice(7).split(',').map(s => s.trim()).filter(Boolean);
+    else if (arg.startsWith('--pages=')) opts.pages = parseInt(arg.slice(8), 10);
     else if (arg.startsWith('--sources=')) opts.sources = arg.slice(10).split(',').map(s => s.trim());
     else if (arg.startsWith('--')) throw new Error(`Unknown option: ${arg}`);
     else opts.folder = path.resolve(arg);
@@ -51,6 +54,7 @@ function parseArgs(argv) {
   if (!opts.folder) throw new Error('Pass the articles folder');
   if (!opts.queries) throw new Error('Pass --queries=<file.json>');
   if (!(opts.count >= 1)) throw new Error(`--count must be 1 or more, got "${opts.count}"`);
+  if (!(opts.pages >= 1)) throw new Error(`--pages must be 1 or more, got "${opts.pages}"`);
   return opts;
 }
 
@@ -91,8 +95,8 @@ async function getJson(source, url, headers = {}) {
   throw new Error(`${source}: still failing after several tries — stopping so no article is skipped; run again to resume`);
 }
 
-async function searchPexels(query, key) {
-  const params = new URLSearchParams({ query, orientation: 'landscape', per_page: '40' });
+async function searchPexels(query, key, page) {
+  const params = new URLSearchParams({ query, orientation: 'landscape', per_page: '40', page: String(page) });
   const data = await getJson('pexels', `https://api.pexels.com/v1/search?${params}`, { Authorization: key });
   return (data.photos || []).map((p, rank) => ({
     source: 'pexels', id: `pexels-${p.id}`, rank, width: p.width, height: p.height,
@@ -101,10 +105,10 @@ async function searchPexels(query, key) {
   }));
 }
 
-async function searchPixabay(query, key) {
+async function searchPixabay(query, key, page) {
   const params = new URLSearchParams({
     key, q: query.slice(0, 100), image_type: 'photo', orientation: 'horizontal',
-    safesearch: 'true', min_width: '1280', per_page: '40', lang: 'en',
+    safesearch: 'true', min_width: '1280', per_page: '40', page: String(page), lang: 'en',
   });
   const data = await getJson('pixabay', `https://pixabay.com/api/?${params}`);
   return (data.hits || []).map((h, rank) => ({
@@ -114,13 +118,14 @@ async function searchPixabay(query, key) {
   }));
 }
 
-async function search(source, query, key, cacheDir) {
-  const hash = crypto.createHash('sha1').update(query.toLowerCase()).digest('hex').slice(0, 16);
+async function search(source, query, key, cacheDir, page = 1) {
+  // Page 1 keeps its old cache name, so earlier runs' caches still count.
+  const hash = crypto.createHash('sha1').update(query.toLowerCase() + (page > 1 ? `#${page}` : '')).digest('hex').slice(0, 16);
   const file = path.join(cacheDir, `${source}-${hash}.json`);
   if (fs.existsSync(file) && Date.now() - fs.statSync(file).mtimeMs < CACHE_MS) {
     return JSON.parse(fs.readFileSync(file, 'utf-8'));
   }
-  const results = source === 'pexels' ? await searchPexels(query, key) : await searchPixabay(query, key);
+  const results = source === 'pexels' ? await searchPexels(query, key, page) : await searchPixabay(query, key, page);
   fs.mkdirSync(cacheDir, { recursive: true });
   fs.writeFileSync(file, JSON.stringify(results));
   return results;
@@ -219,7 +224,9 @@ async function pictureIndex(dirs) {
   return {
     async match(file) {
       const h = await hash(file);
-      const hit = known.find(k => k.file !== file && distance(k.h, h) <= 6);
+      // A full-size download sits up to ~9 bits from our own 1200px copy of the
+      // same photo, so the cut-off is 10 — a false alarm only costs a candidate.
+      const hit = known.find(k => k.file !== file && distance(k.h, h) <= 10);
       return hit ? path.relative(process.cwd(), hit.file) : null;
     },
     async add(file) { known.push({ file, h: await hash(file) }); },
@@ -288,7 +295,8 @@ async function main() {
         for (const q of ordered) {
           let results;
           try {
-            results = await search(source, q, keys[source], cacheDir);
+            results = [];
+            for (let page = 1; page <= opts.pages; page++) results.push(...await search(source, q, keys[source], cacheDir, page));
           } catch (e) {
             // Keep what this article already got, then stop the whole run.
             if (!opts.dryRun) fs.writeFileSync(creditsPath, JSON.stringify(credits, null, 2));

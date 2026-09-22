@@ -104,3 +104,51 @@ function attrString($el: cheerio.Cheerio<any>): string {
     .map(([k, v]) => ` ${k}="${String(v).replace(/"/g, '&quot;')}"`)
     .join('');
 }
+
+export interface KeyPoint { title: string; detail: string }
+
+/**
+ * Pulls the "أهم النقاط" summary out of stored post HTML so the page can render
+ * it as the expandable key-points card instead of an ordinary numbered chapter.
+ *
+ * Only the post's first heading counts, and only when a <ul> follows it within
+ * a lead-in paragraph or two — a later section that happens to use the phrase
+ * stays in the article. Each <li> written as "<strong>title</strong> — detail"
+ * becomes a point that opens to show the detail; a <li> with no bold title is
+ * kept as a plain point with nothing to open.
+ */
+export function extractKeyPoints(html: string): { html: string; points: KeyPoint[] } {
+  if (!html) return { html, points: [] };
+  const $ = cheerio.load(html, null, false);
+
+  const heading = $.root().children('h1, h2, h3, h4, h5, h6').first();
+  if (!heading.length || !heading.text().includes('أهم النقاط')) return { html, points: [] };
+
+  const leadIns: cheerio.Cheerio<any>[] = [];
+  let next = heading.next();
+  while (next.length && next.is('p') && leadIns.length < 2) {
+    leadIns.push(next);
+    next = next.next();
+  }
+  if (!next.is('ul')) return { html, points: [] };
+
+  const points: KeyPoint[] = [];
+  next.children('li').each((_, li) => {
+    const $li = $(li);
+    const first = $li.contents().filter((_, n) => !(n.type === 'text' && !$(n).text().trim())).first();
+    if (first.is('strong') || first.is('b')) {
+      const title = first.html()?.trim() ?? '';
+      first.remove();
+      const detail = ($li.html() ?? '').trim().replace(/^[—–\-:،]\s*/, '').trim();
+      points.push({ title, detail });
+    } else {
+      points.push({ title: ($li.html() ?? '').trim(), detail: '' });
+    }
+  });
+  if (!points.length) return { html, points: [] };
+
+  heading.remove();
+  leadIns.forEach((p) => p.remove());
+  next.remove();
+  return { html: $.html(), points };
+}

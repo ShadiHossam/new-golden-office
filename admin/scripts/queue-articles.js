@@ -112,6 +112,10 @@ function escapeAttr(s) {
 function inline(text) {
   return text
     .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (m, alt, src) => `<img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" loading="lazy">`)
+    // The writers leave "[label]([[رابط واتساب: يضعه الفريق]])" for the team to
+    // fill in; its target has spaces, so the generic link rule below skips it
+    // and it would go live as raw text. Point it at the business WhatsApp.
+    .replace(/\[([^\[\]]+)\]\(\[\[رابط واتساب[^\]]*\]\]\)/g, (m, label) => `<a href="https://wa.me/201227392074" target="_blank" rel="noopener">${label}</a>`)
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, label, href) => `<a href="${escapeAttr(href)}">${label}</a>`)
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|\s)\*([^*\n]+)\*(?=\s|$|[.,!؟?])/g, '$1<em>$2</em>')
