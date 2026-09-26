@@ -1197,10 +1197,10 @@
     "og_title": "",
     "og_description": "",
     "og_image": "",
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-09-17T19:15:46Z",
-    "updated_at": "2026-09-17T19:15:46Z",
-    "published_at": null,
+    "updated_at": "2026-09-26T08:17:01.828Z",
+    "published_at": "2026-09-26T08:17:01.828Z",
     "scheduled_at": "2026-09-26T08:00:00Z",
     "source_file": "1102.md"
   },
