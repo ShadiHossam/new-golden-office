@@ -19,7 +19,14 @@ const { writeAstroBlogEntry, triggerAstroRebuild } = require('../lib/astro-sync'
 const ADMIN_ROOT = path.join(__dirname, '..');
 const SITE_ROOT = path.join(ADMIN_ROOT, '..');
 const LOG_PATH = path.join(ADMIN_ROOT, 'data', 'cron-publish.log');
+const IMAGE_META_PATH = path.join(SITE_ROOT, 'astro', 'src', 'data', 'image-meta.json');
 const fs = require('fs');
+
+// Cover plus every <img> in the body, as the site-relative keys image-meta.json uses.
+function postImages(post) {
+  const srcs = [post.cover_image, ...[...(post.body_html || '').matchAll(/<img[^>]*\ssrc="([^"]+)"/g)].map(m => m[1])];
+  return srcs.filter(Boolean).map(s => s.trim().replace(/^https?:\/\/(www\.)?newgoldenoffice\.com/, ''));
+}
 
 function log(msg) {
   const line = `[${new Date().toISOString()}] ${msg}\n`;
@@ -38,9 +45,19 @@ function main() {
 
   // A post with no cover image never goes live — it stays a draft and keeps
   // being reported here until someone adds a picture.
-  const due = dueAll.filter(p => (p.cover_image || '').trim());
+  const withCover = dueAll.filter(p => (p.cover_image || '').trim());
   for (const p of dueAll.filter(p => !(p.cover_image || '').trim())) {
     log(`SKIPPED (no cover image): ${p.slug}`);
+  }
+
+  // Same for pictures without a reviewed alt/title in image-meta.json: the
+  // site would otherwise fall back to the post title as alt and no title.
+  const imageMeta = JSON.parse(fs.readFileSync(IMAGE_META_PATH, 'utf-8'));
+  const due = [];
+  for (const p of withCover) {
+    const missing = postImages(p).filter(src => !imageMeta[src]);
+    if (missing.length) log(`SKIPPED (no alt/title in image-meta.json for ${missing.join(', ')}): ${p.slug}`);
+    else due.push(p);
   }
 
   if (!due.length) {

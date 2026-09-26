@@ -41,6 +41,12 @@ walk('src', (p) => {
   if (!/\.(astro|ts|json)$/.test(p)) return;
   for (const m of fs.readFileSync(p, 'utf8').matchAll(RE)) refs.add(m[1]);
 });
+// Scheduled drafts too: the server's daily publish only rebuilds, it never
+// runs this script, so a draft's variants must exist before its publish day.
+const BLOG_JSON = '../admin/data/blog.json';
+if (fs.existsSync(BLOG_JSON)) {
+  for (const m of fs.readFileSync(BLOG_JSON, 'utf8').matchAll(RE)) refs.add(m[1]);
+}
 
 /* ---------- process ---------- */
 const manifest = {};
