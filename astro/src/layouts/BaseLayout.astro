@@ -207,6 +207,12 @@ const localBusinessSchema = JSON.stringify({
   <link rel="canonical" href={canonical}>
   <link rel="dns-prefetch" href="https://wa.me">
   {preloadImage && <link rel="preload" href={preloadImage} as="image">}
+  <!-- The Arabic subsets of the heading (Cairo) and body (Tajawal) fonts are
+       on every first screen; preloading them skips waiting for global.css to
+       be parsed before the browser discovers them. crossorigin is required
+       for font preloads even on the same origin, or the file is fetched twice. -->
+  <link rel="preload" href="/fonts/cairo-arabic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/tajawal-400-arabic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href={`/styles/icons.css?v=${iconsCssVersion}`}>
   <link rel="stylesheet" href={`/styles/global.css?v=${globalCssVersion}`}>
   <script type="application/ld+json" set:html={localBusinessSchema} />
