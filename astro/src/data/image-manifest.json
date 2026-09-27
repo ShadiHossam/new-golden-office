@@ -347,7 +347,7 @@
  },
  "/images/ac-filters-and-dust-2.webp": {
   "w": 1200,
-  "h": 412,
+  "h": 800,
   "variants": [
    [
     400,
@@ -1223,7 +1223,7 @@
  },
  "/images/alexandria-print-shop-2.webp": {
   "w": 1200,
-  "h": 900,
+  "h": 800,
   "variants": [
    [
     400,
@@ -1241,7 +1241,7 @@
  },
  "/images/alexandria-print-shop-cover.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 798,
   "variants": [
    [
     400,
@@ -1583,7 +1583,7 @@
  },
  "/images/banknote-sorters-2.webp": {
   "w": 1200,
-  "h": 811,
+  "h": 800,
   "variants": [
    [
     400,
@@ -2537,7 +2537,7 @@
  },
  "/images/carbon-paper-2.webp": {
   "w": 1200,
-  "h": 663,
+  "h": 800,
   "variants": [
    [
     400,
@@ -2785,7 +2785,7 @@
  },
  "/images/cash-transfer-between-branches-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 750,
   "variants": [
    [
     400,
@@ -2893,7 +2893,7 @@
  },
  "/images/cashier-station-setup-2.webp": {
   "w": 1200,
-  "h": 675,
+  "h": 800,
   "variants": [
    [
     400,
@@ -4457,7 +4457,7 @@
  },
  "/images/corniche-restaurant-services-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 903,
   "variants": [
    [
     400,
@@ -4655,7 +4655,7 @@
  },
  "/images/counterfeit-detector-cost-cover.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 857,
   "variants": [
    [
     400,
@@ -4987,7 +4987,7 @@
  },
  "/images/digital-printing-cost-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 900,
   "variants": [
    [
     400,
@@ -5291,6 +5291,24 @@
    ]
   ]
  },
+ "/images/dtf-printing-cover-u.webp": {
+  "w": 1200,
+  "h": 1200,
+  "variants": [
+   [
+    400,
+    "/images/v/dtf-printing-cover-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/dtf-printing-cover-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/dtf-printing-cover-u-1200.webp"
+   ]
+  ]
+ },
  "/images/dtf-printing-cover.webp": {
   "w": 1200,
   "h": 800,
@@ -5365,7 +5383,7 @@
  },
  "/images/duplex-printing-cover.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 801,
   "variants": [
    [
     400,
@@ -5599,7 +5617,7 @@
  },
  "/images/electronic-safes-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 799,
   "variants": [
    [
     400,
@@ -6517,7 +6535,7 @@
  },
  "/images/flyer-sizes-cover.webp": {
   "w": 1200,
-  "h": 900,
+  "h": 800,
   "variants": [
    [
     400,
@@ -8401,7 +8419,7 @@
  },
  "/images/monthly-paper-consumption-2.webp": {
   "w": 1200,
-  "h": 675,
+  "h": 800,
   "variants": [
    [
     400,
@@ -8653,7 +8671,7 @@
  },
  "/images/new-cairo-office-setup-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 782,
   "variants": [
    [
     400,
@@ -9061,7 +9079,7 @@
  },
  "/images/office-air-quality-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 801,
   "variants": [
    [
     400,
@@ -9765,7 +9783,7 @@
  },
  "/images/office-supplies-inventory-cover.webp": {
   "w": 1200,
-  "h": 788,
+  "h": 800,
   "variants": [
    [
     400,
@@ -10079,7 +10097,7 @@
  },
  "/images/outdoor-unit-placement-2.webp": {
   "w": 1200,
-  "h": 801,
+  "h": 800,
   "variants": [
    [
     400,
@@ -10807,7 +10825,7 @@
  },
  "/images/photocopier-operating-environment-2.webp": {
   "w": 1200,
-  "h": 900,
+  "h": 800,
   "variants": [
    [
     400,
@@ -12587,7 +12605,7 @@
  },
  "/images/refurbished-photocopiers-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 900,
   "variants": [
    [
     400,
@@ -13753,7 +13771,7 @@
  },
  "/images/shredder-maintenance-cover.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 766,
   "variants": [
    [
     400,
@@ -13843,7 +13861,7 @@
  },
  "/images/sidi-gaber-office-setup-2.webp": {
   "w": 1200,
-  "h": 734,
+  "h": 801,
   "variants": [
    [
     400,
@@ -14115,7 +14133,7 @@
  },
  "/images/smouha-office-setup-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 808,
   "variants": [
    [
     400,
@@ -14771,7 +14789,7 @@
  },
  "/images/thermal-paper-cost-cover.webp": {
   "w": 1200,
-  "h": 797,
+  "h": 800,
   "variants": [
    [
     400,
@@ -14995,7 +15013,7 @@
  },
  "/images/tshirt-printing-cost-2.webp": {
   "w": 1200,
-  "h": 957,
+  "h": 800,
   "variants": [
    [
     400,
@@ -15103,7 +15121,7 @@
  },
  "/images/ups-for-cctv-2.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 735,
   "variants": [
    [
     400,
@@ -15121,7 +15139,7 @@
  },
  "/images/ups-for-cctv-cover.webp": {
   "w": 1200,
-  "h": 800,
+  "h": 978,
   "variants": [
    [
     400,
@@ -15283,7 +15301,7 @@
  },
  "/images/variable-data-printing-2.webp": {
   "w": 1200,
-  "h": 795,
+  "h": 900,
   "variants": [
    [
     400,
