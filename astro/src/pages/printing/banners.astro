@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -47,103 +46,179 @@ const schemaJson = JSON.stringify({
 />
 
 <!-- MAIN CONTENT -->
-<section class="service-detail">
+<section class="stats-section">
   <div class="container">
-    <div class="service-detail-grid">
-      <div class="service-content">
-        <ContentIntro
-          heading="طباعة بنرات ولافتات احترافية في مصر"
-          text="البنرات واللافتات هي واجهتك التجارية الأولى — هي ما يراه العميل قبل أن يدخل محلك أو يزور معرضك. في نيو جولدن أوفيس، ندرك أهمية هذه اللحظة الأولى، لذا نحرص على تقديم طباعة بنرات وفينيل بجودة استثنائية وألوان زاهية مقاومة للتلاشي. نخدم عملاءنا في الإسكندرية والقاهرة وجميع محافظات مصر منذ عام 1999."
-        />
-        <h2>طباعة فينيل وبنرات — الأنواع التي نطبعها</h2>
-        <p>نوفر في نيو جولدن أوفيس تشكيلة شاملة من خدمات طباعة البنرات تلبي جميع الاحتياجات:</p>
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-        <h3>بنرات الفليكس الخارجية (Outdoor Flex)</h3>
-        <p>البنرات الخارجية المصنوعة من الفليكس هي الخيار الأمثل للمحلات التجارية والشوارع والمنافذ الرئيسية. تتميز بمقاومتها للأمطار وأشعة الشمس والرياح، مع الحفاظ على حيوية ألوانها لفترات طويلة. نطبع على فليكس بسماكات مختلفة (340 جرام، 440 جرام، 550 جرام) حسب الاحتياج.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>طباعة بنرات ولافتات احترافية في مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">البنرات واللافتات هي واجهتك التجارية الأولى — هي ما يراه العميل قبل أن يدخل محلك أو يزور معرضك. في نيو جولدن أوفيس، ندرك أهمية هذه اللحظة الأولى، لذا نحرص على تقديم طباعة بنرات وفينيل بجودة استثنائية وألوان زاهية مقاومة للتلاشي. نخدم عملاءنا في الإسكندرية والقاهرة وجميع محافظات مصر منذ عام 1999.</p>
+  </div>
+</section>
 
-        <h3>بنرات الداخلية (Indoor Banners)</h3>
-        <p>مثالية للمعارض والمولات والفعاليات الداخلية. تتميز بألوان أكثر إشراقاً وتفاصيل أدق لأنها لا تحتاج إلى مقاومة العوامل الجوية. نطبع على خامات ناعمة مختلفة تعطي مظهراً راقياً في الأماكن المغلقة.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>طباعة فينيل وبنرات — الأنواع التي نطبعها</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">نوفر في نيو جولدن أوفيس تشكيلة شاملة من خدمات طباعة البنرات تلبي جميع الاحتياجات:</p>
+    <div class="features-grid landing-cards">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>بنرات الفليكس الخارجية (Outdoor Flex)</h3><p>البنرات الخارجية المصنوعة من الفليكس هي الخيار الأمثل للمحلات التجارية والشوارع والمنافذ الرئيسية. تتميز بمقاومتها للأمطار وأشعة الشمس والرياح، مع الحفاظ على حيوية ألوانها لفترات طويلة. نطبع على فليكس بسماكات مختلفة (340 جرام، 440 جرام، 550 جرام) حسب الاحتياج.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>بنرات الداخلية (Indoor Banners)</h3><p>مثالية للمعارض والمولات والفعاليات الداخلية. تتميز بألوان أكثر إشراقاً وتفاصيل أدق لأنها لا تحتاج إلى مقاومة العوامل الجوية. نطبع على خامات ناعمة مختلفة تعطي مظهراً راقياً في الأماكن المغلقة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>طباعة الميش (Mesh Banners)</h3><p>البنرات الشبكية مثالية للمناطق التي تتعرض لرياح قوية، حيث تسمح للهواء بالمرور من خلالها دون أن تتلف. تُستخدم على واجهات المباني الشاهقة والأسيجة والأسوار الخارجية.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3>طباعة الكانفاس والقماش</h3><p>لافتات قماشية ذات مظهر فاخر ومتميز، مثالية للفنادق والمطاعم الراقية وحفلات الأعراس والمناسبات الخاصة. الكانفاس يمنح طابعاً فنياً وأنيقاً لا يضاهيه شيء.</p></div>
+    </div>
+  </div>
+</section>
 
-        <MidPageCTA formId="prnBannersMidCta" />
+<MidPageCTA formId="prnBannersMidCta" />
 
-        <h3>طباعة الميش (Mesh Banners)</h3>
-        <p>البنرات الشبكية مثالية للمناطق التي تتعرض لرياح قوية، حيث تسمح للهواء بالمرور من خلالها دون أن تتلف. تُستخدم على واجهات المباني الشاهقة والأسيجة والأسوار الخارجية.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>المقاسات المتاحة لطباعة البنرات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
+        { icon: 'fa-compress-arrows-alt', title: 'مقاسات صغيرة', text: 'من 50 سم × 100 سم للعروض والتصريحات الصغيرة' },
+        { icon: 'fa-expand-arrows-alt', title: 'مقاسات متوسطة', text: 'من 1 متر × 2 متر للمحلات والمكاتب' },
+        { icon: 'fa-arrows-alt', title: 'مقاسات كبيرة', text: '2 متر × 4 متر و3 متر × 6 متر للواجهات الرئيسية' },
+        { icon: 'fa-building', title: 'مقاسات ضخمة', text: 'أكبر من 3 متر × 10 متر للمشاريع الكبرى' },
+        { icon: 'fa-ruler', title: 'مقاسات مخصصة', text: 'نطبع بأي مقاس تحتاجه بدون قيود' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h3>طباعة الكانفاس والقماش</h3>
-        <p>لافتات قماشية ذات مظهر فاخر ومتميز، مثالية للفنادق والمطاعم الراقية وحفلات الأعراس والمناسبات الخاصة. الكانفاس يمنح طابعاً فنياً وأنيقاً لا يضاهيه شيء.</p>
-        <h2>المقاسات المتاحة لطباعة البنرات</h2>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-compress-arrows-alt', title: 'مقاسات صغيرة', text: 'من 50 سم × 100 سم للعروض والتصريحات الصغيرة' },
-          { icon: 'fa-expand-arrows-alt', title: 'مقاسات متوسطة', text: 'من 1 متر × 2 متر للمحلات والمكاتب' },
-          { icon: 'fa-arrows-alt', title: 'مقاسات كبيرة', text: '2 متر × 4 متر و3 متر × 6 متر للواجهات الرئيسية' },
-          { icon: 'fa-building', title: 'مقاسات ضخمة', text: 'أكبر من 3 متر × 10 متر للمشاريع الكبرى' },
-          { icon: 'fa-ruler', title: 'مقاسات مخصصة', text: 'نطبع بأي مقاس تحتاجه بدون قيود' },
-        ]} />
-        <h2>مقاومة الأشعة فوق البنفسجية وعوامل الطقس</h2>
-        <p>نستخدم أحبار خاصة مقاومة للأشعة فوق البنفسجية (UV Resistant Inks) تضمن بقاء ألوان بنراتك زاهية لأطول فترة ممكنة. في مناخ مصر الحار وتحت أشعة الشمس الحارقة، هذه الأحبار الخاصة تجعل الفرق بين بنر يصمد لأشهر وآخر يبهت في أسابيع.</p>
-        <h2>استخدامات البنرات واللافتات</h2>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-store', title: 'المحلات التجارية', text: 'لافتات الواجهة وبنرات العروض والتخفيضات' },
-          { icon: 'fa-users', title: 'المعارض والمؤتمرات', text: 'بنرات الخلفية (Backdrop) وبنرات الاستقبال' },
-          { icon: 'fa-vote-yea', title: 'حملات الانتخابات', text: 'لافتات الطرق والبنرات الانتخابية بجميع المقاسات' },
-          { icon: 'fa-heart', title: 'إعلانات الأفراح والمناسبات', text: 'بنرات ترحيب مخصصة للأفراح والحفلات' },
-          { icon: 'fa-road', title: 'الإعلانات الطرقية', text: 'بنرات الطرق السريعة والإشارات الكبيرة' },
-        ]} />
-        <h2>لماذا نيو جولدن أوفيس لطباعة البنرات؟</h2>
-        <p>بخبرة أكثر من 27 عاماً في طباعة اللافتات في الإسكندرية، نعرف تماماً ما يحتاجه عملاؤنا. ماكيناتنا الحديثة للطباعة الكبيرة (Large Format Printing) توفر دقة طباعة عالية وألواناً ثابتة على مساحات واسعة. ندعم التسليم السريع ونوفر خدمة التثبيت إذا احتجت.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>مقاومة الأشعة فوق البنفسجية وعوامل الطقس</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نستخدم أحبار خاصة مقاومة للأشعة فوق البنفسجية (UV Resistant Inks) تضمن بقاء ألوان بنراتك زاهية لأطول فترة ممكنة. في مناخ مصر الحار وتحت أشعة الشمس الحارقة، هذه الأحبار الخاصة تجعل الفرق بين بنر يصمد لأشهر وآخر يبهت في أسابيع.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>خامات إضافية للافتات: من الرول أب إلى الألومنيوم المركب</h2>
-        <p>إلى جانب الفليكس والميش والكانفاس، نطبع أيضاً على خامات أخرى بحسب مكان التركيب والغرض من اللافتة:</p>
-        <h3>الرول أب والإكس بانر (Roll-up / X-Banner Stands)</h3>
-        <p>حوامل عرض متنقلة تُستخدم في المعارض والمؤتمرات والاستقبالات، تُطوى وتُنقل بسهولة داخل حقيبة خاصة وتُنصب في دقيقة واحدة. مثالية لمن يحتاج لافتة يستخدمها في أكثر من مكان ومناسبة دون طباعة بنر جديد في كل مرة.</p>
-        <h3>البنرات المضيئة من الخلف (Backlit Banners)</h3>
-        <p>خامة شبه شفافة مصممة خصيصاً للعرض أمام مصدر إضاءة خلفي، تُستخدم في واجهات المحلات المضاءة وصناديق الإعلانات الليلية داخل المولات. الألوان تظهر بعمق ووضوح استثنائيين عند إضاءتها ليلاً، وهي من أكثر الحلول جذباً للانتباه في الشوارع التجارية المزدحمة.</p>
-        <h3>الطباعة على الألومنيوم المركب (Dibond) والأكريليك</h3>
-        <p>للافتات الثابتة طويلة الأمد مثل يافطات المكاتب والعيادات ولوحات الشركات الخارجية، نطبع على ألواح الألومنيوم المركب أو الأكريليك الشفاف باستخدام <a href="/printing/uv">طباعة UV لثبات الألوان بالخارج</a>، مع تجهيزات تركيب معدنية (Standoffs) تمنح مظهراً مؤسسياً راقياً يدوم لسنوات دون أن يتأثر بالعوامل الجوية كما تفعل الخامات القماشية.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>استخدامات البنرات واللافتات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
+        { icon: 'fa-store', title: 'المحلات التجارية', text: 'لافتات الواجهة وبنرات العروض والتخفيضات' },
+        { icon: 'fa-users', title: 'المعارض والمؤتمرات', text: 'بنرات الخلفية (Backdrop) وبنرات الاستقبال' },
+        { icon: 'fa-vote-yea', title: 'حملات الانتخابات', text: 'لافتات الطرق والبنرات الانتخابية بجميع المقاسات' },
+        { icon: 'fa-heart', title: 'إعلانات الأفراح والمناسبات', text: 'بنرات ترحيب مخصصة للأفراح والحفلات' },
+        { icon: 'fa-road', title: 'الإعلانات الطرقية', text: 'بنرات الطرق السريعة والإشارات الكبيرة' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>سيناريوهات استخدام حسب نوع عميلك</h2>
-        <p>كل قطاع له احتياج مختلف من البنرات، وفريقنا يرشح لك الخامة والمقاس الأنسب حسب مجال عملك:</p>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-store', title: 'صاحب محل تجاري', text: 'يحتاج لافتة واجهة دائمة بخامة مقاومة للطقس (فليكس 440-550 جرام أو ألومنيوم مركب)، وبنرات عروض موسمية أرخص وأسرع تغييراً (فليكس 340 جرام) لتحديثها كل موسم دون تكلفة كبيرة.' },
-          { icon: 'fa-calendar-alt', title: 'منظم فعاليات ومعارض', text: 'يحتاج مزيجاً من بنر خلفية كبير (Backdrop) للمسرح، ورول أب متعدد للاستقبال والزوايا، ولافتات توجيهية صغيرة داخل القاعة — كلها بألوان موحدة مع هوية الفعالية.' },
-          { icon: 'fa-hard-hat', title: 'شركة مقاولات أو عقارات', text: 'تحتاج لافتات مشروع ضخمة (3×6 متر فأكثر) تُعلّق على واجهة المبنى قيد الإنشاء، مقاومة للرياح والأتربة لفترات طويلة، غالباً بخامة الميش لتقليل حمل الرياح على الهيكل.' },
-          { icon: 'fa-heart', title: 'منظم حفلات أفراح ومناسبات', text: 'يفضّل خامة الكانفاس أو القماش الفاخر ببنر ترحيب مخصص بالأسماء، أو بنرات داخلية بألوان زاهية للخلفيات التصويرية (Photo Booth).' },
-          { icon: 'fa-vote-yea', title: 'مرشح انتخابي أو حملة توعية', text: 'يحتاج كميات كبيرة من اللافتات بمقاسات موحدة تُوزّع على مناطق جغرافية متعددة، مع تنسيق تسليم مجدول يغطي المحافظات المستهدفة.' },
-        ]} />
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا نيو جولدن أوفيس لطباعة البنرات؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>بخبرة أكثر من 27 عاماً في طباعة اللافتات في الإسكندرية، نعرف تماماً ما يحتاجه عملاؤنا. ماكيناتنا الحديثة للطباعة الكبيرة (Large Format Printing) توفر دقة طباعة عالية وألواناً ثابتة على مساحات واسعة. ندعم التسليم السريع ونوفر خدمة التثبيت إذا احتجت.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>تجهيز ملف التصميم للطباعة الكبيرة (Large Format)</h2>
-        <p>الطباعة واسعة الفورمات لها قواعد تختلف عن طباعة الأوراق العادية، ومراعاتها توفر عليك وقت المراجعات:</p>
-        <IconCardGrid columns={2} items={[
-          { icon: 'fa-search', title: 'الدقة والمقياس', text: 'نظراً لضخامة المقاس، لا يُشترط تصميم الملف بدقة 300 dpi على الحجم الفعلي كاملاً؛ يكفي تصميمه بمقياس مصغر (Scale) مثل 1:10 بدقة 300 dpi، أو تصميمه بالحجم الفعلي بدقة 72-150 dpi. المعيار الحقيقي هو مسافة المشاهدة: كلما شوهد البنر من بعيد، قلّت الدقة المطلوبة دون أن يلاحظ العين أي فرق.' },
-          { icon: 'fa-cut', title: 'هامش الأمان (Bleed) والمساحة الآمنة', text: 'نوصي بترك هامش قطع 3-5 سم على كل حافة للبنرات التي ستُلحم أو تُطوى حول إطار، مع إبقاء النصوص والعناصر المهمة بعيدة عن الحواف بمسافة كافية.' },
-          { icon: 'fa-circle-notch', title: 'أماكن العروات (Eyelets)', text: 'إذا كنت تحدد أماكن التثبيت مسبقاً (زوايا، أعمدة، إطار خشبي)، أخبرنا بمواصفات موقع التركيب لنحدد أماكن العروات المعدنية بشكل يتحمل وزن البنر واتجاه الرياح.' },
-          { icon: 'fa-palette', title: 'نظام الألوان', text: 'يُفضّل تصميم الملف بنظام CMYK لتقارب أقرب للنتيجة النهائية، مع العلم أن بعض الألوان الفسفورية الزاهية جداً تظهر بشكل مختلف قليلاً بسبب فارق طيف الألوان بين الشاشة والحبر.' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>خامات إضافية للافتات: من الرول أب إلى الألومنيوم المركب</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">إلى جانب الفليكس والميش والكانفاس، نطبع أيضاً على خامات أخرى بحسب مكان التركيب والغرض من اللافتة:</p>
+    <div class="features-grid landing-cards cols-3">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>الرول أب والإكس بانر (Roll-up / X-Banner Stands)</h3><p>حوامل عرض متنقلة تُستخدم في المعارض والمؤتمرات والاستقبالات، تُطوى وتُنقل بسهولة داخل حقيبة خاصة وتُنصب في دقيقة واحدة. مثالية لمن يحتاج لافتة يستخدمها في أكثر من مكان ومناسبة دون طباعة بنر جديد في كل مرة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>البنرات المضيئة من الخلف (Backlit Banners)</h3><p>خامة شبه شفافة مصممة خصيصاً للعرض أمام مصدر إضاءة خلفي، تُستخدم في واجهات المحلات المضاءة وصناديق الإعلانات الليلية داخل المولات. الألوان تظهر بعمق ووضوح استثنائيين عند إضاءتها ليلاً، وهي من أكثر الحلول جذباً للانتباه في الشوارع التجارية المزدحمة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>الطباعة على الألومنيوم المركب (Dibond) والأكريليك</h3><p>للافتات الثابتة طويلة الأمد مثل يافطات المكاتب والعيادات ولوحات الشركات الخارجية، نطبع على ألواح الألومنيوم المركب أو الأكريليك الشفاف باستخدام <a href="/printing/uv">طباعة UV لثبات الألوان بالخارج</a>، مع تجهيزات تركيب معدنية (Standoffs) تمنح مظهراً مؤسسياً راقياً يدوم لسنوات دون أن يتأثر بالعوامل الجوية كما تفعل الخامات القماشية.</p></div>
+    </div>
+  </div>
+</section>
 
-        <h2>خيارات التركيب والتثبيت</h2>
-        <p>بعد الطباعة، نوفر عدة خيارات لتجهيز البنر للتركيب حسب مكانه: عروات معدنية (Eyelets) على مسافات منتظمة لتثبيته بالحبال أو الأسلاك، جيوب طي للأعمدة (Pole Pockets) لتعليقه بين عمودين، لحام حراري لربط قطع متعددة عند تجاوز عرض الماكينة، وشريط لاصق مزدوج للتركيب المباشر على الواجهات الزجاجية والحوائط. إذا لم تكن لديك فريق تركيب، يمكننا توصيتك بفنيين تركيب متعاونين معنا في الإسكندرية والقاهرة.</p>
-      </div>
-      <aside class="service-sidebar">
-        <div class="sidebar-card">
-          <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
-          <div class="contact-info">
-            <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
-            <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-          </div>
-        </div>
-        <div class="sidebar-card">
-          <h3>خدمات الطباعة</h3>
-          <div class="sidebar-services">
-            <a href="/printing/offset" class="sidebar-service-link"><span>طباعة أوفست</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/digital" class="sidebar-service-link"><span>طباعة رقمية</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/banners" class="sidebar-service-link"><span>طباعة بنرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/business-cards" class="sidebar-service-link"><span>بزنس كارد</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/brochures" class="sidebar-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/uv" class="sidebar-service-link"><span>طباعة UV</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/gifts" class="sidebar-service-link"><span>طباعة هدايا</span><i class="fas fa-angle-left"></i></a>
-          </div>
-        </div>
-      </aside>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>سيناريوهات استخدام حسب نوع عميلك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كل قطاع له احتياج مختلف من البنرات، وفريقنا يرشح لك الخامة والمقاس الأنسب حسب مجال عملك:</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-store', title: 'صاحب محل تجاري', text: 'يحتاج لافتة واجهة دائمة بخامة مقاومة للطقس (فليكس 440-550 جرام أو ألومنيوم مركب)، وبنرات عروض موسمية أرخص وأسرع تغييراً (فليكس 340 جرام) لتحديثها كل موسم دون تكلفة كبيرة.' },
+        { icon: 'fa-calendar-alt', title: 'منظم فعاليات ومعارض', text: 'يحتاج مزيجاً من بنر خلفية كبير (Backdrop) للمسرح، ورول أب متعدد للاستقبال والزوايا، ولافتات توجيهية صغيرة داخل القاعة — كلها بألوان موحدة مع هوية الفعالية.' },
+        { icon: 'fa-hard-hat', title: 'شركة مقاولات أو عقارات', text: 'تحتاج لافتات مشروع ضخمة (3×6 متر فأكثر) تُعلّق على واجهة المبنى قيد الإنشاء، مقاومة للرياح والأتربة لفترات طويلة، غالباً بخامة الميش لتقليل حمل الرياح على الهيكل.' },
+        { icon: 'fa-heart', title: 'منظم حفلات أفراح ومناسبات', text: 'يفضّل خامة الكانفاس أو القماش الفاخر ببنر ترحيب مخصص بالأسماء، أو بنرات داخلية بألوان زاهية للخلفيات التصويرية (Photo Booth).' },
+        { icon: 'fa-vote-yea', title: 'مرشح انتخابي أو حملة توعية', text: 'يحتاج كميات كبيرة من اللافتات بمقاسات موحدة تُوزّع على مناطق جغرافية متعددة، مع تنسيق تسليم مجدول يغطي المحافظات المستهدفة.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تجهيز ملف التصميم للطباعة الكبيرة (Large Format)</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الطباعة واسعة الفورمات لها قواعد تختلف عن طباعة الأوراق العادية، ومراعاتها توفر عليك وقت المراجعات:</p>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-search', title: 'الدقة والمقياس', text: 'نظراً لضخامة المقاس، لا يُشترط تصميم الملف بدقة 300 dpi على الحجم الفعلي كاملاً؛ يكفي تصميمه بمقياس مصغر (Scale) مثل 1:10 بدقة 300 dpi، أو تصميمه بالحجم الفعلي بدقة 72-150 dpi. المعيار الحقيقي هو مسافة المشاهدة: كلما شوهد البنر من بعيد، قلّت الدقة المطلوبة دون أن يلاحظ العين أي فرق.' },
+        { icon: 'fa-cut', title: 'هامش الأمان (Bleed) والمساحة الآمنة', text: 'نوصي بترك هامش قطع 3-5 سم على كل حافة للبنرات التي ستُلحم أو تُطوى حول إطار، مع إبقاء النصوص والعناصر المهمة بعيدة عن الحواف بمسافة كافية.' },
+        { icon: 'fa-circle-notch', title: 'أماكن العروات (Eyelets)', text: 'إذا كنت تحدد أماكن التثبيت مسبقاً (زوايا، أعمدة، إطار خشبي)، أخبرنا بمواصفات موقع التركيب لنحدد أماكن العروات المعدنية بشكل يتحمل وزن البنر واتجاه الرياح.' },
+        { icon: 'fa-palette', title: 'نظام الألوان', text: 'يُفضّل تصميم الملف بنظام CMYK لتقارب أقرب للنتيجة النهائية، مع العلم أن بعض الألوان الفسفورية الزاهية جداً تظهر بشكل مختلف قليلاً بسبب فارق طيف الألوان بين الشاشة والحبر.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>خيارات التركيب والتثبيت</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>بعد الطباعة، نوفر عدة خيارات لتجهيز البنر للتركيب حسب مكانه: عروات معدنية (Eyelets) على مسافات منتظمة لتثبيته بالحبال أو الأسلاك، جيوب طي للأعمدة (Pole Pockets) لتعليقه بين عمودين، لحام حراري لربط قطع متعددة عند تجاوز عرض الماكينة، وشريط لاصق مزدوج للتركيب المباشر على الواجهات الزجاجية والحوائط. إذا لم تكن لديك فريق تركيب، يمكننا توصيتك بفنيين تركيب متعاونين معنا في الإسكندرية والقاهرة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="contact-info">
+                  <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
+                  <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+                </div>
+              </div>
     </div>
   </div>
 </section>
@@ -221,6 +296,24 @@ const schemaJson = JSON.stringify({
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20بنرات" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="tel:+201227392074" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fas fa-phone-alt"></i> 01227392074</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدمات الطباعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/printing/offset" class="related-service-link"><span>طباعة أوفست</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/digital" class="related-service-link"><span>طباعة رقمية</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/banners" class="related-service-link"><span>طباعة بنرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/business-cards" class="related-service-link"><span>بزنس كارد</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/brochures" class="related-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/uv" class="related-service-link"><span>طباعة UV</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/gifts" class="related-service-link"><span>طباعة هدايا</span><i class="fas fa-arrow-left"></i></a>
     </div>
   </div>
 </section>

@@ -2608,8 +2608,8 @@
   ]
  },
  "/images/cartridge-storage-2.webp": {
-  "w": 1200,
-  "h": 900,
+  "w": 1049,
+  "h": 1600,
   "variants": [
    [
     400,
@@ -2620,8 +2620,8 @@
     "/images/v/cartridge-storage-2-800.webp"
    ],
    [
-    1200,
-    "/images/v/cartridge-storage-2-1200.webp"
+    1049,
+    "/images/cartridge-storage-2.webp"
    ]
   ]
  },
@@ -5203,7 +5203,7 @@
  },
  "/images/drum-and-fuser-2.webp": {
   "w": 1200,
-  "h": 801,
+  "h": 800,
   "variants": [
    [
     400,
@@ -8307,7 +8307,7 @@
  },
  "/images/money-counter-speed-cover.webp": {
   "w": 1200,
-  "h": 960,
+  "h": 800,
   "variants": [
    [
     400,
@@ -10717,7 +10717,7 @@
  },
  "/images/photocopier-error-codes-2.webp": {
   "w": 1200,
-  "h": 801,
+  "h": 800,
   "variants": [
    [
     400,
@@ -10753,7 +10753,7 @@
  },
  "/images/photocopier-maintenance-contract-cost-2.webp": {
   "w": 1200,
-  "h": 801,
+  "h": 800,
   "variants": [
    [
     400,
@@ -12623,7 +12623,7 @@
  },
  "/images/refurbished-photocopiers-cover.webp": {
   "w": 1200,
-  "h": 900,
+  "h": 800,
   "variants": [
    [
     400,
@@ -15157,7 +15157,7 @@
  },
  "/images/uv-printing-cost-2.webp": {
   "w": 1200,
-  "h": 798,
+  "h": 775,
   "variants": [
    [
     400,

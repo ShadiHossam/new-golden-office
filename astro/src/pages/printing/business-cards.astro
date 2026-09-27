@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -47,112 +46,202 @@ const schemaJson = JSON.stringify({
 />
 
 <!-- MAIN CONTENT -->
-<section class="service-detail">
+<section class="stats-section">
   <div class="container">
-    <div class="service-detail-grid">
-      <div class="service-content">
-        <ContentIntro
-          heading="أهمية الكرت الشخصي الاحترافي في عالم الأعمال"
-          text="كرتك الشخصي هو أول ما يراه الشريك أو العميل المحتمل، وهو الانطباع الذي يبقى في ذاكرته بعد انتهاء اللقاء. كرت شخصي مطبوع على ورق فاخر بتشطيب احترافي يقول الكثير عن مستوى اهتمامك بالتفاصيل وعن هوية علامتك التجارية. في نيو جولدن أوفيس، نصنع كروتاً شخصية تليق بمكانتك المهنية."
-        />
-        <p>سواء كنت تطلب كرتًا واحدًا لنفسك أو مئات الكروت لفريق مبيعات كامل، نحرص على نفس مستوى الجودة في كل طلب. نساعدك أيضًا في مراجعة التصميم قبل الطباعة للتأكد من توافقه مع مقاييس الطباعة الصحيحة وتجنب أي مشكلة في القص النهائي، ونرسل دائمًا معاينة رقمية قبل التنفيذ الفعلي.</p>
-        <p>لفرق المبيعات الكبيرة التي تحتاج كروتًا لعدة موظفين بنفس التصميم الموحد مع اختلاف الاسم والمنصب فقط، ننفذ هذا النوع من الطلبات بسرعة وكفاءة دون تكرار خطوات التصميم من الصفر لكل كرت.</p>
-        <p>نحتفظ أيضًا بملف تصميم الشركة الأساسي، فإذا انضم موظف جديد لاحقًا يحتاج كرتًا خاصًا به، ننفذه بسرعة بنفس الهوية البصرية المعتمدة دون الحاجة لإعادة التصميم بالكامل.</p>
-        <p>نساعدك أيضًا في مراجعة صحة البيانات المطبوعة (رقم الهاتف، البريد الإلكتروني، الموقع) قبل الطباعة النهائية، لتفادي طباعة كمية كاملة بخطأ بسيط يصعب تداركه لاحقًا.</p>
-        <p>نقدم أيضًا خصمًا خاصًا على إعادة الطلب لنفس التصميم، فلا داعي لدفع تكلفة تصميم جديدة عند احتياجك لكمية إضافية لاحقًا.</p>
-        <h2>أنواع الكروت الشخصية التي نطبعها</h2>
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-        <h3>الكروت الشخصية القياسية</h3>
-        <p>المقاس المعتاد 9 سم × 5 سم على ورق 350 جرام أو 400 جرام كوشيه. تأتي بتشطيب مطفي أو لامع حسب تفضيلك. الخيار الكلاسيكي الأنيق الذي يناسب جميع المجالات المهنية.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أهمية الكرت الشخصي الاحترافي في عالم الأعمال</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">كرتك الشخصي هو أول ما يراه الشريك أو العميل المحتمل، وهو الانطباع الذي يبقى في ذاكرته بعد انتهاء اللقاء. كرت شخصي مطبوع على ورق فاخر بتشطيب احترافي يقول الكثير عن مستوى اهتمامك بالتفاصيل وعن هوية علامتك التجارية. في نيو جولدن أوفيس، نصنع كروتاً شخصية تليق بمكانتك المهنية.</p>
+    <div class="landing-body service-content">
+<p>سواء كنت تطلب كرتًا واحدًا لنفسك أو مئات الكروت لفريق مبيعات كامل، نحرص على نفس مستوى الجودة في كل طلب. نساعدك أيضًا في مراجعة التصميم قبل الطباعة للتأكد من توافقه مع مقاييس الطباعة الصحيحة وتجنب أي مشكلة في القص النهائي، ونرسل دائمًا معاينة رقمية قبل التنفيذ الفعلي.</p>
+      <p>لفرق المبيعات الكبيرة التي تحتاج كروتًا لعدة موظفين بنفس التصميم الموحد مع اختلاف الاسم والمنصب فقط، ننفذ هذا النوع من الطلبات بسرعة وكفاءة دون تكرار خطوات التصميم من الصفر لكل كرت.</p>
+      <p>نحتفظ أيضًا بملف تصميم الشركة الأساسي، فإذا انضم موظف جديد لاحقًا يحتاج كرتًا خاصًا به، ننفذه بسرعة بنفس الهوية البصرية المعتمدة دون الحاجة لإعادة التصميم بالكامل.</p>
+      <p>نساعدك أيضًا في مراجعة صحة البيانات المطبوعة (رقم الهاتف، البريد الإلكتروني، الموقع) قبل الطباعة النهائية، لتفادي طباعة كمية كاملة بخطأ بسيط يصعب تداركه لاحقًا.</p>
+      <p>نقدم أيضًا خصمًا خاصًا على إعادة الطلب لنفس التصميم، فلا داعي لدفع تكلفة تصميم جديدة عند احتياجك لكمية إضافية لاحقًا.</p>
+    </div>
+  </div>
+</section>
 
-        <h3>الكروت المطوية (Folded Business Cards)</h3>
-        <p>كروت تُطوى إلى النصف لتوفير مساحة أكبر للمعلومات، مثالية للأطباء والمحامين وأصحاب المشاريع الذين يحتاجون إلى عرض معلومات تفصيلية أكثر أو قائمة خدمات موجزة.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أنواع الكروت الشخصية التي نطبعها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid landing-cards">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>الكروت الشخصية القياسية</h3><p>المقاس المعتاد 9 سم × 5 سم على ورق 350 جرام أو 400 جرام كوشيه. تأتي بتشطيب مطفي أو لامع حسب تفضيلك. الخيار الكلاسيكي الأنيق الذي يناسب جميع المجالات المهنية.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>الكروت المطوية (Folded Business Cards)</h3><p>كروت تُطوى إلى النصف لتوفير مساحة أكبر للمعلومات، مثالية للأطباء والمحامين وأصحاب المشاريع الذين يحتاجون إلى عرض معلومات تفصيلية أكثر أو قائمة خدمات موجزة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>الكروت مع تشطيب UV بقعي (Spot UV)</h3><p>تشطيب راقٍ يضيف لمسة لامعة على أجزاء محددة من الكرت (كالشعار أو الاسم) بينما تبقى بقية الكرت مطفية. يمنح الكرت طابعاً فاخراً ومميزاً يلفت الانتباه.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3>الكروت ذات التحسس النافر (Embossed / Debossed)</h3><p>تقنية تضيف نتوءاً أو غائراً على الكرت تشعر به باللمس، تُستخدم عادةً على الشعار أو الاسم لإضفاء طابع فخامة استثنائي. مناسبة للشركات والعلامات التجارية الراقية.</p></div>
+    </div>
+  </div>
+</section>
 
-        <MidPageCTA formId="prnBusinessCardsMidCta" />
+<MidPageCTA formId="prnBusinessCardsMidCta" />
 
-        <h3>الكروت مع تشطيب UV بقعي (Spot UV)</h3>
-        <p>تشطيب راقٍ يضيف لمسة لامعة على أجزاء محددة من الكرت (كالشعار أو الاسم) بينما تبقى بقية الكرت مطفية. يمنح الكرت طابعاً فاخراً ومميزاً يلفت الانتباه.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أوزان الورق المتاحة للكروت الشخصية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={4} items={[
+        { icon: 'fa-layer-group', title: '300 جرام', text: 'الحد الأدنى المقبول احترافياً — جيد للكروت العادية وذات التوزيع الواسع' },
+        { icon: 'fa-layer-group', title: '350 جرام', text: 'الوزن الأكثر شيوعاً وتوصياً — يمنح صلابة جيدة ومظهراً احترافياً' },
+        { icon: 'fa-layer-group', title: '400 جرام', text: 'وزن فاخر يمنح إحساساً بالثقل والفخامة عند اللمس' },
+        { icon: 'fa-gem', title: 'ورق مقوى مع طبقة فاخرة', text: 'لأعلى مستويات الفخامة والتميز' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h3>الكروت ذات التحسس النافر (Embossed / Debossed)</h3>
-        <p>تقنية تضيف نتوءاً أو غائراً على الكرت تشعر به باللمس، تُستخدم عادةً على الشعار أو الاسم لإضفاء طابع فخامة استثنائي. مناسبة للشركات والعلامات التجارية الراقية.</p>
-        <h2>أوزان الورق المتاحة للكروت الشخصية</h2>
-        <IconCardGrid columns={4} items={[
-          { icon: 'fa-layer-group', title: '300 جرام', text: 'الحد الأدنى المقبول احترافياً — جيد للكروت العادية وذات التوزيع الواسع' },
-          { icon: 'fa-layer-group', title: '350 جرام', text: 'الوزن الأكثر شيوعاً وتوصياً — يمنح صلابة جيدة ومظهراً احترافياً' },
-          { icon: 'fa-layer-group', title: '400 جرام', text: 'وزن فاخر يمنح إحساساً بالثقل والفخامة عند اللمس' },
-          { icon: 'fa-gem', title: 'ورق مقوى مع طبقة فاخرة', text: 'لأعلى مستويات الفخامة والتميز' },
-        ]} />
-        <h2>التشطيبات المتاحة للكروت والمطبوعات</h2>
-        <IconCardGrid columns={4} items={[
-          { icon: 'fa-square', title: 'مطفي (Matt Lamination)', text: 'تشطيب ناعم وأنيق يمنع الانعكاسات — الأكثر شيوعاً وأناقة' },
-          { icon: 'fa-sun', title: 'لامع (Gloss Lamination)', text: 'يبرز الألوان ويمنح مظهراً براقاً ونضاراً' },
-          { icon: 'fa-feather-alt', title: 'ناعم كالمخمل (Soft Touch / Velvet)', text: 'إحساس مخملي فاخر عند اللمس — تشطيب استثنائي' },
-          { icon: 'fa-star', title: 'UV بقعي (Spot UV)', text: 'لمسة لامعة على أجزاء محددة لإبراز العناصر المهمة' },
-        ]} />
-        <h2>محتاج بروشورات أو فلايرات كمان؟</h2>
-        <p>لو محتاج بروشورات تسويقية أو فلايرات توزيع أو كتالوجات منتجات إلى جانب كروتك الشخصية، عندنا صفحة مخصصة لكل أنواع الطي والمقاسات والورق المناسب: <a href="/printing/brochures">طباعة بروشورات وفلايرات</a>.</p>
-        <h2>لماذا تختار نيو جولدن أوفيس لطباعة كروتك وبروشوراتك؟</h2>
-        <p>مع خبرة أكثر من 27 عاماً في طباعة المطبوعات التسويقية في الإسكندرية ومصر، نعرف ما الذي يجعل المطبوعة ناجحة ومؤثرة. نوفر استشارة مجانية لاختيار أنسب الخامات والتشطيبات لميزانيتك وهدفك التسويقي. ملفاتك في أيدٍ أمينة مع فريقنا المتخصص في ما قبل الطباعة.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>التشطيبات المتاحة للكروت والمطبوعات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={4} items={[
+        { icon: 'fa-square', title: 'مطفي (Matt Lamination)', text: 'تشطيب ناعم وأنيق يمنع الانعكاسات — الأكثر شيوعاً وأناقة' },
+        { icon: 'fa-sun', title: 'لامع (Gloss Lamination)', text: 'يبرز الألوان ويمنح مظهراً براقاً ونضاراً' },
+        { icon: 'fa-feather-alt', title: 'ناعم كالمخمل (Soft Touch / Velvet)', text: 'إحساس مخملي فاخر عند اللمس — تشطيب استثنائي' },
+        { icon: 'fa-star', title: 'UV بقعي (Spot UV)', text: 'لمسة لامعة على أجزاء محددة لإبراز العناصر المهمة' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>الكرت الشخصي المناسب لكل مهنة</h2>
-        <p>شكل الكرت وتشطيبه يختلف حسب طبيعة عملك والانطباع اللي عايز توصّله:</p>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-home', title: 'وسطاء العقارات', text: 'عادة ما يفضّلون كرتاً بحجم أكبر قليلاً أو مطوياً لعرض معلومات المشروع أو مواقع التواصل ورمز QR يوصل مباشرة لصفحة المعروضات، بتشطيب لامع يبرز صور المشروعات.' },
-          { icon: 'fa-stethoscope', title: 'الأطباء وأصحاب العيادات', text: 'كرت مطوي يعرض التخصص ومواعيد العمل وأكثر من رقم تواصل، بتشطيب مطفي هادئ يعكس الثقة والاحترافية الطبية.' },
-          { icon: 'fa-balance-scale', title: 'المحامون والمستشارون', text: 'تصميم بسيط وأنيق بألوان محايدة (أسود، كحلي، ذهبي) على ورق 400 جرام، أحياناً مع تحسس نافر على الاسم لإضفاء طابع فخامة ورسمية.' },
-          { icon: 'fa-users', title: 'فرق المبيعات المؤسسية', text: 'تصميم موحد للشركة مع تخصيص الاسم والمسمى الوظيفي ورقم الهاتف لكل موظف — نطبع دفعات متعددة بنفس القالب لضمان اتساق الهوية البصرية عبر الفريق كله.' },
-          { icon: 'fa-rocket', title: 'رواد الأعمال والمشاريع الناشئة', text: 'مساحة أكبر للإبداع — ألوان جريئة، أشكال غير تقليدية (كرت مربع أو بحواف مدورة)، وتشطيبات مميزة مثل Soft Touch أو Spot UV لترك انطباع مختلف عن المنافسين.' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>محتاج بروشورات أو فلايرات كمان؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>لو محتاج بروشورات تسويقية أو فلايرات توزيع أو كتالوجات منتجات إلى جانب كروتك الشخصية، عندنا صفحة مخصصة لكل أنواع الطي والمقاسات والورق المناسب: <a href="/printing/brochures">طباعة بروشورات وفلايرات</a>.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>الكروت الذكية بتقنية QR وNFC</h2>
-        <p>تطور حديث بدأ ينتشر في مصر: كرت شخصي عادي يحمل رمز QR مطبوع يوجّه مباشرة لصفحة تواصل رقمية (فيزيت كارد إلكتروني) أو رقم واتساب أو ملف بيانات جهة الاتصال (vCard) يُضاف تلقائياً لهاتف من يمسح الرمز. نوفر أيضاً كروتاً مدمجة بشريحة NFC تتيح مشاركة بياناتك بمجرد تقريب الكرت من أي هاتف حديث دون الحاجة لمسح كاميرا. هذا الخيار مثالي لمن يريد الجمع بين الانطباع الملموس للكرت الورقي التقليدي وسهولة الحفظ الرقمي الفوري.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا تختار نيو جولدن أوفيس لطباعة كروتك وبروشوراتك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>مع خبرة أكثر من 27 عاماً في طباعة المطبوعات التسويقية في الإسكندرية ومصر، نعرف ما الذي يجعل المطبوعة ناجحة ومؤثرة. نوفر استشارة مجانية لاختيار أنسب الخامات والتشطيبات لميزانيتك وهدفك التسويقي. ملفاتك في أيدٍ أمينة مع فريقنا المتخصص في ما قبل الطباعة.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>أشكال ومقاسات بديلة للكرت الشخصي</h2>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-square', title: 'الكرت المربع', text: 'شكل غير تقليدي يلفت الانتباه، شائع بين المصممين والمصورين وأصحاب المشاريع الإبداعية.' },
-          { icon: 'fa-compress', title: 'الكرت المصغّر (Mini Card)', text: 'أصغر من المقاس القياسي، عملي للتوزيع الكثيف في المعارض أو كملحق مع منتج أو هدية.' },
-          { icon: 'fa-vector-square', title: 'حواف مدورة (Rounded Corners)', text: 'لمسة بسيطة تكسر حدة الشكل المستطيل التقليدي وتمنح إحساساً أكثر نعومة عند التصفح والحفظ في المحفظة.' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الكرت الشخصي المناسب لكل مهنة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>شكل الكرت وتشطيبه يختلف حسب طبيعة عملك والانطباع اللي عايز توصّله:</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-home', title: 'وسطاء العقارات', text: 'عادة ما يفضّلون كرتاً بحجم أكبر قليلاً أو مطوياً لعرض معلومات المشروع أو مواقع التواصل ورمز QR يوصل مباشرة لصفحة المعروضات، بتشطيب لامع يبرز صور المشروعات.' },
+        { icon: 'fa-stethoscope', title: 'الأطباء وأصحاب العيادات', text: 'كرت مطوي يعرض التخصص ومواعيد العمل وأكثر من رقم تواصل، بتشطيب مطفي هادئ يعكس الثقة والاحترافية الطبية.' },
+        { icon: 'fa-balance-scale', title: 'المحامون والمستشارون', text: 'تصميم بسيط وأنيق بألوان محايدة (أسود، كحلي، ذهبي) على ورق 400 جرام، أحياناً مع تحسس نافر على الاسم لإضفاء طابع فخامة ورسمية.' },
+        { icon: 'fa-users', title: 'فرق المبيعات المؤسسية', text: 'تصميم موحد للشركة مع تخصيص الاسم والمسمى الوظيفي ورقم الهاتف لكل موظف — نطبع دفعات متعددة بنفس القالب لضمان اتساق الهوية البصرية عبر الفريق كله.' },
+        { icon: 'fa-rocket', title: 'رواد الأعمال والمشاريع الناشئة', text: 'مساحة أكبر للإبداع — ألوان جريئة، أشكال غير تقليدية (كرت مربع أو بحواف مدورة)، وتشطيبات مميزة مثل Soft Touch أو Spot UV لترك انطباع مختلف عن المنافسين.' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>تجهيز ملف الكرت الشخصي قبل الطباعة</h2>
-        <p>لضمان نتيجة نهائية مطابقة لتوقعك، راعِ النقاط التالية عند تصميم ملفك أو إرساله لنا:</p>
-        <IconCardGrid columns={2} items={[
-          { icon: 'fa-cut', title: 'هامش القطع', text: 'اترك 3 مم زيادة على كل حافة للخلفيات والألوان الممتدة لحافة الكرت، لتفادي ظهور خط أبيض بعد القص.' },
-          { icon: 'fa-shield-alt', title: 'المساحة الآمنة', text: 'أبعد النصوص والشعار عن الحافة بمسافة 3-4 مم على الأقل، خصوصاً في الكروت ذات الحواف المدورة حيث يكون هامش القطع أكبر قليلاً.' },
-          { icon: 'fa-palette', title: 'الدقة ونظام الألوان', text: 'صمم الملف بدقة 300 dpi على الحجم الفعلي وبنظام ألوان CMYK لضمان مطابقة الألوان للنتيجة المطبوعة.' },
-          { icon: 'fa-clone', title: 'التصميم على الوجهين', text: 'لو الكرت مطبوع على الوجهين، تأكد من محاذاة العناصر بنفس الطريقة على الوجهين حتى لا يظهر انزياح بعد القص والتجليد.' },
-        ]} />
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الكروت الذكية بتقنية QR وNFC</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>تطور حديث بدأ ينتشر في مصر: كرت شخصي عادي يحمل رمز QR مطبوع يوجّه مباشرة لصفحة تواصل رقمية (فيزيت كارد إلكتروني) أو رقم واتساب أو ملف بيانات جهة الاتصال (vCard) يُضاف تلقائياً لهاتف من يمسح الرمز. نوفر أيضاً كروتاً مدمجة بشريحة NFC تتيح مشاركة بياناتك بمجرد تقريب الكرت من أي هاتف حديث دون الحاجة لمسح كاميرا. هذا الخيار مثالي لمن يريد الجمع بين الانطباع الملموس للكرت الورقي التقليدي وسهولة الحفظ الرقمي الفوري.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>العناية بالكروت ذات التشطيبات الخاصة</h2>
-        <p>التشطيبات المطفية والـSoft Touch تعطي مظهراً فاخراً لكنها قد تُظهر بصمات الأصابع أكثر من التشطيب اللامع، خصوصاً في الألوان الغامقة — وهذا طبيعي ولا يؤثر على متانة الكرت. التشطيب اللامع والـSpot UV أكثر مقاومة للبصمات والخدوش الخفيفة، مما يجعله خياراً عملياً للكروت التي تُستخدم وتُتداول بكثرة يدوياً.</p>
-      </div>
-      <aside class="service-sidebar">
-        <div class="sidebar-card">
-          <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
-          <div class="contact-info">
-            <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
-            <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-          </div>
-        </div>
-        <div class="sidebar-card">
-          <h3>خدمات الطباعة</h3>
-          <div class="sidebar-services">
-            <a href="/printing/offset" class="sidebar-service-link"><span>طباعة أوفست</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/digital" class="sidebar-service-link"><span>طباعة رقمية</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/banners" class="sidebar-service-link"><span>طباعة بنرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/business-cards" class="sidebar-service-link"><span>بزنس كارد</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/brochures" class="sidebar-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/uv" class="sidebar-service-link"><span>طباعة UV</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/gifts" class="sidebar-service-link"><span>طباعة هدايا</span><i class="fas fa-angle-left"></i></a>
-          </div>
-        </div>
-      </aside>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أشكال ومقاسات بديلة للكرت الشخصي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
+        { icon: 'fa-square', title: 'الكرت المربع', text: 'شكل غير تقليدي يلفت الانتباه، شائع بين المصممين والمصورين وأصحاب المشاريع الإبداعية.' },
+        { icon: 'fa-compress', title: 'الكرت المصغّر (Mini Card)', text: 'أصغر من المقاس القياسي، عملي للتوزيع الكثيف في المعارض أو كملحق مع منتج أو هدية.' },
+        { icon: 'fa-vector-square', title: 'حواف مدورة (Rounded Corners)', text: 'لمسة بسيطة تكسر حدة الشكل المستطيل التقليدي وتمنح إحساساً أكثر نعومة عند التصفح والحفظ في المحفظة.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>تجهيز ملف الكرت الشخصي قبل الطباعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>لضمان نتيجة نهائية مطابقة لتوقعك، راعِ النقاط التالية عند تصميم ملفك أو إرساله لنا:</p>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-cut', title: 'هامش القطع', text: 'اترك 3 مم زيادة على كل حافة للخلفيات والألوان الممتدة لحافة الكرت، لتفادي ظهور خط أبيض بعد القص.' },
+        { icon: 'fa-shield-alt', title: 'المساحة الآمنة', text: 'أبعد النصوص والشعار عن الحافة بمسافة 3-4 مم على الأقل، خصوصاً في الكروت ذات الحواف المدورة حيث يكون هامش القطع أكبر قليلاً.' },
+        { icon: 'fa-palette', title: 'الدقة ونظام الألوان', text: 'صمم الملف بدقة 300 dpi على الحجم الفعلي وبنظام ألوان CMYK لضمان مطابقة الألوان للنتيجة المطبوعة.' },
+        { icon: 'fa-clone', title: 'التصميم على الوجهين', text: 'لو الكرت مطبوع على الوجهين، تأكد من محاذاة العناصر بنفس الطريقة على الوجهين حتى لا يظهر انزياح بعد القص والتجليد.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>العناية بالكروت ذات التشطيبات الخاصة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>التشطيبات المطفية والـSoft Touch تعطي مظهراً فاخراً لكنها قد تُظهر بصمات الأصابع أكثر من التشطيب اللامع، خصوصاً في الألوان الغامقة — وهذا طبيعي ولا يؤثر على متانة الكرت. التشطيب اللامع والـSpot UV أكثر مقاومة للبصمات والخدوش الخفيفة، مما يجعله خياراً عملياً للكروت التي تُستخدم وتُتداول بكثرة يدوياً.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="contact-info">
+                  <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
+                  <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+                </div>
+              </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
     <div class="steps-grid">
@@ -164,7 +253,7 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن الكروت والبروشورات</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -234,6 +323,24 @@ const schemaJson = JSON.stringify({
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كروت%20شخصية%20وبروشورات" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="tel:+201227392074" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fas fa-phone-alt"></i> 01227392074</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدمات الطباعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/printing/offset" class="related-service-link"><span>طباعة أوفست</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/digital" class="related-service-link"><span>طباعة رقمية</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/banners" class="related-service-link"><span>طباعة بنرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/business-cards" class="related-service-link"><span>بزنس كارد</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/brochures" class="related-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/uv" class="related-service-link"><span>طباعة UV</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/gifts" class="related-service-link"><span>طباعة هدايا</span><i class="fas fa-arrow-left"></i></a>
     </div>
   </div>
 </section>

@@ -4,7 +4,6 @@ import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 
 const schemaJson = JSON.stringify({
@@ -46,32 +45,58 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="عداد نقود مصر — أنواع ماكينات عد النقود"
-        text="تتنوع ماكينات عد النقود في السوق المصري لتغطية احتياجات مختلفة، بدءاً من المحلات الصغيرة وصولاً إلى البنوك والمؤسسات المالية الكبرى. في نيو جولدن أوفيس، نوفر ثلاثة أنواع رئيسية لتناسب كل حجم عمل وكل ميزانية."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-layer-group" style="color:var(--secondary);margin-left:8px;"></i> عدادات الأوراق النقدية (Bill Counters)</h3>
-      <p>هي الأكثر شيوعاً في السوق المصري وتُعدّ الأساس في أي مكان يتعامل مع النقد اليومي. تعمل هذه الماكينات على عد الأوراق النقدية بسرعات تتراوح بين <strong>800 و1500 ورقة في الدقيقة</strong>. تتضمن نماذج متعددة تعمل مع الجنيه المصري والعملات الأجنبية كالدولار واليورو. تكتشف أي ورقة ناقصة أو إضافية فوراً وتتوقف عند اكتشاف ورقة مجعدة أو ملتصقة.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>عداد نقود مصر — أنواع ماكينات عد النقود</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">تتنوع ماكينات عد النقود في السوق المصري لتغطية احتياجات مختلفة، بدءاً من المحلات الصغيرة وصولاً إلى البنوك والمؤسسات المالية الكبرى. في نيو جولدن أوفيس، نوفر ثلاثة أنواع رئيسية لتناسب كل حجم عمل وكل ميزانية.</p>
+    <div class="features-grid landing-cards cols-3">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3><i class="fas fa-layer-group" style="color:var(--secondary);margin-left:8px;"></i> عدادات الأوراق النقدية (Bill Counters)</h3><p>هي الأكثر شيوعاً في السوق المصري وتُعدّ الأساس في أي مكان يتعامل مع النقد اليومي. تعمل هذه الماكينات على عد الأوراق النقدية بسرعات تتراوح بين <strong>800 و1500 ورقة في الدقيقة</strong>. تتضمن نماذج متعددة تعمل مع الجنيه المصري والعملات الأجنبية كالدولار واليورو. تكتشف أي ورقة ناقصة أو إضافية فوراً وتتوقف عند اكتشاف ورقة مجعدة أو ملتصقة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3><i class="fas fa-coins" style="color:var(--secondary);margin-left:8px;"></i> عدادات العملات المعدنية (Coin Sorters)</h3><p>مخصصة للمحلات التجارية والمطاعم والمقاهي التي تتعامل يومياً بكميات كبيرة من العملات المعدنية. تفرز هذه الماكينات العملات تلقائياً حسب فئتها وتعدها بدقة تامة، ثم تقدم القيمة الإجمالية لكل فئة. تُزيل الحاجة لفرز العملات يدوياً خاصة عند إغلاق الخزنة في نهاية اليوم.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-sort-amount-up" style="color:var(--secondary);margin-left:8px;"></i> ماكينات العد والفرز متعددة الفئات (Mixed Denomination)</h3><p>الأكثر تطوراً والأعلى كفاءة. هذه الماكينات الذكية قادرة على قراءة كل ورقة نقدية وتحديد فئتها ثم حساب القيمة الإجمالية لكل فئة والمجموع الكلي تلقائياً. مثالية جداً للبنوك وشركات الصرافة ومراكز التسوية التي تستقبل نقداً مختلط الفئات.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-coins" style="color:var(--secondary);margin-left:8px;"></i> عدادات العملات المعدنية (Coin Sorters)</h3>
-      <p>مخصصة للمحلات التجارية والمطاعم والمقاهي التي تتعامل يومياً بكميات كبيرة من العملات المعدنية. تفرز هذه الماكينات العملات تلقائياً حسب فئتها وتعدها بدقة تامة، ثم تقدم القيمة الإجمالية لكل فئة. تُزيل الحاجة لفرز العملات يدوياً خاصة عند إغلاق الخزنة في نهاية اليوم.</p>
-
-      <h3><i class="fas fa-sort-amount-up" style="color:var(--secondary);margin-left:8px;"></i> ماكينات العد والفرز متعددة الفئات (Mixed Denomination)</h3>
-      <p>الأكثر تطوراً والأعلى كفاءة. هذه الماكينات الذكية قادرة على قراءة كل ورقة نقدية وتحديد فئتها ثم حساب القيمة الإجمالية لكل فئة والمجموع الكلي تلقائياً. مثالية جداً للبنوك وشركات الصرافة ومراكز التسوية التي تستقبل نقداً مختلط الفئات.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>الماركات المتاحة لدينا</h2>
-      <IconCardGrid columns={3} items={[
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-award', title: 'Glory', text: 'ماركة يابانية رائدة — الخيار الأول للبنوك الكبرى في مصر والعالم. جودة تصنيع استثنائية وعمر افتراضي طويل مع دقة لا تُضاهى' },
         { icon: 'fa-star', title: 'Cassida', text: 'ماركة أمريكية بجودة عالية وسعر تنافسي. تجمع بين الأداء الاحترافي والموثوقية وشائعة في شركات الصرافة' },
         { icon: 'fa-tag', title: 'Carnation', text: 'خيار اقتصادي ممتاز للمحلات الصغيرة والمتوسطة. أداء جيد بسعر مناسب لميزانيات المشاريع الناشئة' },
         { icon: 'fa-globe-asia', title: 'Ribao', text: 'ماركة صينية موثوقة تحظى بشعبية متزايدة في السوق المصري' },
         { icon: 'fa-boxes', title: 'ماركات صينية موثوقة أخرى', text: 'تشكيلة من الأجهزة الصينية عالية الجودة التي خضعت لاختباراتنا قبل عرضها للبيع' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>مميزات ماكينات العد الحديثة</h2>
-      <IconCardGrid columns={3} items={[
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-layer-group', title: 'Batch Counting (العد بدفعات محددة)', text: 'برمجة الماكينة للتوقف تلقائياً عند عدد محدد لتسهيل تجميع الحزم' },
         { icon: 'fa-plus-circle', title: 'Add Mode', text: 'تراكم الأرقام من عدة جولات عد متتالية للحصول على المجموع الكلي' },
         { icon: 'fa-search-dollar', title: 'كشف العملات المزيفة (UV+MG+IR)', text: 'تتميز أغلب ماكيناتنا بخاصية <a href="/cash-machines/detector">كشف العملة المزيفة المدمج</a>، يجمع الكشف بالأشعة فوق البنفسجية مع الكشف المغناطيسي وأحياناً الأشعة تحت الحمراء' },
@@ -79,9 +104,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-power-off', title: 'بدء/إيقاف تلقائي', text: 'تبدأ العد فور وضع الأوراق وتتوقف عند اكتمال العد' },
         { icon: 'fa-broom', title: 'التنظيف الذاتي', text: 'بعض الطرازات تأتي بخاصية تنظيف ذاتي للمسارات للحفاظ على الأداء' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>أخطاء العد الشائعة وكيف تتجنبها</h2>
-      <p>حتى أفضل ماكينات العد قد تُظهر أحياناً رسائل خطأ أو نتائج غير متوقعة، وغالباً ما يكون السبب بسيطاً وسهل الحل. إليك أشيع المشكلات التي نقابلها في زياراتنا الفنية وكيفية التعامل معها:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>حتى أفضل ماكينات العد قد تُظهر أحياناً رسائل خطأ أو نتائج غير متوقعة، وغالباً ما يكون السبب بسيطاً وسهل الحل. إليك أشيع المشكلات التي نقابلها في زياراتنا الفنية وكيفية التعامل معها:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-exclamation-triangle', title: 'رسالة "Reject" أو "Error" المتكررة', text: 'غالباً ما تحدث بسبب أوراق ملتصقة ببعضها نتيجة الرطوبة أو التجاعيد الشديدة. الحل: افرد الحزمة جيداً وتأكد من عدم وجود أوراق مطوية أو ملتصقة قبل وضعها في الماكينة' },
         { icon: 'fa-clone', title: 'العد المزدوج (Double Count)', text: 'يحدث عندما تلتصق ورقتان معاً وتمران كورقة واحدة أو العكس، وهي مشكلة شائعة مع الأوراق القديمة المهترئة. أغلب الماكينات الحديثة تكتشف هذا تلقائياً بمستشعر السماكة وتتوقف لتنبيه المستخدم' },
@@ -89,9 +123,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-ban', title: 'انحشار الورق (Jam)', text: 'يحدث عند إدخال كمية زائدة عن الحد المسموح أو أوراق غير مستوية الحواف. معظم الماكينات الحديثة تملك خاصية عكس تلقائي لتحرير الورق المحشور دون الحاجة لفتح الجهاز' },
         { icon: 'fa-balance-scale', title: 'تباين النتيجة بين جولات العد المتتالية', text: 'إذا لاحظت اختلافاً بسيطاً بين نتيجتين متتاليتين لنفس الحزمة، تأكد أولاً من نظافة الأسطوانات المطاطية الناقلة، فتراكم الأتربة عليها من أكثر أسباب فقدان الدقة تدريجياً' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>سيناريوهات استخدام واقعية حسب طبيعة النشاط</h2>
-      <p>احتياجات ماكينة عد النقود تختلف اختلافاً جوهرياً باختلاف طبيعة العمل. إليك كيف نُقيّم كل حالة عندما يتواصل معنا عميل جديد:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>احتياجات ماكينة عد النقود تختلف اختلافاً جوهرياً باختلاف طبيعة العمل. إليك كيف نُقيّم كل حالة عندما يتواصل معنا عميل جديد:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-university', title: 'فرع بنكي أو صراف آلي داخلي', text: 'يحتاج ماكينة Mixed Denomination بسرعة 1000+ ورقة/دقيقة مع تقنيات UV+MG+IR مجتمعة، لأن الحجم اليومي كبير جداً ولا مجال لأي خطأ في التسوية المحاسبية آخر اليوم' },
         { icon: 'fa-exchange-alt', title: 'مكتب صرافة صغير', text: 'يحتاج جهازاً متوسط السرعة (800-1000 ورقة/دقيقة) لكن بأعلى مستوى ممكن من كشف التزييف، لأن التعامل يكون مع عملات متعددة وقيمة الصفقة الواحدة قد تكون كبيرة' },
@@ -99,19 +142,38 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-truck', title: 'شركة توزيع أو مقاولات', text: 'تحتاج غالباً جهازاً محمولاً بحجم مضغوط يمكن نقله بين الفروع أو المخازن، مع بطارية أو قدرة تشغيل مستقرة في ظروف ميدانية أقل تنظيماً من المكتب' },
         { icon: 'fa-mug-hot', title: 'مطعم أو كافيه بعدة فروع', text: 'الأفضل هو تجهيز كل فرع بجهاز اقتصادي موحد الموديل، مما يسهل الصيانة وتوفير قطع الغيار ويقلل تكلفة التدريب على فريق العمل' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>الصيانة الدورية لإطالة عمر الجهاز</h2>
-      <p>ماكينة عد النقود جهاز ميكانيكي إلكتروني دقيق يتعرض للاستخدام المكثف يومياً، لذا فالصيانة الدورية البسيطة تُطيل عمره وتحافظ على دقته لسنوات طويلة:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>ماكينة عد النقود جهاز ميكانيكي إلكتروني دقيق يتعرض للاستخدام المكثف يومياً، لذا فالصيانة الدورية البسيطة تُطيل عمره وتحافظ على دقته لسنوات طويلة:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-broom', title: 'التنظيف الأسبوعي', text: 'امسح الأسطوانات المطاطية وعدسات الاستشعار بقطعة قماش جافة، فتراكم الغبار وبقايا الحبر من الأوراق القديمة أكثر أسباب تراجع الأداء شيوعاً' },
         { icon: 'fa-ban', title: 'تجنب الأوراق التالفة جداً', text: 'الأوراق شديدة التمزق أو المبتلة تُجهد آلية السحب الداخلية وقد تسبب انحشاراً متكرراً، يُفضل فرزها يدوياً قبل التمرير' },
         { icon: 'fa-calendar-check', title: 'الفحص الدوري كل 6 أشهر', text: 'ننصح بزيارة فنية دورية للتأكد من معايرة حساسات الكشف وسلامة الموتور الداخلي، خاصة في الأماكن ذات الاستخدام اليومي المكثف كالبنوك والصرافات' },
         { icon: 'fa-warehouse', title: 'التخزين السليم', text: 'عند عدم الاستخدام لفترة طويلة، احفظ الجهاز في مكان جاف بعيداً عن الرطوبة والأتربة وغطِّه بغطاء واقٍ' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="cashCountingMidCta" />
+<MidPageCTA formId="cashCountingMidCta" />
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>من يحتاج ماكينة عد النقود؟</h2>
-      <p>ماكينات عد النقود ليست حكراً على البنوك فقط، بل أصبحت ضرورة في كثير من الأماكن التجارية والخدمية في مصر. إليك أبرز الجهات التي تستفيد من هذه الأجهزة:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>ماكينات عد النقود ليست حكراً على البنوك فقط، بل أصبحت ضرورة في كثير من الأماكن التجارية والخدمية في مصر. إليك أبرز الجهات التي تستفيد من هذه الأجهزة:</p>
       <IconCardGrid columns={4} items={[
         { icon: 'fa-university', title: 'البنوك وشركات الصرافة', text: 'الاستخدام الأساسي والأكثر شيوعاً، سواء لعد الإيداعات أو السحوبات أو تجهيز الحافظات اليومية' },
         { icon: 'fa-shopping-cart', title: 'السوبر ماركت والهايبر ماركت', text: 'عند إغلاق الكاشيرات في نهاية الوردية أو اليوم لحصر النقد السريع' },
@@ -122,8 +184,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-hospital', title: 'المستشفيات والمراكز الطبية', text: 'لعد التحصيلات النقدية اليومية في نهاية الدوام' },
         { icon: 'fa-money-bill-wave', text: 'أي مكان يتعامل بنقد يومي بكميات كبيرة' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>كيف تختار الماكينة المناسبة؟</h2>
-      <p>الاختيار الصحيح يوفر عليك المال ويضمن لك الأداء الأمثل. إليك أهم المعايير التي ننصحك بمراعاتها عند اختيار ماكينة عد النقود:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الاختيار الصحيح يوفر عليك المال ويضمن لك الأداء الأمثل. إليك أهم المعايير التي ننصحك بمراعاتها عند اختيار ماكينة عد النقود:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-tachometer-alt', title: 'الحجم اليومي للنقد', text: 'إذا كنت تعد آلاف الأوراق يومياً اختر سرعة 1200-1500 ورقة/دقيقة. للاستخدام المتوسط 800-1000 ورقة/دقيقة' },
         { icon: 'fa-layer-group', title: 'الحاجة لفرز الفئات', text: 'إذا استقبلت نقداً مختلط الفئات يومياً فماكينة Mixed Denomination تستحق الاستثمار' },
@@ -131,12 +203,31 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-wallet', title: 'الميزانية المتاحة', text: 'لدينا خيارات لكل ميزانية من الاقتصادية للمشاريع الصغيرة حتى الاحترافية للمؤسسات الكبرى' },
         { icon: 'fa-hand-pointer', title: 'سهولة الاستخدام', text: 'بعض الطرازات أسهل في التشغيل وتحتاج تدريباً أقل للموظفين' },
       ]} />
-      <h2>تدريب الموظفين على الاستخدام الأمثل</h2>
-      <p>حتى أفضل ماكينة عد لا تعطي نتائج مثالية دون تدريب بسيط للموظف الذي سيستخدمها يومياً. نحرص في نيو جولدن أوفيس على تقديم جلسة تدريب مجانية مع كل عملية بيع تغطي: طريقة إدخال الحزمة بشكل صحيح (فرد الأوراق وتوحيد اتجاهها)، فهم رسائل الخطأ الشائعة والتصرف السليم عند ظهورها، ضبط وضعية Batch لتسهيل تجميع حزم بعدد محدد مسبقاً، والفرق بين وضعيتي العد العادي ووضعية الإضافة التراكمية Add Mode. هذا التدريب البسيط يقلل كثيراً من الأخطاء التشغيلية ويرفع من ثقة الموظف في التعامل مع الجهاز، خاصة في الأماكن التي يتناوب فيها أكثر من موظف على استخدام نفس الماكينة كالبنوك ومحلات الصرافة الكبيرة.</p>
-      <p>ننصح أيضاً بوضع دليل استخدام مبسط بجانب الجهاز يوضح خطوات التشغيل الأساسية ورقم الدعم الفني للتواصل السريع عند أي استفسار، فهذا الإجراء البسيط يوفر وقتاً ثميناً في بيئات العمل ذات الضغط العالي كنهاية اليوم في السوبر ماركت أو إغلاق الخزينة في الفرع البنكي.</p>
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تدريب الموظفين على الاستخدام الأمثل</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>حتى أفضل ماكينة عد لا تعطي نتائج مثالية دون تدريب بسيط للموظف الذي سيستخدمها يومياً. نحرص في نيو جولدن أوفيس على تقديم جلسة تدريب مجانية مع كل عملية بيع تغطي: طريقة إدخال الحزمة بشكل صحيح (فرد الأوراق وتوحيد اتجاهها)، فهم رسائل الخطأ الشائعة والتصرف السليم عند ظهورها، ضبط وضعية Batch لتسهيل تجميع حزم بعدد محدد مسبقاً، والفرق بين وضعيتي العد العادي ووضعية الإضافة التراكمية Add Mode. هذا التدريب البسيط يقلل كثيراً من الأخطاء التشغيلية ويرفع من ثقة الموظف في التعامل مع الجهاز، خاصة في الأماكن التي يتناوب فيها أكثر من موظف على استخدام نفس الماكينة كالبنوك ومحلات الصرافة الكبيرة.</p>
+      <p>ننصح أيضاً بوضع دليل استخدام مبسط بجانب الجهاز يوضح خطوات التشغيل الأساسية ورقم الدعم الفني للتواصل السريع عند أي استفسار، فهذا الإجراء البسيط يوفر وقتاً ثميناً في بيئات العمل ذات الضغط العالي كنهاية اليوم في السوبر ماركت أو إغلاق الخزينة في الفرع البنكي.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>لماذا نيو جولدن أوفيس؟</h2>
-      <p>منذ تأسيسنا عام 1999 في الإبراهيمية بالإسكندرية، ونحن نخدم عملاءنا في جميع أنحاء مصر بخبرة تمتد لأكثر من 27 عاماً في مجال معدات المكاتب وأجهزة الفارم والعد. نتميز بـ:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>منذ تأسيسنا عام 1999 في الإبراهيمية بالإسكندرية، ونحن نخدم عملاءنا في جميع أنحاء مصر بخبرة تمتد لأكثر من 27 عاماً في مجال معدات المكاتب وأجهزة الفارم والعد. نتميز بـ:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-award', title: 'خبرة 27+ عاماً', text: 'راكمنا خبرة عميقة وفهماً شاملاً لاحتياجات السوق المصري' },
         { icon: 'fa-tags', title: 'أسعار تنافسية', text: 'نضمن لك أفضل سعر في السوق مع جودة موثوقة ومضمونة' },
@@ -145,32 +236,30 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-shipping-fast', title: 'توصيل لكل مصر', text: 'نخدم عملاءنا من الإسكندرية إلى أسوان ومن القاهرة إلى مطروح' },
       ]} />
       <p>ابحث الآن عن <strong>ماكينات عد النقود مصر</strong> أو <strong>ماكينة عد نقود للبيع</strong> وستجد نيو جولدن أوفيس في مقدمة النتائج لأننا الأكثر ثقة والأقدم خبرة في هذا المجال.</p>
-
     </div>
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h3><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات ماكينات الفارم والعد</h3>
-        <div class="sidebar-services">
-          <a href="/cash-machines/counting" class="sidebar-service-link active"><span>ماكينات عد النقود</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/detector" class="sidebar-service-link"><span>كشف العملات المزيفة</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/franking" class="sidebar-service-link"><span>ماكينات الفارم</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/shredder" class="sidebar-service-link"><span>تدمير المستندات</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-    </aside>
-  </div></div>
+  </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section section-sm">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">كيف تختار ماكينة عد النقود المناسبة لنشاطك؟</h2>
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+              </div>
+            </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تختار ماكينة عد النقود المناسبة لنشاطك؟</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">قبل شراء ماكينة عد النقود في مصر، ضع في اعتبارك هذه المعايير:</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
@@ -186,7 +275,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
     <div class="steps-grid">
@@ -197,7 +286,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن ماكينات عد النقود</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -224,5 +313,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات ماكينات الفارم والعد</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/cash-machines/counting" class="related-service-link active"><span>ماكينات عد النقود</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/detector" class="related-service-link"><span>كشف العملات المزيفة</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/franking" class="related-service-link"><span>ماكينات الفارم</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/shredder" class="related-service-link"><span>تدمير المستندات</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="ماكينات عد النقود وفرم الورق" />
 </BaseLayout>

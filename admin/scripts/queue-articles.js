@@ -331,19 +331,21 @@ function findSibling(folder, name) {
   return IMAGE_EXTS.map(ext => path.join(folder, name + ext)).find(p => fs.existsSync(p));
 }
 
+// The site serves only WebP, so a missing sharp stops the run instead of
+// letting a raw .jpg/.png from Pexels or Pixabay go live.
+function requireSharp() {
+  const sharp = tryRequireSharp();
+  if (!sharp) throw new Error('sharp is needed to convert pictures to WebP — run npm install in astro/');
+  return sharp;
+}
+
 // Copies a picture into astro/public/images as WebP and returns its public URL.
 async function publishSibling(sibling, outBase, dryRun) {
-  // sharp is only installed where the admin app runs; without it the picture
-  // is copied across untouched rather than failing the whole queue.
-  const converter = tryRequireSharp();
-  const outName = `${outBase}${converter ? '.webp' : path.extname(sibling).toLowerCase()}`;
+  const outName = `${outBase}.webp`;
   if (!dryRun) {
     fs.mkdirSync(IMAGES_DIR, { recursive: true });
-    const outPath = path.join(IMAGES_DIR, outName);
-    if (converter) {
-      await converter(sibling).resize({ width: MAX_IMAGE_WIDTH, withoutEnlargement: true }).webp({ quality: 78 }).toFile(outPath);
-    }
-    else fs.copyFileSync(sibling, outPath);
+    await requireSharp()(sibling).resize({ width: MAX_IMAGE_WIDTH, withoutEnlargement: true })
+      .webp({ quality: 78 }).toFile(path.join(IMAGES_DIR, outName));
   }
   return `/images/${outName}`;
 }
@@ -439,6 +441,8 @@ function iso(date) {
 
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
+  // Check before any picture is written, so a run never ends half-converted.
+  requireSharp();
 
   if (!fs.existsSync(opts.folder)) throw new Error(`Folder not found: ${opts.folder}`);
   const files = fs.readdirSync(opts.folder).filter(f => f.endsWith('.md') && !f.startsWith('_')).sort();

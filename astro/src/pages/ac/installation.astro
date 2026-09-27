@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
@@ -103,43 +102,91 @@ const schemaJson = JSON.stringify([
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="تركيب تكييف سبليت مصر — لماذا التركيب الاحترافي يُطيل عمر تكييفك؟"
-        text="كثير من العملاء يتفاجؤون بأن سبب أعطال التكييف المتكررة ليس جودة الجهاز بل أخطاء في التركيب الأول. تركيب التكييف ليس مجرد تثبيت وحدتين وتوصيل الأنابيب — إنه عملية دقيقة تتطلب خبرة وأدوات متخصصة."
-      />
-      <p>الفرق بين تركيب يدوم 15 عاماً بلا مشاكل وآخر يبدأ في التسريب أو فقدان الكفاءة خلال أشهر لا يظهر في اللحظة الأولى بعد التركيب — كلا التركيبين قد يبدوان متطابقين ظاهرياً ويبردان الغرفة في أول أسبوع. الفرق الحقيقي يظهر مع الوقت: في مدى إحكام وصلات الفريون، في دقة تفريغ الأنابيب من الرطوبة، وفي جودة التثبيت الذي يتحمل اهتزاز الكمبريسور يومياً لسنوات. هذا بالضبط ما نركّز عليه في كل زيارة تركيب ننفذها.</p>
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-exclamation-circle" style="color:var(--secondary);margin-left:8px;"></i> لماذا يهم التركيب الاحترافي؟</h3>
-      <IconCardGrid columns={2} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تركيب تكييف سبليت مصر — لماذا التركيب الاحترافي يُطيل عمر تكييفك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">كثير من العملاء يتفاجؤون بأن سبب أعطال التكييف المتكررة ليس جودة الجهاز بل أخطاء في التركيب الأول. تركيب التكييف ليس مجرد تثبيت وحدتين وتوصيل الأنابيب — إنه عملية دقيقة تتطلب خبرة وأدوات متخصصة.</p>
+    <div class="landing-body service-content">
+<p>الفرق بين تركيب يدوم 15 عاماً بلا مشاكل وآخر يبدأ في التسريب أو فقدان الكفاءة خلال أشهر لا يظهر في اللحظة الأولى بعد التركيب — كلا التركيبين قد يبدوان متطابقين ظاهرياً ويبردان الغرفة في أول أسبوع. الفرق الحقيقي يظهر مع الوقت: في مدى إحكام وصلات الفريون، في دقة تفريغ الأنابيب من الرطوبة، وفي جودة التثبيت الذي يتحمل اهتزاز الكمبريسور يومياً لسنوات. هذا بالضبط ما نركّز عليه في كل زيارة تركيب ننفذها.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-exclamation-circle" style="color:var(--secondary);margin-left:8px;"></i> لماذا يهم التركيب الاحترافي؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={2} items={[
         { icon: 'fa-percentage', title: 'الكفاءة الكاملة', text: 'التركيب الصحيح يضمن حصولك على كامل طاقة التبريد المكتوبة على الجهاز — التركيب الخاطئ قد يُقلّل الكفاءة 20-30%' },
         { icon: 'fa-hourglass-half', title: 'عمر أطول', text: 'أنابيب النحاس المتصلة بشكل صحيح مع العزل الجيد تحمي الكمبريسور من الزيادة في الضغط' },
         { icon: 'fa-bolt', title: 'توفير الكهرباء', text: 'الجهاز المركَّب صح يعمل في نطاق التصميم — لا يُجهد الكمبريسور بلا داعٍ' },
         { icon: 'fa-shield-alt', title: 'الضمان ساري', text: 'كثير من الشركات ترفض الضمان إذا تبيّن أن التركيب لم يكن احترافياً — فريقنا مُعتمد من الشركات المصنّعة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-clipboard-check" style="color:var(--secondary);margin-left:8px;"></i> متطلبات التركيب — نتحقق منها مسبقاً</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-clipboard-check" style="color:var(--secondary);margin-left:8px;"></i> متطلبات التركيب — نتحقق منها مسبقاً</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-ruler-combined', title: 'مقاس الفتحة في الجدار', text: 'نحسب المكان الصح لمرور الأنابيب بعيداً عن الأسلاك الكهربائية والإنشاءات' },
         { icon: 'fa-bolt', title: 'التمديد الكهربائي', text: 'نتأكد من أن الدائرة الكهربائية تتحمل الحمل المطلوب ونوفر breaker منفصل إذا لزم' },
         { icon: 'fa-ruler-horizontal', title: 'مسافة أنبوب الفريون', text: 'المسافة المثالية بين الوحدة الداخلية والخارجية من 3 إلى 7 أمتار — كلما قلّت المسافة كلما قلّت فقدانات الفريون وارتفعت الكفاءة، والمسافات الأطول تحتاج فريوناً إضافياً' },
         { icon: 'fa-map-marker-alt', title: 'مكان الوحدة الخارجية', text: 'نختار الموضع الأمثل بعيداً عن مصادر الحرارة مع تهوية كافية' },
         { icon: 'fa-water', title: 'مسار الصرف', text: 'نصمم خط الصرف بميل صحيح لضمان سيلان الماء بعيداً عن الجدار تلقائياً' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-snowflake" style="color:var(--secondary);margin-left:8px;"></i> أنواع التركيب التي نتخصص فيها</h3>
-      <ComparisonGrid items={[
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-snowflake" style="color:var(--secondary);margin-left:8px;"></i> أنواع التركيب التي نتخصص فيها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'تكييف سبليت حائطي (Wall Split)', text: 'الأشيع في مصر — وحدة داخلية على الحائط ووحدة خارجية. يتضمن حفر القاعدة، تمرير الأنابيب، وسد الفتحة بإتقان. مناسب لجميع السعات من 1 إلى 3 طن، والتركيب يستغرق عادة 2 إلى 4 ساعات حسب الموقع' },
         { title: 'تكييف كانسيل (Concealed Duct)', text: 'يُركَّب داخل الأسقف المعلقة — التبريد يصدر من الفتحات في السقف. يحتاج تخطيطاً دقيقاً للقنوات وتنسيقاً مع أعمال التشطيبات' },
         { title: 'تكييف كاسيت (Cassette)', text: 'يُثبَّت في منتصف السقف ويوزع الهواء 4 اتجاهات — مثالي للمحلات والصالات الكبيرة، ويتطلب سقفاً معلقاً بارتفاع متر مربع على الأقل' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="acInstallMidCta" />
+<MidPageCTA formId="acInstallMidCta" />
 
-      <h3><i class="fas fa-list-ol" style="color:var(--secondary);margin-left:8px;"></i> خطوات تركيب تكييف السبليت بالتفصيل</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list-ol" style="color:var(--secondary);margin-left:8px;"></i> خطوات تركيب تكييف السبليت بالتفصيل</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-map-marker-alt', title: 'الخطوة 1 — تحديد المواضع', text: 'نحدد موضع الوحدة الداخلية (مرتفعة بما يكفي، بعيدة عن المصادر الحرارية) وموضع الوحدة الخارجية على الشرفة أو الحائط الخارجي' },
         { icon: 'fa-thumbtack', title: 'الخطوة 2 — تركيب اللوحة الخلفية', text: 'تثبيت لوحة الدعم (Back Plate) بمستوى دقيق وبراغٍ قوية في الجدار' },
         { icon: 'fa-circle-notch', title: 'الخطوة 3 — حفر ثقب المرور', text: 'حفر ثقب قطر 7 سم في الجدار بزاوية ميل طفيفة نحو الخارج لتصريف الكثافة' },
@@ -147,34 +194,70 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-link', title: 'الخطوة 5 — تثبيت الوحدتين وتوصيلهما', text: 'تثبيت الوحدة الداخلية على اللوحة والوحدة الخارجية على القاعدة المعدنية، ثم توصيل الأنابيب بمفاتيح خاصة' },
         { icon: 'fa-vial', title: 'الخطوة 6 — تفريغ الهواء والاختبار', text: 'تفريغ الأنابيب من الهواء والرطوبة بمضخة Vacuum Pump ثم فتح الفريون واختبار التبريد والتدفئة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-shield-alt" style="color:var(--secondary);margin-left:8px;"></i> ضمان التركيب وما يشمله</h3>
-      <p>نقدم ضماناً شاملاً على جميع أعمال التركيب التي ينفذها فنيونا:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-shield-alt" style="color:var(--secondary);margin-left:8px;"></i> ضمان التركيب وما يشمله</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نقدم ضماناً شاملاً على جميع أعمال التركيب التي ينفذها فنيونا:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-tools', title: 'ضمان التركيب', text: 'سنة كاملة على جميع أعمال التركيب، أي مشكلة ناتجة عن خطأ في التركيب نُصلحها مجاناً.' },
         { icon: 'fa-wind', title: 'ضمان إحكام الفريون', text: 'نتأكد من عدم وجود أي تسريب في وصلات أنابيب الفريون ونضمن ذلك لمدة سنة.' },
         { icon: 'fa-exclamation-circle', title: 'ما لا يشمله الضمان', text: 'الأضرار الناتجة عن حوادث خارجية أو التلاعب بالجهاز أو سوء الاستخدام أو أعطال قطع الغيار الأصلية.' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> نصائح لاختيار أنسب موقع للتكييف</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> نصائح لاختيار أنسب موقع للتكييف</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-arrows-alt-v', title: 'الارتفاع المثالي', text: 'ركّب الوحدة الداخلية على ارتفاع 2.2 إلى 2.5 متر من الأرض لأفضل توزيع هواء بارد دون أن يلفح الهواء الجالسين مباشرة.' },
         { icon: 'fa-sun', title: 'بعيداً عن الحرارة المباشرة', text: 'تجنّب تركيب الوحدة الداخلية أمام نوافذ تتعرض للشمس المباشرة لأن ذلك يُضلل حساسات الحرارة ويقلل الكفاءة.' },
         { icon: 'fa-balance-scale', title: 'مستوى الوحدة الداخلية', text: 'يجب أن تكون الوحدة الداخلية مستوية تماماً أفقياً لضمان تصريف الكوندنسيت بشكل طبيعي دون تجمع.' },
         { icon: 'fa-umbrella', title: 'الوحدة الخارجية في الظل', text: 'إن أمكن، ركّب الوحدة الخارجية في مكان به ظل جزئي أو قم بتغطيتها بشكل يسمح بالتهوية، يزيد ذلك كفاءتها في الصيف المصري الشديد.' },
         { icon: 'fa-wind', title: 'مسافة التهوية', text: 'اترك مسافة لا تقل عن 30 سم أمام الوحدة الخارجية وعلى الجانبين لتسمح بتدفق الهواء وتسهيل الصيانة.' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-map-marker-alt" style="color:var(--secondary);margin-left:8px;"></i> نغطي جميع أنحاء مصر</h3>
-      <p>نقدم خدمة تركيب التكييفات في الإسكندرية والقاهرة والجيزة وطنطا والمنصورة والمحافظات المجاورة. فريقنا المتنقل يصل إلى موقعك في الموعد المحدد. للمشاريع الكبرى خارج الإسكندرية، تواصل معنا لترتيب الزيارة وتقديم عرض سعر مخصص.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-map-marker-alt" style="color:var(--secondary);margin-left:8px;"></i> نغطي جميع أنحاء مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نقدم خدمة تركيب التكييفات في الإسكندرية والقاهرة والجيزة وطنطا والمنصورة والمحافظات المجاورة. فريقنا المتنقل يصل إلى موقعك في الموعد المحدد. للمشاريع الكبرى خارج الإسكندرية، تواصل معنا لترتيب الزيارة وتقديم عرض سعر مخصص.</p>
 
       <div style="background:#f0f4ff;border-right:4px solid var(--secondary);padding:20px;border-radius:8px;margin:24px 0;">
         <h4 style="margin-bottom:12px;"><i class="fas fa-info-circle" style="color:var(--secondary);margin-left:8px;"></i> تركيب احترافي مقابل تركيب عشوائي</h4>
         <p style="font-size:0.95rem;color:#444;margin:0;line-height:1.7">التركيب الاحترافي يستخدم أنابيب نحاس أصلية بسُمك مناسب، مفاتيح توصيل معتمدة، وأدوات Vacuum Pump وManifold Gauge للتحقق من الضغط. التركيب العشوائي باستخدام أنابيب رديئة أو بدون تفريغ يُقلّل كفاءة الجهاز ويُعرّض الكمبريسور للتلف المبكر.</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-building" style="color:var(--secondary);margin-left:8px;"></i> تحديات التركيب حسب نوع المبنى</h3>
-      <p>كل نوع مبنى له تحديات تركيب مختلفة، ونتعامل معها بأسلوب مُصمَّم خصيصاً لكل حالة:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-building" style="color:var(--secondary);margin-left:8px;"></i> تحديات التركيب حسب نوع المبنى</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كل نوع مبنى له تحديات تركيب مختلفة، ونتعامل معها بأسلوب مُصمَّم خصيصاً لكل حالة:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-home', title: 'الشقق القديمة', text: 'غالباً تحتاج فحصاً إضافياً للتمديدات الكهربائية القديمة قبل التركيب للتأكد من تحملها الحمل الجديد، وقد نحتاج مسارات أنابيب غير مباشرة بسبب سماكة الجدران القديمة أو وجود حديد تسليح في مواضع معينة' },
         { icon: 'fa-city', title: 'المباني الحديثة والفلل', text: 'عادة أسهل في التخطيط لأن التصميم الإنشائي يراعي مسارات التكييف من البداية، ونحرص هنا على إخفاء الأنابيب داخل قنوات جمالية بدل تركها ظاهرة على الواجهة' },
@@ -182,9 +265,18 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-industry', title: 'المصانع والمستودعات', text: 'تتطلب تخطيطاً هندسياً لمسارات الأنابيب الطويلة ونقاط تثبيت إضافية لدعم الوزن، مع مراعاة سلامة التمديدات الكهربائية الصناعية القائمة' },
         { icon: 'fa-hotel', title: 'الفنادق والمباني متعددة الطوابق', text: 'نحتاج تنسيقاً دقيقاً بين عدة وحدات ومسارات صرف مشتركة، وغالباً نُنفّذ التركيب على مراحل بالتنسيق مع إدارة المبنى لتفادي إزعاج النزلاء' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-bug" style="color:var(--secondary);margin-left:8px;"></i> أخطاء تركيب شائعة نتجنّبها دائماً</h3>
-      <p>رأينا خلال سنوات عملنا الكثير من أعطال التكييف التي سببها الحقيقي خطأ في التركيب الأول وليس عيباً في الجهاز نفسه:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-bug" style="color:var(--secondary);margin-left:8px;"></i> أخطاء تركيب شائعة نتجنّبها دائماً</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>رأينا خلال سنوات عملنا الكثير من أعطال التكييف التي سببها الحقيقي خطأ في التركيب الأول وليس عيباً في الجهاز نفسه:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-vial', title: 'عدم تفريغ الأنابيب بالكامل', text: 'إذا لم يُستخدم Vacuum Pump لسحب الهواء والرطوبة من الأنابيب قبل فتح الفريون، تتحول الرطوبة المتبقية إلى حمض يُتلف الكمبريسور تدريجياً خلال أشهر' },
         { icon: 'fa-water', title: 'ميل خاطئ لخرطوم الصرف', text: 'إذا كان الميل غير كافٍ أو معكوساً، يتجمع الماء ويتسرب داخل الحائط أو السقف، مما يسبب أضراراً إنشائية قبل أن يُلاحَظ التسريب من التكييف نفسه' },
@@ -193,31 +285,27 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-plug', title: 'عدم فصل الدائرة الكهربائية', text: 'توصيل التكييف على نفس دائرة أجهزة أخرى دون قاطع (breaker) مستقل يُعرّض المنزل بالكامل لانقطاع الكهرباء عند أي عطل بسيط في التكييف' },
       ]} />
     </div>
+  </div>
+</section>
 
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات التكييف</h4>
-        <div class="sidebar-services">
-          <a href="/ac/buy" class="sidebar-service-link"><span>بيع تكييفات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/ac/installation" class="sidebar-service-link active"><span>تركيب تكييفات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/ac/maintenance" class="sidebar-service-link"><span>صيانة وشحن فريون</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
-        </div>
-      </div>
-      <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-        <h4 style="color:var(--secondary);border-color:var(--secondary);">احجز تركيب تكييفك</h4>
-        <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">احجز موعد التركيب وسنزورك في اليوم المناسب</p>
-        <a href="https://wa.me/201227392074?text=أريد%20حجز%20موعد%20تركيب%20تكييف" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> احجز الآن</a>
-      </div>
-    </aside>
-  </div></div>
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-2">
+<div class="sidebar-card">
+              <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
+              </div>
+            </div>
+<div class="sidebar-card" style="background:var(--primary);color:var(--white);">
+              <h4 style="color:var(--secondary);border-color:var(--secondary);">احجز تركيب تكييفك</h4>
+              <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">احجز موعد التركيب وسنزورك في اليوم المناسب</p>
+              <a href="https://wa.me/201227392074?text=أريد%20حجز%20موعد%20تركيب%20تكييف" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> احجز الآن</a>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="content-section" style="padding:60px 0;background:#f8f9fa">
@@ -268,5 +356,19 @@ const schemaJson = JSON.stringify([
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات التكييف</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/ac/buy" class="related-service-link"><span>بيع تكييفات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/ac/installation" class="related-service-link active"><span>تركيب تكييفات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/ac/maintenance" class="related-service-link"><span>صيانة وشحن فريون</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="تكييفات" />
 </BaseLayout>

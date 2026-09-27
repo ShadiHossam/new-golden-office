@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
@@ -106,43 +105,89 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="تقنية المستقبل في مراقبة المنازل والأعمال"
-        text="كاميرات IP وواي فاي هي أحدث ما وصلت إليه تقنيات المراقبة الحديثة. بدلاً من التعقيد الذي تفرضه الكاميرات التقليدية من كابلات طويلة وإعدادات معقدة، أصبح بإمكانك تثبيت كاميرة في أي مكان تريده والبدء في المشاهدة من هاتفك خلال دقائق. نيو جولدن أوفيس تقدم حلول IP وواي فاي متكاملة للمنازل والمكاتب والمحلات التجارية في جميع أنحاء مصر."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> IP مقابل Analog: أيهما تختار؟</h3>
-      <ComparisonGrid items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تقنية المستقبل في مراقبة المنازل والأعمال</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">كاميرات IP وواي فاي هي أحدث ما وصلت إليه تقنيات المراقبة الحديثة. بدلاً من التعقيد الذي تفرضه الكاميرات التقليدية من كابلات طويلة وإعدادات معقدة، أصبح بإمكانك تثبيت كاميرة في أي مكان تريده والبدء في المشاهدة من هاتفك خلال دقائق. نيو جولدن أوفيس تقدم حلول IP وواي فاي متكاملة للمنازل والمكاتب والمحلات التجارية في جميع أنحاء مصر.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> IP مقابل Analog: أيهما تختار؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'كاميرات Analog التقليدية', text: 'تحتاج كابل Coaxial لكل كاميرة وجهاز DVR. الأرخص في الأنظمة الكبيرة ولكنها أقل مرونة في التثبيت' },
         { title: 'كاميرات IP (شبكية)', text: 'تعمل عبر شبكة Cat6 أو Wi-Fi وتحتاج <a href="/cameras/dvr-nvr">جهاز NVR للكاميرات الشبكية</a> لتسجيل الصورة وتخزينها، دقة صورة أعلى بكثير، إعداد أسهل، قابلة للتوسع بلا حدود' },
         { title: 'النتيجة', text: 'للمشاريع الجديدة ننصح بـ IP لجودتها العالية ومرونتها؛ للأنظمة الموجودة Analog تبقى خياراً اقتصادياً ممتازاً' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> مميزات كاميرات واي فاي</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> مميزات كاميرات واي فاي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-plug', title: 'تثبيت بدون كابلات', text: 'لا تحتاج سوى مقبس كهرباء وشبكة Wi-Fi موجودة مسبقاً في المكان' },
         { icon: 'fa-arrows-alt', title: 'المرونة في الموضع', text: 'يمكن نقل الكاميرة وتغيير مكانها بسهولة دون أي أعمال توصيل' },
         { icon: 'fa-bolt', title: 'التثبيت السريع', text: 'يستغرق تثبيت كاميرة واي فاي 15 دقيقة فقط مقارنة بساعات للكاميرات التقليدية' },
         { icon: 'fa-mobile-alt', title: 'المشاهدة الفورية', text: 'تبدأ في رؤية الصورة على هاتفك فوراً بعد إعداد الكاميرة' },
         { icon: 'fa-sync', title: 'التحديثات التلقائية', text: 'الكاميرات تتلقى تحديثات برمجية تلقائية لتحسين الأداء وإضافة مميزات جديدة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-arrows-alt" style="color:var(--secondary);margin-left:8px;"></i> كاميرات PTZ (الدوّارة)</h3>
-      <p>كاميرات PTZ (Pan-Tilt-Zoom) تمنحك السيطرة الكاملة على المراقبة:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-arrows-alt" style="color:var(--secondary);margin-left:8px;"></i> كاميرات PTZ (الدوّارة)</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كاميرات PTZ (Pan-Tilt-Zoom) تمنحك السيطرة الكاملة على المراقبة:</p>
       <IconCardGrid columns={4} items={[
         { icon: 'fa-arrows-alt-h', title: 'التحريك الأفقي (Pan)', text: 'تدور 360 درجة لتغطية جميع الاتجاهات بكاميرة واحدة' },
         { icon: 'fa-arrows-alt-v', title: 'التحريك الرأسي (Tilt)', text: 'تتحرك لأعلى ولأسفل لمتابعة الأشخاص والأحداث' },
         { icon: 'fa-search-plus', title: 'التكبير الضوئي (Zoom)', text: 'تكبير ضوئي حتى 20x لرؤية التفاصيل الدقيقة من مسافة بعيدة' },
         { icon: 'fa-walking', title: 'المتابعة التلقائية', text: 'تتبع الأشخاص المتحركين تلقائياً دون أي تدخل منك' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="camIpWifiMidCta" />
+<MidPageCTA formId="camIpWifiMidCta" />
 
-      <h3><i class="fas fa-brain" style="color:var(--secondary);margin-left:8px;"></i> الكشف الذكي المتقدم</h3>
-      <p>كاميرات IP الحديثة مزودة بذكاء اصطناعي يميزها تماماً عن الكاميرات التقليدية:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-brain" style="color:var(--secondary);margin-left:8px;"></i> الكشف الذكي المتقدم</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كاميرات IP الحديثة مزودة بذكاء اصطناعي يميزها تماماً عن الكاميرات التقليدية:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-user', title: 'كشف الوجوه (Face Detection)', text: 'تنبيهك عند ظهور وجه أمام الكاميرة مع إمكانية التعرف على الوجوه المسجلة' },
         { icon: 'fa-running', title: 'كشف الحركة الذكي', text: 'يميز بين حركة الإنسان والحيوانات والرياح لتقليل التنبيهات الزائفة' },
@@ -150,19 +195,46 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-baby', title: 'كشف البكاء', text: 'متاح في كاميرات المنازل للرد الفوري على بكاء الأطفال' },
         { icon: 'fa-shield-alt', title: 'كشف اختراق المنطقة', text: 'رسم مناطق محظورة ويتلقى تنبيهاً فور دخول أحد إليها' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-microphone" style="color:var(--secondary);margin-left:8px;"></i> الصوت ثنائي الاتجاه (Two-Way Audio)</h3>
-      <p>كاميرات IP الحديثة مزودة بمكبر صوت وميكروفون يتيح لك التحدث مع من يظهر أمام الكاميرة مباشرةً من هاتفك — مثالي للتعامل مع الزوار والعمال والمراقبة التفاعلية.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-microphone" style="color:var(--secondary);margin-left:8px;"></i> الصوت ثنائي الاتجاه (Two-Way Audio)</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كاميرات IP الحديثة مزودة بمكبر صوت وميكروفون يتيح لك التحدث مع من يظهر أمام الكاميرة مباشرةً من هاتفك — مثالي للتعامل مع الزوار والعمال والمراقبة التفاعلية.</p>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-cloud" style="color:var(--secondary);margin-left:8px;"></i> خيارات التخزين</h3>
-      <ComparisonGrid items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-cloud" style="color:var(--secondary);margin-left:8px;"></i> خيارات التخزين</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'التخزين السحابي', text: 'نسخ احتياطية في السحابة لضمان عدم فقدان التسجيلات حتى لو تعطّل الجهاز أو سُرق' },
         { title: 'MicroSD محلية', text: 'تخزين محلي في الكاميرة نفسها حتى 256GB بدون الحاجة لجهاز DVR' },
         { title: 'NAS Storage', text: 'تخزين شبكي محلي لاحترافيين يريدون أرشفة طويلة المدى' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-mobile-alt" style="color:var(--secondary);margin-left:8px;"></i> التحكم عبر التطبيق</h3>
-      <p>جميع كاميرات IP وواي فاي لدينا تأتي بتطبيق مجاني يدعم Android وiPhone يتيح لك:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-mobile-alt" style="color:var(--secondary);margin-left:8px;"></i> التحكم عبر التطبيق</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>جميع كاميرات IP وواي فاي لدينا تأتي بتطبيق مجاني يدعم Android وiPhone يتيح لك:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-play-circle', text: 'مشاهدة البث المباشر بجودة عالية في أي وقت' },
         { icon: 'fa-film', text: 'مراجعة التسجيلات السابقة وتصديرها' },
@@ -170,9 +242,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-bell', text: 'استقبال تنبيهات فورية على الهاتف' },
         { icon: 'fa-sliders-h', text: 'ضبط إعدادات الكاميرة والحركة والصوت' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> حل مشكلات الاتصال الشائعة في كاميرات واي فاي</h3>
-      <p>على عكس كاميرات النظام التقليدي، أغلب مشكلات كاميرات واي فاي وIP لا علاقة لها بعطل في الجهاز نفسه بل بإعدادات الشبكة، وإليك أشهرها وحلولها:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> حل مشكلات الاتصال الشائعة في كاميرات واي فاي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>على عكس كاميرات النظام التقليدي، أغلب مشكلات كاميرات واي فاي وIP لا علاقة لها بعطل في الجهاز نفسه بل بإعدادات الشبكة، وإليك أشهرها وحلولها:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-unlink', title: 'الكاميرا تظهر "غير متصلة" (Offline) في التطبيق', text: 'غالباً بسبب انقطاع مؤقت في الإنترنت أو تغيّر كلمة مرور الراوتر. إعادة تشغيل الراوتر والكاميرا معاً تحل المشكلة في أغلب الحالات خلال دقائق' },
         { icon: 'fa-hourglass-half', title: 'بطء أو تقطّع البث المباشر', text: 'ناتج عادةً عن ضعف إشارة واي فاي أو ازدحام الشبكة بأجهزة كثيرة — نوصي بتخصيص شبكة واي فاي منفصلة (Guest Network) للكاميرات لتخفيف الحمل عن شبكة الاستخدام اليومي' },
@@ -180,9 +261,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-key', title: 'نسيان كلمة مرور الكاميرا أو التطبيق', text: 'نوفر خدمة استرجاع آمنة عبر الرقم التسلسلي للجهاز أو إعادة الضبط من المصنع مع محاولة الحفاظ على الإعدادات الأساسية قدر الإمكان' },
         { icon: 'fa-sync-alt', title: 'تحديثات التطبيق تسبب مشاكل توافق مؤقتة', text: 'نتابع تحديثات الشركات المصنّعة عن كثب ونرشدك متى يكون التحديث آمناً ومتى يُفضّل الانتظار لإصدار أكثر استقراراً' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-user-friends" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات استخدام يومية لكاميرات IP وواي فاي</h3>
-      <p>ما يميز هذه الفئة من الكاميرات أنها دخلت في تفاصيل حياة الناس اليومية بطرق لم تكن ممكنة مع الأنظمة التقليدية:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-user-friends" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات استخدام يومية لكاميرات IP وواي فاي</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>ما يميز هذه الفئة من الكاميرات أنها دخلت في تفاصيل حياة الناس اليومية بطرق لم تكن ممكنة مع الأنظمة التقليدية:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-briefcase', title: 'الآباء العاملون', text: 'مراقبة الأطفال والمربية من مكان العمل مباشرة عبر الهاتف، مع تنبيه فوري عند البكاء أو أي حركة غير معتادة في غرفة الطفل' },
         { icon: 'fa-hand-holding-heart', title: 'الاطمئنان على كبار السن', text: 'كاميرات بصوت ثنائي الاتجاه تتيح لأفراد العائلة التواصل الفوري مع الوالدين المسنين والاطمئنان عليهم في أي وقت من اليوم' },
@@ -191,41 +281,36 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-door-open', title: 'الطلاب والمقيمون في شقق مستقلة', text: 'كاميرة واي فاي بسيطة عند الباب لمراقبة الزوار واستلام الطرود بأمان دون أي تمديدات أو تعديلات في الشقة المستأجرة' },
       ]} />
     </div>
+  </div>
+</section>
 
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات الكاميرات</h4>
-        <div class="sidebar-services">
-          <a href="/cameras/install" class="sidebar-service-link"><span>بيع وتركيب كاميرات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/dvr-nvr" class="sidebar-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/ip-wifi" class="sidebar-service-link active"><span>كاميرات IP وواي فاي</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/maintenance" class="sidebar-service-link"><span>صيانة المراقبة</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
-        </div>
-      </div>
-      <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-        <h4 style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</h4>
-        <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">أخبرنا بعدد الغرف أو المساحة وسنوصي بالنظام المثالي</p>
-        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20واي%20فاي%20IP" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> واتساب الآن</a>
-      </div>
-      <div class="sidebar-card">
-        <h4><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> متى تختار واي فاي؟</h4>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لمنزلك دون حفر جدران</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لمكان مؤقت أو قابل للتغيير</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لأقل من 8 كاميرات</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>عند وجود شبكة Wi-Fi قوية</span></li>
-        </ul>
-      </div>
-    </aside>
-  </div></div>
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-3">
+<div class="sidebar-card">
+              <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
+              </div>
+            </div>
+<div class="sidebar-card" style="background:var(--primary);color:var(--white);">
+              <h4 style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</h4>
+              <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">أخبرنا بعدد الغرف أو المساحة وسنوصي بالنظام المثالي</p>
+              <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20واي%20فاي%20IP" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> واتساب الآن</a>
+            </div>
+<div class="sidebar-card">
+              <h4><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> متى تختار واي فاي؟</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لمنزلك دون حفر جدران</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لمكان مؤقت أو قابل للتغيير</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لأقل من 8 كاميرات</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>عند وجود شبكة Wi-Fi قوية</span></li>
+              </ul>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="section section-bg">
@@ -263,9 +348,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section section-bg">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">الفرق بين كاميرا IP وكاميرا الواي فاي — أيهما تختار؟</h2>
+    <div class="section-header">
+      <h2>الفرق بين كاميرا IP وكاميرا الواي فاي — أيهما تختار؟</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">كثير من عملائنا في الإسكندرية والقاهرة يسألون عن الفرق بين كاميرا IP وكاميرا الواي فاي قبل شراء نظام المراقبة. إليك المقارنة:</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
       <div style="background:#fff;border-radius:12px;padding:24px;border:2px solid #1a1a2e">
@@ -292,9 +380,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0">
+<section class="section">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">كاميرات واي فاي للمنازل في مصر — الحل الأمثل للمراقبة بدون تمديدات</h2>
+    <div class="section-header">
+      <h2>كاميرات واي فاي للمنازل في مصر — الحل الأمثل للمراقبة بدون تمديدات</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">
       كاميرات الواي فاي للمنازل هي الأكثر طلباً في الإسكندرية والقاهرة وجميع أنحاء مصر للأسباب التالية: سهولة التركيب، إمكانية المشاهدة من الموبايل في أي مكان، وتنبيهات فورية عند أي حركة. نوفر كاميرات واي فاي من Hikvision وDahua وHILook بأسعار تنافسية.
     </p>
@@ -314,5 +405,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات الكاميرات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/cameras/install" class="related-service-link"><span>بيع وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/dvr-nvr" class="related-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/ip-wifi" class="related-service-link active"><span>كاميرات IP وواي فاي</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/maintenance" class="related-service-link"><span>صيانة المراقبة</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="كاميرات المراقبة" />
 </BaseLayout>

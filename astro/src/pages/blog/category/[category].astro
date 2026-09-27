@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import BlogGrid from '../../../components/BlogGrid.astro';
+import { getSortedPosts, countPages, countByCategory, BLOG_CATEGORIES, POSTS_PER_PAGE } from '../../../lib/blog-list';
+
+/** Page 1 of each category that has posts; later pages are /page/N. */
+export async function getStaticPaths() {
+  const posts = await getSortedPosts();
+  const categoryCounts = countByCategory(posts);
+  return BLOG_CATEGORIES.filter((c) => categoryCounts[c.name]).map((category) => {
+    const catPosts = posts.filter((p) => p.category === category.name);
+    return {
+      params: { category: category.slug },
+      props: {
+        category,
+        catPosts,
+        categoryCounts,
+        totalPosts: posts.length,
+        totalPages: countPages(catPosts.length),
+      },
+    };
+  });
+}
+
+const { category, catPosts, categoryCounts, totalPosts, totalPages } = Astro.props;
+const pagePosts = catPosts.slice(0, POSTS_PER_PAGE);
+---
+
+<BaseLayout
+  title={`مقالات ${category.name} | مدونة نيو جولدن أوفيس`}
+  description={`مقالات ونصائح نيو جولدن أوفيس في قسم ${category.name} — دليلك للاختيار والاستخدام في مصر.`}
+  ogTitle={`مقالات ${category.name} — مدونة نيو جولدن أوفيس`}
+  ogDescription={`مقالات ونصائح في قسم ${category.name} من نيو جولدن أوفيس.`}
+  breadcrumbLabel={category.name}
+>
+<PageHero
+  title={category.name}
+  subtitle={`${catPosts.length} مقال ونصيحة في قسم ${category.name}`}
+  heroImage="/images/hero-office.webp"
+  heroAlt={`مدونة نيو جولدن أوفيس — ${category.name}`}
+  heroIcon={category.icon}
+  showCta={false}
+  breadcrumbs={[
+    { label: 'الرئيسية', href: '/' },
+    { label: 'المدونة', href: '/blog' },
+    { label: category.name }
+  ]}
+/>
+
+<BlogGrid posts={pagePosts} page={1} totalPages={totalPages} activeCategory={category.slug} categoryCounts={categoryCounts} totalPosts={totalPosts} />
+</BaseLayout>

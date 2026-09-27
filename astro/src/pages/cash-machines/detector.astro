@@ -4,7 +4,6 @@ import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 
 const schemaJson = JSON.stringify({
@@ -46,41 +45,57 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="جهاز كشف العملة — تقنيات كشف العملات المزيفة"
-        text="التزوير مشكلة حقيقية تواجه التجار والمؤسسات المالية في مصر يومياً. الحل الأمثل هو أجهزة كشف العملات المزيفة الحديثة التي تجمع أكثر من تقنية للكشف لضمان أعلى مستوى من الحماية. في نيو جولدن أوفيس نوفر أحدث هذه الأجهزة وأكثرها موثوقية."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-sun" style="color:var(--secondary);margin-left:8px;"></i> الأشعة فوق البنفسجية (UV)</h3>
-      <p>التقنية الأكثر شيوعاً في أجهزة كشف التزوير. تعمل المصابيح فوق البنفسجية على إظهار العلامات الفلورية المخفية في الأوراق النقدية الأصلية كالعلامة المائية الفلورية والخيوط الأمنية المضيئة. الأوراق المزيفة لا تحمل هذه العلامات أو تحملها بشكل مختلف.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>جهاز كشف العملة — تقنيات كشف العملات المزيفة</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">التزوير مشكلة حقيقية تواجه التجار والمؤسسات المالية في مصر يومياً. الحل الأمثل هو أجهزة كشف العملات المزيفة الحديثة التي تجمع أكثر من تقنية للكشف لضمان أعلى مستوى من الحماية. في نيو جولدن أوفيس نوفر أحدث هذه الأجهزة وأكثرها موثوقية.</p>
+    <div class="features-grid landing-cards">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3><i class="fas fa-sun" style="color:var(--secondary);margin-left:8px;"></i> الأشعة فوق البنفسجية (UV)</h3><p>التقنية الأكثر شيوعاً في أجهزة كشف التزوير. تعمل المصابيح فوق البنفسجية على إظهار العلامات الفلورية المخفية في الأوراق النقدية الأصلية كالعلامة المائية الفلورية والخيوط الأمنية المضيئة. الأوراق المزيفة لا تحمل هذه العلامات أو تحملها بشكل مختلف.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3><i class="fas fa-magnet" style="color:var(--secondary);margin-left:8px;"></i> الكشف المغناطيسي (MG)</h3><p>تحتوي الأوراق النقدية الأصلية على حبر مغناطيسي خاص. أجهزة الكشف المغناطيسي تستشعر هذا الحبر وتؤكد أصالة الورقة. هذه التقنية صعبة التزوير لأن الحبر المغناطيسي الخاص باهظ التكلفة وغير متاح في السوق العادية، مما يجعلها من أوثق وسائل التحقق من الأصالة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-wave-square" style="color:var(--secondary);margin-left:8px;"></i> الأشعة تحت الحمراء (IR)</h3><p>تفحص البنية الداخلية للورق والطباعة بطريقة لا تراها العين المجردة. تكتشف الاختلافات في كثافة الحبر والطبقات المتعددة في الأوراق النقدية الأصلية. تُستخدم في الأجهزة المتطورة كطبقة حماية إضافية فوق UV وMG.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3><i class="fas fa-tint" style="color:var(--secondary);margin-left:8px;"></i> العلامة المائية (Watermark)</h3><p>بعض أجهزة الكشف تفحص العلامة المائية المدمجة في الورق بالضوء المرئي. تظهر عند إضاءة الورقة من الخلف وهي من أصعب العناصر تزويراً لأنها مدمجة في نسيج الورق نفسه وليست مطبوعة فوقه.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3><i class="fas fa-palette" style="color:var(--secondary);margin-left:8px;"></i> الحبر المتغير اللون وعناصر الأمان الأخرى</h3><p>الأوراق النقدية عالية الفئة تحتوي على حبر يتغير لونه عند النظر إليه بزوايا مختلفة (Color Shifting Ink). بعض الأجهزة المتطورة يمكنها الكشف عن هذه الخاصية إلكترونياً، إضافة إلى الشرائط الهولوغرافية والنقوش البارزة الأخرى.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-magnet" style="color:var(--secondary);margin-left:8px;"></i> الكشف المغناطيسي (MG)</h3>
-      <p>تحتوي الأوراق النقدية الأصلية على حبر مغناطيسي خاص. أجهزة الكشف المغناطيسي تستشعر هذا الحبر وتؤكد أصالة الورقة. هذه التقنية صعبة التزوير لأن الحبر المغناطيسي الخاص باهظ التكلفة وغير متاح في السوق العادية، مما يجعلها من أوثق وسائل التحقق من الأصالة.</p>
-
-      <h3><i class="fas fa-wave-square" style="color:var(--secondary);margin-left:8px;"></i> الأشعة تحت الحمراء (IR)</h3>
-      <p>تفحص البنية الداخلية للورق والطباعة بطريقة لا تراها العين المجردة. تكتشف الاختلافات في كثافة الحبر والطبقات المتعددة في الأوراق النقدية الأصلية. تُستخدم في الأجهزة المتطورة كطبقة حماية إضافية فوق UV وMG.</p>
-
-      <h3><i class="fas fa-tint" style="color:var(--secondary);margin-left:8px;"></i> العلامة المائية (Watermark)</h3>
-      <p>بعض أجهزة الكشف تفحص العلامة المائية المدمجة في الورق بالضوء المرئي. تظهر عند إضاءة الورقة من الخلف وهي من أصعب العناصر تزويراً لأنها مدمجة في نسيج الورق نفسه وليست مطبوعة فوقه.</p>
-
-      <h3><i class="fas fa-palette" style="color:var(--secondary);margin-left:8px;"></i> الحبر المتغير اللون وعناصر الأمان الأخرى</h3>
-      <p>الأوراق النقدية عالية الفئة تحتوي على حبر يتغير لونه عند النظر إليه بزوايا مختلفة (Color Shifting Ink). بعض الأجهزة المتطورة يمكنها الكشف عن هذه الخاصية إلكترونياً، إضافة إلى الشرائط الهولوغرافية والنقوش البارزة الأخرى.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>أنواع أجهزة الكشف المتوفرة</h2>
-      <p>نوفر في نيو جولدن أوفيس ثلاثة أنواع رئيسية من أجهزة كشف العملات المزيفة لتناسب مختلف الاحتياجات والميزانيات:</p>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">نوفر في نيو جولدن أوفيس ثلاثة أنواع رئيسية من أجهزة كشف العملات المزيفة لتناسب مختلف الاحتياجات والميزانيات:</p>
+    <div class="features-grid landing-cards cols-3">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>الأجهزة المحمولة والأقلام (Portable/Pen)</h3><p>أصغر وأرخص وسائل الكشف، مثالية للاستخدام الميداني السريع. يمكن حملها في الجيب واستخدامها في أي مكان. تعمل بالتمرير على الورقة النقدية وتعطي إشارة فورية إذا كان الحبر أصيلاً أم لا. مناسبة كأداة إضافية للموظفين أصحاب الخبرة ولكنها ليست كافية للاعتماد الكلي عليها.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>الأجهزة المنضدية البسيطة (Desktop Basic)</h3><p>تستوعب ورقة واحدة في كل مرة وتفحصها بضوء UV فقط أو بتقنيتي UV+MG معاً. سهلة الاستخدام جداً ولا تحتاج تدريباً مسبقاً. تُعدّ الخيار الأمثل للمحلات الصغيرة والمتوسطة التي تريد حماية فعالة بسعر في متناول الجميع. تتراوح سرعتها بين ثانية وثانيتين للورقة الواحدة.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>أجهزة الكشف المتطورة (Advanced Multi-Detection)</h3><p>تجمع UV+MG+IR+WM في جهاز واحد وبعضها يعمل بالتغذية التلقائية (Auto-feed) مما يسمح بفحص كميات كبيرة من الأوراق بسرعة عالية. مناسبة للبنوك وشركات الصرافة والفنادق والمراكز التجارية الكبرى. توفر أعلى مستوى من الحماية والدقة في الكشف.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3>الأجهزة المحمولة والأقلام (Portable/Pen)</h3>
-      <p>أصغر وأرخص وسائل الكشف، مثالية للاستخدام الميداني السريع. يمكن حملها في الجيب واستخدامها في أي مكان. تعمل بالتمرير على الورقة النقدية وتعطي إشارة فورية إذا كان الحبر أصيلاً أم لا. مناسبة كأداة إضافية للموظفين أصحاب الخبرة ولكنها ليست كافية للاعتماد الكلي عليها.</p>
-
-      <h3>الأجهزة المنضدية البسيطة (Desktop Basic)</h3>
-      <p>تستوعب ورقة واحدة في كل مرة وتفحصها بضوء UV فقط أو بتقنيتي UV+MG معاً. سهلة الاستخدام جداً ولا تحتاج تدريباً مسبقاً. تُعدّ الخيار الأمثل للمحلات الصغيرة والمتوسطة التي تريد حماية فعالة بسعر في متناول الجميع. تتراوح سرعتها بين ثانية وثانيتين للورقة الواحدة.</p>
-
-      <h3>أجهزة الكشف المتطورة (Advanced Multi-Detection)</h3>
-      <p>تجمع UV+MG+IR+WM في جهاز واحد وبعضها يعمل بالتغذية التلقائية (Auto-feed) مما يسمح بفحص كميات كبيرة من الأوراق بسرعة عالية. مناسبة للبنوك وشركات الصرافة والفنادق والمراكز التجارية الكبرى. توفر أعلى مستوى من الحماية والدقة في الكشف.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>الماركات المتاحة لدى نيو جولدن أوفيس</h2>
-      <p>نحرص على توفير ماركات عالمية موثوقة تضمن لك أعلى دقة في الكشف وأطول عمر افتراضي للجهاز:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نحرص على توفير ماركات عالمية موثوقة تضمن لك أعلى دقة في الكشف وأطول عمر افتراضي للجهاز:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-globe-asia', title: 'Ribao', text: 'تقنية متطورة وأداء موثوق بسعر تنافسي، شائعة في الأسواق العربية' },
         { icon: 'fa-star', title: 'Cassida', text: 'ماركة أمريكية بجودة احترافية وخاصية كشف متعددة (UV+MG+IR)' },
@@ -88,31 +103,69 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-shield-alt', title: 'Safescan', text: 'هولندية الصنع بتقنيات متقدمة وتصميم أنيق يناسب المكاتب الراقية والفنادق' },
         { icon: 'fa-boxes', title: 'Pro CIS وماركات موثوقة أخرى', text: 'نوفر تشكيلة واسعة تضمن وجود الجهاز المناسب لكل ميزانية وكل احتياج' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>أعطال شائعة في أجهزة الكشف وكيفية حلها</h2>
-      <p>أجهزة كشف العملات المزيفة أجهزة بسيطة نسبياً لكنها تحتاج بعض العناية للحفاظ على دقتها. إليك أشيع المشكلات التي نصادفها وحلولها العملية:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>أجهزة كشف العملات المزيفة أجهزة بسيطة نسبياً لكنها تحتاج بعض العناية للحفاظ على دقتها. إليك أشيع المشكلات التي نصادفها وحلولها العملية:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-lightbulb', title: 'ضعف إضاءة مصباح UV مع الوقت', text: 'مصابيح الأشعة فوق البنفسجية لها عمر افتراضي محدود يتراوح بين 8000 و10000 ساعة تشغيل. إذا لاحظت أن العلامات الفلورية تظهر باهتة، فقد حان وقت استبدال المصباح، وهي عملية بسيطة وسريعة نقوم بها في المعرض أو بزيارة ميدانية' },
         { icon: 'fa-magnet', title: 'عدم استقرار قراءة الكشف المغناطيسي', text: 'غالباً بسبب تراكم الأتربة على رأس الاستشعار المغناطيسي، وينصح بتنظيفه دورياً بقطعة قماش جافة ناعمة دون الضغط عليه' },
         { icon: 'fa-balance-scale', title: 'نتائج كشف متضاربة على نفس الورقة', text: 'إذا أعطت الورقة نتيجة مختلفة في محاولتين متتاليتين، تحقق من نظافة سطح الفحص وتأكد من عدم وجود انحناء أو طيّ حاد في الورقة يُخفي العلامة الأمنية عن الحساس' },
         { icon: 'fa-plug', title: 'الجهاز لا يستجيب عند التشغيل', text: 'تحقق أولاً من مصدر الطاقة والكابل، فأغلب الأعطال المفاجئة تكون بسبب مشكلة كهربائية بسيطة وليست عطلاً داخلياً في الدائرة' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>كيف تختار الجهاز المناسب حسب حجم وطبيعة التعامل النقدي؟</h2>
-      <p>اختيار جهاز كشف العملات المناسب يعتمد على عاملين رئيسيين: حجم النقد اليومي، وقيمة الصفقة الواحدة في المتوسط. إليك دليلنا العملي بناءً على خبرتنا مع مئات العملاء:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>اختيار جهاز كشف العملات المناسب يعتمد على عاملين رئيسيين: حجم النقد اليومي، وقيمة الصفقة الواحدة في المتوسط. إليك دليلنا العملي بناءً على خبرتنا مع مئات العملاء:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-store', title: 'محل صغير بصفقات محدودة القيمة', text: 'جهاز منضدي بتقنية UV+MG يكفي تماماً ويوفر حماية فعلية بتكلفة معقولة، دون الحاجة لاستثمار إضافي غير ضروري' },
         { icon: 'fa-gem', title: 'مكتب صرافة أو محل ذهب بصفقات عالية القيمة', text: 'يستحق الاستثمار في جهاز متطور يجمع UV+MG+IR، لأن قيمة الخسارة المحتملة من ورقة مزيفة واحدة قد تفوق تكلفة الجهاز نفسه عدة مرات' },
         { icon: 'fa-hotel', title: 'فندق أو منشأة سياحية تستقبل عملات أجنبية', text: 'يحتاج جهازاً قادراً على فحص الدولار واليورو والجنيه الإسترليني إلى جانب الجنيه المصري، مع تحديثات دورية لقاعدة بيانات العملات' },
         { icon: 'fa-building', title: 'شركة أو مؤسسة تستقبل نقداً بكميات كبيرة يومياً', text: 'الأفضل جهاز بتغذية تلقائية (Auto-feed) يفحص عشرات الأوراق في دفعة واحدة دون تدخل يدوي لكل ورقة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="cashDetectorMidCta" />
+<MidPageCTA formId="cashDetectorMidCta" />
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>دقة الكشف والموثوقية — لماذا يهم عدد التقنيات؟</h2>
-      <p>كلما زاد عدد تقنيات الكشف في الجهاز، زادت دقته وانخفض احتمال خطأ الكشف. جهاز UV وحده قد يفوته بعض حالات التزوير المتطورة التي تستخدم أحباراً فلورية مشابهة. أما الجهاز الذي يجمع UV+MG+IR فاحتمالية اختراقه تكاد تكون معدومة، لأن التزوير الجامع لكل هذه الخصائص معاً مكلف جداً وصعب التنفيذ بشكل عملي.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كلما زاد عدد تقنيات الكشف في الجهاز، زادت دقته وانخفض احتمال خطأ الكشف. جهاز UV وحده قد يفوته بعض حالات التزوير المتطورة التي تستخدم أحباراً فلورية مشابهة. أما الجهاز الذي يجمع UV+MG+IR فاحتمالية اختراقه تكاد تكون معدومة، لأن التزوير الجامع لكل هذه الخصائص معاً مكلف جداً وصعب التنفيذ بشكل عملي.</p>
       <p>ننصح دائماً بالاستثمار في جهاز بتقنيتين على الأقل (UV+MG) للحماية الفعلية، وبثلاث تقنيات (UV+MG+IR) للأماكن ذات الحجم الكبير أو التي تتعامل مع فئات نقدية عالية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>حالات الاستخدام الشائعة في مصر</h2>
-      <p>جهاز كشف العملات المزيفة أصبح ضرورة وليس رفاهية في كثير من الأماكن المصرية:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>جهاز كشف العملات المزيفة أصبح ضرورة وليس رفاهية في كثير من الأماكن المصرية:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-shopping-cart', title: 'المحلات التجارية والسوبر ماركت', text: 'لفحص الأوراق الكبيرة الفئة (100، 200 جنيه) المستلمة من العملاء' },
         { icon: 'fa-hotel', title: 'الفنادق ومرافق السياحة', text: 'لفحص العملات الأجنبية كالدولار واليورو من السياح' },
@@ -121,8 +174,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-gas-pump', title: 'محطات الوقود والخدمات', text: 'لفحص أوراق 200 و100 جنيه التي كثيراً ما تكون هدفاً للمزورين' },
         { icon: 'fa-university', title: 'البنوك كنظام احتياطي', text: 'إلى جانب ماكينات العد المزودة بالكشف التلقائي' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>علامات الأمان في الجنيه المصري التي يفحصها الجهاز</h2>
-      <p>الجنيه المصري، كغيره من العملات العالمية، يحمل عدة عناصر أمان مصممة خصيصاً لمقاومة التزييف، وأجهزة الكشف الجيدة مبرمجة للتحقق من هذه العناصر تحديداً:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الجنيه المصري، كغيره من العملات العالمية، يحمل عدة عناصر أمان مصممة خصيصاً لمقاومة التزييف، وأجهزة الكشف الجيدة مبرمجة للتحقق من هذه العناصر تحديداً:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-tint', title: 'العلامة المائية', text: 'تظهر عند تعريض الورقة للضوء وتحمل صورة مطابقة للرمز المطبوع على الورقة، ويصعب تقليدها لأنها مدمجة في نسيج الورق أثناء التصنيع' },
         { icon: 'fa-grip-lines', title: 'الخيط الأمني المعدني', text: 'شريط رفيع مدمج داخل الورقة يظهر متقطعاً عند النظر بالعين المجردة ومتصلاً عند تعريضه للضوء، وتكتشفه أجهزة الكشف المغناطيسي بسهولة' },
@@ -130,39 +193,55 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-palette', title: 'الأرقام المتغيرة اللون', text: 'في الفئات الكبيرة، يتغير لون بعض العناصر المطبوعة حسب زاوية النظر، وهي خاصية تفحصها الأجهزة المتطورة إلكترونياً' },
       ]} />
       <p>معرفة هذه العلامات مفيدة للموظفين حتى مع وجود جهاز الكشف، لأنها تمنحهم طبقة تحقق بشرية إضافية، خصوصاً في حالات الشك أو عند انشغال الجهاز.</p>
-
-      <h2>الفحص اليدوي مقابل الجهاز الإلكتروني — أيهما تعتمد عليه؟</h2>
-      <p>كثير من أصحاب المحلات يعتمدون على الفحص البصري واللمس فقط (كالتحقق من الخشونة أو الشفافية أمام الضوء)، وهي طريقة مفيدة كخط دفاع أول لكنها غير كافية بمفردها، خاصة مع تطور أساليب التزييف الحديثة التي قد تُقلّد بعض العناصر المرئية بدقة عالية. الجهاز الإلكتروني يفحص عناصر لا يمكن للعين البشرية اكتشافها كالحبر المغناطيسي الخاص، ويقوم بذلك في أقل من ثانية دون إرهاق أو تراخي انتباه قد يحدث مع الموظف بعد ساعات عمل طويلة. الأفضل عملياً هو الجمع بين الاثنين: تدريب الموظفين على معرفة علامات الأمان الأساسية، مع الاعتماد على الجهاز كخط الدفاع الحاسم والموثوق لكل معاملة.</p>
-
-      <h2>الأجهزة المحمولة مقابل الأجهزة الثابتة</h2>
-      <p>اختيارك بين الجهاز المحمول والثابت يعتمد أساساً على طبيعة عملك وأسلوب استخدامك. <strong>الأجهزة المحمولة</strong> مثالية للمندوبين الميدانيين وصغار التجار الذين يتنقلون ويستلمون نقداً في مواضع مختلفة. <strong>الأجهزة الثابتة المنضدية</strong> مثالية لنقطة البيع الثابتة كالكاشير والمكتب والصندوق، وتوفر دقة أعلى وتقنيات أكثر بنفس السعر.</p>
-      <p>في نيو جولدن أوفيس، نساعدك في اختيار الحل الأمثل بناءً على طبيعة عملك وحجمه وميزانيتك. فريقنا الفني جاهز للإجابة على جميع استفساراتك وتقديم النصيحة المجانية. ابحث عن <strong>جهاز كشف عملات مزيفة مصر</strong> وستجد نيو جولدن أوفيس الوجهة الأولى للثقة والخبرة.</p>
-
     </div>
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h3><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات ماكينات الفارم والعد</h3>
-        <div class="sidebar-services">
-          <a href="/cash-machines/counting" class="sidebar-service-link"><span>ماكينات عد النقود</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/detector" class="sidebar-service-link active"><span>كشف العملات المزيفة</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/franking" class="sidebar-service-link"><span>ماكينات الفارم</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/shredder" class="sidebar-service-link"><span>تدمير المستندات</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-    </aside>
-  </div></div>
+  </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section section-bg">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">كيف تعمل أجهزة كشف العملات المزيفة؟ — شرح التقنيات</h2>
+    <div class="section-header">
+      <h2>الفحص اليدوي مقابل الجهاز الإلكتروني — أيهما تعتمد عليه؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كثير من أصحاب المحلات يعتمدون على الفحص البصري واللمس فقط (كالتحقق من الخشونة أو الشفافية أمام الضوء)، وهي طريقة مفيدة كخط دفاع أول لكنها غير كافية بمفردها، خاصة مع تطور أساليب التزييف الحديثة التي قد تُقلّد بعض العناصر المرئية بدقة عالية. الجهاز الإلكتروني يفحص عناصر لا يمكن للعين البشرية اكتشافها كالحبر المغناطيسي الخاص، ويقوم بذلك في أقل من ثانية دون إرهاق أو تراخي انتباه قد يحدث مع الموظف بعد ساعات عمل طويلة. الأفضل عملياً هو الجمع بين الاثنين: تدريب الموظفين على معرفة علامات الأمان الأساسية، مع الاعتماد على الجهاز كخط الدفاع الحاسم والموثوق لكل معاملة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الأجهزة المحمولة مقابل الأجهزة الثابتة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>اختيارك بين الجهاز المحمول والثابت يعتمد أساساً على طبيعة عملك وأسلوب استخدامك. <strong>الأجهزة المحمولة</strong> مثالية للمندوبين الميدانيين وصغار التجار الذين يتنقلون ويستلمون نقداً في مواضع مختلفة. <strong>الأجهزة الثابتة المنضدية</strong> مثالية لنقطة البيع الثابتة كالكاشير والمكتب والصندوق، وتوفر دقة أعلى وتقنيات أكثر بنفس السعر.</p>
+      <p>في نيو جولدن أوفيس، نساعدك في اختيار الحل الأمثل بناءً على طبيعة عملك وحجمه وميزانيتك. فريقنا الفني جاهز للإجابة على جميع استفساراتك وتقديم النصيحة المجانية. ابحث عن <strong>جهاز كشف عملات مزيفة مصر</strong> وستجد نيو جولدن أوفيس الوجهة الأولى للثقة والخبرة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+              </div>
+            </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تعمل أجهزة كشف العملات المزيفة؟ — شرح التقنيات</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">أجهزة كشف العملات المزيفة في مصر تعتمد على مزيج من التقنيات لضمان أعلى دقة في الكشف:</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
       <div style="background:#fff;border-radius:12px;padding:20px;border-top:4px solid #9b59b6"><h3 style="font-size:1rem;font-weight:700;color:#9b59b6;margin-bottom:8px">تقنية UV (فوق البنفسجية)</h3><p style="color:#555;font-size:0.9rem;line-height:1.7">تكشف عن العلامات المائية المخفية الموجودة في الأوراق الحقيقية فقط.</p></div>
@@ -210,5 +289,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات ماكينات الفارم والعد</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/cash-machines/counting" class="related-service-link"><span>ماكينات عد النقود</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/detector" class="related-service-link active"><span>كشف العملات المزيفة</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/franking" class="related-service-link"><span>ماكينات الفارم</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/shredder" class="related-service-link"><span>تدمير المستندات</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="ماكينات عد النقود وفرم الورق" />
 </BaseLayout>

@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
@@ -48,102 +47,177 @@ const schemaJson = JSON.stringify({
 />
 
 <!-- MAIN CONTENT -->
-<section class="service-detail">
+<section class="stats-section">
   <div class="container">
-    <div class="service-detail-grid">
-      <div class="service-content">
-        <ContentIntro
-          heading="ما هي طباعة السبليميشن (Sublimation) على الهدايا؟"
-          text="طباعة السبليميشن (التسامي الحراري) هي تقنية طباعة متطورة تعتمد على تحويل الحبر إلى غاز تحت تأثير الحرارة والضغط، ثم يتغلغل هذا الغاز داخل خلايا المادة ليصبح جزءاً منها لا يمكن إزالته. النتيجة هي ألوان نابضة وحيوية جزء من المنتج نفسه لا طبقة فوقه — لا تتقشر ولا تبهت ولا تنكسر. في نيو جولدن أوفيس بالإسكندرية، نتخصص في طباعة الهدايا والمنتجات الترويجية باستخدام هذه التقنية الرائعة منذ عام 1999."
-        />
-        <h2>هدايا ترويجية — المنتجات التي نطبع عليها</h2>
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-        <h3>الأكواب والأدوات المكتبية</h3>
-        <p>الكوب المطبوع بصورة شخصية أو شعار الشركة هو أحد أكثر الهدايا الترويجية قبولاً ودواماً. نطبع على أكواب السيراميك بجميع الأحجام (170 مل، 250 مل، 330 مل، 450 مل)، وأكواب الستانلس ستيل الحافظة للحرارة، وأكواب السفر. كل كوب يمكن تخصيصه بصورة، اسم، شعار أو تصميم فريد.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما هي طباعة السبليميشن (Sublimation) على الهدايا؟</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">طباعة السبليميشن (التسامي الحراري) هي تقنية طباعة متطورة تعتمد على تحويل الحبر إلى غاز تحت تأثير الحرارة والضغط، ثم يتغلغل هذا الغاز داخل خلايا المادة ليصبح جزءاً منها لا يمكن إزالته. النتيجة هي ألوان نابضة وحيوية جزء من المنتج نفسه لا طبقة فوقه — لا تتقشر ولا تبهت ولا تنكسر. في نيو جولدن أوفيس بالإسكندرية، نتخصص في طباعة الهدايا والمنتجات الترويجية باستخدام هذه التقنية الرائعة منذ عام 1999.</p>
+  </div>
+</section>
 
-        <h3>التيشيرتات والملابس</h3>
-        <p>طباعة السبليميشن على التيشيرتات البيضاء تمنح ألواناً مبهرة تشمل كامل القميص من أطراف إلى أطراف (Full Sublimation). مثالية للفرق الرياضية، يونيفورم الشركات، والهدايا المؤسسية. نطبع أيضاً على البولو شيرت والهوديز والأوشحة وأقنعة الرأس.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>هدايا ترويجية — المنتجات التي نطبع عليها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid landing-cards cols-3">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>الأكواب والأدوات المكتبية</h3><p>الكوب المطبوع بصورة شخصية أو شعار الشركة هو أحد أكثر الهدايا الترويجية قبولاً ودواماً. نطبع على أكواب السيراميك بجميع الأحجام (170 مل، 250 مل، 330 مل، 450 مل)، وأكواب الستانلس ستيل الحافظة للحرارة، وأكواب السفر. كل كوب يمكن تخصيصه بصورة، اسم، شعار أو تصميم فريد.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>التيشيرتات والملابس</h3><p>طباعة السبليميشن على التيشيرتات البيضاء تمنح ألواناً مبهرة تشمل كامل القميص من أطراف إلى أطراف (Full Sublimation). مثالية للفرق الرياضية، يونيفورم الشركات، والهدايا المؤسسية. نطبع أيضاً على البولو شيرت والهوديز والأوشحة وأقنعة الرأس.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>أغطية الهواتف والأجهزة</h3><p>غطاء هاتف بصورتك أو بتصميمك الخاص هو هدية شخصية رائعة. نطبع على أغطية هواتف مختلف الأنواع والأحجام، وأغطية الأجهزة اللوحية. التصميم يصبح جزءاً من الغطاء البلاستيكي ولا يتلاشى مع الاستخدام.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3>الوسائد والمفارش</h3><p>وسائد مطبوعة بصورك العائلية أو بتصميمات فنية مميزة لتزيين المنزل. مفارش الفأرة (Mouse Pads) المخصصة بشعار الشركة أو صورة شخصية. أغطية الوسائد والمفارش الديكورية بأي تصميم تختاره.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3>الإطارات وألبومات الصور</h3><p>إطارات صور مطبوعة بلون موحد لتجميع صورك العائلية بشكل متناسق وأنيق. ألبومات صور مخصصة لتوثيق ذكريات الأفراح والرحلات والمناسبات بطريقة احترافية ومميزة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-shield-halved"></i></div><h3>المفاتيح والإكسسوارات</h3><p>سلاسل المفاتيح المطبوعة بصور وشعارات هي من أكثر الهدايا الترويجية انتشاراً لأنها تُحمل يومياً. نطبع على سلاسل المفاتيح المعدنية والأكريليك، وبطاقات الهوية، والشارات، والميداليات.</p></div>
+    </div>
+  </div>
+</section>
 
-        <h3>أغطية الهواتف والأجهزة</h3>
-        <p>غطاء هاتف بصورتك أو بتصميمك الخاص هو هدية شخصية رائعة. نطبع على أغطية هواتف مختلف الأنواع والأحجام، وأغطية الأجهزة اللوحية. التصميم يصبح جزءاً من الغطاء البلاستيكي ولا يتلاشى مع الاستخدام.</p>
+<MidPageCTA formId="prnGiftsMidCta" />
 
-        <h3>الوسائد والمفارش</h3>
-        <p>وسائد مطبوعة بصورك العائلية أو بتصميمات فنية مميزة لتزيين المنزل. مفارش الفأرة (Mouse Pads) المخصصة بشعار الشركة أو صورة شخصية. أغطية الوسائد والمفارش الديكورية بأي تصميم تختاره.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الهدايا المؤسسية والترويجية بشعار شركتك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>إذا كنت تبحث عن هدايا مميزة تحمل شعار شركتك لتوزيعها على العملاء والشركاء والموظفين، فنيو جولدن أوفيس هي الشريك المثالي. نوفر خدمة طباعة الهدايا المؤسسية بكميات تبدأ من قطعة واحدة وحتى آلاف القطع. كل هدية مخصصة بشعارك وألوان علامتك التجارية تعزز حضور شركتك في ذاكرة المستلمين.</p>
+    </div>
+  </div>
+</section>
 
-        <MidPageCTA formId="prnGiftsMidCta" />
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>تذكارات المناسبات والأفراح</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الأفراح والخطوبات وحفلات التخرج والمناسبات الخاصة تستحق هدايا مميزة تذكارية. نصمم ونطبع أكواباً وإطارات صور ووسائد وسلاسل مفاتيح مخصصة باسم العروسين أو التاريخ المميز أو الصور الشخصية. هدية تبقى في البيت وتذكّر بالمناسبة كلما نظر إليها صاحبها.</p>
+    </div>
+  </div>
+</section>
 
-        <h3>الإطارات وألبومات الصور</h3>
-        <p>إطارات صور مطبوعة بلون موحد لتجميع صورك العائلية بشكل متناسق وأنيق. ألبومات صور مخصصة لتوثيق ذكريات الأفراح والرحلات والمناسبات بطريقة احترافية ومميزة.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>هدايا شخصية فريدة لأحبائك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>هل تبحث عن هدية مختلفة لعيد ميلاد أو ذكرى سنوية أو عيد الأم؟ الهدية المطبوعة بصورة شخصية أو برسالة عاطفية من أكثر الهدايا تأثيراً وقيمة. اختر المنتج الذي تريد، أرسل لنا الصورة أو التصميم، وسنصنع لك هدية لا تُنسى.</p>
+    </div>
+  </div>
+</section>
 
-        <h3>المفاتيح والإكسسوارات</h3>
-        <p>سلاسل المفاتيح المطبوعة بصور وشعارات هي من أكثر الهدايا الترويجية انتشاراً لأنها تُحمل يومياً. نطبع على سلاسل المفاتيح المعدنية والأكريليك، وبطاقات الهوية، والشارات، والميداليات.</p>
-        <h2>الهدايا المؤسسية والترويجية بشعار شركتك</h2>
-        <p>إذا كنت تبحث عن هدايا مميزة تحمل شعار شركتك لتوزيعها على العملاء والشركاء والموظفين، فنيو جولدن أوفيس هي الشريك المثالي. نوفر خدمة طباعة الهدايا المؤسسية بكميات تبدأ من قطعة واحدة وحتى آلاف القطع. كل هدية مخصصة بشعارك وألوان علامتك التجارية تعزز حضور شركتك في ذاكرة المستلمين.</p>
-        <h2>تذكارات المناسبات والأفراح</h2>
-        <p>الأفراح والخطوبات وحفلات التخرج والمناسبات الخاصة تستحق هدايا مميزة تذكارية. نصمم ونطبع أكواباً وإطارات صور ووسائد وسلاسل مفاتيح مخصصة باسم العروسين أو التاريخ المميز أو الصور الشخصية. هدية تبقى في البيت وتذكّر بالمناسبة كلما نظر إليها صاحبها.</p>
-        <h2>هدايا شخصية فريدة لأحبائك</h2>
-        <p>هل تبحث عن هدية مختلفة لعيد ميلاد أو ذكرى سنوية أو عيد الأم؟ الهدية المطبوعة بصورة شخصية أو برسالة عاطفية من أكثر الهدايا تأثيراً وقيمة. اختر المنتج الذي تريد، أرسل لنا الصورة أو التصميم، وسنصنع لك هدية لا تُنسى.</p>
-        <h2>ضمان الجودة في طباعة الهدايا</h2>
-        <p>نستخدم في نيو جولدن أوفيس أفضل معدات الطباعة الحرارية وأجود الأحبار السبليميشن المستوردة لضمان ألوان نابضة تدوم طويلاً. جميع منتجاتنا الهدائية من خامات عالية الجودة تليق بالمناسبة وتعكس اهتمامك بمن تهديه.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>ضمان الجودة في طباعة الهدايا</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نستخدم في نيو جولدن أوفيس أفضل معدات الطباعة الحرارية وأجود الأحبار السبليميشن المستوردة لضمان ألوان نابضة تدوم طويلاً. جميع منتجاتنا الهدائية من خامات عالية الجودة تليق بالمناسبة وتعكس اهتمامك بمن تهديه.</p>
+    </div>
+  </div>
+</section>
 
-        <h2>دليل اختيار الهدية المؤسسية حسب المناسبة في مصر</h2>
-        <p>لكل مناسبة طابعها الخاص، ونساعد عملاءنا من الشركات على اختيار الهدية الأنسب لكل توقيت من العام:</p>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-moon', title: 'رمضان والعيدين', text: 'أطقم هدايا تجمع كوباً مطبوعاً بشعار الشركة مع دفتر أو أجندة، تُوزَّع على الموظفين والعملاء كتقليد سنوي متكرر يعزز الولاء للعلامة التجارية.' },
-          { icon: 'fa-calendar-alt', title: 'رأس السنة الميلادية', text: 'أجندات وكاليندرات مكتبية مطبوعة بتصميم العام الجديد وهوية الشركة، توزَّع عادة في أواخر ديسمبر على العملاء الاستراتيجيين.' },
-          { icon: 'fa-briefcase', title: 'المعارض والمؤتمرات التجارية', text: 'هدايا ترويجية خفيفة الوزن وسهلة التوزيع بكميات كبيرة — أكواب سفر، سلاسل مفاتيح، أقلام مطبوعة بشعار الشركة وبيانات التواصل لتوزع على زوار الجناح.' },
-          { icon: 'fa-store-alt', title: 'افتتاح فرع أو مشروع جديد', text: 'هدايا تذكارية للمدعوين تحمل تاريخ الافتتاح واسم الفرع، تبقى كتذكار لحدث انطلاق العلامة التجارية.' },
-          { icon: 'fa-graduation-cap', title: 'تخرج الجامعات والدورات التدريبية', text: 'أكواب أو إطارات صور مطبوعة باسم الخريج وتاريخ التخرج، هدية شخصية تحتفظ بها العائلة لسنوات.' },
-          { icon: 'fa-award', title: 'تكريم الموظفين ونهاية الخدمة', text: 'قطع تذكارية مخصصة باسم الموظف وسنوات خدمته، غالباً ما تُطلب بالتزامن مع درع تكريم بطباعة UV لمناسبة أكثر رسمية.' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>دليل اختيار الهدية المؤسسية حسب المناسبة في مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>لكل مناسبة طابعها الخاص، ونساعد عملاءنا من الشركات على اختيار الهدية الأنسب لكل توقيت من العام:</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-moon', title: 'رمضان والعيدين', text: 'أطقم هدايا تجمع كوباً مطبوعاً بشعار الشركة مع دفتر أو أجندة، تُوزَّع على الموظفين والعملاء كتقليد سنوي متكرر يعزز الولاء للعلامة التجارية.' },
+        { icon: 'fa-calendar-alt', title: 'رأس السنة الميلادية', text: 'أجندات وكاليندرات مكتبية مطبوعة بتصميم العام الجديد وهوية الشركة، توزَّع عادة في أواخر ديسمبر على العملاء الاستراتيجيين.' },
+        { icon: 'fa-briefcase', title: 'المعارض والمؤتمرات التجارية', text: 'هدايا ترويجية خفيفة الوزن وسهلة التوزيع بكميات كبيرة — أكواب سفر، سلاسل مفاتيح، أقلام مطبوعة بشعار الشركة وبيانات التواصل لتوزع على زوار الجناح.' },
+        { icon: 'fa-store-alt', title: 'افتتاح فرع أو مشروع جديد', text: 'هدايا تذكارية للمدعوين تحمل تاريخ الافتتاح واسم الفرع، تبقى كتذكار لحدث انطلاق العلامة التجارية.' },
+        { icon: 'fa-graduation-cap', title: 'تخرج الجامعات والدورات التدريبية', text: 'أكواب أو إطارات صور مطبوعة باسم الخريج وتاريخ التخرج، هدية شخصية تحتفظ بها العائلة لسنوات.' },
+        { icon: 'fa-award', title: 'تكريم الموظفين ونهاية الخدمة', text: 'قطع تذكارية مخصصة باسم الموظف وسنوات خدمته، غالباً ما تُطلب بالتزامن مع درع تكريم بطباعة UV لمناسبة أكثر رسمية.' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>تجهيز الصور والتصاميم لطباعة السبليميشن بأفضل جودة</h2>
-        <p>جودة نتيجة السبليميشن تعتمد بشكل كبير على جودة الملف المُرسَل. إليك أهم النقاط التي ننصح بمراعاتها:</p>
-        <IconCardGrid columns={2} items={[
-          { icon: 'fa-search', title: 'دقة الصورة', text: 'يُفضّل ألا تقل الدقة عن 300 نقطة في البوصة على المقاس الفعلي للمنتج، وكحد أدنى مطلق 1000×1000 بكسل للصور المربعة كالأكواب.' },
-          { icon: 'fa-tint', title: 'الخامة يجب أن تكون فاتحة أو بيضاء', text: 'على عكس طباعة UV التي تستخدم طبقة حبر أبيض أساسية، السبليميشن يعتمد على انصهار الحبر داخل طبقة بوليستر خاصة، ولذلك لا يعمل بشكل جيد على الخامات الداكنة أو القطنية الخالصة — الألوان تظهر بوضوح فقط على الأسطح الفاتحة أو البيضاء المطلية بطبقة بوليستر مخصصة للطباعة الحرارية.' },
-          { icon: 'fa-drafting-compass', title: 'قوالب التصميم (Templates)', text: 'لكل منتج شكل تفاف مختلف — تصميم الكوب يُصمَّم على قالب مسطح يلتف حول الكوب الأسطواني، بينما تصميم التيشيرت يُوضع في منطقة محددة على الصدر. نوفر لعملائنا قوالب جاهزة لكل منتج لتسهيل عملية التصميم.' },
-          { icon: 'fa-palette', title: 'نظام الألوان', text: 'الأفضل التصميم بنظام CMYK أو RGB عالي الجودة، وسيقوم فريقنا الفني بضبط الألوان أثناء الطباعة الحرارية لأقرب نتيجة ممكنة لما تراه على الشاشة.' },
-        ]} />
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>تجهيز الصور والتصاميم لطباعة السبليميشن بأفضل جودة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>جودة نتيجة السبليميشن تعتمد بشكل كبير على جودة الملف المُرسَل. إليك أهم النقاط التي ننصح بمراعاتها:</p>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-search', title: 'دقة الصورة', text: 'يُفضّل ألا تقل الدقة عن 300 نقطة في البوصة على المقاس الفعلي للمنتج، وكحد أدنى مطلق 1000×1000 بكسل للصور المربعة كالأكواب.' },
+        { icon: 'fa-tint', title: 'الخامة يجب أن تكون فاتحة أو بيضاء', text: 'على عكس طباعة UV التي تستخدم طبقة حبر أبيض أساسية، السبليميشن يعتمد على انصهار الحبر داخل طبقة بوليستر خاصة، ولذلك لا يعمل بشكل جيد على الخامات الداكنة أو القطنية الخالصة — الألوان تظهر بوضوح فقط على الأسطح الفاتحة أو البيضاء المطلية بطبقة بوليستر مخصصة للطباعة الحرارية.' },
+        { icon: 'fa-drafting-compass', title: 'قوالب التصميم (Templates)', text: 'لكل منتج شكل تفاف مختلف — تصميم الكوب يُصمَّم على قالب مسطح يلتف حول الكوب الأسطواني، بينما تصميم التيشيرت يُوضع في منطقة محددة على الصدر. نوفر لعملائنا قوالب جاهزة لكل منتج لتسهيل عملية التصميم.' },
+        { icon: 'fa-palette', title: 'نظام الألوان', text: 'الأفضل التصميم بنظام CMYK أو RGB عالي الجودة، وسيقوم فريقنا الفني بضبط الألوان أثناء الطباعة الحرارية لأقرب نتيجة ممكنة لما تراه على الشاشة.' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>الكميات وأوقات التسليم حسب حجم الطلب</h2>
-        <ComparisonGrid items={[
-          { title: 'قطعة واحدة إلى 10 قطع', text: 'هدايا شخصية أو عينة قبل طلب أكبر — تُنجز عادة خلال يوم إلى يومي عمل.' },
-          { title: '10 إلى 50 قطعة', text: 'هدايا فريق صغير أو قسم داخل شركة — من يومين إلى 4 أيام حسب تنوع المنتجات المطلوبة.' },
-          { title: '50 إلى 500 قطعة', text: 'مؤتمر متوسط أو حملة توزيع على العملاء — من 4 إلى 7 أيام لضمان تناسق الجودة عبر كل القطع.' },
-          { title: 'أكثر من 500 قطعة', text: 'توزيع سنوي على موظفي وعملاء شركة كبرى — نجدول هذه الطلبات مسبقاً ونوفر جدول إنتاج مرحلي حتى تصل الدفعات في الموعد المطلوب دون تأخير.' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الكميات وأوقات التسليم حسب حجم الطلب</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
+        { title: 'قطعة واحدة إلى 10 قطع', text: 'هدايا شخصية أو عينة قبل طلب أكبر — تُنجز عادة خلال يوم إلى يومي عمل.' },
+        { title: '10 إلى 50 قطعة', text: 'هدايا فريق صغير أو قسم داخل شركة — من يومين إلى 4 أيام حسب تنوع المنتجات المطلوبة.' },
+        { title: '50 إلى 500 قطعة', text: 'مؤتمر متوسط أو حملة توزيع على العملاء — من 4 إلى 7 أيام لضمان تناسق الجودة عبر كل القطع.' },
+        { title: 'أكثر من 500 قطعة', text: 'توزيع سنوي على موظفي وعملاء شركة كبرى — نجدول هذه الطلبات مسبقاً ونوفر جدول إنتاج مرحلي حتى تصل الدفعات في الموعد المطلوب دون تأخير.' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>خيارات التغليف والتعبئة للهدايا المؤسسية بالجملة</h2>
-        <p>الهدية المؤسسية الناجحة لا تتوقف عند جودة الطباعة، بل تمتد إلى طريقة تقديمها. نوفر خيارات تغليف متعددة تناسب حجم وطبيعة كل طلب:</p>
-        <IconCardGrid columns={2} items={[
-          { icon: 'fa-gift', title: 'تغليف فردي فاخر', text: 'صندوق مخصص لكل قطعة مع ورق هدايا وشريطة، مناسب للهدايا التي تُسلَّم يداً بيد لعملاء أو شركاء مهمين.' },
-          { icon: 'fa-boxes', title: 'أكياس أو صناديق مجموعات (Gift Sets)', text: 'تعبئة عدة منتجات معاً (كوب + قلم + دفتر مثلاً) في عبوة واحدة موحدة التصميم بشعار الشركة.' },
-          { icon: 'fa-pallet', title: 'تغليف جماعي للتوزيع الكبير', text: 'تعبئة مبسطة وسريعة للكميات الكبيرة التي تُوزَّع دفعة واحدة في مؤتمر أو فعالية، مع الحفاظ على مظهر أنيق دون تكلفة تغليف فردي مبالغ فيها.' },
-          { icon: 'fa-envelope', title: 'بطاقة تهنئة أو رسالة مخصصة', text: 'يمكن إضافة بطاقة صغيرة بشعار الشركة ورسالة مناسبة للمناسبة داخل كل عبوة هدية.' },
-        ]} />
-      </div>
-      <aside class="service-sidebar">
-        <div class="sidebar-card">
-          <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
-          <div class="contact-info">
-            <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
-            <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-          </div>
-        </div>
-        <div class="sidebar-card">
-          <h3>خدمات الطباعة</h3>
-          <div class="sidebar-services">
-            <a href="/printing/offset" class="sidebar-service-link"><span>طباعة أوفست</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/digital" class="sidebar-service-link"><span>طباعة رقمية</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/banners" class="sidebar-service-link"><span>طباعة بنرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/business-cards" class="sidebar-service-link"><span>بزنس كارد</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/brochures" class="sidebar-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/uv" class="sidebar-service-link"><span>طباعة UV</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/gifts" class="sidebar-service-link"><span>طباعة هدايا</span><i class="fas fa-angle-left"></i></a>
-          </div>
-        </div>
-      </aside>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>خيارات التغليف والتعبئة للهدايا المؤسسية بالجملة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الهدية المؤسسية الناجحة لا تتوقف عند جودة الطباعة، بل تمتد إلى طريقة تقديمها. نوفر خيارات تغليف متعددة تناسب حجم وطبيعة كل طلب:</p>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-gift', title: 'تغليف فردي فاخر', text: 'صندوق مخصص لكل قطعة مع ورق هدايا وشريطة، مناسب للهدايا التي تُسلَّم يداً بيد لعملاء أو شركاء مهمين.' },
+        { icon: 'fa-boxes', title: 'أكياس أو صناديق مجموعات (Gift Sets)', text: 'تعبئة عدة منتجات معاً (كوب + قلم + دفتر مثلاً) في عبوة واحدة موحدة التصميم بشعار الشركة.' },
+        { icon: 'fa-pallet', title: 'تغليف جماعي للتوزيع الكبير', text: 'تعبئة مبسطة وسريعة للكميات الكبيرة التي تُوزَّع دفعة واحدة في مؤتمر أو فعالية، مع الحفاظ على مظهر أنيق دون تكلفة تغليف فردي مبالغ فيها.' },
+        { icon: 'fa-envelope', title: 'بطاقة تهنئة أو رسالة مخصصة', text: 'يمكن إضافة بطاقة صغيرة بشعار الشركة ورسالة مناسبة للمناسبة داخل كل عبوة هدية.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="contact-info">
+                  <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
+                  <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+                </div>
+              </div>
     </div>
   </div>
 </section>
@@ -160,9 +234,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">هدايا مؤسسية بالجملة — حلول الطباعة للشركات</h2>
+    <div class="section-header">
+      <h2>هدايا مؤسسية بالجملة — حلول الطباعة للشركات</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">نخدم الشركات والمؤسسات في القاهرة والإسكندرية وجميع مصر في توريد الهدايا المؤسسية بالجملة بشعار الشركة. مثالية لـ:</p>
     <IconCardGrid columns={4} items={[
       { icon: 'fa-glass-cheers', text: 'مناسبات الشركات والحفلات السنوية' },
@@ -176,7 +253,7 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن طباعة الهدايا</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -224,6 +301,24 @@ const schemaJson = JSON.stringify({
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20هدايا" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="tel:+201227392074" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fas fa-phone-alt"></i> 01227392074</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدمات الطباعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/printing/offset" class="related-service-link"><span>طباعة أوفست</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/digital" class="related-service-link"><span>طباعة رقمية</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/banners" class="related-service-link"><span>طباعة بنرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/business-cards" class="related-service-link"><span>بزنس كارد</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/brochures" class="related-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/uv" class="related-service-link"><span>طباعة UV</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/gifts" class="related-service-link"><span>طباعة هدايا</span><i class="fas fa-arrow-left"></i></a>
     </div>
   </div>
 </section>

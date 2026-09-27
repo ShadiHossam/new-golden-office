@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
@@ -105,25 +104,53 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="طلب تركيب كاميرات القاهرة والإسكندرية — احترافية وجودة لا تُقارَن"
-        text="تُقدّم شركة نيو جولدن أوفيس، التي تأسست عام 1999 في الإسكندرية، خدمة متكاملة لبيع وتركيب كاميرات المراقبة في جميع أنحاء مصر. نوفر حلول مراقبة مناسبة للمنازل والشقق السكنية والمحلات التجارية والسوبرماركت والمصانع والشركات والمجمعات السكنية. فريقنا الفني المتخصص يصمم لك النظام المثالي بعد معاينة مجانية للمكان."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-video" style="color:var(--secondary);margin-left:8px;"></i> الماركات المتاحة لدينا</h3>
-      <ComparisonGrid items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>طلب تركيب كاميرات القاهرة والإسكندرية — احترافية وجودة لا تُقارَن</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">تُقدّم شركة نيو جولدن أوفيس، التي تأسست عام 1999 في الإسكندرية، خدمة متكاملة لبيع وتركيب كاميرات المراقبة في جميع أنحاء مصر. نوفر حلول مراقبة مناسبة للمنازل والشقق السكنية والمحلات التجارية والسوبرماركت والمصانع والشركات والمجمعات السكنية. فريقنا الفني المتخصص يصمم لك النظام المثالي بعد معاينة مجانية للمكان.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-video" style="color:var(--secondary);margin-left:8px;"></i> الماركات المتاحة لدينا</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'Hikvision', text: 'الرائد العالمي الأول في صناعة كاميرات المراقبة، جودة لا مثيل لها بتقنيات متطورة' },
         { title: 'Dahua', text: 'أنظمة مراقبة ذكية بتقنية الذكاء الاصطناعي ودقة تصل إلى 8 ميجابكسل' },
         { title: 'UNIView (UNV)', text: 'حلول احترافية مناسبة للمشاريع الكبيرة والمؤسسات' },
         { title: 'HILook', text: 'الخيار الأمثل للجودة العالية بأسعار مناسبة للمشاريع المتوسطة' },
         { title: 'EZVIZ', text: 'كاميرات ذكية سهلة الاستخدام مثالية للمنازل والمكاتب الصغيرة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-camera" style="color:var(--secondary);margin-left:8px;"></i> أنواع الكاميرات المتوفرة</h3>
-      <p>نوفر تشكيلة شاملة من الكاميرات تناسب كل احتياج وبيئة:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-camera" style="color:var(--secondary);margin-left:8px;"></i> أنواع الكاميرات المتوفرة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نوفر تشكيلة شاملة من الكاميرات تناسب كل احتياج وبيئة:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-home', title: 'كاميرات داخلية (Indoor)', text: 'صغيرة الحجم، مخفية أو ظاهرة، مناسبة للمحلات والمكاتب والمنازل' },
         { icon: 'fa-cloud-sun-rain', title: 'كاميرات خارجية (Outdoor)', text: 'مقاومة للماء والغبار بتصنيف IP66/67، تتحمل قسوة الطقس المصري' },
@@ -131,50 +158,104 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-video', title: 'كاميرات Bullet', text: 'اسطوانية الشكل، مدى رؤية أطول، مثالية للمداخل والطرقات' },
         { icon: 'fa-arrows-alt', title: 'كاميرات PTZ', text: 'متحركة يُمكن التحكم بها عن بُعد، مناسبة للمواقف والأماكن الواسعة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-eye" style="color:var(--secondary);margin-left:8px;"></i> دقة الصورة المتاحة</h3>
-      <ComparisonGrid items={[
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-eye" style="color:var(--secondary);margin-left:8px;"></i> دقة الصورة المتاحة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: '2MP (1080p Full HD)', text: 'مناسبة للاستخدام العام في المحلات والمنازل بسعر اقتصادي' },
         { title: '4MP (2K)', text: 'دقة أعلى للتعرف على التفاصيل والوجوه بوضوح أكبر' },
         { title: '8MP (4K Ultra HD)', text: 'أعلى دقة متاحة للمشاريع التي تتطلب تفاصيل دقيقة جداً' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="camInstallMidCta" />
+<MidPageCTA formId="camInstallMidCta" />
 
-      <h3><i class="fas fa-moon" style="color:var(--secondary);margin-left:8px;"></i> تقنيات الرؤية الليلية</h3>
-      <ComparisonGrid items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-moon" style="color:var(--secondary);margin-left:8px;"></i> تقنيات الرؤية الليلية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'الأشعة تحت الحمراء (IR)', text: 'رؤية ليلية كلاسيكية بمدى يصل إلى 60 متر' },
         { title: 'Full Color Night', text: 'رؤية ملونة في الظلام الدامس بدون حاجة لإضاءة إضافية' },
         { title: 'Smart Light', text: 'إضاءة تلقائية عند الكشف عن حركة مشبوهة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-tools" style="color:var(--secondary);margin-left:8px;"></i> عملية التركيب الاحترافية</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-tools" style="color:var(--secondary);margin-left:8px;"></i> عملية التركيب الاحترافية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-clipboard-check', title: 'المعاينة المجانية', text: 'زيارة المكان وتحديد أفضل نقاط تركيب الكاميرات ومسارات الكابلات' },
         { icon: 'fa-network-wired', title: 'تمديد الكابلات', text: 'نستخدم كابلات Coaxial عالية الجودة أو Cat6 لأنظمة IP مع حماية PVC للتمديدات' },
         { icon: 'fa-thumbtack', title: 'التثبيت الدقيق', text: 'ثبات تام للكاميرات بزوايا محسوبة لتغطية أقصى مساحة ممكنة' },
         { icon: 'fa-sliders-h', title: 'الضبط والإعداد', text: 'ضبط جهاز التسجيل DVR/NVR وربطه بالإنترنت للمشاهدة عن بُعد' },
         { icon: 'fa-graduation-cap', title: 'التدريب الكامل', text: 'شرح تفصيلي لكيفية استخدام النظام ومشاهدة الكاميرات من الهاتف' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-network-wired" style="color:var(--secondary);margin-left:8px;"></i> أنواع الكابلات المستخدمة</h3>
-      <ComparisonGrid items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-network-wired" style="color:var(--secondary);margin-left:8px;"></i> أنواع الكابلات المستخدمة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'كابل Coaxial RG59', text: 'للكاميرات التقليدية Analog وHD-TVI، ثابت وموثوق' },
         { title: 'كابل Cat5e/Cat6', text: 'لكاميرات IP، يدعم بروتوكول PoE لتوصيل الطاقة والبيانات بكابل واحد' },
         { title: 'حماية PVC وقنوات السيلكون', text: 'تمديدات نظيفة ومحمية تدوم لسنوات طويلة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-route" style="color:var(--secondary);margin-left:8px;"></i> تحديات تمديد الكابلات وكيف نتغلب عليها</h3>
-      <p>كل مبنى له طبيعة إنشائية مختلفة تفرض تحديات خاصة أثناء التركيب، وهذا الجزء غالباً ما يُهمَل عند التخطيط الذاتي دون خبرة فنية:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-route" style="color:var(--secondary);margin-left:8px;"></i> تحديات تمديد الكابلات وكيف نتغلب عليها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كل مبنى له طبيعة إنشائية مختلفة تفرض تحديات خاصة أثناء التركيب، وهذا الجزء غالباً ما يُهمَل عند التخطيط الذاتي دون خبرة فنية:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-ruler', title: 'حدود المسافة لكل نوع كابل', text: 'كابل Coaxial RG59 يعمل بكفاءة حتى 200 متر تقريباً، بينما Cat6 العادي محدود بـ100 متر قبل أن تضعف الإشارة — نستخدم مقويات إشارة (Repeaters) أو محولات الألياف الضوئية عند الحاجة لمسافات أطول في المصانع والمستودعات الكبيرة' },
         { icon: 'fa-building', title: 'المباني ذات الجدران الخرسانية السميكة', text: 'نلجأ للتمديد الخارجي المحمي عبر قنوات بلاستيكية مثبتة بعناية بدل الحفر العشوائي الذي يضعف البنية الإنشائية' },
         { icon: 'fa-route', title: 'العبور بين الطوابق أو بين مبانٍ منفصلة', text: 'نخطط مسار الكابل مسبقاً عبر فتحات الخدمات الموجودة أصلاً في المبنى لتفادي أي تمديدات ظاهرة أو غير آمنة' },
         { icon: 'fa-bolt', title: 'التداخل الكهرومغناطيسي', text: 'في المصانع القريبة من ماكينات كهربائية ثقيلة، نستخدم كابلات مُدرَّعة (Shielded) لمنع تشويش الصورة الناتج عن الحقول الكهرومغناطيسية' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-map-marked-alt" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات التركيب حسب نوع المكان</h3>
-      <p>خطة التركيب ونقاط الكاميرات تختلف جذرياً حسب طبيعة المبنى، وإليك كيف نتعامل مع كل حالة:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-map-marked-alt" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات التركيب حسب نوع المكان</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>خطة التركيب ونقاط الكاميرات تختلف جذرياً حسب طبيعة المبنى، وإليك كيف نتعامل مع كل حالة:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-home', title: 'فيلات ومنازل مستقلة', text: 'نغطي المداخل الرئيسية والخلفية والحديقة والسور الخارجي، مع مراعاة اتجاه الشمس لتجنب الوهج (Glare) في ساعات معينة من اليوم، والتركيب عادة يستغرق يوماً واحداً' },
         { icon: 'fa-building', title: 'شقق سكنية ومباني إيجار', text: 'نستخدم تمديدات سطحية أنيقة أو كاميرات واي فاي لا تتطلب حفراً أو تعديلات دائمة في الجدران، وهو الخيار الأمثل للمستأجرين الذين لا يريدون إتلاف الحائط' },
@@ -182,9 +263,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-industry', title: 'مصانع ومستودعات', text: 'التركيب هنا يتطلب سلالم ورافعات للوصول لارتفاعات عالية، وكابلات مقاومة للحرارة والأتربة، وقد يمتد العمل ليومين أو ثلاثة حسب حجم المنشأة' },
         { icon: 'fa-hard-hat', title: 'مواقع إنشائية تحت التشييد', text: 'نوفر حلولاً مؤقتة تعمل بالبطارية والطاقة الشمسية لمراقبة المعدات والمواد قبل اكتمال التوصيلات الكهربائية الدائمة' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-times-circle" style="color:var(--secondary);margin-left:8px;"></i> أخطاء شائعة في تركيب الكاميرات يجب تجنبها</h3>
-      <p>نصادف كثيراً عملاء حاولوا التركيب بأنفسهم أو استعانوا بفني غير متخصص ووقعوا في هذه الأخطاء المتكررة:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-times-circle" style="color:var(--secondary);margin-left:8px;"></i> أخطاء شائعة في تركيب الكاميرات يجب تجنبها</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نصادف كثيراً عملاء حاولوا التركيب بأنفسهم أو استعانوا بفني غير متخصص ووقعوا في هذه الأخطاء المتكررة:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-sun', title: 'تركيب الكاميرا في مواجهة الشمس مباشرة', text: 'يسبب وهجاً شديداً يجعل الصورة غير واضحة في أوقات معينة من اليوم — الحل هو اختيار زاوية مائلة أو استخدام كاميرات بتقنية WDR لموازنة الإضاءة' },
         { icon: 'fa-arrows-alt-v', title: 'الارتفاع الخاطئ', text: 'التركيب المنخفض جداً يُعرّض الكاميرا للتلاعب أو السرقة، والمرتفع جداً يُصعّب التعرف على الوجوه — الارتفاع المثالي عادة بين 2.5 و3.5 متر حسب زاوية العدسة' },
@@ -199,42 +289,37 @@ const schemaJson = JSON.stringify({
         <a href="https://wa.me/201227392074?text=أريد%20معاينة%20مجانية%20لتركيب%20كاميرات%20مراقبة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fab fa-whatsapp" style="color:#25D366;"></i> احجز معاينة مجانية</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h3><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات الكاميرات</h3>
-        <div class="sidebar-services">
-          <a href="/cameras/install" class="sidebar-service-link active"><span>بيع وتركيب كاميرات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/dvr-nvr" class="sidebar-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/ip-wifi" class="sidebar-service-link"><span>كاميرات IP وواي فاي</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/maintenance" class="sidebar-service-link"><span>صيانة المراقبة</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
-        </div>
-      </div>
-      <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-        <h3 style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</h3>
-        <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">أخبرنا عن احتياجاتك وسنوافيك بعرض سعر مفصّل خلال ساعات</p>
-        <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20لكاميرات%20مراقبة" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> واتساب الآن</a>
-      </div>
-      <div class="sidebar-card">
-        <h3><i class="fas fa-star" style="color:var(--secondary);margin-left:8px;"></i> لماذا نيو جولدن أوفيس؟</h3>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>خبرة 27 عاماً في السوق المصري</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>فنيون معتمدون من الشركات المصنّعة</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>ضمان 3 سنوات على جميع الأجهزة</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>نخدم جميع محافظات مصر</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>معاينة مجانية قبل التركيب</span></li>
-        </ul>
-      </div>
-    </aside>
-  </div></div>
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-3">
+<div class="sidebar-card">
+              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
+              </div>
+            </div>
+<div class="sidebar-card" style="background:var(--primary);color:var(--white);">
+              <h3 style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</h3>
+              <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">أخبرنا عن احتياجاتك وسنوافيك بعرض سعر مفصّل خلال ساعات</p>
+              <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20لكاميرات%20مراقبة" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> واتساب الآن</a>
+            </div>
+<div class="sidebar-card">
+              <h3><i class="fas fa-star" style="color:var(--secondary);margin-left:8px;"></i> لماذا نيو جولدن أوفيس؟</h3>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>خبرة 27 عاماً في السوق المصري</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>فنيون معتمدون من الشركات المصنّعة</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>ضمان 3 سنوات على جميع الأجهزة</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>نخدم جميع محافظات مصر</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>معاينة مجانية قبل التركيب</span></li>
+              </ul>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="section section-bg">
@@ -273,9 +358,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0">
+<section class="section section-bg">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">ما هي خطوات تركيب كاميرات المراقبة؟</h2>
+    <div class="section-header">
+      <h2>ما هي خطوات تركيب كاميرات المراقبة؟</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نتبع في نيو جولدن أوفيس منهجية احترافية لتركيب كاميرات المراقبة في الإسكندرية والقاهرة وجميع أنحاء مصر:</p>
     <ol style="padding-right:20px;line-height:2;font-size:1rem;color:#444">
       <li><strong>المعاينة والتخطيط:</strong> نزور الموقع لتحديد أفضل أماكن تركيب الكاميرات وتحديد احتياجاتك.</li>
@@ -297,5 +385,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات الكاميرات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/cameras/install" class="related-service-link active"><span>بيع وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/dvr-nvr" class="related-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/ip-wifi" class="related-service-link"><span>كاميرات IP وواي فاي</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/maintenance" class="related-service-link"><span>صيانة المراقبة</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="كاميرات المراقبة" />
 </BaseLayout>

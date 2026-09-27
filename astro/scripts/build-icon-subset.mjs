@@ -45,6 +45,8 @@ walk('src', (p) => {
   const s = fs.readFileSync(p, 'utf8');
   for (const m of s.matchAll(/class(?:Name)?\s*=\s*(?:\{`|["'`])([^"'`}]*)/g)) collect(m[1]);
   for (const m of s.matchAll(/<i[^>]*?class=\\?["']([^"'\\]+)/g)) collect(m[1]);
+  // icon names passed as props/data, e.g. IconCardGrid `icon: 'fa-print'`, PageHero heroIcon="fa-copy"
+  for (const m of s.matchAll(/[Ii]con["']?\s*[:=]\s*["'`]\s*((?:fa[a-z-]*\s+)*fa-[a-z0-9-]+)/g)) collect(m[1]);
 });
 
 /* ---------- 2. resolve each name to a codepoint from all.css ---------- */

@@ -1,5 +1,6 @@
 ---
 import Img from './Img.astro';
+import { BLOG_CATEGORIES, listingBase, listingPageHref } from '../lib/blog-list';
 
 interface PostCard {
   slug: string;
@@ -14,9 +15,14 @@ interface Props {
   posts: PostCard[];
   page: number;
   totalPages: number;
+  /** Slug of the category being listed; omitted on the all-posts listing. */
+  activeCategory?: string;
+  /** Post count per category name, for the chips. */
+  categoryCounts: Record<string, number>;
+  totalPosts: number;
 }
 
-const { posts, page, totalPages } = Astro.props;
+const { posts, page, totalPages, activeCategory, categoryCounts, totalPosts } = Astro.props;
 
 const DEFAULT_COVER = '/images/og-image.jpg';
 
@@ -29,14 +35,27 @@ function formatDateAr(iso: string) {
   }
 }
 
-/** Page 1 lives at /blog; later pages at /blog/page/N (kept off /blog/<n> so
- *  they can't collide with the /blog/[slug] post route). */
-const hrefFor = (n: number) => (n <= 1 ? '/blog' : `/blog/page/${n}`);
+/** Page 1 lives at the listing base; later pages at <base>/page/N (kept off
+ *  /blog/<n> so they can't collide with the /blog/[slug] post route). */
+const base = listingBase(activeCategory);
+const hrefFor = (n: number) => listingPageHref(base, n);
+const chips = BLOG_CATEGORIES.filter((c) => categoryCounts[c.name]);
 const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 ---
 
 <section class="section">
   <div class="container">
+    <nav class="blog-filter" aria-label="تصفية المقالات حسب القسم">
+      <a href="/blog" class:list={['blog-filter-chip', { 'is-active': !activeCategory }]} aria-current={!activeCategory ? 'page' : undefined}>
+        <i class="fa-solid fa-layer-group"></i> الكل <span class="blog-filter-count">{totalPosts}</span>
+      </a>
+      {chips.map((c) => (
+        <a href={listingBase(c.slug)} class:list={['blog-filter-chip', { 'is-active': activeCategory === c.slug }]} aria-current={activeCategory === c.slug ? 'page' : undefined}>
+          <i class={`fa-solid ${c.icon}`}></i> {c.name} <span class="blog-filter-count">{categoryCounts[c.name]}</span>
+        </a>
+      ))}
+    </nav>
+
     <div class="blog-grid">
       {posts.length ? posts.map((post) => (
         <a href={`/blog/${post.slug}`} class="blog-card reveal">
@@ -83,7 +102,50 @@ const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
   </div>
 </section>
 
+<script>
+  // On phones the chips are one swipeable row; bring the active chip into
+  // view so a deep category doesn't look unselected. Horizontal only — no
+  // vertical page jump.
+  const bar = document.querySelector<HTMLElement>('.blog-filter');
+  const active = bar?.querySelector<HTMLElement>('.is-active');
+  if (bar && active && bar.scrollWidth > bar.clientWidth) {
+    const barBox = bar.getBoundingClientRect();
+    const chipBox = active.getBoundingClientRect();
+    bar.scrollLeft += chipBox.left + chipBox.width / 2 - (barBox.left + barBox.width / 2);
+  }
+</script>
+
 <style>
+  .blog-filter {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin-bottom: 40px;
+  }
+  .blog-filter-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 999px;
+    border: 1.5px solid var(--border); background: var(--white); color: #0f2d06;
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.92rem;
+    text-decoration: none; transition: var(--transition); white-space: nowrap;
+  }
+  .blog-filter-chip i { font-size: 0.85rem; color: var(--green); transition: var(--transition); }
+  .blog-filter-chip:hover { border-color: var(--green-light); color: var(--green); }
+  .blog-filter-chip.is-active { background: var(--green); border-color: var(--green); color: var(--white); }
+  .blog-filter-chip.is-active i { color: var(--white); }
+  .blog-filter-count {
+    min-width: 24px; padding: 1px 7px; border-radius: 999px;
+    background: var(--green-pale); font-size: 0.78rem; text-align: center;
+  }
+  .blog-filter-chip.is-active .blog-filter-count { background: rgba(255, 255, 255, 0.22); }
+  /* Phones: one swipeable row instead of a tall stack of chips. */
+  @media (max-width: 640px) {
+    .blog-filter {
+      flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto;
+      margin: 0 -16px 28px; padding: 2px 16px 8px; scrollbar-width: none;
+    }
+    .blog-filter::-webkit-scrollbar { display: none; }
+    .blog-filter-chip { padding: 8px 14px; font-size: 0.86rem; }
+  }
+
   /* Card art was a CSS background-image, which can't carry a srcset — so a
      phone downloaded the desktop-sized cover for every card. A real <img>
      lets the browser pick a card-sized variant instead. */

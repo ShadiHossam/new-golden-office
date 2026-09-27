@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 const schemaJson = JSON.stringify({
@@ -45,30 +44,40 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="إصلاح طابعات — أنواع خدمات الصيانة"
-        text="نقدم في نيو جولدن أوفيس منظومة متكاملة من خدمات الصيانة لضمان استمرار عمل ماكيناتك وطابعاتك بأعلى كفاءة ممكنة. منذ تأسيسنا عام 1999 ونحن نقدم خدمات صيانة محترفة في الإسكندرية ومصر بأكملها."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3>الصيانة الدورية الوقائية (Preventive Maintenance)</h3>
-      <p>
-        تُعدّ الصيانة الوقائية الخيار الأذكى لإطالة عمر ماكيناتك وتقليل احتمالية الأعطال المفاجئة. تشمل هذه الخدمة تنظيف شاملاً لجميع مكونات الماكينة الداخلية والخارجية، وفحص وتشحيم الأجزاء المتحركة، ومعايرة جودة الصورة، وفحص وضبط بكرات التغذية وضمان سلاسة تغذية الورق، وتنظيف الطبل (Drum) ووحدة التثبيت (Fuser)، وفحص جميع الوصلات الكهربائية. الصيانة الدورية تضمن أن ماكينتك تعمل بأقصى طاقتها الإنتاجية طوال الوقت.
-      </p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>إصلاح طابعات — أنواع خدمات الصيانة</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">نقدم في نيو جولدن أوفيس منظومة متكاملة من خدمات الصيانة لضمان استمرار عمل ماكيناتك وطابعاتك بأعلى كفاءة ممكنة. منذ تأسيسنا عام 1999 ونحن نقدم خدمات صيانة محترفة في الإسكندرية ومصر بأكملها.</p>
+    <div class="features-grid landing-cards cols-3">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>الصيانة الدورية الوقائية (Preventive Maintenance)</h3><p>تُعدّ الصيانة الوقائية الخيار الأذكى لإطالة عمر ماكيناتك وتقليل احتمالية الأعطال المفاجئة. تشمل هذه الخدمة تنظيف شاملاً لجميع مكونات الماكينة الداخلية والخارجية، وفحص وتشحيم الأجزاء المتحركة، ومعايرة جودة الصورة، وفحص وضبط بكرات التغذية وضمان سلاسة تغذية الورق، وتنظيف الطبل (Drum) ووحدة التثبيت (Fuser)، وفحص جميع الوصلات الكهربائية. الصيانة الدورية تضمن أن ماكينتك تعمل بأقصى طاقتها الإنتاجية طوال الوقت.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>الصيانة التصحيحية (Corrective Maintenance)</h3><p>عند وقوع أي عطل في ماكينتك، يتدخل فريقنا الفني فوراً لتشخيص المشكلة وإصلاحها. نعتمد في التشخيص على معدات متخصصة وبرامج تشخيص الشركة المصنعة للوصول إلى الجذر الحقيقي للعطل وليس فقط إخفاء الأعراض. بعد الإصلاح، نجري اختبارات شاملة للتأكد من عودة الأداء إلى مستواه الطبيعي قبل تسليم الماكينة للعميل.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>الصيانة الطارئة (Emergency Maintenance)</h3><p>ندرك أن توقف ماكينة التصوير يعني توقف العمل، لذا نوفر خدمة صيانة طارئة للحالات العاجلة. للعملاء المشتركين في عقود الصيانة، نضمن الاستجابة خلال 4 ساعات في الإسكندرية والقاهرة. للعملاء العاديين، نحاول دائماً تقديم أسرع استجابة ممكنة في نفس يوم الاتصال أو في اليوم التالي.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3>الصيانة التصحيحية (Corrective Maintenance)</h3>
-      <p>
-        عند وقوع أي عطل في ماكينتك، يتدخل فريقنا الفني فوراً لتشخيص المشكلة وإصلاحها. نعتمد في التشخيص على معدات متخصصة وبرامج تشخيص الشركة المصنعة للوصول إلى الجذر الحقيقي للعطل وليس فقط إخفاء الأعراض. بعد الإصلاح، نجري اختبارات شاملة للتأكد من عودة الأداء إلى مستواه الطبيعي قبل تسليم الماكينة للعميل.
-      </p>
-
-      <h3>الصيانة الطارئة (Emergency Maintenance)</h3>
-      <p>
-        ندرك أن توقف ماكينة التصوير يعني توقف العمل، لذا نوفر خدمة صيانة طارئة للحالات العاجلة. للعملاء المشتركين في عقود الصيانة، نضمن الاستجابة خلال 4 ساعات في الإسكندرية والقاهرة. للعملاء العاديين، نحاول دائماً تقديم أسرع استجابة ممكنة في نفس يوم الاتصال أو في اليوم التالي.
-      </p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>الأعطال الشائعة التي نصلحها</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         يتمتع فريقنا الفني بخبرة واسعة في تشخيص وإصلاح جميع أنواع أعطال ماكينات التصوير والطابعات، ومن أبرز هذه الأعطال:
       </p>
       <IconCardGrid columns={4} items={[
@@ -80,10 +89,20 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-trash-alt', title: 'حاوية التونر الزائد (Waste Toner Box)', text: 'عند امتلائها تتوقف الماكينة عن العمل. نقوم بتفريغها أو استبدالها حسب موديل الماكينة.' },
         { icon: 'fa-wifi', title: 'مشاكل الشبكة والبرمجيات', text: 'إعادة ضبط إعدادات الشبكة، وتحديث البرامج الثابتة (Firmware)، وحل مشكلات التوصيل وتعريفات الطابعة على أجهزة الكمبيوتر.' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="copMaintenanceMidCta" />
+<MidPageCTA formId="copMaintenanceMidCta" />
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>الماركات التي نصيانتها</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         يتمتع فريقنا الفني بالخبرة والأدوات اللازمة للتعامل مع جميع الماركات الرئيسية في السوق المصري:
       </p>
       <IconCardGrid columns={4} items={[
@@ -97,8 +116,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-cog', title: 'Brother DCP / MFC / HL', text: 'صيانة براذر بجميع موديلاتها' },
         { icon: 'fa-bolt', title: 'Sharp MX Series', text: 'ماكينات شارب الملونة والأبيض والأسود' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>قطع الغيار — أصلية ومعتمدة</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         نؤمن في نيو جولدن أوفيس أن جودة قطع الغيار هي أساس جودة الصيانة، لذا نتعامل مع موردين معتمدين لضمان الحصول على أفضل قطع الغيار. نستخدم القطع الأصلية (OEM) كلما كانت متاحة ومناسبة لميزانية العميل.
       </p>
       <p>
@@ -107,8 +136,18 @@ const schemaJson = JSON.stringify({
       <p>
         نحتفظ بمخزون كبير من قطع الغيار الأكثر طلباً للموديلات الشائعة في السوق المصري، مما يقلل وقت توقف الماكينة إلى الحد الأدنى.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>عقود الصيانة الدورية</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         تُعدّ عقود الصيانة الدورية الحل الأمثل للشركات والمؤسسات التي تمتلك ماكينتين أو أكثر وتحتاج إلى ضمان استمرارية العمل. يشمل عقد الصيانة الدورية:
       </p>
       <IconCardGrid columns={4} items={[
@@ -123,8 +162,18 @@ const schemaJson = JSON.stringify({
       <p>
         فائدة عقود الصيانة لا تقتصر على تقليل الأعطال فقط، بل تمتد إلى تحسين جودة مخرجات الطباعة باستمرار، وإطالة العمر الافتراضي للأجهزة، وتوفير ميزانية صيانة يمكن التخطيط لها مسبقاً بدلاً من التعامل مع تكاليف الأعطال غير المتوقعة.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>فحوصات أولية قبل الاتصال بالفني</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         بعض المشاكل البسيطة يمكن حلها في دقائق دون الحاجة لانتظار زيارة فنية، مما يوفر عليك الوقت خاصة في أوقات ضغط العمل. إليك خطوات أولية آمنة يمكنك تجربتها بنفسك قبل الاتصال بنا:
       </p>
       <IconCardGrid columns={3} items={[
@@ -134,8 +183,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-wifi', title: 'انقطاع الاتصال بالشبكة', text: 'تأكد من أن كابل الشبكة موصول بإحكام أو أن الواي فاي يعمل، وجرّب طباعة صفحة اختبار الشبكة المتاحة في قائمة إعدادات الماكينة.' },
         { icon: 'fa-exclamation-triangle', title: 'متى لا تحاول الإصلاح بنفسك', text: 'إذا سمعت صوت طقطقة غير معتادة، أو رأيت دخاناً أو رائحة احتراق، أو تسرّب حبر أو تونر، أوقف الماكينة فوراً واتصل بفريقنا دون محاولة أي تدخل يدوي إضافي.' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>جدول الصيانة الدورية الموصى به حسب حجم الاستخدام</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         وتيرة الصيانة الوقائية المثالية تختلف حسب حجم استخدام الماكينة فعلياً، وليس عمرها الزمني فقط. إليك التوصية العامة لفريقنا:
       </p>
       <IconCardGrid columns={2} items={[
@@ -144,8 +203,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-industry', title: 'استخدام مكثف (أكثر من 15,000 صفحة/شهر — محلات تصوير ومطابع)', text: 'صيانة وقائية شهرية إلزامية تقريباً، نظراً لسرعة تآكل المكونات المتحركة تحت هذا الحجم من الاستخدام المستمر.' },
         { icon: 'fa-info-circle', title: 'ملاحظة مهمة', text: 'عدد الصفحات الفعلي (وليس عمر الماكينة بالسنوات) هو المعيار الأدق لتحديد موعد الصيانة القادمة. فريقنا يتابع عداد الماكينة عند كل زيارة لضبط الجدول تلقائياً.' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>ما الذي يحدد تكلفة إصلاح ماكينة التصوير؟</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         يسأل كثير من عملائنا عن سبب اختلاف تكلفة الإصلاح بشكل كبير من عطل لآخر. إليك أهم العوامل المؤثرة فعلياً في السعر النهائي:
       </p>
       <IconCardGrid columns={3} items={[
@@ -155,8 +224,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-search-minus', title: 'ندرة الموديل وتوفر القطع', text: 'الموديلات القديمة أو النادرة في السوق المصري قد تحتاج وقتاً أطول لتوفير القطعة، مما يؤثر أحياناً على السعر النهائي.' },
         { icon: 'fa-file-contract', title: 'وجود عقد صيانة ساري', text: 'عملاء عقود الصيانة الدورية يحصلون على خصومات ثابتة على قطع الغيار وأولوية في الجدولة، مما يقلل التكلفة الإجمالية على المدى الطويل مقارنة بالإصلاح لمرة واحدة.' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>متى تُصلح الماكينة ومتى تستبدلها؟</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         قرار الإصلاح مقابل الاستبدال من أهم القرارات الاقتصادية التي يواجهها أصحاب المكاتب والمطابع. نُقدم لعملائنا دائماً تقييماً صادقاً بناءً على هذه المعايير:
       </p>
       <IconCardGrid columns={2} items={[
@@ -168,28 +247,36 @@ const schemaJson = JSON.stringify({
       <p>
         فريقنا يقدم لك تقييماً صريحاً ومجانياً لحالة ماكينتك، ولا نصلح عطلاً نعلم أنه لن يكون مجدياً اقتصادياً — نُخبرك بذلك بوضوح ونقترح البديل الأنسب.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>أوقات الاستجابة وتغطية الخدمة</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         نفخر في نيو جولدن أوفيس بقدرتنا على تقديم <strong>صيانة ماكينات تصوير مصر</strong> على مستوى احترافي حقيقي. فريقنا الفني المتنقل يغطي الإسكندرية بالكامل مع إمكانية الوصول إلى القاهرة والمحافظات المجاورة. ساعات العمل الرسمية من الساعة 9 صباحاً حتى 6 مساءً، مع توفر خدمة الطوارئ لعملاء عقود الصيانة خارج أوقات العمل.
       </p>
-
     </div>
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-        </div>
-      </div>
-      <div class="sidebar-card"><h3>خدمات ماكينات التصوير</h3><div class="sidebar-services">
-        <a href="/copiers/buy" class="sidebar-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-angle-left"></i></a>
-        <a href="/copiers/printers" class="sidebar-service-link"><span>بيع طابعات</span><i class="fas fa-angle-left"></i></a>
-        <a href="/copiers/maintenance" class="sidebar-service-link"><span>صيانة الماكينات</span><i class="fas fa-angle-left"></i></a>
-        <a href="/copiers/cartridges" class="sidebar-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-angle-left"></i></a>
-      </div></div>
-    </aside>
-  </div></div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+              <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+              </div>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="section section-bg">
@@ -220,9 +307,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section section-bg">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">متى تحتاج ماكينتك للصيانة؟ — 7 علامات تحذيرية</h2>
+    <div class="section-header">
+      <h2>متى تحتاج ماكينتك للصيانة؟ — 7 علامات تحذيرية</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">فريق صيانة ماكينات التصوير في نيو جولدن أوفيس الإسكندرية يوصي بالتواصل معنا فوراً عند ظهور أي من هذه العلامات:</p>
     <IconCardGrid columns={4} items={[
       { icon: 'fa-file-alt', text: 'الورق يتجعد أو ينحشر باستمرار' },
@@ -243,6 +333,21 @@ const schemaJson = JSON.stringify({
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="tel:+201227392074" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fas fa-phone-alt"></i> 01227392074</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدمات ماكينات التصوير</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/maintenance" class="related-service-link"><span>صيانة الماكينات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
     </div>
   </div>
 </section>

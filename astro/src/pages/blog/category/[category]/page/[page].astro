@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import PageHero from '../../../../../components/PageHero.astro';
+import BlogGrid from '../../../../../components/BlogGrid.astro';
+import { getSortedPosts, countPages, countByCategory, BLOG_CATEGORIES, POSTS_PER_PAGE } from '../../../../../lib/blog-list';
+
+/** Pages 2..N of each category — page 1 is served by /blog/category/<slug>. */
+export async function getStaticPaths() {
+  const posts = await getSortedPosts();
+  const categoryCounts = countByCategory(posts);
+  return BLOG_CATEGORIES.flatMap((category) => {
+    const catPosts = posts.filter((p) => p.category === category.name);
+    const totalPages = countPages(catPosts.length);
+    return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => {
+      const page = i + 2;
+      return {
+        params: { category: category.slug, page: String(page) },
+        props: {
+          category,
+          page,
+          totalPages,
+          categoryCounts,
+          totalPosts: posts.length,
+          pagePosts: catPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE),
+        },
+      };
+    });
+  });
+}
+
+const { category, page, totalPages, categoryCounts, totalPosts, pagePosts } = Astro.props;
+---
+
+<BaseLayout
+  title={`مقالات ${category.name} — صفحة ${page} | نيو جولدن أوفيس`}
+  description={`الصفحة ${page} من مقالات نيو جولدن أوفيس في قسم ${category.name}.`}
+  ogTitle={`مقالات ${category.name} — صفحة ${page}`}
+  ogDescription={`مقالات ونصائح في قسم ${category.name} من نيو جولدن أوفيس.`}
+  breadcrumbLabel={`صفحة ${page}`}
+>
+<PageHero
+  title={category.name}
+  subtitle={`الصفحة ${page} من ${totalPages}`}
+  heroImage="/images/hero-office.webp"
+  heroAlt={`مدونة نيو جولدن أوفيس — ${category.name}`}
+  heroIcon={category.icon}
+  showCta={false}
+  breadcrumbs={[
+    { label: 'الرئيسية', href: '/' },
+    { label: 'المدونة', href: '/blog' },
+    { label: category.name, href: `/blog/category/${category.slug}` },
+    { label: `صفحة ${page}` }
+  ]}
+/>
+
+<BlogGrid posts={pagePosts} page={page} totalPages={totalPages} activeCategory={category.slug} categoryCounts={categoryCounts} totalPosts={totalPosts} />
+</BaseLayout>

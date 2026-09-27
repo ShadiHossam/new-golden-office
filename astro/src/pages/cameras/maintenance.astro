@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -46,16 +45,35 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="إصلاح كاميرات مراقبة — نظام في أفضل حالة دائماً"
-        text="كاميرات المراقبة تعمل 24 ساعة يومياً على مدار السنة، وهذا يعني أنها معرضة للغبار والحرارة والاهتراء أكثر من أي جهاز إلكتروني آخر. الصيانة الدورية ليست رفاهية بل ضرورة لضمان استمرار عمل نظامك بكفاءة عالية واكتشاف المشكلات قبل أن تتحول إلى أعطال مكلفة. فريق نيو جولدن أوفيس يوفر خدمة صيانة شاملة لجميع أنواع أنظمة المراقبة."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> أشهر مشكلات كاميرات المراقبة</h3>
-      <p>تواجه أنظمة المراقبة عدة مشكلات شائعة نتعامل معها يومياً:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>إصلاح كاميرات مراقبة — نظام في أفضل حالة دائماً</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">كاميرات المراقبة تعمل 24 ساعة يومياً على مدار السنة، وهذا يعني أنها معرضة للغبار والحرارة والاهتراء أكثر من أي جهاز إلكتروني آخر. الصيانة الدورية ليست رفاهية بل ضرورة لضمان استمرار عمل نظامك بكفاءة عالية واكتشاف المشكلات قبل أن تتحول إلى أعطال مكلفة. فريق نيو جولدن أوفيس يوفر خدمة صيانة شاملة لجميع أنواع أنظمة المراقبة.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> أشهر مشكلات كاميرات المراقبة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>تواجه أنظمة المراقبة عدة مشكلات شائعة نتعامل معها يومياً:</p>
       <IconCardGrid columns={4} items={[
         { icon: 'fa-eye', title: 'ضبابية الصورة أو ضعف الجودة', text: 'غالباً بسبب تراكم الغبار على العدسة أو تلف الزجاج الأمامي أو ضعف الإضاءة الليلية' },
         { icon: 'fa-unlink', title: 'انقطاع الصورة أو ضوضاء', text: 'مشكلة في الكابل أو الموصلات أو بطاقة التسجيل في جهاز DVR' },
@@ -65,9 +83,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-arrows-alt', title: 'الكاميرة تتحرك من مكانها', text: 'ضعف مسامير التثبيت أو تآكل الدعامة بفعل الطقس' },
         { icon: 'fa-hdd', title: 'الهاردسك لا يعمل أو لا يُسجّل', text: 'تلف الهاردسك بسبب الاهتراء أو انقطاع الكهرباء المفاجئ' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-calendar-check" style="color:var(--secondary);margin-left:8px;"></i> الصيانة الوقائية الدورية</h3>
-      <p>نوصي بصيانة دورية كل 6 أشهر تشمل:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-calendar-check" style="color:var(--secondary);margin-left:8px;"></i> الصيانة الوقائية الدورية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نوصي بصيانة دورية كل 6 أشهر تشمل:</p>
       <IconCardGrid columns={4} items={[
         { icon: 'fa-broom', title: 'تنظيف العدسات', text: 'إزالة الغبار والأوساخ من الزجاج الأمامي بمواد متخصصة لا تخدش السطح' },
         { icon: 'fa-network-wired', title: 'فحص الكابلات والموصلات', text: 'التأكد من سلامة التوصيلات وعدم وجود تلف أو صدأ في الموصلات' },
@@ -78,11 +105,20 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-sync-alt', title: 'تحديث الفيرموير', text: 'تحديث برنامج الكاميرات وجهاز التسجيل لآخر إصدار لتحسين الأداء والأمان' },
         { icon: 'fa-mobile-alt', title: 'اختبار المشاهدة عن بُعد', text: 'التحقق من صحة ربط الهاتف والمشاهدة عن بُعد وإعادة الإعداد إذا لزم' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="camMaintenanceMidCta" />
+<MidPageCTA formId="camMaintenanceMidCta" />
 
-      <h3><i class="fas fa-wrench" style="color:var(--secondary);margin-left:8px;"></i> إصلاح أعطال DVR وNVR</h3>
-      <p>نتخصص في إصلاح جميع أعطال أجهزة التسجيل بما في ذلك:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-wrench" style="color:var(--secondary);margin-left:8px;"></i> إصلاح أعطال DVR وNVR</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نتخصص في إصلاح جميع أعطال أجهزة التسجيل بما في ذلك:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-hdd', title: 'استبدال الهاردسك', text: 'تركيب هاردسك جديد مع استرجاع التسجيلات القديمة إذا كانت لا تزال موجودة' },
         { icon: 'fa-bolt', title: 'إصلاح مصدر الطاقة', text: 'إصلاح أو استبدال وحدة Power Supply المتضررة' },
@@ -90,16 +126,34 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-key', title: 'استرجاع كلمة المرور', text: 'إعادة ضبط كلمة المرور في حالة نسيانها بدون فقدان التسجيلات' },
         { icon: 'fa-redo', title: 'تحديث وإعادة تثبيت البرنامج', text: 'في حالة تعطل نظام التشغيل في الجهاز' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-network-wired" style="color:var(--secondary);margin-left:8px;"></i> فحص واختبار الكابلات</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-network-wired" style="color:var(--secondary);margin-left:8px;"></i> فحص واختبار الكابلات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-plug', title: 'جهاز Cable Tester', text: 'نختبر كل كابل لاكتشاف الانقطاعات والأعطال الخفية' },
         { icon: 'fa-exchange-alt', title: 'استبدال الكابلات التالفة', text: 'تغيير الكابلات القديمة أو المتضررة بأخرى جديدة عالية الجودة' },
         { icon: 'fa-route', title: 'إعادة تمديد جزئي', text: 'في حالة التمديدات التالفة بسبب الرطوبة أو القوارض' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-file-contract" style="color:var(--secondary);margin-left:8px;"></i> عقود الصيانة السنوية</h3>
-      <p>توفر نيو جولدن أوفيس عقود صيانة سنوية توفر لك:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-file-contract" style="color:var(--secondary);margin-left:8px;"></i> عقود الصيانة السنوية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>توفر نيو جولدن أوفيس عقود صيانة سنوية توفر لك:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-calendar-check', text: 'زيارتان للصيانة الوقائية سنوياً (كل 6 أشهر)' },
         { icon: 'fa-clock', text: 'أولوية الاستجابة في حالات الطوارئ خلال 24 ساعة' },
@@ -107,26 +161,53 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-file-alt', text: 'تقرير صيانة مكتوب بعد كل زيارة' },
         { icon: 'fa-headset', text: 'دعم فني هاتفي مجاني طوال فترة العقد' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-cloud-sun-rain" style="color:var(--secondary);margin-left:8px;"></i> الصيانة الموسمية حسب مناخ مصر</h3>
-      <p>مناخ مصر المتقلب بين حرارة صيف شديدة وأمطار شتوية على الساحل الشمالي يفرض جدول صيانة يتكيف مع كل فصل بدلاً من روتين ثابت طوال العام:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-cloud-sun-rain" style="color:var(--secondary);margin-left:8px;"></i> الصيانة الموسمية حسب مناخ مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>مناخ مصر المتقلب بين حرارة صيف شديدة وأمطار شتوية على الساحل الشمالي يفرض جدول صيانة يتكيف مع كل فصل بدلاً من روتين ثابت طوال العام:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-sun', title: 'فصل الصيف (يونيو-سبتمبر)', text: 'ارتفاع درجات الحرارة يزيد إجهاد المكونات الإلكترونية داخل الكاميرا خاصة في الأماكن المكشوفة، وتزيد العواصف الترابية من تراكم الغبار على العدسات بمعدل أسرع من باقي العام. نوصي بفحص تهوية جهاز DVR/NVR كل شهرين خلال هذا الفصل لتفادي ارتفاع حرارته الداخلية' },
         { icon: 'fa-cloud-rain', title: 'فصل الشتاء (نوفمبر-فبراير)', text: 'الرطوبة والأمطار، خاصة في الإسكندرية والساحل الشمالي، قد تتسبب في تسرب الماء إلى موصلات الكاميرات الخارجية غير المحكمة الإغلاق. نفحص أختام الكاميرات الخارجية (Gaskets) قبل بداية الموسم المطير مباشرةً كإجراء وقائي' },
         { icon: 'fa-bolt', title: 'فترات انقطاع الكهرباء المتكررة', text: 'أي انقطاع مفاجئ للكهرباء يُعرّض الهاردسك لخطر التلف، خصوصاً في المناطق ذات جودة كهرباء غير مستقرة — ننصح بتركيب UPS كجزء أساسي من خطة الصيانة الوقائية وليس كإضافة اختيارية فقط' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-building" style="color:var(--secondary);margin-left:8px;"></i> أولويات الصيانة حسب نوع المنشأة</h3>
-      <p>وتيرة الصيانة المثالية تختلف حسب طبيعة المكان ومدى اعتماده على استمرارية التغطية الأمنية:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-building" style="color:var(--secondary);margin-left:8px;"></i> أولويات الصيانة حسب نوع المنشأة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>وتيرة الصيانة المثالية تختلف حسب طبيعة المكان ومدى اعتماده على استمرارية التغطية الأمنية:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-home', title: 'منازل وشقق سكنية', text: 'صيانة سنوية واحدة كافية غالباً، مع تركيز أكبر على تنظيف الكاميرا الخارجية عند المدخل لأنها الأكثر عرضة للعوامل الجوية طوال العام' },
         { icon: 'fa-store', title: 'محلات تجارية وصيدليات', text: 'نوصي بصيانة كل 6 أشهر مع أولوية لفحص كاميرات الصندوق والمدخل، لأن أي انقطاع فيها يعني فترة بلا تغطية أمنية في أكثر نقطة حساسة في المحل' },
         { icon: 'fa-industry', title: 'مصانع ومستودعات', text: 'تحتاج جدول صيانة أكثر تكراراً (كل 3-4 أشهر) بسبب التعرض المستمر للغبار الصناعي والاهتزازات، مع فحص دوري لكابلات الطاقة الممتدة لمسافات طويلة' },
         { icon: 'fa-landmark', title: 'مدارس ومستشفيات ومباني حكومية', text: 'نظراً لحساسية هذه المواقع وضرورة استمرار التغطية الأمنية بلا انقطاع، نوصي بعقد صيانة شامل مع زيارات ربع سنوية وأولوية استجابة طارئة خلال ساعات لا أيام' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-coins" style="color:var(--secondary);margin-left:8px;"></i> ما الذي يؤثر على تكلفة صيانة كاميرات المراقبة؟</h3>
-      <p>تختلف تكلفة كل زيارة صيانة حسب عدة عوامل موضوعية نراعيها عند تحديد السعر:</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-coins" style="color:var(--secondary);margin-left:8px;"></i> ما الذي يؤثر على تكلفة صيانة كاميرات المراقبة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>تختلف تكلفة كل زيارة صيانة حسب عدة عوامل موضوعية نراعيها عند تحديد السعر:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-video', title: 'عدد الكاميرات والأجهزة المطلوب فحصها', text: 'كلما زاد العدد زاد وقت الفحص والتنظيف المطلوب لإنجاز الزيارة بشكل كامل' },
         { icon: 'fa-wrench', title: 'نوع العطل ومدى تعقيده', text: 'فحص بسيط أو تنظيف عدسة يختلف تماماً في الوقت والجهد عن استبدال هاردسك أو إصلاح لوحة داخلية في جهاز DVR' },
@@ -136,41 +217,36 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-file-signature', title: 'عقد سنوي أم زيارة منفردة', text: 'الاشتراك في عقد صيانة سنوي يقلل التكلفة الإجمالية بشكل ملحوظ مقارنة بدفع كل زيارة بشكل منفصل' },
       ]} />
     </div>
+  </div>
+</section>
 
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات الكاميرات</h4>
-        <div class="sidebar-services">
-          <a href="/cameras/install" class="sidebar-service-link"><span>بيع وتركيب كاميرات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/dvr-nvr" class="sidebar-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/ip-wifi" class="sidebar-service-link"><span>كاميرات IP وواي فاي</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cameras/maintenance" class="sidebar-service-link active"><span>صيانة المراقبة</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
-        </div>
-      </div>
-      <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-        <h4 style="color:var(--secondary);border-color:var(--secondary);">اطلب صيانة طارئة</h4>
-        <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">كاميراتك معطلة؟ تواصل الآن واحصل على موعد سريع</p>
-        <a href="https://wa.me/201227392074?text=أحتاج%20صيانة%20عاجلة%20لكاميرات%20المراقبة" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> صيانة طارئة</a>
-      </div>
-      <div class="sidebar-card">
-        <h4><i class="fas fa-shield-alt" style="color:var(--secondary);margin-left:8px;"></i> مميزات عقود الصيانة</h4>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>زيارتان وقائيتان سنوياً</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>أولوية الاستجابة في 24 ساعة</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>خصم 20% على قطع الغيار</span></li>
-          <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>دعم هاتفي مجاني طوال العقد</span></li>
-        </ul>
-      </div>
-    </aside>
-  </div></div>
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-3">
+<div class="sidebar-card">
+              <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
+              </div>
+            </div>
+<div class="sidebar-card" style="background:var(--primary);color:var(--white);">
+              <h4 style="color:var(--secondary);border-color:var(--secondary);">اطلب صيانة طارئة</h4>
+              <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">كاميراتك معطلة؟ تواصل الآن واحصل على موعد سريع</p>
+              <a href="https://wa.me/201227392074?text=أحتاج%20صيانة%20عاجلة%20لكاميرات%20المراقبة" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> صيانة طارئة</a>
+            </div>
+<div class="sidebar-card">
+              <h4><i class="fas fa-shield-alt" style="color:var(--secondary);margin-left:8px;"></i> مميزات عقود الصيانة</h4>
+              <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>زيارتان وقائيتان سنوياً</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>أولوية الاستجابة في 24 ساعة</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>خصم 20% على قطع الغيار</span></li>
+                <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>دعم هاتفي مجاني طوال العقد</span></li>
+              </ul>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="section section-bg">
@@ -207,9 +283,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section section-bg">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">أعطال كاميرات المراقبة الشائعة وكيف نصلحها</h2>
+    <div class="section-header">
+      <h2>أعطال كاميرات المراقبة الشائعة وكيف نصلحها</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">فريق صيانة كاميرات المراقبة في نيو جولدن أوفيس الإسكندرية يتعامل يومياً مع هذه الأعطال الشائعة في مصر:</p>
     <IconCardGrid columns={3} items={[
       { icon: 'fa-eye', title: 'صورة ضبابية أو غير واضحة', text: 'السبب: تراكم الغبار على العدسة أو تلف مستشعر الصورة. الحل: تنظيف احترافي أو استبدال العدسة.' },
@@ -232,5 +311,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات الكاميرات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/cameras/install" class="related-service-link"><span>بيع وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/dvr-nvr" class="related-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/ip-wifi" class="related-service-link"><span>كاميرات IP وواي فاي</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/maintenance" class="related-service-link active"><span>صيانة المراقبة</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="كاميرات المراقبة" />
 </BaseLayout>

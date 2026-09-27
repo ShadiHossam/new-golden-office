@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -120,200 +119,259 @@ const schemaJson = JSON.stringify({
 />
 
 <!-- Service Detail -->
-<section class="service-detail">
+<section class="stats-section">
   <div class="container">
-    <div class="service-detail-grid">
-
-      <!-- Main Content -->
-      <div class="service-content">
-        <ContentIntro
-          heading="نجيب بأفضل حل لكل احتياج في عالم ماكينات التصوير والطابعات"
-          text="منذ تأسيس شركة نيو جولدن أوفيس عام 1999 في الإسكندرية، ونحن نُقدم خدمات متكاملة في مجال ماكينات التصوير والطابعات لعملائنا في جميع أنحاء مصر. بدأت رحلتنا بمحل صغير في الإبراهيمية، وتطورنا على مدى أكثر من 27 عاماً لنصبح أحد أبرز المراجع الموثوقة في سوق ماكينات التصوير والطابعات في مصر."
-        />
-        <p>
-          نحن نتعامل مع أكبر الماركات العالمية في مجال ماكينات التصوير، وفي مقدمتها: <strong>كانون Canon</strong> بسلاسلها المتعددة من imageRUNNER وiR ADVANCE، وماكينات <strong>ريكو Ricoh</strong> بسلسلة MP الشهيرة، وماكينات <strong>كيوسيرا Kyocera</strong> بتقنية TASKalfa المتطورة، فضلاً عن ماكينات <strong>توشيبا Toshiba</strong> سلسلة e-STUDIO و<strong>زيروكس Xerox</strong> WorkCentre.
-        </p>
-        <p>
-          أما في مجال الطابعات، فنحن وكلاء ومورِّدون معتمدون لطابعات <strong>HP</strong> LaserJet وDeskJet وOfficeJet، وطابعات <strong>Canon</strong> PIXMA وimageCLASS، وطابعات <strong>Epson</strong> EcoTank وWorkForce، وطابعات <strong>Brother</strong> بسلاسل DCP وMFC المتعددة الوظائف.
-        </p>
-
-        <h3>خدماتنا في مجال ماكينات التصوير والطابعات</h3>
-        <IconCardGrid columns={4} items={[
-          { icon: 'fa-copy', title: 'بيع ماكينات التصوير', text: 'نوفر أحدث ماكينات التصوير الجديدة والمجددة من كانون وريكو وكيوسيرا وتوشيبا وزيروكس بأسعار منافسة. <a href="/copiers/buy">اعرف المزيد</a>' },
-          { icon: 'fa-print', title: 'بيع طابعات', text: 'طابعات ليزر وإنكجيت من HP وكانون وإبسون وبراذر لجميع الاستخدامات المنزلية والمكتبية ومحلات الطباعة. <a href="/copiers/printers">اعرف المزيد</a>' },
-          { icon: 'fa-tools', title: 'صيانة ماكينات التصوير', text: 'فريق فنيين متخصصين لصيانة جميع أنواع وماركات ماكينات التصوير والطابعات مع ضمان على الإصلاح. <a href="/copiers/maintenance">اعرف المزيد</a>' },
-          { icon: 'fa-tint', title: 'كارتريدج وأحبار', text: 'كارتريدج أصلي وبديل لجميع موديلات الطابعات، خدمة تعبئة الكارتريدج، توفير أحبار الليزر والإنكجيت. <a href="/copiers/cartridges">اعرف المزيد</a>' },
-        ]} />
-
-        <h3>لماذا تختار نيو جولدن أوفيس؟</h3>
-        <p>
-          في سوق مليء بالبدائل والاختيارات، ما الذي يُميّزنا؟ الإجابة ببساطة هي الخبرة والثقة والخدمة المتكاملة. منذ عام 1999 ونحن نُراكم خبراتنا في هذا المجال، ونتابع كل تطور تقني في صناعة ماكينات التصوير والطابعات. فريقنا الفني يتلقى تدريبات مستمرة على أحدث الأجهزة والتقنيات من الماركات العالمية الكبرى.
-        </p>
-        <p>
-          نحرص على توفير قطع الغيار الأصلية والمعتمدة، ولا نتنازل عن جودة الإصلاح مقابل السرعة. عملاؤنا في الشركات والمكاتب والمستشفيات والمدارس ومحلات الطباعة في الإسكندرية والقاهرة وسائر محافظات مصر يُشهدون لنا بذلك على مدى عقود متواصلة.
-        </p>
-        <p>
-          نُقدم أيضاً عقود صيانة دورية للشركات التي تُريد ضمان استمرارية عمل أجهزتها دون توقف. يشمل العقد زيارات صيانة وقائية منتظمة، وأولوية في الاستجابة عند الأعطال، وخصومات على قطع الغيار والمستهلكات.
-        </p>
-
-        <MidPageCTA formId="copIndexMidCta" />
-
-        <h3>نخدم جميع أنحاء مصر</h3>
-        <p>
-          رغم أن مقرنا الرئيسي في الإسكندرية، إلا أن نطاق خدماتنا يمتد ليشمل القاهرة الكبرى، والجيزة، والمنصورة، والإسماعيلية، والسويس، وطنطا، وأسيوط، والمنيا، وسائر محافظات مصر. يتوفر لدينا فريق متنقل يمكنه الوصول إليك أينما كنت في مصر لتقديم خدمات التركيب والصيانة والدعم الفني.
-        </p>
-
-        <h3 style="margin-top:40px;">أي حل يناسب طبيعة عملك؟</h3>
-        <p>
-          قبل أن تقرر شراء ماكينة تصوير أو طابعة، يجدر أولاً تحديد فئة الاستخدام التي تنطبق عليك، لأن السعر والسرعة ودورة الإنتاج المناسبة تختلف اختلافاً جذرياً من فئة إلى أخرى. إليك دليل سريع يوضح ما ننصح به فعلياً لكل نوع من عملائنا:
-        </p>
-        <IconCardGrid columns={2} items={[
-          { icon: 'fa-user-tie', title: 'المكتب الصغير (1-10 موظفين)', text: 'طابعة أو ماكينة متعددة الوظائف متوسطة السرعة (20-30 صفحة/دقيقة) تكفي غالباً، خاصة إذا كان حجم الطباعة الشهري أقل من 3000 ورقة. الأولوية هنا للتوفير في الشراء الأولي وسهولة التشغيل.' },
-          { icon: 'fa-print', title: 'محل الطباعة أو التصوير', text: 'يحتاج ماكينة إنتاجية بسرعة 60-100+ صفحة/دقيقة ودورة إنتاج شهرية عالية جداً، مع أدراج ورق متعددة وقدرة على تحمل الاستخدام المكثف يومياً دون تعطل. هنا تكلفة الصفحة أهم من سعر الشراء.' },
-          { icon: 'fa-school', title: 'المدارس والجهات التعليمية', text: 'احتياج موسمي متغير بين فترات الامتحانات (طباعة كثيفة) وباقي العام (طباعة معتدلة). ننصح غالباً بماكينة متوسطة إلى كبيرة مع عقد صيانة يضمن جاهزيتها في فترات الذروة.' },
-          { icon: 'fa-building', title: 'الشركات والمؤسسات الكبرى', text: 'عادة تحتاج أكثر من جهاز موزع على الأقسام، مع شبكة موحدة وإدارة مركزية للطباعة، وعقد صيانة شامل يضمن استمرارية العمل دون توقف في أي قسم.' },
-        ]} />
-
-        <!-- How It Works -->
-        <h3 style="margin-top:40px;">كيف نعمل؟</h3>
-        <div class="steps-grid">
-          <div class="step-item">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h4>تواصل معنا وأخبرنا باحتياجاتك</h4>
-              <p>اتصل بنا أو أرسل لنا رسالة واتساب وأخبرنا بحجم عملك واحتياجاتك من ماكينة التصوير أو الطابعة. سنُحلل احتياجاتك بدقة.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h4>نوفر لك أفضل الخيارات المناسبة لميزانيتك</h4>
-              <p>بناءً على احتياجاتك وميزانيتك، نعرض عليك أفضل الخيارات من الماركات العالمية المعتمدة مع مقارنة كاملة بين المواصفات والأسعار.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h4>نوصل ونثبت الجهاز مع ضمان وخدمة ما بعد البيع</h4>
-              <p>نتولى التوصيل والتركيب والتشغيل التجريبي، ونُدرب فريقك على استخدام الجهاز. نُقدم ضمان وخدمة ما بعد البيع لراحة بالك.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ -->
-        <h3 style="margin-top:40px;">الأسئلة الشائعة</h3>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question">ما الفرق بين ماكينة التصوير والطابعة متعددة الوظائف؟ <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>ماكينة التصوير (الفوتوكوبي) مُصمَّمة أساساً للاستخدام المكثف في بيئات العمل كالمكاتب ومحلات التصوير، وتتميز بسرعات طباعة عالية (من 20 إلى أكثر من 100 صفحة في الدقيقة)، وسعة كبيرة لورق الإدخال، وعمر افتراضي أطول. أما الطابعة متعددة الوظائف فهي مناسبة للاستخدام المتوسط في المنازل والمكاتب الصغيرة. الاختيار يعتمد على حجم الطباعة اليومي ومتطلبات عملك.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">هل تتعاملون مع جميع الماركات؟ <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>نعم، نتعامل مع جميع الماركات العالمية الرئيسية لماكينات التصوير: كانون Canon، ريكو Ricoh، كيوسيرا Kyocera، توشيبا Toshiba، زيروكس Xerox. وللطابعات نتعامل مع: HP، كانون Canon، إبسون Epson، براذر Brother. سواء كنت تريد شراء جهاز جديد أو صيانة جهازك الحالي، نقدم الخدمة لجميع هذه الماركات.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">هل تقدمون عقود صيانة دورية للشركات؟ <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>نعم، نُقدم عقود صيانة دورية مخصصة للشركات والمؤسسات. تشمل العقود زيارات صيانة وقائية منتظمة (شهرية أو ربع سنوية)، وأولوية في الاستجابة عند الأعطال الطارئة، وتقارير دورية عن حالة الأجهزة، وخصومات على قطع الغيار والمستهلكات. تواصل معنا للحصول على عرض سعر مخصص لاحتياجات شركتك.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">ما مناطق التغطية الجغرافية لخدماتكم؟ <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>مقرنا الرئيسي في الإسكندرية، ونقدم خدماتنا في الإسكندرية والقاهرة الكبرى والجيزة ومحافظات الدلتا والوجه البحري والوجه القبلي. يمكن ترتيب زيارات ميدانية لأي منطقة في مصر حسب الطلب. تواصل معنا وسنُحدد إمكانية الوصول إلى موقعكم.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">هل تبيعون ماكينات تصوير مستعملة مجددة؟ <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>نعم، نتوفر على ماكينات تصوير مستعملة تم تجديدها بالكامل (Refurbished) وهي خيار ممتاز لمن يريد الحصول على ماكينة بجودة عالية بسعر أقل. جميع الماكينات المجددة لدينا تمر بفحص شامل وإصلاح كامل قبل البيع، مع ضمان يصل إلى 6 أشهر. تواصل معنا للاستفسار عن المتوفر حالياً.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">كم سعر ماكينة التصوير في مصر؟ <i class="fas fa-plus"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>تتفاوت أسعار ماكينات التصوير في مصر بشكل كبير حسب الماركة والموديل والمواصفات وحالة الجهاز (جديد أو مستعمل مجدد). نوفر ضمان وخدمة ما بعد البيع لجميع الماكينات. تواصل معنا عبر واتساب وأخبرنا باحتياجك وسنرسل لك عرض سعر مجاني ودقيق خلال دقائق.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">هل الأفضل شراء ماكينة تصوير أم الاكتفاء بعقد صيانة على ماكينة موجودة؟ <i class="fas fa-plus"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>إذا كانت ماكينتك الحالية أقل من 5-6 سنوات وتعمل بأداء مقبول، فغالباً عقد صيانة دورية معنا أوفر من شراء جهاز جديد. أما إذا كانت الماكينة تتعطل بشكل متكرر أو تجاوزت دورة إنتاجها المتوقعة أو أصبحت قطع غيارها نادرة، فالشراء يكون الخيار الأكثر جدوى على المدى المتوسط. فريقنا يقيّم حالة ماكينتك مجاناً ويقترح عليك الحل الأنسب اقتصادياً.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">ما الفرق بين احتياج المكتب الصغير واحتياج مطبعة أو محل تصوير؟ <i class="fas fa-plus"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>المكتب الصغير الذي يطبع أقل من 3000 صفحة شهرياً يكفيه جهاز متعدد الوظائف متوسط السرعة (20-30 صفحة/دقيقة) مع درج ورق واحد أو اثنين. أما المطبعة أو محل التصوير الذي يطبع عشرات الآلاف من الصفحات شهرياً فيحتاج ماكينة إنتاجية عالية السرعة (60-100+ صفحة/دقيقة) بدورة إنتاج شهرية مرتفعة وأدراج ورق متعددة وخيارات تجليد وتشطيب. نساعدك في تحديد الفئة الصحيحة بناءً على حجم طباعتك الفعلي.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">هل تقدمون استشارة مجانية لتقييم احتياجات شركتي؟ <i class="fas fa-plus"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>نعم، نقدم زيارة استشارية مجانية بدون التزام لتقييم حجم طباعتك الحالي وعدد المستخدمين والمساحة المتاحة، ثم نقترح عليك الحل الأمثل من حيث نوع الجهاز والماركة والسعة، سواء كان الحل شراء جهاز جديد أو مجدد أو مجرد عقد صيانة على جهازك الحالي.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">هل يمكن تأجير ماكينة تصوير بدلاً من شرائها؟ <i class="fas fa-plus"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>نعم، نوفر خيار التأجير الشهري للشركات التي تفضل عدم الاستثمار في شراء جهاز بالكامل، خاصة للمشاريع المؤقتة أو الشركات الناشئة. يشمل عقد التأجير الصيانة الدورية وقطع الغيار، ويمكن تحويل عقد التأجير لاحقًا إلى شراء إذا رغبت الشركة في تملك الجهاز بعد التأكد من ملاءمته الفعلية لاحتياجها.</p>
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">كم يستغرق توريد وتركيب ماكينة تصوير جديدة؟ <i class="fas fa-plus"></i></button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>الأجهزة المتوفرة في المخزون يتم توريدها وتركيبها عادة خلال يوم إلى يومي عمل. أما الطلبات الخاصة بمواصفات معينة أو ماركات غير متوفرة حاليًا فقد تستغرق أسبوعًا إلى أسبوعين حسب التوريد من المصنّع أو الوكيل. في جميع الحالات، نُبلغك بموعد تقديري واضح منذ البداية ونلتزم به قدر الإمكان، ونُبقيك على اطلاع في حال طرأ أي تأخير خارج عن إرادتنا حتى لا تفاجأ بأي تغيير في الموعد المتفق عليه مسبقًا.</p>
-            </div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar -->
-      <aside class="service-sidebar">
-        <div class="sidebar-card">
-          <h4><i class="fas fa-phone" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا الآن</h4>
-          <div class="contact-info">
-            <div class="contact-info-item">
-              <i class="fas fa-phone"></i>
-              <div><strong>01227392074</strong><br><a href="tel:01227392074" class="btn btn-primary btn-sm" style="margin-top:8px;display:inline-flex;">اتصل الآن</a></div>
-            </div>
-            <div class="contact-info-item">
-              <i class="fab fa-whatsapp" style="color:#25D366;"></i>
-              <div><strong>واتساب</strong><br><a href="https://wa.me/201227392074" class="btn btn-whatsapp btn-sm" style="margin-top:8px;display:inline-flex;">ابدأ محادثة</a></div>
-            </div>
-            <div class="contact-info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية</span>
-            </div>
-            <div class="contact-info-item">
-              <i class="fas fa-clock"></i>
-              <span>السبت – الخميس: 9ص – 6م</span>
-            </div>
-          </div>
-        </div>
-        <div class="sidebar-card">
-          <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدماتنا في التصوير</h4>
-          <div class="sidebar-services">
-            <a href="/copiers" class="sidebar-service-link active"><span>ماكينات التصوير والطابعات</span><i class="fas fa-chevron-left"></i></a>
-            <a href="/copiers/buy" class="sidebar-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-chevron-left"></i></a>
-            <a href="/copiers/printers" class="sidebar-service-link"><span>بيع طابعات ليزر وإنكجيت</span><i class="fas fa-chevron-left"></i></a>
-            <a href="/copiers/maintenance" class="sidebar-service-link"><span>صيانة ماكينات التصوير</span><i class="fas fa-chevron-left"></i></a>
-            <a href="/copiers/cartridges" class="sidebar-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-chevron-left"></i></a>
-          </div>
-        </div>
-      </aside>
-
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">أفضل ماكينات تصوير للشركات في مصر 2025 — مقارنة الماركات</h2>
+    <div class="section-header">
+      <h2>نجيب بأفضل حل لكل احتياج في عالم ماكينات التصوير والطابعات</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">منذ تأسيس شركة نيو جولدن أوفيس عام 1999 في الإسكندرية، ونحن نُقدم خدمات متكاملة في مجال ماكينات التصوير والطابعات لعملائنا في جميع أنحاء مصر. بدأت رحلتنا بمحل صغير في الإبراهيمية، وتطورنا على مدى أكثر من 27 عاماً لنصبح أحد أبرز المراجع الموثوقة في سوق ماكينات التصوير والطابعات في مصر.</p>
+    <div class="landing-body service-content">
+<p>
+        نحن نتعامل مع أكبر الماركات العالمية في مجال ماكينات التصوير، وفي مقدمتها: <strong>كانون Canon</strong> بسلاسلها المتعددة من imageRUNNER وiR ADVANCE، وماكينات <strong>ريكو Ricoh</strong> بسلسلة MP الشهيرة، وماكينات <strong>كيوسيرا Kyocera</strong> بتقنية TASKalfa المتطورة، فضلاً عن ماكينات <strong>توشيبا Toshiba</strong> سلسلة e-STUDIO و<strong>زيروكس Xerox</strong> WorkCentre.
+      </p>
+      <p>
+        أما في مجال الطابعات، فنحن وكلاء ومورِّدون معتمدون لطابعات <strong>HP</strong> LaserJet وDeskJet وOfficeJet، وطابعات <strong>Canon</strong> PIXMA وimageCLASS، وطابعات <strong>Epson</strong> EcoTank وWorkForce، وطابعات <strong>Brother</strong> بسلاسل DCP وMFC المتعددة الوظائف.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدماتنا في مجال ماكينات التصوير والطابعات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={4} items={[
+        { icon: 'fa-copy', title: 'بيع ماكينات التصوير', text: 'نوفر أحدث ماكينات التصوير الجديدة والمجددة من كانون وريكو وكيوسيرا وتوشيبا وزيروكس بأسعار منافسة. <a href="/copiers/buy">اعرف المزيد</a>' },
+        { icon: 'fa-print', title: 'بيع طابعات', text: 'طابعات ليزر وإنكجيت من HP وكانون وإبسون وبراذر لجميع الاستخدامات المنزلية والمكتبية ومحلات الطباعة. <a href="/copiers/printers">اعرف المزيد</a>' },
+        { icon: 'fa-tools', title: 'صيانة ماكينات التصوير', text: 'فريق فنيين متخصصين لصيانة جميع أنواع وماركات ماكينات التصوير والطابعات مع ضمان على الإصلاح. <a href="/copiers/maintenance">اعرف المزيد</a>' },
+        { icon: 'fa-tint', title: 'كارتريدج وأحبار', text: 'كارتريدج أصلي وبديل لجميع موديلات الطابعات، خدمة تعبئة الكارتريدج، توفير أحبار الليزر والإنكجيت. <a href="/copiers/cartridges">اعرف المزيد</a>' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا تختار نيو جولدن أوفيس؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
+        في سوق مليء بالبدائل والاختيارات، ما الذي يُميّزنا؟ الإجابة ببساطة هي الخبرة والثقة والخدمة المتكاملة. منذ عام 1999 ونحن نُراكم خبراتنا في هذا المجال، ونتابع كل تطور تقني في صناعة ماكينات التصوير والطابعات. فريقنا الفني يتلقى تدريبات مستمرة على أحدث الأجهزة والتقنيات من الماركات العالمية الكبرى.
+      </p>
+      <p>
+        نحرص على توفير قطع الغيار الأصلية والمعتمدة، ولا نتنازل عن جودة الإصلاح مقابل السرعة. عملاؤنا في الشركات والمكاتب والمستشفيات والمدارس ومحلات الطباعة في الإسكندرية والقاهرة وسائر محافظات مصر يُشهدون لنا بذلك على مدى عقود متواصلة.
+      </p>
+      <p>
+        نُقدم أيضاً عقود صيانة دورية للشركات التي تُريد ضمان استمرارية عمل أجهزتها دون توقف. يشمل العقد زيارات صيانة وقائية منتظمة، وأولوية في الاستجابة عند الأعطال، وخصومات على قطع الغيار والمستهلكات.
+      </p>
+    </div>
+  </div>
+</section>
+
+<MidPageCTA formId="copIndexMidCta" />
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>نخدم جميع أنحاء مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
+        رغم أن مقرنا الرئيسي في الإسكندرية، إلا أن نطاق خدماتنا يمتد ليشمل القاهرة الكبرى، والجيزة، والمنصورة، والإسماعيلية، والسويس، وطنطا، وأسيوط، والمنيا، وسائر محافظات مصر. يتوفر لدينا فريق متنقل يمكنه الوصول إليك أينما كنت في مصر لتقديم خدمات التركيب والصيانة والدعم الفني.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أي حل يناسب طبيعة عملك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
+        قبل أن تقرر شراء ماكينة تصوير أو طابعة، يجدر أولاً تحديد فئة الاستخدام التي تنطبق عليك، لأن السعر والسرعة ودورة الإنتاج المناسبة تختلف اختلافاً جذرياً من فئة إلى أخرى. إليك دليل سريع يوضح ما ننصح به فعلياً لكل نوع من عملائنا:
+      </p>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-user-tie', title: 'المكتب الصغير (1-10 موظفين)', text: 'طابعة أو ماكينة متعددة الوظائف متوسطة السرعة (20-30 صفحة/دقيقة) تكفي غالباً، خاصة إذا كان حجم الطباعة الشهري أقل من 3000 ورقة. الأولوية هنا للتوفير في الشراء الأولي وسهولة التشغيل.' },
+        { icon: 'fa-print', title: 'محل الطباعة أو التصوير', text: 'يحتاج ماكينة إنتاجية بسرعة 60-100+ صفحة/دقيقة ودورة إنتاج شهرية عالية جداً، مع أدراج ورق متعددة وقدرة على تحمل الاستخدام المكثف يومياً دون تعطل. هنا تكلفة الصفحة أهم من سعر الشراء.' },
+        { icon: 'fa-school', title: 'المدارس والجهات التعليمية', text: 'احتياج موسمي متغير بين فترات الامتحانات (طباعة كثيفة) وباقي العام (طباعة معتدلة). ننصح غالباً بماكينة متوسطة إلى كبيرة مع عقد صيانة يضمن جاهزيتها في فترات الذروة.' },
+        { icon: 'fa-building', title: 'الشركات والمؤسسات الكبرى', text: 'عادة تحتاج أكثر من جهاز موزع على الأقسام، مع شبكة موحدة وإدارة مركزية للطباعة، وعقد صيانة شامل يضمن استمرارية العمل دون توقف في أي قسم.' },
+      ]} />
+
+      <!-- How It Works -->
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف نعمل؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<div class="steps-grid">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>تواصل معنا وأخبرنا باحتياجاتك</h4>
+            <p>اتصل بنا أو أرسل لنا رسالة واتساب وأخبرنا بحجم عملك واحتياجاتك من ماكينة التصوير أو الطابعة. سنُحلل احتياجاتك بدقة.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>نوفر لك أفضل الخيارات المناسبة لميزانيتك</h4>
+            <p>بناءً على احتياجاتك وميزانيتك، نعرض عليك أفضل الخيارات من الماركات العالمية المعتمدة مع مقارنة كاملة بين المواصفات والأسعار.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>نوصل ونثبت الجهاز مع ضمان وخدمة ما بعد البيع</h4>
+            <p>نتولى التوصيل والتركيب والتشغيل التجريبي، ونُدرب فريقك على استخدام الجهاز. نُقدم ضمان وخدمة ما بعد البيع لراحة بالك.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الأسئلة الشائعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">ما الفرق بين ماكينة التصوير والطابعة متعددة الوظائف؟ <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>ماكينة التصوير (الفوتوكوبي) مُصمَّمة أساساً للاستخدام المكثف في بيئات العمل كالمكاتب ومحلات التصوير، وتتميز بسرعات طباعة عالية (من 20 إلى أكثر من 100 صفحة في الدقيقة)، وسعة كبيرة لورق الإدخال، وعمر افتراضي أطول. أما الطابعة متعددة الوظائف فهي مناسبة للاستخدام المتوسط في المنازل والمكاتب الصغيرة. الاختيار يعتمد على حجم الطباعة اليومي ومتطلبات عملك.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">هل تتعاملون مع جميع الماركات؟ <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>نعم، نتعامل مع جميع الماركات العالمية الرئيسية لماكينات التصوير: كانون Canon، ريكو Ricoh، كيوسيرا Kyocera، توشيبا Toshiba، زيروكس Xerox. وللطابعات نتعامل مع: HP، كانون Canon، إبسون Epson، براذر Brother. سواء كنت تريد شراء جهاز جديد أو صيانة جهازك الحالي، نقدم الخدمة لجميع هذه الماركات.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">هل تقدمون عقود صيانة دورية للشركات؟ <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>نعم، نُقدم عقود صيانة دورية مخصصة للشركات والمؤسسات. تشمل العقود زيارات صيانة وقائية منتظمة (شهرية أو ربع سنوية)، وأولوية في الاستجابة عند الأعطال الطارئة، وتقارير دورية عن حالة الأجهزة، وخصومات على قطع الغيار والمستهلكات. تواصل معنا للحصول على عرض سعر مخصص لاحتياجات شركتك.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">ما مناطق التغطية الجغرافية لخدماتكم؟ <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>مقرنا الرئيسي في الإسكندرية، ونقدم خدماتنا في الإسكندرية والقاهرة الكبرى والجيزة ومحافظات الدلتا والوجه البحري والوجه القبلي. يمكن ترتيب زيارات ميدانية لأي منطقة في مصر حسب الطلب. تواصل معنا وسنُحدد إمكانية الوصول إلى موقعكم.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">هل تبيعون ماكينات تصوير مستعملة مجددة؟ <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>نعم، نتوفر على ماكينات تصوير مستعملة تم تجديدها بالكامل (Refurbished) وهي خيار ممتاز لمن يريد الحصول على ماكينة بجودة عالية بسعر أقل. جميع الماكينات المجددة لدينا تمر بفحص شامل وإصلاح كامل قبل البيع، مع ضمان يصل إلى 6 أشهر. تواصل معنا للاستفسار عن المتوفر حالياً.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">كم سعر ماكينة التصوير في مصر؟ <i class="fas fa-plus"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>تتفاوت أسعار ماكينات التصوير في مصر بشكل كبير حسب الماركة والموديل والمواصفات وحالة الجهاز (جديد أو مستعمل مجدد). نوفر ضمان وخدمة ما بعد البيع لجميع الماكينات. تواصل معنا عبر واتساب وأخبرنا باحتياجك وسنرسل لك عرض سعر مجاني ودقيق خلال دقائق.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">هل الأفضل شراء ماكينة تصوير أم الاكتفاء بعقد صيانة على ماكينة موجودة؟ <i class="fas fa-plus"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>إذا كانت ماكينتك الحالية أقل من 5-6 سنوات وتعمل بأداء مقبول، فغالباً عقد صيانة دورية معنا أوفر من شراء جهاز جديد. أما إذا كانت الماكينة تتعطل بشكل متكرر أو تجاوزت دورة إنتاجها المتوقعة أو أصبحت قطع غيارها نادرة، فالشراء يكون الخيار الأكثر جدوى على المدى المتوسط. فريقنا يقيّم حالة ماكينتك مجاناً ويقترح عليك الحل الأنسب اقتصادياً.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">ما الفرق بين احتياج المكتب الصغير واحتياج مطبعة أو محل تصوير؟ <i class="fas fa-plus"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>المكتب الصغير الذي يطبع أقل من 3000 صفحة شهرياً يكفيه جهاز متعدد الوظائف متوسط السرعة (20-30 صفحة/دقيقة) مع درج ورق واحد أو اثنين. أما المطبعة أو محل التصوير الذي يطبع عشرات الآلاف من الصفحات شهرياً فيحتاج ماكينة إنتاجية عالية السرعة (60-100+ صفحة/دقيقة) بدورة إنتاج شهرية مرتفعة وأدراج ورق متعددة وخيارات تجليد وتشطيب. نساعدك في تحديد الفئة الصحيحة بناءً على حجم طباعتك الفعلي.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">هل تقدمون استشارة مجانية لتقييم احتياجات شركتي؟ <i class="fas fa-plus"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>نعم، نقدم زيارة استشارية مجانية بدون التزام لتقييم حجم طباعتك الحالي وعدد المستخدمين والمساحة المتاحة، ثم نقترح عليك الحل الأمثل من حيث نوع الجهاز والماركة والسعة، سواء كان الحل شراء جهاز جديد أو مجدد أو مجرد عقد صيانة على جهازك الحالي.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">هل يمكن تأجير ماكينة تصوير بدلاً من شرائها؟ <i class="fas fa-plus"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>نعم، نوفر خيار التأجير الشهري للشركات التي تفضل عدم الاستثمار في شراء جهاز بالكامل، خاصة للمشاريع المؤقتة أو الشركات الناشئة. يشمل عقد التأجير الصيانة الدورية وقطع الغيار، ويمكن تحويل عقد التأجير لاحقًا إلى شراء إذا رغبت الشركة في تملك الجهاز بعد التأكد من ملاءمته الفعلية لاحتياجها.</p>
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">كم يستغرق توريد وتركيب ماكينة تصوير جديدة؟ <i class="fas fa-plus"></i></button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>الأجهزة المتوفرة في المخزون يتم توريدها وتركيبها عادة خلال يوم إلى يومي عمل. أما الطلبات الخاصة بمواصفات معينة أو ماركات غير متوفرة حاليًا فقد تستغرق أسبوعًا إلى أسبوعين حسب التوريد من المصنّع أو الوكيل. في جميع الحالات، نُبلغك بموعد تقديري واضح منذ البداية ونلتزم به قدر الإمكان، ونُبقيك على اطلاع في حال طرأ أي تأخير خارج عن إرادتنا حتى لا تفاجأ بأي تغيير في الموعد المتفق عليه مسبقًا.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+                <h4><i class="fas fa-phone" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا الآن</h4>
+                <div class="contact-info">
+                  <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div><strong>01227392074</strong><br><a href="tel:01227392074" class="btn btn-primary btn-sm" style="margin-top:8px;display:inline-flex;">اتصل الآن</a></div>
+                  </div>
+                  <div class="contact-info-item">
+                    <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+                    <div><strong>واتساب</strong><br><a href="https://wa.me/201227392074" class="btn btn-whatsapp btn-sm" style="margin-top:8px;display:inline-flex;">ابدأ محادثة</a></div>
+                  </div>
+                  <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية</span>
+                  </div>
+                  <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>السبت – الخميس: 9ص – 6م</span>
+                  </div>
+                </div>
+              </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أفضل ماكينات تصوير للشركات في مصر 2025 — مقارنة الماركات</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نخدم عملاءنا في <a href="/cairo/copiers">القاهرة</a> و<a href="/alexandria/copiers">الإسكندرية</a> وجميع محافظات مصر بأفضل ماكينات التصوير العالمية. إليك مقارنة بين الماركات الأكثر مبيعاً:</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
@@ -387,6 +445,22 @@ const schemaJson = JSON.stringify({
         <a href="tel:01227392074" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> اتصل بنا الآن</a>
         <a href="https://wa.me/201227392074" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp"></i> واتساب</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدماتنا في التصوير</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/copiers" class="related-service-link active"><span>ماكينات التصوير والطابعات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات ليزر وإنكجيت</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/maintenance" class="related-service-link"><span>صيانة ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
     </div>
   </div>
 </section>

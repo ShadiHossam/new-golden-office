@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -46,15 +45,26 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="حبر طابعة: الكارتريدج الأصلي مقابل المتوافق — أيهما تختار؟"
-        text="يُعدّ هذا من أكثر الأسئلة التي يطرحها عملاؤنا، وفي نيو جولدن أوفيس نؤمن بالشفافية التامة في تقديم الخيارين بوضوح حتى يتخذ العميل القرار المناسب لاحتياجاته وميزانيته."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3>الكارتريدج الأصلي (OEM)</h3>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>حبر طابعة: الكارتريدج الأصلي مقابل المتوافق — أيهما تختار؟</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">يُعدّ هذا من أكثر الأسئلة التي يطرحها عملاؤنا، وفي نيو جولدن أوفيس نؤمن بالشفافية التامة في تقديم الخيارين بوضوح حتى يتخذ العميل القرار المناسب لاحتياجاته وميزانيته.</p>
+    <div class="landing-body service-content">
+<h3>الكارتريدج الأصلي (OEM)</h3>
       <p>الكارتريدج الأصلي (Original Equipment Manufacturer) يصنعه مباشرة المصنّع الأصلي للطابعة — HP تصنع كارتريدجاتها، وكانون تصنع كارتريدجاتها، وهكذا. مزايا الكارتريدج الأصلي تشمل:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-award', title: 'جودة طباعة مضمونة', text: 'مصمم ومختبر خصيصاً للطابعة وفق مواصفات دقيقة.' },
@@ -66,35 +76,51 @@ const schemaJson = JSON.stringify({
 
       <h3>الكارتريدج المتوافق (Compatible / Aftermarket)</h3>
       <p>الكارتريدج المتوافق يصنعه طرف ثالث وفق مواصفات تناسب موديلات طابعات محددة. تكلفته أقل بشكل ملحوظ — أحياناً بفارق 50-70% — مما يجعله خياراً اقتصادياً جذاباً، خاصة للاستخدامات ذات الكميات الكبيرة. الكارتريدج المتوافق من ماركات موثوقة يقدم جودة طباعة مقبولة جداً لمعظم الاستخدامات اليومية من نصوص ومستندات. في نيو جولدن أوفيس، نختار الكارتريدجات المتوافقة بعناية من موردين ذوي سمعة جيدة لضمان أفضل تجربة ممكنة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>الماركات التي نوفر كارتريدجها</h2>
-      <p>نحتفظ بمخزون واسع ومتنوع من الكارتريدجات لجميع الماركات الرئيسية، سواء أصلي أو متوافق:</p>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">نحتفظ بمخزون واسع ومتنوع من الكارتريدجات لجميع الماركات الرئيسية، سواء أصلي أو متوافق:</p>
+    <div class="features-grid landing-cards">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>HP (هيولت باكارد)</h3><p>نوفر كارتريدجات HP لسلسلة LaserJet (سوداء وألوان)، وDeskJet (خراطيش الحبر السائل)، وOfficeJet (للمكاتب)، وHP OfficeJet Pro عالي الإنتاجية. أصلي ومتوافق بجميع الموديلات الشائعة في مصر من HP 85A، 78A، 12A، 35A، 36A وغيرها.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>كانون (Canon)</h3><p>نوفر كارتريدجات Canon PIXMA بالحبر السائل لجميع الموديلات، وكارتريدجات تونر Canon imageCLASS (مثل CRG 328، 337، 047)، وتونر Canon imageRUNNER لجميع موديلات سلسلة iR وiR ADVANCE.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>إبسون (Epson)</h3><p>نوفر خراطيش حبر إبسون الأصلية لجميع موديلات PIXMA وEcoTank. كما نوفر زجاجات الحبر للتعبئة في أنظمة EcoTank وخزانات الحبر المتكاملة بجميع ألوانها (أسود، سيان، ماجنتا، أصفر).</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3>براذر (Brother)</h3><p>نوفر كارتريدجات تونر براذر لسلسلة DCP وMFC وHL، مثل TN-2380، TN-2420، TN-3380، وغيرها من الموديلات الشائعة في السوق المصري.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3>ريكو (Ricoh) وكيوسيرا (Kyocera) وزيروكس (Xerox)</h3><p>نوفر تونر ريكو لجميع موديلات MP وAficio، وتونر كيوسيرا TK Series لجميع موديلات TASKalfa وECOSYS، وتونر زيروكس لسلسلة WorkCentre وPhaser. متوفر أصلي وبديل عالي الجودة.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3>HP (هيولت باكارد)</h3>
-      <p>نوفر كارتريدجات HP لسلسلة LaserJet (سوداء وألوان)، وDeskJet (خراطيش الحبر السائل)، وOfficeJet (للمكاتب)، وHP OfficeJet Pro عالي الإنتاجية. أصلي ومتوافق بجميع الموديلات الشائعة في مصر من HP 85A، 78A، 12A، 35A، 36A وغيرها.</p>
+<MidPageCTA formId="copCartridgesMidCta" />
 
-      <h3>كانون (Canon)</h3>
-      <p>نوفر كارتريدجات Canon PIXMA بالحبر السائل لجميع الموديلات، وكارتريدجات تونر Canon imageCLASS (مثل CRG 328، 337، 047)، وتونر Canon imageRUNNER لجميع موديلات سلسلة iR وiR ADVANCE.</p>
-
-      <MidPageCTA formId="copCartridgesMidCta" />
-
-      <h3>إبسون (Epson)</h3>
-      <p>نوفر خراطيش حبر إبسون الأصلية لجميع موديلات PIXMA وEcoTank. كما نوفر زجاجات الحبر للتعبئة في أنظمة EcoTank وخزانات الحبر المتكاملة بجميع ألوانها (أسود، سيان، ماجنتا، أصفر).</p>
-
-      <h3>براذر (Brother)</h3>
-      <p>نوفر كارتريدجات تونر براذر لسلسلة DCP وMFC وHL، مثل TN-2380، TN-2420، TN-3380، وغيرها من الموديلات الشائعة في السوق المصري.</p>
-
-      <h3>ريكو (Ricoh) وكيوسيرا (Kyocera) وزيروكس (Xerox)</h3>
-      <p>نوفر تونر ريكو لجميع موديلات MP وAficio، وتونر كيوسيرا TK Series لجميع موديلات TASKalfa وECOSYS، وتونر زيروكس لسلسلة WorkCentre وPhaser. متوفر أصلي وبديل عالي الجودة.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>تونر الليزر مقابل حبر الإنكجيت</h2>
-      <p>فهم الفرق بين نوعي الحبر يساعدك في اتخاذ قرار الشراء الأفضل:</p>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">فهم الفرق بين نوعي الحبر يساعدك في اتخاذ قرار الشراء الأفضل:</p>
+    <div class="features-grid landing-cards">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>تونر الليزر</h3><p>التونر مسحوق جاف يُستخدم في طابعات الليزر وماكينات التصوير. يتميز بعمر تخزين طويل جداً — يمكن تخزينه لسنوات دون تلف إذا لم يُفتح. ينتج نصاً حاداً ودقيقاً ومقاوماً للماء والرطوبة. كارتريدج التونر ذو السعة العالية (High Yield) يمكنه طباعة آلاف الصفحات بتكلفة منخفضة جداً للصفحة. العيب الوحيد هو سعر الكارتريدج الأعلى ابتداءً، لكن تكلفة الصفحة تجعله الأوفر اقتصادياً على المدى البعيد للكميات الكبيرة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>حبر الإنكجيت</h3><p>الحبر السائل يُستخدم في طابعات الإنكجيت ويتميز بقدرته على إنتاج ألوان زاهية وصور فوتوغرافية بجودة استثنائية. الكارتريدج التقليدي للإنكجيت أرخص سعراً، لكن تكلفته للصفحة أعلى من الليزر عند الاستخدام المكثف. أنظمة الخزانات المتكاملة مثل Epson EcoTank وCanon PIXMA G Series غيّرت المعادلة تماماً بتوفير حبر رخيص الثمن يكفي لعشرات الآلاف من الصفحات.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3>تونر الليزر</h3>
-      <p>التونر مسحوق جاف يُستخدم في طابعات الليزر وماكينات التصوير. يتميز بعمر تخزين طويل جداً — يمكن تخزينه لسنوات دون تلف إذا لم يُفتح. ينتج نصاً حاداً ودقيقاً ومقاوماً للماء والرطوبة. كارتريدج التونر ذو السعة العالية (High Yield) يمكنه طباعة آلاف الصفحات بتكلفة منخفضة جداً للصفحة. العيب الوحيد هو سعر الكارتريدج الأعلى ابتداءً، لكن تكلفة الصفحة تجعله الأوفر اقتصادياً على المدى البعيد للكميات الكبيرة.</p>
-
-      <h3>حبر الإنكجيت</h3>
-      <p>الحبر السائل يُستخدم في طابعات الإنكجيت ويتميز بقدرته على إنتاج ألوان زاهية وصور فوتوغرافية بجودة استثنائية. الكارتريدج التقليدي للإنكجيت أرخص سعراً، لكن تكلفته للصفحة أعلى من الليزر عند الاستخدام المكثف. أنظمة الخزانات المتكاملة مثل Epson EcoTank وCanon PIXMA G Series غيّرت المعادلة تماماً بتوفير حبر رخيص الثمن يكفي لعشرات الآلاف من الصفحات.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>خدمة تعبئة الكارتريدج (Refilling)</h2>
-      <p>نقدم في نيو جولدن أوفيس خدمة تعبئة الكارتريدج الاحترافية كخيار اقتصادي يوفر على العميل تكلفة شراء كارتريدج جديد. إليك ما تحتاج معرفته عن هذه الخدمة:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نقدم في نيو جولدن أوفيس خدمة تعبئة الكارتريدج الاحترافية كخيار اقتصادي يوفر على العميل تكلفة شراء كارتريدج جديد. إليك ما تحتاج معرفته عن هذه الخدمة:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-sync-alt', title: 'الكارتريدجات القابلة للتعبئة', text: 'معظم كارتريدجات التونر قابلة للتعبئة من مرة إلى ثلاث مرات حسب حالتها. بعض كارتريدجات الإنكجيت قابلة للتعبئة أيضاً خاصة الموديلات الكبيرة.' },
         { icon: 'fa-tint', title: 'جودة التعبئة', text: 'نستخدم حبراً عالي الجودة يتوافق مع مواصفات الطابعة لضمان الحصول على جودة طباعة مقبولة دون التسرب أو الإضرار بالطابعة.' },
@@ -102,8 +128,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-piggy-bank', title: 'التوفير في التكلفة', text: 'التعبئة عادة أرخص بنسبة 40-60% من شراء كارتريدج جديد مما يجعلها خياراً اقتصادياً مناسباً للاستخدامات ذات الكميات الكبيرة.' },
         { icon: 'fa-exclamation-triangle', title: 'ملاحظة مهمة', text: 'التعبئة الاحترافية لا تضر بالطابعة إذا تمت بشكل صحيح بحبر مناسب. ننصح دائماً بتجنب تعبئة الكارتريدج بنفسك لتفادي التسريب أو الإضرار برأس الطباعة.' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>شراء بالجملة وخصومات الشركات</h2>
-      <p>نقدم أسعاراً خاصة للشركات والمكاتب والجهات الحكومية التي تشتري الكارتريدج والمستلزمات بكميات كبيرة بشكل منتظم. نظام حسابات الشركات (Corporate Accounts) يوفر:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نقدم أسعاراً خاصة للشركات والمكاتب والجهات الحكومية التي تشتري الكارتريدج والمستلزمات بكميات كبيرة بشكل منتظم. نظام حسابات الشركات (Corporate Accounts) يوفر:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-tags', text: 'أسعار الجملة المخفضة على جميع المنتجات عند الشراء بكميات محددة' },
         { icon: 'fa-truck', text: 'توصيل دوري منتظم وفق جدول يناسب احتياجات الشركة (أسبوعي أو شهري)' },
@@ -112,8 +148,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-comments', text: 'خدمة الاستشارة في اختيار أفضل المنتجات والكميات الاقتصادية' },
         { icon: 'fa-warehouse', text: 'إمكانية تأمين مخزون احتياطي لضمان عدم توقف الطباعة في أي وقت' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>كيف تحافظ على الكارتريدج وتُطيل عمره التخزيني؟</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         الكارتريدج غير المستخدم ليس بالضرورة كارتريدج جاهزاً للاستخدام في أي وقت — طريقة التخزين تؤثر بشكل كبير على جودته عند الاستخدام الفعلي. إليك أهم نصائحنا لعملائنا:
       </p>
       <IconCardGrid columns={3} items={[
@@ -123,8 +169,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-calendar-times', title: 'انتبه لتاريخ الصلاحية', text: 'رغم أن التونر الجاف يدوم لسنوات، إلا أن خراطيش الحبر السائل قد تجف أو تتأثر جودتها بعد 12-18 شهراً من التصنيع حتى لو لم تُستخدم.' },
         { icon: 'fa-lock', title: 'لا تفتح الكارتريدج قبل الحاجة', text: 'بمجرد إزالة الشريط الواقي أو فتح الغلاف، تبدأ مدة صلاحية الاستخدام الفعلي في العد التنازلي، خاصة لخراطيش الحبر السائل.' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>مشاكل جودة الطباعة وعلاقتها بالكارتريدج</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         كثير من مشاكل جودة الطباعة التي يظنها العملاء عطلاً في الطابعة نفسها، تكون في الواقع مرتبطة مباشرة بحالة الكارتريدج. إليك أشهر الأعراض وأسبابها الحقيقية:
       </p>
       <IconCardGrid columns={3} items={[
@@ -134,8 +190,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-tint-slash', title: 'تلطيخ الحبر أو عدم ثباته على الورق', text: 'إذا كان التونر يُمحى بمجرد لمسه، فالمشكلة غالباً في وحدة التثبيت (الفيوزر) وليس الكارتريدج، وتحتاج فحصاً فنياً منفصلاً.' },
         { icon: 'fa-palette', title: 'ألوان غير دقيقة أو مختلطة', text: 'قد ينتج عن كارتريدج ألوان منتهي الصلاحية أو رخيص الجودة لا يتوافق تماماً مع مواصفات الطابعة. الحل الأمثل هو استخدام كارتريدج أصلي أو متوافق من مصدر موثوق.' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>كيف تحسب تكلفة الصفحة الفعلية؟</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         السعر المعروض على علبة الكارتريدج لا يعكس التكلفة الحقيقية للطباعة. الحساب الصحيح لتكلفة الصفحة الواحدة (Cost Per Page) هو ما يجب أن يقود قرار الشراء، خاصة للاستخدام المكثف:
       </p>
       <p>
@@ -144,30 +210,48 @@ const schemaJson = JSON.stringify({
       <p>
         عند المقارنة بين طابعتين أو ماكينتين، احسب دائماً التكلفة الإجمالية السنوية (سعر الكارتريدجات المطلوبة × عدد مرات التغيير المتوقعة في السنة) وليس سعر الكارتريدج الواحد فقط. فريقنا يساعدك في هذا الحساب مجاناً عند شراء أي جهاز أو كارتريدج جديد لضمان اختيارك الأوفر اقتصادياً على المدى الطويل.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>التخلص من الكارتريدج الفارغ بطريقة صحيحة</h2>
-      <p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>
         الكارتريدج الفارغ ليس نفاية عادية — فهو يحتوي على بلاستيك ومكونات إلكترونية ومخلفات تونر أو حبر قد تضر بالبيئة إذا تم التخلص منها بشكل عشوائي. نُشجع عملاءنا على إعادة الكارتريدجات الفارغة إلينا بدلاً من رميها، حيث نقوم بفرزها: ما هو قابل لإعادة التصنيع (بعد فحص وتنظيف واستبدال الأجزاء المتآكلة) يُعاد استخدامه في خدمة التعبئة الاقتصادية، وما هو غير صالح يُتخلص منه بطريقة مسؤولة بيئياً بدلاً من رميه في القمامة العادية.
       </p>
-      <h2>التوصيل في الإسكندرية ومصر</h2>
-      <p>نوفر خدمة توصيل <strong>كارتريدج طابعات مصر</strong> في الإسكندرية بالكامل مع خدمة توصيل سريعة في نفس اليوم أو اليوم التالي. للمحافظات الأخرى، نشحن عبر شركات الشحن الموثوقة مع ضمان وصول المنتجات سليمة. يمكنك أيضاً طلب خدمة <strong>تعبئة كارتريدج مصر</strong> بإرسال الكارتريدج إلينا عبر أي شركة شحن وإعادته مُعبأً بأسرع وقت ممكن. تواصل معنا عبر الواتساب لمعرفة أسعار التوصيل والشحن إلى منطقتك.</p>
-
     </div>
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-        </div>
-      </div>
-      <div class="sidebar-card"><h3>خدمات ماكينات التصوير</h3><div class="sidebar-services">
-        <a href="/copiers/buy" class="sidebar-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-angle-left"></i></a>
-        <a href="/copiers/printers" class="sidebar-service-link"><span>بيع طابعات</span><i class="fas fa-angle-left"></i></a>
-        <a href="/copiers/maintenance" class="sidebar-service-link"><span>صيانة الماكينات</span><i class="fas fa-angle-left"></i></a>
-        <a href="/copiers/cartridges" class="sidebar-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-angle-left"></i></a>
-      </div></div>
-    </aside>
-  </div></div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>التوصيل في الإسكندرية ومصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نوفر خدمة توصيل <strong>كارتريدج طابعات مصر</strong> في الإسكندرية بالكامل مع خدمة توصيل سريعة في نفس اليوم أو اليوم التالي. للمحافظات الأخرى، نشحن عبر شركات الشحن الموثوقة مع ضمان وصول المنتجات سليمة. يمكنك أيضاً طلب خدمة <strong>تعبئة كارتريدج مصر</strong> بإرسال الكارتريدج إلينا عبر أي شركة شحن وإعادته مُعبأً بأسرع وقت ممكن. تواصل معنا عبر الواتساب لمعرفة أسعار التوصيل والشحن إلى منطقتك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+              <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+              </div>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="section section-bg">
@@ -198,9 +282,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section section-bg">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">كارتريدج أصلي أم متوافق — ما الفرق؟</h2>
+    <div class="section-header">
+      <h2>كارتريدج أصلي أم متوافق — ما الفرق؟</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">سؤال شائع من عملائنا في الإسكندرية والقاهرة وجميع أنحاء مصر. إليك المقارنة الصادقة:</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
       <div style="background:#fff;border-radius:12px;padding:24px;border:2px solid #1a1a2e">
@@ -240,5 +327,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدمات ماكينات التصوير</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/maintenance" class="related-service-link"><span>صيانة الماكينات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="ماكينات التصوير" />
 </BaseLayout>

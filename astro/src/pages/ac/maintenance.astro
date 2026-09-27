@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
@@ -62,25 +61,55 @@ const schemaJson = JSON.stringify([
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="شحن فريون مصر وصيانة التكييف — الاستثمار الأذكى لحماية جهازك"
-        text="الصيانة الدورية تُطيل عمر التكييف بشكل كبير وتوفر فاتورة الكهرباء وتمنع الأعطال المكلفة. معظم مشاكل التكييف في مصر يمكن تفاديها بصيانة وقائية بسيطة كل 6 أشهر قبل بداية الصيف وبعد انتهائه."
-      />
-      <p>كثير من عملائنا يتواصلون معنا بعد أن يتوقف التكييف تماماً في منتصف يوليو أو أغسطس، ونكتشف عند الفحص أن المشكلة كانت بسيطة ويمكن تفاديها بالكامل لو تمت صيانة الجهاز قبل بداية الموسم بأسابيع. لهذا نُشجّع دائماً على حجز موعد الصيانة الوقائية مبكراً، قبل أن يمتلئ جدول الفنيين بطلبات الطوارئ في ذروة الصيف، وهو أمر يوفر عليك وقت الانتظار وإزعاج انقطاع التبريد في أشد أيام الحر.</p>
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-heartbeat" style="color:var(--secondary);margin-left:8px;"></i> لماذا تحتاج لصيانة تكييفك؟</h3>
-      <IconCardGrid columns={2} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>شحن فريون مصر وصيانة التكييف — الاستثمار الأذكى لحماية جهازك</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">الصيانة الدورية تُطيل عمر التكييف بشكل كبير وتوفر فاتورة الكهرباء وتمنع الأعطال المكلفة. معظم مشاكل التكييف في مصر يمكن تفاديها بصيانة وقائية بسيطة كل 6 أشهر قبل بداية الصيف وبعد انتهائه.</p>
+    <div class="landing-body service-content">
+<p>كثير من عملائنا يتواصلون معنا بعد أن يتوقف التكييف تماماً في منتصف يوليو أو أغسطس، ونكتشف عند الفحص أن المشكلة كانت بسيطة ويمكن تفاديها بالكامل لو تمت صيانة الجهاز قبل بداية الموسم بأسابيع. لهذا نُشجّع دائماً على حجز موعد الصيانة الوقائية مبكراً، قبل أن يمتلئ جدول الفنيين بطلبات الطوارئ في ذروة الصيف، وهو أمر يوفر عليك وقت الانتظار وإزعاج انقطاع التبريد في أشد أيام الحر.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-heartbeat" style="color:var(--secondary);margin-left:8px;"></i> لماذا تحتاج لصيانة تكييفك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={2} items={[
         { icon: 'fa-bolt', title: 'توفير الكهرباء', text: 'تكييف نظيف يعمل بكفاءة 20-30% أعلى من تكييف متسخ الفلاتر — الفلتر المتسخ يُجبر الكمبريسور على العمل أكثر لينتج نفس البرودة' },
         { icon: 'fa-wind', title: 'تبريد أقوى وأسرع', text: 'الكويل النظيف والفريون الكافي يضمنان الوصول لدرجة الحرارة المطلوبة أسرع وبأقل ضوضاء' },
         { icon: 'fa-lungs', title: 'هواء نظيف وصحي', text: 'الفلاتر المتسخة تُعيد تدوير الغبار والجراثيم في الغرفة — التنظيف الدوري يُحسّن جودة الهواء' },
         { icon: 'fa-shield-alt', title: 'منع الأعطال المفاجئة', text: 'اكتشاف مشاكل الفريون أو الكمبريسور مبكراً يوفر عليك تكلفة إصلاح كبيرة لاحقاً' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> علامات تكييفك يحتاج صيانة فوراً</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> علامات تكييفك يحتاج صيانة فوراً</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-temperature-low', title: 'لا يبرد كما كان سابقاً', text: 'رغم أنه يعمل — علامة على نقص فريون أو فلتر مسدود' },
         { icon: 'fa-volume-up', title: 'صوت غير طبيعي', text: 'كطرق أو صفير — علامة على مشكلة في الكمبريسور أو الفان' },
         { icon: 'fa-tint', title: 'تقطير مياه من الوحدة الداخلية', text: 'خرطوم الصرف مسدود أو ممتلئ' },
@@ -88,11 +117,20 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-wind', title: 'رائحة كريهة', text: 'عند تشغيله — تكاثر بكتيريا في الفلتر أو الكويل' },
         { icon: 'fa-snowflake', title: 'تجمد الوحدة الداخلية', text: 'نقص فريون واضح' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="acMaintenanceMidCta" />
+<MidPageCTA formId="acMaintenanceMidCta" />
 
-      <h3><i class="fas fa-tools" style="color:var(--secondary);margin-left:8px;"></i> ماذا تشمل خدمة الصيانة؟</h3>
-      <IconCardGrid columns={4} items={[
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-tools" style="color:var(--secondary);margin-left:8px;"></i> ماذا تشمل خدمة الصيانة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={4} items={[
         { icon: 'fa-filter', title: 'تنظيف الفلتر', text: 'غسيل الفلاتر وتعقيمها لضمان تدفق هواء نظيف وتوفير الكهرباء' },
         { icon: 'fa-broom', title: 'تنظيف كويل التبخير والمكثف', text: 'إزالة الأتربة والعوالق من الكويل بمحاليل متخصصة' },
         { icon: 'fa-gauge-high', title: 'فحص مستوى الفريون', text: 'قياس ضغط الفريون بـ Manifold Gauge وإضافة الكمية المطلوبة إن لزم' },
@@ -102,18 +140,36 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-fan', title: 'فحص الموتورات والريش', text: 'فحص الموتورات الداخلية والخارجية والتأكد من سلامة الريش' },
         { icon: 'fa-satellite-dish', title: 'اختبار وحدة التحكم والريموت', text: 'التأكد من استجابة الوحدة لجميع أوامر الريموت' },
       ]} />
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-wind" style="color:var(--secondary);margin-left:8px;"></i> شحن الفريون — R22 وR410A وR32</h3>
-      <ComparisonGrid items={[
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-wind" style="color:var(--secondary);margin-left:8px;"></i> شحن الفريون — R22 وR410A وR32</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<ComparisonGrid items={[
         { title: 'فريون R22', text: 'مادة التبريد التقليدية المستخدمة في التكييفات المصنوعة قبل 2015 تقريباً، ويُمنع تدريجياً في كثير من الدول بسبب ضرره على طبقة الأوزون. لا يزال متوفراً لدينا مع قياس الضغط الدقيق لتحديد الكمية المناسبة، لكن أسعاره في ارتفاع مستمر بسبب تقليص الإنتاج العالمي' },
         { title: 'فريون R410A', text: 'النوع الأشيع في التكييفات الحديثة — صديق للبيئة وأكفأ في نقل الحرارة، يعمل بضغط أعلى ويتطلب معدات شحن مختلفة وزيوت خاصة' },
         { title: 'فريون R32', text: 'الجيل الجديد الأكثر كفاءة وصداقة للبيئة — يُستخدم في التكييفات الحديثة من Samsung وMidea وLG' },
       ]} />
       <p><strong>كشف تسريبات الفريون:</strong> إذا نقص الفريون مراراً فهذا يعني وجود تسريب — نُشخّصه ونُصلحه قبل إعادة الشحن.</p>
       <p><strong>تنبيه مهم:</strong> لا يمكن تحويل تكييف R22 ليعمل بـ R410A دون تغيير مكونات جوهرية، والتحويل غير المتخصص يُتلف الكمبرسور. إذا كان تكييفك القديم يستهلك الفريون بسرعة، استشرنا لتقييم جدوى الصيانة مقابل الاستبدال.</p>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-file-contract" style="color:var(--secondary);margin-left:8px;"></i> عقود الصيانة السنوية</h3>
-      <p>للشركات والمحلات وأصحاب أنظمة التكييف المتعددة نوفر عقود صيانة سنوية تشمل:</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-file-contract" style="color:var(--secondary);margin-left:8px;"></i> عقود الصيانة السنوية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>للشركات والمحلات وأصحاب أنظمة التكييف المتعددة نوفر عقود صيانة سنوية تشمل:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-calendar-check', text: 'زيارتان إلى أربع زيارات للصيانة الشاملة سنوياً حسب الاتفاق (قبل الصيف وبعده أساساً)' },
         { icon: 'fa-clock', text: 'أولوية الاستجابة لطلبات الصيانة الطارئة خلال 24 ساعة' },
@@ -121,9 +177,18 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-file-alt', text: 'تقرير صيانة مكتوب ومفصل بعد كل زيارة' },
       ]} />
       <p>نخدم الإسكندرية والقاهرة والمدن المجاورة. تواصل معنا للحصول على عرض سعر لعقد صيانة مخصص لعدد وحداتك ومتطلباتك.</p>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> نصائح بسيطة تطيل عمر تكييفك بين زيارات الصيانة</h3>
-      <IconCardGrid columns={3} items={[
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> نصائح بسيطة تطيل عمر تكييفك بين زيارات الصيانة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
         { icon: 'fa-power-off', title: 'لا تُغلق التكييف وتُشغّله بشكل متكرر خلال ساعات قليلة', text: 'كل تشغيل يُحمّل الكمبريسور، والأفضل ضبط الثيرموستات وتركه يعمل بثبات بدل الإيقاف والتشغيل المتكرر' },
         { icon: 'fa-door-closed', title: 'أبقِ النوافذ والأبواب مغلقة أثناء التشغيل', text: 'الهواء المتسرب من الخارج يُجبر الجهاز على العمل أكثر لتعويض الفرق في درجة الحرارة' },
         { icon: 'fa-wind', title: 'لا تُغطِّ الوحدة الخارجية بإحكام', text: 'الوحدة الخارجية تحتاج تهوية جيدة لتبديد الحرارة، والتغطية الكاملة تُقلل الكفاءة وتُرهق الموتور' },
@@ -166,31 +231,27 @@ const schemaJson = JSON.stringify([
         </table>
       </div>
     </div>
+  </div>
+</section>
 
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h4><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات التكييف</h4>
-        <div class="sidebar-services">
-          <a href="/ac/buy" class="sidebar-service-link"><span>بيع تكييفات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/ac/installation" class="sidebar-service-link"><span>تركيب تكييفات</span><i class="fas fa-angle-left"></i></a>
-          <a href="/ac/maintenance" class="sidebar-service-link active"><span>صيانة وشحن فريون</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
-        </div>
-      </div>
-      <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-        <h4 style="color:var(--secondary);border-color:var(--secondary);">احجز صيانة تكييفك</h4>
-        <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">اتصل الآن واحجز زيارة صيانة في أقرب وقت</p>
-        <a href="https://wa.me/201227392074?text=أريد%20صيانة%20تكييف%20وشحن%20فريون" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> احجز الآن</a>
-      </div>
-    </aside>
-  </div></div>
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-2">
+<div class="sidebar-card">
+              <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص — 6م</span></div>
+              </div>
+            </div>
+<div class="sidebar-card" style="background:var(--primary);color:var(--white);">
+              <h4 style="color:var(--secondary);border-color:var(--secondary);">احجز صيانة تكييفك</h4>
+              <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">اتصل الآن واحجز زيارة صيانة في أقرب وقت</p>
+              <a href="https://wa.me/201227392074?text=أريد%20صيانة%20تكييف%20وشحن%20فريون" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> احجز الآن</a>
+            </div>
+    </div>
+  </div>
 </section>
 
 <section class="section section-bg">
@@ -226,7 +287,7 @@ const schemaJson = JSON.stringify([
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>أخطاء شائعة عند إهمال صيانة التكييف أو محاولة إصلاحه بشكل غير صحيح</h2>
@@ -239,7 +300,7 @@ const schemaJson = JSON.stringify([
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>صيانة التكييف حسب طبيعة المكان — منزل أم مكتب أم محل تجاري</h2>
@@ -264,5 +325,19 @@ const schemaJson = JSON.stringify([
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات التكييف</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/ac/buy" class="related-service-link"><span>بيع تكييفات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/ac/installation" class="related-service-link"><span>تركيب تكييفات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/ac/maintenance" class="related-service-link active"><span>صيانة وشحن فريون</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="تكييفات" />
 </BaseLayout>

@@ -4,7 +4,6 @@ import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 
 const schemaJson = JSON.stringify({
@@ -46,24 +45,40 @@ const schemaJson = JSON.stringify({
   ]}
 />
 
-<section class="service-detail">
-  <div class="container"><div class="service-detail-grid">
-    <div class="service-content">
-      <ContentIntro
-        heading="ماكينة تدمير مستندات — أنواع الشريدر حسب طريقة القطع"
-        text="ليست كل ماكينات تدمير المستندات متساوية في مستوى الأمان. الفرق الجوهري بينها يكمن في طريقة تقطيع الورق وحجم القطع الناتجة. كلما كانت القطع أصغر، كان مستوى الأمان أعلى وصعوبة إعادة تجميع الوثيقة أكبر."
-      />
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-grip-lines" style="color:var(--secondary);margin-left:8px;"></i> القطع الشريطي Strip-Cut (مستوى P-2)</h3>
-      <p>الأبسط والأسرع والأقل تكلفة بين أنواع الشريدر. يقطع الورق إلى شرائط طولية رفيعة بعرض 3-6 ملم. يوفر مستوى أمان أساسي ويكفي للوثائق العادية التي لا تحتوي على معلومات شديدة الحساسية. الإنتاجية عالية والضجيج منخفض مقارنة بالأنواع الأخرى. مناسب للاستخدام المنزلي والمكتبي العادي لتدمير المطبوعات غير الهامة والمسودات والوثائق المنتهية الصلاحية.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>ماكينة تدمير مستندات — أنواع الشريدر حسب طريقة القطع</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">ليست كل ماكينات تدمير المستندات متساوية في مستوى الأمان. الفرق الجوهري بينها يكمن في طريقة تقطيع الورق وحجم القطع الناتجة. كلما كانت القطع أصغر، كان مستوى الأمان أعلى وصعوبة إعادة تجميع الوثيقة أكبر.</p>
+    <div class="features-grid landing-cards cols-3">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3><i class="fas fa-grip-lines" style="color:var(--secondary);margin-left:8px;"></i> القطع الشريطي Strip-Cut (مستوى P-2)</h3><p>الأبسط والأسرع والأقل تكلفة بين أنواع الشريدر. يقطع الورق إلى شرائط طولية رفيعة بعرض 3-6 ملم. يوفر مستوى أمان أساسي ويكفي للوثائق العادية التي لا تحتوي على معلومات شديدة الحساسية. الإنتاجية عالية والضجيج منخفض مقارنة بالأنواع الأخرى. مناسب للاستخدام المنزلي والمكتبي العادي لتدمير المطبوعات غير الهامة والمسودات والوثائق المنتهية الصلاحية.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3><i class="fas fa-th-large" style="color:var(--secondary);margin-left:8px;"></i> القطع المتقاطع Cross-Cut (مستويات P-3 إلى P-4)</h3><p>الأكثر شيوعاً في بيئات العمل المكتبية ويمثل التوازن المثالي بين الأمان والسرعة والسعر. يقطع الورق بشكل أفقي وعمودي في آنٍ واحد لينتج قطعاً صغيرة مستطيلة (نحو 4×40mm في P-3 أو 4×30mm في P-4). إعادة تجميع الوثيقة بعد هذا النوع من القطع صعبة جداً عملياً وتستلزم جهداً كبيراً لا يُجدي. مناسب لتدمير كشوف الرواتب وملفات الموظفين والعقود والوثائق شبه السرية.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-snowflake" style="color:var(--secondary);margin-left:8px;"></i> القطع الدقيق Micro-Cut (مستوى P-5 وأعلى)</h3><p>أعلى مستويات الأمان في الشريدرات التجارية. يقطع الورق إلى جزيئات صغيرة جداً (نحو 2×15mm في P-5) أو أصغر في P-6 وP-7 المخصصين للمؤسسات الحكومية والأمنية. استعادة المعلومات من هذه القطع شبه مستحيلة حتى بأكثر التقنيات تطوراً. مناسب لتدمير أرقام الحسابات البنكية والسجلات الطبية ومعلومات البطاقات الائتمانية والوثائق الحكومية السرية.</p></div>
+    </div>
+  </div>
+</section>
 
-      <h3><i class="fas fa-th-large" style="color:var(--secondary);margin-left:8px;"></i> القطع المتقاطع Cross-Cut (مستويات P-3 إلى P-4)</h3>
-      <p>الأكثر شيوعاً في بيئات العمل المكتبية ويمثل التوازن المثالي بين الأمان والسرعة والسعر. يقطع الورق بشكل أفقي وعمودي في آنٍ واحد لينتج قطعاً صغيرة مستطيلة (نحو 4×40mm في P-3 أو 4×30mm في P-4). إعادة تجميع الوثيقة بعد هذا النوع من القطع صعبة جداً عملياً وتستلزم جهداً كبيراً لا يُجدي. مناسب لتدمير كشوف الرواتب وملفات الموظفين والعقود والوثائق شبه السرية.</p>
-
-      <h3><i class="fas fa-snowflake" style="color:var(--secondary);margin-left:8px;"></i> القطع الدقيق Micro-Cut (مستوى P-5 وأعلى)</h3>
-      <p>أعلى مستويات الأمان في الشريدرات التجارية. يقطع الورق إلى جزيئات صغيرة جداً (نحو 2×15mm في P-5) أو أصغر في P-6 وP-7 المخصصين للمؤسسات الحكومية والأمنية. استعادة المعلومات من هذه القطع شبه مستحيلة حتى بأكثر التقنيات تطوراً. مناسب لتدمير أرقام الحسابات البنكية والسجلات الطبية ومعلومات البطاقات الائتمانية والوثائق الحكومية السرية.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>مستويات الأمان — المعيار الدولي DIN 66399</h2>
-      <p>المعيار الألماني DIN 66399 (المعتمد دولياً بمسمى ISO 21964) يُصنّف ماكينات تدمير المستندات في سبعة مستويات أمان:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>المعيار الألماني DIN 66399 (المعتمد دولياً بمسمى ISO 21964) يُصنّف ماكينات تدمير المستندات في سبعة مستويات أمان:</p>
       <IconCardGrid columns={4} items={[
         { icon: 'fa-file', title: 'P-1', text: 'تدمير عام، شرائط عريضة جداً — للوثائق العامة التي لا تحتوي على معلومات حساسة' },
         { icon: 'fa-grip-lines', title: 'P-2', text: 'قطع شريطي أساسي — للاستخدام المنزلي والمكتبي العادي' },
@@ -74,8 +89,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-user-secret', title: 'P-7', text: 'أعلى مستوى — للاستخبارات والدفاع والبيانات الحكومية الأعلى سرية' },
       ]} />
       <p>في نيو جولدن أوفيس نوفر شريدرات من P-2 حتى P-5 لتغطية احتياجات القطاع الخاص والمؤسسات التجارية في مصر.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>سعة التمريرة — كم ورقة في المرة الواحدة؟</h2>
-      <p>سعة التمريرة (Sheets per Pass) معيار مهم جداً لاختيار الشريدر المناسب لحجم عملك اليومي:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>سعة التمريرة (Sheets per Pass) معيار مهم جداً لاختيار الشريدر المناسب لحجم عملك اليومي:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-home', title: '5-8 أوراق', text: 'شريدرات شخصية ومنزلية للاستخدام الخفيف' },
         { icon: 'fa-user', title: '8-12 ورقة', text: 'شريدرات مكتبية صغيرة لعدد قليل من المستخدمين' },
@@ -84,8 +109,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-industry', title: '30-50+ ورقة', text: 'شريدرات صناعية وإدارية لمراكز تدمير الوثائق وكبرى الشركات' },
       ]} />
       <p>القاعدة العملية: اختر سعة تزيد بحوالي 30% على احتياجك المعتاد لضمان الأداء الأمثل وإطالة عمر الجهاز.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>مميزات إضافية تبحث عنها</h2>
-      <p>عند مقارنة موديلات الشريدر، انتبه لهذه المزايا الإضافية التي تُحدث فرقاً كبيراً في تجربة الاستخدام اليومي:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>عند مقارنة موديلات الشريدر، انتبه لهذه المزايا الإضافية التي تُحدث فرقاً كبيراً في تجربة الاستخدام اليومي:</p>
       <IconCardGrid columns={4} items={[
         { icon: 'fa-ban', title: 'حماية من الانحشار (Anti-Jam)', text: 'الجهاز يتوقف تلقائياً أو يعكس اتجاه التغذية عند الإحساس بالانحشار، مما يُطيل عمر الجهاز ويُجنبك عناء إزالة الانحشار يدوياً' },
         { icon: 'fa-undo', title: 'العكس التلقائي (Auto-Reverse)', text: 'عند الانحشار، يعكس الجهاز اتجاه الأسطوانات تلقائياً لتحرير الورق' },
@@ -95,31 +130,68 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-trash-alt', title: 'سعة السلة (Bin Capacity)', text: 'حجم سلة القصاصات — كلما كانت أكبر قللت تكرار التفريغ' },
         { icon: 'fa-volume-mute', title: 'مستوى الضجيج', text: 'الشريدرات المنزلية والمكتبية الحديثة أصبحت أكثر هدوءاً بكثير من الأجيال القديمة' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>ميزات الأمان في تشغيل الشريدر</h2>
-      <p>ماكينات تدمير المستندات الحديثة لا تحمي بياناتك فقط، بل تحمي المستخدم أيضاً من الحوادث. إليك أهم ميزات الأمان التي ننصح بالبحث عنها عند الاختيار:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>ماكينات تدمير المستندات الحديثة لا تحمي بياناتك فقط، بل تحمي المستخدم أيضاً من الحوادث. إليك أهم ميزات الأمان التي ننصح بالبحث عنها عند الاختيار:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-hand-paper', title: 'حساس اليد (Safety Sensor)', text: 'يوقف دوران الأسطوانات فوراً عند اقتراب اليد من فتحة التغذية، وهو معيار أساسي في أي شريدر مكتبي حديث خصوصاً في بيئات العمل التي يتشارك فيها عدة موظفين الجهاز' },
         { icon: 'fa-child', title: 'قفل الحماية من الأطفال (Child Lock)', text: 'مهم في المكاتب المنزلية والأماكن التي يتردد عليها أطفال، حيث يمنع تشغيل الجهاز عن طريق الخطأ' },
         { icon: 'fa-thermometer-half', title: 'حماية من ارتفاع الحرارة (Thermal Overload Protection)', text: 'يوقف الجهاز تلقائياً عند تجاوز المدة القصوى للتشغيل المتواصل، مما يمنع تلف الموتور، ويحتاج الجهاز بعدها لفترة تبريد قبل إعادة التشغيل' },
         { icon: 'fa-exclamation-circle', title: 'مؤشر امتلاء السلة', text: 'ينبه المستخدم عند اقتراب سلة القصاصات من الامتلاء لتجنب انسكاب القصاصات أو انحشار الجهاز' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>الصيانة الدورية للشريدر — كيف تحافظ على أداء الجهاز؟</h2>
-      <p>الصيانة البسيطة والدورية تُطيل عمر الشريدر بشكل كبير وتحافظ على حدة القطع لسنوات طويلة:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الصيانة البسيطة والدورية تُطيل عمر الشريدر بشكل كبير وتحافظ على حدة القطع لسنوات طويلة:</p>
       <IconCardGrid columns={2} items={[
         { icon: 'fa-oil-can', title: 'التزييت الدوري للشفرات', text: 'استخدم زيت الشريدر المخصص كل 2-3 أشهر أو حسب توصية الشركة المصنّعة، فالشفرات الجافة تفقد حدتها بسرعة وتزيد الضجيج والانحشار' },
         { icon: 'fa-layer-group', title: 'احترام سعة التمريرة القصوى', text: 'تجاوز العدد الموصى به من الأوراق في كل مرة يُجهد الموتور ويقصر عمره الافتراضي بشكل ملحوظ' },
         { icon: 'fa-broom', title: 'تفريغ السلة بانتظام', text: 'لا تنتظر حتى الامتلاء الكامل، فالقصاصات المتراكمة قد تُعيق دوران الأسطوانات السفلية وتسبب انحشاراً' },
         { icon: 'fa-thumbtack', title: 'تجنب الدبابيس الكبيرة والمشابك المعدنية الثقيلة', text: 'رغم أن معظم الشريدرات تتحمل دبابيس صغيرة، إلا أن المشابك الكبيرة قد تُتلف الشفرات مع الاستخدام المتكرر' },
       ]} />
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>شريدر مكتبي أم خدمة تدمير خارجية؟</h2>
-      <p>بعض الشركات الكبرى تلجأ لخدمات تدمير مستندات خارجية متخصصة بدلاً من شراء جهاز. لكل خيار مزاياه: <strong>الشريدر المكتبي</strong> يمنحك السيطرة الكاملة والفورية على تدمير الوثائق الحساسة دون انتظار أو نقل المستندات خارج المبنى، وهو أكثر أماناً من ناحية سرية المعلومات لأن الوثائق لا تغادر مكان العمل قبل تدميرها. أما <strong>الخدمة الخارجية</strong> فقد تكون مجدية اقتصادياً فقط للمؤسسات الضخمة جداً ذات الكميات الهائلة يومياً. لمعظم الشركات والمكاتب في مصر، امتلاك شريدر مناسب الحجم أكثر عملية وأماناً وأقل تكلفة على المدى الطويل.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>بعض الشركات الكبرى تلجأ لخدمات تدمير مستندات خارجية متخصصة بدلاً من شراء جهاز. لكل خيار مزاياه: <strong>الشريدر المكتبي</strong> يمنحك السيطرة الكاملة والفورية على تدمير الوثائق الحساسة دون انتظار أو نقل المستندات خارج المبنى، وهو أكثر أماناً من ناحية سرية المعلومات لأن الوثائق لا تغادر مكان العمل قبل تدميرها. أما <strong>الخدمة الخارجية</strong> فقد تكون مجدية اقتصادياً فقط للمؤسسات الضخمة جداً ذات الكميات الهائلة يومياً. لمعظم الشركات والمكاتب في مصر، امتلاك شريدر مناسب الحجم أكثر عملية وأماناً وأقل تكلفة على المدى الطويل.</p>
+    </div>
+  </div>
+</section>
 
-      <MidPageCTA formId="cashShredderMidCta" />
+<MidPageCTA formId="cashShredderMidCta" />
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
       <h2>حالات الاستخدام في مصر</h2>
-      <p>حماية البيانات أصبحت ضرورة قانونية وأخلاقية في بيئات العمل المصرية الحديثة. إليك أبرز القطاعات التي تحتاج شريدر المستندات:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>حماية البيانات أصبحت ضرورة قانونية وأخلاقية في بيئات العمل المصرية الحديثة. إليك أبرز القطاعات التي تحتاج شريدر المستندات:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-building', title: 'المكاتب والشركات', text: 'تدمير ملفات الموظفين المنتهية والعقود القديمة والمراسلات السرية' },
         { icon: 'fa-university', title: 'البنوك والمؤسسات المالية', text: 'تدمير كشوف الحسابات القديمة ومعاملات العملاء وأوراق الائتمان' },
@@ -128,8 +200,18 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-home', title: 'المنازل والاستخدام الشخصي', text: 'تدمير كشوف البنك وصور الهوية والوثائق الشخصية الحساسة' },
         { icon: 'fa-landmark', title: 'الجهات الحكومية', text: 'تدمير الوثائق الرسمية منتهية الصلاحية وفق اشتراطات الأرشفة والحفظ' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>الحجم المناسب لكل استخدام</h2>
-      <p>ليس منطقياً شراء شريدر صناعي كبير لاستخدام منزلي، ولا شريدر شخصي لشركة تحتاج تدمير مئات الأوراق يومياً. إليك دليل سريع لاختيار الحجم الصحيح:</p>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>ليس منطقياً شراء شريدر صناعي كبير لاستخدام منزلي، ولا شريدر شخصي لشركة تحتاج تدمير مئات الأوراق يومياً. إليك دليل سريع لاختيار الحجم الصحيح:</p>
       <IconCardGrid columns={3} items={[
         { icon: 'fa-home', title: 'شريدر شخصي/منزلي', text: 'سعة 5-8 أوراق، بحجم صغير يناسب مساحة المنزل أو المكتب الصغير' },
         { icon: 'fa-user', title: 'شريدر مكتبي فردي', text: 'سعة 8-12 ورقة، للاستخدام الفردي في المكاتب' },
@@ -137,41 +219,67 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-building', title: 'شريدر قسم كبير', text: 'سعة 20-30 ورقة، لـ 5-10 مستخدمين مع استخدام متكرر يومي' },
         { icon: 'fa-industry', title: 'شريدر صناعي/مركزي', text: 'سعة 30+ ورقة، لمراكز تدمير الوثائق والبنوك والشركات الكبرى' },
       ]} />
-      <h2>الأثر البيئي — إعادة تدوير قصاصات الورق</h2>
-      <p>تدمير المستندات لا يعني بالضرورة إهدار الورق. قصاصات الشريدر، خاصة من القطع المتقاطع، قابلة تماماً لإعادة التدوير مثل أي ورق آخر، ويمكن تجميعها في أكياس أو صناديق منفصلة وتسليمها لشركات إعادة التدوير المحلية بدلاً من رميها في القمامة العادية. بعض الشركات في مصر تستفيد أيضاً من القصاصات الناعمة كمادة تعبئة وحماية عند شحن المنتجات الهشة، مما يقلل الحاجة لشراء مواد تغليف إضافية. ننصح عملاءنا دوماً بالتفكير في هذا الجانب البيئي، خصوصاً المؤسسات الكبيرة التي تنتج كميات كبيرة من القصاصات يومياً، فالجمع بين الأمان المعلوماتي والمسؤولية البيئية أصبح معياراً متزايد الأهمية في بيئة الأعمال الحديثة.</p>
-
-      <h2>مستوى الضجيج وراحة بيئة العمل</h2>
-      <p>الشريدرات القديمة كانت تُعرف بضجيجها المزعج، أما الأجيال الحديثة فقد تحسنت كثيراً في هذا الجانب بفضل تصميم الموتور ومواد العزل الصوتي الأفضل. عند اختيار شريدر لمكتب مفتوح أو منطقة استقبال، يُفضّل السؤال عن مستوى الضجيج بالتحديد قبل الشراء، فالفارق بين طراز وآخر قد يكون ملحوظاً جداً في بيئة العمل اليومية، خاصة إذا كان الجهاز سيُستخدم بشكل متكرر على مقربة من مكاتب الموظفين أو أثناء المكالمات الهاتفية.</p>
-
-      <h2>لماذا يجب تدمير المستندات؟</h2>
-      <p>في عصر تسريبات البيانات والاحتيال الإلكتروني والتجسس التجاري، أصبح التخلص الآمن من الوثائق السرية ضرورة لا رفاهية. رمي الوثائق في سلة المهملات دون تدمير يُعرّض بياناتك وبيانات عملائك لخطر الاستغلال من قِبل المنافسين أو المحتالين. تدمير المستندات يحميك قانونياً ويُقلل من مخاطر تسريب المعلومات التجارية والشخصية الحساسة.</p>
-      <p>سواء كنت تبحث عن <strong>شريدر مصر</strong> للاستخدام المنزلي أو <strong>ماكينة تدمير مستندات مصر</strong> للاستخدام المؤسسي، فنيو جولدن أوفيس توفر لك الخيار المناسب بسعر تنافسي وضمان كامل. خبرتنا الممتدة منذ عام 1999 في الإبراهيمية بالإسكندرية تضمن لك الحصول على أفضل نصيحة واختيار لأجهزتك.</p>
-
     </div>
-    <aside class="service-sidebar">
-      <div class="sidebar-card">
-        <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
-        <div class="contact-info">
-          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
-          <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <h3><i class="fas fa-list" style="color:var(--secondary);margin-left:8px;"></i> خدمات ماكينات الفارم والعد</h3>
-        <div class="sidebar-services">
-          <a href="/cash-machines/counting" class="sidebar-service-link"><span>ماكينات عد النقود</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/detector" class="sidebar-service-link"><span>كشف العملات المزيفة</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/franking" class="sidebar-service-link"><span>ماكينات الفارم</span><i class="fas fa-angle-left"></i></a>
-          <a href="/cash-machines/shredder" class="sidebar-service-link active"><span>تدمير المستندات</span><i class="fas fa-angle-left"></i></a>
-        </div>
-      </div>
-    </aside>
-  </div></div>
+  </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">مستويات أمان الشريدر P-1 إلى P-7 — أيها تحتاج؟</h2>
+    <div class="section-header">
+      <h2>الأثر البيئي — إعادة تدوير قصاصات الورق</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>تدمير المستندات لا يعني بالضرورة إهدار الورق. قصاصات الشريدر، خاصة من القطع المتقاطع، قابلة تماماً لإعادة التدوير مثل أي ورق آخر، ويمكن تجميعها في أكياس أو صناديق منفصلة وتسليمها لشركات إعادة التدوير المحلية بدلاً من رميها في القمامة العادية. بعض الشركات في مصر تستفيد أيضاً من القصاصات الناعمة كمادة تعبئة وحماية عند شحن المنتجات الهشة، مما يقلل الحاجة لشراء مواد تغليف إضافية. ننصح عملاءنا دوماً بالتفكير في هذا الجانب البيئي، خصوصاً المؤسسات الكبيرة التي تنتج كميات كبيرة من القصاصات يومياً، فالجمع بين الأمان المعلوماتي والمسؤولية البيئية أصبح معياراً متزايد الأهمية في بيئة الأعمال الحديثة.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>مستوى الضجيج وراحة بيئة العمل</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الشريدرات القديمة كانت تُعرف بضجيجها المزعج، أما الأجيال الحديثة فقد تحسنت كثيراً في هذا الجانب بفضل تصميم الموتور ومواد العزل الصوتي الأفضل. عند اختيار شريدر لمكتب مفتوح أو منطقة استقبال، يُفضّل السؤال عن مستوى الضجيج بالتحديد قبل الشراء، فالفارق بين طراز وآخر قد يكون ملحوظاً جداً في بيئة العمل اليومية، خاصة إذا كان الجهاز سيُستخدم بشكل متكرر على مقربة من مكاتب الموظفين أو أثناء المكالمات الهاتفية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا يجب تدمير المستندات؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>في عصر تسريبات البيانات والاحتيال الإلكتروني والتجسس التجاري، أصبح التخلص الآمن من الوثائق السرية ضرورة لا رفاهية. رمي الوثائق في سلة المهملات دون تدمير يُعرّض بياناتك وبيانات عملائك لخطر الاستغلال من قِبل المنافسين أو المحتالين. تدمير المستندات يحميك قانونياً ويُقلل من مخاطر تسريب المعلومات التجارية والشخصية الحساسة.</p>
+      <p>سواء كنت تبحث عن <strong>شريدر مصر</strong> للاستخدام المنزلي أو <strong>ماكينة تدمير مستندات مصر</strong> للاستخدام المؤسسي، فنيو جولدن أوفيس توفر لك الخيار المناسب بسعر تنافسي وضمان كامل. خبرتنا الممتدة منذ عام 1999 في الإبراهيمية بالإسكندرية تضمن لك الحصول على أفضل نصيحة واختيار لأجهزتك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="contact-info">
+                <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
+                <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+              </div>
+            </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>مستويات أمان الشريدر P-1 إلى P-7 — أيها تحتاج؟</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">ماكينات تدمير المستندات في مصر تُصنف حسب مستوى الأمان (DIN 66399):</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
@@ -224,5 +332,20 @@ const schemaJson = JSON.stringify({
     </div>
   </div>
 </section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-list"></i> خدمات ماكينات الفارم والعد</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/cash-machines/counting" class="related-service-link"><span>ماكينات عد النقود</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/detector" class="related-service-link"><span>كشف العملات المزيفة</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/franking" class="related-service-link"><span>ماكينات الفارم</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cash-machines/shredder" class="related-service-link active"><span>تدمير المستندات</span><i class="fas fa-arrow-left"></i></a>
+    </div>
+  </div>
+</section>
+
 <RelatedGuides category="ماكينات عد النقود وفرم الورق" />
 </BaseLayout>

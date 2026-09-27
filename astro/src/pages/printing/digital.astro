@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 
@@ -47,101 +46,178 @@ const schemaJson = JSON.stringify({
 />
 
 <!-- MAIN CONTENT -->
-<section class="service-detail">
+<section class="stats-section">
   <div class="container">
-    <div class="service-detail-grid">
-      <div class="service-content">
-        <ContentIntro
-          heading="ما هي الطباعة الرقمية (digital printing)؟"
-          text="الطباعة الرقمية هي تقنية طباعة حديثة تعتمد على نقل الملف الرقمي مباشرةً إلى الطابعة دون الحاجة إلى ألواح طباعة (بليت) أو خطوات إعداد معقدة. هذا يعني أنك تستطيع الحصول على طلبك مطبوعاً في وقت أقل بكثير مقارنة بطباعة الأوفست التقليدية. في نيو جولدن أوفيس، نمتلك أحدث ماكينات الطباعة الرقمية التي تجمع بين السرعة الفائقة والجودة الاحترافية التي تستحقها."
-        />
-        <h2>لماذا الطباعة الرقمية هي الحل الأمثل للكميات الصغيرة؟</h2>
-        <p>إذا كنت تحتاج إلى طباعة من نسخة واحدة وحتى 500 نسخة، فالطباعة الرقمية هي خيارك الأمثل اقتصادياً وزمنياً. لا توجد تكاليف إعداد ثابتة كما في الأوفست، مما يجعل سعر الوحدة معقولاً حتى في الكميات القليلة جداً. هذا يفتح أمامك إمكانيات لم تكن متاحة من قبل — مثل طباعة نسخة واحدة من كتاب، أو 50 دعوة شخصية مختلفة.</p>
-        <p>هذه المرونة تجعل الطباعة الرقمية الخيار المفضل لأصحاب الأعمال الصغيرة الذين يحتاجون تجربة تصميم جديد قبل الالتزام بكمية كبيرة، أو لمن يحتاج تعديل المحتوى بشكل متكرر بين كل طبعة والأخرى دون تكلفة إضافية كبيرة.</p>
-        <p>نساعدك أيضًا في اختيار نوع الورق والتشطيب المناسب لطبيعة استخدام المطبوع، سواء كان عرضًا تقديميًا داخليًا بسيطًا أو مطبوعًا يُقدَّم مباشرة لعميل مهم.</p>
-        <p>للطلبات العاجلة جدًا، نوفر أولوية تنفيذ خلال نفس اليوم حسب توفر الجدول، فقط أخبرنا بالموعد النهائي المطلوب وسنبذل قصارى جهدنا للوفاء به.</p>
-        <p>نساعدك أيضًا في تجهيز الملف الرقمي بالمقاسات الصحيحة قبل الطباعة، لتفادي أي مشكلة في الدقة أو الألوان تظهر بعد التنفيذ الفعلي على الورق.</p>
-        <p>نقدم أيضًا نصائح مجانية حول أفضل دقة ملف مناسبة لكل نوع طباعة، لضمان وضوح المطبوع النهائي دون أي تشوش أو بكسلة ظاهرة.</p>
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
+    </div>
+  </div>
+</section>
 
-        <h3>مميزات الطباعة الرقمية في نيو جولدن أوفيس</h3>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-bolt', title: 'سرعة التنفيذ', text: 'معظم الطلبات الصغيرة جاهزة خلال ساعات معدودة من استلام الملف المعتمد' },
-          { icon: 'fa-hashtag', title: 'بدون حد أدنى للكمية', text: 'نطبع حتى نسخة واحدة — مثالي للتجارب والبروتوتايب' },
-          { icon: 'fa-palette', title: 'جودة ألوان ممتازة', text: 'تقنيات الطباعة الرقمية الحديثة توفر ألواناً نابضة وحادة بدقة عالية' },
-          { icon: 'fa-qrcode', title: 'الطباعة المتغيرة', text: 'كل نسخة يمكن أن تحتوي على بيانات مختلفة — أسماء، رموز QR، أرقام تسلسلية' },
-          { icon: 'fa-edit', title: 'تعديل سهل', text: 'يمكن تعديل التصميم بين الطبعات دون أي تكلفة إضافية للإعداد' },
-          { icon: 'fa-warehouse', title: 'توفير في التخزين', text: 'اطبع ما تحتاجه فقط عند الحاجة بدلاً من تخزين كميات كبيرة' },
-        ]} />
-        <h2>تطبيقات الطباعة الرقمية — من يستفيد؟</h2>
-        <p>الطباعة الرقمية في مصر تخدم قطاعات واسعة ومتنوعة:</p>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-rocket', title: 'الشركات الناشئة والمشاريع الصغيرة', text: 'اختبر تصاميمك ومواد تسويقك بكميات صغيرة قبل الاستثمار الكبير' },
-          { icon: 'fa-calendar-alt', title: 'فعاليات ومؤتمرات', text: 'طباعة برامج الفعاليات، الشهادات، والدعوات الشخصية بأسماء مختلفة' },
-          { icon: 'fa-bullhorn', title: 'التسويق المباشر', text: 'رسائل دعائية مخصصة بأسماء وعروض مختلفة لكل عميل' },
-          { icon: 'fa-flask', title: 'الطبعات التجريبية', text: 'احصل على نسخة واحدة لمراجعة الكتاب أو الكتالوج قبل الطباعة الكاملة' },
-          { icon: 'fa-palette', title: 'المشاريع الفنية', text: 'كتب الفنانين والمطبوعات المحدودة الإصدار' },
-          { icon: 'fa-images', title: 'الطباعة الشخصية', text: 'صور عائلية، ألبومات ذكريات، هدايا مخصصة' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما هي الطباعة الرقمية (digital printing)؟</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="landing-lead">الطباعة الرقمية هي تقنية طباعة حديثة تعتمد على نقل الملف الرقمي مباشرةً إلى الطابعة دون الحاجة إلى ألواح طباعة (بليت) أو خطوات إعداد معقدة. هذا يعني أنك تستطيع الحصول على طلبك مطبوعاً في وقت أقل بكثير مقارنة بطباعة الأوفست التقليدية. في نيو جولدن أوفيس، نمتلك أحدث ماكينات الطباعة الرقمية التي تجمع بين السرعة الفائقة والجودة الاحترافية التي تستحقها.</p>
+  </div>
+</section>
 
-        <MidPageCTA formId="prnDigitalMidCta" />
-        <h2>الطباعة الرقمية مقابل الأوفست — أيهما يناسبك؟</h2>
-        <p>الاختيار بين الطباعة الرقمية وطباعة الأوفست يعتمد على عاملين رئيسيين: الكمية وسرعة التسليم. للكميات دون 500 نسخة، الطباعة الرقمية أوفر اقتصادياً. للكميات فوق 500 نسخة، <a href="/printing/offset">طباعة الأوفست</a> تتفوق في سعر الوحدة. أما من حيث الوقت، فالطباعة الرقمية لا تضاهى للطلبات العاجلة. في نيو جولدن أوفيس، خبراؤنا يساعدونك في اختيار الأنسب لطلبك بالمجان.</p>
-        <h2>جودة الطباعة الرقمية في نيو جولدن أوفيس</h2>
-        <p>نستخدم أحدث ماكينات الطباعة الرقمية ذات الدقة العالية التي تتجاوز 1200 نقطة في البوصة، مما يضمن حدة استثنائية في النصوص الصغيرة والتفاصيل الدقيقة. نطبع على مجموعة واسعة من الأوراق والخامات لتناسب كل احتياج، من ورق الأوفست العادي وحتى ورق الكوشيه الفاخر والورق المقوى.</p>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا الطباعة الرقمية هي الحل الأمثل للكميات الصغيرة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>إذا كنت تحتاج إلى طباعة من نسخة واحدة وحتى 500 نسخة، فالطباعة الرقمية هي خيارك الأمثل اقتصادياً وزمنياً. لا توجد تكاليف إعداد ثابتة كما في الأوفست، مما يجعل سعر الوحدة معقولاً حتى في الكميات القليلة جداً. هذا يفتح أمامك إمكانيات لم تكن متاحة من قبل — مثل طباعة نسخة واحدة من كتاب، أو 50 دعوة شخصية مختلفة.</p>
+      <p>هذه المرونة تجعل الطباعة الرقمية الخيار المفضل لأصحاب الأعمال الصغيرة الذين يحتاجون تجربة تصميم جديد قبل الالتزام بكمية كبيرة، أو لمن يحتاج تعديل المحتوى بشكل متكرر بين كل طبعة والأخرى دون تكلفة إضافية كبيرة.</p>
+      <p>نساعدك أيضًا في اختيار نوع الورق والتشطيب المناسب لطبيعة استخدام المطبوع، سواء كان عرضًا تقديميًا داخليًا بسيطًا أو مطبوعًا يُقدَّم مباشرة لعميل مهم.</p>
+      <p>للطلبات العاجلة جدًا، نوفر أولوية تنفيذ خلال نفس اليوم حسب توفر الجدول، فقط أخبرنا بالموعد النهائي المطلوب وسنبذل قصارى جهدنا للوفاء به.</p>
+      <p>نساعدك أيضًا في تجهيز الملف الرقمي بالمقاسات الصحيحة قبل الطباعة، لتفادي أي مشكلة في الدقة أو الألوان تظهر بعد التنفيذ الفعلي على الورق.</p>
+      <p>نقدم أيضًا نصائح مجانية حول أفضل دقة ملف مناسبة لكل نوع طباعة، لضمان وضوح المطبوع النهائي دون أي تشوش أو بكسلة ظاهرة.</p>
 
-        <h2>الخامات والأسطح التي نطبع عليها رقمياً</h2>
-        <p>الطباعة الرقمية في نيو جولدن أوفيس لا تقتصر على الورق العادي، بل تمتد لتشمل مجموعة واسعة من الخامات حسب احتياج مشروعك:</p>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-file', title: 'ورق أوفست عادي (80-100 جرام)', text: 'للمستندات الداخلية والتقارير والمحتوى النصي الذي لا يحتاج مظهراً فاخراً.' },
-          { icon: 'fa-sun', title: 'ورق كوشيه لامع أو مطفي (130-250 جرام)', text: 'للمطبوعات التسويقية والصور والكتالوجات التي تحتاج ألواناً زاهية وحدة عالية.' },
-          { icon: 'fa-camera', title: 'ورق فوتوغرافي (Photo Paper)', text: 'لطباعة الصور الفوتوغرافية بجودة معملية، مثالي لألبومات الذكريات والبورتريهات.' },
-          { icon: 'fa-tag', title: 'ورق ملصق ذاتي اللصق (Sticker/Vinyl)', text: 'لملصقات المنتجات والعلامات التجارية والتغليف، بتشطيب لامع أو مطفي وقص حسب الشكل.' },
-          { icon: 'fa-book', title: 'ورق مقوى للأغلفة (Cover Stock)', text: 'لأغلفة الكتيبات والكتالوجات التي تحتاج صلابة أكبر من صفحات المحتوى الداخلي.' },
-          { icon: 'fa-layer-group', title: 'شرائح شفافة (Transparency Sheets)', text: 'للاستخدامات التعليمية والعرض على أجهزة العرض الضوئي.' },
-        ]} />
+      <h3>مميزات الطباعة الرقمية في نيو جولدن أوفيس</h3>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-bolt', title: 'سرعة التنفيذ', text: 'معظم الطلبات الصغيرة جاهزة خلال ساعات معدودة من استلام الملف المعتمد' },
+        { icon: 'fa-hashtag', title: 'بدون حد أدنى للكمية', text: 'نطبع حتى نسخة واحدة — مثالي للتجارب والبروتوتايب' },
+        { icon: 'fa-palette', title: 'جودة ألوان ممتازة', text: 'تقنيات الطباعة الرقمية الحديثة توفر ألواناً نابضة وحادة بدقة عالية' },
+        { icon: 'fa-qrcode', title: 'الطباعة المتغيرة', text: 'كل نسخة يمكن أن تحتوي على بيانات مختلفة — أسماء، رموز QR، أرقام تسلسلية' },
+        { icon: 'fa-edit', title: 'تعديل سهل', text: 'يمكن تعديل التصميم بين الطبعات دون أي تكلفة إضافية للإعداد' },
+        { icon: 'fa-warehouse', title: 'توفير في التخزين', text: 'اطبع ما تحتاجه فقط عند الحاجة بدلاً من تخزين كميات كبيرة' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>سيناريوهات استخدام حسب نوع عميلك</h2>
-        <IconCardGrid columns={3} items={[
-          { icon: 'fa-user-graduate', title: 'الطلاب والباحثون', text: 'طباعة وتجليد الرسائل العلمية والأبحاث الجامعية بأعداد قليلة (نسخة إلى عشر نسخ)، مع خيارات تجليد لولبي أو حراري مناسبة لمتطلبات لجان المناقشة.' },
-          { icon: 'fa-balance-scale', title: 'المكاتب القانونية والاستشارية', text: 'نسخ مستندات وعقود ومذكرات قانونية بأعداد متغيرة حسب الحاجة اليومية، مع سرعة تسليم تلائم مواعيد الجلسات والاجتماعات الضيقة.' },
-          { icon: 'fa-users-cog', title: 'أقسام الموارد البشرية والتدريب', text: 'طباعة كتيبات التدريب والأدلة الإرشادية للموظفين الجدد بأعداد تتناسب مع دفعات التوظيف، مع إمكانية تحديث المحتوى بسهولة بين الدفعات.' },
-          { icon: 'fa-camera-retro', title: 'استوديوهات التصوير', text: 'طباعة ألبومات الصور وكتب الذكريات للأفراح والمناسبات بجودة فوتوغرافية عالية ونسخة واحدة فريدة لكل عميل.' },
-          { icon: 'fa-book-reader', title: 'دور النشر المستقلة', text: 'طباعة عند الطلب (Print on Demand) للكتب محدودة الإصدار دون التزام بطباعة آلاف النسخ مقدماً وتحمل مخاطر التخزين.' },
-        ]} />
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تطبيقات الطباعة الرقمية — من يستفيد؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الطباعة الرقمية في مصر تخدم قطاعات واسعة ومتنوعة:</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-rocket', title: 'الشركات الناشئة والمشاريع الصغيرة', text: 'اختبر تصاميمك ومواد تسويقك بكميات صغيرة قبل الاستثمار الكبير' },
+        { icon: 'fa-calendar-alt', title: 'فعاليات ومؤتمرات', text: 'طباعة برامج الفعاليات، الشهادات، والدعوات الشخصية بأسماء مختلفة' },
+        { icon: 'fa-bullhorn', title: 'التسويق المباشر', text: 'رسائل دعائية مخصصة بأسماء وعروض مختلفة لكل عميل' },
+        { icon: 'fa-flask', title: 'الطبعات التجريبية', text: 'احصل على نسخة واحدة لمراجعة الكتاب أو الكتالوج قبل الطباعة الكاملة' },
+        { icon: 'fa-palette', title: 'المشاريع الفنية', text: 'كتب الفنانين والمطبوعات المحدودة الإصدار' },
+        { icon: 'fa-images', title: 'الطباعة الشخصية', text: 'صور عائلية، ألبومات ذكريات، هدايا مخصصة' },
+      ]} />
+    </div>
+  </div>
+</section>
 
-        <h2>تجهيز الملف للطباعة الرقمية</h2>
-        <p>الطباعة الرقمية سريعة ومرنة، لكن مراعاة بعض النقاط الفنية تضمن نتيجة مطابقة لتوقعك من أول مرة:</p>
-        <IconCardGrid columns={2} items={[
-          { icon: 'fa-palette', title: 'تحويل الألوان من RGB إلى CMYK', text: 'الشاشات تعرض الألوان بنظام RGB بينما الطباعة تعتمد نظام CMYK، وتحويل الملف قبل الإرسال يعطيك تصوراً أقرب للنتيجة الفعلية ويقلل مفاجآت اختلاف الألوان.' },
-          { icon: 'fa-search', title: 'الدقة المناسبة', text: '300 dpi على الحجم الفعلي مثالية للمطبوعات العادية والصور، بينما الملصقات الكبيرة نسبياً يمكن أن تُطبع بدقة أقل قليلاً دون أن يلاحظ العين فرقاً واضحاً من مسافة العرض المعتادة.' },
-          { icon: 'fa-font', title: 'تضمين الخطوط (Font Embedding)', text: 'عند إرسال ملف PDF، تأكد من تضمين الخطوط المستخدمة أو تحويلها إلى Outlines لتفادي تغيّر شكل النص عند فتح الملف على جهاز آخر.' },
-          { icon: 'fa-file-contract', title: 'معيار PDF/X', text: 'إن أمكن، احفظ ملفك بمعيار PDF/X-1a أو PDF/X-4 المخصص لدور الطباعة، فهو يضمن توافق الألوان والخطوط والشفافيات بشكل صحيح.' },
-        ]} />
+<MidPageCTA formId="prnDigitalMidCta" />
 
-        <h2>احتياجات خاصة: من الملصقات الداخلية إلى الطباعة الفورية للفعاليات</h2>
-        <p>الطباعة الرقمية مفيدة أيضاً في حالات خاصة مثل طباعة ملصقات وبوسترات داخلية (Indoor Posters) للمعارض والمكاتب بأعداد قليلة — إن كنت تحتاج مقاسات كبيرة جداً للافتات الخارجية، فراجع صفحة <a href="/printing/banners">طباعة البنرات والفينيل</a> المخصصة للطباعة واسعة الفورمات. كذلك نوفر خدمة الطباعة الفورية في موقع الفعاليات للشهادات والبطاقات الشخصية التي تحتاج بيانات متغيرة لكل حضور فور تسجيله.</p>
-      </div>
-      <aside class="service-sidebar">
-        <div class="sidebar-card">
-          <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
-          <div class="contact-info">
-            <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
-            <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
-          </div>
-        </div>
-        <div class="sidebar-card">
-          <h3>خدمات الطباعة</h3>
-          <div class="sidebar-services">
-            <a href="/printing/offset" class="sidebar-service-link"><span>طباعة أوفست</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/digital" class="sidebar-service-link"><span>طباعة رقمية</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/banners" class="sidebar-service-link"><span>طباعة بنرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/business-cards" class="sidebar-service-link"><span>بزنس كارد</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/brochures" class="sidebar-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/uv" class="sidebar-service-link"><span>طباعة UV</span><i class="fas fa-angle-left"></i></a>
-            <a href="/printing/gifts" class="sidebar-service-link"><span>طباعة هدايا</span><i class="fas fa-angle-left"></i></a>
-          </div>
-        </div>
-      </aside>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الطباعة الرقمية مقابل الأوفست — أيهما يناسبك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الاختيار بين الطباعة الرقمية وطباعة الأوفست يعتمد على عاملين رئيسيين: الكمية وسرعة التسليم. للكميات دون 500 نسخة، الطباعة الرقمية أوفر اقتصادياً. للكميات فوق 500 نسخة، <a href="/printing/offset">طباعة الأوفست</a> تتفوق في سعر الوحدة. أما من حيث الوقت، فالطباعة الرقمية لا تضاهى للطلبات العاجلة. في نيو جولدن أوفيس، خبراؤنا يساعدونك في اختيار الأنسب لطلبك بالمجان.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>جودة الطباعة الرقمية في نيو جولدن أوفيس</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>نستخدم أحدث ماكينات الطباعة الرقمية ذات الدقة العالية التي تتجاوز 1200 نقطة في البوصة، مما يضمن حدة استثنائية في النصوص الصغيرة والتفاصيل الدقيقة. نطبع على مجموعة واسعة من الأوراق والخامات لتناسب كل احتياج، من ورق الأوفست العادي وحتى ورق الكوشيه الفاخر والورق المقوى.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>الخامات والأسطح التي نطبع عليها رقمياً</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الطباعة الرقمية في نيو جولدن أوفيس لا تقتصر على الورق العادي، بل تمتد لتشمل مجموعة واسعة من الخامات حسب احتياج مشروعك:</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-file', title: 'ورق أوفست عادي (80-100 جرام)', text: 'للمستندات الداخلية والتقارير والمحتوى النصي الذي لا يحتاج مظهراً فاخراً.' },
+        { icon: 'fa-sun', title: 'ورق كوشيه لامع أو مطفي (130-250 جرام)', text: 'للمطبوعات التسويقية والصور والكتالوجات التي تحتاج ألواناً زاهية وحدة عالية.' },
+        { icon: 'fa-camera', title: 'ورق فوتوغرافي (Photo Paper)', text: 'لطباعة الصور الفوتوغرافية بجودة معملية، مثالي لألبومات الذكريات والبورتريهات.' },
+        { icon: 'fa-tag', title: 'ورق ملصق ذاتي اللصق (Sticker/Vinyl)', text: 'لملصقات المنتجات والعلامات التجارية والتغليف، بتشطيب لامع أو مطفي وقص حسب الشكل.' },
+        { icon: 'fa-book', title: 'ورق مقوى للأغلفة (Cover Stock)', text: 'لأغلفة الكتيبات والكتالوجات التي تحتاج صلابة أكبر من صفحات المحتوى الداخلي.' },
+        { icon: 'fa-layer-group', title: 'شرائح شفافة (Transparency Sheets)', text: 'للاستخدامات التعليمية والعرض على أجهزة العرض الضوئي.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>سيناريوهات استخدام حسب نوع عميلك</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={3} items={[
+        { icon: 'fa-user-graduate', title: 'الطلاب والباحثون', text: 'طباعة وتجليد الرسائل العلمية والأبحاث الجامعية بأعداد قليلة (نسخة إلى عشر نسخ)، مع خيارات تجليد لولبي أو حراري مناسبة لمتطلبات لجان المناقشة.' },
+        { icon: 'fa-balance-scale', title: 'المكاتب القانونية والاستشارية', text: 'نسخ مستندات وعقود ومذكرات قانونية بأعداد متغيرة حسب الحاجة اليومية، مع سرعة تسليم تلائم مواعيد الجلسات والاجتماعات الضيقة.' },
+        { icon: 'fa-users-cog', title: 'أقسام الموارد البشرية والتدريب', text: 'طباعة كتيبات التدريب والأدلة الإرشادية للموظفين الجدد بأعداد تتناسب مع دفعات التوظيف، مع إمكانية تحديث المحتوى بسهولة بين الدفعات.' },
+        { icon: 'fa-camera-retro', title: 'استوديوهات التصوير', text: 'طباعة ألبومات الصور وكتب الذكريات للأفراح والمناسبات بجودة فوتوغرافية عالية ونسخة واحدة فريدة لكل عميل.' },
+        { icon: 'fa-book-reader', title: 'دور النشر المستقلة', text: 'طباعة عند الطلب (Print on Demand) للكتب محدودة الإصدار دون التزام بطباعة آلاف النسخ مقدماً وتحمل مخاطر التخزين.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تجهيز الملف للطباعة الرقمية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الطباعة الرقمية سريعة ومرنة، لكن مراعاة بعض النقاط الفنية تضمن نتيجة مطابقة لتوقعك من أول مرة:</p>
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-palette', title: 'تحويل الألوان من RGB إلى CMYK', text: 'الشاشات تعرض الألوان بنظام RGB بينما الطباعة تعتمد نظام CMYK، وتحويل الملف قبل الإرسال يعطيك تصوراً أقرب للنتيجة الفعلية ويقلل مفاجآت اختلاف الألوان.' },
+        { icon: 'fa-search', title: 'الدقة المناسبة', text: '300 dpi على الحجم الفعلي مثالية للمطبوعات العادية والصور، بينما الملصقات الكبيرة نسبياً يمكن أن تُطبع بدقة أقل قليلاً دون أن يلاحظ العين فرقاً واضحاً من مسافة العرض المعتادة.' },
+        { icon: 'fa-font', title: 'تضمين الخطوط (Font Embedding)', text: 'عند إرسال ملف PDF، تأكد من تضمين الخطوط المستخدمة أو تحويلها إلى Outlines لتفادي تغيّر شكل النص عند فتح الملف على جهاز آخر.' },
+        { icon: 'fa-file-contract', title: 'معيار PDF/X', text: 'إن أمكن، احفظ ملفك بمعيار PDF/X-1a أو PDF/X-4 المخصص لدور الطباعة، فهو يضمن توافق الألوان والخطوط والشفافيات بشكل صحيح.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>احتياجات خاصة: من الملصقات الداخلية إلى الطباعة الفورية للفعاليات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>الطباعة الرقمية مفيدة أيضاً في حالات خاصة مثل طباعة ملصقات وبوسترات داخلية (Indoor Posters) للمعارض والمكاتب بأعداد قليلة — إن كنت تحتاج مقاسات كبيرة جداً للافتات الخارجية، فراجع صفحة <a href="/printing/banners">طباعة البنرات والفينيل</a> المخصصة للطباعة واسعة الفورمات. كذلك نوفر خدمة الطباعة الفورية في موقع الفعاليات للشهادات والبطاقات الشخصية التي تحتاج بيانات متغيرة لكل حضور فور تسجيله.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="contact-info">
+                  <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
+                  <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+                </div>
+              </div>
     </div>
   </div>
 </section>
@@ -158,9 +234,12 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="content-section" style="padding:60px 0;background:#f8f9fa">
+<section class="section">
   <div class="container">
-    <h2 style="font-size:1.8rem;font-weight:700;color:#1a1a2e;margin-bottom:24px">طباعة رقمية من نسخة واحدة — مثالية للكميات الصغيرة</h2>
+    <div class="section-header">
+      <h2>طباعة رقمية من نسخة واحدة — مثالية للكميات الصغيرة</h2>
+      <div class="divider"></div>
+    </div>
     <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">ميزة الطباعة الرقمية في نيو جولدن أوفيس أنها تبدأ من نسخة واحدة — لا حد أدنى للكمية. مثالية لعينات التصميم، المطبوعات الشخصية، والطلبات العاجلة.</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
@@ -203,7 +282,7 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن الطباعة الرقمية</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -264,6 +343,24 @@ const schemaJson = JSON.stringify({
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20رقمية" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="tel:+201227392074" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fas fa-phone-alt"></i> 01227392074</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2>خدمات الطباعة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="related-services">
+      <a href="/printing/offset" class="related-service-link"><span>طباعة أوفست</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/digital" class="related-service-link"><span>طباعة رقمية</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/banners" class="related-service-link"><span>طباعة بنرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/business-cards" class="related-service-link"><span>بزنس كارد</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/brochures" class="related-service-link"><span>بروشورات وفلايرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/uv" class="related-service-link"><span>طباعة UV</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/printing/gifts" class="related-service-link"><span>طباعة هدايا</span><i class="fas fa-arrow-left"></i></a>
     </div>
   </div>
 </section>
