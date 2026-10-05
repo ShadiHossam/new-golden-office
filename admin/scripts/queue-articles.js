@@ -1,5 +1,5 @@
 // Turns a folder of Markdown articles into scheduled blog drafts in
-// admin/data/blog.json — one post per day. The server crontab's
+// admin/data/blog.json — three posts a week (Sun, Tue, Thu). The server crontab's
 // daily_publish.js then publishes each one on its scheduled_at date and
 // rebuilds/deploys the Astro site.
 //
@@ -13,7 +13,8 @@
 //   --start=YYYY-MM-DD  first publish date (default: day after the last
 //                       scheduled post, never earlier than tomorrow)
 //   --time=HH:MM        publish time, UTC (default 08:00)
-//   --every=N           days between posts (default 1)
+//   --days=sun,tue,thu  weekdays to publish on (default sun,tue,thu)
+//   --every=N           publish every N days instead of on --days
 //   --category="..."    category for articles that don't declare one
 //   --dry-run           print the plan without writing anything
 //
@@ -69,19 +70,42 @@ const CLUSTERS = {
   'ac': 'تكييفات',
 };
 
+const WEEKDAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+function parseDays(list) {
+  const days = list.split(',').map(d => WEEKDAYS.indexOf(d.trim().toLowerCase().slice(0, 3)));
+  if (!days.length || days.includes(-1)) throw new Error(`--days must be weekday names like sun,tue,thu, got "${list}"`);
+  return [...new Set(days)].sort();
+}
+
+/** The first allowed publish slot on or after `date` (same time of day). */
+function onAllowedDay(date, opts) {
+  if (opts.every) return date;
+  const d = new Date(date);
+  while (!opts.days.includes(d.getUTCDay())) d.setUTCDate(d.getUTCDate() + 1);
+  return d;
+}
+
+/** The publish slot after `slot`. */
+function nextSlot(slot, opts) {
+  if (opts.every) return new Date(slot.getTime() + opts.every * 86400000);
+  return onAllowedDay(new Date(slot.getTime() + 86400000), opts);
+}
+
 function parseArgs(argv) {
-  const opts = { folder: DEFAULT_FOLDER, time: '08:00', every: 1, dryRun: false, start: null, category: null };
+  const opts = { folder: DEFAULT_FOLDER, time: '08:00', days: [0, 2, 4], every: null, dryRun: false, start: null, category: null };
   for (const arg of argv) {
     if (arg === '--dry-run') opts.dryRun = true;
     else if (arg.startsWith('--start=')) opts.start = arg.slice(8);
     else if (arg.startsWith('--time=')) opts.time = arg.slice(7);
     else if (arg.startsWith('--every=')) opts.every = parseInt(arg.slice(8), 10);
+    else if (arg.startsWith('--days=')) opts.days = parseDays(arg.slice(7));
     else if (arg.startsWith('--category=')) opts.category = arg.slice(11);
     else if (arg.startsWith('--')) throw new Error(`Unknown option: ${arg}`);
     else opts.folder = path.resolve(arg);
   }
   if (!/^\d{2}:\d{2}$/.test(opts.time)) throw new Error(`--time must be HH:MM, got "${opts.time}"`);
-  if (!(opts.every >= 1)) throw new Error(`--every must be 1 or more, got "${opts.every}"`);
+  if (opts.every !== null && !(opts.every >= 1)) throw new Error(`--every must be 1 or more, got "${opts.every}"`);
   if (opts.start && !/^\d{4}-\d{2}-\d{2}$/.test(opts.start)) throw new Error(`--start must be YYYY-MM-DD, got "${opts.start}"`);
   return opts;
 }
@@ -427,12 +451,12 @@ function slotStart(posts, opts) {
   };
   if (opts.start) {
     const [y, mo, d] = opts.start.split('-').map(Number);
-    return new Date(Date.UTC(y, mo - 1, d, h, m));
+    return onAllowedDay(new Date(Date.UTC(y, mo - 1, d, h, m)), opts);
   }
   const tomorrow = new Date(Date.now() + 86400000);
   const latest = latestScheduleDate(posts);
   const afterLatest = latest ? new Date(latest.getTime() + 86400000) : null;
-  return at(afterLatest && afterLatest > tomorrow ? afterLatest : tomorrow);
+  return onAllowedDay(at(afterLatest && afterLatest > tomorrow ? afterLatest : tomorrow), opts);
 }
 
 function iso(date) {
@@ -520,7 +544,7 @@ async function main() {
       scheduledAt = new Date(Date.UTC(y, mo - 1, d, hh, mm));
     } else {
       scheduledAt = slot;
-      slot = new Date(slot.getTime() + opts.every * 86400000);
+      slot = nextSlot(slot, opts);
     }
 
     added.push({
@@ -561,7 +585,7 @@ async function main() {
     return;
   }
 
-  console.log(`\n${opts.dryRun ? 'Would queue' : 'Queued'} ${added.length} post(s), one every ${opts.every} day(s) at ${opts.time} UTC:\n`);
+  console.log(`\n${opts.dryRun ? 'Would queue' : 'Queued'} ${added.length} post(s), ${opts.every ? `one every ${opts.every} day(s)` : `on ${opts.days.map(d => WEEKDAYS[d]).join(', ')}`} at ${opts.time} UTC:\n`);
   for (const p of added) {
     console.log(`  ${p.scheduled_at.slice(0, 10)}  ${p.slug}`);
     console.log(`              ${p.title}`);
