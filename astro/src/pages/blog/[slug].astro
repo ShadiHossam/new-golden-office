@@ -118,6 +118,14 @@ const relatedPool = [...sameCategory, ...others].map((e) => ({
 const sidebarRelated = relatedPool.slice(0, 3);
 const bottomRelated = relatedPool.length > 3 ? relatedPool.slice(3, 6) : relatedPool.slice(0, 3);
 
+// One source for the byline card and the Article schema, so Google sees the
+// same author the reader does.
+const AUTHOR = {
+  name: 'نيهال محمد',
+  label: 'الكاتبة',
+  bio: 'كاتبة محتوى متخصصة في مجال المستلزمات والمعدات المكتبية',
+};
+
 const articleSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -126,7 +134,7 @@ const articleSchema = JSON.stringify({
   image: p.cover_image || p.og_image || DEFAULT_COVER,
   datePublished: publishedIso,
   dateModified: p.updated_at || publishedIso,
-  author: { '@type': 'Organization', name: 'نيو جولدن أوفيس' },
+  author: { '@type': 'Person', name: AUTHOR.name, description: AUTHOR.bio, worksFor: { '@type': 'Organization', name: 'نيو جولدن أوفيس', url: 'https://newgoldenoffice.com/' } },
   publisher: {
     '@type': 'Organization',
     name: 'نيو جولدن أوفيس',
@@ -225,9 +233,9 @@ const articleSchema = JSON.stringify({
         <div class="bp-author-card">
           <div class="bp-author-avatar" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></div>
           <div>
-            <span class="bp-author-label">الكاتبة</span>
-            <h3 class="bp-author-name">نيهال محمد</h3>
-            <p class="bp-author-bio">كاتبة محتوى متخصصة في مجال المستلزمات والمعدات المكتبية</p>
+            <span class="bp-author-label">{AUTHOR.label}</span>
+            <h3 class="bp-author-name">{AUTHOR.name}</h3>
+            <p class="bp-author-bio">{AUTHOR.bio}</p>
           </div>
         </div>
       </article>

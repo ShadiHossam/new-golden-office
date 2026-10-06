@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { PAGES } from '../lib/sitemap-data';
 import { renderUrlset, XML_HEADERS, toW3CDateTime, resolvePageSourceFile, getFileLastModified } from '../lib/sitemap-xml';
-import { getSortedPosts, countPages, blogPageHref } from '../lib/blog-list';
+import { getSortedPosts, countPages, blogPageHref, BLOG_CATEGORIES, listingBase } from '../lib/blog-list';
 
 export const GET: APIRoute = async () => {
   const staticEntries = PAGES.map((page) => ({
@@ -23,5 +23,17 @@ export const GET: APIRoute = async () => {
     })
   );
 
-  return new Response(renderUrlset([...staticEntries, ...paginationEntries]), { headers: XML_HEADERS });
+  // Blog category hubs (/blog/category/<slug>), only for categories that have
+  // posts — the same filter [category].astro uses to build them. lastmod is the
+  // newest post in that category. Posts are sorted newest first.
+  const categoryEntries = BLOG_CATEGORIES.flatMap((category) => {
+    const newestInCategory = posts.find((p) => p.category === category.name);
+    if (!newestInCategory) return [];
+    return [{
+      loc: `https://newgoldenoffice.com${listingBase(category.slug)}`,
+      lastmod: toW3CDateTime(new Date(newestInCategory.date)),
+    }];
+  });
+
+  return new Response(renderUrlset([...staticEntries, ...paginationEntries, ...categoryEntries]), { headers: XML_HEADERS });
 };

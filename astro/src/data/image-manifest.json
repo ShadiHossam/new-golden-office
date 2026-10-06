@@ -309,6 +309,24 @@
    ]
   ]
  },
+ "/images/ac-filter-cleaning-cairo-dust-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/ac-filter-cleaning-cairo-dust-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ac-filter-cleaning-cairo-dust-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ac-filter-cleaning-cairo-dust-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/ac-filter-cleaning-cairo-dust-cover-u.webp": {
   "w": 1200,
   "h": 798,
@@ -536,6 +554,24 @@
    [
     1200,
     "/images/v/ac-maintenance-cost-cover-1200.webp"
+   ]
+  ]
+ },
+ "/images/ac-maintenance-presummer-alexandria-salt-corrosion-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/ac-maintenance-presummer-alexandria-salt-corrosion-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ac-maintenance-presummer-alexandria-salt-corrosion-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ac-maintenance-presummer-alexandria-salt-corrosion-body-u-1200.webp"
    ]
   ]
  },
@@ -2049,6 +2085,24 @@
    ]
   ]
  },
+ "/images/buy-vs-rent-copier-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/buy-vs-rent-copier-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/buy-vs-rent-copier-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/buy-vs-rent-copier-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/buy-vs-rent-copier-cover-u.webp": {
   "w": 1200,
   "h": 800,
@@ -2643,6 +2697,24 @@
    ]
   ]
  },
+ "/images/cash-counter-banks-retail-cairo-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cash-counter-banks-retail-cairo-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cash-counter-banks-retail-cairo-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cash-counter-banks-retail-cairo-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/cash-counter-banks-retail-cairo-cover-u.webp": {
   "w": 1200,
   "h": 800,
@@ -2661,6 +2733,24 @@
    ]
   ]
  },
+ "/images/cash-counter-before-holidays-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cash-counter-before-holidays-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cash-counter-before-holidays-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cash-counter-before-holidays-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/cash-counter-before-holidays-cover-u.webp": {
   "w": 1200,
   "h": 800,
@@ -2676,6 +2766,24 @@
    [
     1200,
     "/images/v/cash-counter-before-holidays-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/cash-counter-shops-alexandria-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cash-counter-shops-alexandria-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cash-counter-shops-alexandria-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cash-counter-shops-alexandria-body-u-1200.webp"
    ]
   ]
  },
@@ -3032,6 +3140,24 @@
    [
     1200,
     "/images/v/cctv-cloud-storage-cover-1200.webp"
+   ]
+  ]
+ },
+ "/images/cctv-factories-warehouses-alexandria-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cctv-factories-warehouses-alexandria-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cctv-factories-warehouses-alexandria-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cctv-factories-warehouses-alexandria-body-u-1200.webp"
    ]
   ]
  },
@@ -3392,6 +3518,24 @@
    [
     1200,
     "/images/v/cctv-security-hardening-cover-1200.webp"
+   ]
+  ]
+ },
+ "/images/cctv-shops-alexandria-corniche-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/cctv-shops-alexandria-corniche-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/cctv-shops-alexandria-corniche-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/cctv-shops-alexandria-corniche-body-u-1200.webp"
    ]
   ]
  },
@@ -4223,6 +4367,24 @@
    ]
   ]
  },
+ "/images/copier-fleet-maintenance-contract-cairo-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/copier-fleet-maintenance-contract-cairo-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/copier-fleet-maintenance-contract-cairo-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/copier-fleet-maintenance-contract-cairo-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/copier-fleet-maintenance-contract-cairo-cover-u.webp": {
   "w": 1200,
   "h": 800,
@@ -4238,6 +4400,24 @@
    [
     1200,
     "/images/v/copier-fleet-maintenance-contract-cairo-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/copier-import-export-alexandria-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/copier-import-export-alexandria-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/copier-import-export-alexandria-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/copier-import-export-alexandria-body-u-1200.webp"
    ]
   ]
  },
@@ -9059,6 +9239,24 @@
    ]
   ]
  },
+ "/images/office-ac-electricity-saving-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/office-ac-electricity-saving-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-ac-electricity-saving-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-ac-electricity-saving-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/office-ac-electricity-saving-cover-u.webp": {
   "w": 1200,
   "h": 801,
@@ -9565,6 +9763,24 @@
    ]
   ]
  },
+ "/images/office-setup-alexandria-smouha-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/office-setup-alexandria-smouha-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-setup-alexandria-smouha-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-setup-alexandria-smouha-body-u-1200.webp"
+   ]
+  ]
+ },
  "/images/office-setup-alexandria-smouha-cover-u.webp": {
   "w": 1200,
   "h": 675,
@@ -9580,6 +9796,24 @@
    [
     1200,
     "/images/v/office-setup-alexandria-smouha-cover-u-1200.webp"
+   ]
+  ]
+ },
+ "/images/office-setup-cairo-tagamoa-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/office-setup-cairo-tagamoa-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/office-setup-cairo-tagamoa-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/office-setup-cairo-tagamoa-body-u-1200.webp"
    ]
   ]
  },
@@ -10370,6 +10604,24 @@
    [
     1600,
     "/images/v/paper-printing-office-3-1784574498770-176565-1600.webp"
+   ]
+  ]
+ },
+ "/images/paper-shredder-buying-guide-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/paper-shredder-buying-guide-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/paper-shredder-buying-guide-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/paper-shredder-buying-guide-body-u-1200.webp"
    ]
   ]
  },
@@ -12636,6 +12888,24 @@
    [
     1200,
     "/images/v/refurbished-photocopiers-cover-1200.webp"
+   ]
+  ]
+ },
+ "/images/remote-cctv-multi-branch-cairo-body-u.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/remote-cctv-multi-branch-cairo-body-u-400.webp"
+   ],
+   [
+    800,
+    "/images/v/remote-cctv-multi-branch-cairo-body-u-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/remote-cctv-multi-branch-cairo-body-u-1200.webp"
    ]
   ]
  },

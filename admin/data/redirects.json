@@ -103,5 +103,12 @@
     "to": "/blog/egypt-photocopier-prices",
     "status": 301,
     "created_at": "2026-09-08T00:00:00.000Z"
+  },
+  {
+    "id": 16,
+    "from": "/printing/apparel",
+    "to": "/printing/gifts",
+    "status": 301,
+    "created_at": "2026-10-04T00:00:00.000Z"
   }
 ]

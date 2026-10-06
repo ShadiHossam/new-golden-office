@@ -27,6 +27,7 @@ RewriteRule ^office-supplies/cairo/?$ https://newgoldenoffice.com/cairo/office-s
 RewriteRule ^portfolio/?$ https://newgoldenoffice.com/about [R=301,L]
 RewriteRule ^blog/adawat-tanzim-al-maktab/?$ https://newgoldenoffice.com/blog/office-organization-tools-guide [R=301,L]
 RewriteRule ^blog/egypt-photocopier-prices-2025/?$ https://newgoldenoffice.com/blog/egypt-photocopier-prices [R=301,L]
+RewriteRule ^printing/apparel/?$ https://newgoldenoffice.com/printing/gifts [R=301,L]
 # END MANAGED REDIRECTS
 
 # URL-form canonicalization. Every target below is absolute
