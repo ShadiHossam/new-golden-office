@@ -44,7 +44,7 @@ $services = [
 $serviceLabel = $services[$service] ?? $service;
 
 $to = 'info@newgoldenoffice.usine.site';
-$subject = '=?UTF-8?B?' . base64_encode('رسالة جديدة من نموذج التواصل — ' . $name) . '?=';
+$subject = '=?UTF-8?B?' . base64_encode('رسالة جديدة من نموذج التواصل، ' . $name) . '?=';
 
 $bodyLines = [
     'الاسم: ' . $name,

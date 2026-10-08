@@ -59,7 +59,7 @@ function initSiteSearch() {
     if (!q) { results.innerHTML = ''; return; }
     const matches = SEARCH_INDEX.filter(item => item.t.toLowerCase().includes(q)).slice(0, 8);
     if (!matches.length) {
-      results.innerHTML = `<div class="site-search-empty">لا توجد نتائج مطابقة — جرّب كلمة أخرى أو <a href="/contact">تواصل معنا</a></div>`;
+      results.innerHTML = `<div class="site-search-empty">لا توجد نتائج مطابقة، جرّب كلمة أخرى أو <a href="/contact">تواصل معنا</a></div>`;
       return;
     }
     results.innerHTML = matches.map(m => `<a class="site-search-result" href="${m.u}">${m.t}</a>`).join('');

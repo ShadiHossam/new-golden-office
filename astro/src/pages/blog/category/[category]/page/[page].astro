@@ -32,9 +32,9 @@ const { category, page, totalPages, categoryCounts, totalPosts, pagePosts } = As
 ---
 
 <BaseLayout
-  title={`مقالات ${category.name} — صفحة ${page} | نيو جولدن أوفيس`}
+  title={`مقالات ${category.name}، صفحة ${page} | نيو جولدن أوفيس`}
   description={`الصفحة ${page} من مقالات نيو جولدن أوفيس في قسم ${category.name}.`}
-  ogTitle={`مقالات ${category.name} — صفحة ${page}`}
+  ogTitle={`مقالات ${category.name}، صفحة ${page}`}
   ogDescription={`مقالات ونصائح في قسم ${category.name} من نيو جولدن أوفيس.`}
   breadcrumbLabel={`صفحة ${page}`}
 >
@@ -42,7 +42,7 @@ const { category, page, totalPages, categoryCounts, totalPosts, pagePosts } = As
   title={category.name}
   subtitle={`الصفحة ${page} من ${totalPages}`}
   heroImage="/images/hero-office.webp"
-  heroAlt={`مدونة نيو جولدن أوفيس — ${category.name}`}
+  heroAlt={`مدونة نيو جولدن أوفيس، ${category.name}`}
   heroIcon={category.icon}
   showCta={false}
   breadcrumbs={[

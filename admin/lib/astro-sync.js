@@ -13,6 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFile } = require('child_process');
 const { sanitizeBodyHtml } = require('./page-templates');
+const { cleanRecord } = require('./clean-text');
 
 const SITE_ROOT = path.join(__dirname, '..', '..');
 const ASTRO_ROOT = path.join(SITE_ROOT, 'astro');
@@ -56,7 +57,8 @@ function extractSchemas(html) {
   return out;
 }
 
-function writeAstroBlogEntry(post) {
+function writeAstroBlogEntry(rawPost) {
+  const post = cleanRecord(rawPost);
   fs.mkdirSync(BLOG_DIR, { recursive: true });
   const entry = {
     title: post.title,
@@ -86,7 +88,8 @@ function deleteAstroBlogEntry(slug) {
   if (fs.existsSync(p)) fs.unlinkSync(p);
 }
 
-function writeAstroPageEntry(page) {
+function writeAstroPageEntry(rawPage) {
+  const page = cleanRecord(rawPage);
   fs.mkdirSync(PAGES_DIR, { recursive: true });
   const entry = {
     title: page.title,

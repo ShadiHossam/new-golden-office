@@ -7,7 +7,7 @@ interface Props {
 
 const {
   title = 'محتاج استشارة أو عرض سعر؟',
-  subtitle = 'املأ بياناتك وهيتفتحلك واتساب على طول برسالة جاهزة فيها طلبك — فريقنا بيرد خلال دقايق في أوقات العمل.',
+  subtitle = 'املأ بياناتك وهيتفتحلك واتساب على طول برسالة جاهزة فيها طلبك، فريقنا بيرد خلال دقايق في أوقات العمل.',
   formId = 'midCtaForm',
 } = Astro.props;
 ---
@@ -34,7 +34,7 @@ const {
           <textarea id={`${formId}-msg`} class="form-control" placeholder="محتاج عرض سعر لـ..."></textarea>
         </div>
         <button type="submit" class="btn btn-whatsapp mid-cta-submit"><i class="fa-brands fa-whatsapp"></i> إرسال عبر واتساب</button>
-        <p class="mid-cta-hint">هيفتح واتساب في تاب جديد برسالتك جاهزة — تقدر تعدلها قبل الإرسال</p>
+        <p class="mid-cta-hint">هيفتح واتساب في تاب جديد برسالتك جاهزة، تقدر تعدلها قبل الإرسال</p>
       </form>
     </div>
   </div>

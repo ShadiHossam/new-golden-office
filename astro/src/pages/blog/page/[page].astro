@@ -27,9 +27,9 @@ const { page, totalPages, pagePosts, categoryCounts, totalPosts } = Astro.props;
 ---
 
 <BaseLayout
-  title={`المدونة — صفحة ${page} | نيو جولدن أوفيس`}
+  title={`المدونة، صفحة ${page} | نيو جولدن أوفيس`}
   description={`الصفحة ${page} من مقالات نيو جولدن أوفيس حول مستلزمات مكتبية، خدمات الطباعة، ماكينات التصوير، كاميرات المراقبة، والتكييفات في مصر.`}
-  ogTitle={`مدونة نيو جولدن أوفيس — صفحة ${page}`}
+  ogTitle={`مدونة نيو جولدن أوفيس، صفحة ${page}`}
   ogDescription="مقالات ونصائح حول مستلزمات مكتبية وخدمات الطباعة وأنظمة الأمان في مصر."
   breadcrumbLabel={`صفحة ${page}`}
 >
@@ -37,7 +37,7 @@ const { page, totalPages, pagePosts, categoryCounts, totalPosts } = Astro.props;
   title="المدونة"
   subtitle={`الصفحة ${page} من ${totalPages}`}
   heroImage="/images/hero-office.webp"
-  heroAlt="مدونة نيو جولدن أوفيس — نصائح المستلزمات المكتبية والطباعة"
+  heroAlt="مدونة نيو جولدن أوفيس، نصائح المستلزمات المكتبية والطباعة"
   heroIcon="fa-newspaper"
   showCta={false}
   breadcrumbs={[
