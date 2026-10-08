@@ -1,5 +1,5 @@
 // Turns a folder of Markdown articles into scheduled blog drafts in
-// admin/data/blog.json — three posts a week (Sun, Tue, Thu). The server crontab's
+// admin/data/blog.json — one post a day. The server crontab's
 // daily_publish.js then publishes each one on its scheduled_at date and
 // rebuilds/deploys the Astro site.
 //
@@ -13,8 +13,8 @@
 //   --start=YYYY-MM-DD  first publish date (default: day after the last
 //                       scheduled post, never earlier than tomorrow)
 //   --time=HH:MM        publish time, UTC (default 08:00)
-//   --days=sun,tue,thu  weekdays to publish on (default sun,tue,thu)
-//   --every=N           publish every N days instead of on --days
+//   --every=N           days between posts (default 1)
+//   --days=sun,tue,thu  publish only on these weekdays instead of every N days
 //   --category="..."    category for articles that don't declare one
 //   --dry-run           print the plan without writing anything
 //
@@ -93,13 +93,13 @@ function nextSlot(slot, opts) {
 }
 
 function parseArgs(argv) {
-  const opts = { folder: DEFAULT_FOLDER, time: '08:00', days: [0, 2, 4], every: null, dryRun: false, start: null, category: null };
+  const opts = { folder: DEFAULT_FOLDER, time: '08:00', days: [0, 2, 4], every: 1, dryRun: false, start: null, category: null };
   for (const arg of argv) {
     if (arg === '--dry-run') opts.dryRun = true;
     else if (arg.startsWith('--start=')) opts.start = arg.slice(8);
     else if (arg.startsWith('--time=')) opts.time = arg.slice(7);
     else if (arg.startsWith('--every=')) opts.every = parseInt(arg.slice(8), 10);
-    else if (arg.startsWith('--days=')) opts.days = parseDays(arg.slice(7));
+    else if (arg.startsWith('--days=')) { opts.days = parseDays(arg.slice(7)); opts.every = null; }
     else if (arg.startsWith('--category=')) opts.category = arg.slice(11);
     else if (arg.startsWith('--')) throw new Error(`Unknown option: ${arg}`);
     else opts.folder = path.resolve(arg);
