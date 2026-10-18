@@ -145,6 +145,8 @@
 
   // ---------- button / section labels ----------
   function btnOf(a) {
+    var tagged = closest(a, '[data-source]');
+    if (tagged) return clip(tagged.getAttribute('data-source'), 30);
     if (closest(a, '.whatsapp-float,.phone-float')) return 'float';
     if (closest(a, 'nav,.navbar')) return 'nav';
     if (closest(a, 'footer')) return 'footer';
@@ -343,6 +345,14 @@
         if (y > maxY) maxY = y;
       });
     }, { passive: true });
+
+    // Contact popup (ContactPopup.astro) announces itself with this event.
+    D.addEventListener('ngo:popup', function (e) {
+      try {
+        var d = e.detail || {};
+        addEv({ e: 'popup', l: clip(d.action, 20), s: clip(d.section, 60) });
+      } catch (er) {}
+    });
 
     var started_forms = {};
     D.addEventListener('focusin', function (e) {

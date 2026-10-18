@@ -210,7 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
     if (!link || typeof gtag !== 'function') return;
     // Same button names as the first-party tracker (src/tracking/ngo-track.js).
-    const source = link.closest('.whatsapp-float,.phone-float') ? 'float'
+    const tagged = link.closest('[data-source]');
+    const source = tagged ? tagged.getAttribute('data-source')
+      : link.closest('.whatsapp-float,.phone-float') ? 'float'
       : link.closest('nav,.navbar') ? 'nav'
       : link.closest('footer') ? 'footer'
       : link.closest('.bp-content') ? 'blog_body'

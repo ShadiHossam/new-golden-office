@@ -19,7 +19,7 @@
   const srcName = s => SRC[s] || String(s || '').replace(/^referral:/, 'Site: ').replace(/^campaign:/, 'Campaign: ').replace(/^paid:/, 'Paid: ');
   const BTN = { float: 'Floating button', hero: 'Top of page', footer: 'Footer', nav: 'Menu', inline: 'In-page button',
     blog_body: 'Link inside article', midpage_form: 'Mid-page form', blog_form: 'Article form', city_form: 'City page form',
-    contact_form: 'Contact page form', form: 'Form' };
+    contact_form: 'Contact page form', popup: 'Popup', form: 'Form' };
   const btnName = b => BTN[b] || b;
   const maxOf = (rows, f) => Math.max(1, ...rows.map(x => x[f] || 0));
 %>
@@ -444,7 +444,7 @@
     if (s.click) bits.push(s.click);
     return bits.join(' · ');
   }
-  var EV = { nav: 'Clicked link', out: 'Left to', btn: 'Clicked', form_start: 'Started form', wa: 'Clicked WhatsApp', call: 'Clicked call' };
+  var EV = { nav: 'Clicked link', out: 'Left to', btn: 'Clicked', form_start: 'Started form', wa: 'Clicked WhatsApp', call: 'Clicked call', popup: 'Popup' };
 
   function openVisit(vid) {
     body.textContent = '';
