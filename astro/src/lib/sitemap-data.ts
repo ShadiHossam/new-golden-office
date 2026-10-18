@@ -15,7 +15,7 @@ export const CATEGORIES: SitemapPage[] = [
   { path: '/copiers', image: '/images/copiers-hub.webp' },
   { path: '/cameras', image: '/images/cameras-hub.webp' },
   { path: '/ac', image: '/images/ac-hub.webp' },
-  { path: '/cash-machines', image: '/images/cash-machines-hub.webp' },
+  { path: '/cash-machines', image: '/images/hero-cash-machines-index.webp' },
   { path: '/office-supplies', image: '/images/office-supplies-hub.webp' },
 ];
 
@@ -61,10 +61,10 @@ export const PAGES: SitemapPage[] = [
   { path: '/ac/buy', image: '/images/hero-ac-buy.webp' },
   { path: '/ac/installation', image: '/images/ac-hub.webp' },
   { path: '/ac/maintenance', image: '/images/hero-ac-maintenance.webp' },
-  { path: '/cash-machines/counting', image: '/images/cash-machines-hub.webp' },
-  { path: '/cash-machines/detector', image: '/images/cash-machines-hub.webp' },
-  { path: '/cash-machines/franking', image: '/images/cash-machines-hub.webp' },
-  { path: '/cash-machines/shredder', image: '/images/cash-machines-hub.webp' },
+  { path: '/cash-machines/counting', image: '/images/hero-cash-machines-counting.webp' },
+  { path: '/cash-machines/detector', image: '/images/hero-cash-machines-detector.webp' },
+  { path: '/cash-machines/franking', image: '/images/hero-cash-machines-franking.webp' },
+  { path: '/cash-machines/shredder', image: '/images/hero-cash-machines-shredder.webp' },
   { path: '/office-supplies/a4-paper', image: '/images/office-supplies-hub.webp' },
   { path: '/office-supplies/thermal', image: '/images/office-supplies-hub.webp' },
   { path: '/office-supplies/pens', image: '/images/office-supplies-hub.webp' },

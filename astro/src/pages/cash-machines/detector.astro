@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +37,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="أجهزة كشف عملات مزيفة في مصر"
   subtitle="أجهزة كشف العملات المزيفة بتقنيات UV والأشعة تحت الحمراء والكشف المغناطيسي، حماية فورية وموثوقة لعملك"
-  heroImage="/images/copiers-hub.webp"
+  heroImage="/images/hero-cash-machines-detector.webp"
   heroIcon="fa-search-dollar"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -50,7 +51,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -58,6 +58,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>جهاز كشف العملة: تقنيات كشف العملات المزيفة</h2>
       <div class="divider"></div>
@@ -69,6 +71,9 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-wave-square" style="color:var(--secondary);margin-left:8px;"></i> الأشعة تحت الحمراء (IR)</h3><p>تفحص البنية الداخلية للورق والطباعة بطريقة لا تراها العين المجردة. تكتشف الاختلافات في كثافة الحبر والطبقات المتعددة في الأوراق النقدية الأصلية. تُستخدم في الأجهزة المتطورة كطبقة حماية إضافية فوق UV وMG.</p></div>
       <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3><i class="fas fa-tint" style="color:var(--secondary);margin-left:8px;"></i> العلامة المائية (Watermark)</h3><p>بعض أجهزة الكشف تفحص العلامة المائية المدمجة في الورق بالضوء المرئي. تظهر عند إضاءة الورقة من الخلف وهي من أصعب العناصر تزويراً لأنها مدمجة في نسيج الورق نفسه وليست مطبوعة فوقه.</p></div>
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3><i class="fas fa-palette" style="color:var(--secondary);margin-left:8px;"></i> الحبر المتغير اللون وعناصر الأمان الأخرى</h3><p>الأوراق النقدية عالية الفئة تحتوي على حبر يتغير لونه عند النظر إليه بزوايا مختلفة (Color Shifting Ink). بعض الأجهزة المتطورة يمكنها الكشف عن هذه الخاصية إلكترونياً، إضافة إلى الشرائط الهولوغرافية والنقوش البارزة الأخرى.</p></div>
+    </div>
+        </div>
+      <ServiceSidebar category="cash-machines" current="/cash-machines/detector" />
     </div>
   </div>
 </section>
@@ -226,7 +231,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -254,11 +259,11 @@ const schemaJson = JSON.stringify({
 
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
@@ -281,7 +286,7 @@ const schemaJson = JSON.stringify({
 
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="https://wa.me/201227392074" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> واتساب</a>

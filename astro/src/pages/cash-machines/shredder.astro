@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +37,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="ماكينات تدمير المستندات في مصر: شريدر"
   subtitle="شريدر المستندات لحماية بياناتك السرية، أنواع وأحجام تناسب المكتب الصغير والشركات الكبيرة والبنوك"
-  heroImage="/images/copiers-hub.webp"
+  heroImage="/images/hero-cash-machines-shredder.webp"
   heroIcon="fa-cut"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -50,7 +51,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -58,6 +58,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>ماكينة تدمير مستندات: أنواع الشريدر حسب طريقة القطع</h2>
       <div class="divider"></div>
@@ -67,6 +69,9 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3><i class="fas fa-grip-lines" style="color:var(--secondary);margin-left:8px;"></i> القطع الشريطي Strip-Cut (مستوى P-2)</h3><p>الأبسط والأسرع والأقل تكلفة بين أنواع الشريدر. يقطع الورق إلى شرائط طولية رفيعة بعرض 3-6 ملم. يوفر مستوى أمان أساسي ويكفي للوثائق العادية التي لا تحتوي على معلومات شديدة الحساسية. الإنتاجية عالية والضجيج منخفض مقارنة بالأنواع الأخرى. مناسب للاستخدام المنزلي والمكتبي العادي لتدمير المطبوعات غير الهامة والمسودات والوثائق المنتهية الصلاحية.</p></div>
       <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3><i class="fas fa-th-large" style="color:var(--secondary);margin-left:8px;"></i> القطع المتقاطع Cross-Cut (مستويات P-3 إلى P-4)</h3><p>الأكثر شيوعاً في بيئات العمل المكتبية ويمثل التوازن المثالي بين الأمان والسرعة والسعر. يقطع الورق بشكل أفقي وعمودي في آنٍ واحد لينتج قطعاً صغيرة مستطيلة (نحو 4×40mm في P-3 أو 4×30mm في P-4). إعادة تجميع الوثيقة بعد هذا النوع من القطع صعبة جداً عملياً وتستلزم جهداً كبيراً لا يُجدي. مناسب لتدمير كشوف الرواتب وملفات الموظفين والعقود والوثائق شبه السرية.</p></div>
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-snowflake" style="color:var(--secondary);margin-left:8px;"></i> القطع الدقيق Micro-Cut (مستوى P-5 وأعلى)</h3><p>أعلى مستويات الأمان في الشريدرات التجارية. يقطع الورق إلى جزيئات صغيرة جداً (نحو 2×15mm في P-5) أو أصغر في P-6 وP-7 المخصصين للمؤسسات الحكومية والأمنية. استعادة المعلومات من هذه القطع شبه مستحيلة حتى بأكثر التقنيات تطوراً. مناسب لتدمير أرقام الحسابات البنكية والسجلات الطبية ومعلومات البطاقات الائتمانية والوثائق الحكومية السرية.</p></div>
+    </div>
+        </div>
+      <ServiceSidebar category="cash-machines" current="/cash-machines/shredder" />
     </div>
   </div>
 </section>
@@ -264,7 +269,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -297,11 +302,11 @@ const schemaJson = JSON.stringify({
 
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
@@ -324,7 +329,7 @@ const schemaJson = JSON.stringify({
 
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="https://wa.me/201227392074" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> واتساب</a>
