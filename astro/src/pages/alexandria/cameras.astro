@@ -47,7 +47,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -60,7 +60,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -89,31 +89,23 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تجهيز المنشآت</div></div>
-      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع كاميرات نوردها ونركبها</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="2">0</div><div class="stat-label">ماركتان عالميتان بضمان رسمي</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">معاينة مجانية قبل أي عرض سعر</div></div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع كاميرات: IP وHD وPTZ وColorVu</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>تبحث عن شركة كاميرات مراقبة في الإسكندرية تصمم لك نظامًا يحمي محلك أو شركتك فعلًا، لا مجرد كاميرات معلقة على الحائط؟ نيو جولدن أوفيس تعمل في تجهيز وخدمة منشآت الإسكندرية منذ 27 عامًا، من مقرنا الفعلي: 26 عبد المنعم سند، الإبراهيمية، باب شرق. نغطي المنظومة كاملة: معاينة الموقع مجانًا، اختيار أنواع الكاميرات المناسبة، التمديدات والتركيب، أجهزة التسجيل DVR وNVR، ضبط المتابعة من هاتفك، ثم الضمان وعقود الصيانة السنوية.</p>
-      <p style="margin-top:16px">الرطوبة العالية والهواء المالح القريب من البحر في الإسكندرية يؤثران على معدات المراقبة الخارجية بشكل مختلف عن باقي المحافظات؛ الأسلاك والكابلات الرخيصة تتآكل أسرع، وأغطية الكاميرات غير المصممة للبيئة الساحلية تفقد وضوحها بسرعة أكبر. من خبرتنا المتراكمة في المدينة، نختار دائمًا خامات ومعدات تراعي هذا العامل المناخي الخاص بالإسكندرية تحديدًا، وهو تفصيل قد لا ينتبه له مورد من محافظة أخرى.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/alexandria">خدماتنا الشاملة في الإسكندرية</a> بكل تخصصاتنا الستة.</p>
-    </div>
-
     <div class="section-header">
-      <h2>تركيب كاميرات مراقبة الاسكندرية: لماذا نيو جولدن أوفيس هي الأفضل؟</h2>
+      <h2>كاميرات مراقبة الإسكندرية: من المعاينة حتى المتابعة من موبايلك</h2>
       <div class="divider"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في تجهيز وخدمة الشركات والمحلات، لا في بيع الأجهزة فقط.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>معاينة مجانية للموقع</h3><p>قبل أي عرض سعر، لأن التسعير الجاد يبدأ من فهم المكان.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h3>منظومة أمنية متكاملة</h3><p>توريد وتركيب وبرمجة وتدريب وصيانة من جهة واحدة.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-water"></i></div><h3>أنظمة مقاسة على الساحل</h3><p>خامات تتحمل رطوبة البحر والإضاءة الخلفية القوية على واجهات الكورنيش.</p></div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كشركة كاميرات مراقبة في الإسكندرية ننفذ المنظومة كاملة: معاينة الموقع مجانًا، اختيار نوع الكاميرات ودقتها، التمديدات والتركيب، أجهزة التسجيل DVR وNVR وسعة التخزين، ضبط المشاهدة من الموبايل، ثم الضمان وعقود الصيانة السنوية.</p>
+      <p style="margin-top:16px">النظام الجيد يبدأ من تحديد نقاط التغطية: المداخل ونقاط الدفع والممرات والزوايا العمياء، ثم اختيار الكاميرا المناسبة لكل نقطة. وفي الإسكندرية نختار للكاميرات الخارجية خامات تتحمل الرطوبة والهواء المالح، ومعالجة إضاءة خلفية للواجهات المطلة على البحر.</p>
     </div>
   </div>
 </section>
@@ -142,10 +134,6 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>المحلات على الكورنيش وفي المناطق التجارية والسياحية لها طبيعة خاصة: حركة زبائن كثيفة، واجهات مفتوحة، وموسم صيفي يتضاعف فيه الازدحام. نظام كاميرات مراقبة للمحلات بالإسكندرية يجب أن يتعامل مع هذا كله: كاميرات تلتقط الوجوه بوضوح عند المداخل رغم الإضاءة الخلفية القوية القادمة من البحر، وتغطية للممرات ونقاط الدفع، وتسجيل يحتفظ بأيام الذروة كاملة.</p>
-      <p style="margin-top:16px">في موسم الصيف تحديدًا، عندما تتضاعف حركة الزوار على الكورنيش والمناطق السياحية، نوصي بمراجعة سعة التخزين مسبقًا لضمان الاحتفاظ بفترة كافية من التسجيلات رغم زيادة الحركة اليومية أمام الكاميرات مقارنة بباقي شهور السنة.</p>
-      <p style="margin-top:16px">نساعد أصحاب المحلات الموسمية على الكورنيش في ضبط النظام قبل بداية كل موسم صيفي، للتأكد من جاهزيته الكاملة قبل ذروة الإقبال على المدينة.</p>
-      <p style="margin-top:16px">نقدم أيضًا فحصًا مجانيًا سريعًا لأنظمة عملائنا القائمة قبل بداية كل موسم صيفي، للتأكد من سلامة الكابلات ووضوح العدسات قبل ازدحام الطلبات في ذروة الموسم.</p>
-      <p style="margin-top:16px">نتابع أيضًا عن قرب أي تحديثات تقنية جديدة في عالم كاميرات المراقبة، لنقترحها على عملائنا الحاليين إذا كانت تستحق الترقية فعليًا.</p>
       <p style="margin-top:16px">في مواسم الصيف تحديدًا، الازدحام يرفع مخاطر السرقات الخاطفة والخلافات أمام المحل، فيصبح التسجيل الواضح دليلك الأول. نصمم التغطية بحيث تخدمك في اليوم العادي وفي ذروة أغسطس بنفس الكفاءة.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
@@ -154,7 +142,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>كيف تحدد عدد ونوع الكاميرات المناسبة لموقعك؟</h2>
@@ -167,7 +155,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>علامات إن نظام المراقبة عندك محتاج صيانة أو ترقية</h2>
@@ -180,7 +168,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>ما الفرق بين الشراء المباشر وعقد الصيانة السنوي؟</h2>
@@ -193,44 +181,33 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>كاميرات المراقبة حسب نوع النشاط في الإسكندرية</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-shop"></i></div><h3>المحلات التجارية</h3><p>تركيز على نقاط الدفع والمخارج لمنع السرقة ومتابعة أداء الموظفين والعملاء يوميًا.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-home"></i></div><h3>الفيلات والشقق السكنية</h3><p>تغطية المداخل والحديقة والمواقف مع إمكانية المشاهدة من الهاتف أثناء السفر أو العمل.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-industry"></i></div><h3>المصانع والمخازن</h3><p>مراقبة خطوط الإنتاج وبوابات الدخول والخروج ومناطق تخزين البضائع الحساسة.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>المكاتب والشركات</h3><p>مراقبة المدخل الرئيسي وقاعات الاجتماعات وغرف الخوادم والأرشيف الحساس.</p></div>
-    </div>
-  </div>
-</section>
-
 <MidPageCTA formId="camAlexandriaMidCta" />
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>الماركات التي نركبها: هيكفيجن وداهوا بضمان رسمي</h2>
+      <h2>الماركات التي نركبها: كل ماركات كاميرات المراقبة في السوق</h2>
       <div class="divider"></div>
     </div>
-    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
-        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">وجه المقارنة</th><th style="padding:14px 16px;text-align:right">هيكفيجن Hikvision</th><th style="padding:14px 16px;text-align:right">داهوا Dahua</th></tr></thead>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead><tr><th>الماركة</th><th>الفئة</th><th>الأنواع المتاحة</th><th>الأنسب لـ</th></tr></thead>
         <tbody>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">الانتشار وقطع الغيار</td><td style="padding:12px 16px">الأوسع انتشارًا، قطع غيار متوفرة بسهولة</td><td style="padding:12px 16px">انتشار واسع وتوفر جيد جدًا</td></tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">تنوع الموديلات</td><td style="padding:12px 16px">تشكيلة ضخمة من الاقتصادي حتى الاحترافي</td><td style="padding:12px 16px">تشكيلة واسعة بأسعار تنافسية</td></tr>
-          <tr style="background:var(--white)"><td style="padding:12px 16px">الملاءمة</td><td style="padding:12px 16px">مشروعات تحتاج أوسع خيارات وميزات</td><td style="padding:12px 16px">مشروعات تريد قيمة قوية مقابل السعر</td></tr>
+          <tr><td>Hikvision</td><td>من الاقتصادي حتى الاحترافي</td><td>IP وTurbo HD وPTZ وColorVu وأجهزة NVR/DVR</td><td>كل المشروعات، وأوسع انتشار لقطع الغيار</td></tr>
+          <tr><td>Dahua</td><td>من الاقتصادي حتى الاحترافي</td><td>IP وHDCVI وPTZ وFull-Color</td><td>مشروعات تريد قيمة قوية مقابل السعر</td></tr>
+          <tr><td>Uniview (UNV)</td><td>متوسطة إلى احترافية</td><td>IP وPTZ وأنظمة NVR</td><td>الشركات والمنشآت متعددة المباني</td></tr>
+          <tr><td>HiLook</td><td>اقتصادية</td><td>IP وTurbo HD</td><td>المحلات والشقق بميزانية محدودة</td></tr>
+          <tr><td>EZVIZ</td><td>منزلية</td><td>كاميرات واي فاي وكاميرات بطارية وجرس باب</td><td>الشقق والمحلات الصغيرة بدون تمديدات</td></tr>
+          <tr><td>Imou</td><td>منزلية</td><td>كاميرات واي فاي داخلية وخارجية</td><td>المراقبة المنزلية من الموبايل</td></tr>
+          <tr><td>TP-Link (Tapo وVIGI)</td><td>منزلية إلى مكتبية</td><td>واي فاي وIP PoE</td><td>المكاتب الصغيرة والشقق</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">الأهم من اسم الماركة أن يكون الجهاز أصليًا وبضمان رسمي، ونساعدك في المفاضلة حسب ميزانيتك واحتياج موقعك الفعلي.</p>
+    <p class="cmp-note">نركب ونصون أيضًا الماركات غير المذكورة. الأهم من اسم الماركة أن يكون الجهاز أصليًا وبضمان، ونساعدك في المفاضلة حسب ميزانيتك واحتياج موقعك.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>باقات التركيب في الإسكندرية</h2>
@@ -245,7 +222,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>المراقبة عن بعد والأمن السيبراني</h2>
@@ -258,29 +235,24 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>مناطق نخدمها في الإسكندرية</h2>
+      <h2>تركيب كاميرات مراقبة الاسكندرية: لماذا نيو جولدن أوفيس هي الأفضل؟</h2>
       <div class="divider"></div>
     </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
-        <li><strong>وسط البلد:</strong> كثافة تجارية عالية ومبانٍ قديمة تحتاج خطط تمديد لا تتلف الواجهات.</li>
-        <li><strong>سموحة:</strong> شركات وعيادات تطلب أنظمة IP بجودة عالية وصلاحيات مستخدمين منظمة.</li>
-        <li><strong>سيدي جابر وميامي وجليم ولوران:</strong> مزيج سكني وتجاري بكاميرات خارجية مجهزة لمناخ الساحل.</li>
-        <li><strong>المنشية والعطارين:</strong> الأسواق التقليدية حيث تحتاج التمديدات حلولًا ذكية دون تكسير.</li>
-        <li><strong>الكورنيش:</strong> واجهات مطلة على البحر تفرض كاميرات بمعالجة إضاءة خلفية قوية وخامات تقاوم الملوحة.</li>
-        <li><strong>قرب الميناء:</strong> منشآت الاستيراد والتصدير حيث توثيق الحركة والبضائع مطلب تشغيلي.</li>
-      </ul>
-      <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نخدم عملاءنا أيضاً خارج الإسكندرية، <a href="/cairo/cameras">نغطي أيضًا القاهرة</a> بنفس معايير الجودة والضمان.</p>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في تجهيز وخدمة الشركات والمحلات، لا في بيع الأجهزة فقط.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>معاينة مجانية للموقع</h3><p>قبل أي عرض سعر، لأن التسعير الجاد يبدأ من فهم المكان.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h3>منظومة أمنية متكاملة</h3><p>توريد وتركيب وبرمجة وتدريب وصيانة من جهة واحدة.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-water"></i></div><h3>أنظمة مقاسة على الساحل</h3><p>خامات تتحمل رطوبة البحر والإضاءة الخلفية القوية على واجهات الكورنيش.</p></div>
     </div>
+    <p style="max-width:800px;margin:40px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نغطي كل أحياء الإسكندرية بالمعاينة والتركيب والصيانة من مقرنا في الإبراهيمية، ونخدم أيضًا <a href="/cairo/cameras">القاهرة</a> بنفس معايير الضمان. تعرف على <a href="/alexandria">كل خدماتنا في الإسكندرية</a>: <a href="/alexandria/ac">التكييفات</a> و<a href="/alexandria/copiers">ماكينات التصوير</a> و<a href="/alexandria/office-supplies">المستلزمات المكتبية</a> و<a href="/alexandria/cash-machines">ماكينات عد النقود</a> و<a href="/alexandria/printing">الطباعة</a> و<a href="/alexandria/office-setup">تجهيز المكاتب</a>.</p>
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
-    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">غير كاميرات المراقبة، نقدر نجهزلك في الإسكندرية: <a href="/alexandria/ac">التكييفات</a>، <a href="/alexandria/copiers">ماكينات تصوير</a>، <a href="/alexandria/office-supplies">مستلزمات مكتبية</a>، <a href="/alexandria/cash-machines">ماكينات عد نقود</a>، و<a href="/alexandria/printing">خدمات الطباعة</a>. تجهيز شامل؟ شوف <a href="/alexandria/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
     <div class="section-header">
       <h2>أسئلة شائعة عن كاميرات المراقبة في الإسكندرية</h2>
       <div class="divider"></div>
@@ -303,15 +275,15 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- QUOTE FORM -->
-<section class="section quote-section">
+<section class="section quote-section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب معاينة مجانية أو عرض سعر</h2>
+      <div class="as-h2">اطلب معاينة مجانية أو عرض سعر</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -356,7 +328,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل كاميرات المراقبة في الإسكندرية</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20مراقبة%20في%20الإسكندرية" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر

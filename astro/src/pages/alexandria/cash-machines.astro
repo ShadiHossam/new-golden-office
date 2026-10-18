@@ -3,6 +3,8 @@ import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import CashMachineComparison from '../../components/CashMachineComparison.astro';
+import CashMachineFaults from '../../components/CashMachineFaults.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -10,7 +12,7 @@ const schemaJson = JSON.stringify({
     {
       "@type": "Service",
       "@id": "https://newgoldenoffice.com/alexandria/cash-machines#service",
-      "name": "بيع ماكينات عد نقود وكشف تزييف في الإسكندرية",
+      "name": "شراء ماكينات عد نقود وكشف تزييف في الإسكندرية",
       "serviceType": "توريد وصيانة ماكينات عد النقود وأجهزة كشف تزييف العملة",
       "url": "https://newgoldenoffice.com/alexandria/cash-machines",
       "provider": { "@id": "https://newgoldenoffice.com/#organization" },
@@ -24,7 +26,7 @@ const schemaJson = JSON.stringify({
         {"@type":"Question","name":"ما الفرق بين ماكينة العد فقط والعد مع الفرز وكشف التزوير؟","acceptedAnswer":{"@type":"Answer","text":"العد فقط يعطي عدد الأوراق، والعد مع الكشف يفحص التزييف، والعد والفرز يضيف فصل الفئات وقراءة القيمة."}},
         {"@type":"Question","name":"هل تدعم الماكينة الجنيه المصري والدولار واليورو؟","acceptedAnswer":{"@type":"Answer","text":"كل الموديلات تدعم الجنيه، وتتوفر موديلات تدعم الدولار واليورو أيضًا."}},
         {"@type":"Question","name":"هل يوجد ضمان وصيانة وقطع غيار في الإسكندرية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، ضمان مكتوب وصيانة وقطع غيار من داخل الإسكندرية بلا شحن لمحافظة أخرى."}},
-        {"@type":"Question","name":"هل يمكن زيارة معرض لتجربة الماكينة قبل الشراء؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكن زيارة مقرنا وتجربة الأجهزة بنقود فعلية قبل الشراء."}},
+        {"@type":"Question","name":"هل يمكن تجربة الماكينة قبل الشراء؟","acceptedAnswer":{"@type":"Answer","text":"لا تتوفر تجربة الماكينة قبل الشراء، لكن كل ماكينة مشمولة بالضمان: إذا ظهرت بها أي مشكلة نسترجعها أو نستبدلها لك."}},
         {"@type":"Question","name":"كيف أختار ماكينة عد النقود المناسبة لنشاطي؟","acceptedAnswer":{"@type":"Answer","text":"حدد حجم تعاملاتك اليومية وهل تحتاج كشف تزييف وفرز فئات، ونرشح لك الأنسب."}},
         {"@type":"Question","name":"ما الذي يحدد سعر ماكينة عد النقود؟","acceptedAnswer":{"@type":"Answer","text":"الوظيفة (عد فقط أم كشف أم فرز)، سرعة العد، عدد تقنيات الكشف، دعم العملات الأجنبية، متانة الاستخدام، وحجم التعاقد إن كنت تجهز أكثر من فرع."}},
         {"@type":"Question","name":"لماذا تنحشر الأوراق داخل ماكينة العد أو تُقرأ أكثر من ورقة معًا؟","acceptedAnswer":{"@type":"Answer","text":"غالبًا بسبب اتساخ رولات السحب المطاطية أو رطوبة زائدة في الأوراق، والحل تنظيف الرولات ومساري السحب بانتظام."}},
@@ -49,7 +51,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -62,7 +64,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -91,31 +93,23 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تجهيز محلات الإسكندرية</div></div>
-      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع ماكينات عد نقود نوفرها</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="4">0</div><div class="stat-label">ماركات عالمية نتعامل معها</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">تجربة حقيقية بنقودك قبل الشراء</div></div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع ماكينات: عد، كشف، فرز، وكثيف الاستخدام</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>تبحث عن شركة ماكينات عد نقود في الإسكندرية توفر لك جهازًا دقيقًا، وضمانًا حقيقيًا، وصيانة قريبة من محلك؟ نيو جولدن أوفيس تجهز محلات وشركات الإسكندرية بماكينات عد الفلوس وأجهزة كشف تزييف العملة منذ 27 عامًا، من مقرنا الفعلي: 26 عبد المنعم سند، الإبراهيمية، باب شرق. كل دقيقة يقضيها موظفك في عد النقود يدويًا هي دقيقة مهدرة واحتمال خطأ، وكل ورقة مزيفة تمر دون فحص هي خسارة مباشرة من صافي الربح.</p>
-      <p style="margin-top:16px">كوننا موجودين فعليًا في الإسكندرية منذ 1999، بنينا خبرة عملية حقيقية في خدمة قطاعات مختلفة تمامًا في طبيعتها: من الصرافات التي تحتاج دقة قصوى في كشف العملات الأجنبية، إلى المحلات الصغيرة في الأسواق التقليدية التي تحتاج جهازًا بسيطًا وموثوقًا بسعر معقول. هذا التنوع في قاعدة عملائنا يعني أننا نعرف بالضبط أي جهاز يناسب أي نوع نشاط، بدل بيعك جهازًا عامًا لا يراعي احتياجك الفعلي.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/alexandria">خدماتنا الشاملة في الإسكندرية</a> بكل تخصصاتنا الستة.</p>
-    </div>
-
     <div class="section-header">
-      <h2>لماذا نيو جولدن أوفيس؟</h2>
+      <h2>ماكينات عد النقود وكشف التزييف في الإسكندرية</h2>
       <div class="divider"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مقر فعلي في الإسكندرية</h3><p>تزوره وتجرب فيه الماكينة بنقودك الفعلية قبل الشراء.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في تجهيز وخدمة المكاتب والشركات، لسنا متجرًا ظهر أمس.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-location-dot"></i></div><h3>خدمة ما بعد البيع محلية</h3><p>ضمان وصيانة وقطع غيار من داخل المدينة، بلا شحن الجهاز.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-scale-balanced"></i></div><h3>ترشيح محايد حسب نشاطك</h3><p>نوفر أكثر من ماركة وفئة، فمصلحتنا أن تشتري الجهاز المناسب.</p></div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>ماكينة عد النقود تعد رزمة 100 ورقة في ثوانٍ وتفحص كل ورقة أثناء مرورها، فتختصر وقت تقفيل الخزينة وتمنع أخطاء العد اليدوي وتلتقط الورقة المزيفة قبل أن تدخل درجك. كشركة ماكينات عد نقود في الإسكندرية نوفر كل فئاتها: ماكينات العد فقط، وماكينات العد مع كشف التزييف بتقنيات UV وMG وIR، وماكينات العد والفرز التي تقرأ قيمة كل ورقة وتعطيك إجمالي الرزمة المختلطة بالجنيه، وأجهزة كشف التزييف المستقلة لنقطة البيع.</p>
+      <p style="margin-top:16px">نتعامل مع كل الماركات المتاحة في السوق، من Glory وKisan وMagner في الفئة الاحترافية حتى الموديلات الاقتصادية للمحلات الصغيرة، ونوفر معها الصيانة وقطع الغيار. الموديل المناسب يتحدد بحجم تعاملك اليومي، وهل تستقبل رزمًا مختلطة الفئات، وهل تتعامل بالدولار واليورو بجانب الجنيه.</p>
     </div>
   </div>
 </section>
@@ -135,43 +129,9 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>مقارنة ماركات ماكينات عد النقود</h2>
-      <div class="divider"></div>
-    </div>
-    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
-        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">الماركة</th><th style="padding:14px 16px;text-align:right">التموضع العام</th><th style="padding:14px 16px;text-align:right">الأنسب لمن؟</th></tr></thead>
-        <tbody>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">Glory</td><td style="padding:12px 16px">فئة عالمية عليا بموثوقية بنكية</td><td style="padding:12px 16px">البنوك والصرافات وخطوط النقد الكثيفة</td></tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">Kisan</td><td style="padding:12px 16px">فئة احترافية قوية في العد والفرز</td><td style="padding:12px 16px">الصرافات والشركات ذات الرزم المختلطة</td></tr>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">Magner</td><td style="padding:12px 16px">ماركة عملية واسعة الانتشار</td><td style="padding:12px 16px">الشركات والمحلات الكبيرة</td></tr>
-          <tr style="background:#f8f9fa"><td style="padding:12px 16px">Banker</td><td style="padding:12px 16px">فئة اقتصادية عملية</td><td style="padding:12px 16px">المحلات والمكاتب الصغيرة والمتوسطة</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+<CashMachineComparison />
 
 <section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>تجار المنشية والعطارين: تجهيز الأسواق التقليدية</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>الأسواق التجارية التقليدية في المنشية والعطارين تعمل بإيقاع خاص: تعاملات نقدية كثيفة طوال اليوم، رزم فئات مختلطة، وتصفية يومية للخزينة. ماكينة عد بكشف مدمج ليست رفاهية هنا بل أداة تشغيل يومية، ولأن مقرنا داخل الإسكندرية فالمعاينة والتسليم والدعم كلها قريبة من محلك في السوق.</p>
-      <p style="margin-top:16px">أصحاب المحلات في هذه الأسواق غالبًا يفضلون أجهزة بسيطة الاستخدام لا تحتاج تدريبًا معقدًا للموظفين، مع متانة تتحمل الاستخدام المكثف اليومي لساعات طويلة دون تسخين أو تعطل. نراعي هذا التوازن بين البساطة والمتانة عند ترشيح الجهاز المناسب لهذا النوع من الأنشطة التجارية اليومية المزدحمة.</p>
-    </div>
-    <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
-      <Img src="/images/webp-images/hands-putting-cash-counter-close-up-worker-calcul-2026-03-11-01-02-02-utc.webp" alt="ماكينات عد نقود للأسواق التقليدية بالإسكندرية" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
-    </div>
-  </div>
-</section>
-
-<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>كشف تزييف العملة: كيف يعمل ومتى تحتاجه؟</h2>
@@ -187,6 +147,22 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
+      <h2>تجار المنشية والعطارين: تجهيز الأسواق التقليدية</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>الأسواق التجارية التقليدية في المنشية والعطارين تعمل بإيقاع خاص: تعاملات نقدية كثيفة طوال اليوم، رزم فئات مختلطة، وتصفية يومية للخزينة. ماكينة عد بكشف مدمج ليست رفاهية هنا بل أداة تشغيل يومية، ولأن مقرنا داخل الإسكندرية فالمعاينة والتسليم والدعم كلها قريبة من محلك في السوق.</p>
+      <p style="margin-top:16px">أصحاب المحلات في هذه الأسواق غالبًا يفضلون أجهزة بسيطة الاستخدام لا تحتاج تدريبًا معقدًا للموظفين، مع متانة تتحمل الاستخدام المكثف اليومي لساعات طويلة دون تسخين أو تعطل. نراعي هذا التوازن بين البساطة والمتانة عند ترشيح الجهاز المناسب لهذا النوع من الأنشطة التجارية اليومية المزدحمة.</p>
+    </div>
+    <div class="reveal" style="max-width:900px;margin:32px auto 0;border-radius:var(--radius-lg);overflow:hidden">
+      <Img src="/images/webp-images/hands-putting-cash-counter-close-up-worker-calcul-2026-03-11-01-02-02-utc.webp" alt="ماكينات عد نقود للأسواق التقليدية بالإسكندرية" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
       <h2>كيف تختار ماكينة العد المناسبة لطبيعة نشاطك؟</h2>
       <div class="divider"></div>
     </div>
@@ -199,7 +175,7 @@ const schemaJson = JSON.stringify({
 
 <MidPageCTA formId="cashAlexandriaMidCta" />
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>دليل الاختيار حسب نشاطك</h2>
@@ -214,41 +190,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>لماذا تختار نيو جولدن أوفيس لماكينات عد النقود في الإسكندرية؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في خدمة البنوك والصرافات والمحلات التجارية داخل الإسكندرية منذ 1999.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مقر حقيقي داخل المدينة</h3><p>تزورنا وتجرب الجهاز بنقود فعلية قبل أي قرار شراء نهائي.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-shield-halved"></i></div><h3>ضمان وقطع غيار أصلية</h3><p>لا نتعامل مع قطع مقلدة تؤثر على دقة الجهاز على المدى الطويل.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>دعم فني مستمر</h3><p>لا نتركك بعد البيع؛ فريقنا يرد ويحل أي مشكلة تقنية فورًا.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>أعطال شائعة في ماكينات عد النقود وكيف نصلحها</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>أشهر عطل نراه هو انحشار الأوراق المتكرر، وغالبًا سببه تراكم الغبار على الأسطوانات الداخلية أو استخدام أوراق نقد شديدة التمزق أو الرطوبة. عطل آخر شائع هو تراجع دقة العد تدريجيًا، وهو مؤشر واضح على حاجة الجهاز لتنظيف شامل ومعايرة من فني متخصص، بدل الاستمرار في استخدامه وتحمل مخاطر خطأ في التسوية المالية اليومية داخل المحل أو الفرع.</p>
-      <p style="margin-top:16px">ننصح دائمًا بعدم محاولة إصلاح هذه الأعطال ذاتيًا أو عبر فني غير متخصص، لأن التدخل غير الصحيح قد يُتلف حساسات الكشف الداخلية ويكلف إصلاحًا أكبر لاحقًا. فريقنا الفني داخل الإسكندرية يشخص المشكلة بدقة قبل أي تدخل.</p>
-      <p style="margin-top:16px">عطل ثالث شائع هو توقف الجهاز فجأة عن العمل دون سبب واضح، وغالبًا يكون السبب مشكلة كهربائية بسيطة كضعف مصدر التيار أو تلف في كابل التوصيل، وليس عطلًا داخليًا معقدًا كما يظن كثير من أصحاب المحلات. الفحص الأولي البسيط لمصدر الكهرباء يوفر أحيانًا زيارة صيانة كاملة غير ضرورية ويوفر عليك وقت الانتظار والتكلفة معًا.</p>
-      <p style="margin-top:16px">نوفر أيضًا دليلًا مبسطًا مطبوعًا مع كل جهاز جديد يشرح خطوات الاستخدام اليومي والتنظيف الأساسي بصريًا، ليكون مرجعًا سريعًا لأي موظف جديد ينضم للفريق لاحقًا في المحل أو الفرع.</p>
-      <p style="margin-top:16px">نوفر أيضًا لعملائنا الدائمين في الإسكندرية خصمًا خاصًا على قطع الغيار عند تجديد عقد الصيانة السنوي، تقديرًا لاستمرارية التعامل معنا.</p>
-      <p style="margin-top:16px">نحرص دائمًا على شرح أي تكلفة إضافية قبل تنفيذها فعليًا، فلا مفاجآت في الفاتورة النهائية بعد أي زيارة صيانة أو إصلاح.</p>
-      <p style="margin-top:16px">هذا الوضوح في التعامل هو ما يجعل عملاءنا يوصون بنا لأصحاب محلات ومكاتب أخرى في الإسكندرية باستمرار.</p>
-      <p style="margin-top:16px">نسعد دائمًا باستقبال استفساراتكم عبر الهاتف أو واتساب أو زيارة مقرنا مباشرة لمناقشة احتياجكم بالتفصيل.</p>
-      <p style="margin-top:16px">فريقنا جاهز لمساعدتك في اختيار الحل الأنسب لنشاطك، بأسعار واضحة وضمان حقيقي وصيانة قريبة منك دائمًا داخل الإسكندرية.</p>
-      <p style="margin-top:16px">زر مقرنا في الإبراهيمية أو تواصل معنا عبر الهاتف، وسنرد عليك بكل التفاصيل التي تحتاجها خلال دقائق قليلة جدًا فقط ودون أي انتظار.</p>
-    </div>
-  </div>
-</section>
+<CashMachineFaults city="الإسكندرية" />
 
 <section class="section">
   <div class="container">
@@ -267,18 +209,21 @@ const schemaJson = JSON.stringify({
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>مناطق نخدمها في الإسكندرية</h2>
+      <h2>لماذا تختار نيو جولدن أوفيس لماكينات عد النقود في الإسكندرية؟</h2>
       <div class="divider"></div>
     </div>
-    <p style="max-width:800px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نغطي الإسكندرية بالكامل من مقرنا داخل المدينة: استجابة سريعة في وسط البلد وسموحة وسيدي جابر وميامي وجليم ولوران، وخدمة يومية لتجار المنشية والعطارين وأسواق المدينة التقليدية، ومحال الكورنيش، وشركات الاستيراد والتصدير القريبة من الميناء التي تحتاج أجهزة تدعم العملات الأجنبية.</p>
-    <p style="max-width:800px;margin:16px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">قربنا الجغرافي من كل هذه المناطق يعني وقت استجابة أسرع لأي طلب صيانة عاجل، بدل انتظار فني قادم من محافظة أخرى في حال حدوث عطل يوقف عمل الخزينة في وقت الذروة.</p>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مقر فعلي وتجربة قبل الشراء</h3><p>تزور مقرنا في الإبراهيمية وتجرب الماكينة بنقودك الفعلية قبل القرار.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-scale-balanced"></i></div><h3>كل الماركات وترشيح محايد</h3><p>لا نرتبط بماركة واحدة، فنرشح الموديل المناسب لحجم تعاملك.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-shield-halved"></i></div><h3>ضمان وقطع غيار أصلية</h3><p>ضمان مكتوب مع الفاتورة، ولا نركب قطعًا مقلدة تضر بدقة الجهاز.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>في توريد وصيانة ماكينات عد النقود للمحلات والصرافات والشركات.</p></div>
+    </div>
+    <p style="max-width:800px;margin:40px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نغطي كل أحياء الإسكندرية بالتوريد والصيانة من مقرنا في الإبراهيمية، من المنشية والعطارين حتى سموحة وميامي. نخدم أيضًا <a href="/cairo/cash-machines">القاهرة</a>، وفي الإسكندرية نوفر كذلك <a href="/alexandria/ac">التكييفات</a> و<a href="/alexandria/cameras">كاميرات المراقبة</a> و<a href="/alexandria/copiers">ماكينات التصوير</a> و<a href="/alexandria/office-supplies">المستلزمات المكتبية</a> و<a href="/alexandria/printing">الطباعة</a> و<a href="/alexandria/office-setup">تجهيز المكاتب</a>. للمزيد اقرأ <a href="/blog/best-money-counting-machine-guide">دليل أفضل ماكينة عد نقود</a>.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب ماكينات عد النقود، نخدمك في الإسكندرية بـ <a href="/alexandria/ac">التكييفات</a>، <a href="/alexandria/cameras">كاميرات المراقبة</a>، <a href="/alexandria/copiers">ماكينات التصوير</a>، <a href="/alexandria/office-supplies">المستلزمات المكتبية</a>، و<a href="/alexandria/printing">خدمات الطباعة</a>. لتجهيز فرع كامل شوف <a href="/alexandria/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
-    <p style="max-width:800px;margin:16px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">بجانب الإسكندرية، <a href="/cairo/cash-machines">نخدم أيضًا القاهرة</a> بنفس معايير الجودة والضمان. تصفح أيضًا <a href="/blog/best-money-counting-machine-guide">دليل أفضل ماكينة عد نقود</a> و<a href="/blog/paper-shredder-buying-guide">دليل شراء ماكينة تدمير مستندات</a> لمزيد من التفاصيل.</p>
     <div class="section-header">
       <h2>أسئلة شائعة عن ماكينات عد النقود في الإسكندرية</h2>
       <div class="divider"></div>
@@ -289,7 +234,7 @@ const schemaJson = JSON.stringify({
       <div class="faq-item"><div class="faq-question">ما الفرق بين ماكينة العد فقط والعد مع الفرز؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">العد فقط يعطي عدد الأوراق، والعد والفرز يضيف فصل الفئات وقراءة القيمة بالجنيه.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل تدعم الماكينة الجنيه المصري والدولار واليورو؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كل الموديلات تدعم الجنيه، وتتوفر موديلات تدعم الدولار واليورو أيضًا.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يوجد ضمان وصيانة وقطع غيار في الإسكندرية؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، ضمان مكتوب وصيانة وقطع غيار من داخل الإسكندرية.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل يمكن زيارة معرض لتجربة الماكينة قبل الشراء؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، يمكن زيارة مقرنا وتجربة الأجهزة بنقود فعلية قبل الشراء.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن تجربة الماكينة قبل الشراء؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا تتوفر تجربة الماكينة قبل الشراء، لكن كل ماكينة مشمولة بالضمان: إذا ظهرت بها أي مشكلة نسترجعها أو نستبدلها لك.</div></div></div>
       <div class="faq-item"><div class="faq-question">كيف أختار ماكينة عد النقود المناسبة لنشاطي؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">حدد حجم تعاملاتك اليومية وهل تحتاج كشف تزييف وفرز فئات، ونرشح لك الأنسب.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل تتأثر دقة الماكينة مع مرور الوقت وكيف نحافظ عليها؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، تراكم الغبار والاستخدام المكثف اليومي قد يقلل الدقة تدريجيًا إذا أُهملت الصيانة. ننصح بتنظيف دوري للأسطوانات الداخلية ومعايرة سنوية على الأقل ضمن عقد الصيانة لضمان بقاء الدقة عند أعلى مستوياتها.</div></div></div>
       <div class="faq-item"><div class="faq-question">كم يستغرق توريد وتركيب ماكينة عد جديدة؟<i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الأجهزة المتوفرة في مخزوننا داخل الإسكندرية تُسلَّم عادة في نفس اليوم أو اليوم التالي، مع شرح كامل للاستخدام والمعايرة الأولية أمام العميل مباشرة.</div></div></div>
@@ -302,12 +247,12 @@ const schemaJson = JSON.stringify({
 <section class="section quote-section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب عرض سعر ماكينة عد النقود</h2>
+      <div class="as-h2">اطلب عرض سعر ماكينة عد النقود</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -351,7 +296,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل ماكينات عد النقود في الإسكندرية</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20ماكينة%20عد%20نقود%20في%20الإسكندرية" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
