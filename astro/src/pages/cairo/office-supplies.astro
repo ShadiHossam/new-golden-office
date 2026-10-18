@@ -46,7 +46,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -59,7 +59,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -88,36 +88,23 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في خدمة الشركات</div></div>
-      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="6">0</div><div class="stat-label">فئات منتجات كاملة</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="5">0</div><div class="stat-label">مناطق أعمال نغطيها بجدول ثابت</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">مندوب حساب مخصص لكل عميل</div></div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">فئات منتجات: ورق وأقلام وملفات وأحبار وأكثر</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>مكتبك لا يجب أن يتوقف أبدًا بسبب نفاد الورق أو الأحبار أو الملفات. نيو جولدن أوفيس شركة أدوات مكتبية في القاهرة تتولى عنك ملف التوريدات المكتبية بالكامل: كتالوج شامل، أسعار جملة حقيقية، عقود توريد دورية بفاتورة ضريبية، ومندوب حساب مخصص يعرف احتياجات شركتك ويتوقعها قبل أن تطلب. خبرة 27 عامًا في خدمة الشركات والمؤسسات، وتغطية كاملة لمناطق القاهرة التجارية: التجمع الخامس، مدينة نصر، المعادي، القاهرة الجديدة، ووسط البلد المالي.</p>
-      <p style="margin-top:16px">نتعامل مع طلبات الشركات في القاهرة بنفس الجدية التي نتعامل بها مع عملاء الإسكندرية منذ 1999، ونحرص على أن يشعر كل عميل جديد بفارق واضح في الاستجابة والتنظيم منذ أول طلب توريد يصله. هذا الالتزام هو ما جعل قاعدة عملائنا في القاهرة تنمو باستمرار عبر التوصية الشخصية أكثر من الإعلانات المدفوعة.</p>
-      <p style="margin-top:16px">نراجع دوريًا مع كل عميل قائمة الأصناف المتعاقد عليها للتأكد من مطابقتها لاحتياجه الفعلي، ونعدلها فورًا عند أي تغيير في حجم الفريق أو طبيعة العمل دون أي تعقيد إداري.</p>
-      <p style="margin-top:16px">نوفر أيضًا تقارير استهلاك دورية للشركات الكبرى التي تحتاج توثيق تكاليف المشتريات لأغراض الميزانية الداخلية، بتفصيل واضح لكل صنف وكميته وتاريخ التوريد.</p>
-      <p style="margin-top:16px">نساعد أيضًا الشركات الجديدة في القاهرة التي تجهز مكتبها لأول مرة في تحديد قائمة الأصناف الأساسية اللازمة للبدء، بناءً على خبرتنا مع عشرات المكاتب المشابهة.</p>
-      <p style="margin-top:16px">نحرص دائمًا على وضوح كامل في التسعير من أول عرض سعر نرسله، دون أي بنود مخفية تظهر لاحقًا في الفاتورة النهائية.</p>
-      <p style="margin-top:16px">هذه الشفافية هي أساس علاقتنا مع كل شركة نتعامل معها في القاهرة منذ أول يوم تعامل.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/cairo">خدماتنا الشاملة في القاهرة</a> بكل تخصصاتنا الستة.</p>
-    </div>
-
     <div class="section-header">
-      <h2>لماذا نيو جولدن أوفيس شركة أدوات مكتبية موثوقة في القاهرة؟</h2>
+      <h2>أدوات مكتبية في القاهرة: كل مستلزمات مكتبك من مورد واحد</h2>
       <div class="divider"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>بدأت من مقرنا الرئيسي بالإسكندرية وامتدت لتغطية القاهرة بخدمة كاملة.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h3>هوية واضحة وتعامل رسمي</h3><p>فواتير ضريبية معتمدة وعقود توريد موثقة تناسب الشركات والجهات الحكومية.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-medal"></i></div><h3>ضمان جودة الأصناف</h3><p>ماركات معروفة ومجربة، وأي صنف لا يطابق المواصفات يُستبدل دون جدال.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>دعم عملاء فعلي</h3><p>مندوب حساب مخصص لكل عميل شركات، يرد ويتابع ويحل أي ملاحظة.</p></div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كشركة أدوات مكتبية في القاهرة نورد كل ما يستهلكه مكتبك من مصدر واحد: ورق A4 وورق التصوير والورق الحراري، أقلام وكشاكيل وأوراق لاصقة، ملفات وأدوات أرشفة، أحبار وخراطيش الطابعات، سبورات ولوازم الاجتماعات، وأدوات المكتب الصغيرة.</p>
+      <p style="margin-top:16px">نبيع بالجملة للشركات والمؤسسات، ونوفر عقود توريد دورية بجدول ثابت وفاتورة ضريبية ومندوب حساب يتابع استهلاكك، فتصل الأصناف قبل أن تنفد بدل الطلب المتكرر.</p>
     </div>
   </div>
 </section>
@@ -158,7 +145,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>لماذا يوفر التوريد الدوري مقارنة بالشراء المتقطع؟</h2>
@@ -171,7 +158,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>أي نوع نشاط يعتمد على توريدنا في القاهرة؟</h2>
@@ -191,24 +178,6 @@ const schemaJson = JSON.stringify({
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>كيف نخدم القاهرة بهذه الكفاءة بدون فرع؟</h2>
-      <div class="divider"></div>
-    </div>
-    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">سؤال منطقي، وإجابته نقطة قوتنا لا نقطة ضعفنا: نظام تشغيل مبني على الانضباط لا على قرب المسافة.</p>
-    <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">1</div><h3>مسارات تسليم مجدولة</h3><p>سياراتنا تغطي مناطق القاهرة التجارية بجدول ثابت، فتعرف شركتك مسبقًا موعد وصول طلبها.</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">2</div><h3>مندوب حساب مخصص</h3><p>يتابع مخزونك الدوري، ويذكّرك قبل نفاد الأصناف الأساسية، ويحل أي ملاحظة فورًا.</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>حد أدنى للتوصيل المجاني</h3><p>طلبات الشركات التي تتجاوز الحد الأدنى تصل مجانًا حتى باب مقرك.</p></div>
-    </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">عدم تحميل عملائنا تكلفة فرع إضافي في القاهرة يعني أسعار جملة أفضل بنفس مستوى الخدمة: انتظام وقابلية للتخطيط وتكلفة أقل.</p>
-    <p style="max-width:800px;margin:16px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">هذا النظام مبني على خبرة 27 عامًا في إدارة عمليات التوريد بدقة، سواء كان العميل في الإسكندرية حيث مقرنا الرئيسي، أو في القاهرة عبر فرقنا الميدانية المتنقلة. الانضباط في الجدولة هو ما يجعل الفارق، لا وجود فرع فعلي في كل مدينة.</p>
-    <p style="max-width:800px;margin:16px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نخدم أيضًا <a href="/alexandria/office-supplies">الإسكندرية</a> بنفس مستوى الجودة والانضباط في التوريد.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
       <h2>عقود توريد دورية بفاتورة ضريبية</h2>
       <div class="divider"></div>
     </div>
@@ -221,7 +190,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>ما الذي يحدد أسعار الأدوات المكتبية بالجملة؟</h2>
@@ -236,23 +205,6 @@ const schemaJson = JSON.stringify({
       </ul>
       <p style="margin-top:20px;text-align:center">أرسل لنا قائمة الأصناف والكميات على 01227392074 وستصلك تسعيرة رسمية مفصلة مع بدائل اقتصادية حيث أمكن.</p>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>تغطيتنا داخل القاهرة حيًا بحي</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>التجمع الخامس</h3><p>مقار الشركات الحديثة، توريد دوري منتظم لمستلزمات المكاتب الكبيرة.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مدينة نصر</h3><p>كثافة شركات ومراكز أعمال، مسار تسليم منتظم للطلبات المتكررة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>المعادي</h3><p>مكاتب الشركات والمقار الإقليمية، مسار تسليم مجدول بموعد معروف مسبقًا.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h3>القاهرة الجديدة</h3><p>منطقة نمو مستمر، نغطيها من أول توريدة تجريبية حتى عقد التوريد السنوي.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>وسط البلد المالي</h3><p>طلبات المنطقة تميل للمستندات والأرشفة والدفاتر، ونعرف أصنافها المطلوبة جيدًا.</p></div>
-    </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لو مقرك خارج هذه المناطق، تواصل معنا وسنؤكد لك ترتيبات التوريد المتاحة قبل الطلب.</p>
   </div>
 </section>
 
@@ -279,7 +231,22 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
-    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب المستلزمات المكتبية، نجهزلك في القاهرة: <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/cameras">كاميرات المراقبة</a>، <a href="/cairo/copiers">ماكينات تصوير</a>، <a href="/cairo/cash-machines">ماكينات عد نقود</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. فاتورة واحدة، جهة متابعة واحدة، شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
+    <div class="section-header">
+      <h2>لماذا نيو جولدن أوفيس شركة أدوات مكتبية موثوقة في القاهرة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>خبرة 27 عامًا</h3><p>بدأت من مقرنا الرئيسي بالإسكندرية وامتدت لتغطية القاهرة بخدمة كاملة.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h3>هوية واضحة وتعامل رسمي</h3><p>فواتير ضريبية معتمدة وعقود توريد موثقة تناسب الشركات والجهات الحكومية.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-medal"></i></div><h3>ضمان جودة الأصناف</h3><p>ماركات معروفة ومجربة، وأي صنف لا يطابق المواصفات يُستبدل دون جدال.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>دعم عملاء فعلي</h3><p>مندوب حساب مخصص لكل عميل شركات، يرد ويتابع ويحل أي ملاحظة.</p></div>
+    </div>
+    <p style="max-width:800px;margin:40px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نوصل لكل مناطق القاهرة الكبرى بجدول توريد ثابت، من وسط البلد ومدينة نصر حتى المعادي والتجمع الخامس. نخدم أيضًا <a href="/alexandria/office-supplies">الإسكندرية</a>. تعرف على <a href="/cairo">كل خدماتنا في القاهرة</a>.</p>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
       <div class="divider"></div>
@@ -302,15 +269,15 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- QUOTE FORM -->
-<section class="section quote-section section-bg">
+<section class="section quote-section">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب عرض سعر توريد مستلزماتك في القاهرة</h2>
+      <div class="as-h2">اطلب عرض سعر توريد مستلزماتك في القاهرة</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -355,7 +322,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل التوريد في القاهرة</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20مستلزمات%20مكتبية%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر

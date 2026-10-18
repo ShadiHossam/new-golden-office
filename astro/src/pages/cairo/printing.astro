@@ -56,7 +56,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -69,7 +69,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -98,103 +98,28 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num" data-target="27" data-suffix="+">0+</div>
-        <div class="stat-label">سنة خبرة في الطباعة</div>
-      </div>
-      <div class="stat-item reveal delay-1">
-        <div class="stat-num" data-target="9">0</div>
-        <div class="stat-label">أنواع مطبوعات كاملة</div>
-      </div>
-      <div class="stat-item reveal delay-2">
-        <div class="stat-num" data-target="5">0</div>
-        <div class="stat-label">مناطق أعمال نغطيها بالقاهرة</div>
-      </div>
-      <div class="stat-item reveal delay-3">
-        <div class="stat-num" data-target="1">0</div>
-        <div class="stat-label">مسؤول حساب واحد يتابع طلبك</div>
-      </div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="9">0</div><div class="stat-label">أنواع مطبوعات من الكروت حتى التغليف</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">تخصصات خدمة تحت سقف واحد</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>تبحث عن شركة طباعة القاهرة تنفذ مطبوعات شركتك بجودة ثابتة وموعد مضمون؟ نيو جولدن أوفيس تخدم الشركات في التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي بخبرة 27 عامًا في الطباعة وتجهيز المكاتب. ننفذ طباعة أوفست وديجيتال، كروت شخصية وبروشورات وفلايرات، بنرات واستاندات، تغليف وهدايا دعائية، مع بروفة تعتمدها قبل التشغيل وتسليم يصلك في مقر شركتك. تتعامل مع مسؤول حساب واحد يعرف ملفاتك ومواصفاتك من أول طلب لآخر تسليم.</p>
-      <p style="margin-top:16px">هذا التخصص في التعامل المؤسسي جعل كثيرًا من شركات القاهرة تعتمد علينا كمورد طباعة دائم بدل البحث عن مطبعة جديدة كل مرة، لأن مندوب حسابك يحتفظ بملف كامل لهويتك البصرية ومواصفاتك المعتمدة، فيسرّع أي طلب جديد لاحق دون إعادة شرح التفاصيل من الصفر مرة أخرى.</p>
-      <p style="margin-top:16px">نحتفظ أيضًا بنسخة من كل تصميم سابق طبعناه لك، فإذا احتجت إعادة طباعة نفس الكمية لاحقًا، ننفذها بنفس المواصفات تمامًا دون الحاجة لإرسال الملفات مرة أخرى.</p>
-      <p style="margin-top:16px">نساعد أيضًا الشركات الجديدة التي لم تحدد هويتها البصرية بعد في اختيار الألوان والخطوط المناسبة لمجال عملها، قبل البدء في تنفيذ أي مطبوعات فعلية.</p>
-      <p style="margin-top:16px">نتابع أيضًا مواعيد التجديد السنوي لعملائنا في القاهرة، ونذكّرهم مسبقًا بأي مطبوعات دورية تحتاج تجديدًا كالتقاويم والكتالوجات الموسمية.</p>
-      <p style="margin-top:16px">نساعد أيضًا في تنسيق الطباعة مع باقي عناصر الهوية البصرية، لضمان اتساق كامل بين الكروت والبروشورات واللافتات وأي مطبوع آخر يمثل شركتك.</p>
-      <p style="margin-top:16px">نرحب دائمًا بزيارتك لمقرنا في الإسكندرية لمعاينة نماذج أعمال سابقة قبل اتخاذ قرارك النهائي.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/cairo">خدماتنا الشاملة في القاهرة</a> بكل تخصصاتنا الستة. ونغطي أيضًا الإسكندرية بنفس الجودة: <a href="/alexandria/printing">خدمات الطباعة في الإسكندرية</a> لتوحيد مطبوعات فروعك عند مورد واحد.</p>
-    </div>
-
     <div class="section-header">
-      <h2>لماذا تعتمد الشركات على نيو جولدن أوفيس كشركة طباعة في القاهرة؟</h2>
+      <h2>طباعة الشركات في القاهرة: أوفست وديجيتال وكل المطبوعات</h2>
       <div class="divider"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon"><i class="fas fa-award"></i></div>
-        <h3>خبرة 27 عامًا</h3>
-        <p>في تنفيذ مطبوعات الشركات، أقدمية يصعب أن تجدها عند منافس.</p>
-      </div>
-      <div class="feature-card reveal delay-1">
-        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-        <h3>مسؤول حساب واحد</h3>
-        <p>رقم واحد يعرف تاريخ طلباتك ومواصفاتك بالكامل.</p>
-      </div>
-      <div class="feature-card reveal delay-2">
-        <div class="feature-icon"><i class="fas fa-check-double"></i></div>
-        <h3>بروفة قبل الطباعة</h3>
-        <p>في كل طلب، فلا مفاجآت في اللون أو المقاس أو النص.</p>
-      </div>
-      <div class="feature-card reveal delay-3">
-        <div class="feature-icon"><i class="fas fa-truck"></i></div>
-        <h3>تسليم في مقرك</h3>
-        <p>داخل مناطق الأعمال الرئيسية في القاهرة.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-        <h3>تشكيلة كاملة</h3>
-        <p>من الكارت الشخصي إلى التغليف والتعاقدات الدورية، فلا تحتاج موردًا ثانيًا.</p>
-      </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كشركة طباعة في القاهرة ننفذ مطبوعات الشركات كاملة: كروت شخصية وأوراق رسمية ودفاتر فواتير، بروشورات وكتالوجات وفلايرات، بنرات ورول أب ولافتات للمعارض، استيكرز وتغليف، وهدايا دعائية بشعار شركتك، بطباعة أوفست للكميات الكبيرة وديجيتال للكميات الصغيرة والعاجلة.</p>
+      <p style="margin-top:16px">كل طلب يمر ببروفة تعتمدها قبل التنفيذ، ومسؤول حساب واحد يحتفظ بملفاتك ومواصفاتك، فإعادة الطباعة لاحقًا تتم بنفس الألوان والمقاسات دون إعادة الشغل من الأول.</p>
     </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">وإذا كان مكتبك يحتاج أكثر من الطباعة، فنحن نجهز المكاتب بالكامل في القاهرة: <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/cameras">كاميرات المراقبة</a>، <a href="/cairo/copiers">ماكينات تصوير</a>، <a href="/cairo/office-supplies">مستلزمات مكتبية</a>، و<a href="/cairo/cash-machines">ماكينات عد نقود</a>. تجهيز شامل؟ شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل في القاهرة</a>.</p>
   </div>
 </section>
 
 <section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>كيف نخدم القاهرة بتغطية كاملة بدون فرع؟</h2>
-      <div class="divider"></div>
-    </div>
-    <p style="max-width:800px;margin:0 auto 32px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لا نتعامل مع طلبات القاهرة كطلبات "من بعيد"، بل عبر ثلاث ركائز تشغيلية:</p>
-    <div class="steps-grid">
-      <div class="step-card reveal">
-        <div class="step-num">1</div>
-        <h3>مسارات تسليم مجدولة</h3>
-        <p>تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي.</p>
-      </div>
-      <div class="step-card reveal delay-1">
-        <div class="step-num">2</div>
-        <h3>مندوب حساب مخصص</h3>
-        <p>يستلم ملفاتك، يرسل البروفة، يجيب أسئلتك الفنية، ويتابع الطلب حتى الاستلام.</p>
-      </div>
-      <div class="step-card reveal delay-2">
-        <div class="step-num">3</div>
-        <h3>فرق ميدانية متنقلة</h3>
-        <p>تصل إليك للمعاينة والاستلام والتسليم أينما كان مقر شركتك.</p>
-      </div>
-    </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">عدم وجود فرع في القاهرة ليس نقصًا نعوضه، بل اختيار تشغيلي: بدلًا من أن تأتي أنت إلينا، نأتي نحن إليك.</p>
-  </div>
-</section>
-
-<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>طباعة اوفست القاهرة وخدماتنا الكاملة للشركات</h2>
@@ -213,7 +138,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>الطباعة الأوفست مقابل الديجيتال: أيهما تختار ومتى؟</h2>
@@ -235,7 +160,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>كيف تختار شركة طباعة في القاهرة؟</h2>
@@ -252,7 +177,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>ما الذي يحدد أسعار الطباعة في القاهرة؟</h2>
@@ -271,7 +196,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>كيف تختار طريقة الطباعة المناسبة لمشروعك في القاهرة؟</h2>
@@ -321,25 +246,6 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>مناطق تغطيتنا داخل القاهرة</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <ul style="max-width:750px;margin:0 auto;padding-inline-start:20px;line-height:2.1">
-        <li><strong>التجمع الخامس:</strong> مقار الشركات والمولات التجارية، وطلبات معارض ومؤتمرات المنطقة.</li>
-        <li><strong>مدينة نصر:</strong> كثافة شركات عالية وطلبات دورية للأوراق الرسمية والمطبوعات التسويقية.</li>
-        <li><strong>المعادي:</strong> الشركات الدولية والمكاتب الاستشارية التي تطلب معايير جودة دقيقة.</li>
-        <li><strong>القاهرة الجديدة:</strong> الشركات الناشئة والمقار الإدارية الحديثة والفعاليات.</li>
-        <li><strong>وسط البلد المالي:</strong> البنوك والشركات المالية والمكاتب القانونية ومطبوعاتها الرسمية.</li>
-      </ul>
-      <p style="margin-top:16px;text-align:center">لو كان مقرك في منطقة أخرى داخل القاهرة، تواصل معنا وسنؤكد لك ترتيب التسليم وموعده قبل بدء التنفيذ.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
       <h2>ضمان الجودة والبروفة قبل الطباعة</h2>
       <div class="divider"></div>
     </div>
@@ -349,6 +255,43 @@ const schemaJson = JSON.stringify({
       <div class="step-card reveal delay-2"><div class="step-num">3</div><h3>فحص قبل التسليم</h3><p>عينات من كل تشغيلة تُفحص للتأكد من ثبات اللون وجودة القص من أول نسخة لآخر نسخة.</p></div>
     </div>
     <!-- TODO: real project details + customer testimonial + real portfolio photos pending, see punch list -->
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>لماذا تعتمد الشركات على نيو جولدن أوفيس كشركة طباعة في القاهرة؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-award"></i></div>
+        <h3>خبرة 27 عامًا</h3>
+        <p>في تنفيذ مطبوعات الشركات، أقدمية يصعب أن تجدها عند منافس.</p>
+      </div>
+      <div class="feature-card reveal delay-1">
+        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+        <h3>مسؤول حساب واحد</h3>
+        <p>رقم واحد يعرف تاريخ طلباتك ومواصفاتك بالكامل.</p>
+      </div>
+      <div class="feature-card reveal delay-2">
+        <div class="feature-icon"><i class="fas fa-check-double"></i></div>
+        <h3>بروفة قبل الطباعة</h3>
+        <p>في كل طلب، فلا مفاجآت في اللون أو المقاس أو النص.</p>
+      </div>
+      <div class="feature-card reveal delay-3">
+        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+        <h3>تسليم في مقرك</h3>
+        <p>داخل مناطق الأعمال الرئيسية في القاهرة.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>تشكيلة كاملة</h3>
+        <p>من الكارت الشخصي إلى التغليف والتعاقدات الدورية، فلا تحتاج موردًا ثانيًا.</p>
+      </div>
+    </div>
+    <p style="max-width:800px;margin:40px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نسلّم في مقرك في كل مناطق القاهرة الكبرى، من وسط البلد ومدينة نصر حتى المعادي والتجمع الخامس. نخدم أيضًا <a href="/alexandria/printing">الإسكندرية</a> لتوحيد مطبوعات فروعك. تعرف على <a href="/cairo">كل خدماتنا في القاهرة</a>: <a href="/cairo/ac">التكييفات</a> و<a href="/cairo/cameras">كاميرات المراقبة</a> و<a href="/cairo/copiers">ماكينات التصوير</a> و<a href="/cairo/office-supplies">المستلزمات المكتبية</a> و<a href="/cairo/cash-machines">ماكينات عد النقود</a> و<a href="/cairo/office-setup">تجهيز المكاتب</a>.</p>
   </div>
 </section>
 
@@ -378,12 +321,12 @@ const schemaJson = JSON.stringify({
 <section class="section quote-section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب عرض سعر طباعتك في القاهرة</h2>
+      <div class="as-h2">اطلب عرض سعر طباعتك في القاهرة</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -430,7 +373,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل الطباعة في القاهرة</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر

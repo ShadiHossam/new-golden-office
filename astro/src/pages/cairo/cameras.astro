@@ -49,7 +49,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -62,7 +62,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -91,35 +91,23 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تأمين بيئات العمل</div></div>
-      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5">0</div><div class="stat-label">مناطق أعمال نغطيها بمواعيد مجدولة</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع كاميرات نوفرها ونركبها</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">شاشة واحدة لمراقبة كل فروعك</div></div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع كاميرات: IP وHD وPTZ وواي فاي</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>أن ترى كل فروعك وأنت في مكتبك، هذه ليست ميزة إضافية بل أساس أي نظام مراقبة حديث. نيو جولدن أوفيس شركة كاميرات مراقبة في القاهرة بخبرة 27 عامًا في تأمين بيئات العمل: معاينة مجانية لموقعك، <a href="/cameras/install">توريد وتركيب كاميرات مراقبة</a> أصلية بضمان مكتوب، برمجة المشاهدة عن بُعد من الموبايل عبر <a href="/cameras/ip-wifi">كاميرات IP وواي فاي</a>، و<a href="/cameras/maintenance">عقود صيانة سنوية</a>. نقطة قوتنا التي لا يقدمها غيرنا: أنظمة مراقبة الفروع المتعددة من شاشة واحدة عبر <a href="/cameras/dvr-nvr">أجهزة تسجيل DVR وNVR</a> مناسبة، لأننا نحن أنفسنا ندير عملياتنا في القاهرة من الإسكندرية عن بُعد بانضباط كامل، ونبني لك نفس النموذج.</p>
-      <p style="margin-top:16px">هذا التخصص ليس نظريًا؛ فرقنا الميدانية في القاهرة تنفذ عشرات مشاريع التركيب سنويًا لعملاء من قطاعات مختلفة تمامًا، من المحلات الصغيرة إلى المقرات الإدارية الكبيرة، وهذا التنوع يمنحنا خبرة عملية في التعامل مع أي تحدٍ تقني قد يظهر أثناء التركيب أو التشغيل.</p>
-      <p style="margin-top:16px">نحرص أيضًا على تدريب عميلنا شخصيًا على استخدام تطبيق المشاهدة عن بُعد قبل مغادرة الفريق الفني للموقع، حتى لا تحتاج لطلب دعم إضافي لاحقًا لأمور بسيطة تتعلق بالاستخدام اليومي للنظام.</p>
-      <p style="margin-top:16px">نراجع أيضًا مع العميل زوايا التغطية بعد التركيب مباشرة للتأكد من أنها تغطي كل النقاط الحرجة المتفق عليها مسبقًا، بدل اكتشاف نقطة عمياء لاحقًا عند الحاجة الفعلية للتسجيل.</p>
-      <p style="margin-top:16px">نقدم أيضًا لعملائنا في القاهرة زيارة فحص مجانية بعد أول ستة أشهر من التركيب، للتأكد من استقرار النظام وسلامة كل الكابلات والوصلات.</p>
-      <p style="margin-top:16px">نتابع أيضًا أي تحديث برمجي مطلوب لتطبيق المشاهدة عن بُعد، ونبلغ عملاءنا به مباشرة لضمان استمرارية عمل النظام بأفضل أداء ممكن.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/cairo">خدماتنا الشاملة في القاهرة</a> بكل تخصصاتنا الستة.</p>
-    </div>
-
     <div class="section-header">
-      <h2>تركيب كاميرات مراقبة القاهرة: لماذا تحتاج شركة متخصصة لا مجرد فني؟</h2>
+      <h2>كاميرات مراقبة القاهرة: من المعاينة حتى مراقبة فروعك من شاشة واحدة</h2>
       <div class="divider"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>معاينة هندسية قبل أي توريد</h3><p>تحديد النقاط الحرجة وزوايا التغطية وعدد الكاميرات الفعلي المطلوب.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h3>أجهزة أصلية بضمان مكتوب</h3><p>ماركات معروفة بفواتير رسمية، لا أجهزة مجهولة المصدر.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-toolbox"></i></div><h3>تركيب وبرمجة باحترافية</h3><p>تمديدات منظمة، وربط المشاهدة بموبايلك قبل مغادرة الموقع.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>ما بعد البيع</h3><p>صيانة دورية ودعم فني يرد عليك، وهذا ما يفصل الشركات الجادة عن الباقين.</p></div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كشركة كاميرات مراقبة في القاهرة ننفذ النظام كاملًا: معاينة مجانية لموقعك، <a href="/cameras/install">توريد وتركيب كاميرات مراقبة</a> أصلية بضمان مكتوب، <a href="/cameras/dvr-nvr">أجهزة تسجيل DVR وNVR</a> بسعة تخزين مناسبة، ضبط المشاهدة من الموبايل عبر <a href="/cameras/ip-wifi">كاميرات IP وواي فاي</a>، ثم <a href="/cameras/maintenance">عقود صيانة سنوية</a>.</p>
+      <p style="margin-top:16px">عدد الكاميرات تحدده نقاط التغطية لا المساحة: المداخل ونقاط الكاش والممرات والمخازن. ولو عندك أكثر من فرع، نربطها كلها على تطبيق واحد فتتابع كل الفروع من شاشة واحدة في مكتبك.</p>
     </div>
   </div>
 </section>
@@ -161,7 +149,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>كيف تحدد عدد الكاميرات المناسب لمكتبك أو محلك في القاهرة؟</h2>
@@ -176,7 +164,7 @@ const schemaJson = JSON.stringify({
 
 <MidPageCTA formId="camCairoMidCta" />
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>حلول حسب نشاطك</h2>
@@ -191,7 +179,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>ما الذي يحدد تكلفة تركيب كاميرات المراقبة؟</h2>
@@ -220,7 +208,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>الضمان وعقد الصيانة السنوي</h2>
@@ -236,26 +224,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>المناطق التي نغطيها داخل القاهرة</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>التجمع الخامس</h3><p>مقرات الشركات والإدارات التي تحتاج أنظمة IP حديثة بمشاهدة مركزية.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مدينة نصر</h3><p>كثافة تجارية عالية، محلات ومكاتب تحتاج تغطية مداخل ومناطق كاش دقيقة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>المعادي</h3><p>شركات ومكاتب مهنية تطلب أنظمة مرتبة المظهر بتمديدات مخفية.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h3>القاهرة الجديدة</h3><p>منشآت وفروع جديدة نجهزها بالكامل من الصفر.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>وسط البلد المالي</h3><p>مقرات وأنشطة تتعامل مع النقود يوميًا وتحتاج تسجيلًا موثوقًا طويل المدى.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>مصر الجديدة</h3><p>محلات وعيادات ومقار إدارية بمباني قديمة تحتاج تمديدات مرتبة تحافظ على شكل الواجهة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>الشيخ زايد و6 أكتوبر</h3><p>الفلل والمجمعات السكنية والإدارية الحديثة، بأنظمة IP متكاملة مع بوابات الدخول.</p></div>
-    </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نخدم عملاءنا أيضاً خارج القاهرة، <a href="/alexandria/cameras">نغطي أيضًا الإسكندرية</a> حيث مقرنا الرئيسي منذ 27 عامًا.</p>
-  </div>
-</section>
-
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>الغبار والأتربة وأثرها على عدسة الكاميرا وهيكلها الخارجي</h2>
@@ -268,7 +237,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>دليل حساب سعة التخزين ومدة حفظ التسجيلات</h2>
@@ -281,7 +250,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>تكامل مع أجهزة الإنذار والتحكم في الدخول</h2>
@@ -295,9 +264,24 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>تركيب كاميرات مراقبة القاهرة: لماذا تحتاج شركة متخصصة لا مجرد فني؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>معاينة هندسية قبل أي توريد</h3><p>تحديد النقاط الحرجة وزوايا التغطية وعدد الكاميرات الفعلي المطلوب.</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h3>أجهزة أصلية بضمان مكتوب</h3><p>ماركات معروفة بفواتير رسمية، لا أجهزة مجهولة المصدر.</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-toolbox"></i></div><h3>تركيب وبرمجة باحترافية</h3><p>تمديدات منظمة، وربط المشاهدة بموبايلك قبل مغادرة الموقع.</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-headset"></i></div><h3>ما بعد البيع</h3><p>صيانة دورية ودعم فني يرد عليك، وهذا ما يفصل الشركات الجادة عن الباقين.</p></div>
+    </div>
+    <p style="max-width:800px;margin:40px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نغطي القاهرة الكبرى بالمعاينة والتركيب والصيانة، من وسط البلد ومصر الجديدة ومدينة نصر حتى المعادي والتجمع الخامس والشيخ زايد و6 أكتوبر. نخدم أيضًا <a href="/alexandria/cameras">الإسكندرية</a>. تعرف على <a href="/cairo">كل خدماتنا في القاهرة</a>: <a href="/cairo/ac">التكييفات</a> و<a href="/cairo/copiers">ماكينات التصوير</a> و<a href="/cairo/office-supplies">المستلزمات المكتبية</a> و<a href="/cairo/cash-machines">ماكينات عد النقود</a> و<a href="/cairo/printing">الطباعة</a> و<a href="/cairo/office-setup">تجهيز المكاتب</a>.</p>
+  </div>
+</section>
+
 <section class="section section-bg">
   <div class="container">
-    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">غير كاميرات المراقبة، نقدر نجهزلك في القاهرة: <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/copiers">ماكينات تصوير</a>، <a href="/cairo/office-supplies">مستلزمات مكتبية</a>، <a href="/cairo/cash-machines">ماكينات عد نقود</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. تجهيز شامل؟ شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
       <div class="divider"></div>
@@ -323,12 +307,12 @@ const schemaJson = JSON.stringify({
 <section class="section quote-section">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب معاينة مجانية لموقعك في القاهرة</h2>
+      <div class="as-h2">اطلب معاينة مجانية لموقعك في القاهرة</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -373,7 +357,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل كاميرات المراقبة في القاهرة</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20مراقبة%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر

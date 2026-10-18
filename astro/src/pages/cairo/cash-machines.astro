@@ -3,6 +3,8 @@ import Img from '../../components/Img.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
+import CashMachineComparison from '../../components/CashMachineComparison.astro';
+import CashMachineFaults from '../../components/CashMachineFaults.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -48,7 +50,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -61,7 +63,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -90,20 +92,19 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في تجهيز البيئات المالية</div></div>
-      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="4">0</div><div class="stat-label">عائلات ماكينات نوفرها</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="3">0</div><div class="stat-label">ماركات عالمية: جلوري وLG وكاسيدا</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="5">0</div><div class="stat-label">مناطق أعمال نغطيها بمسارات مجدولة</div></div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="4">0</div><div class="stat-label">أنواع ماكينات: عد، MIX، فرز، وكشف مستقل</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>في نهاية كل يوم عمل، دقة عد النقود ليست تفصيلة بل خط الدفاع الأول ضد العجز والتلاعب والتزييف. نيو جولدن أوفيس شركة ماكينات عد نقود في القاهرة توفر للبنوك وشركات الصرافة وسلاسل التجزئة والمحلات كل ما تحتاجه خزينة منضبطة: ماكينة عد فلوس بسرعة ودقة تناسب حجم التداول، جهاز كشف تزييف بأحدث تقنيات الفحص، وماكينات فرز للعمليات المصرفية، مع صيانة ميدانية تغطي التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي.</p>
-      <p style="margin-top:16px">نحن لا نبيع جهازًا فقط، بل نساعدك في تصميم منظومة إدارة النقد الكاملة لنشاطك: من عدد الماكينات المطلوبة لكل خزينة، إلى نوع التقنية المناسبة لحجم عملياتك اليومي، وحتى جدول الصيانة الوقائية الذي يمنع أي عطل مفاجئ في يوم تسوية محاسبية حرج.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/cairo">خدماتنا الشاملة في القاهرة</a> بكل تخصصاتنا الستة.</p>
+    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>ماكينة عد النقود تعد رزمة 100 ورقة في ثوانٍ وتفحص كل ورقة أثناء مرورها، فتختصر وقت تقفيل الخزينة وتحسم فروق العهدة وتلتقط الورقة المزيفة قبل قبولها. نيو جولدن أوفيس شركة ماكينات عد نقود في القاهرة توفر كل فئاتها: ماكينات عد الفئة الواحدة، وماكينات MIX التي تعد الرزمة المخلوطة وتعطيك قيمتها بالجنيه، وماكينات الفرز المصرفية، وأجهزة كشف التزييف المستقلة للكاشير والشباك.</p>
+      <p style="margin-top:16px">نتعامل مع كل الماركات المتاحة في السوق، من Glory وKisan وMagner في الفئة المصرفية حتى الموديلات الاقتصادية للمحلات، مع صيانة ميدانية وقطع غيار داخل القاهرة. الموديل المناسب يتحدد بحجم تعاملك اليومي، وهل تستقبل رزمًا مختلطة الفئات، وهل تتعامل بالدولار واليورو بجانب الجنيه.</p>
     </div>
 
     <div class="section-header">
@@ -145,25 +146,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>مقارنة الماركات: جلوري وLG وكاسيدا</h2>
-      <div class="divider"></div>
-    </div>
-    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
-        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">المعيار</th><th style="padding:14px 16px;text-align:right">جلوري (Glory)</th><th style="padding:14px 16px;text-align:right">LG</th><th style="padding:14px 16px;text-align:right">كاسيدا (Cassida)</th></tr></thead>
-        <tbody>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">التموضع</td><td style="padding:12px 16px">الفئة المصرفية الأعلى</td><td style="padding:12px 16px">توازن أداء وسعر</td><td style="padding:12px 16px">الفئة المكتبية العملية</td></tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">الاستخدام الأمثل</td><td style="padding:12px 16px">بنوك، صرافات، تداول ضخم</td><td style="padding:12px 16px">شركات وفروع متوسطة</td><td style="padding:12px 16px">محلات ومكاتب</td></tr>
-          <tr style="background:var(--white)"><td style="padding:12px 16px">كشف التزييف</td><td style="padding:12px 16px">متعدد التقنيات</td><td style="padding:12px 16px">أساسية ومتقدمة حسب الموديل</td><td style="padding:12px 16px">UV وMG في أغلب الموديلات</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="max-width:800px;margin:24px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">لا توجد ماركة "أفضل" بشكل مطلق، بل ماركة أنسب لحجم تداولك وميزانيتك. أخبرنا بطبيعة نشاطك وسنرشح لك الموديل الصحيح من واقع 27 عامًا من التوريد والصيانة.</p>
-  </div>
-</section>
+<CashMachineComparison bg />
 
 <section class="section">
   <div class="container">
@@ -174,9 +157,6 @@ const schemaJson = JSON.stringify({
     <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
       <p>فرع بنكي أو مكتب صرافة في وسط البلد المالي يحتاج ماكينة عد مختلطة الفئات (Mixed Denomination) بسرعة عالية وتقنيات كشف تزييف متعددة (UV+MG+IR)، لأن الحجم اليومي كبير ولا مجال لخطأ في التسوية المحاسبية. أما سوبر ماركت أو صيدلية في مدينة نصر أو التجمع الخامس فتحتاج أولوية لسرعة إغلاق الكاشيرات آخر الوردية، فماكينة اقتصادية بسرعة متوسطة مع كشف UV+MG تكون كافية تمامًا.</p>
       <p style="margin-top:16px">نراعي أيضًا عامل سهولة التدريب على الجهاز؛ الموظفين في المحلات ذات معدل دوران وظيفي عالٍ يحتاجون جهازًا بسيطًا لا يستغرق وقتًا طويلاً لتعلمه، بينما فرق العمليات المصرفية المتخصصة تتقن الأجهزة الأكثر تعقيدًا بسرعة نظرًا لطبيعة تدريبها المستمر.</p>
-      <p style="margin-top:16px">نشرح دائمًا طريقة الاستخدام والصيانة الأساسية للموظف المسؤول قبل مغادرة الفريق الفني للموقع، لتقليل الحاجة لطلب دعم فني متكرر لأمور بسيطة يمكن حلها ذاتيًا.</p>
-      <p style="margin-top:16px">نراجع أيضًا مع كل عميل جديد أفضل ممارسات الصيانة اليومية البسيطة، كتنظيف السطح الخارجي وتجنب الأتربة، لإطالة عمر الجهاز بين زيارات الصيانة الدورية.</p>
-      <p style="margin-top:16px">نوفر أيضًا لعملاء القاهرة إمكانية استبدال جهاز مؤقت أثناء فترة الإصلاح الطويل، حتى لا يتوقف عملك المصرفي أو التجاري اليومي بسبب عطل فني.</p>
       <p style="margin-top:16px">الشركات ومكاتب المحاسبة في القاهرة الجديدة والمعادي غالبًا تحتاج جهازًا متوسط الحجم يمكن نقله بين الفروع، مع دقة عد عالية للتعامل مع مدفوعات الموظفين والموردين. فريقنا يرشح الماكينة المناسبة بعد فهم حجم التعامل النقدي اليومي الفعلي لنشاطك، ويشرح لك الفروق العملية بين الموديلات المتاحة بصراحة تامة.</p>
     </div>
   </div>
@@ -232,7 +212,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>تقنيات كشف التزييف بالتفصيل: UV وMG وIR</h2>
@@ -252,45 +232,11 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>دليل الأعطال الشائعة في ماكينات عد النقود</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <ul style="padding-inline-start:20px;line-height:2.1">
-        <li><strong>انحشار الأوراق أو تعثر السحب:</strong> غالبًا بسبب أوراق نقدية مجعدة أو متسخة أو أطراف ملتصقة ببعضها.</li>
-        <li><strong>عد غير دقيق أو تكرار العد الخاطئ:</strong> يحتاج معايرة أو تنظيف لبكرات السحب المتسخة بتراكم الغبار وزيوت الأصابع.</li>
-        <li><strong>رفض أوراق سليمة باعتبارها مشبوهة:</strong> إعدادات حساسية الكشف تحتاج ضبطًا دقيقًا حسب حالة العملة المتداولة فعليًا.</li>
-        <li><strong>الشاشة لا تعرض العدد أو القيمة بشكل صحيح:</strong> عادة عطل في وحدة العرض أو حاجة لتحديث برمجي بسيط.</li>
-        <li><strong>ضوضاء غير معتادة أثناء التشغيل:</strong> علامة مبكرة على تآكل في المحرك أو البكرات تستدعي فحصًا قبل أن يتوقف الجهاز تمامًا وقت الحاجة.</li>
-      </ul>
-      <p style="margin-top:16px;text-align:center">أغلب هذه الأعطال يُحل بتشخيص هاتفي أولي أو زيارة ميدانية واحدة، لكن الإهمال المتكرر لأعراض بسيطة هو ما يحوّلها لأعطال أكبر تكلفة.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>مناطق تغطيتنا داخل القاهرة</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>التجمع الخامس</h3><p>مقرات الشركات والفروع المصرفية الحديثة بحجم تداول يومي مرتفع.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مدينة نصر</h3><p>كثافة محلات وسلاسل تجزئة تحتاج ماكينات اقتصادية سريعة الإعداد.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>المعادي</h3><p>مكاتب تحصيل وشركات تتعامل مع دفعات نقدية دورية.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h3>القاهرة الجديدة</h3><p>فروع بنكية وتجارية جديدة نجهزها من أول ماكينة حتى عقد الصيانة السنوي.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>وسط البلد المالي</h3><p>أعلى كثافة بنوك وشركات صرافة، وأكثر مناطقنا طلبًا للماكينات المصرفية متعددة العملات.</p></div>
-    </div>
-  </div>
-</section>
+<CashMachineFaults city="القاهرة" bg={false} />
 
 <section class="section section-bg">
   <div class="container">
-    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">إلى جانب ماكينات عد النقود، نخدمك في القاهرة بـ <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/cameras">كاميرات المراقبة</a>، <a href="/cairo/copiers">ماكينات التصوير</a>، <a href="/cairo/office-supplies">المستلزمات المكتبية</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. لتجهيز فرع كامل شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
-    <p style="max-width:800px;margin:16px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">بجانب القاهرة، <a href="/alexandria/cash-machines">نخدم أيضًا الإسكندرية</a> بنفس معايير الجودة والضمان. تصفح أيضًا <a href="/blog/best-money-counting-machine-guide">دليل أفضل ماكينة عد نقود</a> و<a href="/blog/paper-shredder-buying-guide">دليل شراء ماكينة تدمير مستندات</a> لمزيد من التفاصيل.</p>
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نغطي القاهرة الكبرى بالتوريد والصيانة الميدانية، من وسط البلد ومدينة نصر حتى المعادي والتجمع الخامس. نخدم أيضًا <a href="/alexandria/cash-machines">الإسكندرية</a>، وفي القاهرة نوفر كذلك <a href="/cairo/ac">التكييفات</a> و<a href="/cairo/cameras">كاميرات المراقبة</a> و<a href="/cairo/copiers">ماكينات التصوير</a> و<a href="/cairo/office-supplies">المستلزمات المكتبية</a> و<a href="/cairo/printing">الطباعة</a> و<a href="/cairo/office-setup">تجهيز المكاتب</a>. للمزيد اقرأ <a href="/blog/best-money-counting-machine-guide">دليل أفضل ماكينة عد نقود</a>.</p>
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
       <div class="divider"></div>
@@ -317,12 +263,12 @@ const schemaJson = JSON.stringify({
 <section class="section quote-section">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب عرض سعر ماكينة عد النقود في القاهرة</h2>
+      <div class="as-h2">اطلب عرض سعر ماكينة عد النقود في القاهرة</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -367,7 +313,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل ماكينات عد النقود في القاهرة</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20ماكينة%20عد%20نقود%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر

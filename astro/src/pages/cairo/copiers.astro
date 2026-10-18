@@ -10,8 +10,8 @@ const schemaJson = JSON.stringify({
     {
       "@type": "Service",
       "@id": "https://newgoldenoffice.com/cairo/copiers#service",
-      "name": "بيع وإيجار وصيانة ماكينات تصوير في القاهرة",
-      "serviceType": "بيع وإيجار وصيانة ماكينات تصوير المستندات للشركات",
+      "name": "شراء وإيجار وصيانة ماكينات تصوير في القاهرة",
+      "serviceType": "شراء وإيجار وصيانة ماكينات تصوير المستندات للشركات",
       "url": "https://newgoldenoffice.com/cairo/copiers",
       "areaServed": { "@type": "City", "name": "القاهرة" },
       "provider": { "@id": "https://newgoldenoffice.com/#organization" }
@@ -36,11 +36,11 @@ const schemaJson = JSON.stringify({
 ---
 
 <BaseLayout
-  title="شركة ماكينات تصوير في القاهرة | بيع وإيجار وصيانة"
-  description="شركة ماكينات تصوير في القاهرة: بيع وإيجار وصيانة ماكينات تصوير المستندات وعقود أساطيل للشركات، أحبار وقطع غيار أصلية وضمان معتمد. خبرة 27 عامًا."
+  title="شركة ماكينات تصوير في القاهرة | شراء وإيجار وصيانة"
+  description="شركة ماكينات تصوير في القاهرة: شراء وإيجار وصيانة ماكينات تصوير المستندات وعقود أساطيل للشركات، أحبار وقطع غيار أصلية وضمان معتمد. خبرة 27 عامًا."
   keywords="شركة ماكينات تصوير في القاهرة، صيانة ماكينات تصوير القاهرة، عقود صيانة أسطول ماكينات تصوير القاهرة"
   ogTitle="شركة ماكينات تصوير في القاهرة | نيو جولدن أوفيس"
-  ogDescription="بيع وإيجار وصيانة ماكينات تصوير المستندات وعقود أساطيل للشركات في القاهرة."
+  ogDescription="شراء وإيجار وصيانة ماكينات تصوير المستندات وعقود أساطيل للشركات في القاهرة."
   ogImage="/images/copiers-hub.webp"
   schemaJson={schemaJson}
 >
@@ -48,7 +48,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -61,7 +61,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -78,7 +78,7 @@ const schemaJson = JSON.stringify({
           <span class="current">شركة ماكينات تصوير في القاهرة</span>
         </nav>
         <h1 class="reveal">شركة ماكينات تصوير في القاهرة</h1>
-        <p class="lead reveal delay-1">بيع وإيجار وصيانة ماكينات تصوير المستندات، وعقود إدارة أساطيل كاملة للشركات الكبرى، بخبرة 27 عامًا مع كبرى الماركات</p>
+        <p class="lead reveal delay-1">شراء وإيجار وصيانة ماكينات تصوير المستندات، وعقود إدارة أساطيل كاملة للشركات الكبرى، بخبرة 27 عامًا مع كبرى الماركات</p>
       </div>
       <div class="page-hero-image">
         <Img src="/images/copier-scanning-office-1784572494919-541980.webp" alt="شركة ماكينات تصوير في القاهرة" preset="hero" priority />
@@ -90,28 +90,27 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة مع كبرى الماركات</div></div>
-      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="6">0</div><div class="stat-label">ماركات نتعامل معها بيعًا وصيانة</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="4">0</div><div class="stat-label">خدمات في جهة واحدة: بيع وإيجار وصيانة وأحبار</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="1">0</div><div class="stat-label">مندوب حساب واحد لكل أسطول</div></div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="4">0</div><div class="stat-label">خدمات: شراء وإيجار وصيانة وأحبار</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>ماكينة التصوير المتوقفة تعني إدارة كاملة متوقفة. نيو جولدن أوفيس شركة ماكينات تصوير في القاهرة تضمن ألا يحدث ذلك في مقرك: بيع ماكينات جديدة واستيراد بحالة ممتازة، إيجار بعقد شهري شامل، صيانة بفرق فنية ميدانية، وعقود إدارة أساطيل كاملة للشركات التي تشغل عشرات الماكينات في مقر واحد أو عدة طوابق. خبرة 27 عامًا مع كبرى الماركات: ريكو وكانون وكونيكا مينولتا وتوشيبا وزيروكس وكيوسيرا.</p>
-      <p style="margin-top:16px">نتعامل مع شركات القاهرة بمنطق مختلف عن المحلات التجارية الفردية؛ فريقنا يفهم أن توقف ماكينة التصوير في يوم تسليم مشروع أو اجتماع مجلس إدارة له تكلفة تتجاوز بكثير سعر الإصلاح نفسه، لهذا نُصمم عقودنا لتضمن أولوية استجابة حقيقية، لا مجرد وعد تسويقي. سواء كان مقرك مكتبًا واحدًا أو مجمعًا إداريًا بعدة طوابق، نبني لك خطة صيانة تراعي طبيعة استخدامك الفعلي وحساسية توقيت أعمالك اليومية.</p>
-      <p style="margin-top:16px;text-align:center">تعرف على <a href="/cairo">خدماتنا الشاملة في القاهرة</a> بكل تخصصاتنا الستة.</p>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كشركة ماكينات تصوير في القاهرة نوفر الماكينة وكل ما تحتاجه بعدها: شراء ماكينات تصوير وطابعات متعددة الوظائف جديدة واستيراد خارج من كل الماركات، إيجار بعقد شهري شامل الصيانة، صيانة ميدانية وقطع غيار أصلية، توريد أحبار وتونر، وعقود إدارة أساطيل للشركات التي تشغل عشرات الماكينات.</p>
+      <p style="margin-top:16px">الاختيار يبدأ من حجم الطباعة الشهري وعدد المستخدمين، ثم القرار بين الشراء والإيجار، والأبيض والأسود والألوان. وفي الشركات الكبيرة تفرق تكلفة الصفحة الواحدة وسرعة الاستجابة للأعطال أكثر من سعر الماكينة نفسه.</p>
     </div>
 
     <div class="section-header">
-      <h2>صيانة ماكينات تصوير القاهرة وخدماتنا: بيع وإيجار وأحبار</h2>
+      <h2>صيانة ماكينات تصوير القاهرة وخدماتنا: شراء وإيجار وأحبار</h2>
       <div class="divider"></div>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-cart-shopping"></i></div><h3 class="service-title">بيع ماكينات جديدة واستيراد</h3><p class="service-desc">مع ضمان معتمد وتركيب وتدريب، مبنية على حجم التصوير الشهري الفعلي لديك.</p><a href="/copiers/buy" class="btn btn-outline-primary btn-sm">ماكينات للبيع <i class="fas fa-arrow-left"></i></a></div>
+      <div class="service-card reveal"><div class="service-icon"><i class="fas fa-cart-shopping"></i></div><h3 class="service-title">شراء ماكينات جديدة واستيراد</h3><p class="service-desc">مع ضمان معتمد وتركيب وتدريب، مبنية على حجم التصوير الشهري الفعلي لديك.</p><a href="/copiers/buy" class="btn btn-outline-primary btn-sm">ماكينات للبيع <i class="fas fa-arrow-left"></i></a></div>
       <div class="service-card reveal delay-1"><div class="service-icon"><i class="fas fa-calendar-days"></i></div><h3 class="service-title">إيجار بعقد شهري</h3><p class="service-desc">تكلفة شهرية ثابتة تشمل الصيانة والقطع، مناسب للمشاريع الجديدة والفروع المؤقتة.</p></div>
       <div class="service-card reveal delay-2"><div class="service-icon"><i class="fas fa-screwdriver-wrench"></i></div><h3 class="service-title">صيانة وقطع غيار أصلية</h3><p class="service-desc">زيارات وقائية مجدولة وإصلاح ميداني بأولوية استجابة لعملاء العقود.</p><a href="/copiers/maintenance" class="btn btn-outline-primary btn-sm">صيانة الماكينات <i class="fas fa-arrow-left"></i></a></div>
       <div class="service-card reveal delay-3"><div class="service-icon"><i class="fas fa-droplet"></i></div><h3 class="service-title">أحبار وتونر أصلي</h3><p class="service-desc">توريد دوري مجدول فلا يتوقف قسم بسبب خرطوشة فارغة.</p><a href="/copiers/cartridges" class="btn btn-outline-primary btn-sm">أحبار وخراطيش <i class="fas fa-arrow-left"></i></a></div>
@@ -144,22 +143,26 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>الماركات التي نوفرها</h2>
+      <h2>الماركات التي نوفرها: كل ماركات ماكينات التصوير في السوق</h2>
       <div class="divider"></div>
     </div>
-    <div style="overflow-x:auto;max-width:900px;margin:0 auto">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
-        <thead><tr style="background:var(--green-dark);color:var(--white)"><th style="padding:14px 16px;text-align:right">الماركة</th><th style="padding:14px 16px;text-align:right">نقطة القوة الأبرز</th><th style="padding:14px 16px;text-align:right">الأنسب لمن</th></tr></thead>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead><tr><th>الماركة</th><th>أشهر السلاسل</th><th>أبيض وأسود / ألوان</th><th>السرعة (نسخة/دقيقة)</th><th>أبرز ما تُعرف به</th><th>الأنسب لـ</th></tr></thead>
         <tbody>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">ريكو Ricoh</td><td style="padding:12px 16px">انتشار واسع وتكلفة تشغيل اقتصادية</td><td style="padding:12px 16px">أساطيل الشركات والاستخدام الكثيف</td></tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">كانون Canon</td><td style="padding:12px 16px">جودة ألوان قوية وسهولة استخدام</td><td style="padding:12px 16px">طباعة مواد عرض وتقارير ملونة</td></tr>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">كونيكا مينولتا</td><td style="padding:12px 16px">إنتاجية عالية وأداء ألوان احترافي</td><td style="padding:12px 16px">أقسام التصوير كثيفة الاستخدام</td></tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee"><td style="padding:12px 16px">توشيبا e-STUDIO</td><td style="padding:12px 16px">موثوقية عالية وتحمل تشغيل طويل</td><td style="padding:12px 16px">الجهات الإدارية والتصوير الكثيف</td></tr>
-          <tr style="background:var(--white);border-bottom:1px solid #eee"><td style="padding:12px 16px">زيروكس Xerox</td><td style="padding:12px 16px">حلول إدارة مستندات مؤسسية</td><td style="padding:12px 16px">منظومة إدارة مستندات متكاملة</td></tr>
-          <tr style="background:#f8f9fa"><td style="padding:12px 16px">كيوسيرا Kyocera</td><td style="padding:12px 16px">تكلفة تشغيل منخفضة</td><td style="padding:12px 16px">أقل تكلفة للصفحة</td></tr>
+          <tr><td>Toshiba</td><td>e-STUDIO</td><td>الاثنان</td><td>20 – 85</td><td>انتشار واسع وقطع غيار متوفرة دائمًا</td><td>المكاتب والشركات عمومًا</td></tr>
+          <tr><td>Ricoh</td><td>MP وIM</td><td>الاثنان</td><td>20 – 90</td><td>تحمّل قوي للأحجام الكبيرة</td><td>الاستخدام الكثيف ومراكز التصوير</td></tr>
+          <tr><td>Xerox</td><td>VersaLink وAltaLink</td><td>الاثنان</td><td>25 – 70</td><td>جودة ألوان قوية</td><td>مواد الألوان والعروض</td></tr>
+          <tr><td>Kyocera</td><td>TASKalfa وECOSYS</td><td>الاثنان</td><td>20 – 70</td><td>مكونات طويلة العمر وتكلفة نسخة منخفضة</td><td>من يريد أقل تكلفة تشغيل</td></tr>
+          <tr><td>Canon</td><td>imageRUNNER</td><td>الاثنان</td><td>20 – 75</td><td>سهولة استخدام وموثوقية</td><td>المكاتب الصغيرة والمتوسطة</td></tr>
+          <tr><td>Konica Minolta</td><td>bizhub</td><td>الاثنان</td><td>20 – 75</td><td>إنتاجية عالية وأداء ألوان</td><td>الطباعة الملونة الاحترافية</td></tr>
+          <tr><td>Sharp</td><td>MX وBP</td><td>الاثنان</td><td>20 – 75</td><td>شاشات لمس سهلة وتكامل مع الشبكة</td><td>الشركات متعددة الأقسام</td></tr>
+          <tr><td>HP</td><td>LaserJet MFP وColor LaserJet</td><td>الاثنان</td><td>20 – 65</td><td>توافق ممتاز مع أنظمة المكاتب</td><td>المكاتب الصغيرة والطباعة A4</td></tr>
+          <tr><td>Brother</td><td>MFC وDCP</td><td>الاثنان</td><td>20 – 50</td><td>أجهزة مدمجة بسعر شراء منخفض</td><td>المكاتب المنزلية والصغيرة</td></tr>
         </tbody>
       </table>
     </div>
+    <p class="cmp-note">نوفر الماكينات جديدة واستيراد خارج، ونصون ونورد أحبار كل هذه الماركات وغيرها. السرعات تقريبية حسب الموديل.</p>
   </div>
 </section>
 
@@ -184,23 +187,6 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>مناطق تغطيتنا في القاهرة لصيانة وبيع ماكينات التصوير</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-city"></i></div><h3>التجمع الخامس</h3><p>مقرات الشركات ومباني الأعمال الحديثة التي تعتمد على أساطيل ماكينات تصوير متعددة الطوابق والإدارات.</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>مدينة نصر</h3><p>كثافة مكتبية وتجارية عالية تحتاج استجابة سريعة لأعطال الطباعة اليومية المتكررة.</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>المعادي</h3><p>مكاتب الشركات والمقرات الإدارية بمواعيد صيانة تناسب طبيعة كل عميل ونوع نشاطه.</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-arrow-trend-up"></i></div><h3>القاهرة الجديدة</h3><p>المقرات الجديدة والتوسعات، من التوريد الأول حتى عقود الصيانة الشاملة لاحقًا.</p></div>
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-building-columns"></i></div><h3>وسط البلد المالي</h3><p>المباني الإدارية والمقرات العريقة التي تحتاج حلولًا مدروسة تراعي طبيعة إنشاءاتها القديمة.</p></div>
-    </div>
-    <p style="max-width:800px;margin:20px auto 0;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">ونخدم الإسكندرية أيضًا عبر <a href="/alexandria/copiers">صفحة ماكينات التصوير في الإسكندرية</a>.</p>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -218,7 +204,7 @@ const schemaJson = JSON.stringify({
 
 <MidPageCTA formId="copCairoMidCta" />
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>ما الذي يحدد أسعار ماكينات التصوير وتكلفة التشغيل؟</h2>
@@ -285,7 +271,7 @@ const schemaJson = JSON.stringify({
 
 <section class="section section-bg">
   <div class="container">
-    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">غير ماكينات التصوير، عندنا في القاهرة: <a href="/cairo/ac">التكييفات</a>، <a href="/cairo/cameras">كاميرات المراقبة</a>، <a href="/cairo/cash-machines">ماكينات عد نقود</a>، <a href="/cairo/office-supplies">مستلزمات مكتبية</a>، و<a href="/cairo/printing">خدمات الطباعة</a>. تجهيز شامل؟ شوف <a href="/cairo/office-setup">صفحة تجهيز مكتب متكامل</a>.</p>
+    <p style="max-width:800px;margin:0 auto 40px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">نغطي القاهرة الكبرى بالتوريد والصيانة الميدانية، من وسط البلد ومدينة نصر حتى المعادي والتجمع الخامس. نخدم أيضًا <a href="/alexandria/copiers">الإسكندرية</a>. تعرف على <a href="/cairo">كل خدماتنا في القاهرة</a>: <a href="/cairo/ac">التكييفات</a> و<a href="/cairo/cameras">كاميرات المراقبة</a> و<a href="/cairo/cash-machines">ماكينات عد النقود</a> و<a href="/cairo/office-supplies">المستلزمات المكتبية</a> و<a href="/cairo/printing">الطباعة</a> و<a href="/cairo/office-setup">تجهيز المكاتب</a>.</p>
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
       <div class="divider"></div>
@@ -309,12 +295,12 @@ const schemaJson = JSON.stringify({
 <section class="section quote-section">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب عرض سعر ماكينة تصوير أو عقد أسطول</h2>
+      <div class="as-h2">اطلب عرض سعر ماكينة تصوير أو عقد أسطول</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -359,7 +345,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل تفاصيل ماكينات التصوير في القاهرة</p>
         <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20ماكينة%20تصوير%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر

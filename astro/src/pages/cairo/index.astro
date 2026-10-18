@@ -59,7 +59,7 @@ const schemaJson = JSON.stringify({
   .quote-section{padding:60px 0}
   .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
   .quote-form-card{background:#fff;border-radius:18px;padding:2.2rem;box-shadow:0 4px 24px rgba(27,58,107,0.1)}
-  .quote-form-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
+  .quote-form-card h3,.quote-form-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green-dark);margin-bottom:1.5rem}
   .form-group{margin-bottom:1.1rem}
   .form-group label{display:block;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:600;color:var(--green-dark);margin-bottom:0.4rem}
   .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e5eaf3;border-radius:10px;font-family:'Tajawal',sans-serif;font-size:1rem;color:#333;background:#fafbfd;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box;direction:rtl}
@@ -72,7 +72,7 @@ const schemaJson = JSON.stringify({
   .success-message p{font-family:'Cairo',sans-serif;font-size:1.05rem;color:#2e7d32;font-weight:600}
   .quote-alt-card{background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:18px;padding:2.4rem;text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem}
   .quote-alt-card .wa-icon{font-size:3rem}
-  .quote-alt-card h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
+  .quote-alt-card h3,.quote-alt-card .as-h3{font-family:'Cairo',sans-serif;font-size:1.3rem;font-weight:800}
   .quote-alt-card p{opacity:.92;line-height:1.8}
   @media(max-width:768px){.quote-grid{grid-template-columns:1fr}}
 </style>
@@ -99,46 +99,19 @@ const schemaJson = JSON.stringify({
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num" data-target="27" data-suffix="+">0+</div>
-        <div class="stat-label">سنة خبرة في السوق المصري</div>
-      </div>
-      <div class="stat-item reveal delay-1">
-        <div class="stat-num" data-target="6">0</div>
-        <div class="stat-label">فئات خدمة متكاملة</div>
-      </div>
-      <div class="stat-item reveal delay-2">
-        <div class="stat-num" data-target="5">0</div>
-        <div class="stat-label">مناطق أعمال رئيسية نغطيها</div>
-      </div>
-      <div class="stat-item reveal delay-3">
-        <div class="stat-num" data-target="1">0</div>
-        <div class="stat-label">مندوب حساب مخصص لكل عميل</div>
-      </div>
+      <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
+      <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-suffix="+">0+</div><div class="stat-label">عميل في جميع أنحاء مصر</div></div>
+      <div class="stat-item reveal delay-2"><div class="stat-num stat-text">كل الماركات</div><div class="stat-label">المتاحة في السوق، بيعًا وصيانة</div></div>
+      <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">تخصصات خدمة تحت سقف واحد</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="intro-text" style="max-width:900px;margin:0 auto 48px;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>تبحث عن مورد واحد موثوق يغطي كل احتياجات مكتبك؟ خدماتنا في القاهرة تمنحك ذلك بالضبط. شركة نيو جولدن أوفيس تقدم للشركات في القاهرة تغطية خدمة كاملة تشمل ست فئات: الطباعة، المستلزمات المكتبية، التكييفات، كاميرات المراقبة، ماكينات التصوير، وماكينات عد النقود. خبرة 27 عامًا في تجهيز وخدمة المكاتب والشركات، وفرق ميدانية متنقلة تصل إلى مقرك في التجمع الخامس ومدينة نصر والمعادي والقاهرة الجديدة ووسط البلد المالي، ومندوب حساب مخصص يتابع طلباتك من أول اتصال حتى ما بعد التسليم. مورد واحد، فاتورة واحدة، مسؤولية واحدة.</p>
-      <p style="margin-top:16px">نتعامل مع شركات القاهرة بنفس مستوى الجدية الذي نتعامل به مع عملاء الإسكندرية منذ 1999، بغض النظر عن عدم وجود فرع فعلي في المدينة. الفارق الحقيقي في تجربة العميل يأتي من انضباط المواعيد ووضوح التعامل، لا من قرب المسافة الجغرافية وحدها، وهذا ما نحرص على إثباته مع كل عميل جديد في القاهرة.</p>
-    </div>
-
-    <div class="section-header">
-      <h2>نخدم القاهرة بنظام تشغيل محكم، لا بكثرة الفروع</h2>
-      <div class="divider"></div>
-    </div>
     <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>نموذج عملنا في القاهرة مبني على الكفاءة: مسارات تسليم مجدولة تغطي مناطق الأعمال الرئيسية بانتظام، وفرق تركيب وصيانة متنقلة مجهزة بالكامل بالعدد وقطع الغيار، ومندوب حساب مخصص لكل عميل شركات يعرف تاريخ طلباتك واحتياجاتك بالاسم. هذا النموذج ليس بديلًا عن فرع، بل هو اختيار تشغيلي واعٍ: بدلًا من أن ينتظر العميل موعدًا يناسب الفرع، تتحرك الخدمة نحو العميل بمواعيد متفق عليها مسبقًا. النتيجة التي يلمسها عملاؤنا في القاهرة: مرونة أعلى في المواعيد، واستجابة أسرع للطلبات الدورية، وأسعار تنافسية لأننا لا نحمّل عقودنا تكاليف تشغيل إضافية لا يستفيد منها العميل.</p>
-      <p style="margin-top:16px">هذا النهج أثبت نجاحه مع عشرات الشركات في القاهرة التي كانت تتعامل سابقًا مع موردين متعددين لكل خدمة على حدة، ثم انتقلت لنظامنا الموحد ووجدت أن التوفير الحقيقي لا يأتي فقط من السعر، بل من الوقت الإداري الذي كان يُهدر في التنسيق بين جهات متفرقة.</p>
-      <p style="margin-top:16px">نتعامل مع كل عميل جديد في القاهرة بنفس الشفافية: نشرح لك مسبقًا آلية العمل ومواعيد التسليم المتوقعة، ولا نعِد بما لا نستطيع تنفيذه، لأن سمعتنا الممتدة منذ 1999 بُنيت على الالتزام لا الوعود الفارغة.</p>
-      <p style="margin-top:16px">كل مندوب حساب لدينا مسؤول عن عدد محدود من العملاء عمدًا، حتى يتمكن من متابعة تفاصيل كل شركة بدقة بدل التعامل مع عدد كبير جدًا من الحسابات دون اهتمام حقيقي بالتفاصيل.</p>
-      <p style="margin-top:16px">نراجع أيضًا بشكل دوري رضا عملائنا في القاهرة عن مستوى الخدمة، ونستخدم هذه الملاحظات لتحسين مساراتنا وجدولة زياراتنا باستمرار.</p>
-      <p style="margin-top:16px">نهدف دائمًا لأن تكون تجربتك الأولى معنا في القاهرة بداية علاقة طويلة، لا صفقة واحدة، وهذا ما ينعكس في طريقة تعاملنا مع أصغر التفاصيل.</p>
-      <p style="margin-top:16px">بالإضافة إلى الخدمات الست الأساسية، نساعد الشركات التي تفتتح فرعًا جديدًا في القاهرة أو تُجهّز مكتبًا من الصفر عبر تنسيق كل هذه الخدمات في مشروع واحد بترتيب تنفيذ صحيح، بدل التعامل مع ست جهات منفصلة قد تتعارض مواعيدها مع بعضها البعض.</p>
-      <p style="margin-top:16px">وخلف هذا النموذج تقف خبرة 27 عامًا في السوق المصري. نعرف كيف تشتري الشركات، وما الذي يعطل مكتبًا عن العمل، وما الفرق بين مورد يبيع منتجًا ومورد يتحمل مسؤولية تشغيل كاملة. هذه الخبرة هي ما نضعه في كل عقد توريد وكل زيارة صيانة داخل القاهرة.</p>
+      <p>خدماتنا في القاهرة تغطي 6 تخصصات لتجهيز وتشغيل المكاتب والشركات: <a href="/cairo/printing">الطباعة</a> بكل أنواعها، <a href="/cairo/office-supplies">الأدوات والمستلزمات المكتبية</a>، <a href="/cairo/ac">التكييفات</a> توريدًا وتركيبًا وصيانة، <a href="/cairo/cameras">كاميرات المراقبة</a>، <a href="/cairo/copiers">ماكينات التصوير</a> وأحبارها، و<a href="/cairo/cash-machines">ماكينات عد النقود</a> وكشف التزييف.</p>
+      <p style="margin-top:16px">نتعامل مع كل الماركات المتاحة في السوق، ومندوب حساب واحد يتابع كل خدماتك. تقدر تطلب خدمة واحدة، أو تجهّز مقرك بالكامل عبر <a href="/cairo/office-setup">مشروع تجهيز متكامل</a> بعقد وفاتورة واحدة.</p>
     </div>
   </div>
 </section>
@@ -169,7 +142,7 @@ const schemaJson = JSON.stringify({
       <div class="service-card reveal delay-2">
         <div class="service-card-img"><Img src="/images/webp-images/modern-air-conditioner-unit-on-wall-at-home-2026-03-25-06-57-47-utc.webp" alt="شركة تكييفات في القاهرة" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-        <h3 class="service-title">التكييفات: بيع وتركيب وصيانة</h3>
+        <h3 class="service-title">التكييفات: شراء وتركيب وصيانة</h3>
         <p class="service-desc">من السبليت إلى الحلول المركزية، مع ترشيح القدرة المناسبة وعقود صيانة سنوية تواجه أجواء القاهرة المغبرة.</p>
         <a href="/cairo/ac" class="btn btn-outline-primary btn-sm">خدمات شركة التكييفات في القاهرة <i class="fas fa-arrow-left"></i></a>
       </div>
@@ -186,7 +159,7 @@ const schemaJson = JSON.stringify({
         <div class="service-card-img"><Img src="/images/copier-scanning-office-1784572494919-541980.webp" alt="شركة ماكينات تصوير في القاهرة" preset="card" /></div>
         <div class="service-icon"><i class="fas fa-copy"></i></div>
         <h3 class="service-title">ماكينات تصوير المستندات</h3>
-        <p class="service-desc">بيع وصيانة لماركات موثوقة مثل ريكو وكانون وكونيكا مينولتا وتوشيبا، مع عقود صيانة لأساطيل الماكينات في مقرات الشركات الكبرى.</p>
+        <p class="service-desc">شراء وصيانة لماركات موثوقة مثل ريكو وكانون وكونيكا مينولتا وتوشيبا، مع عقود صيانة لأساطيل الماكينات في مقرات الشركات الكبرى.</p>
         <a href="/cairo/copiers" class="btn btn-outline-primary btn-sm">خدمات ماكينات التصوير في القاهرة <i class="fas fa-arrow-left"></i></a>
       </div>
 
@@ -261,15 +234,8 @@ const schemaJson = JSON.stringify({
       <h2>مناطق تغطيتنا داخل القاهرة</h2>
       <div class="divider"></div>
     </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <ul style="padding-inline-start:20px;line-height:2.1">
-        <li><strong>التجمع الخامس:</strong> الشركات والمقرات الإدارية الحديثة التي تحتاج تجهيزًا متكاملًا من الصفر أو توريدًا دوريًا منتظمًا.</li>
-        <li><strong>مدينة نصر:</strong> كثافة مكتبية وتجارية عالية نخدمها بمسارات تسليم متكررة للمستلزمات والأحبار.</li>
-        <li><strong>المعادي:</strong> مكاتب الشركات المحلية والأجنبية، مع فرق تركيب وصيانة تلتزم بمواعيد دقيقة.</li>
-        <li><strong>القاهرة الجديدة:</strong> المقرات المتوسعة التي تحتاج شريكًا ينمو معها في التكييف والمراقبة والتجهيز المكتبي.</li>
-        <li><strong>وسط البلد المالي:</strong> البنوك وشركات الصرافة والمكاتب العريقة، وهي الأكثر طلبًا لماكينات عد النقود وكشف التزييف.</li>
-      </ul>
-      <p style="margin-top:16px;text-align:center">إذا كان مقرك في منطقة أخرى داخل القاهرة، تواصل معنا وسنؤكد لك ترتيبات الخدمة قبل أي التزام.</p>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;text-align:center;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>نغطي القاهرة الكبرى بالتوريد والتركيب والصيانة: وسط البلد ومصر الجديدة، مدينة نصر والمعادي، القاهرة الجديدة والتجمع الخامس، والشيخ زايد و6 أكتوبر.</p>
     </div>
     <div class="reveal" style="max-width:900px;margin:36px auto 0;border-radius:var(--radius-lg);overflow:hidden">
       <Img src="/images/cairo-print-delivery-2.webp" alt="برج القاهرة ومباني الزمالك" preset="content" style="width:100%;height:340px;object-fit:cover;display:block" />
@@ -324,30 +290,30 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>كيف تبدأ معنا؟</h2>
+      <div class="as-h2">كيف تبدأ معنا؟</div>
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>تواصل معنا</h3>
+        <div class="as-h3">تواصل معنا</div>
         <p>اتصل بنا على 01227392074 أو راسلنا واذكر احتياجك.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>مندوب حساب يتابعك</h3>
+        <div class="as-h3">مندوب حساب يتابعك</div>
         <p>يتواصل معك مندوب حساب لفهم التفاصيل وترتيب معاينة إن لزمت.</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>عرض سعر واضح</h3>
+        <div class="as-h3">عرض سعر واضح</div>
         <p>يصلك عرض سعر واضح ببنود مكتوبة. لا التزام قبل أن تعرف كل شيء.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>نخدم الإسكندرية أيضًا</h2>
@@ -365,7 +331,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>الأسئلة الشائعة عن خدماتنا في القاهرة</h2>
@@ -416,15 +382,15 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section quote-section">
+<section class="section quote-section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>اطلب عرض سعر لخدماتك في القاهرة</h2>
+      <div class="as-h2">اطلب عرض سعر لخدماتك في القاهرة</div>
       <div class="divider"></div>
     </div>
     <div class="quote-grid">
       <div class="quote-form-card reveal">
-        <h3>أرسل تفاصيل طلبك</h3>
+        <div class="as-h3">أرسل تفاصيل طلبك</div>
         <form id="quoteForm">
           <div class="form-group">
             <label for="q-name">الاسم الكامل</label>
@@ -444,7 +410,7 @@ const schemaJson = JSON.stringify({
               <option value="" disabled selected>اختر الخدمة التي تحتاجها</option>
               <option value="printing">الطباعة والدعاية للشركات</option>
               <option value="office-supplies">الأدوات والمستلزمات المكتبية</option>
-              <option value="ac">التكييفات: بيع وتركيب وصيانة</option>
+              <option value="ac">التكييفات: شراء وتركيب وصيانة</option>
               <option value="cameras">كاميرات المراقبة وأنظمة الأمان</option>
               <option value="copiers">ماكينات تصوير المستندات</option>
               <option value="cash-machines">ماكينات عد النقود وكشف التزييف</option>
@@ -469,7 +435,7 @@ const schemaJson = JSON.stringify({
       </div>
       <div class="quote-alt-card reveal delay-1">
         <i class="fab fa-whatsapp wa-icon"></i>
-        <h3>تفضل تتكلم مباشرة؟</h3>
+        <div class="as-h3">تفضل تتكلم مباشرة؟</div>
         <p>كلمنا على واتساب وهنرد عليك فورًا بكل خدماتنا في القاهرة</p>
         <a href="https://wa.me/201227392074?text=أريد%20الاستفسار%20عن%20خدماتكم%20في%20القاهرة" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--green-dark);font-weight:700">
           <i class="fab fa-whatsapp" style="color:#25D366"></i> واتساب مباشر
