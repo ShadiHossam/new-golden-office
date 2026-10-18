@@ -5,12 +5,13 @@ import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "بيع ماكينات التصوير",
+  "name": "شراء ماكينات التصوير",
   "description": "ماكينات تصوير للبيع في مصر، Canon وRicoh وKyocera وToshiba وXerox بأفضل الأسعار مع ضمان وخدمة ما بعد البيع.",
-  "serviceType": "بيع ماكينات تصوير",
+  "serviceType": "شراء ماكينات تصوير",
   "provider": {
     "@type": "LocalBusiness",
     "name": "نيو جولدن أوفيس",
@@ -34,13 +35,13 @@ const schemaJson = JSON.stringify({
 >
 <PageHero
   title="ماكينات تصوير للبيع في مصر: ريكو، كانون، كيوسيرا، توشيبا"
-  subtitle="متخصصون منذ 1999 في بيع ماكينات التصوير الجديدة والمجددة بأسعار تنافسية لجميع محافظات مصر"
-  heroImage="/images/copiers-hub.webp"
+  subtitle="متخصصون منذ 1999 في توريد ماكينات التصوير الجديدة والمجددة بأسعار تنافسية لجميع محافظات مصر"
+  heroImage="/images/hero-copiers-buy.webp"
   heroIcon="fa-copy"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
     { label: 'ماكينات التصوير والطابعات', href: '/copiers' },
-    { label: 'بيع ماكينات التصوير' }
+    { label: 'شراء ماكينات التصوير' }
   ]}
 />
 
@@ -49,7 +50,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -57,6 +57,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>شراء ماكينة تصوير: الأنواع المتاحة للبيع</h2>
       <div class="divider"></div>
@@ -66,6 +68,9 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3>ماكينات التصوير أبيض وأسود (Monochrome)</h3><p>تُعدّ ماكينات التصوير أحادية اللون الأكثر انتشاراً في مصر، وهي الخيار المثالي للمكاتب ومحلات التصوير والجهات الحكومية. تتراوح سرعات هذه الماكينات بين 20 صفحة في الدقيقة للاستخدام المكتبي المتوسط وحتى 100 صفحة في الدقيقة للاستخدامات المكثفة. تتميز بتكلفة منخفضة للصفحة الواحدة وعمر تشغيلي طويل، مما يجعلها الأنسب للمؤسسات التي تطبع عشرات الآلاف من الصفحات شهرياً. معظمها يدعم الطباعة على الوجهين (Duplex) والاتصال بالشبكة وميزة المسح الضوئي وإرسال الفاكس.</p></div>
       <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3>ماكينات التصوير الملونة (Color Copiers)</h3><p>تمثل ماكينات التصوير الملونة القفزة النوعية في جودة المخرجات، وهي مثالية لشركات الإعلان والتسويق ومكاتب العمارة والهندسة والمطابع الصغيرة. توفر هذه الماكينات جودة طباعة عالية بدقة تصل إلى 1200×1200 نقطة في البوصة، مع سرعات تتراوح بين 20 و60 صفحة ملونة في الدقيقة. تستخدم نظام تونر رباعي الألوان (CMYK) لضمان دقة الألوان وثباتها على مدار عمر الماكينة.</p></div>
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>ماكينات التصوير متعددة الوظائف (Multifunction)</h3><p>تجمع هذه الماكينات بين وظائف الطباعة والنسخ والمسح الضوئي وإرسال الفاكس في جهاز واحد متكامل. تأتي مزودة بدرج أوتوماتيكي لتغذية المستندات (ADF) يستوعب من 50 إلى 300 ورقة، وشاشة لمس ملونة لسهولة التشغيل، وإمكانية الإرسال المباشر للمسح الضوئي عبر البريد الإلكتروني أو الشبكة. تُعدّ الحل الأمثل للشركات التي تحتاج إلى دمج عدة أجهزة في جهاز واحد لتوفير المساحة والتكلفة.</p></div>
+    </div>
+        </div>
+      <ServiceSidebar category="copiers" current="/copiers/buy" />
     </div>
   </div>
 </section>
@@ -247,7 +252,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -259,33 +264,16 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
 
 <section class="section section-bg">
-  <div class="container">
-    <div class="section-header"><h2>أسئلة شائعة عن ماكينات التصوير</h2><div class="divider"></div></div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">ما الفرق بين ماكينة التصوير وطابعة الليزر متعددة الوظائف؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">ماكينة التصوير مصممة للاستخدام المكثف وتتميز بسرعات عالية جداً (30-100+ صفحة/دقيقة) وسعة ورق كبيرة ودرج تلقائي ADF، بينما طابعة الليزر متعددة الوظائف أصغر حجماً وأقل سرعة وتناسب المكاتب الصغيرة. اختيارك يعتمد على حجم الطباعة اليومي.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تبيعون ماكينات تصوير مستعملة مجددة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم نبيع ماكينات مجددة بالكامل من كانون وريكو وكيوسيرا مع ضمان 6 أشهر. تمر كل ماكينة بفحص شامل وإصلاح كامل لكل المكونات.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما أسرع ماكينات التصوير المتاحة لديكم؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نوفر ماكينات بسرعات من 20 صفحة/دقيقة للاستخدام المكتبي المتوسط وصولاً إلى 100+ صفحة/دقيقة للاستخدام المكثف في محلات التصوير والشركات الكبيرة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تخدمون محافظات خارج الإسكندرية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نخدم جميع محافظات مصر. للقاهرة والمحافظات المجاورة يتوفر لدينا فريق تسليم وتركيب ميداني، وللمحافظات البعيدة يتم الشحن مع ضمان التركيب.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما عمر الضمان على الماكينات الجديدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الماكينات الجديدة تأتي بضمان الشركة المصنعة لمدة عام كامل مع إمكانية تمديده، فيما تأتي الماكينات المجددة بضمان 6 أشهر من نيو جولدن أوفيس.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم سعر ماكينة التصوير للبيع في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار ماكينات التصوير في مصر حسب الطراز والمواصفات. نيو جولدن أوفيس توفر أفضل الأسعار مع ضمان وخدمة ما بعد البيع في الإسكندرية والقاهرة وجميع أنحاء مصر. تواصل معنا للحصول على عرض سعر.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل يمكن التقسيط عند شراء ماكينة تصوير؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر لبعض العملاء والشركات إمكانية تقسيط قيمة الماكينة على عدة دفعات حسب الاتفاق، بالإضافة إلى خيار الشراء النقدي الكامل. تواصل معنا لمناقشة الخيار الأنسب لميزانيتك.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما دورة الإنتاج الشهرية وكيف تؤثر على اختياري؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">دورة الإنتاج الشهرية هي الحد الأقصى من الصفحات التي يمكن للماكينة طباعتها شهرياً دون الإضرار بمكوناتها. ننصح دائماً أن تكون طباعتك الفعلية 50-60% فقط من هذا الرقم لضمان عمر تشغيلي طويل وتقليل الأعطال.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تتكفلون بتركيب الماكينة وتدريب الموظفين بعد الشراء؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، خدمة التوصيل والتركيب والتشغيل التجريبي وتدريب المستخدمين على الاستخدام اليومي مشمولة ضمن عملية البيع دون تكلفة إضافية، حتى تبدأ الماكينة عملها الفعلي فور تسليمها.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>ماكينة تصوير جديدة أم مستعملة: أيهما أفضل لك؟</h2>
@@ -320,9 +308,27 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header"><h2>أسئلة شائعة عن ماكينات التصوير</h2><div class="divider"></div></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">ما الفرق بين ماكينة التصوير وطابعة الليزر متعددة الوظائف؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">ماكينة التصوير مصممة للاستخدام المكثف وتتميز بسرعات عالية جداً (30-100+ صفحة/دقيقة) وسعة ورق كبيرة ودرج تلقائي ADF، بينما طابعة الليزر متعددة الوظائف أصغر حجماً وأقل سرعة وتناسب المكاتب الصغيرة. اختيارك يعتمد على حجم الطباعة اليومي.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تبيعون ماكينات تصوير مستعملة مجددة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم نبيع ماكينات مجددة بالكامل من كانون وريكو وكيوسيرا مع ضمان 6 أشهر. تمر كل ماكينة بفحص شامل وإصلاح كامل لكل المكونات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما أسرع ماكينات التصوير المتاحة لديكم؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نوفر ماكينات بسرعات من 20 صفحة/دقيقة للاستخدام المكتبي المتوسط وصولاً إلى 100+ صفحة/دقيقة للاستخدام المكثف في محلات التصوير والشركات الكبيرة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تخدمون محافظات خارج الإسكندرية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نخدم جميع محافظات مصر. للقاهرة والمحافظات المجاورة يتوفر لدينا فريق تسليم وتركيب ميداني، وللمحافظات البعيدة يتم الشحن مع ضمان التركيب.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما عمر الضمان على الماكينات الجديدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الماكينات الجديدة تأتي بضمان الشركة المصنعة لمدة عام كامل مع إمكانية تمديده، فيما تأتي الماكينات المجددة بضمان 6 أشهر من نيو جولدن أوفيس.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سعر ماكينة التصوير للبيع في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار ماكينات التصوير في مصر حسب الطراز والمواصفات. نيو جولدن أوفيس توفر أفضل الأسعار مع ضمان وخدمة ما بعد البيع في الإسكندرية والقاهرة وجميع أنحاء مصر. تواصل معنا للحصول على عرض سعر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن التقسيط عند شراء ماكينة تصوير؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر لبعض العملاء والشركات إمكانية تقسيط قيمة الماكينة على عدة دفعات حسب الاتفاق، بالإضافة إلى خيار الشراء النقدي الكامل. تواصل معنا لمناقشة الخيار الأنسب لميزانيتك.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما دورة الإنتاج الشهرية وكيف تؤثر على اختياري؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">دورة الإنتاج الشهرية هي الحد الأقصى من الصفحات التي يمكن للماكينة طباعتها شهرياً دون الإضرار بمكوناتها. ننصح دائماً أن تكون طباعتك الفعلية 50-60% فقط من هذا الرقم لضمان عمر تشغيلي طويل وتقليل الأعطال.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تتكفلون بتركيب الماكينة وتدريب الموظفين بعد الشراء؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، خدمة التوصيل والتركيب والتشغيل التجريبي وتدريب المستخدمين على الاستخدام اليومي مشمولة ضمن عملية البيع دون تكلفة إضافية، حتى تبدأ الماكينة عملها الفعلي فور تسليمها.</div></div></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
@@ -338,8 +344,8 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="related-services">
-      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
-      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/buy" class="related-service-link"><span>شراء ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>شراء طابعات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/maintenance" class="related-service-link"><span>صيانة الماكينات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
     </div>
