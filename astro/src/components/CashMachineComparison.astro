@@ -1,0 +1,48 @@
+---
+// Brand + machine-type comparison tables shared by the geo cash-machine pages.
+interface Props { bg?: boolean }
+const { bg = false } = Astro.props;
+---
+<section class={bg ? 'section section-bg' : 'section'}>
+  <div class="container">
+    <div class="section-header">
+      <h2>مقارنة ماركات ماكينات عد النقود</h2>
+      <div class="divider"></div>
+    </div>
+    <p class="cmp-note" style="margin:0 auto 24px">نتعامل مع كل الماركات المتاحة في السوق المصري بيعًا وصيانة. الجدول يلخص أشهرها والفرق بينها، والمواصفات تختلف من موديل لآخر داخل نفس الماركة.</p>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead><tr><th>الماركة</th><th>الفئة</th><th>السرعة (ورقة/دقيقة)</th><th>كشف التزييف</th><th>قراءة القيمة والرزم المختلطة</th><th>الأنسب لـ</th></tr></thead>
+        <tbody>
+          <tr><td>Glory</td><td>الأعلى، للبنوك والاستخدام الكثيف</td><td>1000 – 1500</td><td>UV + MG + IR وفحص بالصورة في موديلات الفرز</td><td>نعم في موديلات الفرز</td><td>البنوك وشركات نقل الأموال والصرافات الكبيرة</td></tr>
+          <tr><td>Kisan</td><td>احترافية</td><td>1000 – 1500</td><td>UV + MG + IR + CIS</td><td>نعم (سلسلة Newton)</td><td>الصرافات والشركات ذات الرزم المختلطة</td></tr>
+          <tr><td>Magner</td><td>احترافية</td><td>1000 – 1500</td><td>UV + MG + IR حسب الموديل</td><td>في الموديلات العليا</td><td>السوبر ماركت الكبير وخزائن الشركات</td></tr>
+          <tr><td>Safescan</td><td>متوسطة إلى احترافية</td><td>1000 – 1500</td><td>UV + MG + IR</td><td>في موديلات محددة (نتأكد من دعم الجنيه)</td><td>المكاتب والفنادق والمحلات المتوسطة</td></tr>
+          <tr><td>Cassida</td><td>متوسطة</td><td>1000 – 1400</td><td>UV + MG، وIR في بعض الموديلات</td><td>في موديلات محددة</td><td>المكاتب ومحلات التجزئة</td></tr>
+          <tr><td>LG</td><td>متوسطة</td><td>1000 – 1200</td><td>UV + MG</td><td>غالبًا عد فقط</td><td>الفروع والشركات المتوسطة</td></tr>
+          <tr><td>Ribao</td><td>اقتصادية إلى متوسطة</td><td>900 – 1200</td><td>UV + MG + IR حسب الموديل</td><td>نعم في موديلات الفرز</td><td>المحلات والصرافات الصغيرة</td></tr>
+          <tr><td>Carnation</td><td>اقتصادية</td><td>900 – 1100</td><td>UV + MG</td><td>لا في أغلب الموديلات</td><td>المحلات الصغيرة والصيدليات</td></tr>
+          <tr><td>Banker</td><td>اقتصادية</td><td>900 – 1100</td><td>UV + MG</td><td>لا في أغلب الموديلات</td><td>المكاتب والمحلات الصغيرة</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note">لو الماركة اللي في بالك مش في الجدول، غالبًا متوفرة عندنا أو نقدر نصونها. الأرقام تقريبية للموديلات الشائعة، وعرض السعر بيحدد الموديل بالضبط.</p>
+
+    <div class="section-header" style="margin-top:56px">
+      <h2>مقارنة أنواع ماكينات عد النقود</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead><tr><th>النوع</th><th>السرعة (ورقة/دقيقة)</th><th>كشف التزييف</th><th>يقرأ قيمة الورقة؟</th><th>رزم مختلطة الفئات</th><th>سعة الخزان</th><th>عدد الجيوب</th><th>الأنسب لـ</th></tr></thead>
+        <tbody>
+          <tr><td>عد فقط</td><td>800 – 1200</td><td>لا، أو UV بسيط</td><td>لا</td><td>لا</td><td>100 – 200 ورقة</td><td>جيب واحد</td><td>محل بتعاملات نقدية قليلة</td></tr>
+          <tr><td>عد مع كشف تزييف</td><td>1000 – 1500</td><td>UV + MG، وIR في الأعلى</td><td>لا</td><td>لا، فئة واحدة في كل مرة</td><td>200 – 300 ورقة</td><td>جيب واحد</td><td>المحلات والصيدليات والسوبر ماركت</td></tr>
+          <tr><td>عد وفرز (قراءة القيمة)</td><td>900 – 1200 مع المختلط</td><td>UV + MG + IR + CIS</td><td>نعم، ويعطي الإجمالي بالجنيه</td><td>نعم</td><td>300 – 500 ورقة</td><td>جيب واحد أو اثنان</td><td>الصرافات وشركات التحصيل والسلاسل</td></tr>
+          <tr><td>كثيف الاستخدام (للبنوك)</td><td>حتى 1500</td><td>متعدد التقنيات مع فحص بالصورة</td><td>نعم مع تسجيل الأرقام المسلسلة</td><td>نعم مع فرز آلي</td><td>500 ورقة فأكثر</td><td>جيبان أو أكثر</td><td>البنوك ومراكز النقد</td></tr>
+          <tr><td>جهاز كشف مستقل</td><td>ورقة بورقة</td><td>UV + MG + IR حسب الموديل</td><td>في بعض الموديلات</td><td>لا ينطبق</td><td>لا ينطبق</td><td>لا ينطبق</td><td>نقطة البيع والكاشير</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

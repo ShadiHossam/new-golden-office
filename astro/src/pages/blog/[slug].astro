@@ -97,10 +97,33 @@ const bodyHtmlWithoutSchema = p.body_html.replace(
 // The "أهم النقاط" summary renders as its own expandable card, not chapter 01.
 const { html: bodyHtmlWithoutKeys, points: keyPoints } = extractKeyPoints(bodyHtmlWithoutSchema);
 
-const { introHtml, chapters, headings } = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(bodyHtmlWithoutKeys))));
+const split = splitIntoChapters(wrapTables(normalizeHeadings(enhanceImages(bodyHtmlWithoutKeys))));
+const { introHtml } = split;
+
+// The FAQ always renders last, right before the related-articles grid, no
+// matter where the article put it. Some articles give each question its own
+// h2 after the FAQ heading — fold those into the FAQ chapter as h3s.
+const isFaqTitle = (t: string) => /الأسئلة الشائعة|أسئلة شائعة|أسئلة العملاء|FAQ/i.test(t);
+const isQuestionTitle = (t: string) => /[؟?]\s*$/.test(t) && !/^(الخاتمة|هل تبحث)/.test(t);
+let faqChapter: Chapter | null = null;
+const chapters: Chapter[] = [];
+for (let i = 0; i < split.chapters.length; i++) {
+  const c = split.chapters[i];
+  if (!faqChapter && isFaqTitle(c.title)) {
+    let bodyHtml = c.bodyHtml;
+    while (i + 1 < split.chapters.length && isQuestionTitle(split.chapters[i + 1].title)) {
+      const q = split.chapters[++i];
+      bodyHtml += `<h3>${q.title.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</h3>${q.bodyHtml}`;
+    }
+    faqChapter = { ...c, bodyHtml };
+  } else {
+    chapters.push(c);
+  }
+}
+const headings: Heading[] = [...chapters, ...(faqChapter ? [faqChapter] : [])].map((c) => ({ id: c.id, text: c.title }));
 const readMinutes = estimateReadMinutes(p.body_html);
 
-const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
+const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.webp';
 const publishedIso = p.published_at || p.updated_at;
 const canonical = `https://newgoldenoffice.com/blog/${p.slug}`;
 
@@ -138,7 +161,7 @@ const articleSchema = JSON.stringify({
   publisher: {
     '@type': 'Organization',
     name: 'نيو جولدن أوفيس',
-    logo: { '@type': 'ImageObject', url: 'https://newgoldenoffice.com/images/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://newgoldenoffice.com/images/logo.webp' },
   },
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
 });
@@ -154,6 +177,7 @@ const articleSchema = JSON.stringify({
   schemaJson={articleSchema}
   extraSchemas={[...(p.schemas ?? []), ...bodySchemas]}
   breadcrumbLabel={p.title}
+  popupContext={{ category: p.category, title: p.title }}
   ogType="article"
   publishedTime={p.published_at || p.created_at}
   modifiedTime={p.updated_at || p.published_at || p.created_at}
@@ -238,6 +262,16 @@ const articleSchema = JSON.stringify({
             <p class="bp-author-bio">{AUTHOR.bio}</p>
           </div>
         </div>
+
+        {faqChapter && (
+          <div class="bp-chapter bp-faq" id={faqChapter.id}>
+            <div class="bp-chapter-head">
+              <span class="bp-chapter-num">{String(chapters.length + 1).padStart(2, '0')}</span>
+              <h2 class="bp-chapter-title">{faqChapter.title}</h2>
+            </div>
+            <Fragment set:html={faqChapter.bodyHtml} />
+          </div>
+        )}
       </article>
 
       {sidebarRelated.length > 0 && (
@@ -277,7 +311,7 @@ const articleSchema = JSON.stringify({
     <div class="bp-wa-cta">
       <div class="bp-wa-info">
         <span class="bp-wa-eyebrow"><i class="fa-brands fa-whatsapp"></i> رد سريع على واتساب</span>
-        <h2>محتاج استشارة أو عرض سعر؟</h2>
+        <div class="as-h2">محتاج استشارة أو عرض سعر؟</div>
         <p>املأ بياناتك وهيتفتحلك واتساب على طول برسالة جاهزة فيها طلبك، فريقنا بيرد خلال دقايق في أوقات العمل.</p>
       </div>
       <form class="bp-wa-form" id="bpWaForm">

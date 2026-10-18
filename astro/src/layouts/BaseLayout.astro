@@ -5,6 +5,8 @@ import { join } from 'node:path';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import ContactPopup from '../components/ContactPopup.astro';
+import { resolvePopupCopy, type PopupContext } from '../lib/popupCopy';
 import { PAGE_NAMES } from '../lib/pageNames';
 
 // Cache-busting query param so CDN/browser caches never serve a stale
@@ -44,6 +46,10 @@ interface Props {
   preloadImage?: string;
   robots?: string;
   breadcrumbLabel?: string;
+  /** Show the 15s call/WhatsApp popup (off on contact/legal/404). */
+  popup?: boolean;
+  /** Blog posts pass their category + title for article-aware popup copy. */
+  popupContext?: PopupContext;
 }
 
 const {
@@ -61,6 +67,8 @@ const {
   preloadImage,
   robots,
   breadcrumbLabel,
+  popup = true,
+  popupContext,
 } = Astro.props;
 
 const SITE = 'https://newgoldenoffice.com';
@@ -70,7 +78,7 @@ const resolvedOgTitle = ogTitle ?? title;
 const resolvedOgDescription = ogDescription ?? description;
 const resolvedOgImage = ogImage
   ? (ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`)
-  : `${SITE}/images/og-image.jpg`;
+  : `${SITE}/images/og-image.webp`;
 
 // Build BreadcrumbList schema from pathname
 const segments = pathname.split('/').filter(s => s && s !== 'index.html' && !s.endsWith('.html'));
@@ -109,11 +117,11 @@ const localBusinessSchema = JSON.stringify({
   '@id': 'https://newgoldenoffice.com/#organization',
   name: 'نيو جولدن أوفيس',
   alternateName: 'New Golden Office',
-  description: 'بيع وصيانة ماكينات التصوير والطابعات، خدمات الطباعة، كاميرات المراقبة، التكييفات، ماكينات عد النقود، والمستلزمات المكتبية في مصر',
+  description: 'شراء وصيانة ماكينات التصوير والطابعات، خدمات الطباعة، كاميرات المراقبة، التكييفات، ماكينات عد النقود، والمستلزمات المكتبية في مصر',
   url: 'https://newgoldenoffice.com',
   telephone: '+201227392074',
   image: `${SITE}/images/about-team.webp`,
-  logo: `${SITE}/images/logo.png`,
+  logo: `${SITE}/images/logo.webp`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: '26 عبد المنعم سند',
@@ -193,8 +201,8 @@ const localBusinessSchema = JSON.stringify({
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/images/logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="/images/logo.png">
+  <link rel="icon" href="/images/logo.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="/images/logo.webp">
   <title>{title}</title>
   <meta name="description" content={description}>
   {keywords && <meta name="keywords" content={keywords}>}
@@ -236,6 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <slot />
 <Footer />
 <WhatsAppFloat />
+{popup && <ContactPopup copy={resolvePopupCopy(Astro.url.pathname, popupContext)} />}
 <div class="nav-overlay"></div>
 <script src="/js/main.js" defer></script>
 <script is:inline defer src={`/js/ngo-track.js?v=${trackJsVersion}`}></script>

@@ -4,6 +4,7 @@ import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
+  popup={false}
   {...getSeoFor('/terms')}
 >
 <style is:global>
@@ -28,7 +29,7 @@ import { getSeoFor } from '../lib/siteSeo';
   .policy-last-updated{display:inline-flex;align-items:center;gap:8px;background:#f0f0f0;border-radius:var(--radius-pill);padding:6px 16px;font-size:0.88rem;color:#666;margin-bottom:2rem}
   .policy-last-updated i{color:var(--green)}
   .policy-contact-cta{background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:var(--radius-lg);padding:2.5rem 2rem;text-align:center;color:#fff;margin-top:2rem}
-  .policy-contact-cta h3{color:#fff;margin-bottom:0.5rem}.policy-contact-cta p{color:rgba(255,255,255,0.85);margin-bottom:1.3rem}
+  .policy-contact-cta h3,.policy-contact-cta .as-h3{color:#fff;margin-bottom:0.5rem}.policy-contact-cta p{color:rgba(255,255,255,0.85);margin-bottom:1.3rem}
   .policy-contact-cta .btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--green-dark);padding:12px 28px;border-radius:var(--radius-pill);font-family:var(--font-heading);font-weight:700;font-size:0.95rem;transition:var(--transition)}
   .policy-contact-cta .btn-white:hover{background:var(--green-pale);transform:translateY(-2px)}
 </style>
@@ -55,7 +56,7 @@ import { getSeoFor } from '../lib/siteSeo';
       </ol>
     </div>
     <div class="policy-section" id="acceptance"><h2><span class="sec-num">١</span> القبول والموافقة</h2><p>باستخدامك لموقع <strong>نيو جولدن أوفيس</strong> (newgoldenoffice.com) أو طلب أي من خدماتنا، فإنك تُقرّ بأنك قرأت وفهمت ووافقت على هذه الشروط والأحكام. إذا كنت لا توافق على هذه الشروط، يُرجى عدم استخدام موقعنا أو خدماتنا.</p><div class="policy-info-box"><i class="fas fa-info-circle"></i><p>تُطبّق هذه الشروط على جميع المنتجات والخدمات التي تقدمها شركة نيو جولدن أوفيس، سواء عبر الموقع أو بصورة مباشرة.</p></div></div>
-    <div class="policy-section" id="services"><h2><span class="sec-num">٢</span> وصف الخدمات</h2><p>تقدم نيو جولدن أوفيس مجموعة متكاملة من الخدمات تشمل:</p><ul><li>بيع وصيانة ماكينات التصوير والطابعات وتوريد مستلزماتها (كارتريدج، أحبار، أسطوانات).</li><li>خدمات الطباعة بأنواعها: أوفست، رقمية، UV، بنرات، بزنس كارد، هدايا مطبوعة.</li><li>بيع وتركيب وصيانة كاميرات المراقبة وأنظمة DVR/NVR.</li><li>بيع وتركيب وصيانة وحدات التكييف وشحن الفريون.</li><li>بيع ماكينات عد النقود، كشف العملات المزيفة، ماكينات الفارم والختم، وتدمير المستندات.</li><li>توريد المستلزمات المكتبية بجميع أنواعها (ورق، أقلام، ملفات، أختام، وغيرها).</li></ul><p>نحتفظ بالحق في تعديل أو إيقاف أي خدمة في أي وقت دون إشعار مسبق.</p></div>
+    <div class="policy-section" id="services"><h2><span class="sec-num">٢</span> وصف الخدمات</h2><p>تقدم نيو جولدن أوفيس مجموعة متكاملة من الخدمات تشمل:</p><ul><li>شراء وصيانة ماكينات التصوير والطابعات وتوريد مستلزماتها (كارتريدج، أحبار، أسطوانات).</li><li>خدمات الطباعة بأنواعها: أوفست، رقمية، UV، بنرات، بزنس كارد، هدايا مطبوعة.</li><li>شراء وتركيب وصيانة كاميرات المراقبة وأنظمة DVR/NVR.</li><li>شراء وتركيب وصيانة وحدات التكييف وشحن الفريون.</li><li>شراء ماكينات عد النقود، كشف العملات المزيفة، ماكينات الفارم والختم، وتدمير المستندات.</li><li>توريد المستلزمات المكتبية بجميع أنواعها (ورق، أقلام، ملفات، أختام، وغيرها).</li></ul><p>نحتفظ بالحق في تعديل أو إيقاف أي خدمة في أي وقت دون إشعار مسبق.</p></div>
     <div class="policy-section" id="pricing"><h2><span class="sec-num">٣</span> الأسعار والدفع</h2><ul><li>تخضع جميع الأسعار للتغيير دون إشعار مسبق وفقًا لتقلبات السوق وأسعار الصرف.</li><li>يتم تأكيد الأسعار النهائية للعميل قبل إتمام أي صفقة أو أمر شراء.</li><li>يُقبل الدفع نقدًا عند الاستلام أو بالتحويل البنكي المباشر إلى حساباتنا الرسمية.</li><li>لا تُعتبر الصفقة مُبرمة إلا بعد الحصول على موافقة مكتوبة أو شفهية مؤكدة من فريقنا.</li><li>لا تشمل الأسعار المعروضة تكاليف التوصيل أو التركيب إلا إذا نُص على ذلك صراحةً.</li></ul><div class="policy-warning-box"><i class="fas fa-exclamation-triangle"></i><p>أي مدفوعات تُحوَّل إلى حسابات غير رسمية أو أرقام لم تتلقَها من فريقنا مباشرةً لا نتحمل مسؤوليتها.</p></div></div>
     <div class="policy-section" id="warranty"><h2><span class="sec-num">٤</span> الضمان والصيانة</h2><ul><li>تشمل المنتجات الجديدة ضمان الشركة المصنّعة وفقًا للشروط المصاحبة لكل منتج.</li><li>لا يشمل الضمان الأضرار الناتجة عن الإهمال أو سوء الاستخدام أو التعديل غير المرخص.</li><li>خدمات الصيانة التي تُقدمها نيو جولدن أوفيس مضمونة لمدة <strong>30 يومًا</strong> على العمل المنجز فقط.</li><li>الضمان على قطع الغيار المُستبدَلة يخضع لضمان المورد المعتمد.</li><li>لا يُعدّ ضمانًا أي تقدير شفهي لحالة الجهاز قبل الفحص الفعلي.</li></ul></div>
     <div class="policy-section" id="delivery"><h2><span class="sec-num">٥</span> التسليم والتركيب</h2><ul><li>مواعيد التسليم المُتفق عليها تقديرية وليست ملزِمة في حالات القوة القاهرة أو ظروف خارجة عن إرادتنا.</li><li>يتحمل العميل مسؤولية تهيئة المكان المناسب للتركيب (كهرباء مستقرة، تمديدات كافية للكاميرات، إلخ).</li><li>يُفحص المنتج أمام العميل عند التسليم؛ أي ضرر ظاهر يُبلَّغ عنه فورًا وإلا اعتُبر المنتج مُسلَّمًا بحالة جيدة.</li><li>تكاليف التوصيل خارج الإسكندرية تُحدد مسبقًا بحسب الموقع والكمية.</li></ul></div>
@@ -66,7 +67,7 @@ import { getSeoFor } from '../lib/siteSeo';
     <div class="policy-section" id="law"><h2><span class="sec-num">١٠</span> القانون الحاكم وتسوية النزاعات</h2><p>تخضع هذه الشروط للقانون المصري وتُفسَّر وفقًا له. في حال نشوء أي نزاع، يُسعى أولًا إلى تسويته وديًا. إذا تعذّر ذلك، يُحال النزاع إلى المحاكم المختصة في مدينة <strong>الإسكندرية، جمهورية مصر العربية</strong>.</p></div>
     <div class="policy-section" id="changes"><h2><span class="sec-num">١١</span> التعديلات على الشروط</h2><p>نحتفظ بالحق في تعديل هذه الشروط والأحكام في أي وقت. ستُنشر أي تعديلات على هذه الصفحة مع تغيير تاريخ "آخر تحديث". استمرارك في استخدام خدماتنا بعد التعديل يعني موافقتك على الشروط الجديدة.</p></div>
     <div class="policy-section" id="contact"><h2><span class="sec-num">١٢</span> تواصل معنا</h2><p>لأي استفسار يتعلق بهذه الشروط، يُرجى التواصل معنا:</p><ul><li><strong>العنوان:</strong> 26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية، مصر</li><li><strong>الهاتف / واتساب:</strong> 01227392074</li><li><strong>ساعات العمل:</strong> السبت – الخميس، 9 صباحًا – 6 مساءً</li></ul></div>
-    <div class="policy-contact-cta"><h3>هل لديك سؤال حول الشروط؟</h3><p>تواصل معنا مباشرةً وسيسعدنا مساعدتك.</p><a href="/contact" class="btn-white"><i class="fas fa-envelope"></i> تواصل معنا</a></div>
+    <div class="policy-contact-cta"><div class="as-h3">هل لديك سؤال حول الشروط؟</div><p>تواصل معنا مباشرةً وسيسعدنا مساعدتك.</p><a href="/contact" class="btn-white"><i class="fas fa-envelope"></i> تواصل معنا</a></div>
   </div>
 </section>
 </BaseLayout>

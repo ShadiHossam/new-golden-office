@@ -1,8 +1,12 @@
 ---
+import Img from './Img.astro';
+
 interface CardItem {
   icon: string;
   title?: string;
   text: string;
+  /** Optional photo shown at the top of the card instead of the icon. */
+  image?: string;
 }
 
 interface Props {
@@ -15,8 +19,10 @@ const { items, columns = 4 } = Astro.props;
 
 <div class:list={['features-grid', 'icon-card-grid', `cols-${columns}`]}>
   {items.map((item, i) => (
-    <div class:list={['feature-card', 'reveal', i > 0 && i <= 4 ? `delay-${i}` : '']}>
-      <div class="feature-icon"><i class={`fas ${item.icon}`}></i></div>
+    <div class:list={['feature-card', 'reveal', i > 0 && i <= 4 ? `delay-${i}` : '', item.image && 'has-image']}>
+      {item.image
+        ? <div class="feature-card-img"><Img src={item.image} alt={item.title ?? ''} preset="card" /></div>
+        : <div class="feature-icon"><i class={`fas ${item.icon}`}></i></div>}
       {item.title && <h3>{item.title}</h3>}
       <p set:html={item.text} />
     </div>
@@ -30,5 +36,37 @@ const { items, columns = 4 } = Astro.props;
   @media (min-width: 1025px) {
     .icon-card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
     .icon-card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  }
+  /* Photo cards: image runs edge to edge across the top at one fixed
+     height, so every card in the row lines up regardless of the source
+     photo's aspect ratio. Text keeps the usual card padding below it. */
+  .feature-card.has-image {
+    padding: 0 0 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .feature-card.has-image h3,
+  .feature-card.has-image p {
+    padding: 0 20px;
+  }
+  .feature-card-img {
+    height: 200px;
+    margin-bottom: 4px;
+    background: var(--bg);
+  }
+  .feature-card-img :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .feature-card.has-image:hover .feature-card-img :global(img) {
+    transform: scale(1.04);
+  }
+  @media (max-width: 768px) {
+    .feature-card-img { height: 180px; }
   }
 </style>

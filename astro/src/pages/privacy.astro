@@ -4,6 +4,7 @@ import { getSeoFor } from '../lib/siteSeo';
 ---
 
 <BaseLayout
+  popup={false}
   {...getSeoFor('/privacy')}
 >
 <style is:global>
@@ -26,7 +27,7 @@ import { getSeoFor } from '../lib/siteSeo';
   .policy-last-updated{display:inline-flex;align-items:center;gap:8px;background:#f0f0f0;border-radius:var(--radius-pill);padding:6px 16px;font-size:0.88rem;color:#666;margin-bottom:2rem}
   .policy-last-updated i{color:var(--green)}
   .policy-contact-cta{background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:var(--radius-lg);padding:2.5rem 2rem;text-align:center;color:#fff;margin-top:2rem}
-  .policy-contact-cta h3{color:#fff;margin-bottom:0.5rem}.policy-contact-cta p{color:rgba(255,255,255,0.85);margin-bottom:1.3rem}
+  .policy-contact-cta h3,.policy-contact-cta .as-h3{color:#fff;margin-bottom:0.5rem}.policy-contact-cta p{color:rgba(255,255,255,0.85);margin-bottom:1.3rem}
   .policy-contact-cta .btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--green-dark);padding:12px 28px;border-radius:var(--radius-pill);font-family:var(--font-heading);font-weight:700;font-size:0.95rem;transition:var(--transition)}
   .policy-contact-cta .btn-white:hover{background:var(--green-pale);transform:translateY(-2px)}
 </style>
@@ -62,7 +63,7 @@ import { getSeoFor } from '../lib/siteSeo';
     <div class="policy-section" id="children"><h2><span class="sec-num">٨</span> خصوصية الأطفال</h2><p>خدماتنا موجهة للشركات والأفراد البالغين. لا نجمع عن قصد معلومات من أشخاص دون سن الثامنة عشرة. إذا علمت بأن طفلًا قدّم لنا بياناته، يُرجى التواصل معنا فورًا لحذفها.</p></div>
     <div class="policy-section" id="changes"><h2><span class="sec-num">٩</span> التعديلات على السياسة</h2><p>نحتفظ بالحق في تعديل هذه السياسة في أي وقت. سيتم نشر أي تحديثات على هذه الصفحة مع تغيير تاريخ "آخر تحديث". نوصيك بمراجعة هذه الصفحة بصفة دورية.</p></div>
     <div class="policy-section" id="contact"><h2><span class="sec-num">١٠</span> تواصل معنا</h2><p>إذا كان لديك أي استفسار حول سياسة الخصوصية أو بياناتك الشخصية، يمكنك التواصل معنا:</p><ul><li><strong>العنوان:</strong> 26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية، مصر</li><li><strong>الهاتف / واتساب:</strong> 01227392074</li><li><strong>ساعات العمل:</strong> السبت – الخميس، 9 صباحًا – 6 مساءً</li></ul></div>
-    <div class="policy-contact-cta"><h3>هل لديك استفسار؟</h3><p>فريقنا جاهز للإجابة على أي سؤال يتعلق بخصوصيتك أو خدماتنا.</p><a href="/contact" class="btn-white"><i class="fas fa-envelope"></i> تواصل معنا</a></div>
+    <div class="policy-contact-cta"><div class="as-h3">هل لديك استفسار؟</div><p>فريقنا جاهز للإجابة على أي سؤال يتعلق بخصوصيتك أو خدماتنا.</p><a href="/contact" class="btn-white"><i class="fas fa-envelope"></i> تواصل معنا</a></div>
   </div>
 </section>
 </BaseLayout>

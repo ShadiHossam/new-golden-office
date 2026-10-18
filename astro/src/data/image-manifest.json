@@ -4497,28 +4497,6 @@
    ]
   ]
  },
- "/images/copier-mfp-office-1784572494696-842827.jpg": {
-  "w": 1600,
-  "h": 1200,
-  "variants": [
-   [
-    400,
-    "/images/v/copier-mfp-office-1784572494696-842827-400.webp"
-   ],
-   [
-    800,
-    "/images/v/copier-mfp-office-1784572494696-842827-800.webp"
-   ],
-   [
-    1200,
-    "/images/v/copier-mfp-office-1784572494696-842827-1200.webp"
-   ],
-   [
-    1600,
-    "/images/v/copier-mfp-office-1784572494696-842827-1600.webp"
-   ]
-  ]
- },
  "/images/copier-mfp-office-1784572494696-842827.webp": {
   "w": 1600,
   "h": 1200,
@@ -4574,28 +4552,6 @@
    [
     1200,
     "/images/v/copier-paper-sizes-cover-1200.webp"
-   ]
-  ]
- },
- "/images/copier-scanning-office-1784572494919-541980.jpg": {
-  "w": 1600,
-  "h": 1066,
-  "variants": [
-   [
-    400,
-    "/images/v/copier-scanning-office-1784572494919-541980-400.webp"
-   ],
-   [
-    800,
-    "/images/v/copier-scanning-office-1784572494919-541980-800.webp"
-   ],
-   [
-    1200,
-    "/images/v/copier-scanning-office-1784572494919-541980-1200.webp"
-   ],
-   [
-    1600,
-    "/images/v/copier-scanning-office-1784572494919-541980-1600.webp"
    ]
   ]
  },
@@ -7019,6 +6975,534 @@
    ]
   ]
  },
+ "/images/hero-ac-buy.webp": {
+  "w": 1600,
+  "h": 1059,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-ac-buy-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-ac-buy-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-ac-buy-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-ac-buy-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-ac-maintenance.webp": {
+  "w": 1600,
+  "h": 1322,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-ac-maintenance-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-ac-maintenance-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-ac-maintenance-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-ac-maintenance-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-cameras-dvr-nvr.webp": {
+  "w": 1280,
+  "h": 960,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cameras-dvr-nvr-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cameras-dvr-nvr-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cameras-dvr-nvr-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-cameras-dvr-nvr.webp"
+   ]
+  ]
+ },
+ "/images/hero-cameras-install.webp": {
+  "w": 1280,
+  "h": 853,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cameras-install-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cameras-install-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cameras-install-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-cameras-install.webp"
+   ]
+  ]
+ },
+ "/images/hero-cameras-ip-wifi.webp": {
+  "w": 1600,
+  "h": 1200,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cameras-ip-wifi-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cameras-ip-wifi-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cameras-ip-wifi-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-cameras-ip-wifi-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-cameras-maintenance.webp": {
+  "w": 1600,
+  "h": 1200,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cameras-maintenance-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cameras-maintenance-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cameras-maintenance-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-cameras-maintenance-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-cash-machines-counting.webp": {
+  "w": 1600,
+  "h": 1066,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cash-machines-counting-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cash-machines-counting-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cash-machines-counting-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-cash-machines-counting-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-cash-machines-detector.webp": {
+  "w": 1280,
+  "h": 1046,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cash-machines-detector-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cash-machines-detector-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cash-machines-detector-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-cash-machines-detector.webp"
+   ]
+  ]
+ },
+ "/images/hero-cash-machines-franking.webp": {
+  "w": 1280,
+  "h": 849,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cash-machines-franking-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cash-machines-franking-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cash-machines-franking-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-cash-machines-franking.webp"
+   ]
+  ]
+ },
+ "/images/hero-cash-machines-index.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cash-machines-index-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cash-machines-index-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cash-machines-index-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-cash-machines-index-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-cash-machines-shredder.webp": {
+  "w": 1600,
+  "h": 1068,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-cash-machines-shredder-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-cash-machines-shredder-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-cash-machines-shredder-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-cash-machines-shredder-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-copiers-buy.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-copiers-buy-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-copiers-buy-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-copiers-buy-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-copiers-buy-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-copiers-printers.webp": {
+  "w": 1280,
+  "h": 853,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-copiers-printers-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-copiers-printers-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-copiers-printers-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-copiers-printers.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-a4-paper.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-a4-paper-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-a4-paper-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-a4-paper-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-a4-paper-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-batteries-usb.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-batteries-usb-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-batteries-usb-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-batteries-usb-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-batteries-usb-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-binding.webp": {
+  "w": 1280,
+  "h": 844,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-binding-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-binding-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-binding-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-office-supplies-binding.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-envelopes.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-envelopes-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-envelopes-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-envelopes-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-envelopes-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-files.webp": {
+  "w": 1280,
+  "h": 1001,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-files-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-files-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-files-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-office-supplies-files.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-notebooks.webp": {
+  "w": 1600,
+  "h": 1060,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-notebooks-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-notebooks-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-notebooks-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-notebooks-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-pens.webp": {
+  "w": 1280,
+  "h": 853,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-pens-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-pens-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-pens-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-office-supplies-pens.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-stamps.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-stamps-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-stamps-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-stamps-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-stamps-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-sticky-notes.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-sticky-notes-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-sticky-notes-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-sticky-notes-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-sticky-notes-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-thermal.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-thermal-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-thermal-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-thermal-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-thermal-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-office-supplies-whiteboards.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-office-supplies-whiteboards-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-office-supplies-whiteboards-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-office-supplies-whiteboards-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-office-supplies-whiteboards-1600.webp"
+   ]
+  ]
+ },
  "/images/hero-office.webp": {
   "w": 1200,
   "h": 800,
@@ -7034,6 +7518,160 @@
    [
     1200,
     "/images/v/hero-office-1200.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-banners.webp": {
+  "w": 1280,
+  "h": 853,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-banners-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-banners-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-banners-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-printing-banners.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-brochures.webp": {
+  "w": 1280,
+  "h": 859,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-brochures-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-brochures-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-brochures-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-printing-brochures.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-business-cards.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-business-cards-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-business-cards-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-business-cards-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-printing-business-cards-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-digital.webp": {
+  "w": 1600,
+  "h": 1067,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-digital-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-digital-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-digital-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-printing-digital-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-gifts.webp": {
+  "w": 1280,
+  "h": 779,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-gifts-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-gifts-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-gifts-1200.webp"
+   ],
+   [
+    1280,
+    "/images/hero-printing-gifts.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-offset.webp": {
+  "w": 1600,
+  "h": 1068,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-offset-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-offset-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-offset-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-printing-offset-1600.webp"
+   ]
+  ]
+ },
+ "/images/hero-printing-uv.webp": {
+  "w": 1600,
+  "h": 1065,
+  "variants": [
+   [
+    400,
+    "/images/v/hero-printing-uv-400.webp"
+   ],
+   [
+    800,
+    "/images/v/hero-printing-uv-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/hero-printing-uv-1200.webp"
+   ],
+   [
+    1600,
+    "/images/v/hero-printing-uv-1600.webp"
    ]
   ]
  },
@@ -7567,6 +8205,114 @@
    ]
   ]
  },
+ "/images/ip-wifi-4g-site-camera.webp": {
+  "w": 1200,
+  "h": 673,
+  "variants": [
+   [
+    400,
+    "/images/v/ip-wifi-4g-site-camera-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ip-wifi-4g-site-camera-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ip-wifi-4g-site-camera-1200.webp"
+   ]
+  ]
+ },
+ "/images/ip-wifi-dome-camera.webp": {
+  "w": 1200,
+  "h": 900,
+  "variants": [
+   [
+    400,
+    "/images/v/ip-wifi-dome-camera-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ip-wifi-dome-camera-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ip-wifi-dome-camera-1200.webp"
+   ]
+  ]
+ },
+ "/images/ip-wifi-indoor-home-camera.webp": {
+  "w": 1200,
+  "h": 800,
+  "variants": [
+   [
+    400,
+    "/images/v/ip-wifi-indoor-home-camera-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ip-wifi-indoor-home-camera-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ip-wifi-indoor-home-camera-1200.webp"
+   ]
+  ]
+ },
+ "/images/ip-wifi-outdoor-camera.webp": {
+  "w": 1200,
+  "h": 900,
+  "variants": [
+   [
+    400,
+    "/images/v/ip-wifi-outdoor-camera-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ip-wifi-outdoor-camera-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ip-wifi-outdoor-camera-1200.webp"
+   ]
+  ]
+ },
+ "/images/ip-wifi-ptz-camera.webp": {
+  "w": 1200,
+  "h": 900,
+  "variants": [
+   [
+    400,
+    "/images/v/ip-wifi-ptz-camera-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ip-wifi-ptz-camera-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ip-wifi-ptz-camera-1200.webp"
+   ]
+  ]
+ },
+ "/images/ip-wifi-solar-camera.webp": {
+  "w": 1200,
+  "h": 900,
+  "variants": [
+   [
+    400,
+    "/images/v/ip-wifi-solar-camera-400.webp"
+   ],
+   [
+    800,
+    "/images/v/ip-wifi-solar-camera-800.webp"
+   ],
+   [
+    1200,
+    "/images/v/ip-wifi-solar-camera-1200.webp"
+   ]
+  ]
+ },
  "/images/ip66-cameras-2.webp": {
   "w": 1200,
   "h": 800,
@@ -7926,11 +8672,6 @@
     "/images/v/local-vs-distant-supplier-cover-1200.webp"
    ]
   ]
- },
- "/images/logo.png": {
-  "w": 40,
-  "h": 40,
-  "variants": []
  },
  "/images/logo.webp": {
   "w": 40,
@@ -10239,7 +10980,7 @@
    ]
   ]
  },
- "/images/og-image.jpg": {
+ "/images/og-image.webp": {
   "w": 1200,
   "h": 630,
   "variants": [
@@ -11936,24 +12677,6 @@
    [
     1200,
     "/images/v/printer-not-feeding-paper-cover-1200.webp"
-   ]
-  ]
- },
- "/images/printer-paper-tray-desk-1784572494985-248504.jpg": {
-  "w": 1067,
-  "h": 1600,
-  "variants": [
-   [
-    400,
-    "/images/v/printer-paper-tray-desk-1784572494985-248504-400.webp"
-   ],
-   [
-    800,
-    "/images/v/printer-paper-tray-desk-1784572494985-248504-800.webp"
-   ],
-   [
-    1067,
-    "/images/printer-paper-tray-desk-1784572494985-248504.jpg"
    ]
   ]
  },

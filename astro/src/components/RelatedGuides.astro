@@ -10,7 +10,7 @@ interface Props {
 
 const { category, limit = 3, title = 'أدلة ومقالات ذات صلة' } = Astro.props;
 
-const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.jpg';
+const DEFAULT_COVER = 'https://newgoldenoffice.com/images/og-image.webp';
 
 const allPublished = await getCollection('blog', ({ data }) => data.status === 'published');
 const pool = category ? allPublished.filter((e) => e.data.category === category) : allPublished;

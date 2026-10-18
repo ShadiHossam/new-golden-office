@@ -11,6 +11,12 @@ RewriteEngine On
 # the extensionless URL instead, so it's a real 200, not a redirect.
 DirectorySlash Off
 
+# The site serves WebP only. Old .jpg/.png image URLs (shared links, cached
+# og:image) 301 to the WebP twin when the original no longer exists.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+RewriteRule ^(images/.+)\.(jpe?g|png)$ https://newgoldenoffice.com/$1.webp [R=301,L]
+
 # BEGIN MANAGED REDIRECTS -- generated from admin/data/redirects.json, do not hand-edit
 RewriteRule ^printing/alexandria/?$ https://newgoldenoffice.com/alexandria/printing [R=301,L]
 RewriteRule ^printing/cairo/?$ https://newgoldenoffice.com/cairo/printing [R=301,L]

@@ -1,0 +1,92 @@
+---
+/**
+ * Sidebar for service pages: sibling pages in the same category plus a
+ * contact card. Sits beside the page intro inside .service-detail-grid,
+ * the same layout the office-supplies pages use.
+ */
+type Category = 'ac' | 'cameras' | 'cash-machines' | 'copiers' | 'printing';
+
+interface Props {
+  category: Category;
+  current: string;
+}
+
+const CATEGORIES: Record<Category, { title: string; links: [string, string][] }> = {
+  ac: {
+    title: 'خدمات التكييف',
+    links: [
+      ['/ac', 'كل خدمات التكييف'],
+      ['/ac/buy', 'شراء تكييفات'],
+      ['/ac/installation', 'تركيب تكييفات'],
+      ['/ac/maintenance', 'صيانة وشحن فريون'],
+    ],
+  },
+  cameras: {
+    title: 'كاميرات المراقبة',
+    links: [
+      ['/cameras', 'كل خدمات الكاميرات'],
+      ['/cameras/install', 'شراء وتركيب كاميرات'],
+      ['/cameras/ip-wifi', 'كاميرات IP وواي فاي'],
+      ['/cameras/dvr-nvr', 'أنظمة DVR و NVR'],
+      ['/cameras/maintenance', 'صيانة المراقبة'],
+    ],
+  },
+  'cash-machines': {
+    title: 'ماكينات النقد',
+    links: [
+      ['/cash-machines', 'ماكينات الفارم والعد النقدي'],
+      ['/cash-machines/counting', 'ماكينات عد النقود'],
+      ['/cash-machines/detector', 'كشف العملات المزيفة'],
+      ['/cash-machines/franking', 'ماكينات الفارم والختم'],
+      ['/cash-machines/shredder', 'ماكينات تدمير المستندات'],
+    ],
+  },
+  copiers: {
+    title: 'ماكينات التصوير والطابعات',
+    links: [
+      ['/copiers', 'ماكينات التصوير والطابعات'],
+      ['/copiers/buy', 'شراء ماكينات التصوير'],
+      ['/copiers/printers', 'شراء طابعات ليزر وإنكجيت'],
+      ['/copiers/cartridges', 'كارتريدج وأحبار'],
+      ['/copiers/maintenance', 'صيانة ماكينات التصوير'],
+    ],
+  },
+  printing: {
+    title: 'خدمات الطباعة',
+    links: [
+      ['/printing', 'كل خدمات الطباعة'],
+      ['/printing/digital', 'طباعة رقمية'],
+      ['/printing/offset', 'طباعة أوفست'],
+      ['/printing/uv', 'طباعة UV'],
+      ['/printing/banners', 'طباعة بنرات'],
+      ['/printing/brochures', 'بروشورات وفلايرات'],
+      ['/printing/business-cards', 'بزنس كارد'],
+      ['/printing/gifts', 'طباعة هدايا'],
+    ],
+  },
+};
+
+const { category, current } = Astro.props;
+const { title, links } = CATEGORIES[category];
+---
+
+<div class="service-sidebar">
+  <div class="sidebar-card">
+    <div class="as-h4">{title}</div>
+    <div class="sidebar-services">
+      {links.map(([href, label]) => (
+        <a href={href} class:list={['sidebar-service-link', href === current && 'active']} aria-current={href === current ? 'page' : undefined}>
+          <span>{label}</span><i class="fas fa-angle-left"></i>
+        </a>
+      ))}
+    </div>
+  </div>
+  <div class="sidebar-card">
+    <div class="as-h4">تواصل معنا</div>
+    <div class="contact-info">
+      <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
+      <div class="contact-info-item"><i class="fas fa-clock"></i><span>السبت - الخميس: 9ص - 6م</span></div>
+    </div>
+    <a href="https://wa.me/201227392074" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;margin-top:16px"><i class="fab fa-whatsapp"></i> تواصل عبر واتساب</a>
+  </div>
+</div>

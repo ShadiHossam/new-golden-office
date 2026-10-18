@@ -95,7 +95,7 @@
 @media (max-width:760px){.bp-wa-cta{grid-template-columns:1fr;padding:30px 26px}}
 .bp-wa-info{position:relative;z-index:1}
 .bp-wa-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);color:#fff;font-family:var(--font-heading);font-weight:700;font-size:.78rem;padding:6px 16px;border-radius:var(--radius-pill);margin-bottom:16px}
-.bp-wa-info h2{color:#fff;font-size:1.5rem;margin-bottom:12px;line-height:1.3}
+.bp-wa-info h2,.bp-wa-info .as-h2{color:#fff;font-size:1.5rem;margin-bottom:12px;line-height:1.3}
 .bp-wa-info p{color:rgba(255,255,255,.82);font-size:.92rem;line-height:1.8;margin:0}
 .bp-wa-form{position:relative;z-index:1;background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-lg)}
 .bp-wa-form .form-group{margin-bottom:14px}

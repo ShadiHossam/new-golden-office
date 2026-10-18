@@ -1,0 +1,441 @@
+---
+// Call/WhatsApp prompt, centered on screen. It opens after 15 seconds of
+// *visible* time on the page or once the visitor scrolls to 80% of it,
+// whichever comes first. After it has shown, it comes back on the 3rd page
+// after that (same 15s / 80% trigger) or after 2 more minutes on the site,
+// whichever comes first. A visitor who clicks WhatsApp/call or submits a form
+// doesn't see it again for 24 hours.
+// Copy comes from lib/popupCopy.ts.
+//
+// Tracking: the WhatsApp/call buttons are plain wa.me / tel: links carrying
+// data-source="popup", so the sitewide click trackers record them like any
+// other button. The card itself only announces show/dismiss, via gtag and a
+// `ngo:popup` DOM event that ngo-track.js records.
+import type { PopupCopy } from '../lib/popupCopy';
+
+interface Props {
+  copy: PopupCopy;
+  delaySeconds?: number;
+  scrollPercent?: number;
+  /** After a show: pages until it may show again. */
+  repeatPages?: number;
+  /** After a show: visible seconds on the site until it shows again. */
+  repeatSeconds?: number;
+}
+
+const { copy, delaySeconds = 15, scrollPercent = 80, repeatPages = 3, repeatSeconds = 120 } = Astro.props;
+const WA_NUMBER = '201227392074';
+const waHref = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(copy.waMessage)}`;
+---
+
+<div
+  id="ngoPopup"
+  class="ngo-popup"
+  data-nosnippet
+  data-section={copy.section}
+  data-primary={copy.primary}
+  data-delay={delaySeconds}
+  data-scroll={scrollPercent}
+  data-repeat-pages={repeatPages}
+  data-repeat-seconds={repeatSeconds}
+  hidden
+>
+  <div class="ngo-popup-backdrop" data-dismiss="backdrop"></div>
+  <div
+    class="ngo-popup-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ngoPopupTitle"
+    aria-describedby="ngoPopupSub"
+    tabindex="-1"
+  >
+    <button type="button" class="ngo-popup-x" data-dismiss="x" aria-label="إغلاق">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+
+    <p class="ngo-popup-status" data-open-only><span class="ngo-popup-dot" aria-hidden="true"></span> متاحين دلوقتي</p>
+    <p class="ngo-popup-title" id="ngoPopupTitle">{copy.headline}</p>
+    <p class="ngo-popup-sub" id="ngoPopupSub">
+      <span data-open-only>{copy.sub}</span>
+      <span data-closed-only>ابعتلنا دلوقتي على واتساب ونرد عليك أول ما نفتح الساعة 9 الصبح.</span>
+    </p>
+
+    <div class="ngo-popup-actions">
+      <a class="ngo-popup-btn ngo-popup-wa" href={waHref} target="_blank" rel="noopener" data-source="popup">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> ابعت واتساب
+      </a>
+      <a class="ngo-popup-btn ngo-popup-call" href="tel:+201227392074" data-source="popup">
+        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+        <span class="ngo-popup-call-label">اتصل الآن</span>
+        <span class="ngo-popup-num" dir="ltr">0122 739 2074</span>
+      </a>
+    </div>
+    <p class="ngo-popup-hours" data-closed-only>مواعيدنا: السبت للخميس، 9 الصبح لـ 6 المسا</p>
+
+    <p class="ngo-popup-trust">✓ استشارة مجانية · ✓ رد خلال دقايق في أوقات العمل · ✓ من 1999</p>
+    <button type="button" class="ngo-popup-later" data-dismiss="later">مش دلوقتي</button>
+  </div>
+</div>
+
+<style>
+  .ngo-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1001; /* above the navbar (1000), floats (999) and cookie banner (998) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .ngo-popup[hidden] { display: none; }
+
+  .ngo-popup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 30, 15, 0.55);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .ngo-popup-card {
+    position: relative;
+    width: min(420px, 100%);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    padding: 26px 24px 16px;
+    font-family: var(--font-body);
+    color: var(--text);
+    text-align: right;
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .ngo-popup-card:focus { outline: none; }
+  .ngo-popup.is-in .ngo-popup-backdrop { opacity: 1; }
+  .ngo-popup.is-in .ngo-popup-card { opacity: 1; transform: none; }
+
+  .ngo-popup-x {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .ngo-popup-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--green);
+  }
+  .ngo-popup-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--wa);
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.25);
+  }
+  .ngo-popup-title {
+    margin: 0 0 10px;
+    padding-left: 36px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--primary);
+  }
+  .ngo-popup-sub {
+    margin: 0 0 18px;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+  .ngo-popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ngo-popup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .ngo-popup-btn:focus-visible,
+  .ngo-popup-x:focus-visible,
+  .ngo-popup-later:focus-visible { outline: 3px solid var(--green-light); outline-offset: 2px; }
+  /* Primary = filled, secondary = outline. data-primary is set per page and
+     flipped to "wa" by the script outside working hours / on desktop. */
+  .ngo-popup .ngo-popup-btn { background: transparent; color: var(--green); border: 2px solid var(--green); box-shadow: none; }
+  .ngo-popup[data-primary='wa'] .ngo-popup-wa,
+  .ngo-popup[data-primary='call'] .ngo-popup-call {
+    color: var(--white);
+    border-color: transparent;
+    min-height: 56px;
+    font-size: 1.08rem;
+  }
+  .ngo-popup[data-primary='wa'] .ngo-popup-wa { background: var(--wa); box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35); }
+  .ngo-popup[data-primary='call'] .ngo-popup-call { background: var(--green); box-shadow: var(--shadow); }
+  .ngo-popup[data-primary='call'] .ngo-popup-actions { flex-direction: column-reverse; }
+
+  /* The number is only shown where tel: can't dial (desktop). */
+  .ngo-popup-num { display: none; font-weight: 800; }
+  .ngo-popup.is-desktop .ngo-popup-num { display: inline; }
+  .ngo-popup.is-desktop .ngo-popup-call-label { display: none; }
+
+  .ngo-popup-hours {
+    margin: 8px 0 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .ngo-popup-trust {
+    margin: 14px 0 4px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .ngo-popup-later {
+    display: block;
+    margin: 0 auto;
+    padding: 6px 12px;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .ngo-popup:not(.is-closed) [data-closed-only],
+  .ngo-popup.is-closed [data-open-only] { display: none; }
+
+  /* Floats would peek out from under the backdrop; hide them while it's open. */
+  :global(body.ngo-popup-open .whatsapp-float),
+  :global(body.ngo-popup-open .phone-float) { display: none; }
+
+  @media (max-width: 600px) {
+    .ngo-popup-card { padding: 24px 18px 14px; }
+    .ngo-popup-title { font-size: 1.12rem; }
+    .ngo-popup-trust { font-size: 0.72rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ngo-popup-backdrop, .ngo-popup-card { transition: none; }
+    .ngo-popup-card { transform: none; }
+  }
+</style>
+
+<script>
+  (function () {
+    const root = document.getElementById('ngoPopup');
+    if (!root) return;
+    const card = root.querySelector('.ngo-popup-card') as HTMLElement;
+
+    const delayMs = Math.max(3, Number(root.dataset.delay) || 15) * 1000;
+    const scrollTarget = Math.min(100, Math.max(10, Number(root.dataset.scroll) || 80));
+    const repeatPages = Math.max(1, Number(root.dataset.repeatPages) || 3);
+    const repeatMs = Math.max(30, Number(root.dataset.repeatSeconds) || 120) * 1000;
+    const CONVERTED_PAUSE = 24 * 60 * 60 * 1000;
+    const section = root.dataset.section || 'default';
+
+    // Cross-page state, one small JSON blob:
+    //   vt     visible ms spent on the site, summed across pages
+    //   shown  true once the popup has shown at least once
+    //   sv     vt at the moment it last showed
+    //   pg     pages loaded since it last showed
+    //   conv   timestamp of the last WhatsApp/call click or form submit
+    // localStorage first; if that's blocked, a cookie; last resort memory.
+    type St = { vt: number; shown: boolean; sv: number; pg: number; conv: number };
+    const KEY = 'ngo_pp';
+    let mem: St | null = null;
+    function load(): St {
+      let raw: string | null = null;
+      try { raw = localStorage.getItem(KEY); } catch { /* blocked */ }
+      if (!raw) { try { const m = document.cookie.match(/(?:^|; )ngo_pp=([^;]*)/); raw = m ? decodeURIComponent(m[1]) : null; } catch { /* blocked */ } }
+      try { if (raw) { const v = JSON.parse(raw); if (v && typeof v.vt === 'number') return v; } } catch { /* corrupt */ }
+      return mem ?? { vt: 0, shown: false, sv: 0, pg: 0, conv: 0 };
+    }
+    function save(v: St) {
+      mem = v;
+      const raw = JSON.stringify(v);
+      try { localStorage.setItem(KEY, raw); return; } catch { /* blocked */ }
+      try {
+        document.cookie = KEY + '=' + encodeURIComponent(raw) + '; Max-Age=31536000; Path=/; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+      } catch { /* blocked */ }
+    }
+
+    const st = load();
+    if (st.shown) { st.pg += 1; save(st); }
+
+    const paused = () => Date.now() - (load().conv || 0) < CONVERTED_PAUSE;
+
+    function emit(action: string, extra: Record<string, string> = {}) {
+      const detail = { action, section, ...extra };
+      try { document.dispatchEvent(new CustomEvent('ngo:popup', { detail })); } catch { /* old browser */ }
+      const g = (window as any).gtag;
+      if (typeof g === 'function') g('event', 'contact_popup_' + action, { page_path: location.pathname, popup_section: section, ...extra });
+    }
+
+    // Working hours: Sat-Thu 09:00-18:00 Cairo time. Use Intl with
+    // Africa/Cairo, not the device clock, so visitors abroad and Egypt's DST
+    // both come out right. If Intl can't do it, assume open.
+    function isOpenNow() {
+      try {
+        const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Africa/Cairo', weekday: 'short', hour: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+        const wd = parts.find(p => p.type === 'weekday')?.value;
+        const h = Number(parts.find(p => p.type === 'hour')?.value);
+        return wd !== 'Fri' && h >= 9 && h < 18;
+      } catch { return true; }
+    }
+
+    // ── Someone who just called/WhatsApped/submitted a form gets a 24h break
+    function markConverted() {
+      const v = load(); v.conv = Date.now(); save(v);
+      if (!root.hidden) hide('converted');
+    }
+    document.addEventListener('click', (e) => {
+      const a = (e.target as Element | null)?.closest?.('a[href*="wa.me"], a[href^="tel:"]');
+      if (a) markConverted();
+    }, true);
+    document.addEventListener('submit', markConverted, true);
+
+    // ── Visible time, on this page and summed across the site
+    let pageMs = 0;
+    let lastTick = Date.now();
+    let unsaved = 0;
+    function accrue() {
+      const now = Date.now();
+      // Cap the step so a sleeping laptop or throttled tab can't jump the clock.
+      const d = Math.min(now - lastTick, 2000);
+      lastTick = now;
+      if (document.hidden) return;
+      pageMs += d;
+      unsaved += d;
+      if (unsaved >= 2000) flush();
+    }
+    function flush() {
+      if (!unsaved) return;
+      const v = load(); v.vt += unsaved; unsaved = 0; save(v);
+    }
+    document.addEventListener('visibilitychange', () => { accrue(); if (document.hidden) flush(); });
+    window.addEventListener('pagehide', () => { accrue(); flush(); });
+
+    // ── Scroll trigger: 80% of the page, after a real scroll (a page short
+    // enough to be 80% visible on load doesn't pop instantly).
+    let reachedScroll = false;
+    window.addEventListener('scroll', () => {
+      if (reachedScroll || window.scrollY <= 0) return;
+      const h = document.documentElement.scrollHeight;
+      if (h > 0 && ((window.scrollY + window.innerHeight) / h) * 100 >= scrollTarget) reachedScroll = true;
+    }, { passive: true });
+
+    // Why it's due now, or '' if it isn't.
+    function dueReason(): string {
+      const v = load();
+      const onPage = pageMs >= delayMs || reachedScroll;
+      if (!v.shown) return onPage ? (reachedScroll && pageMs < delayMs ? 'scroll' : 'time') : '';
+      if (v.vt + unsaved - v.sv >= repeatMs) return 'repeat_time';
+      if (v.pg >= repeatPages && onPage) return 'repeat_pages';
+      return '';
+    }
+
+    const isTyping = () => {
+      const el = document.activeElement as HTMLElement | null;
+      return !!el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
+    };
+    const navOpen = () => !!document.querySelector('.nav-overlay.open, .nav-menu.open');
+    // Cookie banner (ngo-consent.js): let the visitor answer it first, but
+    // don't wait forever for someone ignoring it (15s more at most).
+    let dueSince = 0;
+    const bannerUp = () => !!document.querySelector('.ngo-cc') && Date.now() - dueSince < 15000;
+
+    let typingSince = 0;
+    window.setInterval(() => {
+      accrue();
+      if (!root.hidden || paused()) { dueSince = 0; return; }
+      const reason = dueReason();
+      if (!reason) { dueSince = 0; return; }
+      if (!dueSince) dueSince = Date.now();
+      // Typing in a form: wait until they've left the field for 3s.
+      if (isTyping()) { typingSince = Date.now(); return; }
+      if (typingSince && Date.now() - typingSince < 3000) return;
+      if (navOpen() || bannerUp() || document.hidden) return;
+      show(reason);
+    }, 400);
+
+    let lastFocus: HTMLElement | null = null;
+
+    function show(trigger: string) {
+      flush();
+      const v = load(); v.shown = true; v.sv = v.vt; v.pg = 0; save(v);
+      // A second trigger on this same page needs the 2-minute rule, not the
+      // 15s/80% one, so reset the in-page triggers.
+      pageMs = 0; reachedScroll = false; dueSince = 0;
+
+      const open = isOpenNow();
+      const desktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      root.classList.toggle('is-closed', !open);
+      root.classList.toggle('is-desktop', desktop);
+      // tel: does nothing useful on most desktops, and nobody answers at night.
+      root.dataset.primary = (!open || desktop) ? 'wa' : (root.dataset.primaryDefault || root.dataset.primary);
+
+      lastFocus = document.activeElement as HTMLElement | null;
+      root.hidden = false;
+      document.body.classList.add('ngo-popup-open');
+      requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('is-in')));
+      try { card.focus({ preventScroll: true }); } catch { /* old browser */ }
+      emit('shown', { hours: open ? 'open' : 'closed', device: desktop ? 'desktop' : 'mobile', trigger });
+    }
+    root.dataset.primaryDefault = root.dataset.primary;
+
+    function hide(how: string) {
+      root.classList.remove('is-in');
+      root.hidden = true;
+      document.body.classList.remove('ngo-popup-open');
+      try { lastFocus?.focus?.({ preventScroll: true }); } catch { /* gone */ }
+      if (how !== 'converted') emit('dismissed', { how });
+    }
+
+    root.addEventListener('click', (e) => {
+      const btn = (e.target as Element).closest('[data-dismiss]') as HTMLElement | null;
+      if (btn) hide(btn.dataset.dismiss || 'x');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (root.hidden) return;
+      if (e.key === 'Escape') { hide('esc'); return; }
+      // Keep Tab inside the dialog while it's open.
+      if (e.key === 'Tab') {
+        const f = Array.from(card.querySelectorAll<HTMLElement>('a[href], button'));
+        if (!f.length) return;
+        const first = f[0], lastEl = f[f.length - 1];
+        if (e.shiftKey && (document.activeElement === first || document.activeElement === card)) { e.preventDefault(); lastEl.focus(); }
+        else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    // Back/forward cache: a restored page may still show the card from
+    // before the visitor left (usually to WhatsApp).
+    window.addEventListener('pageshow', (e) => {
+      if ((e as PageTransitionEvent).persisted) { lastTick = Date.now(); if (!root.hidden) hide('converted'); }
+    });
+  })();
+</script>
