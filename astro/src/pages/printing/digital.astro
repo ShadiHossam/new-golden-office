@@ -5,6 +5,7 @@ import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +37,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="طباعة رقمية سريعة في مصر: جاهز في ساعات"
   subtitle="احتاج طلبك بسرعة؟ الطباعة الرقمية في نيو جولدن أوفيس تمنحك جودة عالية في وقت قياسي، مثالية للكميات الصغيرة والطلبات العاجلة"
-  heroImage="/images/printing-hub.webp"
+  heroImage="/images/hero-printing-digital.webp"
   heroIcon="fa-laptop"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -51,7 +52,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -59,16 +59,14 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>ما هي الطباعة الرقمية (digital printing)؟</h2>
       <div class="divider"></div>
     </div>
     <p class="landing-lead">الطباعة الرقمية هي تقنية طباعة حديثة تعتمد على نقل الملف الرقمي مباشرةً إلى الطابعة دون الحاجة إلى ألواح طباعة (بليت) أو خطوات إعداد معقدة. هذا يعني أنك تستطيع الحصول على طلبك مطبوعاً في وقت أقل بكثير مقارنة بطباعة الأوفست التقليدية. في نيو جولدن أوفيس، نمتلك أحدث ماكينات الطباعة الرقمية التي تجمع بين السرعة الفائقة والجودة الاحترافية التي تستحقها.</p>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2>لماذا الطباعة الرقمية هي الحل الأمثل للكميات الصغيرة؟</h2>
       <div class="divider"></div>
@@ -82,7 +80,7 @@ const schemaJson = JSON.stringify({
       <p>نقدم أيضًا نصائح مجانية حول أفضل دقة ملف مناسبة لكل نوع طباعة، لضمان وضوح المطبوع النهائي دون أي تشوش أو بكسلة ظاهرة.</p>
 
       <h3>مميزات الطباعة الرقمية في نيو جولدن أوفيس</h3>
-      <IconCardGrid columns={3} items={[
+      <IconCardGrid columns={2} items={[
         { icon: 'fa-bolt', title: 'سرعة التنفيذ', text: 'معظم الطلبات الصغيرة جاهزة خلال ساعات معدودة من استلام الملف المعتمد' },
         { icon: 'fa-hashtag', title: 'بدون حد أدنى للكمية', text: 'نطبع حتى نسخة واحدة، مثالي للتجارب والبروتوتايب' },
         { icon: 'fa-palette', title: 'جودة ألوان ممتازة', text: 'تقنيات الطباعة الرقمية الحديثة توفر ألواناً نابضة وحادة بدقة عالية' },
@@ -91,10 +89,14 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-warehouse', title: 'توفير في التخزين', text: 'اطبع ما تحتاجه فقط عند الحاجة بدلاً من تخزين كميات كبيرة' },
       ]} />
     </div>
+          </div>
+      </div>
+      <ServiceSidebar category="printing" current="/printing/digital" />
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>تطبيقات الطباعة الرقمية: من يستفيد؟</h2>
@@ -212,7 +214,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
                 <div class="contact-info">
                   <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                   <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -225,11 +227,11 @@ const schemaJson = JSON.stringify({
 <!-- HOW IT WORKS -->
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التنفيذ والتسليم</h3><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التنفيذ والتسليم</div><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
     </div>
   </div>
 </section>
@@ -281,8 +283,22 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- CTA -->
 <section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>متى تختار الطباعة الرقمية بدلًا من الأوفست؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>الطباعة الرقمية هي الخيار الأمثل عندما تحتاج كمية صغيرة إلى متوسطة (من نسخة واحدة حتى بضع مئات)، أو عندما يكون الوقت عاملًا حاسمًا ولا تستطيع الانتظار لإعداد قوالب الأوفست. كما أنها مثالية للمحتوى المتغير مثل الطباعة بالاسم أو البيانات المختلفة لكل نسخة (Variable Data Printing)، وهو ما لا يمكن تنفيذه بطباعة الأوفست التقليدية.</p>
+      <p style="margin-top:16px">بالمقابل، إذا كانت الكمية تتجاوز الألف نسخة والتصميم ثابت لكل النسخ، طباعة الأوفست تصبح أوفر تدريجيًا رغم تكلفة إعداد القالب الأولى الأعلى. فريقنا يساعدك في تحديد نقطة التعادل الاقتصادية بين الطريقتين حسب كميتك الفعلية قبل اتخاذ القرار.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن الطباعة الرقمية</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -322,23 +338,10 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>متى تختار الطباعة الرقمية بدلًا من الأوفست؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>الطباعة الرقمية هي الخيار الأمثل عندما تحتاج كمية صغيرة إلى متوسطة (من نسخة واحدة حتى بضع مئات)، أو عندما يكون الوقت عاملًا حاسمًا ولا تستطيع الانتظار لإعداد قوالب الأوفست. كما أنها مثالية للمحتوى المتغير مثل الطباعة بالاسم أو البيانات المختلفة لكل نسخة (Variable Data Printing)، وهو ما لا يمكن تنفيذه بطباعة الأوفست التقليدية.</p>
-      <p style="margin-top:16px">بالمقابل، إذا كانت الكمية تتجاوز الألف نسخة والتصميم ثابت لكل النسخ، طباعة الأوفست تصبح أوفر تدريجيًا رغم تكلفة إعداد القالب الأولى الأعلى. فريقنا يساعدك في تحديد نقطة التعادل الاقتصادية بين الطريقتين حسب كميتك الفعلية قبل اتخاذ القرار.</p>
-    </div>
-  </div>
-</section>
 
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>تواصل معنا وسنرد عليك فوراً بأفضل عرض</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20رقمية" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
