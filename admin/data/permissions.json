@@ -20,7 +20,8 @@
       "users.view": true,
       "users.manage": true,
       "settings.view": true,
-      "settings.manage": true
+      "settings.manage": true,
+      "analytics.view": true
     },
     "editor": {
       "pages.view": true,
@@ -42,7 +43,8 @@
       "users.view": false,
       "users.manage": false,
       "settings.view": false,
-      "settings.manage": false
+      "settings.manage": false,
+      "analytics.view": false
     },
     "viewer": {
       "pages.view": true,
@@ -64,7 +66,8 @@
       "users.view": false,
       "users.manage": false,
       "settings.view": false,
-      "settings.manage": false
+      "settings.manage": false,
+      "analytics.view": false
     }
   },
   "role_meta": {

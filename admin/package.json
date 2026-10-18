@@ -8,7 +8,8 @@
     "dev": "node server.js",
     "seed": "node db/seed.js",
     "media:thumbs": "node scripts/backfill-thumbs.js",
-    "blog:queue": "node scripts/queue-articles.js"
+    "blog:queue": "node scripts/queue-articles.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

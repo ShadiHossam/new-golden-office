@@ -1,0 +1,515 @@
+<%- include('layout-start', { pageTitle, headExtra, headerActions, breadcrumb }) %>
+<%
+  const P = '/2ef65f179f12439e317a23628b016653/analytics';
+  const k = agg.kpis;
+  const qs = r.range === 'custom' ? `range=custom&from=${r.from}&to=${r.to}` : `range=${r.range}`;
+  const pct = x => (x * 100).toFixed(1) + '%';
+  const secs = s => { s = Math.round(s || 0); return s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + (s % 60) + 's'; };
+  const delta = (cur, before, isRate) => {
+    if (!before) return '';
+    const d = isRate ? (cur - before) * 100 : ((cur - before) / before) * 100;
+    if (!isFinite(d) || Math.abs(d) < 0.05) return '<span class="an-delta">no change</span>';
+    const up = d > 0;
+    return `<span class="an-delta ${up ? 'up' : 'down'}">${up ? '▲' : '▼'} ${Math.abs(d).toFixed(1)}${isRate ? ' pts' : '%'}</span>`;
+  };
+  const SRC = { google_organic: 'Google search', google_ads: 'Google Ads', direct: 'Direct', facebook: 'Facebook',
+    instagram: 'Instagram', bing_organic: 'Bing', yandex_organic: 'Yandex', duckduckgo_organic: 'DuckDuckGo',
+    yahoo_organic: 'Yahoo', 'social:whatsapp': 'WhatsApp link', 'social:twitter': 'X / Twitter',
+    'social:linkedin': 'LinkedIn', 'social:youtube': 'YouTube', 'social:tiktok': 'TikTok' };
+  const srcName = s => SRC[s] || String(s || '').replace(/^referral:/, 'Site: ').replace(/^campaign:/, 'Campaign: ').replace(/^paid:/, 'Paid: ');
+  const BTN = { float: 'Floating button', hero: 'Top of page', footer: 'Footer', nav: 'Menu', inline: 'In-page button',
+    blog_body: 'Link inside article', midpage_form: 'Mid-page form', blog_form: 'Article form', city_form: 'City page form',
+    contact_form: 'Contact page form', form: 'Form' };
+  const btnName = b => BTN[b] || b;
+  const maxOf = (rows, f) => Math.max(1, ...rows.map(x => x[f] || 0));
+%>
+
+<style>
+  .an-wrap { --an-visits: #2f6fd6; --an-leads: #1a9e55; --an-call: #b8860b; }
+  .an-toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-bottom:18px; }
+  .an-ranges { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .an-ranges a, .an-ranges button { font-size:12.5px; padding:6px 12px; border-radius:999px; border:1px solid var(--border); background:var(--surface); color:var(--text-2); text-decoration:none; cursor:pointer; }
+  .an-ranges a.on { background:var(--text); color:var(--surface); border-color:var(--text); }
+  .an-ranges input[type=date] { font-size:12.5px; padding:5px 8px; border:1px solid var(--border); border-radius:8px; background:var(--surface); color:var(--text); }
+  .an-kpis { display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:12px; margin-bottom:18px; }
+  .an-kpi { background:var(--surface); border:1px solid var(--border-light); border-radius:12px; padding:14px 16px; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+  .an-kpi .lbl { font-size:11.5px; color:var(--text-3); text-transform:uppercase; letter-spacing:.4px; }
+  .an-kpi .val { font-size:26px; font-weight:650; color:var(--text); margin:4px 0 2px; font-variant-numeric:tabular-nums; }
+  .an-kpi .sub { font-size:12px; color:var(--text-2); }
+  .an-delta { font-size:11.5px; color:var(--text-3); }
+  .an-delta.up { color:#1a7f45; } .an-delta.down { color:#b42318; }
+  .an-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:18px; }
+  .an-grid3 { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-bottom:18px; }
+  @media (max-width: 1100px) { .an-grid3 { grid-template-columns:1fr 1fr; } }
+  @media (max-width: 760px) { .an-grid2, .an-grid3 { grid-template-columns:1fr; } }
+  .an-card { background:var(--surface); border:1px solid var(--border-light); border-radius:12px; padding:14px 16px; min-width:0; }
+  .an-card h3 { font-size:13px; font-weight:650; color:var(--text); margin:0 0 4px; }
+  .an-card .hint { font-size:11.5px; color:var(--text-3); margin:0 0 10px; }
+  .an-bars { display:flex; align-items:flex-end; gap:2px; height:140px; border-bottom:1px solid var(--border); position:relative; }
+  .an-bars .b { flex:1; min-width:2px; border-radius:4px 4px 0 0; position:relative; }
+  .an-bars .b:hover { opacity:.75; }
+  .an-bars .hit { position:absolute; inset:-4px 0 0 0; height:140px; bottom:0; top:auto; }
+  .an-axis { display:flex; justify-content:space-between; font-size:10.5px; color:var(--text-3); margin-top:4px; }
+  .an-list { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .an-list td, .an-list th { padding:5px 4px; border-bottom:1px solid var(--border-light); vertical-align:middle; }
+  .an-list th { font-size:10.5px; color:var(--text-3); text-transform:uppercase; letter-spacing:.4px; font-weight:550; text-align:left; }
+  .an-list td.num, .an-list th.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .an-list .name { max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .an-meter { height:6px; border-radius:3px; background:var(--surface-3); overflow:hidden; min-width:50px; }
+  .an-meter > i { display:block; height:100%; border-radius:3px; }
+  .an-tbl-wrap { overflow-x:auto; }
+  .an-tbl { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .an-tbl th { font-size:10.5px; color:var(--text-3); text-transform:uppercase; letter-spacing:.4px; font-weight:550; text-align:left; padding:8px 8px; background:var(--surface-2); border-bottom:2px solid var(--border); white-space:nowrap; }
+  .an-tbl td { padding:8px 8px; border-bottom:1px solid var(--border-light); vertical-align:top; }
+  .an-tbl tbody tr { cursor:pointer; }
+  .an-tbl tbody tr:hover { background:var(--gold-soft); }
+  .an-tbl .muted { color:var(--text-3); font-size:11.5px; }
+  .an-pill { display:inline-block; font-size:11px; padding:2px 8px; border-radius:999px; background:var(--surface-3); color:var(--text-2); white-space:nowrap; }
+  .an-pill.wa { background:#e3f6eb; color:#13703d; } .an-pill.call { background:var(--gold-soft); color:#7a5a07; }
+  .an-heat { border-collapse:separate; border-spacing:2px; font-size:10px; color:var(--text-3); }
+  .an-heat td { width:18px; height:16px; border-radius:3px; }
+  .an-heat th { font-weight:500; padding:0 4px 0 0; text-align:right; }
+  .an-filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; }
+  .an-filters select, .an-filters input { font-size:12.5px; padding:6px 8px; border:1px solid var(--border); border-radius:8px; background:var(--surface); color:var(--text); }
+  .an-pager { display:flex; gap:8px; align-items:center; justify-content:flex-end; margin-top:10px; font-size:12px; color:var(--text-2); }
+  .an-pager button { font-size:12px; padding:4px 10px; border-radius:8px; border:1px solid var(--border); background:var(--surface); cursor:pointer; }
+  .an-tip { position:fixed; z-index:3000; pointer-events:none; background:#111318; color:#fff; font-size:12px; padding:6px 9px; border-radius:6px; white-space:nowrap; display:none; }
+  .an-drawer-bg { position:fixed; inset:0; background:rgba(0,0,0,.25); z-index:2000; display:none; }
+  .an-drawer { position:fixed; top:0; right:0; bottom:0; width:min(560px, 100vw); background:var(--surface); z-index:2001; box-shadow:-8px 0 32px rgba(0,0,0,.15); overflow-y:auto; padding:20px 22px; transform:translateX(100%); transition:transform .2s ease; }
+  .an-drawer.open { transform:none; }
+  .an-drawer h2 { font-size:16px; margin:0 0 4px; }
+  .an-drawer .close { position:absolute; top:12px; right:14px; border:0; background:none; font-size:22px; cursor:pointer; color:var(--text-2); }
+  .an-kv { display:grid; grid-template-columns:120px 1fr; gap:4px 10px; font-size:12.5px; margin:12px 0 16px; }
+  .an-kv dt { color:var(--text-3); } .an-kv dd { margin:0; color:var(--text); word-break:break-word; }
+  .an-tl { list-style:none; margin:0; padding:0; border-left:2px solid var(--border); }
+  .an-tl li { position:relative; padding:0 0 14px 16px; font-size:12.5px; }
+  .an-tl li::before { content:''; position:absolute; left:-6px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--surface); border:2px solid var(--an-visits); }
+  .an-tl li.lead::before { background:var(--an-leads); border-color:var(--an-leads); }
+  .an-tl .t { font-weight:600; color:var(--text); }
+  .an-tl .meta { color:var(--text-3); font-size:11.5px; }
+  .an-tl .ev { color:var(--text-2); font-size:11.5px; margin-top:2px; }
+  .an-msg { white-space:pre-wrap; background:var(--surface-2); border-radius:8px; padding:8px 10px; margin-top:4px; font-size:12px; }
+  .an-empty { text-align:center; padding:28px 10px; color:var(--text-3); font-size:13px; }
+  [dir=auto] { unicode-bidi:plaintext; }
+</style>
+
+<div class="an-wrap">
+  <div class="an-toolbar">
+    <form class="an-ranges" method="get" action="<%= P %>">
+      <% [['today','Today'],['7d','7 days'],['30d','30 days'],['90d','90 days']].forEach(function (x) { %>
+        <a href="<%= P %>?range=<%= x[0] %>" class="<%= r.range === x[0] ? 'on' : '' %>"><%= x[1] %></a>
+      <% }) %>
+      <input type="hidden" name="range" value="custom">
+      <input type="date" name="from" value="<%= r.from %>" aria-label="From">
+      <input type="date" name="to" value="<%= r.to %>" aria-label="To">
+      <button type="submit" class="<%= r.range === 'custom' ? 'on' : '' %>">Apply</button>
+    </form>
+    <div class="an-ranges">
+      <a href="<%= P %>/export.csv?<%= qs %>&type=leads">Export leads (CSV)</a>
+      <a href="<%= P %>/export.csv?<%= qs %>&type=visits">Export visits (CSV)</a>
+    </div>
+  </div>
+
+  <div class="an-kpis">
+    <div class="an-kpi"><div class="lbl">Visits</div><div class="val"><%= k.visits %></div><div class="sub"><%- delta(k.visits, prev.visits) %></div></div>
+    <div class="an-kpi"><div class="lbl">Visitors</div><div class="val"><%= k.visitors %></div><div class="sub"><%= k.newVisitors %> first visits · <%= k.returning %> returning</div></div>
+    <div class="an-kpi"><div class="lbl">WhatsApp leads</div><div class="val"><%= k.wa %></div><div class="sub"><%- delta(k.wa, prev.wa) %><%= prev.wa ? ' · ' : '' %><%= k.forms %> from forms</div></div>
+    <div class="an-kpi"><div class="lbl">Phone calls</div><div class="val"><%= k.calls %></div><div class="sub"><%- delta(k.calls, prev.calls) %></div></div>
+    <div class="an-kpi"><div class="lbl">Conversion</div><div class="val"><%= pct(k.convRate) %></div><div class="sub">visits with a lead <%- delta(k.convRate, prev.convRate, true) %></div></div>
+    <div class="an-kpi"><div class="lbl">Engagement</div><div class="val"><%= k.avgPages.toFixed(1) %></div><div class="sub">pages per visit · <%= secs(k.avgAct) %> active</div></div>
+  </div>
+
+  <% if (!k.visits) { %>
+    <div class="an-card an-empty">No visits in this period yet. Tracking data appears here after the new tracker is live on the site.</div>
+  <% } %>
+
+  <div class="an-grid2">
+    <% [['visits', 'Visits per day', 'var(--an-visits)'], ['leads', 'Leads per day (WhatsApp + calls)', 'var(--an-leads)']].forEach(function (c) {
+         const mx = maxOf(agg.daily, c[0]); %>
+      <div class="an-card">
+        <h3><%= c[1] %></h3>
+        <p class="hint">Peak <%= mx === 1 && !agg.daily.some(d => d[c[0]]) ? 0 : mx %> on one day</p>
+        <div class="an-bars">
+          <% agg.daily.forEach(function (d) { %>
+            <div class="b" style="height:<%= d[c[0]] ? Math.max(2, (d[c[0]] / mx) * 100) : 0 %>%;background:<%= c[2] %>" data-tip="<%= d.date %>: <%= d[c[0]] %> <%= c[0] %>"></div>
+          <% }) %>
+        </div>
+        <div class="an-axis"><span><%= agg.daily[0] && agg.daily[0].date %></span><span><%= agg.daily.length > 1 ? agg.daily[agg.daily.length - 1].date : '' %></span></div>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="an-card" style="margin-bottom:18px;">
+    <h3>Leads: who contacted you, and how they got there</h3>
+    <p class="hint">Newest first. Click a row to see the whole visit, page by page. Times are Cairo time.</p>
+    <div class="an-tbl-wrap">
+      <table class="an-tbl" id="an-leads">
+        <thead><tr><th>Time</th><th>Type</th><th>Sent from page</th><th>Came from</th><th>First page</th><th>Pages</th><th>Time on site</th><th>Location / device</th><th>Name / phone</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="an-pager" id="an-leads-pager"></div>
+  </div>
+
+  <div class="an-grid3">
+    <div class="an-card">
+      <h3>Where visitors come from</h3>
+      <p class="hint">Visits, leads and conversion per source</p>
+      <table class="an-list">
+        <thead><tr><th>Source</th><th class="num">Visits</th><th class="num">Leads</th><th class="num">Conv.</th></tr></thead>
+        <tbody>
+        <% agg.bySource.forEach(function (x) { %>
+          <tr><td class="name"><%= srcName(x.key) %></td><td class="num"><%= x.visits %></td><td class="num"><%= x.leads %></td><td class="num"><%= pct(x.conv) %></td></tr>
+        <% }) %>
+        <% if (!agg.bySource.length) { %><tr><td colspan="4" class="an-empty">No data</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>Pages where people clicked WhatsApp / call</h3>
+      <p class="hint">The page the lead was sent from</p>
+      <% const mxL = maxOf(agg.byLeadPage, 'leads'); %>
+      <table class="an-list">
+        <tbody>
+        <% agg.byLeadPage.forEach(function (x) { %>
+          <tr><td class="name" dir="auto" title="<%= x.key %>"><%= x.title || x.key %></td>
+              <td style="width:30%"><div class="an-meter"><i style="width:<%= (x.leads / mxL) * 100 %>%;background:var(--an-leads)"></i></div></td>
+              <td class="num"><%= x.leads %></td></tr>
+        <% }) %>
+        <% if (!agg.byLeadPage.length) { %><tr><td colspan="3" class="an-empty">No leads yet</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>Which button they used</h3>
+      <p class="hint">Where on the page the lead clicked</p>
+      <% const mxB = maxOf(agg.byButton, 'leads'); %>
+      <table class="an-list">
+        <tbody>
+        <% agg.byButton.forEach(function (x) { %>
+          <tr><td class="name"><%= btnName(x.key) %></td>
+              <td style="width:40%"><div class="an-meter"><i style="width:<%= (x.leads / mxB) * 100 %>%;background:var(--an-leads)"></i></div></td>
+              <td class="num"><%= x.leads %></td></tr>
+        <% }) %>
+        <% if (!agg.byButton.length) { %><tr><td colspan="3" class="an-empty">No leads yet</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>First page of the visit (landing pages)</h3>
+      <p class="hint">Visits and how many turned into a lead</p>
+      <table class="an-list">
+        <thead><tr><th>Page</th><th class="num">Visits</th><th class="num">Leads</th><th class="num">Conv.</th></tr></thead>
+        <tbody>
+        <% agg.byLanding.forEach(function (x) { %>
+          <tr><td class="name" dir="ltr" title="<%= x.key %>"><%= x.key %></td><td class="num"><%= x.visits %></td><td class="num"><%= x.leads %></td><td class="num"><%= pct(x.conv) %></td></tr>
+        <% }) %>
+        <% if (!agg.byLanding.length) { %><tr><td colspan="4" class="an-empty">No data</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>Most viewed pages</h3>
+      <p class="hint">Views and average active time per view</p>
+      <table class="an-list">
+        <thead><tr><th>Page</th><th class="num">Views</th><th class="num">Avg time</th></tr></thead>
+        <tbody>
+        <% agg.topPages.forEach(function (x) { %>
+          <tr><td class="name" dir="auto" title="<%= x.key %>"><%= x.title || x.key %></td><td class="num"><%= x.views %></td><td class="num"><%= secs(x.avgAct) %></td></tr>
+        <% }) %>
+        <% if (!agg.topPages.length) { %><tr><td colspan="3" class="an-empty">No data</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>Where visitors left without contacting</h3>
+      <p class="hint">Last page of visits with no lead</p>
+      <table class="an-list">
+        <thead><tr><th>Page</th><th class="num">Exits</th></tr></thead>
+        <tbody>
+        <% agg.exitPages.forEach(function (x) { %>
+          <tr><td class="name" dir="ltr" title="<%= x.key %>"><%= x.key %></td><td class="num"><%= x.visits %></td></tr>
+        <% }) %>
+        <% if (!agg.exitPages.length) { %><tr><td colspan="2" class="an-empty">No data</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>Cities</h3>
+      <p class="hint">City needs Cloudflare's visitor location headers; otherwise the country code shows</p>
+      <table class="an-list">
+        <thead><tr><th>City</th><th class="num">Visits</th><th class="num">Leads</th></tr></thead>
+        <tbody>
+        <% agg.byCity.forEach(function (x) { %>
+          <tr><td class="name"><%= x.key %></td><td class="num"><%= x.visits %></td><td class="num"><%= x.leads %></td></tr>
+        <% }) %>
+        <% if (!agg.byCity.length) { %><tr><td colspan="3" class="an-empty">No data</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>Devices</h3>
+      <p class="hint">Visits, leads and conversion per device type</p>
+      <table class="an-list">
+        <thead><tr><th>Device</th><th class="num">Visits</th><th class="num">Leads</th><th class="num">Conv.</th></tr></thead>
+        <tbody>
+        <% agg.byDevice.forEach(function (x) { %>
+          <tr><td class="name"><%= x.key %></td><td class="num"><%= x.visits %></td><td class="num"><%= x.leads %></td><td class="num"><%= pct(x.conv) %></td></tr>
+        <% }) %>
+        <% if (!agg.byDevice.length) { %><tr><td colspan="4" class="an-empty">No data</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="an-card">
+      <h3>When leads come in</h3>
+      <p class="hint">Leads by weekday and hour (Cairo time). Darker = more.</p>
+      <% const hmx = Math.max(1, ...agg.heat.flat()); %>
+      <div class="an-tbl-wrap">
+      <table class="an-heat">
+        <% agg.heat.forEach(function (row, i) { %>
+          <tr><th><%= agg.weekdays[i] %></th>
+          <% row.forEach(function (n, h) { %>
+            <td style="background:<%= n ? 'rgba(26,158,85,' + (0.18 + 0.82 * n / hmx).toFixed(2) + ')' : 'var(--surface-3)' %>" data-tip="<%= agg.weekdays[i] %> <%= String(h).padStart(2, '0') %>:00 – <%= n %> lead<%= n === 1 ? '' : 's' %>"></td>
+          <% }) %>
+          </tr>
+        <% }) %>
+        <tr><th></th><% for (let h = 0; h < 24; h++) { %><th style="text-align:center;font-weight:400"><%= h % 6 === 0 ? h : '' %></th><% } %></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <% if (agg.byCampaign.length) { %>
+  <div class="an-card" style="margin-bottom:18px;">
+    <h3>Campaigns (utm_campaign)</h3>
+    <table class="an-list">
+      <thead><tr><th>Campaign</th><th class="num">Visits</th><th class="num">Leads</th><th class="num">Conv.</th></tr></thead>
+      <tbody>
+      <% agg.byCampaign.forEach(function (x) { %>
+        <tr><td class="name"><%= x.key %></td><td class="num"><%= x.visits %></td><td class="num"><%= x.leads %></td><td class="num"><%= pct(x.conv) %></td></tr>
+      <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+
+  <div class="an-card" style="margin-bottom:18px;">
+    <h3>All visits</h3>
+    <p class="hint">Every visit in the period, including people who did not contact you. Click a row for the full journey.</p>
+    <div class="an-filters">
+      <select id="f-src" aria-label="Source"><option value="">All sources</option></select>
+      <select id="f-conv" aria-label="Converted"><option value="">All visits</option><option value="1">With a lead</option><option value="0">Without a lead</option></select>
+      <select id="f-dev" aria-label="Device"><option value="">All devices</option><option>mobile</option><option>desktop</option><option>tablet</option></select>
+      <input id="f-q" type="search" placeholder="Filter by page or city" aria-label="Filter by page or city">
+    </div>
+    <div class="an-tbl-wrap">
+      <table class="an-tbl" id="an-visits">
+        <thead><tr><th>Start</th><th>Came from</th><th>First page</th><th>Last page</th><th>Pages</th><th>Time on site</th><th>Leads</th><th>Visit #</th><th>Location / device</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="an-pager" id="an-visits-pager"></div>
+  </div>
+  <% if (bad) { %><p class="text-muted fs-12">Skipped <%= bad %> unreadable line(s) in the data files.</p><% } %>
+</div>
+
+<div class="an-tip" id="an-tip"></div>
+<div class="an-drawer-bg" id="an-bg"></div>
+<aside class="an-drawer" id="an-drawer" aria-label="Visit details"><button class="close" type="button" id="an-close" aria-label="Close">×</button><div id="an-drawer-body"></div></aside>
+
+<script type="application/json" id="an-data"><%- JSON.stringify({ leads: agg.leads, visits: agg.visits.slice(0, 3000), src: SRC, btn: BTN, qs: qs, base: P }).replace(/</g, '\\u003c') %></script>
+<script nonce="<%= cspNonce %>">
+(function () {
+  var D = JSON.parse(document.getElementById('an-data').textContent);
+  var fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Africa/Cairo', day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
+  function t(iso) { try { return fmt.format(new Date(iso)); } catch (e) { return iso || ''; } }
+  function secs(s) { s = Math.round(s || 0); return s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + (s % 60) + 's'; }
+  function srcName(s) { return D.src[s] || String(s || '').replace(/^referral:/, 'Site: ').replace(/^campaign:/, 'Campaign: ').replace(/^paid:/, 'Paid: '); }
+  function btnName(b) { return D.btn[b] || b || ''; }
+  // Tiny DOM builder. Text always goes through textContent, never innerHTML,
+  // because titles, messages and form values come from site visitors.
+  function h(tag, attrs, kids) {
+    var el = document.createElement(tag), k;
+    for (k in attrs || {}) {
+      if (k === 'text') el.textContent = attrs[k];
+      else if (k === 'cls') el.className = attrs[k];
+      else el.setAttribute(k, attrs[k]);
+    }
+    (kids || []).forEach(function (c) { if (c != null) el.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return el;
+  }
+  function place(v) { return [v.city || v.cc || '', (v.dev && v.dev.type) || '', (v.dev && v.dev.os) || ''].filter(Boolean).join(' · '); }
+
+  // ---- tooltip for bars and heatmap cells ----
+  var tip = document.getElementById('an-tip');
+  document.addEventListener('mouseover', function (e) {
+    var el = e.target.closest && e.target.closest('[data-tip]');
+    if (!el) { tip.style.display = 'none'; return; }
+    tip.textContent = el.getAttribute('data-tip');
+    tip.style.display = 'block';
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (tip.style.display === 'block') { tip.style.left = (e.clientX + 12) + 'px'; tip.style.top = (e.clientY - 30) + 'px'; }
+  });
+
+  // ---- paged tables ----
+  function paged(tableId, pagerId, rows, render) {
+    var tbody = document.querySelector('#' + tableId + ' tbody'), pager = document.getElementById(pagerId), page = 0, size = 50;
+    function draw() {
+      tbody.textContent = '';
+      if (!rows.length) { tbody.appendChild(h('tr', {}, [h('td', { colspan: 9, cls: 'an-empty', text: 'Nothing here for this period.' })])); }
+      rows.slice(page * size, page * size + size).forEach(function (r) { tbody.appendChild(render(r)); });
+      pager.textContent = '';
+      var pages = Math.ceil(rows.length / size);
+      if (pages > 1) {
+        var prev = h('button', { type: 'button', text: '‹ Prev' }), next = h('button', { type: 'button', text: 'Next ›' });
+        prev.disabled = page === 0; next.disabled = page >= pages - 1;
+        prev.addEventListener('click', function () { page--; draw(); });
+        next.addEventListener('click', function () { page++; draw(); });
+        pager.appendChild(h('span', { text: rows.length + ' rows · page ' + (page + 1) + ' of ' + pages }));
+        pager.appendChild(prev); pager.appendChild(next);
+      }
+    }
+    return { set: function (r) { rows = r; page = 0; draw(); } , draw: draw };
+  }
+
+  var leadsTable = paged('an-leads', 'an-leads-pager', D.leads, function (l) {
+    var tr = h('tr', { 'data-vid': l.vid }, [
+      h('td', { text: t(l.at) }),
+      h('td', {}, [h('span', { cls: 'an-pill ' + (l.ch === 'call' ? 'call' : 'wa'), text: l.ch === 'call' ? 'Call' : 'WhatsApp' }),
+        l.count > 1 ? h('span', { cls: 'muted', text: ' ×' + l.count }) : null,
+        h('div', { cls: 'muted', text: btnName(l.btn) })]),
+      h('td', { dir: 'auto' }, [l.t || l.p, h('div', { cls: 'muted', dir: 'ltr', text: l.p })]),
+      h('td', {}, [srcName(l.src), l.utm && l.utm.campaign ? h('div', { cls: 'muted', text: l.utm.campaign }) : null]),
+      h('td', { dir: 'ltr', text: l.landing }),
+      h('td', { text: String(l.pages) }),
+      h('td', { text: l.stub ? '—' : secs(l.act) }),
+      h('td', { text: place(l) + (l.n > 1 ? ' · visit #' + l.n : ' · new') }),
+      h('td', { dir: 'auto', text: l.form ? [l.form.name, l.form.phone].filter(Boolean).join(' · ') : '' })
+    ]);
+    return tr;
+  });
+  leadsTable.draw();
+
+  // ---- visits explorer ----
+  var srcSel = document.getElementById('f-src'), seen = {};
+  D.visits.forEach(function (v) { if (!seen[v.src]) { seen[v.src] = 1; srcSel.appendChild(h('option', { value: v.src, text: srcName(v.src) })); } });
+  var visitsTable = paged('an-visits', 'an-visits-pager', D.visits, function (v) {
+    return h('tr', { 'data-vid': v.vid }, [
+      h('td', { text: t(v.st) }),
+      h('td', { text: srcName(v.src) }),
+      h('td', { dir: 'ltr', text: v.landing }),
+      h('td', { dir: 'ltr', text: v.exit }),
+      h('td', { text: String(v.pages) }),
+      h('td', { text: v.stub ? '—' : secs(v.act) }),
+      h('td', {}, [v.leads ? h('span', { cls: 'an-pill wa', text: String(v.leads) }) : '']),
+      h('td', { text: v.n > 1 ? '#' + v.n : 'new' }),
+      h('td', { text: place(v) })
+    ]);
+  });
+  function applyFilters() {
+    var s = srcSel.value, c = document.getElementById('f-conv').value, d = document.getElementById('f-dev').value,
+        q = document.getElementById('f-q').value.trim().toLowerCase();
+    visitsTable.set(D.visits.filter(function (v) {
+      if (s && v.src !== s) return false;
+      if (c === '1' && !v.leads) return false;
+      if (c === '0' && v.leads) return false;
+      if (d && (!v.dev || v.dev.type !== d)) return false;
+      if (q && (v.landing + ' ' + v.exit + ' ' + v.city + ' ' + v.cc).toLowerCase().indexOf(q) === -1) return false;
+      return true;
+    }));
+  }
+  ['f-src', 'f-conv', 'f-dev'].forEach(function (id) { document.getElementById(id).addEventListener('change', applyFilters); });
+  document.getElementById('f-q').addEventListener('input', applyFilters);
+  visitsTable.draw();
+
+  // ---- journey drawer ----
+  var drawer = document.getElementById('an-drawer'), bg = document.getElementById('an-bg'), body = document.getElementById('an-drawer-body');
+  function close() { drawer.classList.remove('open'); bg.style.display = 'none'; }
+  document.getElementById('an-close').addEventListener('click', close);
+  bg.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  function kv(pairs) {
+    var dl = h('dl', { cls: 'an-kv' });
+    pairs.forEach(function (p) { if (p[1]) { dl.appendChild(h('dt', { text: p[0] })); dl.appendChild(h('dd', { dir: 'auto', text: p[1] })); } });
+    return dl;
+  }
+  function srcLine(s) {
+    if (!s) return '';
+    var bits = [srcName(s.type)];
+    if (s.ref) bits.push('from ' + s.ref);
+    if (s.utm && s.utm.campaign) bits.push('campaign ' + s.utm.campaign);
+    if (s.utm && s.utm.term) bits.push('keyword ' + s.utm.term);
+    if (s.click) bits.push(s.click);
+    return bits.join(' · ');
+  }
+  var EV = { nav: 'Clicked link', out: 'Left to', btn: 'Clicked', form_start: 'Started form', wa: 'Clicked WhatsApp', call: 'Clicked call' };
+
+  function openVisit(vid) {
+    body.textContent = '';
+    body.appendChild(h('p', { cls: 'muted', text: 'Loading…' }));
+    drawer.classList.add('open'); bg.style.display = 'block';
+    fetch(D.base + '/visit/' + encodeURIComponent(vid) + '?' + D.qs, { credentials: 'same-origin' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (j) {
+        body.textContent = '';
+        body.appendChild(h('h2', { text: (j.leads.length ? 'Lead visit' : 'Visit') + ' · ' + t(j.st) }));
+        body.appendChild(h('div', { cls: 'muted', text: j.n > 1 ? 'Visit #' + j.n + ' by this visitor' : 'First visit by this visitor' }));
+        var dev = j.dev || {};
+        body.appendChild(kv([
+          ['Came from', srcLine(j.src)],
+          ['First ever source', j.n > 1 ? srcLine(j.first) : ''],
+          ['First seen', j.fs ? t(j.fs) : ''],
+          ['Location', [j.city, j.reg, j.cc].filter(Boolean).join(', ')],
+          ['Device', [dev.type, dev.os, dev.br, dev.sw ? dev.sw + '×' + dev.sh : '', dev.net].filter(Boolean).join(' · ')],
+          ['Language', [dev.lang, dev.tz].filter(Boolean).join(' · ')],
+          ['Visit length', j.dur ? secs(j.dur) : '']
+        ]));
+        if (j.stub) body.appendChild(h('p', { cls: 'muted', text: 'Only the lead was received for this visit (the visitor closed the tab before the visit summary was sent), so page times are missing.' }));
+
+        j.leads.forEach(function (l) {
+          var box = h('div', { cls: 'an-card', style: 'margin-bottom:12px;border-color:#bfe6cf' }, [
+            h('div', {}, [h('span', { cls: 'an-pill ' + (l.ch === 'call' ? 'call' : 'wa'), text: l.ch === 'call' ? 'Call' : 'WhatsApp' }), ' ' + t(l.at) + ' · ' + btnName(l.btn)]),
+            l.form ? h('div', { dir: 'auto', style: 'margin-top:6px', text: [l.form.name, l.form.phone, l.form.service, l.form.company].filter(Boolean).join(' · ') }) : null,
+            l.msg ? h('div', { cls: 'an-msg', dir: 'auto', text: l.msg }) : null
+          ]);
+          body.appendChild(box);
+        });
+
+        body.appendChild(h('h3', { text: 'Pages in order', style: 'font-size:13px;margin:16px 0 10px' }));
+        var ol = h('ol', { cls: 'an-tl' });
+        (j.pages || []).forEach(function (p) {
+          var lead = (p.ev || []).some(function (e) { return e.e === 'wa' || e.e === 'call'; });
+          var li = h('li', { cls: lead ? 'lead' : '' }, [
+            h('div', { cls: 't', dir: 'auto', text: p.t || p.p }),
+            h('div', { cls: 'meta', dir: 'ltr', text: p.p + (p.at ? ' · ' + t(p.at) : '') + (p.act != null ? ' · ' + secs(p.act) + ' active' : '') + (p.scr ? ' · scrolled ' + p.scr + '%' : '') + (p.rl ? ' · reloaded' : '') })
+          ]);
+          (p.ev || []).forEach(function (e) {
+            var label = EV[e.e] || e.e;
+            var detail = e.e === 'wa' || e.e === 'call' ? btnName(e.s) : [e.l, e.h].filter(Boolean).join(' → ');
+            li.appendChild(h('div', { cls: 'ev', dir: 'auto', text: '+' + secs(e.o) + '  ' + label + (detail ? ': ' + detail : '') }));
+          });
+          ol.appendChild(li);
+        });
+        body.appendChild(ol);
+
+        if (j.others && j.others.length) {
+          body.appendChild(h('h3', { text: 'Other visits by this visitor (this period)', style: 'font-size:13px;margin:16px 0 8px' }));
+          j.others.forEach(function (o) {
+            var a = h('a', { href: '#', text: t(o.st) + ' · ' + srcName(o.src) + ' · ' + o.pages + ' pages' + (o.leads ? ' · ' + o.leads + ' lead(s)' : '') });
+            a.addEventListener('click', function (e) { e.preventDefault(); openVisit(o.vid); });
+            body.appendChild(h('div', { style: 'font-size:12.5px;margin-bottom:4px' }, [a]));
+          });
+        }
+      })
+      .catch(function () { body.textContent = ''; body.appendChild(h('p', { text: 'Could not load this visit.' })); });
+  }
+  document.addEventListener('click', function (e) {
+    var tr = e.target.closest && e.target.closest('tr[data-vid]');
+    if (tr) openVisit(tr.getAttribute('data-vid'));
+  });
+})();
+</script>
+
+<%- include('layout-end') %>

@@ -19,6 +19,7 @@ const usersRoutes = require('./routes/users');
 const calendarRoutes = require('./routes/calendar');
 const pagesRoutes = require('./routes/pages');
 const blogRoutes = require('./routes/blog');
+const analyticsRoutes = require('./routes/analytics');
 const { getUserById } = require('./lib/db');
 const { getEffectivePermissions, getAllRoles } = require('./lib/permissions');
 
@@ -187,6 +188,7 @@ app.use(`${ADMIN_PREFIX}/users`, usersRoutes);
 app.use(`${ADMIN_PREFIX}/calendar`, calendarRoutes);
 app.use(`${ADMIN_PREFIX}/pages`, pagesRoutes);
 app.use(`${ADMIN_PREFIX}/blog`, blogRoutes);
+app.use(`${ADMIN_PREFIX}/analytics`, analyticsRoutes);
 
 // Root redirect
 app.get('/', (req, res) => res.redirect(ADMIN_PREFIX));

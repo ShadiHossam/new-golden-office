@@ -56,6 +56,13 @@ const PERMISSION_GROUPS = [
     ]
   },
   {
+    key: 'analytics',
+    label: 'Analytics',
+    permissions: [
+      { key: 'analytics.view', label: 'View visitor analytics & leads' }
+    ]
+  },
+  {
     key: 'system',
     label: 'System',
     permissions: [
@@ -76,7 +83,7 @@ const ALL_PERMISSION_KEYS = PERMISSION_GROUPS.flatMap(g => g.permissions.map(p =
 const BUILTIN_DEFAULTS = {
   admin: Object.fromEntries(ALL_PERMISSION_KEYS.map(k => [k, true])),
   editor: Object.fromEntries(ALL_PERMISSION_KEYS.map(k => {
-    if (['users.view', 'users.manage', 'settings.view', 'settings.manage', 'activity.view_all'].includes(k)) return [k, false];
+    if (['users.view', 'users.manage', 'settings.view', 'settings.manage', 'activity.view_all', 'analytics.view'].includes(k)) return [k, false];
     return [k, true];
   })),
   viewer: Object.fromEntries(ALL_PERMISSION_KEYS.map(k => {

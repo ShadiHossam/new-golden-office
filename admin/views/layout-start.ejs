@@ -31,6 +31,15 @@
 
         <% var perms = typeof permissions !== 'undefined' ? permissions : {}; %>
 
+        <% if (perms['analytics.view']) { %>
+        <li class="<%= currentPath.startsWith('/analytics') ? 'active' : '' %>">
+          <a href="/2ef65f179f12439e317a23628b016653/analytics" data-tooltip="Analytics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <% } %>
+
         <% if (perms['pages.view'] || perms['blog.view'] || perms['seo.view'] || perms['media.view']) { %>
         <li class="sidebar-section-label">Content</li>
         <% } %>

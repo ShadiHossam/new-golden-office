@@ -6,3 +6,6 @@
 Thumbs.db
 .claude/
 .superpowers/
+
+# Local analytics test data (production data lives outside the repo)
+admin/data/analytics-dev/
