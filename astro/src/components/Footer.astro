@@ -83,6 +83,7 @@ const year = new Date().getFullYear();
         <a href="/privacy">سياسة الخصوصية</a>
         <a href="/terms">الشروط والأحكام</a>
         <a href="/contact">تواصل معنا</a>
+        <button type="button" class="footer-cc-btn" data-ngo-cc>إعدادات الكوكيز</button>
       </div>
     </div>
   </div>
@@ -253,7 +254,9 @@ const year = new Date().getFullYear();
 }
 .footer-bottom-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
 }
 .footer-bottom-links a {
   font-size: 0.82rem;
@@ -262,6 +265,19 @@ const year = new Date().getFullYear();
   transition: var(--transition);
 }
 .footer-bottom-links a:hover {
+  color: var(--green-light);
+}
+.footer-cc-btn {
+  font: inherit;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.50);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.footer-cc-btn:hover {
   color: var(--green-light);
 }
 

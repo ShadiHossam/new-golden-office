@@ -22,6 +22,12 @@ const globalCssVersion = createHash('md5').update(readFileSync(globalCssPath)).d
 const iconsCssPath = join(process.cwd(), 'public/styles/icons.css');
 const iconsCssVersion = createHash('md5').update(readFileSync(iconsCssPath)).digest('hex').slice(0, 10);
 
+// First-party visit tracker + cookie banner (minified from src/tracking/ by
+// scripts/build-tracking.mjs). Same content-hash cache busting as the CSS.
+const fileVersion = (rel: string) => createHash('md5').update(readFileSync(join(process.cwd(), rel))).digest('hex').slice(0, 10);
+const trackJsVersion = fileVersion('public/js/ngo-track.js');
+const consentJsVersion = fileVersion('public/js/ngo-consent.js');
+
 interface Props {
   title: string;
   description: string;
@@ -232,6 +238,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <WhatsAppFloat />
 <div class="nav-overlay"></div>
 <script src="/js/main.js" defer></script>
+<script is:inline defer src={`/js/ngo-track.js?v=${trackJsVersion}`}></script>
+<script is:inline defer src={`/js/ngo-consent.js?v=${consentJsVersion}`}></script>
 
 </body>
 </html>

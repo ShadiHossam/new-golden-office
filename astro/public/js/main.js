@@ -209,9 +209,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href*="wa.me"], a[href^="tel:"]');
     if (!link || typeof gtag !== 'function') return;
+    // Same button names as the first-party tracker (src/tracking/ngo-track.js).
+    const source = link.closest('.whatsapp-float,.phone-float') ? 'float'
+      : link.closest('nav,.navbar') ? 'nav'
+      : link.closest('footer') ? 'footer'
+      : link.closest('.bp-content') ? 'blog_body'
+      : link.closest('.hero,[class*="page-hero"],[class*="-hero"]') ? 'hero' : 'inline';
     gtag('event', link.href.includes('wa.me') ? 'whatsapp_click' : 'phone_click', {
       page_path: window.location.pathname,
       link_text: link.textContent.trim().slice(0, 100),
+      button_source: source,
     });
   });
 

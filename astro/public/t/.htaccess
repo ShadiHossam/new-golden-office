@@ -1,0 +1,9 @@
+Options -Indexes
+# Only the collector is reachable in this folder.
+<FilesMatch "^(?!c\.php$)">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+  Header set Cache-Control "no-store"
+</IfModule>
