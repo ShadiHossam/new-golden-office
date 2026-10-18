@@ -121,7 +121,7 @@ const schemaJson = JSON.stringify({
             </div>
             <div class="form-group"><label for="message"><i class="fa-solid fa-comment" style="margin-left:0.4rem;color:var(--secondary)"></i>رسالتك</label><textarea id="message" name="message" placeholder="اكتب رسالتك أو استفسارك هنا..."></textarea></div>
             <input type="hidden" name="source" value="contact">
-            <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+            <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0" aria-hidden="true">
             <button type="submit" class="form-submit-btn" id="contactSubmitBtn"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة</button>
             <p id="contactErrorMessage" style="display:none;color:#c0392b;margin-top:12px;font-size:.9rem"></p>
           </form>
