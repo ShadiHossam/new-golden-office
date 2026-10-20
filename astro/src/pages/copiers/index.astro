@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -55,7 +56,7 @@ const schemaJson = JSON.stringify({
       "name": "كم سعر ماكينة التصوير في مصر؟",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "تتفاوت أسعار ماكينات التصوير في مصر بشكل كبير حسب الماركة والموديل والمواصفات وحالة الجهاز (جديد أو مستعمل مجدد). نوفر ضمان وخدمة ما بعد البيع لجميع الماكينات. تواصل معنا عبر واتساب وأخبرنا باحتياجك وسنرسل لك عرض سعر مجاني ودقيق خلال دقائق."
+        "text": "تتفاوت أسعار ماكينات التصوير في مصر حسب الماركة والسرعة وحالة الجهاز. في 2026: ماكينة التصوير المستوردة المجددة أبيض وأسود مقاس A3 تبدأ من 18,000 جنيه، والألوان تبدأ من 21,000 جنيه، والطابعة الليزر الجديدة الصغيرة تبدأ من 6,000 جنيه. الأسعار تتغير مع سعر الصرف، فتواصل معنا عبر واتساب وأخبرنا باحتياجك وسنرسل لك عرض سعر مجاني ودقيق."
       }
     },
     {
@@ -107,8 +108,8 @@ const schemaJson = JSON.stringify({
   schemaJson={schemaJson}
 >
 <PageHero
-  title="ماكينات تصوير في مصر: والطابعات لكل الماركات"
-  subtitle="مركزكم الأول في مصر لبيع وصيانة ماكينات التصوير والطابعات. نجيب بأفضل حل لاحتياجك بجميع الماركات العالمية"
+  title="ماكينات التصوير والطابعات في مصر: شراء وصيانة وأحبار"
+  subtitle="مركزكم الأول في مصر لشراء وصيانة ماكينات التصوير والطابعات. نختار معك الجهاز الأنسب لعملك وميزانيتك من كل الماركات العالمية"
   heroImage="/images/copiers-hub.webp"
   heroIcon="fa-copy"
   showCta={true}
@@ -124,7 +125,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -132,18 +132,37 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
-      <h2>نجيب بأفضل حل لكل احتياج في عالم ماكينات التصوير والطابعات</h2>
+      <h2>الحل الأنسب لكل احتياج في ماكينات التصوير والطابعات</h2>
       <div class="divider"></div>
     </div>
-    <p class="landing-lead">منذ تأسيس شركة نيو جولدن أوفيس عام 1999 في الإسكندرية، ونحن نُقدم خدمات متكاملة في مجال ماكينات التصوير والطابعات لعملائنا في جميع أنحاء مصر. بدأت رحلتنا بمحل صغير في الإبراهيمية، وتطورنا على مدى أكثر من 27 عاماً لنصبح أحد أبرز المراجع الموثوقة في سوق ماكينات التصوير والطابعات في مصر.</p>
+    <p class="landing-lead">منذ تأسيس شركة نيو جولدن أوفيس عام 1999 في الإسكندرية، ونحن نُقدم خدمات متكاملة في مجال ماكينات التصوير والطابعات لعملائنا في جميع أنحاء مصر. بدأنا كشركة توريد وصيانة للشركات والمؤسسات، وتطورنا على مدى أكثر من 27 عاماً لنصبح أحد أبرز المراجع الموثوقة في سوق ماكينات التصوير والطابعات في مصر.</p>
     <div class="landing-body service-content">
 <p>
-        نحن نتعامل مع أكبر الماركات العالمية في مجال ماكينات التصوير، وفي مقدمتها: <strong>كانون Canon</strong> بسلاسلها المتعددة من imageRUNNER وiR ADVANCE، وماكينات <strong>ريكو Ricoh</strong> بسلسلة MP الشهيرة، وماكينات <strong>كيوسيرا Kyocera</strong> بتقنية TASKalfa المتطورة، فضلاً عن ماكينات <strong>توشيبا Toshiba</strong> سلسلة e-STUDIO و<strong>زيروكس Xerox</strong> WorkCentre.
+        نتعامل مع أشهر الماركات العالمية في ماكينات التصوير مثل <strong>كانون Canon</strong> و<strong>ريكو Ricoh</strong> و<strong>كيوسيرا Kyocera</strong> و<strong>توشيبا Toshiba</strong> و<strong>زيروكس Xerox</strong>، وفي الطابعات مثل <strong>HP</strong> و<strong>Canon</strong> و<strong>Epson</strong> و<strong>Brother</strong>.
       </p>
       <p>
-        أما في مجال الطابعات، فنحن وكلاء ومورِّدون معتمدون لطابعات <strong>HP</strong> LaserJet وDeskJet وOfficeJet، وطابعات <strong>Canon</strong> PIXMA وimageCLASS، وطابعات <strong>Epson</strong> EcoTank وWorkForce، وطابعات <strong>Brother</strong> بسلاسل DCP وMFC المتعددة الوظائف.
+        ولا نحصرك في ماركة أو موديل بعينه: نوفر الجديد والمستورد المجدد، ونرشح لك الجهاز حسب حجم طباعتك الشهري وميزانيتك وتوفر الأحبار وقطع الغيار في السوق.
       </p>
+    </div>
+          <div class="intro-merged-block">
+    <div class="section-header">
+      <h2>خدماتنا في مجال ماكينات التصوير والطابعات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<IconCardGrid columns={2} items={[
+        { icon: 'fa-copy', title: 'شراء ماكينات التصوير', text: 'نوفر أحدث ماكينات التصوير الجديدة والمجددة من كانون وريكو وكيوسيرا وتوشيبا وزيروكس بأسعار منافسة. <a href="/copiers/buy">اعرف المزيد</a>' },
+        { icon: 'fa-print', title: 'شراء طابعات', text: 'طابعات ليزر وإنكجيت من HP وكانون وإبسون وبراذر لجميع الاستخدامات المنزلية والمكتبية ومحلات الطباعة. <a href="/copiers/printers">اعرف المزيد</a>' },
+        { icon: 'fa-tools', title: 'صيانة ماكينات التصوير', text: 'فريق فنيين متخصصين لصيانة جميع أنواع وماركات ماكينات التصوير والطابعات مع ضمان على الإصلاح. <a href="/copiers/maintenance">اعرف المزيد</a>' },
+        { icon: 'fa-tint', title: 'كارتريدج وأحبار', text: 'كارتريدج أصلي وبديل لجميع موديلات الطابعات، خدمة تعبئة الكارتريدج، توفير أحبار الليزر والإنكجيت. <a href="/copiers/cartridges">اعرف المزيد</a>' },
+      ]} />
+    </div>
+          </div>
+      </div>
+      <ServiceSidebar category="copiers" current="/copiers" />
     </div>
   </div>
 </section>
@@ -151,55 +170,21 @@ const schemaJson = JSON.stringify({
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>خدماتنا في مجال ماكينات التصوير والطابعات</h2>
+      <h2>لماذا تختار نيو جولدن أوفيس؟</h2>
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
-<IconCardGrid columns={4} items={[
-        { icon: 'fa-copy', title: 'بيع ماكينات التصوير', text: 'نوفر أحدث ماكينات التصوير الجديدة والمجددة من كانون وريكو وكيوسيرا وتوشيبا وزيروكس بأسعار منافسة. <a href="/copiers/buy">اعرف المزيد</a>' },
-        { icon: 'fa-print', title: 'بيع طابعات', text: 'طابعات ليزر وإنكجيت من HP وكانون وإبسون وبراذر لجميع الاستخدامات المنزلية والمكتبية ومحلات الطباعة. <a href="/copiers/printers">اعرف المزيد</a>' },
-        { icon: 'fa-tools', title: 'صيانة ماكينات التصوير', text: 'فريق فنيين متخصصين لصيانة جميع أنواع وماركات ماكينات التصوير والطابعات مع ضمان على الإصلاح. <a href="/copiers/maintenance">اعرف المزيد</a>' },
-        { icon: 'fa-tint', title: 'كارتريدج وأحبار', text: 'كارتريدج أصلي وبديل لجميع موديلات الطابعات، خدمة تعبئة الكارتريدج، توفير أحبار الليزر والإنكجيت. <a href="/copiers/cartridges">اعرف المزيد</a>' },
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-tools', title: 'خبرة في كل الماركات الكبرى', text: 'نبيع ونصين ماكينات كانون وريكو وكيوسيرا وتوشيبا وزيروكس، وطابعات HP وإبسون وبراذر، بقطع غيار أصلية.' },
+        { icon: 'fa-file-contract', title: 'عقود صيانة دورية للشركات', text: 'زيارات وقائية شهرية أو ربع سنوية، وأولوية في الاستجابة عند الأعطال، وتقارير دورية عن حالة الأجهزة، وخصومات على قطع الغيار والمستهلكات.' },
+        { icon: 'fa-tags', title: 'جديد أو مجدد أو تأجير', text: 'ماكينات جديدة، أو مجددة بالكامل بضمان يصل إلى 6 أشهر، أو تأجير شهري يشمل الصيانة وقطع الغيار ويمكن تحويله لشراء لاحقًا.' },
+        { icon: 'fa-map-marked-alt', title: 'فريق متنقل في كل مصر', text: 'نصل للتركيب والصيانة في القاهرة الكبرى والجيزة والإسكندرية والمنصورة وطنطا والإسماعيلية والسويس وأسيوط والمنيا، ونرتب زيارات لباقي المحافظات حسب الطلب.' },
       ]} />
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>لماذا تختار نيو جولدن أوفيس؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<p>
-        في سوق مليء بالبدائل والاختيارات، ما الذي يُميّزنا؟ الإجابة ببساطة هي الخبرة والثقة والخدمة المتكاملة. منذ عام 1999 ونحن نُراكم خبراتنا في هذا المجال، ونتابع كل تطور تقني في صناعة ماكينات التصوير والطابعات. فريقنا الفني يتلقى تدريبات مستمرة على أحدث الأجهزة والتقنيات من الماركات العالمية الكبرى.
-      </p>
-      <p>
-        نحرص على توفير قطع الغيار الأصلية والمعتمدة، ولا نتنازل عن جودة الإصلاح مقابل السرعة. عملاؤنا في الشركات والمكاتب والمستشفيات والمدارس ومحلات الطباعة في الإسكندرية والقاهرة وسائر محافظات مصر يُشهدون لنا بذلك على مدى عقود متواصلة.
-      </p>
-      <p>
-        نُقدم أيضاً عقود صيانة دورية للشركات التي تُريد ضمان استمرارية عمل أجهزتها دون توقف. يشمل العقد زيارات صيانة وقائية منتظمة، وأولوية في الاستجابة عند الأعطال، وخصومات على قطع الغيار والمستهلكات.
-      </p>
-    </div>
-  </div>
-</section>
-
 <MidPageCTA formId="copIndexMidCta" />
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>نخدم جميع أنحاء مصر</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<p>
-        رغم أن مقرنا الرئيسي في الإسكندرية، إلا أن نطاق خدماتنا يمتد ليشمل القاهرة الكبرى، والجيزة، والمنصورة، والإسماعيلية، والسويس، وطنطا، وأسيوط، والمنيا، وسائر محافظات مصر. يتوفر لدينا فريق متنقل يمكنه الوصول إليك أينما كنت في مصر لتقديم خدمات التركيب والصيانة والدعم الفني.
-      </p>
-    </div>
-  </div>
-</section>
 
 <section class="section section-bg">
   <div class="container">
@@ -226,32 +211,14 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>كيف نعمل؟</h2>
+      <div class="as-h2">كيف نعمل؟</div>
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
 <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h4>تواصل معنا وأخبرنا باحتياجاتك</h4>
-            <p>اتصل بنا أو أرسل لنا رسالة واتساب وأخبرنا بحجم عملك واحتياجاتك من ماكينة التصوير أو الطابعة. سنُحلل احتياجاتك بدقة.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h4>نوفر لك أفضل الخيارات المناسبة لميزانيتك</h4>
-            <p>بناءً على احتياجاتك وميزانيتك، نعرض عليك أفضل الخيارات من الماركات العالمية المعتمدة مع مقارنة كاملة بين المواصفات والأسعار.</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h4>نوصل ونثبت الجهاز مع ضمان وخدمة ما بعد البيع</h4>
-            <p>نتولى التوصيل والتركيب والتشغيل التجريبي، ونُدرب فريقك على استخدام الجهاز. نُقدم ضمان وخدمة ما بعد البيع لراحة بالك.</p>
-          </div>
-        </div>
+        <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا وأخبرنا باحتياجاتك</div><p>اتصل بنا أو أرسل لنا رسالة واتساب وأخبرنا بحجم عملك واحتياجاتك من ماكينة التصوير أو الطابعة. سنُحلل احتياجاتك بدقة.</p></div>
+        <div class="step-card"><div class="step-num">2</div><div class="as-h3">نوفر لك أفضل الخيارات المناسبة لميزانيتك</div><p>بناءً على احتياجاتك وميزانيتك، نعرض عليك أفضل الخيارات من الماركات العالمية مع مقارنة كاملة بين المواصفات والأسعار.</p></div>
+        <div class="step-card"><div class="step-num">3</div><div class="as-h3">نوصل ونثبت الجهاز مع ضمان وخدمة ما بعد البيع</div><p>نتولى التوصيل والتركيب والتشغيل التجريبي، ونُدرب فريقك على استخدام الجهاز. نُقدم ضمان وخدمة ما بعد البيع لراحة بالك.</p></div>
       </div>
 
       <!-- FAQ -->
@@ -259,7 +226,180 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section section-sm">
+  <div class="container">
+    <div class="sidebar-cards-row cols-1">
+<div class="sidebar-card">
+                <div class="as-h3"><i class="fas fa-phone" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا الآن</div>
+                <div class="contact-info">
+                  <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div><strong>01227392074</strong><br><a href="tel:01227392074" class="btn btn-primary btn-sm" style="margin-top:8px;display:inline-flex;">اتصل الآن</a></div>
+                  </div>
+                  <div class="contact-info-item">
+                    <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+                    <div><strong>واتساب</strong><br><a href="https://wa.me/201227392074" class="btn btn-whatsapp btn-sm" style="margin-top:8px;display:inline-flex;">ابدأ محادثة</a></div>
+                  </div>
+                  <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية</span>
+                  </div>
+                  <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>السبت – الخميس: 9ص – 6م</span>
+                  </div>
+                </div>
+              </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أبرز الماركات المتاحة في مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+      <IconCardGrid columns={2} items={[
+        { icon: 'fa-copy', title: 'ماكينات التصوير', text: 'كانون Canon وريكو Ricoh وكيوسيرا Kyocera وتوشيبا Toshiba وزيروكس Xerox هي الأكثر انتشاراً في مصر، وأحبارها وقطع غيارها متوفرة في السوق، مما يسهّل الصيانة ويقلل وقت التوقف.' },
+        { icon: 'fa-print', title: 'الطابعات', text: 'HP وCanon وEpson وBrother تغطي كل الاستخدامات: طابعات ليزر للمكاتب، وطابعات بخزانات حبر للطباعة الملونة الكثيرة بتكلفة أقل، وأجهزة متعددة الوظائف للطباعة والتصوير والمسح الضوئي.' },
+      ]} />
+    </div>
+  </div>
+</section>
+
 <section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>الأسعار والأنواع: جديد واستيراد ومستعمل</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-box', title: 'جديد', text: 'جهاز في عبوته الأصلية بضمان الشركة. الأعلى سعراً، ومناسب للشركات التي تريد أطول عمر وأقل مخاطرة.' },
+        { icon: 'fa-plane-arrival', title: 'استيراد مجدد', text: 'ماكينات مستوردة من الخارج بعدد نسخ منخفض، نفحصها ونجددها قبل البيع وعليها ضمان يصل إلى 6 أشهر. أفضل قيمة مقابل السعر لأغلب المكاتب.' },
+        { icon: 'fa-recycle', title: 'مستعمل محلي', text: 'الأرخص، لكن حالته تختلف من جهاز لآخر، لذا يجب التأكد من العداد (الكاونتر) وحالة الدرام والفيوزر قبل الشراء.' },
+      ]} />
+      <div style="overflow-x:auto;margin-top:24px">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead>
+          <tr style="background:#1a1a2e;color:#fff">
+            <th style="padding:12px 16px;text-align:right">النوع</th>
+            <th style="padding:12px 16px;text-align:right">مناسب لـ</th>
+            <th style="padding:12px 16px;text-align:right">الأسعار تبدأ من</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fff;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">طابعة ليزر جديدة أبيض وأسود (A4)</td>
+            <td style="padding:12px 16px">البيت والمكتب الصغير</td>
+            <td style="padding:12px 16px;font-weight:700">6,000 جنيه</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">ماكينة تصوير استيراد مجددة أبيض وأسود (A3)</td>
+            <td style="padding:12px 16px">المكاتب ومحلات التصوير الصغيرة</td>
+            <td style="padding:12px 16px;font-weight:700">18,000 جنيه</td>
+          </tr>
+          <tr style="background:#fff;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">ماكينة تصوير استيراد مجددة ألوان (A3)</td>
+            <td style="padding:12px 16px">المكاتب ومحلات الطباعة</td>
+            <td style="padding:12px 16px;font-weight:700">21,000 جنيه</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">طابعة ليزر ألوان جديدة متعددة الوظائف (A4)</td>
+            <td style="padding:12px 16px">المكاتب التي تحتاج طباعة ملونة بكميات متوسطة</td>
+            <td style="padding:12px 16px;font-weight:700">38,000 جنيه</td>
+          </tr>
+          <tr style="background:#fff;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">ماكينة تصوير جديدة (A3)</td>
+            <td style="padding:12px 16px">الشركات التي تريد جهازاً جديداً بضمان كامل</td>
+            <td style="padding:12px 16px;font-weight:700">45,000 جنيه</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:16px">الأسعار متوسطات تقريبية للسوق المصري في 2026، وتتغير مع سعر الصرف والموديل وعدد النسخ وحالة الجهاز. للحصول على السعر الدقيق اليوم تواصل معنا عبر واتساب وأخبرنا باحتياجك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أفضل ماكينات تصوير للشركات في مصر 2026: مقارنة الماركات</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نخدم عملاءنا في <a href="/cairo/copiers">القاهرة</a> و<a href="/alexandria/copiers">الإسكندرية</a> وجميع محافظات مصر بأفضل ماكينات التصوير العالمية. إليك مقارنة بين الماركات الأكثر مبيعاً، ولمعرفة الأسعار التي تبدأ منها كل فئة راجع الجدول السابق:</p>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+        <thead>
+          <tr style="background:#1a1a2e;color:#fff">
+            <th style="padding:12px 16px;text-align:right">الماركة</th>
+            <th style="padding:12px 16px;text-align:right">مناسبة لـ</th>
+            <th style="padding:12px 16px;text-align:right">المميزات</th>
+            <th style="padding:12px 16px;text-align:right">انتبه لـ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fff;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">Canon</td>
+            <td style="padding:12px 16px">المكاتب المتوسطة</td>
+            <td style="padding:12px 16px">جودة عالية، سهلة الاستخدام</td>
+            <td style="padding:12px 16px">أحبارها الأصلية أغلى نسبياً</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">Ricoh</td>
+            <td style="padding:12px 16px">الشركات الكبيرة</td>
+            <td style="padding:12px 16px">سرعة عالية، طباعة ألوان</td>
+            <td style="padding:12px 16px">الأكثر انتشاراً في الاستيراد المجدد، فاختر جهازاً بعداد نسخ منخفض</td>
+          </tr>
+          <tr style="background:#fff;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">Kyocera</td>
+            <td style="padding:12px 16px">الطباعة بكميات كبيرة</td>
+            <td style="padding:12px 16px">تكلفة تشغيل منخفضة</td>
+            <td style="padding:12px 16px">سعر الشراء أعلى قليلاً لكن تكلفة الصفحة أقل</td>
+          </tr>
+          <tr style="background:#f8f9fa;border-bottom:1px solid #eee">
+            <td style="padding:12px 16px;font-weight:700">Toshiba</td>
+            <td style="padding:12px 16px">بيئات العمل المتنوعة</td>
+            <td style="padding:12px 16px">متعددة الوظائف، موثوقة</td>
+            <td style="padding:12px 16px">قطع غيار بعض الموديلات القديمة أقل توفراً</td>
+          </tr>
+          <tr style="background:#fff">
+            <td style="padding:12px 16px;font-weight:700">Xerox</td>
+            <td style="padding:12px 16px">مراكز الطباعة</td>
+            <td style="padding:12px 16px">إنتاجية عالية جداً</td>
+            <td style="padding:12px 16px">مناسبة للكميات الكبيرة، وأوفر مع عقد صيانة</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>ما الذي يحدد سعر ماكينة التصوير أو الطابعة؟</h2>
+      <p>يسألنا كثير من عملائنا عن سبب اختلاف الأسعار بشكل كبير بين ماكينة وأخرى رغم تشابه المظهر الخارجي. إليك أهم العوامل الفعلية التي تحدد التكلفة النهائية</p>
+      <div class="divider"></div>
+    </div>
+    <div style="max-width:860px;margin:0 auto;">
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-tachometer-alt', title: 'سرعة الطباعة (PPM)', text: 'كل زيادة في عدد الصفحات بالدقيقة تعني آلية طباعة أقوى وأغلى في التصنيع، خاصة في الفئة التي تتجاوز 50 صفحة/دقيقة' },
+        { icon: 'fa-recycle', title: 'حالة الجهاز (جديد أو مجدد)', text: 'الماكينات المجددة توفر توفيراً كبيراً في التكلفة الأولية مقابل ضمان أقصر نسبياً' },
+        { icon: 'fa-layer-group', title: 'عدد أدراج الورق والسعة الإجمالية', text: 'كل درج إضافي ووحدة تغذية ورق كبيرة يرفعان السعر لكنهما يقللان تدخل الموظف اليدوي' },
+        { icon: 'fa-palette', title: 'دعم الألوان', text: 'الماكينات الملونة أعلى سعراً في الشراء وفي تكلفة التونر مقارنة بالأبيض والأسود فقط' },
+        { icon: 'fa-cut', title: 'خيارات التشطيب والتجليد', text: 'وحدات التدبيس والثقب والطي الأوتوماتيكي تُضاف كتكلفة إضافية لكنها توفر وقتاً كبيراً في محلات الطباعة' },
+        { icon: 'fa-shield-alt', title: 'مدة الضمان ونوع عقد الصيانة', text: 'الضمان الممتد وعقد الصيانة الشامل يرفعان الاستثمار الأولي لكنهما يخفضان مفاجآت تكلفة الصيانة لاحقاً' },
+      ]} />
+      <p>نُقدم دائماً تفصيلاً واضحاً لكل بند من هذه التكاليف قبل التنفيذ، حتى تعرف بالضبط أين تذهب ميزانيتك وما البديل الأنسب لحجم استخدامك الفعلي بدلاً من الشراء بمواصفات أعلى أو أقل من حاجتك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>الأسئلة الشائعة</h2>
@@ -300,7 +440,7 @@ const schemaJson = JSON.stringify({
         <div class="faq-item">
           <button class="faq-question">كم سعر ماكينة التصوير في مصر؟ <i class="fas fa-plus"></i></button>
           <div class="faq-answer"><div class="faq-answer-inner">
-            <p>تتفاوت أسعار ماكينات التصوير في مصر بشكل كبير حسب الماركة والموديل والمواصفات وحالة الجهاز (جديد أو مستعمل مجدد). نوفر ضمان وخدمة ما بعد البيع لجميع الماكينات. تواصل معنا عبر واتساب وأخبرنا باحتياجك وسنرسل لك عرض سعر مجاني ودقيق خلال دقائق.</p>
+            <p>تتفاوت أسعار ماكينات التصوير في مصر حسب الماركة والسرعة وحالة الجهاز. في 2026: ماكينة التصوير المستوردة المجددة أبيض وأسود مقاس A3 تبدأ من 18,000 جنيه، والألوان تبدأ من 21,000 جنيه، والطابعة الليزر الجديدة الصغيرة تبدأ من 6,000 جنيه. الأسعار تتغير مع سعر الصرف، فتواصل معنا عبر واتساب وأخبرنا باحتياجك وسنرسل لك عرض سعر مجاني ودقيق.</p>
           </div></div>
         </div>
         <div class="faq-item">
@@ -338,108 +478,11 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-sm">
-  <div class="container">
-    <div class="sidebar-cards-row cols-1">
-<div class="sidebar-card">
-                <h4><i class="fas fa-phone" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا الآن</h4>
-                <div class="contact-info">
-                  <div class="contact-info-item">
-                    <i class="fas fa-phone"></i>
-                    <div><strong>01227392074</strong><br><a href="tel:01227392074" class="btn btn-primary btn-sm" style="margin-top:8px;display:inline-flex;">اتصل الآن</a></div>
-                  </div>
-                  <div class="contact-info-item">
-                    <i class="fab fa-whatsapp" style="color:#25D366;"></i>
-                    <div><strong>واتساب</strong><br><a href="https://wa.me/201227392074" class="btn btn-whatsapp btn-sm" style="margin-top:8px;display:inline-flex;">ابدأ محادثة</a></div>
-                  </div>
-                  <div class="contact-info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>26 عبد المنعم سند، الإبراهيمية، باب شرق، الإسكندرية</span>
-                  </div>
-                  <div class="contact-info-item">
-                    <i class="fas fa-clock"></i>
-                    <span>السبت – الخميس: 9ص – 6م</span>
-                  </div>
-                </div>
-              </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>أفضل ماكينات تصوير للشركات في مصر 2025: مقارنة الماركات</h2>
-      <div class="divider"></div>
-    </div>
-    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">نخدم عملاءنا في <a href="/cairo/copiers">القاهرة</a> و<a href="/alexandria/copiers">الإسكندرية</a> وجميع محافظات مصر بأفضل ماكينات التصوير العالمية. إليك مقارنة بين الماركات الأكثر مبيعاً:</p>
-    <div style="overflow-x:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
-        <thead>
-          <tr style="background:#1a1a2e;color:#fff">
-            <th style="padding:12px 16px;text-align:right">الماركة</th>
-            <th style="padding:12px 16px;text-align:right">مناسبة لـ</th>
-            <th style="padding:12px 16px;text-align:right">المميزات</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background:#fff;border-bottom:1px solid #eee">
-            <td style="padding:12px 16px;font-weight:700">Canon</td>
-            <td style="padding:12px 16px">المكاتب المتوسطة</td>
-            <td style="padding:12px 16px">جودة عالية، سهلة الاستخدام</td>
-          </tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee">
-            <td style="padding:12px 16px;font-weight:700">Ricoh</td>
-            <td style="padding:12px 16px">الشركات الكبيرة</td>
-            <td style="padding:12px 16px">سرعة عالية، طباعة ألوان</td>
-          </tr>
-          <tr style="background:#fff;border-bottom:1px solid #eee">
-            <td style="padding:12px 16px;font-weight:700">Kyocera</td>
-            <td style="padding:12px 16px">الطباعة بكميات كبيرة</td>
-            <td style="padding:12px 16px">تكلفة تشغيل منخفضة</td>
-          </tr>
-          <tr style="background:#f8f9fa;border-bottom:1px solid #eee">
-            <td style="padding:12px 16px;font-weight:700">Toshiba</td>
-            <td style="padding:12px 16px">بيئات العمل المتنوعة</td>
-            <td style="padding:12px 16px">متعددة الوظائف، موثوقة</td>
-          </tr>
-          <tr style="background:#fff">
-            <td style="padding:12px 16px;font-weight:700">Xerox</td>
-            <td style="padding:12px 16px">مراكز الطباعة</td>
-            <td style="padding:12px 16px">إنتاجية عالية جداً</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>ما الذي يحدد سعر ماكينة التصوير أو الطابعة؟</h2>
-      <p>يسألنا كثير من عملائنا عن سبب اختلاف الأسعار بشكل كبير بين ماكينة وأخرى رغم تشابه المظهر الخارجي. إليك أهم العوامل الفعلية التي تحدد التكلفة النهائية</p>
-      <div class="divider"></div>
-    </div>
-    <div style="max-width:860px;margin:0 auto;">
-      <IconCardGrid columns={3} items={[
-        { icon: 'fa-tachometer-alt', title: 'سرعة الطباعة (PPM)', text: 'كل زيادة في عدد الصفحات بالدقيقة تعني آلية طباعة أقوى وأغلى في التصنيع، خاصة في الفئة التي تتجاوز 50 صفحة/دقيقة' },
-        { icon: 'fa-recycle', title: 'حالة الجهاز (جديد أو مجدد)', text: 'الماكينات المجددة توفر توفيراً كبيراً في التكلفة الأولية مقابل ضمان أقصر نسبياً' },
-        { icon: 'fa-layer-group', title: 'عدد أدراج الورق والسعة الإجمالية', text: 'كل درج إضافي ووحدة تغذية ورق كبيرة يرفعان السعر لكنهما يقللان تدخل الموظف اليدوي' },
-        { icon: 'fa-palette', title: 'دعم الألوان', text: 'الماكينات الملونة أعلى سعراً في الشراء وفي تكلفة التونر مقارنة بالأبيض والأسود فقط' },
-        { icon: 'fa-cut', title: 'خيارات التشطيب والتجليد', text: 'وحدات التدبيس والثقب والطي الأوتوماتيكي تُضاف كتكلفة إضافية لكنها توفر وقتاً كبيراً في محلات الطباعة' },
-        { icon: 'fa-shield-alt', title: 'مدة الضمان ونوع عقد الصيانة', text: 'الضمان الممتد وعقد الصيانة الشامل يرفعان الاستثمار الأولي لكنهما يخفضان مفاجآت تكلفة الصيانة لاحقاً' },
-      ]} />
-      <p>نُقدم دائماً تفصيلاً واضحاً لكل بند من هذه التكاليف قبل التنفيذ، حتى تعرف بالضبط أين تذهب ميزانيتك وما البديل الأنسب لحجم استخدامك الفعلي بدلاً من الشراء بمواصفات أعلى أو أقل من حاجتك.</p>
-    </div>
-  </div>
-</section>
-
 <!-- CTA Banner -->
 <section class="cta-banner">
   <div class="container">
     <div class="cta-content">
-      <h2>هل تحتاج ماكينة تصوير أو طابعة؟</h2>
+      <div class="as-h2">هل تحتاج ماكينة تصوير أو طابعة؟</div>
       <p>تواصل معنا الآن واحصل على استشارة مجانية واختر الجهاز الأنسب لاحتياجاتك وميزانيتك</p>
       <div class="cta-buttons">
         <a href="tel:01227392074" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> اتصل بنا الآن</a>
@@ -457,8 +500,8 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="related-services">
       <a href="/copiers" class="related-service-link active"><span>ماكينات التصوير والطابعات</span><i class="fas fa-arrow-left"></i></a>
-      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
-      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات ليزر وإنكجيت</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/buy" class="related-service-link"><span>شراء ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>شراء طابعات ليزر وإنكجيت</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/maintenance" class="related-service-link"><span>صيانة ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
     </div>

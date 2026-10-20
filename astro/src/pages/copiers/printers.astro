@@ -5,12 +5,13 @@ import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "بيع طابعات",
+  "name": "شراء طابعات",
   "description": "طابعات ليزر وإنكجيت للبيع في مصر، HP وCanon وEpson وBrother بأفضل الأسعار مع ضمان وصيانة.",
-  "serviceType": "بيع طابعات",
+  "serviceType": "شراء طابعات",
   "provider": {
     "@type": "LocalBusiness",
     "name": "نيو جولدن أوفيس",
@@ -35,12 +36,12 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="طابعات ليزر وإنكجيت للبيع في مصر"
   subtitle="تشكيلة واسعة من طابعات الليزر والإنكجيت لجميع الاستخدامات، منزلية، مكتبية، متعددة الوظائف"
-  heroImage="/images/copiers-hub.webp"
+  heroImage="/images/hero-copiers-printers.webp"
   heroIcon="fa-print"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
     { label: 'ماكينات التصوير والطابعات', href: '/copiers' },
-    { label: 'بيع طابعات' }
+    { label: 'شراء طابعات' }
   ]}
 />
 
@@ -49,7 +50,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -57,6 +57,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>طابعات الليزر: كيف تعمل ومتى تختارها</h2>
       <div class="divider"></div>
@@ -70,11 +72,7 @@ const schemaJson = JSON.stringify({
         نوفر طابعات ليزر أحادية اللون وملونة من HP LaserJet Pro وEnterprise، وكانون imageCLASS، وبراذر HL وMFC، وKyocera ECOSYS، لتلبية جميع الاحتياجات المكتبية في السوق المصري.
       </p>
     </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2>طابعات انكجيت: متى تكون الخيار الأفضل</h2>
       <div class="divider"></div>
@@ -90,10 +88,14 @@ const schemaJson = JSON.stringify({
         الإنكجيت مثالية للاستخدام المنزلي والمكاتب الصغيرة التي تطبع كميات معتدلة، وللمصورين والمصممين الذين يحتاجون إلى جودة لون عالية في مخرجاتهم.
       </p>
     </div>
+          </div>
+      </div>
+      <ServiceSidebar category="copiers" current="/copiers/printers" />
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>الماركات المتاحة</h2>
@@ -264,7 +266,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -274,30 +276,13 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
-    <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>أسئلة شائعة عن الطابعات</h2><div class="divider"></div></div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">ما الفرق بين طابعة الليزر والإنكجيت؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">طابعة الليزر تستخدم حبراً جافاً (تونر) وتتميز بسرعة أعلى وتكلفة أقل لكل صفحة خاصة للنصوص، وهي مثالية للمكاتب. طابعة الإنكجيت تستخدم حبراً سائلاً وتتفوق في جودة الألوان والصور الفوتوغرافية.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما أفضل طابعة للاستخدام المنزلي في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للاستخدام المنزلي المتوسط ننصح بطابعة إنكجيت متعددة الوظائف مثل Epson EcoTank أو Canon PIXMA لتوفيرها في تكلفة الحبر مع جودة ممتازة في الطباعة الملونة والمستندات.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل يمكن توصيل الطابعة بعدة أجهزة في الشبكة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، الطابعات الشبكية يمكن توصيلها بعشرات الأجهزة عبر الشبكة المحلية. معظم الطابعات المكتبية الحديثة تدعم الواي فاي والشبكة السلكية وتتيح الطباعة من الهاتف والحاسوب.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تبيعون الطابعات مع الكارتريدج والخدمة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نبيع الطابعة كاملة مع كارتريدج أصلي أو بديل بحسب رغبة العميل، ونقدم خدمة ما بعد البيع وتوفير الكارتريدج والحبر بشكل منتظم.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم مدة الضمان على الطابعات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الطابعات الجديدة تحمل ضمان الشركة المصنعة لمدة سنة واحدة، ونقدم نحن من طرفنا دعم فني مجاني لأول 6 أشهر بعد الشراء.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم سعر الطابعة في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار الطابعات في مصر حسب النوع والمواصفات. نوفر HP وCanon وEpson وBrother بأفضل الأسعار مع ضمان وتوصيل لجميع أنحاء مصر. تواصل معنا للحصول على عرض سعر.</div></div></div>
-      <div class="faq-item"><div class="faq-question">لماذا تظهر طابعتي "غير متصلة" (Offline) رغم أنها متصلة بالكهرباء؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">غالباً بسبب انقطاع اتصال الشبكة أو USB. أعد تشغيل الطابعة والراوتر، وتحقق من أن الطابعة والكمبيوتر على نفس الشبكة. إذا استمرت المشكلة، جرّب حذف الطابعة وإعادة إضافتها من إعدادات الكمبيوتر أو تواصل معنا للدعم الفني.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل توفرون طابعات بميزات أمان للشركات والجهات الحكومية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر طابعات احترافية تدعم الطباعة الآمنة برقم سري (Pull Printing)، وتشفير القرص الصلب الداخلي، وسجل تدقيق كامل لعمليات الطباعة، مناسبة للجهات المالية والقانونية والحكومية التي تتعامل مع مستندات حساسة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">أي طابعة تناسب فريلانسر أو مكتب منزلي بأقل تكلفة تشغيل؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">ننصح بطابعات نظام الخزان المتكامل مثل Epson EcoTank أو Canon PIXMA G Series، فهي توفر تكلفة تشغيل منخفضة جداً على المدى الطويل مقارنة بالكارتريدج التقليدي، مع جودة ألوان ممتازة للتصاميم والعروض التقديمية.</div></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
@@ -336,9 +321,27 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header"><h2>أسئلة شائعة عن الطابعات</h2><div class="divider"></div></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">ما الفرق بين طابعة الليزر والإنكجيت؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">طابعة الليزر تستخدم حبراً جافاً (تونر) وتتميز بسرعة أعلى وتكلفة أقل لكل صفحة خاصة للنصوص، وهي مثالية للمكاتب. طابعة الإنكجيت تستخدم حبراً سائلاً وتتفوق في جودة الألوان والصور الفوتوغرافية.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما أفضل طابعة للاستخدام المنزلي في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للاستخدام المنزلي المتوسط ننصح بطابعة إنكجيت متعددة الوظائف مثل Epson EcoTank أو Canon PIXMA لتوفيرها في تكلفة الحبر مع جودة ممتازة في الطباعة الملونة والمستندات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن توصيل الطابعة بعدة أجهزة في الشبكة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، الطابعات الشبكية يمكن توصيلها بعشرات الأجهزة عبر الشبكة المحلية. معظم الطابعات المكتبية الحديثة تدعم الواي فاي والشبكة السلكية وتتيح الطباعة من الهاتف والحاسوب.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تبيعون الطابعات مع الكارتريدج والخدمة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نبيع الطابعة كاملة مع كارتريدج أصلي أو بديل بحسب رغبة العميل، ونقدم خدمة ما بعد البيع وتوفير الكارتريدج والحبر بشكل منتظم.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم مدة الضمان على الطابعات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الطابعات الجديدة تحمل ضمان الشركة المصنعة لمدة سنة واحدة، ونقدم نحن من طرفنا دعم فني مجاني لأول 6 أشهر بعد الشراء.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سعر الطابعة في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار الطابعات في مصر حسب النوع والمواصفات. نوفر HP وCanon وEpson وBrother بأفضل الأسعار مع ضمان وتوصيل لجميع أنحاء مصر. تواصل معنا للحصول على عرض سعر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">لماذا تظهر طابعتي "غير متصلة" (Offline) رغم أنها متصلة بالكهرباء؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">غالباً بسبب انقطاع اتصال الشبكة أو USB. أعد تشغيل الطابعة والراوتر، وتحقق من أن الطابعة والكمبيوتر على نفس الشبكة. إذا استمرت المشكلة، جرّب حذف الطابعة وإعادة إضافتها من إعدادات الكمبيوتر أو تواصل معنا للدعم الفني.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل توفرون طابعات بميزات أمان للشركات والجهات الحكومية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر طابعات احترافية تدعم الطباعة الآمنة برقم سري (Pull Printing)، وتشفير القرص الصلب الداخلي، وسجل تدقيق كامل لعمليات الطباعة، مناسبة للجهات المالية والقانونية والحكومية التي تتعامل مع مستندات حساسة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">أي طابعة تناسب فريلانسر أو مكتب منزلي بأقل تكلفة تشغيل؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">ننصح بطابعات نظام الخزان المتكامل مثل Epson EcoTank أو Canon PIXMA G Series، فهي توفر تكلفة تشغيل منخفضة جداً على المدى الطويل مقارنة بالكارتريدج التقليدي، مع جودة ألوان ممتازة للتصاميم والعروض التقديمية.</div></div></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
@@ -354,8 +357,8 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="related-services">
-      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
-      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/buy" class="related-service-link"><span>شراء ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>شراء طابعات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/maintenance" class="related-service-link"><span>صيانة الماكينات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
     </div>

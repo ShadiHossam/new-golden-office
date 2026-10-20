@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -50,7 +51,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -58,6 +58,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>حبر طابعة: الكارتريدج الأصلي مقابل المتوافق: أيهما تختار؟</h2>
       <div class="divider"></div>
@@ -76,6 +78,9 @@ const schemaJson = JSON.stringify({
 
       <h3>الكارتريدج المتوافق (Compatible / Aftermarket)</h3>
       <p>الكارتريدج المتوافق يصنعه طرف ثالث وفق مواصفات تناسب موديلات طابعات محددة. تكلفته أقل بشكل ملحوظ، أحياناً بفارق 50-70%، مما يجعله خياراً اقتصادياً جذاباً، خاصة للاستخدامات ذات الكميات الكبيرة. الكارتريدج المتوافق من ماركات موثوقة يقدم جودة طباعة مقبولة جداً لمعظم الاستخدامات اليومية من نصوص ومستندات. في نيو جولدن أوفيس، نختار الكارتريدجات المتوافقة بعناية من موردين ذوي سمعة جيدة لضمان أفضل تجربة ممكنة.</p>
+    </div>
+        </div>
+      <ServiceSidebar category="copiers" current="/copiers/cartridges" />
     </div>
   </div>
 </section>
@@ -244,7 +249,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -256,33 +261,16 @@ const schemaJson = JSON.stringify({
 
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="section-header"><h2>أسئلة شائعة عن الكارتريدج والأحبار</h2><div class="divider"></div></div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">ما الفرق بين الكارتريدج الأصلي والمتوافق؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الكارتريدج الأصلي تصنعه شركة الطابعة نفسها ويضمن أفضل جودة طباعة وعمر أطول للطابعة ولا يؤثر على الضمان. الكارتريدج المتوافق يصنعه طرف ثالث بتكلفة أقل وقد يكون اختياراً اقتصادياً جيداً من ماركات موثوقة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تعبئة الكارتريدج تضر بالطابعة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">التعبئة الاحترافية بحبر مناسب لنوع الطابعة لا تضر بها إذا تمت بشكل صحيح. ننصح باستخدام خدمات التعبئة الاحترافية لدينا لضمان استخدام الحبر المناسب وعدم تسريبه داخل الطابعة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تتوفر لديكم كارتريدج لجميع موديلات الطابعات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نحتفظ بمخزون كبير من الكارتريدج لأشهر الموديلات من جميع الماركات. للموديلات النادرة أو القديمة، يمكننا توفيرها خلال 24-48 ساعة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما أفضل كارتريدج للطباعة الاقتصادية بكميات كبيرة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للطباعة بكميات كبيرة ننصح بكارتريدجات High Yield (سعة كبيرة) التي تعطيك تكلفة أقل لكل صفحة، أو التحول إلى أنظمة الخزانات المتكاملة مثل Epson EcoTank أو Canon PIXMA G Series.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل يمكن شراء الكارتريدج بالجملة للشركات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نقدم أسعاراً خاصة وخصومات للشركات والمكاتب التي تشتري بكميات كبيرة، مع إمكانية التوصيل الدوري المنتظم وفق جدول زمني يناسب عملكم.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم سعر الكارتريدج في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار الكارتريدج في مصر حسب الماركة والنوع والطراز. كارتريدج الطباعة بالألوان (Color) يكون أعلى سعراً من الأسود والأبيض. تواصل معنا للحصول على أفضل سعر، نوفر جميع الأنواع مع خدمة التوصيل لجميع أنحاء مصر.</div></div></div>
-      <div class="faq-item"><div class="faq-question">لماذا تظهر خطوط بيضاء أو طباعة باهتة رغم أن الكارتريدج جديد؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">قد يكون السبب انسداداً في فوهات رأس الطباعة يحتاج دورة تنظيف من إعدادات الطابعة، أو توزيعاً غير متجانس للتونر يُحل بهز الكارتريدج بلطف. إذا استمرت المشكلة بعد ذلك، قد تكون هناك مشكلة في الطبل أو وحدة التثبيت وليس الكارتريدج نفسه.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كيف أحسب التكلفة الحقيقية للصفحة الواحدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">اقسم سعر الكارتريدج على عدد الصفحات المضمون طباعتها منه. الكارتريدج عالي السعة (High Yield) غالباً أوفر لكل صفحة رغم سعره الأعلى ابتداءً. فريقنا يساعدك في هذا الحساب مجاناً لضمان اختيارك الأوفر اقتصادياً.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تستقبلون الكارتريدجات الفارغة لإعادة التدوير؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نُشجع عملاءنا على إعادة الكارتريدجات الفارغة إلينا بدلاً من رميها. نفرزها بين ما هو قابل لإعادة التصنيع عبر خدمة التعبئة، وما يجب التخلص منه بطريقة مسؤولة بيئياً.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>كارتريدج أصلي أم متوافق: ما الفرق؟</h2>
@@ -317,9 +305,27 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header"><h2>أسئلة شائعة عن الكارتريدج والأحبار</h2><div class="divider"></div></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">ما الفرق بين الكارتريدج الأصلي والمتوافق؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الكارتريدج الأصلي تصنعه شركة الطابعة نفسها ويضمن أفضل جودة طباعة وعمر أطول للطابعة ولا يؤثر على الضمان. الكارتريدج المتوافق يصنعه طرف ثالث بتكلفة أقل وقد يكون اختياراً اقتصادياً جيداً من ماركات موثوقة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تعبئة الكارتريدج تضر بالطابعة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">التعبئة الاحترافية بحبر مناسب لنوع الطابعة لا تضر بها إذا تمت بشكل صحيح. ننصح باستخدام خدمات التعبئة الاحترافية لدينا لضمان استخدام الحبر المناسب وعدم تسريبه داخل الطابعة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تتوفر لديكم كارتريدج لجميع موديلات الطابعات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نحتفظ بمخزون كبير من الكارتريدج لأشهر الموديلات من جميع الماركات. للموديلات النادرة أو القديمة، يمكننا توفيرها خلال 24-48 ساعة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما أفضل كارتريدج للطباعة الاقتصادية بكميات كبيرة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">للطباعة بكميات كبيرة ننصح بكارتريدجات High Yield (سعة كبيرة) التي تعطيك تكلفة أقل لكل صفحة، أو التحول إلى أنظمة الخزانات المتكاملة مثل Epson EcoTank أو Canon PIXMA G Series.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن شراء الكارتريدج بالجملة للشركات؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نقدم أسعاراً خاصة وخصومات للشركات والمكاتب التي تشتري بكميات كبيرة، مع إمكانية التوصيل الدوري المنتظم وفق جدول زمني يناسب عملكم.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سعر الكارتريدج في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار الكارتريدج في مصر حسب الماركة والنوع والطراز. كارتريدج الطباعة بالألوان (Color) يكون أعلى سعراً من الأسود والأبيض. تواصل معنا للحصول على أفضل سعر، نوفر جميع الأنواع مع خدمة التوصيل لجميع أنحاء مصر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">لماذا تظهر خطوط بيضاء أو طباعة باهتة رغم أن الكارتريدج جديد؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">قد يكون السبب انسداداً في فوهات رأس الطباعة يحتاج دورة تنظيف من إعدادات الطابعة، أو توزيعاً غير متجانس للتونر يُحل بهز الكارتريدج بلطف. إذا استمرت المشكلة بعد ذلك، قد تكون هناك مشكلة في الطبل أو وحدة التثبيت وليس الكارتريدج نفسه.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أحسب التكلفة الحقيقية للصفحة الواحدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">اقسم سعر الكارتريدج على عدد الصفحات المضمون طباعتها منه. الكارتريدج عالي السعة (High Yield) غالباً أوفر لكل صفحة رغم سعره الأعلى ابتداءً. فريقنا يساعدك في هذا الحساب مجاناً لضمان اختيارك الأوفر اقتصادياً.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تستقبلون الكارتريدجات الفارغة لإعادة التدوير؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نُشجع عملاءنا على إعادة الكارتريدجات الفارغة إلينا بدلاً من رميها. نفرزها بين ما هو قابل لإعادة التصنيع عبر خدمة التعبئة، وما يجب التخلص منه بطريقة مسؤولة بيئياً.</div></div></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
@@ -334,8 +340,8 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="related-services">
-      <a href="/copiers/buy" class="related-service-link"><span>بيع ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
-      <a href="/copiers/printers" class="related-service-link"><span>بيع طابعات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/buy" class="related-service-link"><span>شراء ماكينات التصوير</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/copiers/printers" class="related-service-link"><span>شراء طابعات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/maintenance" class="related-service-link"><span>صيانة الماكينات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/copiers/cartridges" class="related-service-link"><span>كارتريدج وأحبار</span><i class="fas fa-arrow-left"></i></a>
     </div>
