@@ -6,6 +6,7 @@ import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -13,7 +14,7 @@ const schemaJson = JSON.stringify({
     {
       "@type": "Service",
       "name": "أنظمة DVR و NVR للتسجيل",
-      "description": "بيع وتركيب أجهزة DVR وNVR بقنوات متعددة وتخزين عالي السعة في جميع أنحاء مصر",
+      "description": "شراء وتركيب أجهزة DVR وNVR بقنوات متعددة وتخزين عالي السعة في جميع أنحاء مصر",
       "provider": {
         "@type": "LocalBusiness",
         "name": "نيو جولدن أوفيس",
@@ -95,7 +96,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="أنظمة DVR و NVR للتسجيل في مصر"
   subtitle="أجهزة تسجيل عالية الجودة بقنوات 4 و8 و16 و32، تخزين ضخم حتى 8TB، مشاهدة من هاتفك في أي مكان وزمان، مع كشف الحركة وتنبيهات فورية"
-  heroImage="/images/cameras-hub.webp"
+  heroImage="/images/hero-cameras-dvr-nvr.webp"
   heroIcon="fa-hdd"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -109,7 +110,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -117,16 +117,14 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>جهاز تسجيل كاميرات مصر: القلب النابض لنظام المراقبة</h2>
       <div class="divider"></div>
     </div>
     <p class="landing-lead">جهاز التسجيل هو العقل المدبر لأي نظام مراقبة، فهو يستقبل الصور من جميع الكاميرات ويخزّنها ويتيح لك مراجعتها في أي وقت. في نيو جولدن أوفيس، نوفر أفضل أجهزة DVR وNVR من Hikvision وDahua بجميع السعات والمواصفات لتناسب كل نوع من المشاريع سواء كانت منازل أو محلات أو مصانع أو فنادق.</p>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> الفرق بين DVR و NVR</h2>
       <div class="divider"></div>
@@ -138,11 +136,8 @@ const schemaJson = JSON.stringify({
         { title: 'NVR (Network Video Recorder)', text: 'يعمل مع كاميرات IP عبر كابل Cat5e/Cat6 أو Wi-Fi. أعلى جودة صورة، يدعم PoE لتوصيل طاقة الكاميرا عبر الكابل نفسه، مثالي للمشاريع الجديدة.' },
       ]} />
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
+          </div>
+        <div class="intro-merged-block">
     <div class="section-header">
       <h2><i class="fas fa-th-large" style="color:var(--secondary);margin-left:8px;"></i> أعداد القنوات المتاحة</h2>
       <div class="divider"></div>
@@ -154,6 +149,10 @@ const schemaJson = JSON.stringify({
         { title: '16 قنوات', text: 'للمحلات الكبيرة والشركات والفنادق الصغيرة ومجمعات التسوق' },
         { title: '32 قنوات فأكثر', text: 'للمصانع والمستشفيات والمجمعات السكنية والمشاريع الضخمة' },
       ]} />
+    </div>
+          </div>
+      </div>
+      <ServiceSidebar category="cameras" current="/cameras/dvr-nvr" />
     </div>
   </div>
 </section>
@@ -298,7 +297,7 @@ const schemaJson = JSON.stringify({
       ]} />
 
       <div class="cta-banner" style="margin-top:40px;border-radius:12px;">
-        <h2>استشر خبراءنا في اختيار جهاز التسجيل المناسب</h2>
+        <div class="as-h2">استشر خبراءنا في اختيار جهاز التسجيل المناسب</div>
         <p>أخبرنا بعدد الكاميرات والمساحة المطلوبة وسنوصي لك بالجهاز الأمثل بأفضل سعر</p>
         <a href="https://wa.me/201227392074?text=أريد%20الاستفسار%20عن%20جهاز%20DVR%20أو%20NVR%20مناسب" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--secondary-dark);font-weight:700;"><i class="fab fa-whatsapp" style="color:#25D366;"></i> استشر خبيرنا</a>
       </div>
@@ -310,7 +309,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-3">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
@@ -318,12 +317,12 @@ const schemaJson = JSON.stringify({
               </div>
             </div>
 <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-              <h3 style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</h3>
+              <div class="as-h3" style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</div>
               <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">حدد عدد القنوات المطلوبة وسنقدم لك عرضاً فورياً</p>
               <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20لجهاز%20DVR%20NVR" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> واتساب الآن</a>
             </div>
 <div class="sidebar-card">
-              <h3><i class="fas fa-info-circle" style="color:var(--secondary);margin-left:8px;"></i> مقارنة سريعة</h3>
+              <div class="as-h3"><i class="fas fa-info-circle" style="color:var(--secondary);margin-left:8px;"></i> مقارنة سريعة</div>
               <div style="overflow-x:auto;">
                 <table style="width:100%;font-size:0.82rem;border-collapse:collapse;">
                   <thead><tr style="background:var(--primary);color:var(--white);"><th style="padding:6px 8px;">الميزة</th><th style="padding:6px 8px;">DVR</th><th style="padding:6px 8px;">NVR</th></tr></thead>
@@ -340,37 +339,16 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>من التسجيل حتى المشاهدة في 3 خطوات</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>التقاط وإرسال</h3><p>الكاميرات تلتقط الصور وترسلها عبر الكابلات أو الشبكة إلى جهاز DVR/NVR الذي يستقبل جميع القنوات في آنٍ واحد</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>التسجيل والتخزين</h3><p>الجهاز يضغط الفيديو ويخزّنه على الهاردسك بشكل دوري أو عند الكشف عن حركة، مع إمكانية الكتابة فوق القديم تلقائياً</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>المشاهدة والمراقبة</h3><p>شاهد الكاميرات مباشرةً من الشاشة المتصلة أو من هاتفك في أي مكان في العالم عبر التطبيق المخصص</p></div>
-    </div>
-  </div>
-</section>
-
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>أسئلة شائعة عن أجهزة DVR و NVR</h2>
+      <div class="as-h2">من التسجيل حتى المشاهدة في 3 خطوات</div>
       <div class="divider"></div>
     </div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">هل يمكن استخدام الهاردسك العادي في جهاز DVR؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا يُنصح بذلك. الهاردسكات العادية مصممة للكمبيوتر وليست للتسجيل المستمر 24/7. نستخدم هاردسكات WD Purple أو Seagate SkyHawk المصممة خصيصاً للمراقبة وتتحمل التشغيل المستمر لسنوات طويلة بدون أعطال.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ماذا يحدث للتسجيلات عند امتلاء الهاردسك؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">عند امتلاء الهاردسك، يقوم الجهاز تلقائياً بحذف أقدم التسجيلات والكتابة فوقها، وهو ما يُسمى "الكتابة الدورية". هذا يضمن استمرار التسجيل بلا انقطاع. يمكنك أيضاً ضبط الجهاز لإيقاف التسجيل عند الامتلاء إذا كنت تريد الاحتفاظ بالتسجيلات.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كيف أشاهد الكاميرات من هاتفي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بعد التثبيت، نقوم بربط الجهاز بشبكة الإنترنت في موقعك. ثم نثبت التطبيق المخصص على هاتفك (Hik-Connect لـ Hikvision أو DMSS لـ Dahua) وندرّبك على استخدامه. بعدها يمكنك مشاهدة الكاميرات من أي مكان في العالم طالما هاتفك متصل بالإنترنت.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل يمكن توسيع جهاز DVR الموجود بإضافة كاميرات جديدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، إذا كان لديك قنوات شاغرة في الجهاز يمكن إضافة كاميرات جديدة بسهولة. إذا لم يكن هناك قنوات شاغرة، يمكن استبدال الجهاز بآخر بعدد قنوات أكبر مع الإبقاء على نفس الكاميرات والكابلات في معظم الحالات.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما ضمان جهاز DVR/NVR؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">جميع أجهزة DVR وNVR التي نبيعها تأتي بضمان سنة من المصنع وضماننا الإضافي يصل إلى 3 سنوات. في حالة أي عطل خلال فترة الضمان، نقوم بالإصلاح أو الاستبدال بشكل مجاني في أسرع وقت ممكن.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كم سعر جهاز DVR أو NVR في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار أجهزة DVR وNVR في مصر حسب عدد القنوات وجودة التسجيل. تواصل مع نيو جولدن أوفيس للحصول على أفضل سعر مع ضمان وتركيب.</div></div></div>
-      <div class="faq-item"><div class="faq-question">كيف أحسب سعة التخزين المناسبة لعدد الكاميرات لدي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تعتمد السعة على دقة الكاميرات وعددها وأسلوب التسجيل. كقاعدة تقريبية، كاميرة 2MP بضغط H.265+ تستهلك 4-6GB يومياً عند التسجيل المستمر. اضرب هذا الرقم في عدد الكاميرات وعدد أيام الأرشفة المطلوبة لتحصل على تقدير تقريبي، ثم أضف هامش أمان 20%. فريقنا يقوم بهذا الحساب بدقة عند المعاينة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما هو نظام RAID ومتى أحتاجه؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">RAID تقنية تخزين تحفظ نسخة مطابقة من التسجيلات على أكثر من هاردسك في آن واحد، فإذا تعطل أحد الهاردسكات لا تفقد أي بيانات. ننصح به للمشاريع الحساسة كالبنوك ومحال الذهب والمصانع الكبرى، بينما يكفي هاردسك واحد عالي الجودة للمنازل والمحلات الصغيرة.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل يحتاج جهاز NVR مفتاح شبكة خاص (PoE Switch)؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم إذا كنت تستخدم كاميرات IP تعمل بتقنية PoE، فأنت تحتاج مفتاح شبكة يدعم PoE لتوصيل الطاقة والبيانات لكل كاميرا عبر كابل واحد. نساعدك في اختيار المفتاح المناسب حسب عدد الكاميرات المطلوب توصيلها.</div></div></div>
-      <div class="faq-item"><div class="faq-question">هل تحديث الفيرموير لجهاز DVR/NVR آمن ولا يؤثر على التسجيلات القديمة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، تحديث الفيرموير من الشركة المصنعة لا يمسح التسجيلات المخزنة على الهاردسك، لكن ننصح دوماً بعمل نسخة احتياطية للإعدادات المهمة قبل أي تحديث احترازياً. نقوم بهذه التحديثات ضمن خدمة الصيانة الدورية لضمان أمان النظام وأحدث الميزات.</div></div></div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">التقاط وإرسال</div><p>الكاميرات تلتقط الصور وترسلها عبر الكابلات أو الشبكة إلى جهاز DVR/NVR الذي يستقبل جميع القنوات في آنٍ واحد</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">التسجيل والتخزين</div><p>الجهاز يضغط الفيديو ويخزّنه على الهاردسك بشكل دوري أو عند الكشف عن حركة، مع إمكانية الكتابة فوق القديم تلقائياً</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">المشاهدة والمراقبة</div><p>شاهد الكاميرات مباشرةً من الشاشة المتصلة أو من هاتفك في أي مكان في العالم عبر التطبيق المخصص</p></div>
     </div>
   </div>
 </section>
@@ -408,9 +386,31 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>أسئلة شائعة عن أجهزة DVR و NVR</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">هل يمكن استخدام الهاردسك العادي في جهاز DVR؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">لا يُنصح بذلك. الهاردسكات العادية مصممة للكمبيوتر وليست للتسجيل المستمر 24/7. نستخدم هاردسكات WD Purple أو Seagate SkyHawk المصممة خصيصاً للمراقبة وتتحمل التشغيل المستمر لسنوات طويلة بدون أعطال.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ماذا يحدث للتسجيلات عند امتلاء الهاردسك؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">عند امتلاء الهاردسك، يقوم الجهاز تلقائياً بحذف أقدم التسجيلات والكتابة فوقها، وهو ما يُسمى "الكتابة الدورية". هذا يضمن استمرار التسجيل بلا انقطاع. يمكنك أيضاً ضبط الجهاز لإيقاف التسجيل عند الامتلاء إذا كنت تريد الاحتفاظ بالتسجيلات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أشاهد الكاميرات من هاتفي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">بعد التثبيت، نقوم بربط الجهاز بشبكة الإنترنت في موقعك. ثم نثبت التطبيق المخصص على هاتفك (Hik-Connect لـ Hikvision أو DMSS لـ Dahua) وندرّبك على استخدامه. بعدها يمكنك مشاهدة الكاميرات من أي مكان في العالم طالما هاتفك متصل بالإنترنت.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يمكن توسيع جهاز DVR الموجود بإضافة كاميرات جديدة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، إذا كان لديك قنوات شاغرة في الجهاز يمكن إضافة كاميرات جديدة بسهولة. إذا لم يكن هناك قنوات شاغرة، يمكن استبدال الجهاز بآخر بعدد قنوات أكبر مع الإبقاء على نفس الكاميرات والكابلات في معظم الحالات.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما ضمان جهاز DVR/NVR؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">جميع أجهزة DVR وNVR التي نبيعها تأتي بضمان سنة من المصنع وضماننا الإضافي يصل إلى 3 سنوات. في حالة أي عطل خلال فترة الضمان، نقوم بالإصلاح أو الاستبدال بشكل مجاني في أسرع وقت ممكن.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كم سعر جهاز DVR أو NVR في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار أجهزة DVR وNVR في مصر حسب عدد القنوات وجودة التسجيل. تواصل مع نيو جولدن أوفيس للحصول على أفضل سعر مع ضمان وتركيب.</div></div></div>
+      <div class="faq-item"><div class="faq-question">كيف أحسب سعة التخزين المناسبة لعدد الكاميرات لدي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تعتمد السعة على دقة الكاميرات وعددها وأسلوب التسجيل. كقاعدة تقريبية، كاميرة 2MP بضغط H.265+ تستهلك 4-6GB يومياً عند التسجيل المستمر. اضرب هذا الرقم في عدد الكاميرات وعدد أيام الأرشفة المطلوبة لتحصل على تقدير تقريبي، ثم أضف هامش أمان 20%. فريقنا يقوم بهذا الحساب بدقة عند المعاينة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما هو نظام RAID ومتى أحتاجه؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">RAID تقنية تخزين تحفظ نسخة مطابقة من التسجيلات على أكثر من هاردسك في آن واحد، فإذا تعطل أحد الهاردسكات لا تفقد أي بيانات. ننصح به للمشاريع الحساسة كالبنوك ومحال الذهب والمصانع الكبرى، بينما يكفي هاردسك واحد عالي الجودة للمنازل والمحلات الصغيرة.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل يحتاج جهاز NVR مفتاح شبكة خاص (PoE Switch)؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم إذا كنت تستخدم كاميرات IP تعمل بتقنية PoE، فأنت تحتاج مفتاح شبكة يدعم PoE لتوصيل الطاقة والبيانات لكل كاميرا عبر كابل واحد. نساعدك في اختيار المفتاح المناسب حسب عدد الكاميرات المطلوب توصيلها.</div></div></div>
+      <div class="faq-item"><div class="faq-question">هل تحديث الفيرموير لجهاز DVR/NVR آمن ولا يؤثر على التسجيلات القديمة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، تحديث الفيرموير من الشركة المصنعة لا يمسح التسجيلات المخزنة على الهاردسك، لكن ننصح دوماً بعمل نسخة احتياطية للإعدادات المهمة قبل أي تحديث احترازياً. نقوم بهذه التحديثات ضمن خدمة الصيانة الدورية لضمان أمان النظام وأحدث الميزات.</div></div></div>
+    </div>
+  </div>
+</section>
+
+
 <section class="cta-banner">
   <div class="container">
-    <h2>اختر جهاز التسجيل المناسب لك</h2>
+    <div class="as-h2">اختر جهاز التسجيل المناسب لك</div>
     <p>خبراؤنا يساعدونك في اختيار DVR أو NVR المثالي بناءً على عدد الكاميرات والمساحة المطلوبة وميزانيتك في جميع أنحاء مصر</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="/contact" class="btn btn-outline btn-lg"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
@@ -425,7 +425,7 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="related-services">
-      <a href="/cameras/install" class="related-service-link"><span>بيع وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/install" class="related-service-link"><span>شراء وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/cameras/dvr-nvr" class="related-service-link active"><span>أنظمة DVR و NVR</span><i class="fas fa-arrow-left"></i></a>
       <a href="/cameras/ip-wifi" class="related-service-link"><span>كاميرات IP وواي فاي</span><i class="fas fa-arrow-left"></i></a>
       <a href="/cameras/maintenance" class="related-service-link"><span>صيانة المراقبة</span><i class="fas fa-arrow-left"></i></a>

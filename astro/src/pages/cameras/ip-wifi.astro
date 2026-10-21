@@ -4,8 +4,8 @@ import RelatedGuides from '../../components/RelatedGuides.astro';
 import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
-import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -13,7 +13,7 @@ const schemaJson = JSON.stringify({
     {
       "@type": "Service",
       "name": "كاميرات IP وواي فاي",
-      "description": "بيع وتركيب كاميرات IP وواي فاي في مصر، راقب منزلك ومحلك من موبايلك في أي مكان مع نيو جولدن أوفيس الإسكندرية.",
+      "description": "شراء وتركيب كاميرات IP وواي فاي في مصر، راقب منزلك ومحلك من موبايلك في أي مكان مع نيو جولدن أوفيس الإسكندرية.",
       "serviceType": "كاميرات مراقبة لاسلكية",
       "provider": {
         "@type": "LocalBusiness",
@@ -56,7 +56,7 @@ const schemaJson = JSON.stringify({
         {
           "@type": "Question",
           "name": "ما سعر كاميرات IP وواي فاي في مصر؟",
-          "acceptedAnswer": { "@type": "Answer", "text": "تتفاوت أسعار كاميرات الواي فاي وIP في مصر حسب الدقة والمواصفات. تواصل مع نيو جولدن أوفيس للحصول على عرض سعر مجاني يشمل الكاميرات والتركيب في القاهرة والإسكندرية وجميع أنحاء مصر." }
+          "acceptedAnswer": { "@type": "Answer", "text": "تبدأ أسعار كاميرات الواي فاي الداخلية من 1,100 جنيه، وكاميرات IP السلكية من 1,800 جنيه للكاميرا، والكاميرات الدوّارة PTZ من 5,000 جنيه. السعر النهائي يعتمد على الدقة والماركة وعدد الكاميرات وجهاز التسجيل. تواصل مع نيو جولدن أوفيس لمعاينة مجانية وعرض سعر شامل التركيب في جميع محافظات مصر." }
         },
         {
           "@type": "Question",
@@ -94,9 +94,9 @@ const schemaJson = JSON.stringify({
   schemaJson={schemaJson}
 >
 <PageHero
-  title="كاميرات واي فاي وIP في مصر: راقب من موبايلك"
-  subtitle="كاميرات ذكية لاسلكية وشبكية للمنازل والمكاتب والمحلات، تثبيت سهل، مشاهدة فورية من هاتفك، كشف ذكي للوجوه والحركة والصوت مع تنبيهات لحظية"
-  heroImage="/images/cameras-hub.webp"
+  title="كاميرات واي فاي وIP في مصر: نختار لك الأنسب لبيتك وشغلك"
+  subtitle="اختر الكاميرا المناسبة لمنزلك أو شركتك أو محلك واترك الباقي علينا: معاينة مجانية، ترشيح أفضل خيار يناسب ميزانيتك، أسعار تبدأ من 1,100 جنيه، وتركيب وتشغيل على موبايلك مع ضمان ودعم بعد البيع"
+  heroImage="/images/hero-cameras-ip-wifi.webp"
   heroIcon="fa-wifi"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -110,7 +110,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -118,26 +117,101 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
-      <h2>تقنية المستقبل في مراقبة المنازل والأعمال</h2>
+      <h2><i class="fas fa-handshake" style="color:var(--secondary);margin-left:8px;"></i> ماذا سنفعل لك بالضبط؟ نريحك من البداية للنهاية</h2>
       <div class="divider"></div>
     </div>
-    <p class="landing-lead">كاميرات IP وواي فاي هي أحدث ما وصلت إليه تقنيات المراقبة الحديثة. بدلاً من التعقيد الذي تفرضه الكاميرات التقليدية من كابلات طويلة وإعدادات معقدة، أصبح بإمكانك تثبيت كاميرة في أي مكان تريده والبدء في المشاهدة من هاتفك خلال دقائق. نيو جولدن أوفيس تقدم حلول IP وواي فاي متكاملة للمنازل والمكاتب والمحلات التجارية في جميع أنحاء مصر.</p>
+    <p class="landing-lead">لا تحتاج أن تكون خبيراً في الكاميرات ولا أن تقضي أياماً في مقارنة الموديلات والأسعار. أخبرنا بمكانك وما تريد مراقبته، وفريقنا يتولى كل شيء حتى تشاهد الصورة على موبايلك.</p>
+    <div class="landing-body service-content">
+<IconCardGrid columns={2} items={[
+        { icon: 'fa-clipboard-check', title: 'معاينة مجانية للمكان', text: 'نعاين المكان أو نراجع صوره معك، ونحدد عدد الكاميرات وأماكنها الصحيحة لتغطية كل زاوية مهمة بدون كاميرات زائدة' },
+        { icon: 'fa-search-dollar', title: 'أفضل خيار بأفضل سعر', text: 'نقارن لك بين الأنواع والماركات ونرشّح ما يناسب شركتك أو محلك أو منزلك وميزانيتك، فلا تدفع في مواصفات لا تحتاجها' },
+        { icon: 'fa-file-invoice-dollar', title: 'عرض سعر واضح بدون مفاجآت', text: 'عرض سعر مكتوب يشمل الكاميرات وجهاز التسجيل والتخزين والتركيب قبل أن نبدأ، بدون أي تكاليف مخفية' },
+        { icon: 'fa-tools', title: 'تركيب وضبط احترافي', text: 'فنيون متخصصون يركبون الكاميرات ويضبطون الزوايا والتسجيل والكشف الذكي والتنبيهات بالشكل الصحيح من أول يوم' },
+        { icon: 'fa-mobile-alt', title: 'تشغيل على موبايلك', text: 'نربط النظام بالتطبيق على موبايلك وموبايل من تريد، ونشرح لك المشاهدة المباشرة ومراجعة التسجيلات خطوة بخطوة' },
+        { icon: 'fa-headset', title: 'ضمان ودعم بعد البيع', text: 'ضمان على الأجهزة ومتابعة بعد التركيب، وأي مشكلة في الاتصال أو التطبيق نحلها معك بسرعة' },
+      ]} />
+      <div style="text-align:center;margin-top:24px;">
+        <a href="https://wa.me/201227392074?text=أريد%20معاينة%20مجانية%20وعرض%20سعر%20كاميرات%20مراقبة" target="_blank" class="btn btn-primary btn-lg"><i class="fab fa-whatsapp"></i> اطلب معاينة مجانية وعرض سعر</a>
+      </div>
+    </div>
+        </div>
+      <ServiceSidebar category="cameras" current="/cameras/ip-wifi" />
+    </div>
   </div>
 </section>
 
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> IP مقابل Analog: أيهما تختار؟</h2>
+      <h2><i class="fas fa-balance-scale" style="color:var(--secondary);margin-left:8px;"></i> الفرق بين كاميرا IP وكاميرا الواي فاي: أيهما تختار؟</h2>
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
-<ComparisonGrid items={[
-        { title: 'كاميرات Analog التقليدية', text: 'تحتاج كابل Coaxial لكل كاميرة وجهاز DVR. الأرخص في الأنظمة الكبيرة ولكنها أقل مرونة في التثبيت' },
-        { title: 'كاميرات IP (شبكية)', text: 'تعمل عبر شبكة Cat6 أو Wi-Fi وتحتاج <a href="/cameras/dvr-nvr">جهاز NVR للكاميرات الشبكية</a> لتسجيل الصورة وتخزينها، دقة صورة أعلى بكثير، إعداد أسهل، قابلة للتوسع بلا حدود' },
-        { title: 'النتيجة', text: 'للمشاريع الجديدة ننصح بـ IP لجودتها العالية ومرونتها؛ للأنظمة الموجودة Analog تبقى خياراً اقتصادياً ممتازاً' },
+<p>أول سؤال يسأله أغلب عملائنا قبل الشراء. هذه مقارنة مباشرة تساعدك تختار، وإذا كنت محتاراً نرشّح لك الأنسب بعد المعاينة:</p>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table style="width:100%;font-size:0.95rem;border-collapse:collapse;">
+          <thead><tr style="background:var(--primary);color:var(--white);"><th style="padding:12px 14px;text-align:right;">وجه المقارنة</th><th style="padding:12px 14px;text-align:right;">كاميرا IP (سلكية)</th><th style="padding:12px 14px;text-align:right;">كاميرا واي فاي (لاسلكية)</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">طريقة الاتصال</td><td style="padding:12px 14px;">كابل شبكة Cat6 ينقل الصورة والكهرباء معاً (PoE)</td><td style="padding:12px 14px;">لاسلكياً عبر راوتر الواي فاي + فيشة كهرباء فقط</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">ثبات الاتصال</td><td style="padding:12px 14px;">ثابت 24/7 ولا يتأثر بضعف الراوتر</td><td style="padding:12px 14px;">يعتمد على قوة إشارة الواي فاي في المكان</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">جودة الصورة</td><td style="padding:12px 14px;">من 2 حتى 8 ميجا (4K)</td><td style="padding:12px 14px;">غالباً من 2 حتى 5 ميجا</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">التركيب</td><td style="padding:12px 14px;">يحتاج تمديد كابلات</td><td style="padding:12px 14px;">سريع وبدون تكسير أو تمديدات</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">التسجيل</td><td style="padding:12px 14px;"><a href="/cameras/dvr-nvr">جهاز NVR</a> وهارد ديسك</td><td style="padding:12px 14px;">كارت MicroSD أو سحابة أو جهاز NVR</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">عدد الكاميرات المناسب</td><td style="padding:12px 14px;">من 4 إلى عشرات الكاميرات</td><td style="padding:12px 14px;">حتى 8 كاميرات تقريباً</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">الأنسب لـ</td><td style="padding:12px 14px;">الشركات والمحلات والمخازن والمصانع</td><td style="padding:12px 14px;">الشقق والمكاتب الصغيرة والأماكن المؤجرة</td></tr>
+            <tr style="background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">السعر يبدأ من</td><td style="padding:12px 14px;font-weight:700;">1,800 جنيه للكاميرا</td><td style="padding:12px 14px;font-weight:700;">1,100 جنيه للكاميرا</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-video" style="color:var(--secondary);margin-left:8px;"></i> أنواع كاميرات المراقبة</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>لكل مكان نوع كاميرا مناسب، واختيار النوع الصحيح يوفر عليك عدد الكاميرات والتكلفة:</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-video', title: 'كاميرا Bullet (خارجية)', image: '/images/ip-wifi-outdoor-camera.webp', text: 'الشكل الأسطواني المعروف، مقاومة للمياه والأتربة، مثالية للأسوار والمداخل والجراجات وواجهات المحلات' },
+        { icon: 'fa-circle', title: 'كاميرا Dome (سقف)', image: '/images/ip-wifi-dome-camera.webp', text: 'تُركب في السقف بشكل أنيق وغير لافت، مثالية للمكاتب والمحلات والممرات والاستقبال' },
+        { icon: 'fa-home', title: 'كاميرا واي فاي داخلية (Cube)', image: '/images/ip-wifi-indoor-home-camera.webp', text: 'صغيرة وتوضع على رف أو حائط، بصوت ثنائي الاتجاه، مثالية للشقق وغرف الأطفال ومتابعة كبار السن' },
+        { icon: 'fa-arrows-alt', title: 'كاميرا PTZ (دوّارة)', image: '/images/ip-wifi-ptz-camera.webp', text: 'تدور 360 درجة وتكبّر الصورة، كاميرا واحدة تغطي ساحة أو مخزن أو جراج كامل' },
+        { icon: 'fa-solar-panel', title: 'كاميرا بطارية وطاقة شمسية', image: '/images/ip-wifi-solar-camera.webp', text: 'تعمل بدون كهرباء دائمة، مثالية للفيلات والشاليهات والمزارع والمواقع الإنشائية' },
+        { icon: 'fa-sim-card', title: 'كاميرا 4G بشريحة', image: '/images/ip-wifi-4g-site-camera.webp', text: 'تعمل بشريحة موبايل بدلاً من الواي فاي، للمواقع التي لا يتوفر فيها إنترنت أرضي' },
       ]} />
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-tags" style="color:var(--secondary);margin-left:8px;"></i> الأسعار والأنواع: أشهر الكاميرات وأسعارها في مصر</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>مقارنة سريعة بين أكثر أنواع الكاميرات طلباً في مصر والسعر الذي تبدأ منه كل فئة، لتعرف ميزانيتك قبل التواصل معنا:</p>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table style="width:100%;font-size:0.95rem;border-collapse:collapse;">
+          <thead><tr style="background:var(--primary);color:var(--white);"><th style="padding:12px 14px;text-align:right;">نوع الكاميرا</th><th style="padding:12px 14px;text-align:right;">الأنسب لـ</th><th style="padding:12px 14px;text-align:right;">الدقة الشائعة</th><th style="padding:12px 14px;text-align:right;">السعر يبدأ من</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">واي فاي داخلية</td><td style="padding:12px 14px;">الشقق وغرف الأطفال والمكاتب الصغيرة</td><td style="padding:12px 14px;">2 – 4 ميجا</td><td style="padding:12px 14px;font-weight:700;">1,100 جنيه</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">واي فاي خارجية</td><td style="padding:12px 14px;">البلكونات والمداخل والحدائق</td><td style="padding:12px 14px;">2 – 4 ميجا</td><td style="padding:12px 14px;font-weight:700;">1,800 جنيه</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">IP سلكية (Bullet / Dome)</td><td style="padding:12px 14px;">المحلات والشركات والمخازن</td><td style="padding:12px 14px;">2 – 4 ميجا</td><td style="padding:12px 14px;font-weight:700;">1,800 جنيه</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">IP بدقة 4K</td><td style="padding:12px 14px;">الواجهات ومداخل السيارات وقراءة اللوحات</td><td style="padding:12px 14px;">8 ميجا</td><td style="padding:12px 14px;font-weight:700;">4,500 جنيه</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">بطارية / طاقة شمسية</td><td style="padding:12px 14px;">الفيلات والشاليهات والمواقع بدون كهرباء</td><td style="padding:12px 14px;">2 – 4 ميجا</td><td style="padding:12px 14px;font-weight:700;">3,500 جنيه</td></tr>
+            <tr style="background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">PTZ دوّارة</td><td style="padding:12px 14px;">الساحات والمصانع والجراجات الكبيرة</td><td style="padding:12px 14px;">2 – 4 ميجا مع زووم</td><td style="padding:12px 14px;font-weight:700;">5,000 جنيه</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.9rem;color:#777;">* أسعار استرشادية للكاميرا الواحدة بدون التركيب (أكتوبر 2026)، وتتغير حسب الماركة والموديل وسعر الصرف. تواصل معنا لعرض سعر محدّث شامل التركيب.</p>
     </div>
   </div>
 </section>
@@ -168,12 +242,12 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="landing-body service-content">
 <p>كاميرات PTZ (Pan-Tilt-Zoom) تمنحك السيطرة الكاملة على المراقبة:</p>
-      <IconCardGrid columns={4} items={[
-        { icon: 'fa-arrows-alt-h', title: 'التحريك الأفقي (Pan)', text: 'تدور 360 درجة لتغطية جميع الاتجاهات بكاميرة واحدة' },
-        { icon: 'fa-arrows-alt-v', title: 'التحريك الرأسي (Tilt)', text: 'تتحرك لأعلى ولأسفل لمتابعة الأشخاص والأحداث' },
-        { icon: 'fa-search-plus', title: 'التكبير الضوئي (Zoom)', text: 'تكبير ضوئي حتى 20x لرؤية التفاصيل الدقيقة من مسافة بعيدة' },
-        { icon: 'fa-walking', title: 'المتابعة التلقائية', text: 'تتبع الأشخاص المتحركين تلقائياً دون أي تدخل منك' },
-      ]} />
+      <ul style="padding-right:20px;line-height:2;font-size:1rem;color:#444">
+        <li><strong>التحريك الأفقي (Pan):</strong> تدور 360 درجة لتغطية جميع الاتجاهات بكاميرة واحدة.</li>
+        <li><strong>التحريك الرأسي (Tilt):</strong> تتحرك لأعلى ولأسفل لمتابعة الأشخاص والأحداث.</li>
+        <li><strong>التكبير الضوئي (Zoom):</strong> تكبير ضوئي حتى 20x لرؤية التفاصيل الدقيقة من مسافة بعيدة.</li>
+        <li><strong>المتابعة التلقائية:</strong> تتبع الأشخاص المتحركين تلقائياً دون أي تدخل منك.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -214,39 +288,23 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2><i class="fas fa-cloud" style="color:var(--secondary);margin-left:8px;"></i> خيارات التخزين</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<ComparisonGrid items={[
-        { title: 'التخزين السحابي', text: 'نسخ احتياطية في السحابة لضمان عدم فقدان التسجيلات حتى لو تعطّل الجهاز أو سُرق' },
-        { title: 'MicroSD محلية', text: 'تخزين محلي في الكاميرة نفسها حتى 256GB بدون الحاجة لجهاز DVR' },
-        { title: 'NAS Storage', text: 'تخزين شبكي محلي لاحترافيين يريدون أرشفة طويلة المدى' },
-      ]} />
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
       <h2><i class="fas fa-mobile-alt" style="color:var(--secondary);margin-left:8px;"></i> التحكم عبر التطبيق</h2>
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
 <p>جميع كاميرات IP وواي فاي لدينا تأتي بتطبيق مجاني يدعم Android وiPhone يتيح لك:</p>
-      <IconCardGrid columns={3} items={[
-        { icon: 'fa-play-circle', text: 'مشاهدة البث المباشر بجودة عالية في أي وقت' },
-        { icon: 'fa-film', text: 'مراجعة التسجيلات السابقة وتصديرها' },
-        { icon: 'fa-arrows-alt', text: 'التحكم في كاميرات PTZ من هاتفك' },
-        { icon: 'fa-bell', text: 'استقبال تنبيهات فورية على الهاتف' },
-        { icon: 'fa-sliders-h', text: 'ضبط إعدادات الكاميرة والحركة والصوت' },
-      ]} />
+      <ul style="padding-right:20px;line-height:2;font-size:1rem;color:#444">
+        <li>مشاهدة البث المباشر بجودة عالية في أي وقت.</li>
+        <li>مراجعة التسجيلات السابقة وتصديرها.</li>
+        <li>التحكم في كاميرات PTZ من هاتفك.</li>
+        <li>استقبال تنبيهات فورية على الهاتف.</li>
+        <li>ضبط إعدادات الكاميرة والحركة والصوت.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2><i class="fas fa-wifi" style="color:var(--secondary);margin-left:8px;"></i> حل مشكلات الاتصال الشائعة في كاميرات واي فاي</h2>
@@ -265,21 +323,60 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
-      <h2><i class="fas fa-user-friends" style="color:var(--secondary);margin-left:8px;"></i> سيناريوهات استخدام يومية لكاميرات IP وواي فاي</h2>
+      <h2><i class="fas fa-award" style="color:var(--secondary);margin-left:8px;"></i> أشهر الماركات المتوفرة في السوق المصري</h2>
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
-<p>ما يميز هذه الفئة من الكاميرات أنها دخلت في تفاصيل حياة الناس اليومية بطرق لم تكن ممكنة مع الأنظمة التقليدية:</p>
+<p>نتعامل مع الماركات الأكثر انتشاراً واعتماداً في مصر، ونرشّح لك الماركة حسب نوع المكان والميزانية وليس حسب الماركة الأغلى:</p>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table style="width:100%;font-size:0.95rem;border-collapse:collapse;">
+          <thead><tr style="background:var(--primary);color:var(--white);"><th style="padding:12px 14px;text-align:right;">الماركة</th><th style="padding:12px 14px;text-align:right;">الفئة</th><th style="padding:12px 14px;text-align:right;">الأنسب لـ</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">Hikvision</td><td style="padding:12px 14px;">احترافية</td><td style="padding:12px 14px;">أنظمة IP للشركات والمحلات والمصانع</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">Dahua</td><td style="padding:12px 14px;">احترافية</td><td style="padding:12px 14px;">المشاريع المتوسطة والكبيرة</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">EZVIZ</td><td style="padding:12px 14px;">منزلية ذكية (تابعة لـ Hikvision)</td><td style="padding:12px 14px;">كاميرات الواي فاي للشقق والفيلات</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">Imou</td><td style="padding:12px 14px;">منزلية ذكية (تابعة لـ Dahua)</td><td style="padding:12px 14px;">واي فاي داخلي وخارجي بسعر اقتصادي</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">HiLook</td><td style="padding:12px 14px;">اقتصادية (من Hikvision)</td><td style="padding:12px 14px;">المحلات والميزانيات المحدودة</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">TP-Link Tapo</td><td style="padding:12px 14px;">منزلية</td><td style="padding:12px 14px;">الشقق والاستخدام المنزلي البسيط</td></tr>
+            <tr><td style="padding:12px 14px;font-weight:700;">Uniview (UNV)</td><td style="padding:12px 14px;">احترافية</td><td style="padding:12px 14px;">الشركات والمواقع متعددة الفروع</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-project-diagram" style="color:var(--secondary);margin-left:8px;"></i> إزاي تعمل سيستم مراقبة كامل؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>سيستم المراقبة الكامل ليس مجرد كاميرات، بل كاميرات + جهاز تسجيل + تخزين + شبكة + تطبيق. هذه الخطوات التي ننفذها معك:</p>
       <IconCardGrid columns={3} items={[
-        { icon: 'fa-briefcase', title: 'الآباء العاملون', text: 'مراقبة الأطفال والمربية من مكان العمل مباشرة عبر الهاتف، مع تنبيه فوري عند البكاء أو أي حركة غير معتادة في غرفة الطفل' },
-        { icon: 'fa-hand-holding-heart', title: 'الاطمئنان على كبار السن', text: 'كاميرات بصوت ثنائي الاتجاه تتيح لأفراد العائلة التواصل الفوري مع الوالدين المسنين والاطمئنان عليهم في أي وقت من اليوم' },
-        { icon: 'fa-store-alt', title: 'أصحاب الأعمال متعددة الفروع', text: 'ربط عدة فروع بكاميرات IP على حساب واحد في التطبيق لمراقبة جميع المواقع من شاشة واحدة دون الحاجة لزيارة كل فرع بشكل يومي' },
-        { icon: 'fa-umbrella-beach', title: 'أصحاب العقارات الساحلية والمسافرون', text: 'كاميرات تعمل بالطاقة الشمسية أو البطارية لمراقبة الفيلات والشاليهات الساحلية التي تبقى خالية معظم أيام السنة دون كهرباء دائمة' },
-        { icon: 'fa-door-open', title: 'الطلاب والمقيمون في شقق مستقلة', text: 'كاميرة واي فاي بسيطة عند الباب لمراقبة الزوار واستلام الطرود بأمان دون أي تمديدات أو تعديلات في الشقة المستأجرة' },
+        { icon: 'fa-map-marked-alt', title: '1. تحديد الأماكن المهمة', text: 'المداخل والخزنة والكاشير والمخزن والممرات، ونحسب عدد الكاميرات المطلوب لتغطيتها بدون نقاط عمياء' },
+        { icon: 'fa-video', title: '2. اختيار نوع الكاميرا', text: 'IP سلكية للأماكن الثابتة والمهمة، وواي فاي حيث يصعب التمديد، وPTZ للمساحات المفتوحة الكبيرة' },
+        { icon: 'fa-hdd', title: '3. جهاز التسجيل والتخزين', text: 'NVR بعدد قنوات يسمح بالتوسع لاحقاً، وهارد ديسك بسعة تكفي المدة التي تريد الاحتفاظ بالتسجيل خلالها' },
+        { icon: 'fa-network-wired', title: '4. الشبكة والكهرباء', text: 'كابلات Cat6 وسويتش PoE، وUPS يحمي السيستم من انقطاع الكهرباء ويحافظ على استمرار التسجيل' },
+        { icon: 'fa-tools', title: '5. التركيب والضبط', text: 'تثبيت الكاميرات وضبط الزوايا والرؤية الليلية والكشف الذكي والتنبيهات' },
+        { icon: 'fa-mobile-alt', title: '6. التشغيل على الموبايل', text: 'ربط السيستم بالتطبيق على موبايلك وشرح المشاهدة المباشرة ومراجعة التسجيلات' },
       ]} />
+      <h3 style="margin-top:32px;">تكلفة تقريبية لسيستم كامل</h3>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table style="width:100%;font-size:0.95rem;border-collapse:collapse;">
+          <thead><tr style="background:var(--primary);color:var(--white);"><th style="padding:12px 14px;text-align:right;">السيستم</th><th style="padding:12px 14px;text-align:right;">مناسب لـ</th><th style="padding:12px 14px;text-align:right;">يبدأ من (أجهزة)</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 14px;font-weight:700;">2 كاميرا واي فاي + كروت ذاكرة</td><td style="padding:12px 14px;">شقة أو مكتب صغير</td><td style="padding:12px 14px;font-weight:700;">3,000 جنيه</td></tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--bg);"><td style="padding:12px 14px;font-weight:700;">4 كاميرات IP + NVR + هارد 1 تيرا</td><td style="padding:12px 14px;">محل أو مكتب</td><td style="padding:12px 14px;font-weight:700;">12,000 جنيه</td></tr>
+            <tr><td style="padding:12px 14px;font-weight:700;">8 كاميرات IP + NVR + هارد 2 تيرا</td><td style="padding:12px 14px;">شركة أو مخزن أو فيلا</td><td style="padding:12px 14px;font-weight:700;">22,000 جنيه</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.9rem;color:#777;">* أسعار استرشادية للأجهزة فقط (أكتوبر 2026)، وتكلفة الكابلات والتركيب تُحدد بعد المعاينة المجانية حسب المكان. <a href="/cameras/install">اعرف أكثر عن خدمة التركيب</a>.</p>
     </div>
   </div>
 </section>
@@ -288,7 +385,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-3">
 <div class="sidebar-card">
-              <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+              <div class="as-h4"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
@@ -296,12 +393,12 @@ const schemaJson = JSON.stringify({
               </div>
             </div>
 <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-              <h4 style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</h4>
+              <div class="as-h4" style="color:var(--secondary);border-color:var(--secondary);">احصل على عرض سعر</div>
               <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">أخبرنا بعدد الغرف أو المساحة وسنوصي بالنظام المثالي</p>
               <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كاميرات%20واي%20فاي%20IP" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> واتساب الآن</a>
             </div>
 <div class="sidebar-card">
-              <h4><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> متى تختار واي فاي؟</h4>
+              <div class="as-h4"><i class="fas fa-lightbulb" style="color:var(--secondary);margin-left:8px;"></i> متى تختار واي فاي؟</div>
               <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
                 <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لمنزلك دون حفر جدران</span></li>
                 <li style="font-size:0.9rem;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--secondary);margin-top:3px;flex-shrink:0;"></i><span>لمكان مؤقت أو قابل للتغيير</span></li>
@@ -313,16 +410,41 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-home" style="color:var(--secondary);margin-left:8px;"></i> كاميرات واي فاي للمنازل: أمان بيتك بدون تكسير ولا تمديدات</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="landing-body service-content">
+<p>كاميرا الواي فاي هي أسهل طريقة لتأمين شقتك أو فيلتك: لا حفر في الجدران ولا كابلات ظاهرة، فقط فيشة كهرباء وشبكة الواي فاي الموجودة عندك، وخلال ساعات تشاهد بيتك من موبايلك أينما كنت، وتصلك تنبيهات فورية عند أي حركة.</p>
+      <p>أغلب البيوت يكفيها من 2 إلى 4 كاميرات، ونرشّح لك أماكنها حسب تصميم بيتك:</p>
+      <ul style="padding-right:20px;line-height:2;font-size:1rem;color:#444">
+        <li><strong>باب الشقة أو المدخل:</strong> تعرف من يطرق الباب وتتحدث معه من موبايلك حتى وأنت خارج البيت.</li>
+        <li><strong>الصالة:</strong> زاوية واسعة تغطي الحركة الأساسية داخل البيت.</li>
+        <li><strong>غرفة الأطفال:</strong> متابعة الأطفال أو المربية مع تنبيه عند البكاء.</li>
+        <li><strong>البلكونة أو الحديقة:</strong> كاميرا خارجية مقاومة للمياه برؤية ليلية.</li>
+      </ul>
+      <p style="margin-top:16px;">التسجيل يكون على كارت ذاكرة داخل الكاميرا أو على السحابة، وأغلب الموديلات تدعم وضع الخصوصية الذي يوقف الكاميرا وأنت في البيت. نوفر كاميرات واي فاي من EZVIZ وImou وHikvision وDahua بأسعار تبدأ من 1,100 جنيه، مع التركيب والتشغيل على موبايلك في جميع محافظات مصر.</p>
+      <div style="text-align:center;margin-top:20px;">
+        <a href="https://wa.me/201227392074?text=أريد%20ترشيح%20كاميرات%20واي%20فاي%20لمنزلي" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> أرسل لنا عدد الغرف ونرشّح لك الأنسب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>تثبيت كاميرة واي فاي في 3 خطوات بسيطة</h2>
+      <h2><i class="fas fa-cloud" style="color:var(--secondary);margin-left:8px;"></i> خيارات التخزين</h2>
       <div class="divider"></div>
     </div>
-    <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>اختر المكان المناسب</h3><p>فريقنا يساعدك في اختيار أفضل مكان للكاميرة لتغطية أقصى مساحة مع ضمان وصول إشارة Wi-Fi قوية</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>التثبيت والإعداد</h3><p>نثبّت الكاميرة ونربطها بشبكة Wi-Fi ونضبط جميع الإعدادات من جودة الصورة والكشف الذكي والتخزين</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>ابدأ المراقبة فوراً</h3><p>نثبت التطبيق على هاتفك وندرّبك على الاستخدام الكامل، وفي نهاية اليوم أنت قادر على مراقبة منزلك من أي مكان</p></div>
+    <div class="landing-body service-content">
+<ul style="padding-right:20px;line-height:2;font-size:1rem;color:#444">
+        <li><strong>التخزين السحابي:</strong> نسخ احتياطية في السحابة لضمان عدم فقدان التسجيلات حتى لو تعطّل الجهاز أو سُرق.</li>
+        <li><strong>MicroSD محلية:</strong> تخزين محلي في الكاميرة نفسها حتى 256GB بدون الحاجة لجهاز DVR.</li>
+        <li><strong>NAS Storage:</strong> تخزين شبكي محلي لاحترافيين يريدون أرشفة طويلة المدى.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -338,7 +460,7 @@ const schemaJson = JSON.stringify({
       <div class="faq-item"><div class="faq-question">كيف أعرف أن إشارة واي فاي كافية للكاميرة؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نقوم بقياس قوة الإشارة في موقع الكاميرة قبل التثبيت. إذا كانت الإشارة ضعيفة، نوصي بتركيب Wireless Range Extender أو استخدام الكابل Cat6 بدلاً من Wi-Fi في تلك النقطة تحديداً. نضمن استقرار الاتصال 100%.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يمكن اختراق كاميرات واي فاي؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">الكاميرات الحديثة من Hikvision وDahua وEZVIZ تستخدم تشفير SSL/TLS قوي يحمي الصورة والبيانات. نحن نضبط كلمات مرور قوية ونفعّل التشفير عند التثبيت. باتباع الإرشادات الصحيحة، أمان الكاميرات الحديثة عالٍ جداً.</div></div></div>
       <div class="faq-item"><div class="faq-question">ما الفرق بين كاميرات PTZ وكاميرات واي فاي العادية؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">كاميرا PTZ هي نوع من كاميرات IP تتميز بالحركة الكاملة، تدور يمين ويسار وأعلى وأسفل وتكبّر. تستبدل عدة كاميرات ثابتة في الأماكن الكبيرة. الكاميرات العادية ثابتة الزاوية، أوفر وكافية في معظم التطبيقات المنزلية والتجارية.</div></div></div>
-      <div class="faq-item"><div class="faq-question">ما سعر كاميرات IP وواي فاي في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تتفاوت أسعار كاميرات الواي فاي وIP في مصر حسب الدقة والمواصفات. تواصل مع نيو جولدن أوفيس للحصول على عرض سعر مجاني يشمل الكاميرات والتركيب في القاهرة والإسكندرية وجميع أنحاء مصر.</div></div></div>
+      <div class="faq-item"><div class="faq-question">ما سعر كاميرات IP وواي فاي في مصر؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">تبدأ أسعار كاميرات الواي فاي الداخلية من 1,100 جنيه، وكاميرات IP السلكية من 1,800 جنيه للكاميرا، والكاميرات الدوّارة PTZ من 5,000 جنيه. السعر النهائي يعتمد على الدقة والماركة وعدد الكاميرات وجهاز التسجيل. تواصل مع نيو جولدن أوفيس لمعاينة مجانية وعرض سعر شامل التركيب في جميع محافظات مصر.</div></div></div>
       <div class="faq-item"><div class="faq-question">الكاميرا تظهر "غير متصلة" في التطبيق، ما الحل؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">أولاً تأكد من اتصال الراوتر بالإنترنت وأن الكاميرا موصولة بالكهرباء. جرب إعادة تشغيل الراوتر والكاميرا معاً، فهذا يحل المشكلة في أغلب الحالات خلال دقائق. إذا استمرت المشكلة، فقد تكون كلمة مرور الواي فاي تغيرت وتحتاج الكاميرا لإعادة ربط بالشبكة من جديد.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل يمكن مراقبة عدة فروع لشركتي من تطبيق واحد؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، يمكن ربط كاميرات IP من عدة مواقع مختلفة على نفس حساب التطبيق، فتشاهد جميع الفروع من شاشة واحدة بغض النظر عن موقعك. هذا الحل مثالي لأصحاب سلاسل المحلات والصيدليات والمطاعم متعددة الفروع.</div></div></div>
       <div class="faq-item"><div class="faq-question">هل توجد كاميرات تعمل بالطاقة الشمسية أو البطارية بدون كهرباء؟ <i class="fas fa-plus"></i></div><div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر كاميرات تعمل بالبطارية القابلة للشحن أو بالطاقة الشمسية، وهي مثالية للفيلات والشاليهات الساحلية والمواقع الإنشائية التي لا تتوفر فيها كهرباء دائمة أو التي تُستخدم موسمياً فقط.</div></div></div>
@@ -348,56 +470,9 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>الفرق بين كاميرا IP وكاميرا الواي فاي: أيهما تختار؟</h2>
-      <div class="divider"></div>
-    </div>
-    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:20px">كثير من عملائنا في الإسكندرية والقاهرة يسألون عن الفرق بين كاميرا IP وكاميرا الواي فاي قبل شراء نظام المراقبة. إليك المقارنة:</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
-      <div style="background:#fff;border-radius:12px;padding:24px;border:2px solid #1a1a2e">
-        <h3 style="font-size:1.15rem;font-weight:700;color:#1a1a2e;margin-bottom:12px">كاميرا IP (سلكية)</h3>
-        <ul style="list-style:none;padding:0;line-height:2;color:#444">
-          <li>✅ اتصال ثابت ومستقر 24/7</li>
-          <li>✅ جودة صورة أعلى</li>
-          <li>✅ لا تتأثر بضعف الإنترنت</li>
-          <li>✅ مثالية للمحلات والشركات</li>
-          <li>❌ تحتاج تمديد كابلات</li>
-        </ul>
-      </div>
-      <div style="background:#fff;border-radius:12px;padding:24px;border:2px solid #c8a951">
-        <h3 style="font-size:1.15rem;font-weight:700;color:#1a1a2e;margin-bottom:12px">كاميرا واي فاي (لاسلكية)</h3>
-        <ul style="list-style:none;padding:0;line-height:2;color:#444">
-          <li>✅ تركيب سهل وسريع</li>
-          <li>✅ لا تحتاج كابلات</li>
-          <li>✅ مثالية للمنازل والمكاتب</li>
-          <li>✅ إمكانية النقل والتحريك</li>
-          <li>❌ تعتمد على قوة الواي فاي</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>كاميرات واي فاي للمنازل في مصر: الحل الأمثل للمراقبة بدون تمديدات</h2>
-      <div class="divider"></div>
-    </div>
-    <p style="font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:16px">
-      كاميرات الواي فاي للمنازل هي الأكثر طلباً في الإسكندرية والقاهرة وجميع أنحاء مصر للأسباب التالية: سهولة التركيب، إمكانية المشاهدة من الموبايل في أي مكان، وتنبيهات فورية عند أي حركة. نوفر كاميرات واي فاي من Hikvision وDahua وHILook بأسعار تنافسية.
-    </p>
-    <p style="font-size:1.05rem;line-height:1.9;color:#444">
-      نخدم عملاءنا في القاهرة والإسكندرية وجميع محافظات مصر، تواصل معنا لمعرفة أفضل كاميرا واي فاي تناسب منزلك أو محلك.
-    </p>
-  </div>
-</section>
-
 <section class="cta-banner">
   <div class="container">
-    <h2>راقب منزلك ومحلك من أي مكان في العالم</h2>
+    <div class="as-h2">راقب منزلك ومحلك من أي مكان في العالم</div>
     <p>كاميرات IP وواي فاي الذكية تحمي ما تحب. تواصل معنا الآن للحصول على أفضل عرض سعر في مصر</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="/contact" class="btn btn-outline btn-lg"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
@@ -412,7 +487,7 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="related-services">
-      <a href="/cameras/install" class="related-service-link"><span>بيع وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/cameras/install" class="related-service-link"><span>شراء وتركيب كاميرات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/cameras/dvr-nvr" class="related-service-link"><span>أنظمة DVR و NVR</span><i class="fas fa-arrow-left"></i></a>
       <a href="/cameras/ip-wifi" class="related-service-link active"><span>كاميرات IP وواي فاي</span><i class="fas fa-arrow-left"></i></a>
       <a href="/cameras/maintenance" class="related-service-link"><span>صيانة المراقبة</span><i class="fas fa-arrow-left"></i></a>
