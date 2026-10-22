@@ -6,6 +6,7 @@ import PageHero from '../../components/PageHero.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify([
   {
@@ -52,7 +53,7 @@ const schemaJson = JSON.stringify([
 <PageHero
   title="صيانة تكييفات وشحن فريون في مصر: خدمة سريعة"
   subtitle="تكييفك يعمل لكنه لا يبرد بالكفاءة المعتادة؟ قد يحتاج إلى صيانة دورية أو شحن فريون. نيو جولدن أوفيس تقدم خدمة صيانة تكييفات شاملة في مصر منذ 1999، استجابة سريعة وأسعار مناسبة"
-  heroImage="/images/ac-hub.webp"
+  heroImage="/images/hero-ac-maintenance.webp"
   heroIcon="fa-wrench"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -66,7 +67,6 @@ const schemaJson = JSON.stringify([
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -74,6 +74,8 @@ const schemaJson = JSON.stringify([
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>شحن فريون مصر وصيانة التكييف: الاستثمار الأذكى لحماية جهازك</h2>
       <div class="divider"></div>
@@ -82,11 +84,7 @@ const schemaJson = JSON.stringify([
     <div class="landing-body service-content">
 <p>كثير من عملائنا يتواصلون معنا بعد أن يتوقف التكييف تماماً في منتصف يوليو أو أغسطس، ونكتشف عند الفحص أن المشكلة كانت بسيطة ويمكن تفاديها بالكامل لو تمت صيانة الجهاز قبل بداية الموسم بأسابيع. لهذا نُشجّع دائماً على حجز موعد الصيانة الوقائية مبكراً، قبل أن يمتلئ جدول الفنيين بطلبات الطوارئ في ذروة الصيف، وهو أمر يوفر عليك وقت الانتظار وإزعاج انقطاع التبريد في أشد أيام الحر.</p>
     </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2><i class="fas fa-heartbeat" style="color:var(--secondary);margin-left:8px;"></i> لماذا تحتاج لصيانة تكييفك؟</h2>
       <div class="divider"></div>
@@ -99,10 +97,14 @@ const schemaJson = JSON.stringify([
         { icon: 'fa-shield-alt', title: 'منع الأعطال المفاجئة', text: 'اكتشاف مشاكل الفريون أو الكمبريسور مبكراً يوفر عليك تكلفة إصلاح كبيرة لاحقاً' },
       ]} />
     </div>
+          </div>
+      </div>
+      <ServiceSidebar category="ac" current="/ac/maintenance" />
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2><i class="fas fa-exclamation-triangle" style="color:var(--secondary);margin-left:8px;"></i> علامات تكييفك يحتاج صيانة فوراً</h2>
@@ -238,7 +240,7 @@ const schemaJson = JSON.stringify([
   <div class="container">
     <div class="sidebar-cards-row cols-2">
 <div class="sidebar-card">
-              <h4><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h4>
+              <div class="as-h4"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fas fa-phone-alt"></i><a href="tel:+201227392074">01227392074</a></div>
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
@@ -246,7 +248,7 @@ const schemaJson = JSON.stringify([
               </div>
             </div>
 <div class="sidebar-card" style="background:var(--primary);color:var(--white);">
-              <h4 style="color:var(--secondary);border-color:var(--secondary);">احجز صيانة تكييفك</h4>
+              <div class="as-h4" style="color:var(--secondary);border-color:var(--secondary);">احجز صيانة تكييفك</div>
               <p style="font-size:0.9rem;margin-bottom:16px;opacity:0.9;">اتصل الآن واحجز زيارة صيانة في أقرب وقت</p>
               <a href="https://wa.me/201227392074?text=أريد%20صيانة%20تكييف%20وشحن%20فريون" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> احجز الآن</a>
             </div>
@@ -257,13 +259,40 @@ const schemaJson = JSON.stringify([
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>كيف تسير عملية الصيانة من اتصالك حتى التسليم</h2>
+      <div class="as-h2">كيف تسير عملية الصيانة من اتصالك حتى التسليم</div>
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>اتصل واحجز موعد</h3><p>اتصل بنا أو تواصل عبر واتساب وأخبرنا بنوع مشكلتك. نحدد أقرب موعد متاح لزيارتك بنفس اليوم أو اليوم التالي</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>الفني يصل ويفحص</h3><p>يصل الفني في الموعد المتفق، يفحص التكييف بشكل شامل ويُخبرك بالمشاكل الموجودة وتكلفة الإصلاح قبل البدء</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>الإصلاح والتسليم والضمان</h3><p>نُصلح المشكلة فوراً بقطع غيار أصلية، نختبر الجهاز أمامك، ونُسلّمك ضمان خطي على الإصلاح</p></div>
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">اتصل واحجز موعد</div><p>اتصل بنا أو تواصل عبر واتساب وأخبرنا بنوع مشكلتك. نحدد أقرب موعد متاح لزيارتك بنفس اليوم أو اليوم التالي</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">الفني يصل ويفحص</div><p>يصل الفني في الموعد المتفق، يفحص التكييف بشكل شامل ويُخبرك بالمشاكل الموجودة وتكلفة الإصلاح قبل البدء</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">الإصلاح والتسليم والضمان</div><p>نُصلح المشكلة فوراً بقطع غيار أصلية، نختبر الجهاز أمامك، ونُسلّمك ضمان خطي على الإصلاح</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أخطاء شائعة عند إهمال صيانة التكييف أو محاولة إصلاحه بشكل غير صحيح</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>كثير من الأعطال المكلفة التي نراها كان يمكن تفاديها بصيانة بسيطة في وقتها. من أشهر الأخطاء التي نلاحظها لدى العملاء: الاستمرار في تشغيل التكييف رغم ظهور علامات تجمد على الوحدة الداخلية (وهذا يُتلف الكمبريسور تدريجياً)، ومحاولة شحن الفريون بنفسه دون معرفة نوع الغاز الصحيح للجهاز (خلط الأنواع يُتلف الدائرة بالكامل)، وتجاهل صوت الطرق أو الصفير لفترة طويلة ظناً أنه سيختفي من تلقاء نفسه.</p>
+      <p style="margin-top:16px">خطأ آخر شائع هو الاعتماد على فنيين غير متخصصين لتوفير المال، ثم اكتشاف أن التركيب أو الإصلاح كان سبباً في مشاكل أكبر لاحقاً، كتفريغ غير كامل للأنابيب من الهواء قبل شحن الفريون، أو استخدام قطع غيار غير مطابقة للمواصفات. نحن ننصح دائماً بالتعامل مع فنيين معتمدين وطلب فاتورة رسمية توثّق نوع القطعة المستخدمة ومدة الضمان عليها، فالفرق في التكلفة بين الفني المعتمد وغير المعتمد ضئيل مقارنة بتكلفة إصلاح الضرر لاحقاً.</p>
+    </div>
+  </div>
+</section>
+<section class="section section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>صيانة التكييف حسب طبيعة المكان: منزل أم مكتب أم محل تجاري</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-home"></i></div><h3>المنازل والشقق</h3><p>عادة تكفي صيانة مرتين سنوياً، مع تنظيف شهري بسيط للفلتر من قِبل صاحب المنزل نفسه بين الزيارتين، خاصة في الغرف الأكثر استخداماً</p></div>
+      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>المكاتب والشركات</h3><p>التشغيل شبه المستمر طوال ساعات العمل يستدعي وتيرة أعلى، فحص كل 3 أشهر تقريباً، مع أولوية لتنظيف الفلاتر في المكاتب المطلة على شوارع مزدحمة أو مناطق إنشاءات</p></div>
+      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>المحلات التجارية والمطاعم</h3><p>ساعات تشغيل طويلة يومياً بالإضافة لدخول وخروج مستمر للعملاء يزيد الحمل على الجهاز، لذا ننصح بعقد صيانة شهري أو ربع سنوي حسب طبيعة النشاط وحجم المساحة</p></div>
+      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-industry"></i></div><h3>المصانع والمخازن</h3><p>بيئة العمل الصناعية غالباً أكثر تلوثاً بالغبار والأبخرة، ما يستدعي جدول صيانة مكثفاً مصمماً خصيصاً حسب طبيعة النشاط الصناعي وموقع الوحدات، ونراجع هذا الجدول دورياً مع العميل لضمان ملاءمته</p></div>
     </div>
   </div>
 </section>
@@ -287,37 +316,11 @@ const schemaJson = JSON.stringify([
   </div>
 </section>
 
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>أخطاء شائعة عند إهمال صيانة التكييف أو محاولة إصلاحه بشكل غير صحيح</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>كثير من الأعطال المكلفة التي نراها كان يمكن تفاديها بصيانة بسيطة في وقتها. من أشهر الأخطاء التي نلاحظها لدى العملاء: الاستمرار في تشغيل التكييف رغم ظهور علامات تجمد على الوحدة الداخلية (وهذا يُتلف الكمبريسور تدريجياً)، ومحاولة شحن الفريون بنفسه دون معرفة نوع الغاز الصحيح للجهاز (خلط الأنواع يُتلف الدائرة بالكامل)، وتجاهل صوت الطرق أو الصفير لفترة طويلة ظناً أنه سيختفي من تلقاء نفسه.</p>
-      <p style="margin-top:16px">خطأ آخر شائع هو الاعتماد على فنيين غير متخصصين لتوفير المال، ثم اكتشاف أن التركيب أو الإصلاح كان سبباً في مشاكل أكبر لاحقاً، كتفريغ غير كامل للأنابيب من الهواء قبل شحن الفريون، أو استخدام قطع غيار غير مطابقة للمواصفات. نحن ننصح دائماً بالتعامل مع فنيين معتمدين وطلب فاتورة رسمية توثّق نوع القطعة المستخدمة ومدة الضمان عليها، فالفرق في التكلفة بين الفني المعتمد وغير المعتمد ضئيل مقارنة بتكلفة إصلاح الضرر لاحقاً.</p>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>صيانة التكييف حسب طبيعة المكان: منزل أم مكتب أم محل تجاري</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-home"></i></div><h3>المنازل والشقق</h3><p>عادة تكفي صيانة مرتين سنوياً، مع تنظيف شهري بسيط للفلتر من قِبل صاحب المنزل نفسه بين الزيارتين، خاصة في الغرف الأكثر استخداماً</p></div>
-      <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-building"></i></div><h3>المكاتب والشركات</h3><p>التشغيل شبه المستمر طوال ساعات العمل يستدعي وتيرة أعلى، فحص كل 3 أشهر تقريباً، مع أولوية لتنظيف الفلاتر في المكاتب المطلة على شوارع مزدحمة أو مناطق إنشاءات</p></div>
-      <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-store"></i></div><h3>المحلات التجارية والمطاعم</h3><p>ساعات تشغيل طويلة يومياً بالإضافة لدخول وخروج مستمر للعملاء يزيد الحمل على الجهاز، لذا ننصح بعقد صيانة شهري أو ربع سنوي حسب طبيعة النشاط وحجم المساحة</p></div>
-      <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-industry"></i></div><h3>المصانع والمخازن</h3><p>بيئة العمل الصناعية غالباً أكثر تلوثاً بالغبار والأبخرة، ما يستدعي جدول صيانة مكثفاً مصمماً خصيصاً حسب طبيعة النشاط الصناعي وموقع الوحدات، ونراجع هذا الجدول دورياً مع العميل لضمان ملاءمته</p></div>
-    </div>
-  </div>
-</section>
 
 <section class="cta-banner">
   <div class="container">
-    <h2>تكييفك يستحق الصيانة قبل أن يُعطل في شهر أغسطس</h2>
+    <div class="as-h2">تكييفك يستحق الصيانة قبل أن يُعطل في شهر أغسطس</div>
     <p>لا تنتظر الصيف ليبدأ التكييف في الإخفاق. اطلب صيانة وقائية الآن واضمن صيفاً بارداً ومريحاً بأقل تكلفة، وبفريق فني تثق في خبرته منذ عام 1999.</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="/contact" class="btn btn-outline btn-lg"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
@@ -332,7 +335,7 @@ const schemaJson = JSON.stringify([
       <div class="divider"></div>
     </div>
     <div class="related-services">
-      <a href="/ac/buy" class="related-service-link"><span>بيع تكييفات</span><i class="fas fa-arrow-left"></i></a>
+      <a href="/ac/buy" class="related-service-link"><span>شراء تكييفات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/ac/installation" class="related-service-link"><span>تركيب تكييفات</span><i class="fas fa-arrow-left"></i></a>
       <a href="/ac/maintenance" class="related-service-link active"><span>صيانة وشحن فريون</span><i class="fas fa-arrow-left"></i></a>
     </div>
