@@ -5,12 +5,13 @@ import PageHero from '../../components/PageHero.astro';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "ماكينات الفارم والعد النقدي",
-  "description": "بيع ماكينات عد النقود وأجهزة كشف العملات المزيفة وماكينات الفارم والشريدر في مصر",
+  "description": "شراء ماكينات عد النقود وأجهزة كشف العملات المزيفة وماكينات الفارم والشريدر في مصر",
   "provider": {
     "@type": "LocalBusiness",
     "name": "نيو جولدن أوفيس",
@@ -28,7 +29,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="ماكينات عد نقود في مصر: فارم وكشف تزييف وشريدر"
   subtitle="نجيب بأفضل حل لإدارة النقد وتأمين مستنداتك، نوفر لك الوقت والجهد بأسعار تنافسية وضمان كامل"
-  heroImage="/images/copiers-hub.webp"
+  heroImage="/images/hero-cash-machines-index.webp"
   heroIcon="fa-money-bill-wave"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -42,7 +43,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -50,6 +50,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>فارم نقود الإسكندرية وماكينات العد النقدي: الحل الأمثل لإدارة النقد</h2>
       <div class="divider"></div>
@@ -65,7 +67,7 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-cut', title: 'ماكينات تدمير المستندات (الشريدر)', text: 'تؤمن التخلص الآمن من المستندات السرية والبيانات الحساسة عبر تقطيعها إلى شرائح دقيقة لا يمكن إعادة تجميعها، بمستويات أمان مختلفة تناسب الاستخدام المكتبي والحكومي والمؤسسي.' },
       ]} />
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:32px 0;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:32px 0;">
         <a href="/cash-machines/counting" style="display:block;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;color:inherit;text-align:center;">
           <div style="width:56px;height:56px;background:#e8f0fe;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;"><i class="fas fa-money-bill-wave" style="font-size:24px;color:var(--primary);"></i></div>
           <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">ماكينات عد النقود</h3>
@@ -87,6 +89,9 @@ const schemaJson = JSON.stringify({
           <p style="font-size:0.85rem;color:var(--text-muted);margin:0;">شريدر للتخلص الآمن من المستندات السرية والبيانات الحساسة</p>
         </a>
       </div>
+    </div>
+        </div>
+      <ServiceSidebar category="cash-machines" current="/cash-machines" />
     </div>
   </div>
 </section>
@@ -187,7 +192,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا الآن</h3>
+              <div class="as-h3"><i class="fas fa-phone" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا الآن</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
@@ -216,13 +221,13 @@ const schemaJson = JSON.stringify({
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>ثلاث خطوات بسيطة للحصول على الجهاز المناسب لعملك</h2>
+      <div class="as-h2">ثلاث خطوات بسيطة للحصول على الجهاز المناسب لعملك</div>
       <div class="divider"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>حدد نوع الجهاز المناسب</h3><p>أخبرنا بطبيعة عملك وحجم التعامل النقدي اليومي وسنرشدك لأفضل جهاز يناسب احتياجاتك وميزانيتك</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>نقدم لك أفضل الأجهزة بأفضل الأسعار</h3><p>نوفر لك خيارات متعددة من أفضل الماركات العالمية بأسعار تنافسية مع ضمان الجودة والأداء</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>تسليم وتشغيل وضمان بعد البيع</h3><p>نسلم الجهاز ونشغله في موقعك مع تدريب كامل على الاستخدام وضمان ما بعد البيع وخدمة صيانة متكاملة</p></div>
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">حدد نوع الجهاز المناسب</div><p>أخبرنا بطبيعة عملك وحجم التعامل النقدي اليومي وسنرشدك لأفضل جهاز يناسب احتياجاتك وميزانيتك</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">نقدم لك أفضل الأجهزة بأفضل الأسعار</div><p>نوفر لك خيارات متعددة من أفضل الماركات العالمية بأسعار تنافسية مع ضمان الجودة والأداء</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">تسليم وتشغيل وضمان بعد البيع</div><p>نسلم الجهاز ونشغله في موقعك مع تدريب كامل على الاستخدام وضمان ما بعد البيع وخدمة صيانة متكاملة</p></div>
     </div>
   </div>
 </section>
@@ -249,7 +254,7 @@ const schemaJson = JSON.stringify({
 
 <section class="cta-banner">
   <div class="container">
-    <h2>هل تحتاج ماكينة لإدارة النقد؟</h2>
+    <div class="as-h2">هل تحتاج ماكينة لإدارة النقد؟</div>
     <p>تواصل معنا الآن. نجيب بأفضل حل لإدارة النقد بأسعار تنافسية وضمان كامل، شريكك الموثوق في مصر منذ 1999</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="https://wa.me/201227392074" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>

@@ -6,6 +6,7 @@ import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import ContentIntro from '../../components/ContentIntro.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -37,7 +38,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="ماكينة فارم وختم في مصر: يدوية وكهربائية"
   subtitle="ماكينات الفارم والختم لتنظيم النقود والمستندات، يدوية وكهربائية لجميع الاستخدامات المكتبية والحكومية والتجارية"
-  heroImage="/images/copiers-hub.webp"
+  heroImage="/images/hero-cash-machines-franking.webp"
   heroIcon="fa-stamp"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -51,7 +52,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -59,6 +59,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="landing-body service-content">
 <ContentIntro
         heading="ما هي ماكينة الفارم وختم بنكي؟"
@@ -67,11 +69,7 @@ const schemaJson = JSON.stringify({
       <p><strong>فارم النقود (Cash Banding Machine):</strong> جهاز يربط مجموعة من الأوراق النقدية معاً بشريط ورقي خاص يُسمى "وشاح" أو "شريط الربط"، لتكوين حزم منظمة سهلة العد والتخزين والنقل. يستخدمه البنوك وشركات الصرافة والمؤسسات المالية يومياً لتنظيم النقد وتسهيل التدقيق المحاسبي.</p>
       <p><strong>فارم المستندات والختم:</strong> يشمل ماكينات الترقيم التسلسلي وأختام التاريخ الكهربائية، وتُستخدم لإضافة أرقام تسلسلية أو تواريخ على الوثائق الرسمية والإيصالات والفواتير، مما يضمن التوثيق الكامل والأمان القانوني للمعاملات.</p>
     </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2>أنواع ماكينات الفارم المتوفرة</h2>
       <div class="divider"></div>
@@ -82,10 +80,14 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-sort-numeric-up" style="color:var(--secondary);margin-left:8px;"></i> ماكينات الترقيم التسلسلي</h3><p>تُضيف أرقاماً تسلسلية على المستندات والإيصالات والفواتير بضغطة واحدة. يتقدم الرقم تلقائياً بعد كل ختم. متوفرة بعدد خانات مختلف (5، 6، 7، 8 خانات) وبألوان حبر متعددة. أساسية في الجهات الحكومية والمحاسبة والمستشفيات وأي جهة تُصدر وثائق رسمية تحتاج ترقيماً موحداً.</p></div>
       <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3><i class="fas fa-calendar-alt" style="color:var(--secondary);margin-left:8px;"></i> أختام التاريخ الكهربائية واليدوية</h3><p>تُضيف تاريخ الاستلام أو الإصدار على المستندات بشكل واضح وموحد. متوفرة في نسختين: يدوية بغمس في حبر بشكل يدوي، وكهربائية تعمل بلمسة زر وتطبع تلقائياً. بعض الموديلات تجمع التاريخ والوقت والترقيم معاً في ختم واحد لأقصى كفاءة في التوثيق.</p></div>
     </div>
+          </div>
+      </div>
+      <ServiceSidebar category="cash-machines" current="/cash-machines/franking" />
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>مواد الربط: شرائط الفارم</h2>
@@ -102,7 +104,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>مشاكل شائعة في ماكينات الفارم وحلولها</h2>
@@ -120,7 +122,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>اختيار الجهاز المناسب حسب طبيعة المؤسسة</h2>
@@ -219,7 +221,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -229,7 +231,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>الفرق بين ماكينة الفارم وماكينة الختم: أيهما تحتاج؟</h2>
@@ -243,18 +245,18 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن ماكينات الفارم والختم</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -272,7 +274,7 @@ const schemaJson = JSON.stringify({
 
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="https://wa.me/201227392074" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> واتساب</a>

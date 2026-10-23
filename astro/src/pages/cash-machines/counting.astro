@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import { getSeoFor } from '../../lib/siteSeo';
 import MidPageCTA from '../../components/MidPageCTA.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +37,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="ماكينات عد نقود في مصر: للبنوك والمحلات"
   subtitle="ماكينات عد النقود الاحترافية للبنوك والمحلات وشركات الصرافة، عد سريع، دقة 100%، كشف العملات المزيفة"
-  heroImage="/images/copiers-hub.webp"
+  heroImage="/images/hero-cash-machines-counting.webp"
   heroIcon="fa-money-bill-wave"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -50,7 +51,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -58,6 +58,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>عداد نقود مصر: أنواع ماكينات عد النقود</h2>
       <div class="divider"></div>
@@ -67,6 +69,9 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-circle-check"></i></div><h3><i class="fas fa-layer-group" style="color:var(--secondary);margin-left:8px;"></i> عدادات الأوراق النقدية (Bill Counters)</h3><p>هي الأكثر شيوعاً في السوق المصري وتُعدّ الأساس في أي مكان يتعامل مع النقد اليومي. تعمل هذه الماكينات على عد الأوراق النقدية بسرعات تتراوح بين <strong>800 و1500 ورقة في الدقيقة</strong>. تتضمن نماذج متعددة تعمل مع الجنيه المصري والعملات الأجنبية كالدولار واليورو. تكتشف أي ورقة ناقصة أو إضافية فوراً وتتوقف عند اكتشاف ورقة مجعدة أو ملتصقة.</p></div>
       <div class="feature-card reveal delay-1"><div class="feature-icon"><i class="fas fa-star"></i></div><h3><i class="fas fa-coins" style="color:var(--secondary);margin-left:8px;"></i> عدادات العملات المعدنية (Coin Sorters)</h3><p>مخصصة للمحلات التجارية والمطاعم والمقاهي التي تتعامل يومياً بكميات كبيرة من العملات المعدنية. تفرز هذه الماكينات العملات تلقائياً حسب فئتها وتعدها بدقة تامة، ثم تقدم القيمة الإجمالية لكل فئة. تُزيل الحاجة لفرز العملات يدوياً خاصة عند إغلاق الخزنة في نهاية اليوم.</p></div>
       <div class="feature-card reveal delay-2"><div class="feature-icon"><i class="fas fa-award"></i></div><h3><i class="fas fa-sort-amount-up" style="color:var(--secondary);margin-left:8px;"></i> ماكينات العد والفرز متعددة الفئات (Mixed Denomination)</h3><p>الأكثر تطوراً والأعلى كفاءة. هذه الماكينات الذكية قادرة على قراءة كل ورقة نقدية وتحديد فئتها ثم حساب القيمة الإجمالية لكل فئة والمجموع الكلي تلقائياً. مثالية جداً للبنوك وشركات الصرافة ومراكز التسوية التي تستقبل نقداً مختلط الفئات.</p></div>
+    </div>
+        </div>
+      <ServiceSidebar category="cash-machines" current="/cash-machines/counting" />
     </div>
   </div>
 </section>
@@ -244,7 +249,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-              <h3><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</h3>
+              <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary);margin-left:8px;"></i> تواصل معنا</div>
               <div class="contact-info">
                 <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074" target="_blank">واتساب مباشر</a></div>
                 <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -277,11 +282,11 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num">١</div><h3>تواصل معنا</h3><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card reveal delay-1"><div class="step-num">٢</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">٣</div><h3>التسليم</h3><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
+      <div class="step-card reveal"><div class="step-num">١</div><div class="as-h3">تواصل معنا</div><p>تواصل عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">٢</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card reveal delay-2"><div class="step-num">٣</div><div class="as-h3">التسليم</div><p>ننفذ طلبك ونسلمه مع ضمان شامل</p></div>
     </div>
   </div>
 </section>
@@ -305,7 +310,7 @@ const schemaJson = JSON.stringify({
 
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>فريقنا جاهز للرد عليك فوراً. تواصل معنا واختر الجهاز المناسب لعملك</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="https://wa.me/201227392074" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> واتساب</a>
