@@ -6,6 +6,7 @@ import PageHero from '../../components/PageHero.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -37,7 +38,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="طباعة أوفست في مصر: جودة لا تُضاهى للكميات الكبيرة"
   subtitle="نيو جولدن أوفيس تقدم خدمة طباعة أوفست احترافية بخبرة 27 عاماً، دقة ألوان استثنائية وأسعار تنافسية للكميات الكبيرة في جميع أنحاء مصر"
-  heroImage="/images/printing-hub.webp"
+  heroImage="/images/hero-printing-offset.webp"
   heroIcon="fa-print"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -52,7 +53,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -60,16 +60,14 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>ما هي طباعة الأوفست (offset printing) ولماذا هي الأمثل للكميات الكبيرة؟</h2>
       <div class="divider"></div>
     </div>
     <p class="landing-lead">طباعة الأوفست هي التقنية الأكثر انتشاراً واحترافاً في عالم الطباعة التجارية. تعتمد هذه التقنية على نقل الحبر من اللوحة المعدنية (البليت) إلى بكرة مطاطية ثم إلى الورق، مما يمنح نتائج طباعة حادة ودقيقة للغاية. في نيو جولدن أوفيس، نعمل بهذه التقنية منذ تأسيس الشركة عام 1999، ونمتلك خبرة تراكمية تمتد لأكثر من 27 عاماً في خدمة عملائنا في الإسكندرية وجميع أنحاء مصر.</p>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2>متى تختار طباعة الأوفست؟</h2>
       <div class="divider"></div>
@@ -78,7 +76,7 @@ const schemaJson = JSON.stringify({
 <p>طباعة الأوفست هي الخيار الأمثل عندما تحتاج إلى كميات كبيرة تبدأ من 500 نسخة فأكثر. كلما زادت الكمية، انخفضت التكلفة لكل وحدة بشكل ملحوظ، مما يجعلها الحل الاقتصادي الأمثل للمشاريع الضخمة. إذا كنت تطبع مجلات، كتالوجات، نشرات دعائية، أو عبوات تغليف بكميات كبيرة، فطباعة الأوفست هي خيارك الأول دون منازع.</p>
 
       <h3>مميزات طباعة الأوفست مع نيو جولدن أوفيس</h3>
-      <IconCardGrid columns={3} items={[
+      <IconCardGrid columns={2} items={[
         { icon: 'fa-palette', title: 'دقة ألوان استثنائية', text: 'نستخدم نظام الألوان CMYK الاحترافي مع إمكانية إضافة ألوان بانتون للحصول على ألوان بعينها بدقة متناهية' },
         { icon: 'fa-tachometer-alt', title: 'سرعة إنتاج عالية', text: 'ماكيناتنا الحديثة قادرة على طباعة آلاف النسخ في الساعة مع الحفاظ على جودة ثابتة في كل نسخة' },
         { icon: 'fa-tags', title: 'أسعار تنافسية', text: 'كلما زادت الكمية، انخفض سعر الوحدة، نقدم أفضل الأسعار في سوق الطباعة المصري' },
@@ -86,12 +84,16 @@ const schemaJson = JSON.stringify({
         { icon: 'fa-award', title: 'جودة مضمونة', text: 'نلتزم بمعايير الجودة الدولية ونوفر عينات للاعتماد قبل بدء الطباعة' },
       ]} />
     </div>
+          </div>
+      </div>
+      <ServiceSidebar category="printing" current="/printing/offset" />
+    </div>
   </div>
 </section>
 
 <MidPageCTA formId="prnOffsetMidCta" />
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>المنتجات التي تُطبع بتقنية الأوفست</h2>
@@ -111,7 +113,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>أنواع الورق المتاحة لطباعة الأوفست</h2>
@@ -130,20 +132,23 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>لماذا تختار نيو جولدن أوفيس للطباعة الأوفست في مصر؟</h2>
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
-<p>مع خبرة تمتد منذ عام 1999، أصبحنا أحد أبرز مراكز طباعة الأوفست في الإسكندرية ومصر بأكملها. نخدم عملاءنا في القاهرة والإسكندرية والمحافظات المصرية كافة، ونوفر خدمة التوصيل لجميع أنحاء الجمهورية. فريقنا المتخصص يضم خبراء في ما قبل الطباعة (Pre-press) والطباعة والتشطيب، مما يضمن لك نتيجة احترافية في كل مرحلة.</p>
-      <p>نلتزم بمواعيد التسليم ونوفر خدمة متابعة مستمرة من لحظة استلام ملفاتك حتى وصول المنتج النهائي إلى يدك.</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-eye', title: 'بروفة اعتماد قبل كل تشغيل', text: 'بروفة رقمية (PDF) مجانًا مع كل طلب، وبروفة ورقية مطبوعة فعليًا عند الحاجة لاعتماد الألوان بدقة قبل تشغيل الماكينة على الكمية كاملة.' },
+        { icon: 'fa-cogs', title: 'الطباعة والتشطيب في مكان واحد', text: 'السلوفان والـ UV الموضعي والفويل والرفع والقص بالتشكيل والتجليد تتم داخل نفس المنشأة، فلا يتنقل طلبك بين ورش مختلفة ولا يتأخر بسببها.' },
+        { icon: 'fa-truck', title: 'توصيل لكل محافظات مصر', text: 'نشحن طلبك مع شركات شحن موثوقة إلى القاهرة والإسكندرية والدلتا والصعيد حتى الأقصر وأسوان، وإلى مطروح وسيناء.' },
+      ]} />
     </div>
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>دليل الكميات وأوقات التسليم في طباعة الأوفست</h2>
@@ -162,7 +167,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>تجهيز ملفات التصميم لطباعة أوفست احترافية بلا مفاجآت</h2>
@@ -183,7 +188,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>التشطيبات النهائية بعد طباعة الأوفست</h2>
@@ -204,7 +209,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>من يحتاج طباعة الأوفست؟ سيناريوهات واقعية من عملائنا</h2>
@@ -222,7 +227,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>طباعة الأوفست مقابل الرقمية وUV: الفرق من منظور تقني</h2>
@@ -239,7 +244,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
                 <div class="contact-info">
                   <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                   <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -252,11 +257,11 @@ const schemaJson = JSON.stringify({
 <!-- HOW IT WORKS -->
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التنفيذ والتسليم</h3><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التنفيذ والتسليم</div><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
     </div>
   </div>
 </section>
@@ -309,7 +314,7 @@ const schemaJson = JSON.stringify({
 <!-- CTA -->
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>تواصل معنا وسنرد عليك فوراً بأفضل عرض</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20أوفست" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>

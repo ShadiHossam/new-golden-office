@@ -5,6 +5,7 @@ import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +37,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="طباعة UV في مصر: اطبع على أي خامة تريدها"
   subtitle="تقنية طباعة UV المتطورة تتيح الطباعة على البلاستيك والمعدن والزجاج والخشب والأكريليك بألوان فائقة الجودة مقاومة للماء والخدش. نيو جولدن أوفيس تتقن هذه التقنية"
-  heroImage="/images/printing-hub.webp"
+  heroImage="/images/hero-printing-uv.webp"
   heroIcon="fa-sun"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -51,7 +52,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -59,16 +59,14 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>ما هو UV printing وكيف يعمل؟</h2>
       <div class="divider"></div>
     </div>
     <p class="landing-lead">طباعة UV هي تقنية طباعة متطورة تستخدم أحبار خاصة تجف فورياً عند تعرضها للضوء فوق البنفسجي (Ultraviolet Light). هذه الأحبار الخاصة لا تتغلغل في الخامة بل تلتصق بسطحها بشكل مباشر، مما يجعلها قادرة على الطباعة على أي خامة بغض النظر عن مساميتها أو طبيعتها. في نيو جولدن أوفيس بالإسكندرية، نمتلك أحدث ماكينات الطباعة بالأشعة فوق البنفسجية التي تطبع على الخشب والزجاج والمعدن والبلاستيك والجلد.</p>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
+          <div class="intro-merged-block">
     <div class="section-header">
       <h2>الخامات التي تطبع عليها تقنية UV</h2>
       <div class="divider"></div>
@@ -81,12 +79,16 @@ const schemaJson = JSON.stringify({
       <div class="feature-card reveal delay-3"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3>الخشب والـ MDF</h3><p>طباعة UV على الخشب والـ MDF تفتح عالماً من إمكانيات الديكور الداخلي. من الأثاث المخصص إلى اللوحات الخشبية الفنية، الطباعة على الخشب بتقنية UV تمنح نتائج فاخرة وفريدة.</p></div>
       <div class="feature-card reveal"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h3>الجلد والمواد الجلدية</h3><p>الطباعة على الجلد بتقنية UV تُستخدم في تخصيص المحافظ وأغطية الدفاتر والهدايا الجلدية الفاخرة. النتيجة ألوان حيوية تدوم طويلاً دون أن تتأثر بالاستخدام اليومي.</p></div>
     </div>
+          </div>
+      </div>
+      <ServiceSidebar category="printing" current="/printing/uv" />
+    </div>
   </div>
 </section>
 
 <MidPageCTA formId="prnUvMidCta" />
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>مميزات طباعة UV</h2>
@@ -104,7 +106,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>استخدامات طباعة UV</h2>
@@ -123,7 +125,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>الطباعة ثلاثية الأبعاد بتقنية UV</h2>
@@ -131,18 +133,6 @@ const schemaJson = JSON.stringify({
     </div>
     <div class="landing-body service-content">
 <p>واحدة من أبرز إمكانيات طباعة UV هي قدرتها على إنشاء ملمس ثلاثي الأبعاد عبر طباعة طبقات متعددة فوق بعضها البعض. الشعارات والعناصر التصميمية يمكن أن تبرز من السطح بشكل محسوس، مما يمنح المنتج مظهراً فاخراً استثنائياً يجذب الانتباه ويترك انطباعاً لا يُنسى.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>نيو جولدن أوفيس: رائدة طباعة UV في مصر</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<p>نمتلك في نيو جولدن أوفيس خبرة واسعة في طباعة UV وأحدث الأجهزة في هذا المجال. فريقنا المتخصص يرشدك لاختيار أنسب الخامات والإعدادات لتحقيق أفضل نتيجة لمشروعك.</p>
     </div>
   </div>
 </section>
@@ -219,7 +209,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
                 <div class="contact-info">
                   <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                   <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -232,11 +222,11 @@ const schemaJson = JSON.stringify({
 <!-- HOW IT WORKS -->
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التنفيذ والتسليم</h3><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التنفيذ والتسليم</div><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
     </div>
   </div>
 </section>
@@ -302,7 +292,7 @@ const schemaJson = JSON.stringify({
 <!-- CTA -->
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>تواصل معنا وسنرد عليك فوراً بأفضل عرض</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20طباعة%20UV" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>

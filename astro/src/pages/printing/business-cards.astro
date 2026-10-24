@@ -5,6 +5,7 @@ import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import { getSeoFor } from '../../lib/siteSeo';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +37,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="طباعة كروت شخصية وبروشورات في مصر: انطباعك الأول"
   subtitle="كرت شخصي أنيق وبروشور احترافي يتركان انطباعاً لا يُنسى. نيو جولدن أوفيس تصنع مطبوعاتك التسويقية بأفضل الخامات وأرقى التشطيبات في مصر"
-  heroImage="/images/printing-hub.webp"
+  heroImage="/images/hero-printing-business-cards.webp"
   heroIcon="fa-id-card"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -51,7 +52,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -59,6 +59,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>لماذا تحتاج كرتًا شخصيًا احترافيًا؟</h2>
       <div class="divider"></div>
@@ -70,6 +72,9 @@ const schemaJson = JSON.stringify({
       <p>نحتفظ أيضًا بملف تصميم الشركة الأساسي، فإذا انضم موظف جديد لاحقًا يحتاج كرتًا خاصًا به، ننفذه بسرعة بنفس الهوية البصرية المعتمدة دون الحاجة لإعادة التصميم بالكامل.</p>
       <p>نساعدك أيضًا في مراجعة صحة البيانات المطبوعة (رقم الهاتف، البريد الإلكتروني، الموقع) قبل الطباعة النهائية، لتفادي طباعة كمية كاملة بخطأ بسيط يصعب تداركه لاحقًا.</p>
       <p>نقدم أيضًا خصمًا خاصًا على إعادة الطلب لنفس التصميم، فلا داعي لدفع تكلفة تصميم جديدة عند احتياجك لكمية إضافية لاحقًا.</p>
+    </div>
+        </div>
+      <ServiceSidebar category="printing" current="/printing/business-cards" />
     </div>
   </div>
 </section>
@@ -111,47 +116,6 @@ const schemaJson = JSON.stringify({
 <section class="section section-bg">
   <div class="container">
     <div class="section-header">
-      <h2>التشطيبات المتاحة للكروت والمطبوعات</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<IconCardGrid columns={4} items={[
-        { icon: 'fa-square', title: 'مطفي (Matt Lamination)', text: 'تشطيب ناعم وأنيق يمنع الانعكاسات، الأكثر شيوعاً وأناقة' },
-        { icon: 'fa-sun', title: 'لامع (Gloss Lamination)', text: 'يبرز الألوان ويمنح مظهراً براقاً ونضاراً' },
-        { icon: 'fa-feather-alt', title: 'ناعم كالمخمل (Soft Touch / Velvet)', text: 'إحساس مخملي فاخر عند اللمس، تشطيب استثنائي' },
-        { icon: 'fa-star', title: 'UV بقعي (Spot UV)', text: 'لمسة لامعة على أجزاء محددة لإبراز العناصر المهمة' },
-      ]} />
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>محتاج بروشورات أو فلايرات كمان؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<p>لو محتاج بروشورات تسويقية أو فلايرات توزيع أو كتالوجات منتجات إلى جانب كروتك الشخصية، عندنا صفحة مخصصة لكل أنواع الطي والمقاسات والورق المناسب: <a href="/printing/brochures">طباعة بروشورات وفلايرات</a>.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>لماذا تختار نيو جولدن أوفيس لطباعة كروتك وبروشوراتك؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="landing-body service-content">
-<p>مع خبرة أكثر من 27 عاماً في طباعة المطبوعات التسويقية في الإسكندرية ومصر، نعرف ما الذي يجعل المطبوعة ناجحة ومؤثرة. نوفر استشارة مجانية لاختيار أنسب الخامات والتشطيبات لميزانيتك وهدفك التسويقي. ملفاتك في أيدٍ أمينة مع فريقنا المتخصص في ما قبل الطباعة.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
       <h2>الكرت الشخصي المناسب لكل مهنة</h2>
       <div class="divider"></div>
     </div>
@@ -168,7 +132,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>الكروت الذكية بتقنية QR وNFC</h2>
@@ -180,7 +144,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>أشكال ومقاسات بديلة للكرت الشخصي</h2>
@@ -196,7 +160,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2>تجهيز ملف الكرت الشخصي قبل الطباعة</h2>
@@ -214,7 +178,7 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header">
       <h2>العناية بالكروت ذات التشطيبات الخاصة</h2>
@@ -226,11 +190,11 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<section class="section section-bg section-sm">
+<section class="section section-sm">
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
                 <div class="contact-info">
                   <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                   <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -241,19 +205,19 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section">
+<section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التنفيذ والتسليم</h3><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>تواصل معنا عبر الواتساب أو الهاتف وأخبرنا باحتياجاتك</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرسل لك عرض سعر مفصل خلال ساعات معدودة</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التنفيذ والتسليم</div><p>ننفذ طلبك بأعلى جودة ونسلمه في الوقت المحدد</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section section-bg">
+<section class="section">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن الكروت والبروشورات</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -303,22 +267,9 @@ const schemaJson = JSON.stringify({
 </section>
 
 <!-- CTA -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>كيف تختار خامة وتشطيب كرت العمل المناسب لمهنتك؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>المحامي أو الطبيب أو المستشار المالي عادة يفضل كرت أنيق بتشطيب مطفي (Matte) يعكس الجدية والاحترافية، بينما مصمم الجرافيك أو صاحب وكالة إعلانية قد يفضل تشطيبًا لامعًا أو UV موضعي يبرز شعاره ويلفت الانتباه. رجال المبيعات والعقارات يستفيدون من كروت سميكة تعطي انطباعًا أوليًا بالجودة والثقة عند تسليمها للعميل المحتمل، بينما الشركات الناشئة أحيانًا تختار خامات غير تقليدية (ورق مقوى، خشب رقيق) للتميز عن المنافسين.</p>
-      <p style="margin-top:16px">مهما كان اختيارك، ننصح دائمًا بمراجعة عينة فعلية قبل طباعة الكمية الكاملة، لأن اختلاف الشاشة عن الورق المطبوع في الألوان أمر شائع، ونحرص على أن يرى العميل نموذجًا حقيقيًا بيده قبل الموافقة النهائية.</p>
-    </div>
-  </div>
-</section>
-
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>تواصل معنا وسنرد عليك فوراً بأفضل عرض</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20كروت%20شخصية%20وبروشورات" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>

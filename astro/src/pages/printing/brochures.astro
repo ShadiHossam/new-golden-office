@@ -5,6 +5,7 @@ import MidPageCTA from '../../components/MidPageCTA.astro';
 import PageHero from '../../components/PageHero.astro';
 import IconCardGrid from '../../components/IconCardGrid.astro';
 import ComparisonGrid from '../../components/ComparisonGrid.astro';
+import ServiceSidebar from '../../components/ServiceSidebar.astro';
 
 const schemaJson = JSON.stringify({
   "@context": "https://schema.org",
@@ -41,7 +42,7 @@ const schemaJson = JSON.stringify({
 <PageHero
   title="طباعة بروشورات وفلايرات في مصر"
   subtitle="من الفلاير السريع للتوزيع إلى الكتالوج متعدد الصفحات. نيو جولدن أوفيس تطبع بروشوراتك وفلايراتك بكل أنواع الطي والمقاسات، بخبرة 27 عامًا"
-  heroImage="/images/printing-hub.webp"
+  heroImage="/images/hero-printing-brochures.webp"
   heroIcon="fa-book-open"
   breadcrumbs={[
     { label: 'الرئيسية', href: '/' },
@@ -56,7 +57,6 @@ const schemaJson = JSON.stringify({
     <div class="stats-grid">
       <div class="stat-item reveal"><div class="stat-num" data-target="27" data-suffix="+">0+</div><div class="stat-label">سنة خبرة في السوق المصري</div></div>
       <div class="stat-item reveal delay-1"><div class="stat-num" data-target="5000" data-prefix="+">0</div><div class="stat-label">عميل راضٍ في جميع أنحاء مصر</div></div>
-      <div class="stat-item reveal delay-2"><div class="stat-num" data-target="50" data-suffix="+">0+</div><div class="stat-label">ماركة عالمية معتمدة</div></div>
       <div class="stat-item reveal delay-3"><div class="stat-num" data-target="6">0</div><div class="stat-label">خدمات متكاملة تحت سقف واحد</div></div>
     </div>
   </div>
@@ -64,6 +64,8 @@ const schemaJson = JSON.stringify({
 
 <section class="section">
   <div class="container">
+    <div class="service-detail-grid">
+      <div class="service-content">
     <div class="section-header">
       <h2>البروشور، الفلاير، والكتالوج: إيه الفرق؟</h2>
       <div class="divider"></div>
@@ -75,6 +77,9 @@ const schemaJson = JSON.stringify({
       <p>للشركات التي تحتاج بروشورات موسمية متكررة (عروض، فعاليات، منتجات جديدة)، نحتفظ بالقالب الأساسي لتسريع أي طباعة لاحقة مع تحديث المحتوى فقط دون إعادة تصميم كامل من الصفر.</p>
       <p>نساعدك أيضًا في تحديد أنسب حجم بروشور لكمية المعلومات التي تريد عرضها، بدل اختيار حجم عشوائي قد يبدو مزدحمًا بالنص أو فارغًا من المحتوى.</p>
       <p>نقدم أيضًا استشارة مجانية حول ترتيب المحتوى داخل صفحات البروشور، لضمان تسلسل منطقي يقود القارئ من المقدمة حتى دعوة التواصل النهائية.</p>
+    </div>
+        </div>
+      <ServiceSidebar category="printing" current="/printing/brochures" />
     </div>
   </div>
 </section>
@@ -166,7 +171,11 @@ const schemaJson = JSON.stringify({
       <div class="divider"></div>
     </div>
     <div class="landing-body service-content">
-<p>بخبرة أكثر من 27 عامًا في طباعة المطبوعات التسويقية بمصر، بنساعدك تختار الطي والورق والمقاس الأنسب لهدفك، مع مراجعة فنية مجانية لملفك قبل الطباعة وبروفة تعتمدها قبل التشغيل الكامل.</p>
+      <IconCardGrid columns={3} items={[
+        { icon: 'fa-clock', title: 'تسليم من يوم ليومين للكميات الصغيرة', text: 'الطباعة الرقمية بتتسلّم خلال يوم إلى يومين عمل، والأوفست للكميات الكبيرة من 3 إلى 7 أيام حسب الكمية والتشطيب. وللفعاليات والمواعيد الضيقة قولنا من الأول ونرتب الأولوية.' },
+        { icon: 'fa-file-signature', title: 'مراجعة ملفك وبروفة قبل التشغيل', text: 'بنراجع ملفك فنيًا مجانًا (هامش القطع والمساحة الآمنة والدقة) وبتعتمد بروفة قبل ما نشغّل الكمية كلها، فمفيش مفاجآت بعد الطباعة.' },
+        { icon: 'fa-book-open', title: 'كتالوجات متعددة الصفحات بتجليد مناسب', text: 'لو محتاج كتالوج منتجات كبير، بنطبعه بخياطة أو تدبيس أو تجليد لولبي حسب عدد الصفحات والاستخدام، ونرشح لك وزن الورق المناسب.' },
+      ]} />
     </div>
   </div>
 </section>
@@ -250,7 +259,7 @@ const schemaJson = JSON.stringify({
   <div class="container">
     <div class="sidebar-cards-row cols-1">
 <div class="sidebar-card">
-                <h3><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</h3>
+                <div class="as-h3"><i class="fas fa-phone-alt" style="color:var(--secondary)"></i> تواصل معنا</div>
                 <div class="contact-info">
                   <div class="contact-info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201227392074">واتساب مباشر</a></div>
                   <div class="contact-info-item"><i class="fas fa-phone"></i><a href="tel:+201227392074">01227392074</a></div>
@@ -263,17 +272,31 @@ const schemaJson = JSON.stringify({
 <!-- HOW IT WORKS -->
 <section class="section section-bg">
   <div class="container">
-    <div class="section-header"><h2>كيف نعمل معك؟</h2><div class="divider"></div></div>
+    <div class="section-header"><div class="as-h2">كيف نعمل معك؟</div><div class="divider"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>تواصل معنا</h3><p>أرسل نوع البروشور أو الفلاير المطلوب وكميتك التقريبية</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>عرض السعر</h3><p>نرشح لك الطي والورق والتقنية الأنسب مع عرض سعر مفصل</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>التنفيذ والتسليم</h3><p>بعد اعتماد البروفة، ننفذ ونسلم في الموعد المتفق عليه</p></div>
+      <div class="step-card"><div class="step-num">1</div><div class="as-h3">تواصل معنا</div><p>أرسل نوع البروشور أو الفلاير المطلوب وكميتك التقريبية</p></div>
+      <div class="step-card"><div class="step-num">2</div><div class="as-h3">عرض السعر</div><p>نرشح لك الطي والورق والتقنية الأنسب مع عرض سعر مفصل</p></div>
+      <div class="step-card"><div class="step-num">3</div><div class="as-h3">التنفيذ والتسليم</div><p>بعد اعتماد البروفة، ننفذ ونسلم في الموعد المتفق عليه</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>كيف تختار طي البروشور المناسب لمحتواك؟</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
+      <p>الطي الثلاثي (Tri-fold) هو الأكثر شيوعًا لأنه يعطي 6 مساحات عرض منظمة، مناسب لعرض خدمة أو منتج بتسلسل منطقي: مقدمة، تفاصيل، ثم دعوة للتواصل. الطي الثنائي (Bi-fold) أبسط ويناسب المحتوى الأقل تفصيلاً كقائمة أسعار أو دليل مختصر. للمشاريع التي تحتاج مساحة عرض أكبر مع صور كثيرة، البروشور المفرود بدون طي (Flat) أو بطي بوابة (Gate Fold) يعطي مساحة أوسع لكنه يحتاج غلاف أو مظروف عند التوزيع البريدي.</p>
+      <p style="margin-top:16px">اختيار نوع الورق يهم بقدر أهمية التصميم نفسه؛ الورق اللامع (Glossy) يبرز الصور بألوان زاهية ومناسب للمنتجات البصرية، بينما الورق المطفي (Matte) يعطي انطباعًا أكثر رقيًا واحترافية ويقلل انعكاس الضوء عند القراءة تحت إضاءة قوية.</p>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section section-bg">
   <div class="container">
     <div class="section-header"><h2>أسئلة شائعة عن طباعة البروشورات والفلايرات</h2><div class="divider"></div></div>
     <div class="faq-list">
@@ -313,23 +336,10 @@ const schemaJson = JSON.stringify({
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section section-bg">
-  <div class="container">
-    <div class="section-header">
-      <h2>كيف تختار طي البروشور المناسب لمحتواك؟</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="intro-text" style="max-width:900px;margin:0 auto;line-height:2;font-size:1.05rem;color:var(--text-muted)">
-      <p>الطي الثلاثي (Tri-fold) هو الأكثر شيوعًا لأنه يعطي 6 مساحات عرض منظمة، مناسب لعرض خدمة أو منتج بتسلسل منطقي: مقدمة، تفاصيل، ثم دعوة للتواصل. الطي الثنائي (Bi-fold) أبسط ويناسب المحتوى الأقل تفصيلاً كقائمة أسعار أو دليل مختصر. للمشاريع التي تحتاج مساحة عرض أكبر مع صور كثيرة، البروشور المفرود بدون طي (Flat) أو بطي بوابة (Gate Fold) يعطي مساحة أوسع لكنه يحتاج غلاف أو مظروف عند التوزيع البريدي.</p>
-      <p style="margin-top:16px">اختيار نوع الورق يهم بقدر أهمية التصميم نفسه؛ الورق اللامع (Glossy) يبرز الصور بألوان زاهية ومناسب للمنتجات البصرية، بينما الورق المطفي (Matte) يعطي انطباعًا أكثر رقيًا واحترافية ويقلل انعكاس الضوء عند القراءة تحت إضاءة قوية.</p>
-    </div>
-  </div>
-</section>
 
 <section class="cta-banner">
   <div class="container">
-    <h2>احصل على عرض سعر مجاني الآن</h2>
+    <div class="as-h2">احصل على عرض سعر مجاني الآن</div>
     <p>تواصل معنا وسنرد عليك فوراً بأفضل عرض</p>
     <div class="btn-group" style="justify-content:center">
       <a href="https://wa.me/201227392074?text=أريد%20عرض%20سعر%20بروشورات%20وفلايرات" class="btn btn-outline btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
